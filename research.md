@@ -1,7 +1,5 @@
 ---
-layout: default
-title: Research
-nav_order: 2
+title: "Research"
 ---
 
 # Research
