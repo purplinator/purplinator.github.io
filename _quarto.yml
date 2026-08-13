@@ -20,8 +20,13 @@ website:
     # 'contents' informs the sidebar links
     contents:
       - text: "Home"
+        icon: house-door
         file: index.md
-      - text: "Research"
+      - section: "Research"
+        # contents:
+        #   - text: "Large Megallanic Cloud"
+        #     file: lmc_overview
+      - text: "Research Placeholder"
         file: research.md
       - text: "Teaching"
         file: teaching.md
