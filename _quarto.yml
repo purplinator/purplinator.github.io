@@ -26,6 +26,8 @@ website:
         contents:
           - text: "Large Megallanic Cloud"
             file: lvm_research.qmd
+          - text: "Code Docs"
+            file: lvm_code_docs.qmd
       - text: "Research Placeholder"
         file: research.md
       - text: "Teaching"
