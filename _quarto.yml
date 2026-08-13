@@ -7,7 +7,7 @@ project:
 
 # instructions in 'website' control global website features
 website:
-  title: "Saxon Stockton<br><small style='font-weight: normal; color: #6c757d;'>Astrophysics PhD Student<br>Texas Christian University<\small>"
+  title: "Saxon Stockton<br><small style='font-weight: normal; color: #6c757d;'>Astrophysics PhD Student<br>Texas Christian University</small>"
   # 'description' contains metadata for the website
   description: "Astrophysics Research and Teaching Portfolio"
   # 'sidebar' gives a left-handed navigation menu
