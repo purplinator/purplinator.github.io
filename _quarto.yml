@@ -7,17 +7,24 @@ project:
 
 # instructions in 'website' control global website features
 website:
-  title: "Saxon Stockton"
+  title: "Saxon Stockton<br><small style='font-weight: normal; color: #6c757d;'>Astrophysics PhD Student<br>Texas Christian University<\small>"
   # 'description' contains metadata for the website
   description: "Astrophysics Research and Teaching Portfolio"
   # 'sidebar' gives a left-handed navigation menu
   sidebar:
     # 'docked' pins the sidebar to the screen
-    style: docked
+    # 'floating' makes sidebar toggleable
+    style: floating
     # 'search' adds a built-in search bar that looks inside
     # the .md files
     search: true
     # 'contents' informs the sidebar links
+    tools:
+      - icon: envelope
+        href: mailto:s.stockton@tcu.edu
+      - icon: github
+        href: https://github.com/purplinator
+        
     contents:
       - text: "Home"
         icon: house-door
