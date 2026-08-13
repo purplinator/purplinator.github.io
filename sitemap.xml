@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://purplinator.github.io/index.html</loc>
-    <lastmod>2026-08-13T02:21:52.022Z</lastmod>
-  </url>
-  <url>
     <loc>https://purplinator.github.io/lvm_research.html</loc>
-    <lastmod>2026-08-13T02:21:52.022Z</lastmod>
-  </url>
-  <url>
-    <loc>https://purplinator.github.io/teaching.html</loc>
-    <lastmod>2026-08-13T02:21:52.022Z</lastmod>
+    <lastmod>2026-08-13T02:24:00.915Z</lastmod>
   </url>
   <url>
     <loc>https://purplinator.github.io/research.html</loc>
-    <lastmod>2026-08-13T02:21:52.022Z</lastmod>
+    <lastmod>2026-08-13T02:24:00.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/index.html</loc>
+    <lastmod>2026-08-13T02:24:00.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/teaching.html</loc>
+    <lastmod>2026-08-13T02:24:00.915Z</lastmod>
   </url>
 </urlset>

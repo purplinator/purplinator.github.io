@@ -11,16 +11,6 @@
     ]
   },
   {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching Resources",
-    "section": "",
-    "text": "Teaching Resources",
-    "crumbs": [
-      "Teaching"
-    ]
-  },
-  {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
@@ -38,6 +28,16 @@
     "text": "This is where I will discuss my research.",
     "crumbs": [
       "Research Placeholder"
+    ]
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching Resources",
+    "section": "",
+    "text": "Teaching Resources",
+    "crumbs": [
+      "Teaching"
     ]
   }
 ]

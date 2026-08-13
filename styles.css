@@ -1,5 +1,5 @@
 /* Target the accordion section titles in the sidebar */
-.sidebar-section > .sidebar-item-container {
+.sidebar-item-container {
   background-color: #f8f9fa !important;  /* Light grey background */
   border: 2px solid #5a5a5a !important;  /* Dark grey border */
   border-radius: 15px !important;        /* Rounds the corners to create a bubble */
