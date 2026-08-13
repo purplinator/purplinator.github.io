@@ -4,7 +4,11 @@
     "href": "lvm_code_docs.html",
     "title": "Code Documentation",
     "section": "",
-    "text": "Code Documentation"
+    "text": "Code Documentation",
+    "crumbs": [
+      "Research",
+      "Code Docs"
+    ]
   },
   {
     "objectID": "teaching.html",
