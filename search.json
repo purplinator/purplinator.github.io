@@ -1,5 +1,22 @@
 [
   {
+    "objectID": "lvm_code_docs.html",
+    "href": "lvm_code_docs.html",
+    "title": "Code Documentation",
+    "section": "",
+    "text": "Code Documentation"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching Resources",
+    "section": "",
+    "text": "Teaching Resources",
+    "crumbs": [
+      "Teaching"
+    ]
+  },
+  {
     "objectID": "lvm_research.html",
     "href": "lvm_research.html",
     "title": "Build in progress",
@@ -28,16 +45,6 @@
     "text": "This is where I will discuss my research.",
     "crumbs": [
       "Research Placeholder"
-    ]
-  },
-  {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching Resources",
-    "section": "",
-    "text": "Teaching Resources",
-    "crumbs": [
-      "Teaching"
     ]
   }
 ]
