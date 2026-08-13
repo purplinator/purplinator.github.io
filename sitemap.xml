@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://purplinator.github.io/research.html</loc>
-    <lastmod>2026-08-13T00:08:00.281Z</lastmod>
+    <loc>https://purplinator.github.io/index.html</loc>
+    <lastmod>2026-08-13T00:10:41.326Z</lastmod>
   </url>
   <url>
-    <loc>https://purplinator.github.io/index.html</loc>
-    <lastmod>2026-08-13T00:08:00.281Z</lastmod>
+    <loc>https://purplinator.github.io/teaching.html</loc>
+    <lastmod>2026-08-13T00:10:41.326Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/research.html</loc>
+    <lastmod>2026-08-13T00:10:41.326Z</lastmod>
   </url>
 </urlset>
