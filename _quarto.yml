@@ -26,7 +26,7 @@ website:
   sidebar:
     # 'docked' pins the sidebar to the screen
     # 'floating' makes sidebar toggleable
-    style: floating
+    style: docked
     # 'search' adds a built-in search bar that looks inside
     # the .md files
     # 'contents' informs the sidebar links
