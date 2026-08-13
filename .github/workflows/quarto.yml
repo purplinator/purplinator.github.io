@@ -1,23 +1,59 @@
+# 'on' looks for events to trigger the script
 on:
+  # 'push' gives the condtion run whenever new
+  # new code is pushed to the repository
   push:
+    # specifies to only run if new code is pushed
+    # to the main branch
     branches: main
+  # 'workflow_dispatch' adds a physical "Run
+  # workflow" button to GitHub Actions to
+  # run a manual site rebuild without
+  # having to push a commit
   workflow_dispatch:
 
+# This names the script inside GitHub Actions
 name: Quarto Publish
 
+# 'jobs' initiates the lists of tasks for the
+# server to perform
 jobs:
+  # Arbitrary name we give to this task
   build-deploy:
+    # 'runs-on' specifies the operating system
+    # for the temporary server. 'ubuntu-latest'
+    # is industry standard for automated runners
     runs-on: ubuntu-latest
+    # 'permissions' defines what the automated
+    # server is allowed to do
     permissions:
       contents: write
+    # 'steps' is a sequential chronological list
+    # of commands for the server to follow
     steps:
+      # 'actions/checkout@v4' downloads a copy
+      # of all the files in the repository to
+      # the server
       - name: Check out repository
         uses: actions/checkout@v4
+      # 'quarto-dev/quarto-actions/setup@v2'
+      # instructs the server to connect to Quarto
+      # and download/install their software
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+      # 'quarto-dev/quarto-actions/publish@v2'
+      # triggers the quarto render command
+      # and 'target: gh-pages' directs where
+      # to store the HTML files (website code)
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+        # 'env' is environmental variables aka 
+        # passwords and keys for the script to
+        # run. The token is a temporary password
+        # for a GitHub security checkpoint. This
+        # proves that Quarto has authorization
+        # to push files.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
