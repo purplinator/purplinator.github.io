@@ -36,3 +36,4 @@ format:
   html:
     theme: cosmo # A clean, professional academic theme
     toc: true    # Automatically adds a table of contents to long pages
+    css: styles.css # Connecting to information on styling the sidebar
