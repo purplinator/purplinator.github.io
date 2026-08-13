@@ -12,15 +12,15 @@ website:
   description: "Astrophysics Research and Teaching Portfolio"
   
   navbar:
-  background: "#003366"
-  # 'search' adds a built-in search bar that looks inside
-  # the .md files
-  search: true
-  tools:
-    - icon: envelope
-      href: mailto:s.stockton@tcu.edu
-    - icon: github
-      href: https://github.com/purplinator
+    background: "#003366"
+    # 'search' adds a built-in search bar that looks inside
+    # the .md files
+    search: true
+    tools:
+      - icon: envelope
+        href: mailto:s.stockton@tcu.edu
+      - icon: github
+        href: https://github.com/purplinator
 
   # 'sidebar' gives a left-handed navigation menu
   sidebar:
