@@ -1,12 +1,23 @@
+# 'project' is the highest level instruction for Quarto
+# It informs the handling of the entire repository
 project:
+  # 'website' tells it to render .md files as interconnected
+  # HTML webpages
   type: website
 
+# instructions in 'website' control global website features
 website:
   title: "Saxon Stockton"
+  # 'description' contains metadata for the website
   description: "Astrophysics Research and Teaching Portfolio"
+  # 'sidebar' gives a left-handed navigation menu
   sidebar:
+    # 'docked' pins the sidebar to the screen
     style: docked
+    # 'search' adds a built-in search bar that looks inside
+    # the .md files
     search: true
+    # 'contents' informs the sidebar links
     contents:
       - text: "Home"
         file: index.md
@@ -15,6 +26,7 @@ website:
       - text: "Teaching"
         file: teaching.md
 
+# 'format' controls the final output
 format:
   html:
     theme: cosmo # A clean, professional academic theme
