@@ -23,9 +23,9 @@ website:
         icon: house-door
         file: index.md
       - section: "Research"
-        # contents:
-        #   - text: "Large Megallanic Cloud"
-        #     file: lmc_overview
+        contents:
+          - text: "Large Megallanic Cloud"
+            file: lvm_research.qmd
       - text: "Research Placeholder"
         file: research.md
       - text: "Teaching"
