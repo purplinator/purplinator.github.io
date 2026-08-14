@@ -1,5 +1,5 @@
 ---
-title: "Saxon Stockton"
+title: "Learning About Writing Code"
 # subtitle: "Astronomy Course Materials & Planetarium Resources"
 ---
 
@@ -11,7 +11,7 @@ title: "Saxon Stockton"
     // 1. ADD THIS LINE: Give the element an ID
     pageTitle.id = 'dynamic-page-title'; 
     
-    pageTitle.innerHTML = "Home";
+    pageTitle.innerHTML = "Coding Tutorials";
     
     pageTitle.style.color = 'white';
     pageTitle.style.fontWeight = 'bold';
@@ -27,16 +27,3 @@ title: "Saxon Stockton"
     }
   };
 </script>
-
-# Who am I?
-I am a physics PhD student at Texas Christian University. Originally hailing from Austin, Texas, I ended up moving to Utah for a while and got a Bachelor's of Science in Physics from Utah Valley University.
- 
-# Research Interests
-At TCU, I am working on a physics PhD with an astrophysics specialization. I am interested in many things astronomy and astrophysics. I am particularly proficient with data analysis and working with spectral data, but I have also dipped my toes into photometry. Fields of interest include:
-
-1. Galaxy Formation and Evolution
-2. Circumgalactic Medium
-3. Gas Flows in and around Galaxies
-4. Star Forming Regions
-5. Emission-line galaxies
-6. Dust (PAHs, etc.)

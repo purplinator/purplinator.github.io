@@ -7,15 +7,19 @@ project:
 
 # instructions in 'website' control global website features
 website:
-  title: "<strong style='font-size: 1.2em;'>Saxon Stockton</strong><br><small style='font-weight: normal; color: #6c757d;'>Astrophysics PhD Student<br>Texas Christian University</small>"
+  title: "<strong style='font-size: 1.2em; color: #ECE7F2;'>Saxon Stockton</strong><br><small style='font-weight: normal; color: #D8D0E5;'>Astrophysics PhD Student</small>"
   # 'description' contains metadata for the website
   description: "Astrophysics Research and Teaching Portfolio"
   
   navbar:
-    background: "#003366"
+    background: "#32104E"
     # 'search' adds a built-in search bar that looks inside
     # the .md files
     search: true
+
+    # left: 
+    #   - text: "<span id='dynamic-nav-text' style='color: white; font-weight: bold; font-size: 1.3rem;'></span>"
+
     tools:
       - icon: envelope
         href: mailto:s.stockton@tcu.edu
@@ -24,6 +28,7 @@ website:
 
   # 'sidebar' gives a left-handed navigation menu
   sidebar:
+    background: "#A3A9AC"
     # 'docked' pins the sidebar to the screen
     # 'floating' makes sidebar toggleable
     style: docked
@@ -35,15 +40,21 @@ website:
         icon: house-door
         file: index.md
       - section: "Research"
+        icon: moon-stars
+        file: research.md
         contents:
           - text: "Large Megallanic Cloud"
             file: lvm_research.qmd
           - text: "Code Docs"
             file: lvm_code_docs.qmd
-      - text: "Research Placeholder"
-        file: research.md
-      - text: "Teaching"
-        file: teaching.md
+      - section: "Teaching"
+        contents:
+        - text: "Teaching Philosophy"
+          file: teaching.md
+        - text: "Coding Tutorials"
+          file: tutorial_code.qmd
+        - text: "Physics Problems"
+          file: tutorial_problems.qmd
 
 # 'format' controls the final output
 format:
@@ -51,3 +62,6 @@ format:
     css: styles.css # Connecting to information on styling the sidebar
     theme: cosmo # A clean, professional academic theme
     toc: true    # Automatically adds a table of contents to long pages
+    grid:
+      body-width: 1000px # Controls the width of the main content area
+      margin-width: 300px # Controls the width of the sidebar
