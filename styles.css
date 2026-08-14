@@ -2,13 +2,108 @@
 .sidebar-item-container {
   background-color: #f8f9fa !important;  /* Light grey background */
   border: 2px solid #5a5a5a !important;  /* Dark grey border */
-  border-radius: 15px !important;        /* Rounds the corners to create a bubble */
-  padding: 4px 10px !important;          /* Adds breathing room inside the bubble */
+  border-radius: 12px !important;        /* Rounds the corners to create a bubble */
+  padding: 5px 10px !important;          /* Adds breathing room inside the bubble */
   margin-top: 10px !important;           /* Adds space between the bubbles */
-  margin-bottom: 5px !important;
+  margin-bottom: 10px !important;
+  transition: all 0.15s ease-in-out !important;
 }
 
-/* Optional: Change the background color when a user hovers over the bubble */
-.sidebar-section > .sidebar-item-container:hover {
-  background-color: #e2e6ea !important;
+/* 1. Change the color of the bubble container on hover */
+.sidebar-item-container:hover {
+  background-color: #FFFFFF !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
+  transform: scale(1.1) !important; /* Grows the bubble by 3% */
+  border-color: #4D1979 !important; /* Changes your grey border to dark blue */
+  transform: translateX(4px) !important; /* Pushes the bubble 4 pixels to the right */
+  /* Paints a 6-pixel solid purple ribbon on the inside left edge */
+  box-shadow: inset 6px 0 0 #4d1979 !important;
+  /* Fades from soft purple at the left edge (0%) to standard grey near the right (80%) */
+  /* background: linear-gradient(90deg, #eadaf5 0%, #f8f9fa 80%) !important; */
+}
+
+
+/* 2. Strip Quarto's default hover background from the text inside the bubble */
+.sidebar-item-container:hover .sidebar-link,
+.sidebar-item-container:hover .sidebar-item-toggle,
+.sidebar-item-container:hover .sidebar-item-text {
+  background-color: transparent !important;
+}
+
+/* Pull the navbar contents inward from the edges of wide screens */
+.navbar > .container-fluid {
+  /* max-width: 1500px; Adjust this number to match the width of your page */
+  padding-left: 30px;  /* Optional: Add some padding to the left */
+  padding-right: 30px; /* Optional: Add some padding to the right */
+}
+
+.navbar-title {
+  /* Add a subtle shadow just to your name to make it pop against the blue background */
+  text-shadow: 5px 5px 15px rgb(3, 3, 3) !important;
+  
+  /* Horizontal spacing (from the previous step) */
+  padding-right: 25px !important;  
+  margin-right: 25px !important;   
+  
+  /* NEW: Vertical spacing to stretch the line */
+  padding-top: 50px !important;     /* Stretches the line upwards */
+  padding-bottom: 8px !important;  /* Stretches the line downwards */
+  
+  /* The carved line */
+  border-right: 3px solid rgb(0, 0, 0) !important; 
+  box-shadow: 2px 0 0 rgba(117, 117, 117, 0.231) !important;
+}
+
+/* Make the icons slightly larger and space them further apart */
+.quarto-navigation-tool {
+  font-size: 1.5rem !important; 
+  margin-left: 5px !important; 
+}
+
+/* Control the height of the Title Block Banner */
+.quarto-title-banner {
+  padding-top: 5px !important;    /* Adds space between the top edge and the word "Teaching" */
+  padding-bottom: 11px !important; /* Adds space between the subtitle and the bottom edge */
+  margin-bottom: -17px !important;  /* Pushes the main page text further down */
+}
+
+/* Turn the standard inline title block into a colored tile */
+header.quarto-title-block {
+  background-color: #4D1979 !important; /* Your dark blue color */
+  padding: 40px 30px !important;        /* Controls the size of the tile */
+  border-radius: 15px !important;       /* Rounds the corners */
+  margin-bottom: 40px !important;       /* Pushes your markdown text down */
+}
+
+/* Force the title and subtitle text to be white so it is readable */
+header.quarto-title-block h1.title,
+header.quarto-title-block p.subtitle {
+  color: #ffffff !important;
+}
+
+/* Hide the dynamic page title on smaller screens (tablets and phones) */
+@media (max-width: 991px) {
+  #dynamic-page-title {
+    display: none !important;
+  }
+}
+
+/* Change the breadcrumb navigation tree color to white */
+header.quarto-title-block .quarto-page-breadcrumbs,
+header.quarto-title-block .quarto-page-breadcrumbs a,
+header.quarto-title-block .breadcrumb-item::before {
+  color: #e9ecef !important; /* Uses a soft, readable off-white */
+}
+
+/* Make the breadcrumb links turn pure white when hovered over */
+header.quarto-title-block .quarto-page-breadcrumbs a:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+/* Target the very last item in the breadcrumbs (the current page) */
+header.quarto-title-block .breadcrumb-item:last-child,
+header.quarto-title-block .breadcrumb-item:last-child a {
+  color: #ffcc00 !important;    /* Changes it to bright gold */
+  font-weight: bold !important; /* Makes it thicker than the other links */
 }

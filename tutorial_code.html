@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>lvm_code_docs – &lt;strong style='font-size: 1.2em; color: #ECE7F2;'&gt;Saxon Stockton&lt;/strong&gt;&lt;br&gt;&lt;small style='font-weight: normal; color: #D8D0E5;'&gt;Astrophysics PhD Student&lt;/small&gt;</title>
+<title>Learning About Writing Code – Saxon StocktonAstrophysics PhD Student</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./research.html">Research</a></li><li class="breadcrumb-item"><a href="./lvm_code_docs.html">Code Docs</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="./tutorial_code.html">Coding Tutorials</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lvm_code_docs.html" class="sidebar-item-text sidebar-link active">
+  <a href="./lvm_code_docs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Code Docs</span></a>
   </div>
 </li>
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorial_code.html" class="sidebar-item-text sidebar-link">
+  <a href="./tutorial_code.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Coding Tutorials</span></a>
   </div>
 </li>
@@ -178,26 +178,57 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#code-documentation" id="toc-code-documentation" class="nav-link active" data-scroll-target="#code-documentation">Code Documentation</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./research.html">Research</a></li><li class="breadcrumb-item"><a href="./lvm_code_docs.html">Code Docs</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="./tutorial_code.html">Coding Tutorials</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Learning About Writing Code</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="code-documentation" class="level1">
-<h1>Code Documentation</h1>
+    
+  
+    
+  </div>
+  
 
 
-</section>
+</header>
+
+
+<script>
+  window.onload = function() {
+    const navbar = document.querySelector('.navbar > .container-fluid');
+    const pageTitle = document.createElement('span');
+    
+    // 1. ADD THIS LINE: Give the element an ID
+    pageTitle.id = 'dynamic-page-title'; 
+    
+    pageTitle.innerHTML = "Coding Tutorials";
+    
+    pageTitle.style.color = 'white';
+    pageTitle.style.fontWeight = 'bold';
+    pageTitle.style.fontSize = '3rem';
+    pageTitle.style.position = 'absolute';
+    pageTitle.style.left = '300px';
+    pageTitle.style.transform = 'translateX(0%)';
+    pageTitle.style.zIndex = '9999';
+    pageTitle.style.textShadow = '3px 3px 6px rgba(0, 0, 0, 0.6)';
+    
+    if (navbar) {
+        navbar.appendChild(pageTitle);
+    }
+  };
+</script>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
