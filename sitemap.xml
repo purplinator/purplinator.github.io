@@ -1,31 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://purplinator.github.io/lvm_research.html</loc>
-    <lastmod>2026-08-14T22:19:41.261Z</lastmod>
-  </url>
-  <url>
     <loc>https://purplinator.github.io/research.html</loc>
-    <lastmod>2026-08-14T22:19:41.261Z</lastmod>
-  </url>
-  <url>
-    <loc>https://purplinator.github.io/tutorial_code.html</loc>
-    <lastmod>2026-08-14T22:19:41.261Z</lastmod>
+    <lastmod>2026-09-04T21:34:27.089Z</lastmod>
   </url>
   <url>
     <loc>https://purplinator.github.io/tutorial_problems.html</loc>
-    <lastmod>2026-08-14T22:19:41.261Z</lastmod>
+    <lastmod>2026-09-04T21:34:27.089Z</lastmod>
   </url>
   <url>
-    <loc>https://purplinator.github.io/lvm_code_docs.html</loc>
-    <lastmod>2026-08-14T22:19:41.261Z</lastmod>
+    <loc>https://purplinator.github.io/lvm_research.html</loc>
+    <lastmod>2026-09-04T21:34:27.089Z</lastmod>
   </url>
   <url>
-    <loc>https://purplinator.github.io/index.html</loc>
-    <lastmod>2026-08-14T22:19:41.261Z</lastmod>
+    <loc>https://purplinator.github.io/tutorial_code.html</loc>
+    <lastmod>2026-09-04T21:34:27.089Z</lastmod>
   </url>
   <url>
     <loc>https://purplinator.github.io/teaching.html</loc>
-    <lastmod>2026-08-14T22:19:41.261Z</lastmod>
+    <lastmod>2026-09-04T21:34:27.089Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/lvm_code_docs.html</loc>
+    <lastmod>2026-09-04T21:34:27.089Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/code_choose_language.html</loc>
+    <lastmod>2026-09-04T21:34:27.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/code_computers.html</loc>
+    <lastmod>2026-09-04T21:34:27.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/code_1_pybasics.html</loc>
+    <lastmod>2026-09-04T21:34:27.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/code_what_is_language.html</loc>
+    <lastmod>2026-09-04T21:34:27.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/cv_page.html</loc>
+    <lastmod>2026-09-04T21:34:27.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://purplinator.github.io/index.html</loc>
+    <lastmod>2026-09-04T21:34:27.089Z</lastmod>
   </url>
 </urlset>

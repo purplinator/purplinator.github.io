@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Learning About Writing Code – Saxon StocktonAstrophysics PhD Student</title>
+<title>Learning About Code – Saxon Stockton</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -45,7 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8f9342fd4fa0482c83ea2d12f36296b1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-60ad970db028e8b7b40975c33956355b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,12 +75,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -86,14 +89,32 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><strong style="font-size: 1.2em; color: #ECE7F2;">Saxon Stockton</strong><br><small style="font-weight: normal; color: #D8D0E5;">Astrophysics PhD Student</small></span>
+    <span class="navbar-title"><strong style="font-size: 1.5em; color: #ECE7F2;">Saxon Stockton</strong></span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-end">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./teaching.html" aria-current="page"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
     <a href="mailto:s.stockton@tcu.edu" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
     <a href="https://github.com/purplinator" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
-          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -101,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="./tutorial_code.html">Coding Tutorials</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial_code.html">Coding Tutorials</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -115,78 +136,63 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house-door" role="img">
-</i> 
- <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./research.html" class="sidebar-item-text sidebar-link"><i class="bi bi-moon-stars" role="img">
-</i> 
- <span class="menu-text">Research</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lvm_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Large Megallanic Cloud</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lvm_code_docs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code Docs</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Teaching</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./teaching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching Philosophy</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./tutorial_code.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Coding Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorial_code.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Coding Tutorials</span></a>
+  <a href="./code_what_is_language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is a Programming Language?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code_choose_language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing a Language</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code_computers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How Computers Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code_1_pybasics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1: Python Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tutorial_problems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Physics Problems</span></a>
   </div>
 </li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="./tutorial_code.html">Coding Tutorials</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Learning About Writing Code</h1>
+<h1 class="title">Learning About Code</h1>
 </div>
 
 
@@ -203,34 +209,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<script>
-  window.onload = function() {
-    const navbar = document.querySelector('.navbar > .container-fluid');
-    const pageTitle = document.createElement('span');
-    
-    // 1. ADD THIS LINE: Give the element an ID
-    pageTitle.id = 'dynamic-page-title'; 
-    
-    pageTitle.innerHTML = "Coding Tutorials";
-    
-    pageTitle.style.color = 'white';
-    pageTitle.style.fontWeight = 'bold';
-    pageTitle.style.fontSize = '3rem';
-    pageTitle.style.position = 'absolute';
-    pageTitle.style.left = '300px';
-    pageTitle.style.transform = 'translateX(0%)';
-    pageTitle.style.zIndex = '9999';
-    pageTitle.style.textShadow = '3px 3px 6px rgba(0, 0, 0, 0.6)';
-    
-    if (navbar) {
-        navbar.appendChild(pageTitle);
-    }
-  };
+<p>Writing code can be surprisingly simple.</p>
+<!-- # Thoughts on AI
+
+First things first, AI is absolutely a massive problem right now. From ethical issues to educational issues to societal issues, it is mired in so many problematic places that it is completely understandable, and perhaps even laudable, if you choose to completely boycott it. I want to make it clear, right now, that I fully support anyone who chooses to wholly boycott AI. That being said, I am still working through my own decisions around AI. I will provide my thoughts here.
+
+AI as it stands in the current cultural diaspora eludes a specific definition. It is entirely a result of marketing that has made a concerted effort to drive public and investor interest. The underlying ideas behind modern AI models have been in existence for a very, very long time. Computers operate in a way that is essentially an extension of mathematics in a base 2 system. Just like the "invention" of calculus is an extension of the mathematics before it, AI today is simply an extension of the binary logic that we have modeled for decades. Writing algorithms that are capable of parsing through data at an advanced level, designing machine learning algorithms, and coming up with methods for combining 0s and 1s to recognize patterns in reality have been in existence for many, many years. As early as the 1940s and 1950s, without any modern computers, scientists and mathemeticians were figuring out ways to design advanced binary systems that would eventually be used. Technically speaking, even some of the most cutting-edge AI models today are simply math-driven tools that you could recreate by hand if you had enough time.  
+
+This is one of the problems I have with deciding anything about AI as a whole. The term AI seems to encompass anything and everything that is an obfuscated data-analysis system today. This means that simply saying "AI is bad" has very little meaning. What makes an AI, AI? Is it a specific line of code? Is it the ability to analyze data? Is it the ability to learn? Is it a computer pretending to be human? It seems as though the current definition of AI in the public sphere is either something that has been fed to us by a marketing team or we just rely on vibes. To be clear, I'm not trying to muddy the waters here. How do you tell the difference between a fish and a seal? You don't look at them and go "Well clearly there is a specific difference in the DNA," you just typically inherently _know_. Many, many things in your life probably exist as a set of vibes that you don't have an explicit definition for, but you implicitly just know because of the training your brain has undergone throughout your life. It's okay to not be able to distinguish the exact technical features that make an AI an AI. My point is that it seems like most people, whether supporting or fighting AI, seem to have virtually no definition whatsoever. This is because our brains have not been trained to recognize this new thing.  
+
+Furthermore, I am of the opinion that technology is often devoid of morality on its own merits. Computers have undoubtedly been involved in the deaths of hundreds of thousands, if not millions, of people. Computers have also saved hundreds of thousands, if not millions, of people. Cars have entirely revolutionized infrastructure on a global scale in a mere 100 years. They have also been one of the top mechanisms for killing people and also have done an extremem amount of environmental damage that will likely result in the deaths of even more millions. These examples are not intended to minimize the impact of a new technology like AI, but more to illustrate that the technology itself is not necessarily the issue. This is not a gun that has one singular purpose: to kill. This is not a nuclear bomb that has one singular purpose: kill everyone. Those technologies have no real virtuous argument. Even some terribly misguided idea that they can somehow provide security disregards that the security that they provide is by being a threat. Even from a moral philosophy perspective, it is difficult to justify self-defense. AI is not purely a weapon. __But it is being weaponized__.  
+
+My current opinion is that we need to learn more about AI. Currently, there is an impetus on people operating in good conscience to minimize their involvemnt in AI. As I stated before, I completely understand this. AI is being used in so many terrible ways, it is having an adverse effect on our environment, and it is helping to spur on the horrific economic reality we are now living in. The big problem that I have with this is, who is left to engage with AI? If good people turn their backs on AI, then this powerful tool stays in the hands of bad people. The only people studying it, developing it, and controlling it are the exact people that we __do not__ want doing those things.
+
+AI is not going to just disappear if we boycott it. That's akin to trying to make an idea disappear by ignoring it. The technology is here, and there is no way to put it back. It is especially difficult to make it go away because it is just a series of special equations that anyone could put together with the right education. Even if we manage to destroy the AI bubble and stop all of the data centers from being built, the technology behind AI is here to stay. And, over time, it will get better and more efficient. If everyone good just ignores this in hopes that it will disappear, it will move on without us and, in my opinion, be used against us. We need good people to study it, learn about it, and develop their own systems and tools. We need to make sure that we aren't completely at the mercy of people who show a complete disregard for everyone around them.
+
+AI is being weaponized against us. It is only a matter of time until someone has a powerful enough model that it is able to manipulate any algorithm they want, able to create whatever visual aides they want, and control the flow of information on the internet. They don't need a sentient intelligence, they just need a model that is very capable, can run on its own, and can respond to inputs very quickly. We need people to learn.
+
+
+
+
+## AI in Art
+
+I think that the way that AI  -->
+
+
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
 </script>
 
-
-
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
