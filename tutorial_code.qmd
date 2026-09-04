@@ -1,29 +1,33 @@
 ---
-title: "Learning About Writing Code"
+title: "Learning About Code"
 # subtitle: "Astronomy Course Materials & Planetarium Resources"
+format: live-html
 ---
 
-<script>
-  window.onload = function() {
-    const navbar = document.querySelector('.navbar > .container-fluid');
-    const pageTitle = document.createElement('span');
-    
-    // 1. ADD THIS LINE: Give the element an ID
-    pageTitle.id = 'dynamic-page-title'; 
-    
-    pageTitle.innerHTML = "Coding Tutorials";
-    
-    pageTitle.style.color = 'white';
-    pageTitle.style.fontWeight = 'bold';
-    pageTitle.style.fontSize = '3rem';
-    pageTitle.style.position = 'absolute';
-    pageTitle.style.left = '300px';
-    pageTitle.style.transform = 'translateX(0%)';
-    pageTitle.style.zIndex = '9999';
-    pageTitle.style.textShadow = '3px 3px 6px rgba(0, 0, 0, 0.6)';
-    
-    if (navbar) {
-        navbar.appendChild(pageTitle);
-    }
-  };
-</script>
+Writing code can be surprisingly simple.
+
+
+
+
+<!-- # Thoughts on AI
+
+First things first, AI is absolutely a massive problem right now. From ethical issues to educational issues to societal issues, it is mired in so many problematic places that it is completely understandable, and perhaps even laudable, if you choose to completely boycott it. I want to make it clear, right now, that I fully support anyone who chooses to wholly boycott AI. That being said, I am still working through my own decisions around AI. I will provide my thoughts here.
+
+AI as it stands in the current cultural diaspora eludes a specific definition. It is entirely a result of marketing that has made a concerted effort to drive public and investor interest. The underlying ideas behind modern AI models have been in existence for a very, very long time. Computers operate in a way that is essentially an extension of mathematics in a base 2 system. Just like the "invention" of calculus is an extension of the mathematics before it, AI today is simply an extension of the binary logic that we have modeled for decades. Writing algorithms that are capable of parsing through data at an advanced level, designing machine learning algorithms, and coming up with methods for combining 0s and 1s to recognize patterns in reality have been in existence for many, many years. As early as the 1940s and 1950s, without any modern computers, scientists and mathemeticians were figuring out ways to design advanced binary systems that would eventually be used. Technically speaking, even some of the most cutting-edge AI models today are simply math-driven tools that you could recreate by hand if you had enough time.  
+
+This is one of the problems I have with deciding anything about AI as a whole. The term AI seems to encompass anything and everything that is an obfuscated data-analysis system today. This means that simply saying "AI is bad" has very little meaning. What makes an AI, AI? Is it a specific line of code? Is it the ability to analyze data? Is it the ability to learn? Is it a computer pretending to be human? It seems as though the current definition of AI in the public sphere is either something that has been fed to us by a marketing team or we just rely on vibes. To be clear, I'm not trying to muddy the waters here. How do you tell the difference between a fish and a seal? You don't look at them and go "Well clearly there is a specific difference in the DNA," you just typically inherently _know_. Many, many things in your life probably exist as a set of vibes that you don't have an explicit definition for, but you implicitly just know because of the training your brain has undergone throughout your life. It's okay to not be able to distinguish the exact technical features that make an AI an AI. My point is that it seems like most people, whether supporting or fighting AI, seem to have virtually no definition whatsoever. This is because our brains have not been trained to recognize this new thing.  
+
+Furthermore, I am of the opinion that technology is often devoid of morality on its own merits. Computers have undoubtedly been involved in the deaths of hundreds of thousands, if not millions, of people. Computers have also saved hundreds of thousands, if not millions, of people. Cars have entirely revolutionized infrastructure on a global scale in a mere 100 years. They have also been one of the top mechanisms for killing people and also have done an extremem amount of environmental damage that will likely result in the deaths of even more millions. These examples are not intended to minimize the impact of a new technology like AI, but more to illustrate that the technology itself is not necessarily the issue. This is not a gun that has one singular purpose: to kill. This is not a nuclear bomb that has one singular purpose: kill everyone. Those technologies have no real virtuous argument. Even some terribly misguided idea that they can somehow provide security disregards that the security that they provide is by being a threat. Even from a moral philosophy perspective, it is difficult to justify self-defense. AI is not purely a weapon. __But it is being weaponized__.  
+
+My current opinion is that we need to learn more about AI. Currently, there is an impetus on people operating in good conscience to minimize their involvemnt in AI. As I stated before, I completely understand this. AI is being used in so many terrible ways, it is having an adverse effect on our environment, and it is helping to spur on the horrific economic reality we are now living in. The big problem that I have with this is, who is left to engage with AI? If good people turn their backs on AI, then this powerful tool stays in the hands of bad people. The only people studying it, developing it, and controlling it are the exact people that we __do not__ want doing those things.
+
+AI is not going to just disappear if we boycott it. That's akin to trying to make an idea disappear by ignoring it. The technology is here, and there is no way to put it back. It is especially difficult to make it go away because it is just a series of special equations that anyone could put together with the right education. Even if we manage to destroy the AI bubble and stop all of the data centers from being built, the technology behind AI is here to stay. And, over time, it will get better and more efficient. If everyone good just ignores this in hopes that it will disappear, it will move on without us and, in my opinion, be used against us. We need good people to study it, learn about it, and develop their own systems and tools. We need to make sure that we aren't completely at the mercy of people who show a complete disregard for everyone around them.
+
+AI is being weaponized against us. It is only a matter of time until someone has a powerful enough model that it is able to manipulate any algorithm they want, able to create whatever visual aides they want, and control the flow of information on the internet. They don't need a sentient intelligence, they just need a model that is very capable, can run on its own, and can respond to inputs very quickly. We need people to learn.
+
+
+
+
+## AI in Art
+
+I think that the way that AI  -->

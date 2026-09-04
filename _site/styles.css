@@ -32,9 +32,9 @@
 
 /* Pull the navbar contents inward from the edges of wide screens */
 .navbar > .container-fluid {
-  /* max-width: 1500px; Adjust this number to match the width of your page */
-  padding-left: 30px;  /* Optional: Add some padding to the left */
-  padding-right: 30px; /* Optional: Add some padding to the right */
+  max-width: 1800px; /* Adjust this number to match the width of your page */
+  padding-left: 15px;  /* Optional: Add some padding to the left */
+  padding-right: 50px; /* Optional: Add some padding to the right */
 }
 
 .navbar-title {
@@ -42,15 +42,15 @@
   text-shadow: 5px 5px 15px rgb(3, 3, 3) !important;
   
   /* Horizontal spacing (from the previous step) */
-  padding-right: 25px !important;  
-  margin-right: 25px !important;   
+  padding-right: 15px !important;  
+  margin-right: 5px !important;   
   
   /* NEW: Vertical spacing to stretch the line */
-  padding-top: 50px !important;     /* Stretches the line upwards */
-  padding-bottom: 8px !important;  /* Stretches the line downwards */
+  padding-top: 15px !important;     /* Stretches the line upwards */
+  padding-bottom: 15px !important;  /* Stretches the line downwards */
   
   /* The carved line */
-  border-right: 3px solid rgb(0, 0, 0) !important; 
+  border-right: 5px solid rgb(0, 0, 0) !important; 
   box-shadow: 2px 0 0 rgba(117, 117, 117, 0.231) !important;
 }
 
@@ -60,32 +60,12 @@
   margin-left: 5px !important; 
 }
 
-/* Control the height of the Title Block Banner */
-.quarto-title-banner {
-  padding-top: 5px !important;    /* Adds space between the top edge and the word "Teaching" */
-  padding-bottom: 11px !important; /* Adds space between the subtitle and the bottom edge */
-  margin-bottom: -17px !important;  /* Pushes the main page text further down */
-}
 
-/* Turn the standard inline title block into a colored tile */
-header.quarto-title-block {
-  background-color: #4D1979 !important; /* Your dark blue color */
-  padding: 40px 30px !important;        /* Controls the size of the tile */
-  border-radius: 15px !important;       /* Rounds the corners */
-  margin-bottom: 40px !important;       /* Pushes your markdown text down */
-}
 
 /* Force the title and subtitle text to be white so it is readable */
 header.quarto-title-block h1.title,
 header.quarto-title-block p.subtitle {
   color: #ffffff !important;
-}
-
-/* Hide the dynamic page title on smaller screens (tablets and phones) */
-@media (max-width: 991px) {
-  #dynamic-page-title {
-    display: none !important;
-  }
 }
 
 /* Change the breadcrumb navigation tree color to white */
@@ -106,4 +86,90 @@ header.quarto-title-block .breadcrumb-item:last-child,
 header.quarto-title-block .breadcrumb-item:last-child a {
   color: #ffcc00 !important;    /* Changes it to bright gold */
   font-weight: bold !important; /* Makes it thicker than the other links */
+}
+
+/* Apply the background image only to pages with the static-bg tag */
+body.homepage-bg {
+  /* Point to the image you saved in step 1 */
+  background-image: url("images/M33_Hubble.webp.jpeg") !important;
+  
+  /* Forces the image to cover the entire screen without stretching */
+  background-size: cover !important;
+  
+  /* Keeps the image perfectly centered */
+  background-position: center !important;
+  
+  /* Prevents the image from tiling if the screen is too large */
+  background-repeat: no-repeat !important;
+  
+  /* THIS IS THE MAGIC LINE: Locks the image in place while scrolling */
+  background-attachment: fixed !important; 
+}
+
+/* The dark purple homepage container */
+.profile-bubble {
+  /* A deep, highly-legible purple */
+  background-color: #311A6D !important;
+  
+  /* Forces all standard text inside the bubble to be crisp white */
+  color: #f8f9fa !important;
+  
+  /* Pushes the bubble down from the very top of the screen */
+  margin-top: 8vh !important; 
+  
+  /* Centers the bubble and prevents it from getting too wide on massive desktop monitors */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1300px !important;
+  
+  /* Internal breathing room and the soft rounded 'bubble' shape */
+  padding: 40px !important;
+  border-radius: 20px !important;
+  
+  /* A soft, elegant shadow to lift the bubble off your static background image */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Ensure the main headings inside the bubble are also white */
+.profile-bubble h1, 
+.profile-bubble h2, 
+.profile-bubble h3 {
+  color: #ffffff !important;
+  margin-top: 0 !important;
+}
+
+/* Style standard links in the bio so they are visible against the dark purple */
+.profile-bubble a:not(.btn) {
+  color: #eadaf5 !important; /* A very soft pastel purple */
+  text-decoration: underline !important;
+}
+
+.profile-bubble a:not(.btn):hover {
+  color: #ffffff !important;
+}
+
+/* Custom primary button (Solid Purple) */
+.btn-purple {
+  background-color: #311A6D !important;
+  color: #ffffff !important;
+  border: 2px solid #311A6D !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btn-purple:hover {
+  background-color: #0C0426 !important; /* Slightly darker on hover */
+  border-color: #0C0426 !important;
+}
+
+/* Custom secondary button (Hollow Purple) */
+.btn-outline-purple {
+  background-color: transparent !important;
+  color: #0C0426 !important;
+  border: 2px solid #0C0426 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btn-outline-purple:hover {
+  background-color: #0C0426 !important;
+  color: #ffffff !important;
 }

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>The Basics: How Computers Work – Saxon Stockton</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-25aa1c8bd195a69ebef1bd1c1b3570db.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title"><strong style="font-size: 1.5em; color: #ECE7F2;">Saxon Stockton</strong></span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./teaching.html" aria-current="page"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="mailto:s.stockton@tcu.edu" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
+    <a href="https://github.com/purplinator" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial_code.html">Coding Tutorials</a></li><li class="breadcrumb-item"><a href="./code_1_basics.html">How Computers Work</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching Philosophy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./tutorial_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coding Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code_what_is_language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is a Programming Language?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code_choose_language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing a Language</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code_1_basics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">How Computers Work</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physics Problems</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial_code.html">Coding Tutorials</a></li><li class="breadcrumb-item"><a href="./code_1_basics.html">How Computers Work</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">The Basics: How Computers Work</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-is-a-bit" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-bit">What is a Bit?</h2>
+<p>The term <strong>bit</strong> is short for <em>binary digit</em>. It is a system that has two states: <code>0</code> or <code>1</code>, hence the “<em>bi</em>-” in binary. If you are particularly inquisitive, you may ask “Why <code>0</code> or <code>1</code>?” The answer is that it doesn’t really matter which two numbers we choose, any two will do. The point is that we stay consistent. For example, I have made circuits that look for two inputs: <code>0V</code> or <code>5V</code>. That is still a binary system. The reason we represent bits as <code>0</code> or <code>1</code> is because of simplicity.</p>
+</section>
+<section id="how-are-0-and-1-simple" class="level2">
+<h2 class="anchored" data-anchor-id="how-are-0-and-1-simple">How are <code>0</code> and <code>1</code> Simple?</h2>
+<p>The number <code>0</code> is often associated with “nothing” or “off” in many people’s daily lives. <code>1</code> is clearly “not zero” or “not nothing” or “something.” If I asked you “Is there a dog in your room?” and your answer was “no” then that would correspond to <code>0</code> dogs in your room. If your answer was instead “yes” then that would correspond to at least <code>1</code> dog being there. By this logic, the number <code>0</code> essentially represents the <em>absence</em> of something and the number <code>1</code> represents the <em>presence</em> of something. This is at the heart of the simplicity of the bit.</p>
+<p>That logic also provides the answer to another question that you might have. Why does it have to be binary? Why not trinary (<code>0,1,2</code>)? or quaternary (<code>0,1,2,3</code>)? Or any other number of -<em>nary</em> in existence? Again, simplicity is the answer. The simplest way I can think of representing something is asking does it exist or not? No other details, just the very basic question does it exist or not? Is there a dog in your room? The answer is either no (<code>0</code>) or yes (<code>1</code>). There is little room for confusion or complications because the question and the answer are both extremely simple. This simplicity is extremely important, especially when we want to build more complicated structures out of it.</p>
+</section>
+<section id="what-is-a-bit-really-though" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-bit-really-though">What is a Bit Really Though?</h2>
+<p>Calling a bit a binary digit or a system with 2 states doesn’t actually tell us what a bit is. This is the truly fascinating part of the underlying science behind computers. A bit is actually a <strong>single unit of information</strong>. There is an entire field of science called Information Theory that has been in development for around 160 years and seen massive strides in the past 100 years. In fact, the accelerating advancements in technology that we have seen since around WWII have been parallel to accelerating advancements in Information Theory. Some of you have likely heard of quantum computers that rely on <em>qubits</em> but may not realize that <em>qubits</em> are simply a quantum version of bits used in Quantum Information Theory.</p>
+<p>Without going into a full history of Information Theory, the gist of it is that in 1867 a famous physicist named James Clerk Maxwell was trying to find a way to poke holes in the second law of thermodynamics (entropy always increases in a closed system) and came up with a logic test for it. His thought experiment, called Maxwell’s Demon, is still somewhat relevant to this day. It has been solved, probably. But it still persists in some ways. The pursuit of resolving Maxwell’s Demon eventually led to the realization that <strong>information is a real, physical quantity</strong>. Just like you measure your height in feet, inches, and centimeters, <strong>information is measured in bits</strong>.</p>
+</section>
+<section id="representing-information-with-bits" class="level2">
+<h2 class="anchored" data-anchor-id="representing-information-with-bits">Representing Information with Bits</h2>
+<p>In order to exchange or store information, we need a way to represent the information. Picture someone using a flashlight to transmit messages in morse code. The photons coming from the flashlight do not have some special property that allows them to carry information, and yet an exchange of information is able to happen because we are able to encode information into the existence and nonexistence of photons from the flashlight. To go another level deeper, the encoding is actually tied to the alteration of the entropy<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of the flashlight.</p>
+<p>Let’s represent the flashlight being off as <code>0</code> and the flashlight being on as <code>1</code>. We will go with simplest possible case and make a single bit equal to a single unit of morse code. Here is how a message might look<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
+<p><code>010100000001011101010001110111011100010101011100010000000111010111000101110001011101000101110001110111011100011101011100010</code></p>
+<p>This translates to “I love karoake”. I started and ended the message with a <code>0</code> to take into account the information associated with not having a signal at the beginning and end. Sending that message in this manner took 123 bits. Does this mean that the information that I, personally, love karaoke has a physical size of 123 bits? No, not really. The message “I love karaoke” is what we encoded in 123 bits, not the information of what any of that means. In fact, it is important here to separate your colloquial definition of information about the meaning of something from the scientific definition of information.</p>
+<p>The 123 bits that I chose to use to transmit this message could easily have been done with 121 bits by leaving out the bordering <code>0</code>’s. It could have been represented with 200 bits if I decided to add more bordering <code>0</code>’s or maybe use a different system of representation altogether. Morse himself designed Morse Code to utilize less time spent on more common letters, so common letters are more typically composed of dots. Dots have a bit size of 1 while dashes have a bit size of 3. What if I change around the Morse system and now my message might take 500 bits to send, or 50 bits?</p>
+<p>The bits measuring information don’t hold some grandiose, obscure meaning in them. The information is contained in specifically ordering the bits in the way that we choose. If I send the word “love” to 100 people, it may mean 100 different things to all of those people. The information contained by the bits is not the meaning of the word love, but specifically is just the word love.</p>
+</section>
+<section id="information-is-negative-entropy" class="level2">
+<h2 class="anchored" data-anchor-id="information-is-negative-entropy">Information is Negative Entropy</h2>
+<p>In the early days of resolving Maxwell’s Demon, Leo Szilard developed the idea that knowledge is associated with a dissolution of entropy. Knowledge, and information, become intrinsically related to the energy associated with reducing the entropy in a system.</p>
+<p>Entropy is a measure of the order or disorder of a system. One way to think of entropy is how likely a system is to exist by pure randomness. If we flip 30 bottles and 30 land perfectly on their caps upside down (a cap flip), that final 30 bottle system is a very low entropy system. If instead only a few or none land perfectly on their caps upside down, which is far more likely, then it is a high entropy system. More naturally-random results = more entropy. An interesting point is that you can very specifically arrange the 30 bottles as if they had all been perfectly cap-flipped, and this final system of 30 water bottles will have the same state as very low entropy state of them all having randomly landed on their caps. There is an energy associated with taking the bottles from a high entropy state (more likely to exist) to a low entropy state (less likely to exist).</p>
+<p>The information contained by a flashing flashlight actually arises from specifically arranging the flashes of the flashlight in such a way. It is not even really the bits themselves that contain the information, but rather the change in entropy of the state in which you arrange the bits away from their likely (more random) state. Storing or communicating information explicitly require setting a system into a lower entropy state, and it is this state that contains the information. The bits are just a way to represent this state.</p>
+</section>
+<section id="intro-to-logic-gates" class="level2">
+<h2 class="anchored" data-anchor-id="intro-to-logic-gates">Intro to Logic Gates</h2>
+<p>Why does all of this matter? Let’s start building simple systems.</p>
+<p>A light switch has 2 positions: off (<code>0</code>) and on (<code>1</code>).</p>
+<p>If the light is on, you dance. If the light is off, you don’t dance.</p>
+<p>I flip the switch to on (<code>1</code>). You see the lights on (<code>1</code>). What do you do?<br>
+- The answer is dance</p>
+<p>I flip the switch to off (<code>0</code>). You see the lights off (<code>0</code>). What do you do?<br>
+- The answer is not dance.</p>
+<p>Now, I’m going to put something in there to mess with the signal from the switch. When the switch is on (<code>1</code>), the light is off (<code>0</code>). When the switch is off (<code>0</code>), the light is on (<code>1</code>). This is likely a familiar situation to many people that have rooms with multiple light switches controlling the same lights.</p>
+<p>I flip the switch to on (<code>1</code>). You see the lights off (<code>0</code>). What do you do?<br>
+- The answer is not dance.</p>
+<p>I flip the switch to off (<code>0</code>). You see the lights on (<code>1</code>). What do you do?<br>
+- The answer is dance.</p>
+<p>Messing with a signal like this is called a <strong>gate</strong>. This example of changing <code>0</code> to <code>1</code> and <code>1</code> to <code>0</code> is called a <code>NOT</code> gate. It is a simple logical play on a bit. You do the opposite of what a bit does. If you think about this from an electricity standpoint it makes sense to wonder how no signal, meaning no electricity, can possibly activate the light in the <code>NOT</code> situation (because <code>0</code> sends <code>1</code>). In situations like this, there is a source of electricity that allows the gate to pass along a signal when it receives no signal from the circuit, so try not to get hung up on that idea.</p>
+<p>Let’s try building some more logic. We are now going to use 2 switches, or 2 bits. To mess with it this time, I am going to make it so that the lights turn on only when BOTH switches are on (<code>1,1</code>).</p>
+<p>Both switches are off (<code>0,0</code>). You see the lights off (<code>0</code>). What do you do?<br>
+- The answer is not dance.</p>
+<p>The left switch is on and the other is off (<code>1,0</code>). You see the lights off (<code>0</code>). What do you do?<br>
+- The answer is not dance.</p>
+<p>The right switch is on and the other is off (<code>0,1</code>). You see the lights off (<code>0</code>). What do you do?<br>
+- The answer is not dance.</p>
+<p>Both switches are on (<code>1,1</code>). You see the lights on (<code>1</code>). What do you do?<br>
+- The answer is dance.</p>
+<p>This type of gate is called an <code>AND</code> gate. It only outputs a <code>1</code> if it receives a <code>1,1</code> input.</p>
+<p>There are a multitude of gates that can be used in physical circuits and in logic. Complicated combinations of these gates in physical circuits give us the ability to create modern technology such as computers. These logical sequences of information theory are the exact same tenets that created programming languages. Your computer “thinks” and functions by utilizing bits and gates. Programming languages were devised as a way manipulate bits and gates to make computers do things.</p>
+<p>This is why I think that it is important for anyone diving into the subject of programming to understand a little bit about the basics of information theory and computers, because programming languages can seem like a mystical thing that doesn’t make sense. It is quite the opposite, they are very purposeful and follow rigid, logical systems.</p>
+</section>
+<section id="memory" class="level2">
+<h2 class="anchored" data-anchor-id="memory">Memory</h2>
+<p>An extension of this that is very relevant is to go back to the idea that information is a physical quantity and think about this idea of a bit being <code>0</code> or <code>1</code>. What if there was a way that you could actually store whether a switch was was on or off? In the flashlight morse code example, each subsequent bit erases the state of the previous. But, let’s say that we have 123 physical switches. We could set these physical switches in the positions of that message, then leave it there and go do something else. When we come back, the bits are still in the same position that we left them. This ability to store information, rather than merely transmit it, is called <strong>memory</strong>.</p>
+<p>Memory hardware has advanced significantly in the last 30 years. In order to store information, even temporarily, you need to have a physical way to contain it just like having physical switches. This is one of the physical limitations of modern computers and is exactly why you cannot just download more RAM. Random Access Memory (RAM) is very fast memory designed to hold things temporarily. Hard Disk Drives (HDD) which are quickly becoming obsolete use a metal disk and a little magnet to literally write information (bits) to the metal disk. Solid State Drives (SSD) are much faster than HDDs because they do not use a spinning disk. I do not recall the specific mechanism, but given the name I assume they manipulate the electron structure of metals (mess with the crystal pattern of the electrons).</p>
+<p>Anything you do on your computer uses memory. RAM will be the primary limiting component for programming because it is the quick-access memory that programs are using.</p>
+<section id="cpu-and-gpu" class="level3">
+<h3 class="anchored" data-anchor-id="cpu-and-gpu">CPU and GPU</h3>
+<p>There is also a limitation for how fast a Central Processing Unit (CPU) or Graphics Processing Unit (GPU) is able to move the information around, but that is not usually a massive roadblock to people.</p>
+<p>The CPU is typically very fast at singular tasks. CPUs do a great job at handling tasks that have large sequential components. Maybe you write a program teaching the computer to do a kickflip. In order to do a kickflip it has to first learn what a kickflip is, then what a skateboard is, then learn to ride a skateboard, then learn to do an ollie, then learn to do a kickflip, then actually do a kickflip. CPUs are very fast at getting through steps like this. They are not so fast at doing multiple things at once. If you knew exactly how to paint every part of a picture, a CPU would still need to go paint every individual part of the painting spot-by-spot using 1 paintbrush. This is where a GPU is useful instead. GPUs are slower at doing 1 thing, but they can do many things at once. If you know exactly how to paint a picture, the GPU will simply use 50 paintbrushes to paint it all at once. This is a much, much faster process than painting spot-by-spot using 1 paintbrush like the CPU. That being said, the GPU is much, much slower at learning to do a kickflip because it still needs to learn all of the things first before actually doing to kickflip.</p>
+</section>
+</section>
+<section id="what-is-a-bit-1" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-bit-1">What is a Bit?</h2>
+<p>The term <strong>bit</strong> is short for <em>binary digit</em> <!--[cite: 1] -->. It is a system that exists in one of two states: <code>0</code> or <code>1</code>, which gives us the “<em>bi-</em>” in binary <!--[cite: 1] -->.</p>
+<p>If you are inquisitive, you might ask, <em>“Why exactly <code>0</code> and <code>1</code>?”</em> The truth is, the specific numbers don’t matter as long as we choose exactly two states and stay consistent <!--[cite: 1] -->. For example, physical computer circuits look for two voltage inputs: <code>0V</code> or <code>5V</code> <!--[cite: 1] -->. That is still a binary system. We represent bits as <code>0</code> or <code>1</code> purely for mathematical simplicity <!--[cite: 1] -->.</p>
+<section id="the-simplicity-of-0-and-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-simplicity-of-0-and-1">The Simplicity of <code>0</code> and <code>1</code></h3>
+<p>In daily life, the number <code>0</code> is often associated with “nothing” or “off.” By contrast, <code>1</code> is clearly “not zero,” representing “something” or “on” <!--[cite: 1] -->.</p>
+<p>If I asked you, <em>“Is there a dog in your room?”</em> and your answer was <em>“no”</em>, that corresponds to <code>0</code> dogs <!--[cite: 1] -->. If your answer was <em>“yes”</em>, that corresponds to at least <code>1</code> dog <!--[cite: 1] -->. By this logic, <code>0</code> represents the <em>absence</em> of something, and <code>1</code> represents the <em>presence</em> of something <!--[cite: 1] -->. This is the heart of a bit’s simplicity <!--[cite: 1] -->.</p>
+<p>Why does it have to be binary? Why not ternary (<code>0, 1, 2</code>) or quaternary (<code>0, 1, 2, 3</code>)? <!--[cite: 1] --> The simplest way to evaluate reality is to ask a fundamental question: <em>Does this exist, or not?</em> <!--[cite: 1] --> There is little room for confusion because both the question and the answer are absolute <!--[cite: 1] -->. This absolute simplicity is vital when we want to stack millions of these questions together to build complex computational structures <!--[cite: 1] -->.</p>
+<hr>
+</section>
+</section>
+<section id="what-is-a-bit-really" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-bit-really">What is a Bit, <em>Really</em>?</h2>
+<p>Calling a bit a “binary digit” doesn’t actually explain its physical nature <!--[cite: 1] -->. A bit is actually a <strong>single unit of information</strong> <!--[cite: 1] -->.</p>
+<p>There is an entire field of science called Information Theory that has been evolving for over 160 years <!--[cite: 1] -->. The accelerating technological advancements we have seen since WWII run parallel to breakthroughs in this field <!--[cite: 1] -->. (If you have heard of quantum computers, they rely on <em>qubits</em>, which are simply the quantum mechanical version of bits used in Quantum Information Theory <!--[cite: 1] -->).</p>
+<p>In 1867, a famous physicist named James Clerk Maxwell proposed a thought experiment—known as Maxwell’s Demon—to test the second law of thermodynamics <!--[cite: 1] -->. The pursuit of resolving this physics puzzle eventually led scientists to a profound realization: <strong>Information is a real, physical quantity</strong> <!--[cite: 1] -->. Just as you measure distance in meters, you measure information in bits <!--[cite: 1] -->.</p>
+<section id="representing-information" class="level3">
+<h3 class="anchored" data-anchor-id="representing-information">Representing Information</h3>
+<p>To exchange or store information, we must encode it into a physical medium <!--[cite: 1] -->.</p>
+<p>Picture someone using a flashlight to transmit messages in Morse code <!--[cite: 1] -->. The photons coming from the flashlight do not inherently possess special properties that carry data <!--[cite: 1] -->. Yet, communication happens because we encode information into the <em>existence</em> (<code>1</code>) and <em>nonexistence</em> (<code>0</code>) of those photons <!--[cite: 1] -->.</p>
+<p>Let’s make a single bit equal to a single unit of Morse code time. Here is how a message might look:</p>
+<blockquote class="blockquote">
+<p><code>010100000001011101010001110111011100010101011100010000000111010111000101110001011101000101110001110111011100011101011100010</code></p>
+</blockquote>
+<p>This sequence translates to <em>“I love karaoke”</em> <!--[cite: 1] -->. Sending that specific pattern required 123 bits <!--[cite: 1] -->.</p>
+<p>Does this mean the literal concept of loving karaoke has a physical mass of 123 bits? No <!--[cite: 1] -->. The bits do not hold semantic meaning; they only hold the structure of the message <!--[cite: 1] -->. If I send the word “love” to 100 people, it means 100 different things. The scientific information contained in those bits is just the structural arrangement of the word itself, not human emotion <!--[cite: 1] -->.</p>
+</section>
+<section id="information-and-entropy" class="level3">
+<h3 class="anchored" data-anchor-id="information-and-entropy">Information and Entropy</h3>
+<p>In the early 20th century, physicist Leo Szilard helped resolve Maxwell’s Demon by proving that acquiring information inherently requires an expenditure of energy to reduce the entropy of a system <!--[cite: 1] -->.</p>
+<p><strong>Entropy</strong> is a measure of the disorder or randomness of a system <!--[cite: 1] -->. Think of flipping 30 water bottles. If all 30 land perfectly upside down on their caps, that is a highly ordered, very <em>low entropy</em> system <!--[cite: 1] -->. If they land randomly scattered, that is a highly disordered, <em>high entropy</em> system (which is statistically far more likely) <!--[cite: 1] -->.</p>
+<p>Because the scattered bottles are the natural, likely state, it requires physical energy to organize them into the unlikely state of standing on their caps <!--[cite: 1] -->.</p>
+<p>The information contained in our flashlight signal arises from intentionally arranging the flashes against random chance <!--[cite: 1] -->. Storing or communicating information explicitly requires forcing a system into a lower entropy state. The bits are simply the mathematical way we measure and represent that ordered state <!--[cite: 1] -->.</p>
+<hr>
+</section>
+</section>
+<section id="introduction-to-logic-gates" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-logic-gates">Introduction to Logic Gates</h2>
+<p>Why does the physics of information matter for programming? Because it allows us to build logic <!--[cite: 1] -->.</p>
+<p>Imagine a simple light switch with two positions: Off (<code>0</code>) and On (<code>1</code>) <!--[cite: 1] -->. We establish a rule: <em>If the light is on, you dance. If it is off, you do not dance</em> <!--[cite: 1] -->.</p>
+<ul>
+<li><strong>Input <code>1</code> (Switch On):</strong> Light is on. You dance. <!--[cite: 1] --></li>
+<li><strong>Input <code>0</code> (Switch Off):</strong> Light is off. You do not dance. <!--[cite: 1] --></li>
+</ul>
+<p>Now, we introduce a hardware component that intercepts and reverses the electrical signal. When the switch is On (<code>1</code>), it forces the light Off (<code>0</code>).</p>
+<ul>
+<li><strong>Input <code>1</code> (Switch On):</strong> Light is forced Off. You do not dance. <!--[cite: 1] --></li>
+<li><strong>Input <code>0</code> (Switch Off):</strong> Light is forced On. You dance. <!--[cite: 1] --></li>
+</ul>
+<p>This type of signal manipulation is called a <strong>Gate</strong> <!--[cite: 1] -->. Specifically, this is a <strong><code>NOT</code> Gate</strong> because it outputs the exact opposite of its input <!--[cite: 1] -->.</p>
+<p>Let’s try a more complex logical rule using two switches. We construct the circuit so the light only turns on if BOTH switches are flipped On (<code>1, 1</code>) <!--[cite: 1] -->.</p>
+<ul>
+<li><code>0, 0</code> <span class="math inline">\(\rightarrow\)</span> Light Off (No dance) <!--[cite: 1] --></li>
+<li><code>1, 0</code> <span class="math inline">\(\rightarrow\)</span> Light Off (No dance) <!--[cite: 1] --></li>
+<li><code>0, 1</code> <span class="math inline">\(\rightarrow\)</span> Light Off (No dance) <!--[cite: 1] --></li>
+<li><code>1, 1</code> <span class="math inline">\(\rightarrow\)</span> Light On (Dance!) <!--[cite: 1] --></li>
+</ul>
+<p>This is an <strong><code>AND</code> Gate</strong> <!--[cite: 1] -->.</p>
+<p>By combining millions of physical <code>NOT</code>, <code>AND</code>, and <code>OR</code> gates on a silicon chip, we create modern computers <!--[cite: 1] -->. Programming languages were invented simply as a human-readable way to manipulate these logic gates <!--[cite: 1] -->. Code isn’t magic; it is a rigid, physical system of organized logic <!--[cite: 1] -->.</p>
+<hr>
+</section>
+<section id="memory-and-processing" class="level2">
+<h2 class="anchored" data-anchor-id="memory-and-processing">Memory and Processing</h2>
+<p>If information is a physical quantity, how do we store it? In our flashlight example, the information vanished the moment the light turned off <!--[cite: 1] -->.</p>
+<p>To store information permanently, you need a physical container to hold the system in its low-entropy state so you can leave and come back to it later <!--[cite: 1] -->. This is called <strong>memory</strong> <!--[cite: 1] -->.</p>
+<ul>
+<li><strong>RAM (Random Access Memory):</strong> Very fast, temporary memory used by your computer to hold the data it is actively thinking about. When power is lost, the data is lost <!--[cite: 1] -->.</li>
+<li><strong>HDD (Hard Disk Drive):</strong> Older, slower storage that uses a magnetic arm to literally write bits onto a spinning metal platter <!--[cite: 1] -->.</li>
+<li><strong>SSD (Solid State Drive):</strong> Fast, modern storage with no moving parts <!--[cite: 1] -->. Instead of magnets, it relies on microscopic components called <em>floating-gate transistors</em> to physically trap electrons in a specific pattern, holding onto the data even when the computer is turned off.</li>
+</ul>
+<section id="cpu-vs.-gpu" class="level3">
+<h3 class="anchored" data-anchor-id="cpu-vs.-gpu">CPU vs.&nbsp;GPU</h3>
+<p>To execute the logic gates and move this memory around, computers rely on processors <!--[cite: 1] -->.</p>
+<p><strong>The CPU (Central Processing Unit)</strong> is incredibly fast at doing single tasks in a sequential order <!--[cite: 1] -->. If you want to teach a computer to do a kickflip, the CPU learns step-by-step: first what a skateboard is, then how to ride it, then how to ollie, and finally how to kickflip <!--[cite: 1] -->. If it were painting a picture, the CPU is one master artist painting the entire canvas at lightning speed with a single brush <!--[cite: 1] -->.</p>
+<p><strong>The GPU (Graphics Processing Unit)</strong> is slower at single tasks, but excels at parallel processing—doing thousands of calculations at the exact same time <!--[cite: 1] -->. If the GPU were painting the same picture, it is like 5,000 artists painting one dot simultaneously <!--[cite: 1] -->. The GPU is much faster at rendering the final image, but it relies on the CPU to tell it what picture it is supposed to be painting in the first place.</p>
+
+
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Entropy measures the disorder of a system. An example is the <a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Rules for Morse Code are: <br> - <code>0</code> is no signal<br> - <code>1</code> is a dot<br> - <code>111</code> is a dash<br> - Dots and dashes in a letter are separated by a single <code>0</code><br> - Letters in a word are separated by three <code>0</code><br> - Words are separated by seven <code>0</code><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

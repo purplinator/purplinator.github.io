@@ -1,0 +1,29 @@
+---
+title: "Lesson 1: Python Basics"
+# subtitle: "Astronomy Course Materials & Planetarium Resources"
+format: live-html
+---
+
+## Running a Cell
+
+Throughout this coding help there will be boxes of code called _cells_. The webpage is designed to spin up a little Python system in your browser. Many of these cells are there for you to interact and play around with. There should be an option to `Run Cell` that you can click or you can use `CMD`+`ENTER` on MacOS or `CTRL`+`ENTER` on Windows to run the cells. Your cursor has to be inside the cell that you want to run in order for the shortcuts to work. For those of you with experience with Jupyter Notebooks, the `SHIFT`+`ENTER` does not make these cells run unfortunately.
+
+Practice running this cell:
+```{pyodide}
+print("Is your refrigerator running?")
+```
+
+
+<br>
+Notice how the output appeared underneath it. For some cells, I will have an output already in there, like this:
+```{pyodide}
+#| autorun: true
+print("Then you better go and catch it!")
+```
+
+
+<br>
+
+## Importing Packages
+
+Packages are a way to save us time and effort in coding. If I want to tell the computer to do something, I need to know exactly how to explain it in Python terms. In 

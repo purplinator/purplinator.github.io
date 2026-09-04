@@ -1,0 +1,70 @@
+---
+title: "What is a Programming Language?"
+# subtitle: "Astronomy Course Materials & Planetarium Resources"
+format: live-html
+---
+
+
+Think of writing code as providing an explicit set of instructions to a computer. The programming language is an interpreter that takes the code and translates it into something that the computer can understand. A programming language, in many ways, is exactly that—a language. It has its own syntax, grammar, and vocabulary.  
+
+Let's say you speak English, but you want to communicate with someone who speaks Chinese. In order to communicate, there needs to be some way for the two of you to understand each other. One possibility is for you to simply learn Chinese so well that you can communicate whatever you need to. This kind of approach can take a very long time and requires quite a bit of study. To talk to a computer like this, instead of learning Chinese, you would essentially be learning how to flip bits on and off and speak in binary. Binary has its own structure that is very different from most spoken and written languages and can provide an even greater challenge to learn.  
+
+Instead of learning Chinese to communicate, you can find someone who already speaks Chinese and ask them to translate for you. The problem is, this translator doesn't understand English perfectly; they understand it in a way that is very literal and basic. The translator also has no mind of their own to read between the lines or understand connotations or implications. In order to communicate, you need to be very exact with the words you choose to say to the translator.
+
+__It might be helpful to think of a programming language as a child that is only capable of doing things that you teach it to do.__ Want it to know what a banana is? You need to TEACH it what a banana is. Want it to understand how to write its name? You need to TEACH it to write its name. Want it to solve a complicated problem? You need to TEACH it HOW to solve the problem. The advantage of languages like Python is that other people have often figured out how to teach the language to do some very useful things, and you can utilize what other people have done. I'm not going to spend my time telling the code, in its language, how to compute a logarithm; I'm simply going to import the NumPy package because somebody else has already done that.
+
+Let's see how it might work telling this computer translator to "make a peanut butter and jelly sandwich."  
+
+The translator will attempt to recognize each word because it can only translate literally:  
+
+>1. "make" might already be associated with a function like "to create" in the translator's memory.  
+2. "a" is a simple word that refers to a singular object, easy basic syntax for the translator to recognize.  
+3. "peanut" might already be associated with a specific type of data or object in the translator's memory.  
+4. "butter" might already have a match in the translator's memory.
+5. "butter" may take on a property away from its default definition based on context.
+6. "peanut" combined with "butter" is recognized as a specific object called "peanut butter".
+7. "and" is a simple logical operator that brings two concepts together.  
+8. "jelly" might already have an association in the translator's memory.  
+9. "sandwich" is not already defined in the translator's memory; it has never learned what a "sandwich" is.  
+
+The translator breaks. It doesn't know what to do because it does not know what a "sandwich" is. If programmed properly, the translator will throw an error: "Error: I don't know what 'sandwich' is." This is the translator's way of saying: "If you want your statement translated, you need to explicitly define what a 'sandwich' is first."
+
+Now, we have to figure out a way to define a sandwich in terms the translator can understand. We can try telling it something like: "'sandwich' = food between 2 slices of bread".  
+
+The translator will now attempt to process this new definition:
+
+>1. "=" tells the translator we are defining a new term.
+2. "food" is recognized as a broad category of edible items.
+3. "between" is recognized as a positional relationship.
+4. "2" is nice and easy because the translator is very good with numbers.
+5. "slices" is recognized as a term describing parts of something.
+6. "of" gives the dependent relationship of something.
+7. "bread" is an object recognized by the translator.
+8. The "of" instructs the translator to connect "slices" and "bread" as "slices of bread".
+9. "2" now tells the translator the exact integer quantity of "slices".
+10. The translator maps the positional logic "between" to combine the "food" and the "2 slices of bread".
+11. The translator stores in its memory that the new term "sandwich" refers to "food between 2 slices of bread".
+
+Now you can attempt to run the original statement again: "make a peanut butter and jelly sandwich"
+
+>1. "make" triggers the creation function.  
+2. "a" dictates the quantity (1).  
+3. "peanut butter" is recognized as a specific ingredient.  
+4. "and" links ingredients together.  
+5. "jelly" is recognized as a specific ingredient.  
+6. "sandwich" is now successfully recognized as the structure: "food between 2 slices of bread".
+7. The translator places the linked food ("peanut butter" and "jelly") into the required position ("between") of the structure ("2 slices of bread").
+8. The translator successfully compiles this into absolute, literal machine code.
+9. The computer executes the machine code and makes a peanut butter and jelly sandwich.
+
+Python, C++, Fortran, etc., are all simply translators. They each have their own specific syntax and rules connected to very specific computer translations. You can only work within the framework of these computer/human translations.
+
+>_sidenote_: The rise of vibe-coding^[<span style="color:red">__Vibe-Coding__</span> is the name given to the process of generating code and software by instructing an AI in a natural language (like English) to write the code for you.] with AI has attempted to circumvent this. Unfortunately, the vast majority of vibe-coding, at its core, just places ANOTHER translator into the system. You tell an AI model (usually an LLM) what you are trying to do, and this AI model then translates your objective into code, which is then translated into machine instructions by the computer's translator. This can be very useful, as it means you do not need to learn a new programming language to communicate with the computer translator, but it also places ANOTHER system in between you and the computer. Going back to the translator example, this is similar to hiring ANOTHER translator who speaks great English and is very good at the computer translator's basic language. 
+>
+>While this system can be used effectively, it is inherently limited by your ability to communicate with the AI model, and the AI model's ability to communicate with both you and the computer translator. As long as the AI model is better than you at this, it makes it possible for you to create things beyond your current technical ability. One of the primary issues with this is that, as long as you rely completely on this method, you will never be able to work beyond the AI model's ability to translate for you. Additionally, the natural learning process becomes centered around learning how to interact with the AI models, which takes away from learning the core logic of a programming language. 
+>
+>In my opinion, if you are going to use AI to help with coding, you should do so in a way that is focused on "How do I do this?" rather than "Do this for me." This will help keep you connected to the core concepts of programming across all skill levels and help prevent a complete reliance on the AI model. Remember, although they can be highly useful, most of these AI models are controlled by corporations that can do all sorts of things to impact your interactions. The models could suddenly get worse, become restricted, or be placed behind steeper paywalls.
+>  
+> __TLDR: If you are going to use AI models to help write code, I think it is very important to approach things from an "I want to learn" perspective rather than a "Do it for me" perspective.__
+
+

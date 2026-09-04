@@ -1,0 +1,99 @@
+---
+title: "Choosing a Programming Language"
+# subtitle: "Astronomy Course Materials & Planetarium Resources"
+format: live-html
+---
+
+# About Languages and Python
+
+Python is my language of choice. In my opinion, choosing a language to start learning how to operate in is much less important than simply starting to learn. Going between different programming languages requires learning new words, sure, but the logic behind how computers handle information does not vary wildly. The logic behind computer science is essentially a form of math, and logical concepts such as multiplication and addition both work just fine even if we change bases or how we represent them.  
+
+Example:  
+Python makes a lot of assumptions for you. If you want to store a number to use later, you simply tell it: `x = 5`, and it will run that no problem. Python sees a whole number on its own and assumes that it is an integer^[In math terms, an <span style="color:red">__integer__</span> is a number that has no decimal (a whole number is a type of integer). It can be positive, negative, or even 0.]. It handles the memory and background categorization for you.  
+
+C does not make the same assumptions that Python does. If you put `x = 5` into C, it will break. C assumes nothing about what `x` is supposed to be, so it doesn't know how much memory to give it. You need to explicitly tell it that `x` is an integer by writing `int x = 5;`, and it will handle it no problem.  
+
+The logic of storing and manipulating data is a simple process, but the language used to describe it changes. Learning the logic of computers is often the hardest part for people, and transitioning to another language after that is not nearly as difficult. That being said, choosing a language to begin with often goes hand-in-hand with what you want to accomplish.  
+
+<br>
+
+---
+
+
+
+
+>__Python__<span style="color:blue">  
++ Industry standard for AI, machine learning, and data science  
++ Excellent data handling/analysis ability (uses packages that run highly optimized C/Fortran code in the background)  
++ Very beginner-friendly  
++ Makes lots of assumptions (handles memory for you)  
++ Tons of useful packages created by others</span><span style="color:red">  
+- Slow execution speed  
+- Whitespace matters  
+- Can hide the inner workings, making performance issues harder to debug  
+- Makes lots of assumptions (less manual control)  </span>
+
+>__C or C++__<span style="color:blue">  
++ Unmatched processing speed and precise memory control  
++ Can run on pretty much every piece of hardware  
++ Industry standard for systems programming and hardware integration  
++ C++ in particular is the standard for game development (Unreal Engine)</span><span style="color:red">  
+- Complex syntax  
+- Need to understand manual memory handling  
+- Assumes very little (you have to build everything explicitly)  </span>
+
+>__Fortran__<span style="color:blue">  
++ Extremely fast and efficient for heavy numerical arrays and complex math  
++ Tons of use in scientific computing and supercomputing  
++ Can explicitly manage memory handling  
++ Decades and decades of optimized math libraries to pull from  </span><span style="color:red">  
+- Super old  
+- Need to explicitly understand memory handling  
+- Not suited for general-purpose programming or modern UX  </span>
+
+>__Java and C#__<span style="color:blue">  
++ Industry standards for massive corporate application development  
++ Highly general-purpose (they power everything from mobile apps to heavy enterprise servers)  
++ Object-oriented, making them scalable for large teams  
++ C# for game development (Unity)  </span><span style="color:red">  
+- Syntax is verbose (requires a lot of boilerplate code)  
+- Can have slower startup times and higher memory overhead than C/C++  </span>
+
+>__Javascript / Typescript__<span style="color:blue">  
++ Industry standard for web development  
++ Runs natively in web browsers  
++ Full-stack development possible (one language for front-end and back-end)  
++ Massive industry and community  
++ TypeScript adds strict rules (types) to prevent messy errors in large projects</span><span style="color:red">  
+- Large, complex dependency trees  
+- Vanilla JavaScript can be prone to runtime errors  </span>
+
+>__Rust and Go__<span style="color:blue">  
++ Industry standard for Web3, microservices, and modern cloud infrastructure  
++ Rust can be extremely fast (comparable to C) and guarantees memory safety  
++ Go is designed to be easy to learn and handles thousands of simultaneous tasks effortlessly  </span><span style="color:red">  
+- Rust is notoriously difficult to learn  
+- Go syntax is extremely verbose (requires writing repetitive code because it lacks certain advanced features)  </span>
+
+
+
+---
+
+<br>
+
+
+Do you want to work in data analysis or AI? Choose Python. Do you want to work in game development? Choose either C++ or C#. Do you want to delve into the ins and outs of how a computer handles information? Choose C. Do you want to be able to hang with all of the old computational physicists and complain about how slow Python is? Choose Fortran. Do you want to become a full-stack or web developer? Choose Javascript/Typescript. Do you want to make a phone app? Choose Java. Rust and Go are so new that I honestly don't know much about them, but if you want to dive into those new territories, go for it!  
+
+If you don't know what you want to do yet, then I'll make it simple for you. Just start with Python.
+
+
+
+<!-- ```{pyodide}
+#| autorun: true
+x=5
+print(x)
+``` -->
+
+<!-- ```python
+x=5
+``` -->
