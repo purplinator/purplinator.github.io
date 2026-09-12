@@ -1,0 +1,73 @@
+---
+title: "About"
+subtitle: "The longer version"
+description: "Who I am, what I work on, and why this site exists."
+toc: false
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+![](images/portrait.jpg){.rounded-circle .shadow fig-alt="Saxon Stockton" width="100%" style="max-width:260px;"}
+
+**Saxon Stockton**<br>
+Astrophysics PhD Student<br>
+Texas Christian University
+
+[s.stockton@tcu.edu](mailto:s.stockton@tcu.edu)<br>
+[github.com/purplinator](https://github.com/purplinator)
+:::
+
+::: {.g-col-12 .g-col-md-8}
+
+I am an astrophysics researcher specialising in spectral line analysis and
+pulling physical information out of large data sets. My current work processes
+integral field spectroscopy from the Local Volume Mapper around the 30 Doradus
+region of the Large Magellanic Cloud, measuring how much dust sits between us
+and every point in that nebula.
+
+What I like most about the work is the part before the result: figuring out what
+a data set can and cannot tell you, and building something that does not quietly
+lie about its own uncertainty. I am at my happiest doing an in-depth
+investigation into a data structure that nobody has looked at closely yet.
+
+Outside of that, I am an enthusiastic karaoke singer, a gamer, and a traveler.
+
+:::
+:::
+
+## Why this site exists
+
+Two reasons.
+
+The first is ordinary: research should be findable, and code nobody can run is
+not a contribution. The [Research](research/index.qmd) section is where I write
+up what I am working on and document the tools that come out of it.
+
+The second is the one I care about more. I like taking high-level physics and
+breaking it down to a level where anyone can actually engage with it — not a
+watered-down version, the real thing explained properly. Most people who think
+they are bad at physics have only ever met explanations written for people who
+already understood. The [Teaching](teaching/index.qmd) section is my attempt at
+the other kind, and it is free, permanently, to anyone who wants it.
+
+## What I am working on
+
+**Research.** Dust extinction maps across 30 Doradus from LVM spectroscopy.
+[Read the project →](research/01-lmc-dust.qmd)
+
+**Writing.** *Python from Scratch*, a programming series for people who have
+never written a line of code, with examples that run in the browser.
+[Open the series →](teaching/python/index.qmd)
+
+**Next.** Mathematics lessons and worked physics problems, both currently
+outlined and not yet written.
+
+## Get in touch
+
+Email is best: [s.stockton@tcu.edu](mailto:s.stockton@tcu.edu).
+
+I am glad to hear from students stuck on a problem, anyone who found an error
+in something I wrote, and anyone interested in the research. Corrections
+especially — if a lesson here lost you somewhere, that is a bug and I want to
+know where it happened.

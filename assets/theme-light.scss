@@ -1,0 +1,114 @@
+/*-- scss:defaults --*/
+
+// ---------------------------------------------------------------------------
+// Saxon Stockton — light theme
+//
+// Quarto builds the site by layering this file on top of Bootstrap. Anything
+// under "scss:defaults" overrides a Bootstrap/Quarto variable BEFORE the
+// framework compiles, which is why almost nothing here needs !important.
+// Anything under "scss:rules" is plain CSS appended afterwards.
+// ---------------------------------------------------------------------------
+
+// -- Typeface --------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+$font-family-sans-serif: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !default;
+$font-family-monospace:  "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace !default;
+$headings-font-family:   "Space Grotesk", $font-family-sans-serif !default;
+
+$font-size-root:    17px;
+$headings-font-weight: 600;
+$headings-line-height: 1.25;
+$line-height-base:  1.65;
+
+// -- Purple scale ----------------------------------------------------------
+// The whole site is tuned off these nine steps. Change them here and the
+// navbar, buttons, callouts, code blocks and cards all follow.
+$purple-950: #150B2E;
+$purple-900: #241046;
+$purple-800: #2F1760;
+$purple-700: #40248A;
+$purple-600: #5B35B8;
+$purple-500: #7551D4;
+$purple-400: #9B7EE6;
+$purple-300: #C3B0F1;
+$purple-200: #E0D6F8;
+$purple-100: #F0EBFC;
+$purple-050: #F8F6FD;
+
+// Starlight gold — the accent. Used sparingly: rules, marks, active states.
+$gold:      #E8A33D;
+$gold-soft: #F6D9A6;
+// Nebula pink — second accent, mostly for category chips.
+$nebula:    #C7519C;
+
+// -- Bootstrap core --------------------------------------------------------
+$primary:   $purple-600;
+$secondary: #5B5570;
+$body-bg:   #FBFAFE;
+$body-color: #1E1A2E;
+$link-color: $purple-700;
+$link-hover-color: $purple-500;
+$border-color: $purple-200;
+$border-radius: 0.6rem;
+$border-radius-lg: 0.9rem;
+$border-radius-sm: 0.4rem;
+
+// -- Quarto chrome ---------------------------------------------------------
+$navbar-bg: $purple-900;
+$navbar-fg: #EFEAFB;
+$navbar-hl: $gold;
+
+$sidebar-bg: #F5F2FC;
+$sidebar-fg: #2A2440;
+$sidebar-hl: $purple-700;
+
+$footer-bg: $purple-950;
+$footer-fg: #C8C0DC;
+
+$toc-color: #5B5570;
+$toc-active-border: $purple-500;
+$toc-font-size: 0.85rem;
+
+// -- Code ------------------------------------------------------------------
+$code-color: $purple-700;
+$code-bg: $purple-100;
+$code-block-bg: #FAF8FE;
+$code-block-border-left: $purple-400;
+
+// -- Callouts --------------------------------------------------------------
+$callout-color-note: $purple-600;
+$callout-color-tip: #2FA090;
+$callout-color-caution: $gold;
+$callout-color-warning: #D2703A;
+$callout-color-important: $nebula;
+
+/*-- scss:rules --*/
+
+// Every shared component rule lives in styles.css and reads these tokens, so
+// the light and dark themes only have to disagree about colour.
+:root {
+  --sx-bg:            #FBFAFE;
+  --sx-surface:       #FFFFFF;
+  --sx-surface-alt:   #F5F2FC;
+  --sx-ink:           #1E1A2E;
+  --sx-ink-muted:     #5B5570;
+  --sx-ink-faint:     #857E9C;
+  --sx-border:        #E4DDF6;
+  --sx-border-strong: #C9BCEB;
+
+  --sx-primary:       #5B35B8;
+  --sx-primary-deep:  #40248A;
+  --sx-primary-soft:  #F0EBFC;
+  --sx-space:         #241046;
+  --sx-space-deep:    #150B2E;
+
+  --sx-gold:          #E8A33D;
+  --sx-nebula:        #C7519C;
+
+  --sx-shadow-sm: 0 1px 2px rgba(36, 16, 70, 0.06), 0 2px 8px rgba(36, 16, 70, 0.05);
+  --sx-shadow-md: 0 4px 10px rgba(36, 16, 70, 0.08), 0 12px 28px rgba(36, 16, 70, 0.10);
+  --sx-shadow-lg: 0 10px 24px rgba(36, 16, 70, 0.14), 0 24px 60px rgba(36, 16, 70, 0.16);
+
+  --sx-hero-veil: linear-gradient(180deg, rgba(21, 11, 46, 0.72) 0%, rgba(36, 16, 70, 0.82) 55%, rgba(21, 11, 46, 0.95) 100%);
+}

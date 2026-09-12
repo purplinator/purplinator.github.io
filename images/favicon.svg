@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Saxon Stockton">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5B35B8"/>
+      <stop offset="100%" stop-color="#241046"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8A33D"/>
+      <stop offset="100%" stop-color="#F6D9A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#sky)"/>
+  <circle cx="26" cy="30" r="1.1" fill="#fff" opacity=".85"/>
+  <circle cx="45" cy="17" r="1.4" fill="#fff" opacity=".7"/>
+  <circle cx="15" cy="47" r="1" fill="#fff" opacity=".6"/>
+  <circle cx="50" cy="46" r="1.2" fill="#fff" opacity=".55"/>
+  <circle cx="32" cy="32" r="13" fill="#B7A3E8"/>
+  <path d="M32 32 a13 13 0 0 1 -11.6 12.9 a13 13 0 0 0 11.6 -12.9z" fill="#8A6FD6" opacity=".9"/>
+  <ellipse cx="32" cy="32" rx="22" ry="6.5" fill="none" stroke="url(#ring)" stroke-width="3"
+           transform="rotate(-20 32 32)"/>
+</svg>

@@ -1,68 +1,56 @@
-# 'on' looks for events to trigger the script
+# Renders the Quarto site and publishes it to the gh-pages branch.
+#
+# 'on' lists the events that trigger this workflow.
 on:
-  # 'push' gives the condtion run whenever new
-  # new code is pushed to the repository
+  # Run whenever new code is pushed to the main branch.
   push:
-    # specifies to only run if new code is pushed
-    # to the main branch
     branches: main
-  # 'workflow_dispatch' adds a physical "Run
-  # workflow" button to GitHub Actions to
-  # run a manual site rebuild without
-  # having to push a commit
+  # Adds a "Run workflow" button in the GitHub Actions tab, so the site can be
+  # rebuilt manually without having to push a commit.
   workflow_dispatch:
 
-# This names the script inside GitHub Actions
 name: Quarto Publish
 
-# 'jobs' initiates the lists of tasks for the
-# server to perform
 jobs:
-  # Arbitrary name we give to this task
   build-deploy:
-    # 'runs-on' specifies the operating system
-    # for the temporary server. 'ubuntu-latest'
-    # is industry standard for automated runners
+    # 'ubuntu-latest' is the standard image for automated runners.
     runs-on: ubuntu-latest
-    # 'permissions' defines what the automated
-    # server is allowed to do
+    # What this workflow is allowed to do. It needs write access to push the
+    # rendered site to the gh-pages branch.
     permissions:
       contents: write
-    # 'steps' is a sequential chronological list
-    # of commands for the server to follow
     steps:
-      # 'actions/checkout@v4' downloads a copy
-      # of all the files in the repository to
-      # the server
+      # Download a copy of the repository onto the runner.
       - name: Check out repository
         uses: actions/checkout@v4
-      # 'quarto-dev/quarto-actions/setup@v2'
-      # instructs the server to connect to Quarto
-      # and download/install their software
 
+      # Python is NOT needed to run any code on this site. The interactive
+      # lessons use {pyodide} cells, which are compiled into the page and run in
+      # the reader's browser, and every page containing them sets
+      # `engine: markdown` so Quarto knows there is nothing to execute here.
+      #
+      # This step stays as insurance: if a page is ever added with real
+      # ```{python} cells meant to run at build time, that page needs a Jupyter
+      # kernel available, and without these two steps the build fails with
+      # "Jupyter is not available in this Python installation."
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          
+
       - name: Install Jupyter
         run: python -m pip install jupyter
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-      # 'quarto-dev/quarto-actions/publish@v2'
-      # triggers the quarto render command
-      # and 'target: gh-pages' directs where
-      # to store the HTML files (website code)
+
+      # Renders the site and pushes the result to the gh-pages branch, which is
+      # what GitHub Pages serves.
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
-        # 'env' is environmental variables aka 
-        # passwords and keys for the script to
-        # run. The token is a temporary password
-        # for a GitHub security checkpoint. This
-        # proves that Quarto has authorization
-        # to push files.
         env:
+          # A temporary token GitHub generates for this run, proving the
+          # workflow is authorised to push to the repository.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,6 @@
+# Defaults inherited by every page under teaching/.
+toc: true
+toc-depth: 3
+number-sections: false
+fig-cap-location: bottom
+footnotes-hover: true

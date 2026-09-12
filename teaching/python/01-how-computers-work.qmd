@@ -1,0 +1,285 @@
+---
+title: "How Computers Actually Work"
+subtitle: "Bits, entropy, and why information is a physical quantity"
+description: "Starting from a flashlight and a dog: what a bit really is, why information has a measurable size, and how stacking logic gates gets you a computer."
+order: 1
+categories: [Foundations]
+
+# Required on any page with {pyodide} cells. Quarto picks a document's engine
+# from its own front matter before _metadata.yml is merged, so this cannot be
+# inherited. Without it Quarto tries to run the cells with Jupyter at build time.
+engine: markdown
+---
+
+Programming languages can feel like a mystical thing that doesn't quite make
+sense. They are the opposite of that — they are purposeful and follow rigid,
+logical systems. This lesson is about where those systems come from, because
+once you can see the machinery, the syntax stops feeling arbitrary.
+
+## What is a bit?
+
+The term **bit** is short for *binary digit*. It is a system with two states,
+`0` or `1` — hence the "*bi-*" in binary.
+
+If you are particularly inquisitive, you may ask: *why `0` or `1`?* The answer
+is that it doesn't really matter which two values we choose. Any two will do.
+The point is that we stay consistent. I have built circuits that look for two
+inputs, `0 V` or `5 V`, and that is still a binary system. We represent bits as
+`0` and `1` because of simplicity.
+
+### How are `0` and `1` simple?
+
+The number `0` is associated with "nothing" or "off" in most people's daily
+lives. `1` is clearly "not zero" — "not nothing," "something."
+
+If I asked you *"Is there a dog in your room?"* and your answer was "no," that
+corresponds to `0` dogs in your room. If your answer was "yes," that
+corresponds to at least `1` dog being there. By this logic, `0` represents the
+*absence* of something and `1` represents the *presence* of something. That is
+the heart of a bit's simplicity.
+
+That same logic answers the next question you might have. Why binary? Why not
+trinary (`0,1,2`), or quaternary (`0,1,2,3`), or any other -*nary* you like?
+Again: simplicity. The simplest way I can think of to represent something is to
+ask whether it exists. No other details, just the very basic question — does it
+exist or not? Is there a dog in your room? No (`0`) or yes (`1`). There is
+almost no room for confusion, because both the question and the answer are
+extremely simple.
+
+That simplicity matters enormously once we start building more complicated
+structures out of it.
+
+## What is a bit, *really*?
+
+Calling a bit a binary digit, or a system with two states, doesn't actually
+tell us what a bit *is*. This is the genuinely fascinating part of the science
+underneath computers.
+
+A bit is a **single unit of information**.
+
+There is an entire field called Information Theory, which has been developing
+for roughly 160 years if you start the clock where I do. The accelerating
+advances in technology since around World War II run parallel to accelerating
+advances in this field. Some of you have heard of quantum computers relying on
+*qubits* without realising that a qubit is simply the quantum version of a bit,
+used in Quantum Information Theory.
+
+Without going into a full history: in 1867, James Clerk Maxwell was trying to
+poke holes in the second law of thermodynamics — the one saying entropy always
+increases in a closed system — and came up with a logic test for it. His
+thought experiment, **Maxwell's Demon**, is still somewhat relevant today. It
+has been solved. Probably. But it persists in some ways.
+
+The pursuit of resolving Maxwell's Demon eventually led to a realisation:
+**information is a real, physical quantity.** Just as you measure your height
+in feet, inches, and centimetres, **information is measured in bits.**
+
+## Representing information with bits
+
+To exchange or store information, we need a way to represent it.
+
+Picture someone using a flashlight to transmit a message in Morse code. The
+photons coming out of that flashlight have no special property that lets them
+carry information. And yet an exchange of information happens, because we
+encode the message into the existence and nonexistence of those photons. One
+level deeper, the encoding is actually tied to a change in the entropy of the
+system — more on that in a moment.
+
+Let's represent the flashlight being off as `0` and on as `1`, and take the
+simplest possible case where a single bit equals a single unit of Morse code
+time. Here is how a message might look[^morse]:
+
+[^morse]: Rules for Morse code as encoded here:
+`0` is no signal ·
+`1` is a dot ·
+`111` is a dash ·
+dots and dashes within a letter are separated by one `0` ·
+letters within a word are separated by three `0` ·
+words are separated by seven `0`.
+
+``` text
+010100000001011101010001110111011100010101011100010000000111010111000101110001011101000101110001110111011100011101011100010
+```
+
+That translates to "I love karaoke." I started and ended the message with a `0`
+to account for the information associated with having no signal at the
+beginning and the end. Sent this way, the message took 123 bits.
+
+Does that mean the information that I, personally, love karaoke has a physical
+size of 123 bits? No, not really. The *message* "I love karaoke" is what we
+encoded in 123 bits — not the information of what any of that means. It is
+important here to separate your colloquial sense of "information" as the
+meaning of something from the scientific definition.
+
+The 123 bits I used could easily have been 121 by leaving off the bordering
+zeros. It could have been 200 if I added more, or if I picked a different
+representation scheme altogether. Morse himself designed Morse code so that
+common letters take less time, which is why common letters tend to be built out
+of dots — a dot costs 1 bit here and a dash costs 3. Rearrange the scheme and
+the same message might take 500 bits, or 50.
+
+The bits do not hold some grandiose, obscure meaning. The information is
+contained in ordering the bits the specific way we chose. If I send the word
+"love" to 100 people, it may mean 100 different things to them. The information
+carried by the bits is not the meaning of the word love. It is specifically
+just the word love.
+
+::: {.callout-tip collapse="true"}
+## Try it: count the bits in your own message
+
+Run this cell, then change the message and run it again. This encodes each
+character as 8 bits of ASCII — a different scheme than the Morse example above,
+which is exactly the point.
+
+```{pyodide}
+message = "I love karaoke"
+
+bits = "".join(format(ord(character), "08b") for character in message)
+
+print(bits)
+print()
+print(f"{len(message)} characters encoded as {len(bits)} bits")
+```
+:::
+
+## Information is negative entropy
+
+In the early days of resolving Maxwell's Demon, Leo Szilard developed the idea
+that knowledge is associated with a dissolution of entropy. Knowledge, and
+information, become intrinsically related to the energy required to reduce the
+entropy of a system.
+
+**Entropy** is a measure of the order or disorder of a system. One useful way
+to think about it is *how likely a system is to exist by pure randomness.*
+
+Flip 30 water bottles. If all 30 land perfectly upside down on their caps, that
+final arrangement is a very low entropy system — it is an extremely unlikely
+outcome. If only a few land on their caps, which is far more likely, it is a
+high entropy system. More naturally-random results means more entropy.
+
+Here is the interesting part. You can arrange those 30 bottles by hand, exactly
+as if they had all been perfectly cap-flipped, and the final system has the same
+low-entropy state as the one that got there by chance. Either way, there is an
+energy cost associated with taking the bottles from a high entropy state (more
+likely to exist) to a low entropy state (less likely to exist).
+
+The information carried by a flashing flashlight arises from arranging those
+flashes in one specific way. It is not really the bits themselves that contain
+the information — it is the change in entropy away from the likely, more random
+state. Storing or communicating information explicitly requires forcing a
+system into a lower entropy state, and it is that state which holds the
+information. The bits are just how we represent it.
+
+## Intro to logic gates
+
+Why does any of this matter? Because now we can start building systems.
+
+A light switch has two positions: off (`0`) and on (`1`). We set a rule: *if
+the light is on, you dance. If the light is off, you don't.*
+
+| Switch | Light | You |
+|:------:|:-----:|:----|
+| `1`    | `1`   | Dance |
+| `0`    | `0`   | Don't dance |
+
+: The trivial case — the light does what the switch says. {.striped tbl-colwidths="[20,20,60]"}
+
+Now I am going to put something in the middle to mess with the signal. When the
+switch is on (`1`), the light goes off (`0`). When the switch is off (`0`), the
+light comes on (`1`). This will be familiar to anyone who has lived in a room
+with two switches controlling the same light.
+
+| Switch | Light | You |
+|:------:|:-----:|:----|
+| `1`    | `0`   | Don't dance |
+| `0`    | `1`   | Dance |
+
+: A `NOT` gate. {.striped tbl-colwidths="[20,20,60]"}
+
+Messing with a signal like this is called a **gate**. This particular one —
+turning `0` into `1` and `1` into `0` — is a `NOT` gate. It is a simple logical
+play on a single bit: do the opposite of what the bit says.
+
+From an electricity standpoint you might reasonably wonder how *no* signal,
+meaning no electricity, can possibly turn the light on. In a real circuit there
+is a separate power source that lets the gate emit a signal when it receives
+none from the input. Try not to get hung up on it.
+
+Let's build some more logic. Two switches now, so two bits. This time the
+light only turns on when *both* switches are on.
+
+| Switch A | Switch B | Light | You |
+|:--------:|:--------:|:-----:|:----|
+| `0` | `0` | `0` | Don't dance |
+| `1` | `0` | `0` | Don't dance |
+| `0` | `1` | `0` | Don't dance |
+| `1` | `1` | `1` | Dance |
+
+: An `AND` gate. It only outputs `1` when it receives `1,1`. {.striped}
+
+There are a multitude of gates usable in physical circuits and in logic.
+Complicated combinations of them are what give us modern technology. These same
+logical sequences are the exact tenets that created programming languages. Your
+computer "thinks" by manipulating bits and gates, and programming languages
+were devised as a way for you to do that manipulation without wiring anything.
+
+This is why I think anyone diving into programming should understand a little
+about information theory and computers. Code is not a mystical thing that
+refuses to make sense. It is the opposite — rigid, purposeful, logical systems
+all the way down.
+
+## Memory
+
+Now extend the idea that information is a physical quantity.
+
+In the flashlight example, each bit erases the state of the one before it. But
+what if we could store whether a switch was on or off? Say we have 123 physical
+switches. We set them into the positions of that message, leave them there, and
+go do something else. When we come back, the bits are still where we left them.
+
+That ability to *store* information rather than merely transmit it is
+**memory**.
+
+Memory hardware has advanced enormously in the last thirty years, but the
+principle has not changed: to store information, even temporarily, you need a
+physical way to contain it. This is one of the real physical limits of a
+computer, and it is exactly why you cannot just download more RAM.
+
+**RAM (Random Access Memory)** is very fast memory designed to hold things
+temporarily. It is the quick-access memory your programs actually live in, and
+it will usually be the limiting component when you are programming. Cut the
+power and it is gone.
+
+**HDD (Hard Disk Drive)**, now quickly becoming obsolete, uses a spinning metal
+platter and a little magnetic arm to literally write bits onto the disk.
+
+**SSD (Solid State Drive)** is much faster because nothing moves. Instead of
+magnets it uses microscopic *floating-gate transistors*, which physically trap
+electrons in a specific pattern and hold that pattern even with the power off.
+
+Anything you do on a computer uses memory.
+
+## CPU and GPU
+
+There is also a limit on how fast a processor can move that information around,
+though it is usually less of a roadblock than memory.
+
+**The CPU (Central Processing Unit)** is typically very fast at single,
+sequential tasks. Say you write a program teaching the computer to do a
+kickflip. To do a kickflip it first has to learn what a kickflip is, then what
+a skateboard is, then how to ride one, then how to ollie, then how to kickflip,
+and then actually do it. A CPU rips through steps like that.
+
+What it is not so fast at is doing many things at once. If you knew exactly how
+to paint every part of a picture, a CPU would still go paint every individual
+part of it, spot by spot, with one brush.
+
+**The GPU (Graphics Processing Unit)** is where that changes. A GPU is slower
+at any single task, but it can do enormous numbers of them simultaneously. Give
+it the same painting and it picks up 5,000 brushes and paints every spot at
+once — vastly faster than one brush going spot to spot.
+
+The trade-off runs the other way too. The GPU is much slower at *learning* to
+do the kickflip, because all those sequential steps still have to happen first,
+and it relies on the CPU to tell it what it is supposed to be painting in the
+first place.

@@ -1,85 +1,197 @@
-# 'project' is the highest level instruction for Quarto
-# It informs the handling of the entire repository
+# ============================================================================
+# Site configuration
+#
+# Structure of the site, one folder per top-level section:
+#
+#   index.qmd            splash page
+#   cv.qmd               curriculum vitae
+#   about.qmd            longer bio
+#   research/            research hub + one file per project
+#     code/              documentation for code that came out of the research
+#   teaching/            teaching hub
+#     python/            "Python from Scratch" tutorial series
+#     math/              mathematics lessons
+#     physics/           worked textbook problems
+#
+# The sidebars below use `auto: "dir/*"` globs, so adding a page is just adding
+# a file to the right folder with a two-digit number prefix — no edit to this
+# file required. The number sets the order.
+#
+# Use the bare `"dir/*"` form. A more specific glob like "dir/[0-9]*.qmd" also
+# works but makes Quarto synthesise an extra sidebar section for every folder
+# in the path, which produces a duplicated tree.
+# ============================================================================
+
 project:
-  # 'website' tells it to render .md files as interconnected
-  # HTML webpages
   type: website
+  output-dir: _site
+  # Explicit include list. Without it Quarto walks into .venv/ and tries to
+  # render the thousands of markdown files that ship inside installed packages.
+  render:
+    - "*.qmd"
+    - "research/**/*.qmd"
+    - "teaching/**/*.qmd"
 
-# instructions in 'website' control global website features
 website:
-  title: "<strong style='font-size: 1.5em; color: #ECE7F2;'>Saxon Stockton</strong>"
-  # 'description' contains metadata for the website
-  description: "Astrophysics Research and Teaching Portfolio"
-  
+  title: "Saxon Stockton"
+  description: "Astrophysics research, teaching resources, and plain-language explanations of hard physics."
+  site-url: https://purplinator.github.io
+  favicon: images/favicon.svg
+
+  open-graph: true
+  twitter-card: true
+
+  # Prev/next links at the bottom of every page that sits in a sidebar. This is
+  # what turns the tutorial folders into readable sequences.
+  page-navigation: true
+  back-to-top-navigation: true
+  bread-crumbs: true
+
   navbar:
-    background: "#311A6D"
-    # 'search' adds a built-in search bar that looks inside
-    # the .md files
-    search: false
-
-    # left: 
-    #   - text: "<span id='dynamic-nav-text' style='color: white; font-weight: bold; font-size: 1.3rem;'></span>"
-
+    logo: images/favicon.svg
+    title: "Saxon Stockton"
+    search: true
+    pinned: false
+    collapse-below: lg
+    left:
+      - text: "Research"
+        href: research/index.qmd
+      - text: "Teaching"
+        href: teaching/index.qmd
+      - text: "CV"
+        href: cv.qmd
+      - text: "About"
+        href: about.qmd
     tools:
-      - icon: envelope
-        href: mailto:s.stockton@tcu.edu
       - icon: github
         href: https://github.com/purplinator
-    
-    left:
-      - text: Home
-        href: index.md
-      - text: Research
-        href: research.md
-      - text: Teaching
-        href: teaching.md
+        text: GitHub
+      - icon: envelope
+        href: mailto:s.stockton@tcu.edu
+        text: Email
 
-  # 'sidebar' gives a left-handed navigation menu
   sidebar:
-    - id: research
-      background: "#A3A9AC"
+    # The home page, the CV and the About page get no sidebar. Listing them in
+    # an empty sidebar keeps Quarto from inheriting a neighbouring one.
+    - id: none
       style: docked
+      contents: []
+
+    - id: research
+      title: "Research"
+      style: docked
+      collapse-level: 2
       contents:
-        - text: "Research Home"
-          file: research.md
-          icon: moon-stars
-        - text: "Large Megallanic Cloud"
-          file: lvm_research.qmd
-        - text: "Code Docs"
-          file: lvm_code_docs.qmd
+        - text: "Overview"
+          href: research/index.qmd
+        - section: "Projects"
+          contents:
+            - auto: "research/*"
+        - section: "Code & Documentation"
+          href: research/code/index.qmd
+          contents:
+            - auto: "research/code/*"
 
     - id: teaching
-      background: "#A3A9AC"
-      style: floating
+      title: "Teaching"
+      style: docked
+      collapse-level: 2
       contents:
+        - text: "Overview"
+          href: teaching/index.qmd
         - text: "Teaching Philosophy"
-          file: teaching.md
-        - text: "Coding Tutorials"
-          file: tutorial_code.qmd
+          href: teaching/philosophy.qmd
+        - section: "Python from Scratch"
+          href: teaching/python/index.qmd
           contents:
-            - text: "What is a Programming Language?"
-              file: code_what_is_language.qmd
-            - text: "Choosing a Language"
-              file: code_choose_language.qmd
-            - text: "How Computers Work"
-              file: code_computers.qmd
-            - text: "1: Python Basics"
-              file: code_1_pybasics.qmd
-        - text: "Physics Problems"
-          file: tutorial_problems.qmd 
-    # 'docked' pins the sidebar to the screen
-    # 'floating' makes sidebar toggleable
+            - auto: "teaching/python/*"
+        - section: "Mathematics"
+          href: teaching/math/index.qmd
+          contents:
+            - auto: "teaching/math/*"
+        - section: "Physics Problems"
+          href: teaching/physics/index.qmd
+          contents:
+            - auto: "teaching/physics/*"
 
-    # 'search' adds a built-in search bar that looks inside
-    # the .md files
-    # 'contents' informs the sidebar links
+  page-footer:
+    background: light
+    left: |
+      © 2026 Saxon Stockton · Built with [Quarto](https://quarto.org)
+    center: |
+      [Research](/research/) · [Teaching](/teaching/) · [CV](/cv.html) · [About](/about.html)
+    right:
+      - icon: github
+        href: https://github.com/purplinator
+      - icon: envelope
+        href: mailto:s.stockton@tcu.edu
 
-# 'format' controls the final output
 format:
   html:
-    css: styles.css # Connecting to information on styling the sidebar
-    theme: cosmo # A clean, professional academic theme
-    toc: true    # Automatically adds a table of contents to long pages
+    theme:
+      light: [cosmo, assets/theme-light.scss]
+      dark: [cosmo, assets/theme-dark.scss]
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    toc-title: "On this page"
+    anchor-sections: true
+    smooth-scroll: true
+
+    # Purple banner across the top of every interior page. The home page turns
+    # this off in its own front matter.
+    title-block-banner: true
+    title-block-banner-color: "#F3EFFC"
+
+    # Reading column. 900px is roughly 75 characters at the base font size,
+    # which is the width long-form prose actually wants.
     grid:
-      body-width: 1500px # Controls the width of the main content area
-      margin-width: 300px # Controls the width of the sidebar
+      body-width: 900px
+      sidebar-width: 280px
+      margin-width: 260px
+      gutter-width: 1.6rem
+
+    # Figures
+    fig-align: center
+    fig-cap-location: bottom
+    lightbox: auto
+
+    # Code
+    code-copy: true
+    code-overflow: wrap
+    code-block-border-left: true
+    highlight-style: atom-one
+    code-link: false
+
+    # Math. MathJax handles \( \) and $$ $$, and the macros below are available
+    # on every page so common astrophysics notation stays short to type.
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    include-in-header:
+      - assets/mathjax-config.html
+
+    # Footnotes appear as hover popups rather than sending readers to the
+    # bottom of the page — the tutorials lean on them for term definitions.
+    citations-hover: true
+    footnotes-hover: true
+
+# Interactive Python cells
+# ------------------------
+# The r-wasm/live extension turns ```{pyodide} blocks into editable cells that
+# run in the reader's browser. It is switched on per folder rather than here,
+# because it pulls in about a megabyte of runtime and the splash page has no
+# reason to carry that. See teaching/python/_metadata.yml for how to enable it
+# on another folder.
+#
+# The extension also ships a `live-html` format. Do not use it: registering a
+# second project format makes Quarto render every page twice into colliding
+# filenames, and `live-html` inherits none of the theme configured above.
+#
+# One thing cannot be inherited — `engine: markdown` has to sit in the front
+# matter of each page containing cells. Quarto picks a document's execution
+# engine from its own front matter before folder metadata is merged, and
+# without it Quarto tries to run the cells through Jupyter at build time and
+# the GitHub Actions build fails. teaching/python/_template.qmd has it already.
+
+editor: source

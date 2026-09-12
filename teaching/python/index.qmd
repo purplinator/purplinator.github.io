@@ -1,0 +1,55 @@
+---
+title: "Python from Scratch"
+subtitle: "A programming course for people who have never written a line of code"
+description: "Starts before the code — what a language is, what a computer is doing — then teaches Python in cells you run right in the page."
+listing:
+  id: lessons
+  contents:
+    - "[0-9]*.qmd"
+  type: grid
+  grid-columns: 2
+  sort: "order asc"
+  fields: [title, description]
+  sort-ui: false
+  filter-ui: false
+  date-format: ""
+
+# Required on any page with {pyodide} cells. Quarto picks a document's engine
+# from its own front matter before _metadata.yml is merged, so this cannot be
+# inherited. Without it Quarto tries to run the cells with Jupyter at build time.
+engine: markdown
+---
+
+Most programming tutorials start by having you type something and promising it
+will make sense later. That works for some people. For everyone else it
+produces a year of copying code that runs without any idea why.
+
+This series takes the other route. The first three lessons contain no Python at
+all — they are about what a programming language *is*, what a computer is
+physically doing when it runs one, and how to pick a language in the first
+place. Once that is in place, the syntax stops being arbitrary and starts being
+obvious.
+
+::: {.callout-tip appearance="simple" icon=false}
+## You do not need to install anything
+
+Every code cell in this series runs in your browser. Click **Run Code**, or put
+your cursor inside a cell and press `Cmd`+`Enter` (macOS) or `Ctrl`+`Enter`
+(Windows/Linux). Edit them, break them, run them again — nothing you do here
+can hurt anything.
+:::
+
+## The lessons
+
+::: {#lessons}
+:::
+
+## How to use this
+
+Go in order if you are starting fresh. Skip to [Lesson 1](03-python-basics.qmd)
+if you have written code before and just want Python.
+
+Do not read it like a book. The cells are there because reading about a loop
+teaches you very little and running one teaches you a lot. When a cell shows
+you something, change a number in it and run it again to see what breaks. That
+is the whole method.

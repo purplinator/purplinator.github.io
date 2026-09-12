@@ -1,0 +1,158 @@
+---
+title: "What Is a Programming Language?"
+subtitle: "It is a translator, and it is an extremely literal one"
+description: "No code at all. Just the idea that a programming language is a very literal translator — which turns out to explain almost every error message you will ever see."
+order: 0
+categories: [Foundations]
+
+# Required on any page with {pyodide} cells. Quarto picks a document's engine
+# from its own front matter before _metadata.yml is merged, so this cannot be
+# inherited. Without it Quarto tries to run the cells with Jupyter at build time.
+engine: markdown
+---
+
+Think of writing code as providing an explicit set of instructions to a
+computer. The programming language is an interpreter that takes those
+instructions and translates them into something the computer can understand. A
+programming language, in many ways, is exactly that — a language. It has its
+own syntax, grammar, and vocabulary.
+
+## Learn the language, or hire a translator
+
+Let's say you speak English, but you want to communicate with someone who
+speaks Chinese. There needs to be some way for the two of you to understand
+each other.
+
+One possibility is to learn Chinese well enough to say whatever you need to.
+That takes a very long time and quite a bit of study. The equivalent for
+talking to a computer is not learning Chinese — it is learning to flip bits on
+and off and speak in binary. Binary has a structure very different from most
+spoken and written languages, so that route is an even greater challenge.
+
+The other possibility is to find someone who already speaks Chinese and ask
+them to translate for you. The catch is that this translator doesn't understand
+English perfectly. They understand it in a way that is very literal and very
+basic. They have no mind of their own to read between the lines, catch
+connotation, or infer what you meant. To communicate, you have to be exact
+about the words you choose.
+
+::: {.callout-important appearance="simple"}
+It might help to think of a programming language as a child that is only
+capable of doing things you have taught it to do.
+:::
+
+Want it to know what a banana is? You have to teach it what a banana is. Want
+it to write its own name? Teach it to write its name. Want it to solve a
+complicated problem? Teach it *how* to solve the problem.
+
+The advantage of a language like Python is that other people have already
+figured out how to teach it a great many useful things, and you get to use
+their work. I am not going to spend my afternoon explaining to Python, in its
+own terms, how to compute a logarithm. I am going to import NumPy, because
+somebody else already did.
+
+## A worked example: the sandwich
+
+Let's watch what happens when we tell this computer translator to
+**"make a peanut butter and jelly sandwich."**
+
+The translator will attempt to recognise each word, because literal
+translation is the only thing it can do:
+
+> 1. **make** — might already be associated with a function like "to create."
+> 2. **a** — a simple word referring to a singular object. Easy syntax to recognise.
+> 3. **peanut** — might already be associated with a type of data or object.
+> 4. **butter** — might already have a match in memory.
+> 5. **butter** — may take on a property away from its default definition, based on context.
+> 6. **peanut** combined with **butter** — recognised as a specific object, "peanut butter."
+> 7. **and** — a simple logical operator that brings two concepts together.
+> 8. **jelly** — might already have an association in memory.
+> 9. **sandwich** — not defined. It has never learned what a sandwich is.
+
+The translator breaks. It does not know what to do, because it does not know
+what a "sandwich" is. If it is well built, it throws an error:
+
+``` text
+Error: I don't know what 'sandwich' is.
+```
+
+Which is the translator's way of saying: *if you want this statement
+translated, you need to explicitly define "sandwich" first.*
+
+### Defining a sandwich
+
+So we have to define a sandwich in terms it can already handle. Something like
+`sandwich = food between 2 slices of bread`.
+
+The translator processes the new definition:
+
+> 1. **=** tells the translator we are defining a new term.
+> 2. **food** is recognised as a broad category of edible items.
+> 3. **between** is recognised as a positional relationship.
+> 4. **2** is easy — the translator is very good with numbers.
+> 5. **slices** is recognised as a term describing parts of something.
+> 6. **of** gives the dependent relationship between two things.
+> 7. **bread** is an object it already knows.
+> 8. The **of** instructs it to connect "slices" and "bread" into "slices of bread."
+> 9. The **2** now fixes the exact integer quantity of slices.
+> 10. **between** combines the "food" with the "2 slices of bread."
+> 11. It stores in memory that "sandwich" means "food between 2 slices of bread."
+
+### Running it again
+
+Now we can attempt the original statement a second time:
+**"make a peanut butter and jelly sandwich."**
+
+> 1. **make** triggers the creation function.
+> 2. **a** sets the quantity to 1.
+> 3. **peanut butter** is recognised as a specific ingredient.
+> 4. **and** links ingredients together.
+> 5. **jelly** is recognised as a specific ingredient.
+> 6. **sandwich** is now recognised as the structure "food between 2 slices of bread."
+> 7. The linked food is placed into the required position of the structure.
+> 8. The whole thing compiles into absolute, literal machine code.
+> 9. The computer executes the machine code and makes a peanut butter and jelly sandwich.
+
+Python, C++, Fortran and the rest are all simply translators. Each has its own
+syntax and rules tied to very specific computer translations, and you can only
+work inside the framework of the translation it offers.
+
+## A note on AI and vibe-coding
+
+The rise of vibe-coding[^vibe] has tried to circumvent all of this.
+Unfortunately, at its core, the vast majority of vibe-coding just inserts
+*another* translator into the chain. You tell an AI model what you are trying
+to do, that model translates your objective into code, and the computer's
+translator turns that code into machine instructions.
+
+[^vibe]: **Vibe-coding** is the name given to generating code and software by
+instructing an AI, in a natural language like English, to write the code for
+you.
+
+This can be genuinely useful — it means you do not have to learn a new
+programming language to get something built. But it also puts one more system
+between you and the computer. In the translator analogy, you have hired a
+second translator who speaks great English and is very good at talking to the
+first translator.
+
+The system works, but it is bounded by two things at once: your ability to
+communicate with the AI model, and the model's ability to communicate with both
+you and the computer. As long as the model is better at this than you are, it
+lets you build things beyond your current technical ability. The problem is
+that if you rely on it completely, you will never be able to work *beyond* the
+model's ability to translate for you. Worse, the natural learning process
+recentres on learning how to interact with AI models, which is time not spent
+learning the core logic of a programming language.
+
+It is also worth remembering that most of these models are controlled by
+corporations who can change them at any time. They can get worse, become
+restricted, or move behind a steeper paywall.
+
+::: {.callout-tip}
+## The short version
+
+If you are going to use AI models to help write code, approach it as
+*"How do I do this?"* rather than *"Do this for me."* The first keeps you
+connected to the concepts at every skill level. The second builds a dependency
+you cannot see until it fails.
+:::

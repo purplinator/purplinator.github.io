@@ -1,0 +1,163 @@
+---
+title: "Lesson 1: Python Basics"
+subtitle: "Running cells, importing packages, and storing things in variables"
+description: "The first lesson with actual code. How to run the interactive cells, what a package is, and how Python stores a value so you can use it later."
+order: 3
+categories: [Python, Lesson]
+
+# Required on any page with {pyodide} cells. Quarto picks a document's engine
+# from its own front matter before _metadata.yml is merged, so this cannot be
+# inherited. Without it Quarto tries to run the cells with Jupyter at build time.
+engine: markdown
+---
+
+::: {.sx-live-notice}
+<i class="bi bi-lightning-charge-fill"></i>
+<div>
+<strong>The code on this page is live.</strong> A small Python interpreter loads
+into your browser when you open this page — the first cell may take a few
+seconds while it finishes. Nothing is installed on your machine, and nothing you
+type here leaves it.
+</div>
+:::
+
+## Running a cell
+
+Throughout this series there will be boxes of code called **cells**. This
+webpage spins up a little Python system in your browser, and many of these cells
+are here for you to interact with and play around with.
+
+There is a **Run Code** button you can click. You can also put your cursor
+inside a cell and press `Cmd`+`Enter` on macOS or `Ctrl`+`Enter` on
+Windows and Linux. Your cursor has to be inside the cell you want to run for the
+shortcut to work.
+
+For those of you with Jupyter Notebook experience: `Shift`+`Enter` does not run
+these cells, unfortunately.
+
+Practice on this one:
+
+```{pyodide}
+print("Is your refrigerator running?")
+```
+
+Notice that the output appeared underneath it. Some cells will already have
+their output filled in, like this one:
+
+```{pyodide}
+#| autorun: true
+print("Then you better go and catch it!")
+```
+
+::: {.callout-tip appearance="simple"}
+Every cell is yours to break. Change the text, delete a quotation mark, run it
+again and read the error. Errors are the cheapest way to learn what a language
+expects, and you cannot damage anything here — refreshing the page puts it all
+back.
+:::
+
+## Variables
+
+A variable is a name attached to a value so you can use it again later. In
+Python you make one with a single `=`:
+
+```{pyodide}
+#| autorun: true
+favorite_number = 7
+
+print(favorite_number)
+```
+
+The `=` here does not mean "equals" in the math sense. It means *store the thing
+on the right under the name on the left.* This is why a line like
+`x = x + 1` is perfectly sensible in Python and nonsense in algebra.
+
+Python figures out what kind of value you handed it:
+
+```{pyodide}
+#| autorun: true
+count   = 7            # an integer  — a whole number
+gravity = 9.81         # a float     — a number with a decimal
+name    = "Saxon"      # a string    — text
+loud    = True         # a boolean   — True or False
+
+print(type(count), type(gravity), type(name), type(loud))
+```
+
+Try changing one of those values and running it again to see the type change.
+
+## Importing packages
+
+Packages save us time and effort. If I want the computer to do something, I need
+to know exactly how to explain it in Python terms — and somebody has usually
+explained it already.
+
+Rather than teaching Python how to compute a square root from scratch, I import
+a package that already knows:
+
+```{pyodide}
+#| autorun: true
+import numpy as np
+
+print(np.sqrt(144))
+```
+
+Two things happened on that import line.
+
+`import numpy` goes and fetches the NumPy package, which is a large collection
+of mathematical tools other people have written and tested.
+
+`as np` gives it a shorter nickname for the rest of the file. It is purely for
+convenience — `numpy.sqrt(144)` would work identically — but `np` is such a
+strong convention that other people reading your code will expect it.
+
+::: {.callout-note collapse="true"}
+## Which packages you will actually see
+
+| Package | Nickname | What it is for |
+|---------|----------|----------------|
+| `numpy` | `np` | Numerical arrays and math |
+| `matplotlib.pyplot` | `plt` | Plotting and figures |
+| `pandas` | `pd` | Tables of data |
+| `astropy` | — | Units, coordinates, and FITS files |
+| `scipy` | — | Fitting, integration, signal processing |
+
+: {tbl-colwidths="[28,15,57]"}
+
+You do not need any of these yet. They are here so the names look familiar when
+they turn up.
+:::
+
+## Your turn
+
+Change this cell so it prints the circumference of a circle with a radius of
+your choosing, then run it.
+
+```{pyodide}
+#| exercise: circumference
+import numpy as np
+
+radius = 3
+
+circumference = ____
+
+print(circumference)
+```
+
+::: {.callout-caution collapse="true"}
+## Show a solution
+
+```python
+import numpy as np
+
+radius = 3
+
+circumference = 2 * np.pi * radius
+
+print(circumference)
+```
+
+`np.pi` is NumPy's stored value of $\pi$. You could type `3.14159` instead, but
+the package version is more precise and makes the intent obvious to anyone
+reading it.
+:::

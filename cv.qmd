@@ -1,0 +1,115 @@
+---
+title: "Curriculum Vitae"
+subtitle: "Astrophysics PhD student, Texas Christian University"
+description: "Education, research, teaching, and talks."
+toc: true
+toc-depth: 2
+date-modified: last-modified
+---
+
+::: {.d-flex .flex-wrap .gap-2 .mb-4}
+[<i class="bi bi-file-earmark-arrow-down"></i> Full CV (PDF)](files/saxon_stockton_CV.pdf){.btn .btn-purple}
+[<i class="bi bi-file-earmark-text"></i> Two-page CV (PDF)](files/short_saxon_stockton_CV.pdf){.btn .btn-outline-purple}
+:::
+
+::: {.sx-lede}
+I am a physics PhD student at TCU working on integral field spectroscopy of the
+Large Magellanic Cloud. Before that I studied physics at Utah Valley
+University. Contact:
+[s.stockton@tcu.edu](mailto:s.stockton@tcu.edu).
+:::
+
+## Education
+
+::: {.sx-entry}
+::: {.sx-entry__head}
+[Ph.D. in Physics]{.sx-entry__title}
+[Expected 2030]{.sx-entry__when}
+:::
+[Texas Christian University]{.sx-entry__where}
+
+- Astrophysics specialisation
+- Advisor: *add name*
+:::
+
+::: {.sx-entry}
+::: {.sx-entry__head}
+[B.S. in Physics]{.sx-entry__title}
+[2023]{.sx-entry__when}
+:::
+[Utah Valley University]{.sx-entry__where}
+
+- Minor in Mathematics
+- Magna cum laude
+:::
+
+## Research
+
+**Current focus.** Spatially resolved dust extinction in the 30 Doradus region
+of the Large Magellanic Cloud, using Balmer decrements measured from Local
+Volume Mapper integral field spectroscopy.
+
+**Areas.**
+
+- Spectral line analysis and Balmer decrements
+- Dust extinction mapping in the Large Magellanic Cloud
+- Integral field spectroscopy data pipelines
+- Extracting physical parameters from large spectroscopic data sets
+
+See [Research](research/index.qmd) for project write-ups and code documentation.
+
+### Positions
+
+::: {.sx-entry}
+::: {.sx-entry__head}
+[Graduate Research Assistant]{.sx-entry__title}
+[20XX – present]{.sx-entry__when}
+:::
+[Texas Christian University]{.sx-entry__where}
+
+<!-- One or two lines on what you actually do. -->
+:::
+
+## Publications
+
+<!-- Format: Authors (Year). "Title." *Journal*, volume, pages. DOI. -->
+
+*In preparation.*
+
+## Presentations
+
+<!-- Format:
+::: {.sx-entry}
+::: {.sx-entry__head}
+[Talk title]{.sx-entry__title}
+[Month Year]{.sx-entry__when}
+:::
+[Conference or venue]{.sx-entry__where}
+:::
+-->
+
+*To be added.*
+
+## Teaching
+
+<!-- Courses taught or assisted, with term and institution. -->
+
+*To be added.* See [Teaching Resources](teaching/index.qmd) for materials I have
+written.
+
+## Technical Skills
+
+| Area | Tools |
+|------|-------|
+| Languages | Python, C, Fortran |
+| Scientific Python | NumPy, SciPy, Astropy, Matplotlib, pandas |
+| Data | FITS, integral field spectroscopy cubes, SDSS-V / LVM data products |
+| Other | Git, LaTeX, Quarto, Unix shell |
+
+: {tbl-colwidths="[25,75]"}
+
+## Service and Outreach
+
+<!-- Planetarium shows, public talks, mentoring, committee work. -->
+
+*To be added.*

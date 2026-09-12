@@ -1,0 +1,50 @@
+---
+title: "Physics Problems"
+subtitle: "Worked solutions with the thinking left in"
+description: "Textbook problems worked all the way through, including the part where you decide which approach to try before you know it will work."
+listing:
+  id: problems
+  contents:
+    - "[0-9]*.qmd"
+  type: table
+  sort: "order asc"
+  fields: [title, categories, description]
+  field-display-names:
+    title: "Problem"
+    categories: "Topic"
+    description: "What it covers"
+  sort-ui: [title, categories]
+  filter-ui: true
+---
+
+A solution manual tells you the steps. It almost never tells you why anyone
+would have tried those steps, which is the only part you actually need to learn.
+
+Every problem here is worked in the same shape:
+
+1. **What is being asked** — restated in plain language, with the physical
+   situation described before any symbol appears
+2. **What we know** — the givens, the assumptions, and explicitly which
+   assumptions are doing real work
+3. **Choosing an approach** — the part solution manuals skip. Why energy
+   conservation here rather than kinematics, and what would have happened if we
+   had guessed wrong
+4. **The work** — every algebraic step, none of them called obvious
+5. **Sanity check** — units, limiting cases, and whether the number is the right
+   size for the physical world
+
+::: {#problems}
+:::
+
+## Planned
+
+Nothing is posted yet. The first sets will come from introductory mechanics and
+electromagnetism, since those are the courses I see students struggle in most,
+followed by thermodynamics and modern physics.
+
+::: {.callout-note appearance="simple"}
+**A request.** If you are working a problem right now and stuck, send it to me at
+[s.stockton@tcu.edu](mailto:s.stockton@tcu.edu). Real problems that real
+students are stuck on are far more useful to write up than whatever I would pick
+on my own.
+:::

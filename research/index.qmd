@@ -1,0 +1,52 @@
+---
+title: "Research"
+subtitle: "Spectral lines, dust, and the code that turns one into the other"
+listing:
+  - id: projects
+    contents:
+      # A bare glob also matches subfolders, so code/ has to be excluded or the
+      # code documentation shows up in the projects grid too.
+      - "[0-9]*.qmd"
+      - "!code/**"
+    type: grid
+    grid-columns: 2
+    sort: "order asc"
+    fields: [title, description, categories]
+    sort-ui: false
+    filter-ui: false
+  - id: codedocs
+    contents:
+      - "code/[0-9]*.qmd"
+    type: grid
+    grid-columns: 2
+    sort: "order asc"
+    fields: [title, description, categories]
+    sort-ui: false
+    filter-ui: false
+---
+
+I work on **integral field spectroscopy** — observations that record a full
+spectrum at every point in an image rather than a single spectrum for a whole
+object. That turns a picture of a nebula into tens of thousands of spectra, and
+the interesting problem becomes extracting a physical quantity from all of them
+at once without losing track of the uncertainty.
+
+My current data comes from the [Local Volume
+Mapper](https://www.sdss.org/dr19/lvm/) (LVM), one of the three surveys in
+SDSS-V. I am focused on the 30 Doradus region of the Large Magellanic Cloud.
+
+## Projects
+
+::: {#projects}
+:::
+
+## Code & Documentation
+
+Analysis code is only useful if someone else can run it — including me, two
+years from now. Everything I write for a project gets documented here, with the
+reasoning behind it, not just the function signatures.
+
+::: {#codedocs}
+:::
+
+[Browse all code documentation →](code/index.qmd)

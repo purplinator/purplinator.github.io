@@ -1,0 +1,19 @@
+# Defaults for every page in the interactive Python series.
+
+# Turns on the r-wasm/live extension for this folder, which compiles
+# ```{pyodide} blocks into editable cells that run in the reader's browser.
+# It is scoped here rather than in _quarto.yml because it loads roughly a
+# megabyte of runtime, and only these pages need it. To make another folder
+# interactive, copy these two keys into that folder's _metadata.yml.
+filters:
+  - live
+ojs-engine: true
+
+# NOTE: `engine: markdown` is deliberately NOT here. Quarto determines a
+# document's execution engine from its own front matter before this file is
+# merged in, so every page with {pyodide} cells must carry that key itself.
+# Copy _template.qmd when starting a new lesson and it is already set.
+
+toc: true
+toc-depth: 3
+footnotes-hover: true

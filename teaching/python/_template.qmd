@@ -1,0 +1,66 @@
+---
+title: "Lesson N: Title"
+subtitle: "One line on what the reader can do after this lesson"
+description: "One or two sentences. This is the text that shows on the series index card and in search results."
+order: 4
+categories: [Python, Lesson]
+
+# Required on any page with {pyodide} cells. Quarto picks a document's engine
+# from its own front matter before _metadata.yml is merged, so this cannot be
+# inherited. Without it Quarto tries to run the cells with Jupyter at build time.
+engine: markdown
+---
+
+<!-- ---------------------------------------------------------------------------
+     Starting a new lesson:
+
+       1. Copy this file to NN-slug.qmd, where NN is a two-digit number. The
+          number controls its position in the sidebar and on the series index.
+       2. Set `order:` to the same number.
+       3. Delete everything below this comment and write.
+
+     Files beginning with an underscore are not rendered, so this template
+     never appears on the site.
+
+     Things available to you on any page in this series:
+
+       Live Python cell (reader can edit and run it):
+         ```{pyodide}
+         print("hello")
+         ```
+
+       Live cell that runs itself on page load:
+         ```{pyodide}
+         #| autorun: true
+         print("hello")
+         ```
+
+       Static code, not runnable:
+         ```python
+         print("hello")
+         ```
+
+       Math, inline $E = mc^2$ or display:
+         $$ \deriv{x}{t} = v $$
+         Custom macros (\msun, \halpha, \deriv, \vect, ...) are defined in
+         assets/mathjax-config.html.
+
+       Figure with a caption and a cross-reference:
+         ![A caption.](figures/thing.png){#fig-thing width=80%}
+         ... as shown in @fig-thing ...
+
+       Callouts: note, tip, warning, caution, important
+         ::: {.callout-tip}
+         ## Optional heading
+         Body text.
+         :::
+         Add collapse="true" to make it fold shut by default.
+
+       Footnote for defining a term without breaking the sentence:
+         ...an integer[^int]...
+         [^int]: A whole number, positive, negative, or zero.
+--------------------------------------------------------------------------- -->
+
+Opening paragraph.
+
+## First section

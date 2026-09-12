@@ -1,0 +1,78 @@
+---
+title: "Teaching Resources"
+subtitle: "Everything here is free, and everything here assumes you can handle the real explanation"
+description: "Python tutorials that run in your browser, mathematics lessons, and worked physics problems."
+---
+
+Most of the time, when a student tells me they are bad at physics, what they
+actually mean is that nobody has ever explained it to them in a language they
+already speak. That is a translation problem, not an ability problem, and it is
+fixable.
+
+So this section exists to be the explanation I wish someone had handed me:
+slower where it matters, honest about what is genuinely hard, and never
+pretending a step is obvious when it isn't.
+
+```{=html}
+<div class="sx-cards">
+<a class="sx-card" href="python/index.html">
+  <div class="sx-card__icon"><i class="bi bi-code-square"></i></div>
+  <h3 class="sx-card__title">Python from Scratch</h3>
+  <p class="sx-card__text">
+    A full series for people who have never written a line of code. Starts with
+    what a computer is actually doing, then moves into Python you can run right
+    here in the page — nothing to install.
+  </p>
+  <span class="sx-card__more">Open the series</span>
+</a>
+
+<a class="sx-card" href="math/index.html">
+  <div class="sx-card__icon"><i class="bi bi-infinity"></i></div>
+  <h3 class="sx-card__title">Mathematics Lessons</h3>
+  <p class="sx-card__text">
+    The mathematics physics students keep running into, built up from where it
+    comes from rather than dropped in as a formula to memorise.
+  </p>
+  <span class="sx-card__more">Browse lessons</span>
+</a>
+
+<a class="sx-card" href="physics/index.html">
+  <div class="sx-card__icon"><i class="bi bi-rocket-takeoff"></i></div>
+  <h3 class="sx-card__title">Physics Problems</h3>
+  <p class="sx-card__text">
+    Worked textbook problems with the reasoning left in — including the part
+    where you decide which approach to try before you know it will work.
+  </p>
+  <span class="sx-card__more">Browse problems</span>
+</a>
+</div>
+```
+
+## How these are written
+
+I try to hold to a few rules across everything in this section.
+
+**Start below the starting point.** If a lesson needs an idea from three
+courses ago, the lesson explains that idea rather than assuming it. The
+Python series opens with information theory for exactly this reason.
+
+**Name the hard part out loud.** Some things are genuinely difficult. Saying
+"as you can clearly see" about a step that took me an hour is a disservice, and
+it teaches students that their confusion is a personal failing.
+
+**Give you something to poke at.** Reading about a `for` loop does very little.
+Running one, breaking it, and running it again does quite a lot. Code on this
+site is live wherever it can be.
+
+**Keep the physics attached to something real.** Every abstraction started as
+someone trying to answer a concrete question. That question is usually the
+best way in.
+
+There is more on where this comes from in my
+[teaching philosophy](philosophy.qmd).
+
+## Found a mistake?
+
+I would genuinely like to know. Email me at
+[s.stockton@tcu.edu](mailto:s.stockton@tcu.edu) — corrections, confusing
+passages, and "this section lost me at paragraph three" are all useful.

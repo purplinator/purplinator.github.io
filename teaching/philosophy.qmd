@@ -1,0 +1,57 @@
+---
+title: "Teaching Philosophy"
+subtitle: "Both of us are stuck inside our own perspective. That is the whole problem."
+description: "Why I think most learning difficulties are translation problems, and what that means for how I teach."
+---
+
+I believe any student can learn from the right teacher.
+
+I have had many, many conversations with students whose biggest struggle came
+down to a disconnect between them and their instructor. Not ability, not
+effort — a mismatch in how the two of them were carving up the world.
+
+The relationship often reminds me of Plato's cave. The teacher is trying to
+bring the student into the teacher's world, but the student can only see that
+world through the lens of their own. Every step forward is a small breach in
+how the student already understands things, and the wrong guide will struggle
+to help them through it.
+
+What my own teaching has taught me is that the arrow runs both directions. The
+teacher is also only capable of interpreting the world from inside their own
+perspective, and the student is also, constantly, trying to pull the teacher
+into theirs. Perhaps that is just an analogy for communication in general. But
+it strikes me as an apt description of the specific difficulty of being both
+the teacher and the student at once. Both are captives of their own viewpoint.
+
+That framing changes what the job is. If the gap is a translation problem, then
+the work is not repeating the explanation louder — it is finding out which
+language the student already speaks and building the explanation out of that.
+A student who understands how a bank account works already understands
+conservation laws. A student who has argued with an autocorrect already
+understands most of what makes a compiler frustrating. The material is rarely
+the obstacle. The route in is.
+
+## What that looks like in practice
+
+**I ask what you already know before I tell you anything.** Not to grade it —
+to find the bridge.
+
+**I make the reasoning visible, including the dead ends.** Textbooks show the
+path that worked, which quietly implies that the author saw it immediately.
+They didn't. Showing the false starts is more honest and more useful.
+
+**I refuse to call anything trivial.** "Obviously" and "simply" are words that
+tell a struggling student the problem is them.
+
+**I let the student be wrong out loud.** A misconception you can see is one I
+can work with. One you are hiding because you are embarrassed will follow you
+into the next course.
+
+## The limits
+
+We cannot meet the needs of every student, and we cannot make every student
+care. I have stopped treating that as a personal failure. But it does not
+change the math on the ones we can reach, and there are more of those than most
+people assume.
+
+We can make a difference. That is enough reason to keep doing it carefully.

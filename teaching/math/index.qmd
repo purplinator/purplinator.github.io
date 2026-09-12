@@ -1,0 +1,47 @@
+---
+title: "Mathematics Lessons"
+subtitle: "Where the formula came from, not just what it is"
+description: "Mathematics for physics students, built up from the question it was invented to answer."
+listing:
+  id: lessons
+  contents:
+    - "[0-9]*.qmd"
+  type: grid
+  grid-columns: 2
+  sort: "order asc"
+  fields: [title, description, categories]
+  sort-ui: false
+  filter-ui: false
+---
+
+Most of the mathematics that gives physics students trouble is not hard. It is
+*unmotivated*. Somebody wrote $\nabla \times \vect{B}$ on a board without ever
+saying what question a curl was invented to answer, and from that point on it is
+a symbol you manipulate rather than an idea you have.
+
+These lessons go the other direction. Each one starts with a concrete problem
+somebody actually had, follows the reasoning that produced the tool, and only
+then writes down the notation.
+
+::: {#lessons}
+:::
+
+## Planned
+
+Nothing here is written yet. The rough order I intend to work through:
+
+- **Vectors and coordinates** — why we bother with different coordinate systems
+  and how to move between them without losing track of what is physical
+- **Derivatives as rates** — the physics reading of calculus, where $\deriv{x}{t}$
+  is a thing you can see rather than a rule you apply
+- **Integrals as accumulation** — adding up infinitely many small contributions,
+  and why that is the same operation as area
+- **Taylor series** — why "just approximate it as linear" is the single most
+  used move in physics
+- **Linear algebra** — matrices as things that *do* something to vectors
+- **Differential equations** — how to read one before you try to solve it
+- **Fourier analysis** — decomposing a signal into frequencies, which is most of
+  what spectroscopy is
+
+If one of these would be useful to you sooner rather than later, tell me at
+[s.stockton@tcu.edu](mailto:s.stockton@tcu.edu) and I will bump it up the list.

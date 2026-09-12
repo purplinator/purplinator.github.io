@@ -1,0 +1,159 @@
+---
+pagetitle: "Saxon Stockton | Astrophysics Research & Teaching"
+description: "Astrophysics PhD student at TCU. Spectral line analysis in the Large Magellanic Cloud, and teaching resources for people who want the real explanation."
+page-layout: custom
+title-block-banner: false
+toc: false
+sidebar: false
+---
+
+::: {.sx-hero}
+::: {.sx-hero__inner}
+
+![](images/portrait.jpg){.sx-hero__portrait fig-alt="Saxon Stockton"}
+
+<h1 class="sx-hero__name">Saxon Stockton</h1>
+
+<p class="sx-hero__role">Astrophysics PhD Student · Texas Christian University</p>
+
+<p class="sx-hero__pitch">
+I pull physics out of starlight. My research measures how dust reddens the
+light coming out of 30 Doradus in the Large Magellanic Cloud, and the rest of
+this site is my attempt to explain work like that to anyone willing to read it.
+</p>
+
+::: {.sx-hero__actions}
+<a class="sx-btn sx-btn--solid" href="research/index.html">See the research</a>
+<a class="sx-btn" href="teaching/index.html">Teaching resources</a>
+<a class="sx-btn" href="cv.html">CV</a>
+:::
+
+<p class="sx-hero__contact">
+<a href="mailto:s.stockton@tcu.edu">s.stockton@tcu.edu</a>
+&nbsp;·&nbsp;
+<a href="https://github.com/purplinator">github.com/purplinator</a>
+</p>
+
+:::
+:::
+
+::: {.sx-section}
+::: {.sx-section__inner}
+
+<p class="sx-section__eyebrow">Three ways in</p>
+<h2 class="sx-section__title">Pick whichever one you came for</h2>
+<p class="sx-section__intro">
+Everything on this site lives in one of three places. If you are here from a
+class, you want the middle one.
+</p>
+
+```{=html}
+<div class="sx-cards">
+<a class="sx-card" href="research/index.html">
+  <div class="sx-card__icon"><i class="bi bi-stars"></i></div>
+  <h3 class="sx-card__title">Research</h3>
+  <p class="sx-card__text">
+    Integral field spectroscopy of the Large Magellanic Cloud, dust extinction
+    maps, and documentation for the code that produces them.
+  </p>
+  <span class="sx-card__more">Current projects</span>
+</a>
+
+<a class="sx-card" href="teaching/index.html">
+  <div class="sx-card__icon"><i class="bi bi-mortarboard"></i></div>
+  <h3 class="sx-card__title">Teaching Resources</h3>
+  <p class="sx-card__text">
+    Python tutorials you can run in the browser, mathematics lessons, and
+    worked physics problems. Free, no account, no paywall.
+  </p>
+  <span class="sx-card__more">Start learning</span>
+</a>
+
+<a class="sx-card" href="cv.html">
+  <div class="sx-card__icon"><i class="bi bi-file-earmark-person"></i></div>
+  <h3 class="sx-card__title">Curriculum Vitae</h3>
+  <p class="sx-card__text">
+    Education, research experience, teaching history, and talks — on the page
+    or as a PDF download.
+  </p>
+  <span class="sx-card__more">Read the CV</span>
+</a>
+</div>
+```
+:::
+:::
+
+::: {.sx-section .sx-section--alt}
+::: {.sx-section__inner}
+
+<p class="sx-section__eyebrow">Right now</p>
+<h2 class="sx-section__title">What I am working on</h2>
+
+```{=html}
+<div class="sx-cards  sx-cards--two">
+<a class="sx-card" href="research/01-lmc-dust.html">
+  <span class="sx-chip">In progress</span>
+  <h3 class="sx-card__title">Dust extinction across 30 Doradus</h3>
+  <p class="sx-card__text">
+    Using Balmer decrements from LVM integral field spectroscopy to map how
+    much dust sits between us and every point in the Tarantula Nebula.
+  </p>
+  <span class="sx-card__more">Read the project</span>
+</a>
+
+<a class="sx-card" href="teaching/python/index.html">
+  <span class="sx-chip sx-chip--nebula">Writing</span>
+  <h3 class="sx-card__title">Python from Scratch</h3>
+  <p class="sx-card__text">
+    A tutorial series that starts before the code — what a programming language
+    actually is, and what a computer is actually doing — then teaches Python in
+    cells you run right in the page.
+  </p>
+  <span class="sx-card__more">Open the series</span>
+</a>
+</div>
+```
+:::
+:::
+
+::: {.sx-section}
+::: {.sx-section__inner}
+
+<p class="sx-section__eyebrow">New here?</p>
+<h2 class="sx-section__title">Good places to start</h2>
+
+```{=html}
+<div class="sx-cards">
+<a class="sx-card" href="teaching/python/00-what-is-a-programming-language.html">
+  <div class="sx-card__icon"><i class="bi bi-translate"></i></div>
+  <h3 class="sx-card__title">What is a programming language?</h3>
+  <p class="sx-card__text">
+    No code. Just the idea that a language is a very literal translator, and
+    why that explains almost every error message you will ever see.
+  </p>
+  <span class="sx-card__more">Read it</span>
+</a>
+
+<a class="sx-card" href="teaching/python/01-how-computers-work.html">
+  <div class="sx-card__icon"><i class="bi bi-cpu"></i></div>
+  <h3 class="sx-card__title">How computers actually work</h3>
+  <p class="sx-card__text">
+    Bits, entropy, logic gates, and why information is a physical quantity you
+    can measure — starting from a flashlight and a dog.
+  </p>
+  <span class="sx-card__more">Read it</span>
+</a>
+
+<a class="sx-card" href="teaching/philosophy.html">
+  <div class="sx-card__icon"><i class="bi bi-lightbulb"></i></div>
+  <h3 class="sx-card__title">How I think about teaching</h3>
+  <p class="sx-card__text">
+    Why I believe most learning problems are translation problems, and what
+    that means for how these lessons are written.
+  </p>
+  <span class="sx-card__more">Read it</span>
+</a>
+</div>
+```
+:::
+:::

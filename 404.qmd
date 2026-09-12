@@ -1,0 +1,36 @@
+---
+title: "Lost in Space"
+subtitle: "There is nothing at this address"
+page-layout: article
+toc: false
+---
+
+The page you were looking for does not exist. Most likely it moved when I
+reorganised the site, or the link that brought you here has a typo in it.
+
+Try one of these instead:
+
+```{=html}
+<div class="sx-cards">
+<a class="sx-card" href="/">
+  <div class="sx-card__icon"><i class="bi bi-house"></i></div>
+  <h3 class="sx-card__title">Home</h3>
+  <p class="sx-card__text">Back to the start.</p>
+</a>
+
+<a class="sx-card" href="/research/">
+  <div class="sx-card__icon"><i class="bi bi-stars"></i></div>
+  <h3 class="sx-card__title">Research</h3>
+  <p class="sx-card__text">Projects and code documentation.</p>
+</a>
+
+<a class="sx-card" href="/teaching/">
+  <div class="sx-card__icon"><i class="bi bi-mortarboard"></i></div>
+  <h3 class="sx-card__title">Teaching</h3>
+  <p class="sx-card__text">Python, mathematics, and physics problems.</p>
+</a>
+</div>
+```
+
+There is also a search box in the navigation bar, which covers every page on
+the site.

@@ -1,2 +1,11 @@
+# Quarto build output (GitHub Actions renders and publishes to the gh-pages branch)
+/_site/
 /.quarto/
 **/*.quarto_ipynb
+
+# Python environment
+/.venv/
+
+# macOS noise
+.DS_Store
+**/.DS_Store

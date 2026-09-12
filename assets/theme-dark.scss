@@ -1,0 +1,98 @@
+/*-- scss:defaults --*/
+
+// ---------------------------------------------------------------------------
+// Saxon Stockton — dark theme
+//
+// Same structure as theme-light.scss. Students read tutorials at night; this
+// is the version they get when they hit the toggle in the navbar.
+// ---------------------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+$font-family-sans-serif: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !default;
+$font-family-monospace:  "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace !default;
+$headings-font-family:   "Space Grotesk", $font-family-sans-serif !default;
+
+$font-size-root:    17px;
+$headings-font-weight: 600;
+$headings-line-height: 1.25;
+$line-height-base:  1.65;
+
+$purple-950: #150B2E;
+$purple-900: #241046;
+$purple-800: #2F1760;
+$purple-700: #40248A;
+$purple-600: #5B35B8;
+$purple-500: #7551D4;
+$purple-400: #9B7EE6;
+$purple-300: #C3B0F1;
+$purple-200: #E0D6F8;
+$purple-100: #F0EBFC;
+
+$gold:   #F0B84D;
+$nebula: #E97BC0;
+
+$primary:   $purple-400;
+$secondary: #A79FC0;
+$body-bg:   #14101F;
+$body-color: #E8E4F3;
+$link-color: #B79BF5;
+$link-hover-color: #D6C6FF;
+$border-color: #332A4D;
+$border-radius: 0.6rem;
+$border-radius-lg: 0.9rem;
+$border-radius-sm: 0.4rem;
+
+$navbar-bg: #1B1430;
+$navbar-fg: #E8E4F3;
+$navbar-hl: $gold;
+
+$sidebar-bg: #1A1529;
+$sidebar-fg: #D6D0E6;
+$sidebar-hl: #C3B0F1;
+
+$footer-bg: #100D1A;
+$footer-fg: #948CAD;
+
+$toc-color: #A79FC0;
+$toc-active-border: $purple-400;
+$toc-font-size: 0.85rem;
+
+$code-color: #C3B0F1;
+$code-bg: rgba(117, 81, 212, 0.18);
+$code-block-bg: #1C1730;
+$code-block-border-left: $purple-500;
+
+$callout-color-note: $purple-400;
+$callout-color-tip: #4FC2B0;
+$callout-color-caution: $gold;
+$callout-color-warning: #E68A56;
+$callout-color-important: $nebula;
+
+/*-- scss:rules --*/
+
+:root {
+  --sx-bg:            #14101F;
+  --sx-surface:       #1E1830;
+  --sx-surface-alt:   #1A1529;
+  --sx-ink:           #E8E4F3;
+  --sx-ink-muted:     #A79FC0;
+  --sx-ink-faint:     #857E9C;
+  --sx-border:        #332A4D;
+  --sx-border-strong: #493C6B;
+
+  --sx-primary:       #B79BF5;
+  --sx-primary-deep:  #D6C6FF;
+  --sx-primary-soft:  rgba(117, 81, 212, 0.16);
+  --sx-space:         #1B1430;
+  --sx-space-deep:    #100D1A;
+
+  --sx-gold:          #F0B84D;
+  --sx-nebula:        #E97BC0;
+
+  --sx-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --sx-shadow-md: 0 4px 10px rgba(0, 0, 0, 0.45), 0 12px 28px rgba(0, 0, 0, 0.35);
+  --sx-shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.45);
+
+  --sx-hero-veil: linear-gradient(180deg, rgba(10, 6, 22, 0.74) 0%, rgba(20, 11, 40, 0.86) 55%, rgba(16, 13, 26, 0.97) 100%);
+}

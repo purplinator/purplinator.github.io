@@ -1,0 +1,173 @@
+---
+title: "Choosing a Programming Language"
+subtitle: "Short answer: it matters less than starting"
+description: "What actually differs between Python, C, Fortran, Java, JavaScript, Rust and Go — and why the choice matters far less than most beginners think."
+order: 2
+categories: [Foundations]
+
+# Required on any page with {pyodide} cells. Quarto picks a document's engine
+# from its own front matter before _metadata.yml is merged, so this cannot be
+# inherited. Without it Quarto tries to run the cells with Jupyter at build time.
+engine: markdown
+---
+
+Python is my language of choice. But in my opinion, choosing which language to
+start with is far less important than simply starting.
+
+Moving between programming languages means learning new words, sure. It does
+not mean relearning how computers handle information. The logic underneath
+computer science is essentially a form of math, and concepts like multiplication
+and addition work just fine even if we change bases or change how we write them
+down.
+
+## An example of what actually changes
+
+Python makes a lot of assumptions for you. If you want to store a number to use
+later, you tell it `x = 5` and it runs without complaint. Python sees a whole
+number on its own and assumes it is an integer[^int]. It handles the memory and
+the background categorisation for you.
+
+[^int]: In math terms, an **integer** is a number with no decimal part — a whole
+number. It can be positive, negative, or zero.
+
+C does not make the same assumptions. Put `x = 5` into C and it breaks. C
+assumes nothing about what `x` is supposed to be, so it has no idea how much
+memory to give it. You need to say explicitly that `x` is an integer:
+
+``` c
+int x = 5;
+```
+
+And then it handles it no problem.
+
+The logic of storing and manipulating data is the same in both cases. The
+language used to describe it changed. Learning the *logic* of computers is
+usually the hardest part for people, and transitioning to another language
+afterwards is nowhere near as difficult.
+
+That said, the language you begin with often goes hand in hand with what you
+want to accomplish. Here is the honest version of the trade-offs.
+
+## The languages
+
+::: {.panel-tabset}
+
+### Python
+
+**Good**
+
+- Industry standard for AI, machine learning, and data science
+- Excellent data handling and analysis (its packages run highly optimised C and
+  Fortran underneath)
+- Very beginner-friendly
+- Makes lots of assumptions, so it handles memory for you
+- An enormous ecosystem of packages written by other people
+
+**Bad**
+
+- Slow execution speed
+- Whitespace matters
+- Can hide its inner workings, which makes performance problems harder to debug
+- Makes lots of assumptions, so you have less manual control
+
+### C / C++
+
+**Good**
+
+- Unmatched processing speed and precise memory control
+- Runs on essentially every piece of hardware that exists
+- Industry standard for systems programming and hardware integration
+- C++ in particular is the standard for game development (Unreal Engine)
+
+**Bad**
+
+- Complex syntax
+- You have to understand manual memory management
+- Assumes very little, so you build everything explicitly
+
+### Fortran
+
+**Good**
+
+- Extremely fast and efficient for heavy numerical arrays and complex math
+- Heavily used in scientific computing and supercomputing
+- Explicit control over memory handling
+- Decades of optimised math libraries to pull from
+
+**Bad**
+
+- Very old
+- You need to understand memory handling explicitly
+- Not suited to general-purpose programming or modern user interfaces
+
+### Java / C#
+
+**Good**
+
+- Industry standards for large corporate application development
+- Highly general-purpose — they power everything from mobile apps to heavy
+  enterprise servers
+- Object-oriented, which scales well across large teams
+- C# is the language of Unity for game development
+
+**Bad**
+
+- Verbose syntax that requires a lot of boilerplate
+- Slower startup times and higher memory overhead than C or C++
+
+### JavaScript / TypeScript
+
+**Good**
+
+- Industry standard for web development
+- Runs natively in web browsers
+- Full-stack development is possible in one language, front-end and back-end
+- Massive industry presence and community
+- TypeScript adds strict typing rules that prevent messy errors in large
+  projects
+
+**Bad**
+
+- Large, complex dependency trees
+- Plain JavaScript is prone to runtime errors
+
+### Rust / Go
+
+**Good**
+
+- Industry standard for microservices and modern cloud infrastructure
+- Rust can be extremely fast, comparable to C, and guarantees memory safety
+- Go is designed to be easy to learn and handles thousands of simultaneous
+  tasks effortlessly
+
+**Bad**
+
+- Rust is notoriously difficult to learn
+- Go is extremely verbose, and lacks certain advanced features, so you end up
+  writing repetitive code
+
+:::
+
+## So which one?
+
+Do you want to work in data analysis or AI? **Python.**
+
+Game development? **C++ or C#.**
+
+Do you want to understand the ins and outs of how a computer handles
+information? **C.**
+
+Do you want to hang with the old computational physicists and complain about
+how slow Python is? **Fortran.**
+
+Full-stack or web development? **JavaScript/TypeScript.**
+
+A phone app? **Java.**
+
+Rust and Go are new enough that I honestly don't know much about them, but if
+you want to dive into that territory, go for it.
+
+::: {.callout-note appearance="simple"}
+And if you don't know what you want to do yet, I will make it simple: start
+with Python. Then go to [Lesson 1](03-python-basics.qmd).
+:::
