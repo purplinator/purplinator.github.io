@@ -1,0 +1,25 @@
+[
+  {
+    "listing": "/teaching/python/index.html",
+    "items": [
+      "/teaching/python/00-what-is-a-programming-language.html",
+      "/teaching/python/01-how-computers-work.html",
+      "/teaching/python/02-choosing-a-language.html",
+      "/teaching/python/03-python-basics.html"
+    ]
+  },
+  {
+    "listing": "/teaching/labs/index.html",
+    "items": [
+      "/teaching/labs/01-uncertainty.html"
+    ]
+  },
+  {
+    "listing": "/teaching/math/index.html",
+    "items": []
+  },
+  {
+    "listing": "/teaching/physics/index.html",
+    "items": []
+  }
+]

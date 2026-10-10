@@ -1,256 +1,607 @@
 [
   {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
+    "objectID": "teaching/python/index.html",
+    "href": "teaching/python/index.html",
+    "title": "Python from Scratch",
     "section": "",
-    "text": "This is where I will discuss my research.",
-    "crumbs": [
-      "Research",
-      "Research Home"
-    ]
-  },
-  {
-    "objectID": "research.html#lvm-investigations",
-    "href": "research.html#lvm-investigations",
-    "title": "Research",
-    "section": "",
-    "text": "This is where I will discuss my research.",
-    "crumbs": [
-      "Research",
-      "Research Home"
-    ]
-  },
-  {
-    "objectID": "lvm_research.html",
-    "href": "lvm_research.html",
-    "title": "Build in progress",
-    "section": "",
-    "text": "Build in progress",
-    "crumbs": [
-      "Research",
-      "Large Megallanic Cloud"
-    ]
-  },
-  {
-    "objectID": "tutorial_code.html",
-    "href": "tutorial_code.html",
-    "title": "Learning About Code",
-    "section": "",
-    "text": "Writing code can be surprisingly simple.",
+    "text": "Most programming tutorials start by having you type something and promising it will make sense later. That works for some people. For everyone else it produces a year of copying code that runs without any idea why.\nThis series takes the other route. The first three pages are foundations and contain no Python at all — they are about what a programming language is, what a computer is physically doing when it runs one, and how to pick a language in the first place. Once that is in place, the syntax stops being arbitrary and starts being obvious.",
     "crumbs": [
       "Teaching",
-      "Coding Tutorials"
+      "Python from Scratch"
     ]
   },
   {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching Information",
-    "section": "",
-    "text": "I am a strong believer that any student can learn from the right teacher. I have had many, many conversations with students whose biggest struggle often comes down to a disconnect between the teacher (or professor) and the student. The relationship between students and teachers often times reminds me of Plato’s The Cave. The teacher is trying to introduce the student to the teacher’s world, but the student is viewing the teacher’s world through the lens of the student’s own understanding of the world. Each step is a breach into the student’s understanding of the world, and the wrong guide may struggle to help them. Additionally, my experience in teaching has taught me that the teacher is also only capable of interpreting the world from their own perspective, and the student is also attempting to introduce the teacher into the student’s view of the world. Perhaps that is just an analogy for communication in general, but it resonates with me as an apt way to describe the difficulty in being both the teacher and the student. Both are captives to their own perspectives.\nWe cannot meet the needs of every student, and we cannot force every student to put in effort, but we can make a difference.",
+    "objectID": "teaching/python/index.html#the-lessons",
+    "href": "teaching/python/index.html#the-lessons",
+    "title": "Python from Scratch",
+    "section": "The lessons",
+    "text": "The lessons\n\n\n\n\n\n\n\nWhat Is a Programming Language?\n\n\n\nFoundations\n\n\n\nNo code at all. Just the idea that a programming language is a very literal translator — which turns out to explain almost every error message you will ever see.\n\n\n\n\n\n\n\n\n\nHow Computers Actually Work\n\n\n\nFoundations\n\n\n\nStarting from a flashlight and a dog: what a bit really is, why information has a measurable size, and how stacking logic gates gets you a computer.\n\n\n\n\n\n\n\n\n\nChoosing a Programming Language\n\n\n\nFoundations\n\n\n\nWhat actually differs between Python, C, Fortran, Java, JavaScript, Rust and Go — and why the choice matters far less than most beginners think.\n\n\n\n\n\n\n\n\n\nLesson 1: Python Basics\n\n\n\nPython\n\nLesson\n\n\n\nThe first lesson with actual code. How to run the interactive cells, what a package is, and how Python stores a value so you can use it later.\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Teaching",
-      "Teaching Philosophy"
+      "Python from Scratch"
     ]
   },
   {
-    "objectID": "teaching.html#teaching-philosophy",
-    "href": "teaching.html#teaching-philosophy",
-    "title": "Teaching Information",
-    "section": "",
-    "text": "I am a strong believer that any student can learn from the right teacher. I have had many, many conversations with students whose biggest struggle often comes down to a disconnect between the teacher (or professor) and the student. The relationship between students and teachers often times reminds me of Plato’s The Cave. The teacher is trying to introduce the student to the teacher’s world, but the student is viewing the teacher’s world through the lens of the student’s own understanding of the world. Each step is a breach into the student’s understanding of the world, and the wrong guide may struggle to help them. Additionally, my experience in teaching has taught me that the teacher is also only capable of interpreting the world from their own perspective, and the student is also attempting to introduce the teacher into the student’s view of the world. Perhaps that is just an analogy for communication in general, but it resonates with me as an apt way to describe the difficulty in being both the teacher and the student. Both are captives to their own perspectives.\nWe cannot meet the needs of every student, and we cannot force every student to put in effort, but we can make a difference.",
+    "objectID": "teaching/python/index.html#how-to-use-this",
+    "href": "teaching/python/index.html#how-to-use-this",
+    "title": "Python from Scratch",
+    "section": "How to use this",
+    "text": "How to use this\nGo in order if you are starting fresh. Skip to Lesson 1 if you have written code before and just want Python.\nDo not read it like a book. The cells are there because reading about a loop teaches you very little and running one teaches you a lot. When a cell shows you something, change a number in it and run it again to see what breaks. That is the whole method.",
     "crumbs": [
       "Teaching",
-      "Teaching Philosophy"
+      "Python from Scratch"
     ]
   },
   {
-    "objectID": "teaching.html#coding-tutorials",
-    "href": "teaching.html#coding-tutorials",
-    "title": "Teaching Information",
-    "section": "Coding Tutorials",
-    "text": "Coding Tutorials",
-    "crumbs": [
-      "Teaching",
-      "Teaching Philosophy"
-    ]
-  },
-  {
-    "objectID": "teaching.html#physics-problem-tutorials",
-    "href": "teaching.html#physics-problem-tutorials",
-    "title": "Teaching Information",
-    "section": "Physics Problem Tutorials",
-    "text": "Physics Problem Tutorials",
-    "crumbs": [
-      "Teaching",
-      "Teaching Philosophy"
-    ]
-  },
-  {
-    "objectID": "teaching.html#math-lessons",
-    "href": "teaching.html#math-lessons",
-    "title": "Teaching Information",
-    "section": "Math Lessons",
-    "text": "Math Lessons",
-    "crumbs": [
-      "Teaching",
-      "Teaching Philosophy"
-    ]
-  },
-  {
-    "objectID": "lvm_code_docs.html",
-    "href": "lvm_code_docs.html",
-    "title": "Code Documentation",
-    "section": "",
-    "text": "Code Documentation",
-    "crumbs": [
-      "Research",
-      "Code Docs"
-    ]
-  },
-  {
-    "objectID": "code_choose_language.html",
-    "href": "code_choose_language.html",
+    "objectID": "teaching/python/02-choosing-a-language.html",
+    "href": "teaching/python/02-choosing-a-language.html",
     "title": "Choosing a Programming Language",
     "section": "",
-    "text": "Python is my language of choice. In my opinion, choosing a language to start learning how to operate in is much less important than simply starting to learn. Going between different programming languages requires learning new words, sure, but the logic behind how computers handle information does not vary wildly. The logic behind computer science is essentially a form of math, and logical concepts such as multiplication and addition both work just fine even if we change bases or how we represent them.\nExample:\nPython makes a lot of assumptions for you. If you want to store a number to use later, you simply tell it: x = 5, and it will run that no problem. Python sees a whole number on its own and assumes that it is an integer1. It handles the memory and background categorization for you.\nC does not make the same assumptions that Python does. If you put x = 5 into C, it will break. C assumes nothing about what x is supposed to be, so it doesn’t know how much memory to give it. You need to explicitly tell it that x is an integer by writing int x = 5;, and it will handle it no problem.\nThe logic of storing and manipulating data is a simple process, but the language used to describe it changes. Learning the logic of computers is often the hardest part for people, and transitioning to another language after that is not nearly as difficult. That being said, choosing a language to begin with often goes hand-in-hand with what you want to accomplish.\n\n\n\nPython\n+ Industry standard for AI, machine learning, and data science\n+ Excellent data handling/analysis ability (uses packages that run highly optimized C/Fortran code in the background)\n+ Very beginner-friendly\n+ Makes lots of assumptions (handles memory for you)\n+ Tons of useful packages created by others\n- Slow execution speed\n- Whitespace matters\n- Can hide the inner workings, making performance issues harder to debug\n- Makes lots of assumptions (less manual control) \n\n\nC or C++\n+ Unmatched processing speed and precise memory control\n+ Can run on pretty much every piece of hardware\n+ Industry standard for systems programming and hardware integration\n+ C++ in particular is the standard for game development (Unreal Engine)\n- Complex syntax\n- Need to understand manual memory handling\n- Assumes very little (you have to build everything explicitly) \n\n\nFortran\n+ Extremely fast and efficient for heavy numerical arrays and complex math\n+ Tons of use in scientific computing and supercomputing\n+ Can explicitly manage memory handling\n+ Decades and decades of optimized math libraries to pull from \n- Super old\n- Need to explicitly understand memory handling\n- Not suited for general-purpose programming or modern UX \n\n\nJava and C#\n+ Industry standards for massive corporate application development\n+ Highly general-purpose (they power everything from mobile apps to heavy enterprise servers)\n+ Object-oriented, making them scalable for large teams\n+ C# for game development (Unity) \n- Syntax is verbose (requires a lot of boilerplate code)\n- Can have slower startup times and higher memory overhead than C/C++ \n\n\nJavascript / Typescript\n+ Industry standard for web development\n+ Runs natively in web browsers\n+ Full-stack development possible (one language for front-end and back-end)\n+ Massive industry and community\n+ TypeScript adds strict rules (types) to prevent messy errors in large projects\n- Large, complex dependency trees\n- Vanilla JavaScript can be prone to runtime errors \n\n\nRust and Go\n+ Industry standard for Web3, microservices, and modern cloud infrastructure\n+ Rust can be extremely fast (comparable to C) and guarantees memory safety\n+ Go is designed to be easy to learn and handles thousands of simultaneous tasks effortlessly \n- Rust is notoriously difficult to learn\n- Go syntax is extremely verbose (requires writing repetitive code because it lacks certain advanced features) \n\n\n\nDo you want to work in data analysis or AI? Choose Python. Do you want to work in game development? Choose either C++ or C#. Do you want to delve into the ins and outs of how a computer handles information? Choose C. Do you want to be able to hang with all of the old computational physicists and complain about how slow Python is? Choose Fortran. Do you want to become a full-stack or web developer? Choose Javascript/Typescript. Do you want to make a phone app? Choose Java. Rust and Go are so new that I honestly don’t know much about them, but if you want to dive into those new territories, go for it!\nIf you don’t know what you want to do yet, then I’ll make it simple for you. Just start with Python.",
+    "text": "Python is my language of choice. But in my opinion, choosing which language to start with is far less important than simply starting.\nMoving between programming languages means learning new words, sure. It does not mean relearning how computers handle information. The logic underneath computer science is essentially a form of math, and concepts like multiplication and addition work just fine even if we change bases or change how we write them down.",
     "crumbs": [
       "Teaching",
-      "Coding Tutorials",
-      "Choosing a Language"
+      "Python from Scratch",
+      "Choosing a Programming Language"
     ]
   },
   {
-    "objectID": "code_choose_language.html#footnotes",
-    "href": "code_choose_language.html#footnotes",
+    "objectID": "teaching/python/02-choosing-a-language.html#an-example-of-what-actually-changes",
+    "href": "teaching/python/02-choosing-a-language.html#an-example-of-what-actually-changes",
+    "title": "Choosing a Programming Language",
+    "section": "An example of what actually changes",
+    "text": "An example of what actually changes\nPython makes a lot of assumptions for you. If you want to store a number to use later, you tell it x = 5 and it runs without complaint. Python sees a whole number on its own and assumes it is an integer1. It handles the memory and the background categorisation for you.\nC does not make the same assumptions. Put x = 5 into C and it breaks. C assumes nothing about what x is supposed to be, so it has no idea how much memory to give it. You need to say explicitly that x is an integer:\nint x = 5;\nAnd then it handles it no problem.\nThe logic of storing and manipulating data is the same in both cases. The language used to describe it changed. Learning the logic of computers is usually the hardest part for people, and transitioning to another language afterwards is nowhere near as difficult.\nThat said, the language you begin with often goes hand in hand with what you want to accomplish. Here is the honest version of the trade-offs.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "Choosing a Programming Language"
+    ]
+  },
+  {
+    "objectID": "teaching/python/02-choosing-a-language.html#the-languages",
+    "href": "teaching/python/02-choosing-a-language.html#the-languages",
+    "title": "Choosing a Programming Language",
+    "section": "The languages",
+    "text": "The languages\n\nPythonC / C++FortranJava / CJavaScript / TypeScriptRust / Go\n\n\nGood\n\nIndustry standard for AI, machine learning, and data science\nExcellent data handling and analysis (its packages run highly optimised C and Fortran underneath)\nVery beginner-friendly\nMakes lots of assumptions, so it handles memory for you\nAn enormous ecosystem of packages written by other people\n\nBad\n\nSlow execution speed\nWhitespace matters\nCan hide its inner workings, which makes performance problems harder to debug\nMakes lots of assumptions, so you have less manual control\n\n\n\nGood\n\nUnmatched processing speed and precise memory control\nRuns on essentially every piece of hardware that exists\nIndustry standard for systems programming and hardware integration\nC++ in particular is the standard for game development (Unreal Engine)\n\nBad\n\nComplex syntax\nYou have to understand manual memory management\nAssumes very little, so you build everything explicitly\n\n\n\nGood\n\nExtremely fast and efficient for heavy numerical arrays and complex math\nHeavily used in scientific computing and supercomputing\nExplicit control over memory handling\nDecades of optimised math libraries to pull from\n\nBad\n\nVery old\nYou need to understand memory handling explicitly\nNot suited to general-purpose programming or modern user interfaces\n\n\n\nGood\n\nIndustry standards for large corporate application development\nHighly general-purpose — they power everything from mobile apps to heavy enterprise servers\nObject-oriented, which scales well across large teams\nC# is the language of Unity for game development\n\nBad\n\nVerbose syntax that requires a lot of boilerplate\nSlower startup times and higher memory overhead than C or C++\n\n\n\nGood\n\nIndustry standard for web development\nRuns natively in web browsers\nFull-stack development is possible in one language, front-end and back-end\nMassive industry presence and community\nTypeScript adds strict typing rules that prevent messy errors in large projects\n\nBad\n\nLarge, complex dependency trees\nPlain JavaScript is prone to runtime errors\n\n\n\nGood\n\nIndustry standard for microservices and modern cloud infrastructure\nRust can be extremely fast, comparable to C, and guarantees memory safety\nGo is designed to be easy to learn and handles thousands of simultaneous tasks effortlessly\n\nBad\n\nRust is notoriously difficult to learn\nGo is extremely verbose, and lacks certain advanced features, so you end up writing repetitive code",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "Choosing a Programming Language"
+    ]
+  },
+  {
+    "objectID": "teaching/python/02-choosing-a-language.html#so-which-one",
+    "href": "teaching/python/02-choosing-a-language.html#so-which-one",
+    "title": "Choosing a Programming Language",
+    "section": "So which one?",
+    "text": "So which one?\nDo you want to work in data analysis or AI? Python.\nGame development? C++ or C#.\nDo you want to understand the ins and outs of how a computer handles information? C.\nDo you want to hang with the old computational physicists and complain about how slow Python is? Fortran.\nFull-stack or web development? JavaScript/TypeScript.\nA phone app? Java.\nRust and Go are new enough that I honestly don’t know much about them, but if you want to dive into that territory, go for it.\n\n\n\n\n\n\nAnd if you don’t know what you want to do yet, I will make it simple: start with Python. Then go to Lesson 1.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "Choosing a Programming Language"
+    ]
+  },
+  {
+    "objectID": "teaching/python/02-choosing-a-language.html#footnotes",
+    "href": "teaching/python/02-choosing-a-language.html#footnotes",
     "title": "Choosing a Programming Language",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nIn math terms, an integer is a number that has no decimal (a whole number is a type of integer). It can be positive, negative, or even 0.↩︎",
+    "text": "Footnotes\n\n\nIn math terms, an integer is a number with no decimal part — a whole number. It can be positive, negative, or zero.↩︎",
     "crumbs": [
       "Teaching",
-      "Coding Tutorials",
-      "Choosing a Language"
+      "Python from Scratch",
+      "Choosing a Programming Language"
     ]
   },
   {
-    "objectID": "code_computers.html",
-    "href": "code_computers.html",
-    "title": "The Basics: How Computers Work",
+    "objectID": "teaching/python/00-what-is-a-programming-language.html",
+    "href": "teaching/python/00-what-is-a-programming-language.html",
+    "title": "What Is a Programming Language?",
     "section": "",
-    "text": "The term bit is short for binary digit . It is a system that exists in one of two states: 0 or 1, which gives us the “bi-” in binary .\nIf you are inquisitive, you might ask, “Why exactly 0 and 1?” The truth is, the specific numbers don’t matter as long as we choose exactly two states and stay consistent . For example, physical computer circuits look for two voltage inputs: 0V or 5V . That is still a binary system. We represent bits as 0 or 1 purely for mathematical simplicity .\n\n\nIn daily life, the number 0 is often associated with “nothing” or “off.” By contrast, 1 is clearly “not zero,” representing “something” or “on” .\nIf I asked you, “Is there a dog in your room?” and your answer was “no”, that corresponds to 0 dogs . If your answer was “yes”, that corresponds to at least 1 dog . By this logic, 0 represents the absence of something, and 1 represents the presence of something . This is the heart of a bit’s simplicity .\nWhy does it have to be binary? Why not ternary (0, 1, 2) or quaternary (0, 1, 2, 3)?  The simplest way to evaluate reality is to ask a fundamental question: Does this exist, or not?  There is little room for confusion because both the question and the answer are absolute . This absolute simplicity is vital when we want to stack millions of these questions together to build complex computational structures .",
+    "text": "Think of writing code as providing an explicit set of instructions to a computer. The programming language is an interpreter that takes those instructions and translates them into something the computer can understand. A programming language, in many ways, is exactly that — a language. It has its own syntax, grammar, and vocabulary.",
     "crumbs": [
       "Teaching",
-      "Coding Tutorials",
-      "How Computers Work"
+      "Python from Scratch",
+      "What Is a Programming Language?"
     ]
   },
   {
-    "objectID": "code_computers.html#what-is-a-bit",
-    "href": "code_computers.html#what-is-a-bit",
-    "title": "The Basics: How Computers Work",
-    "section": "",
-    "text": "The term bit is short for binary digit . It is a system that exists in one of two states: 0 or 1, which gives us the “bi-” in binary .\nIf you are inquisitive, you might ask, “Why exactly 0 and 1?” The truth is, the specific numbers don’t matter as long as we choose exactly two states and stay consistent . For example, physical computer circuits look for two voltage inputs: 0V or 5V . That is still a binary system. We represent bits as 0 or 1 purely for mathematical simplicity .\n\n\nIn daily life, the number 0 is often associated with “nothing” or “off.” By contrast, 1 is clearly “not zero,” representing “something” or “on” .\nIf I asked you, “Is there a dog in your room?” and your answer was “no”, that corresponds to 0 dogs . If your answer was “yes”, that corresponds to at least 1 dog . By this logic, 0 represents the absence of something, and 1 represents the presence of something . This is the heart of a bit’s simplicity .\nWhy does it have to be binary? Why not ternary (0, 1, 2) or quaternary (0, 1, 2, 3)?  The simplest way to evaluate reality is to ask a fundamental question: Does this exist, or not?  There is little room for confusion because both the question and the answer are absolute . This absolute simplicity is vital when we want to stack millions of these questions together to build complex computational structures .",
+    "objectID": "teaching/python/00-what-is-a-programming-language.html#learn-the-language-or-hire-a-translator",
+    "href": "teaching/python/00-what-is-a-programming-language.html#learn-the-language-or-hire-a-translator",
+    "title": "What Is a Programming Language?",
+    "section": "Learn the language, or hire a translator",
+    "text": "Learn the language, or hire a translator\nLet’s say you speak English, but you want to communicate with someone who speaks Chinese. There needs to be some way for the two of you to understand each other.\nOne possibility is to learn Chinese well enough to say whatever you need to. That takes a very long time and quite a bit of study. The equivalent for talking to a computer is not learning Chinese — it is learning to flip bits on and off and speak in binary. Binary has a structure very different from most spoken and written languages, so that route is an even greater challenge.\nThe other possibility is to find someone who already speaks Chinese and ask them to translate for you. The catch is that this translator doesn’t understand English perfectly. They understand it in a way that is very literal and very basic. They have no mind of their own to read between the lines, catch connotation, or infer what you meant. To communicate, you have to be exact about the words you choose.\n\n\n\n\n\n\nIt might help to think of a programming language as a child that is only capable of doing things you have taught it to do.\n\n\n\nWant it to know what a banana is? You have to teach it what a banana is. Want it to write its own name? Teach it to write its name. Want it to solve a complicated problem? Teach it how to solve the problem.\nThe advantage of a language like Python is that other people have already figured out how to teach it a great many useful things, and you get to use their work. I am not going to spend my afternoon explaining to Python, in its own terms, how to compute a logarithm. I am going to import NumPy, because somebody else already did.",
     "crumbs": [
       "Teaching",
-      "Coding Tutorials",
-      "How Computers Work"
+      "Python from Scratch",
+      "What Is a Programming Language?"
     ]
   },
   {
-    "objectID": "code_computers.html#what-is-a-bit-really",
-    "href": "code_computers.html#what-is-a-bit-really",
-    "title": "The Basics: How Computers Work",
-    "section": "What is a Bit, Really?",
-    "text": "What is a Bit, Really?\nCalling a bit a “binary digit” doesn’t actually explain its physical nature . A bit is actually a single unit of information .\nThere is an entire field of science called Information Theory that has been evolving for over 160 years . The accelerating technological advancements we have seen since WWII run parallel to breakthroughs in this field . (If you have heard of quantum computers, they rely on qubits, which are simply the quantum mechanical version of bits used in Quantum Information Theory ).\nIn 1867, a famous physicist named James Clerk Maxwell proposed a thought experiment—known as Maxwell’s Demon—to test the second law of thermodynamics . The pursuit of resolving this physics puzzle eventually led scientists to a profound realization: Information is a real, physical quantity . Just as you measure distance in meters, you measure information in bits .\n\nRepresenting Information\nTo exchange or store information, we must encode it into a physical medium .\nPicture someone using a flashlight to transmit messages in Morse code . The photons coming from the flashlight do not inherently possess special properties that carry data . Yet, communication happens because we encode information into the existence (1) and nonexistence (0) of those photons .\nLet’s make a single bit equal to a single unit of Morse code time. Here is how a message might look:\n\n010100000001011101010001110111011100010101011100010000000111010111000101110001011101000101110001110111011100011101011100010\n\nThis sequence translates to “I love karaoke” . Sending that specific pattern required 123 bits .\nDoes this mean the literal concept of loving karaoke has a physical mass of 123 bits? No . The bits do not hold semantic meaning; they only hold the structure of the message . If I send the word “love” to 100 people, it means 100 different things. The scientific information contained in those bits is just the structural arrangement of the word itself, not human emotion .\n\n\nInformation and Entropy\nIn the early 20th century, physicist Leo Szilard helped resolve Maxwell’s Demon by proving that acquiring information inherently requires an expenditure of energy to reduce the entropy of a system .\nEntropy is a measure of the disorder or randomness of a system . Think of flipping 30 water bottles. If all 30 land perfectly upside down on their caps, that is a highly ordered, very low entropy system . If they land randomly scattered, that is a highly disordered, high entropy system (which is statistically far more likely) .\nBecause the scattered bottles are the natural, likely state, it requires physical energy to organize them into the unlikely state of standing on their caps .\nThe information contained in our flashlight signal arises from intentionally arranging the flashes against random chance . Storing or communicating information explicitly requires forcing a system into a lower entropy state. The bits are simply the mathematical way we measure and represent that ordered state .",
+    "objectID": "teaching/python/00-what-is-a-programming-language.html#a-worked-example-the-sandwich",
+    "href": "teaching/python/00-what-is-a-programming-language.html#a-worked-example-the-sandwich",
+    "title": "What Is a Programming Language?",
+    "section": "A worked example: the sandwich",
+    "text": "A worked example: the sandwich\nLet’s watch what happens when we tell this computer translator to “make a peanut butter and jelly sandwich.”\nThe translator will attempt to recognise each word, because literal translation is the only thing it can do:\n\n\nmake — might already be associated with a function like “to create.”\na — a simple word referring to a singular object. Easy syntax to recognise.\npeanut — might already be associated with a type of data or object.\nbutter — might already have a match in memory.\nbutter — may take on a property away from its default definition, based on context.\npeanut combined with butter — recognised as a specific object, “peanut butter.”\nand — a simple logical operator that brings two concepts together.\njelly — might already have an association in memory.\nsandwich — not defined. It has never learned what a sandwich is.\n\n\nThe translator breaks. It does not know what to do, because it does not know what a “sandwich” is. If it is well built, it throws an error:\nError: I don't know what 'sandwich' is.\nWhich is the translator’s way of saying: if you want this statement translated, you need to explicitly define “sandwich” first.\n\nDefining a sandwich\nSo we have to define a sandwich in terms it can already handle. Something like sandwich = food between 2 slices of bread.\nThe translator processes the new definition:\n\n\n= tells the translator we are defining a new term.\nfood is recognised as a broad category of edible items.\nbetween is recognised as a positional relationship.\n2 is easy — the translator is very good with numbers.\nslices is recognised as a term describing parts of something.\nof gives the dependent relationship between two things.\nbread is an object it already knows.\nThe of instructs it to connect “slices” and “bread” into “slices of bread.”\nThe 2 now fixes the exact integer quantity of slices.\nbetween combines the “food” with the “2 slices of bread.”\nIt stores in memory that “sandwich” means “food between 2 slices of bread.”\n\n\n\n\nRunning it again\nNow we can attempt the original statement a second time: “make a peanut butter and jelly sandwich.”\n\n\nmake triggers the creation function.\na sets the quantity to 1.\npeanut butter is recognised as a specific ingredient.\nand links ingredients together.\njelly is recognised as a specific ingredient.\nsandwich is now recognised as the structure “food between 2 slices of bread.”\nThe linked food is placed into the required position of the structure.\nThe whole thing compiles into absolute, literal machine code.\nThe computer executes the machine code and makes a peanut butter and jelly sandwich.\n\n\nPython, C++, Fortran and the rest are all simply translators. Each has its own syntax and rules tied to very specific computer translations, and you can only work inside the framework of the translation it offers.",
     "crumbs": [
       "Teaching",
-      "Coding Tutorials",
-      "How Computers Work"
+      "Python from Scratch",
+      "What Is a Programming Language?"
     ]
   },
   {
-    "objectID": "code_computers.html#introduction-to-logic-gates",
-    "href": "code_computers.html#introduction-to-logic-gates",
-    "title": "The Basics: How Computers Work",
-    "section": "Introduction to Logic Gates",
-    "text": "Introduction to Logic Gates\nWhy does the physics of information matter for programming? Because it allows us to build logic .\nImagine a simple light switch with two positions: Off (0) and On (1) . We establish a rule: If the light is on, you dance. If it is off, you do not dance .\n\nInput 1 (Switch On): Light is on. You dance. \nInput 0 (Switch Off): Light is off. You do not dance. \n\nNow, we introduce a hardware component that intercepts and reverses the electrical signal. When the switch is On (1), it forces the light Off (0).\n\nInput 1 (Switch On): Light is forced Off. You do not dance. \nInput 0 (Switch Off): Light is forced On. You dance. \n\nThis type of signal manipulation is called a Gate . Specifically, this is a NOT Gate because it outputs the exact opposite of its input .\nLet’s try a more complex logical rule using two switches. We construct the circuit so the light only turns on if BOTH switches are flipped On (1, 1) .\n\n0, 0 \\(\\rightarrow\\) Light Off (No dance) \n1, 0 \\(\\rightarrow\\) Light Off (No dance) \n0, 1 \\(\\rightarrow\\) Light Off (No dance) \n1, 1 \\(\\rightarrow\\) Light On (Dance!) \n\nThis is an AND Gate .\nBy combining millions of physical NOT, AND, and OR gates on a silicon chip, we create modern computers . Programming languages were invented simply as a human-readable way to manipulate these logic gates . Code isn’t magic; it is a rigid, physical system of organized logic .",
+    "objectID": "teaching/python/00-what-is-a-programming-language.html#a-note-on-ai-and-vibe-coding",
+    "href": "teaching/python/00-what-is-a-programming-language.html#a-note-on-ai-and-vibe-coding",
+    "title": "What Is a Programming Language?",
+    "section": "A note on AI and vibe-coding",
+    "text": "A note on AI and vibe-coding\nThe rise of vibe-coding1 has tried to circumvent all of this. Unfortunately, at its core, the vast majority of vibe-coding just inserts another translator into the chain. You tell an AI model what you are trying to do, that model translates your objective into code, and the computer’s translator turns that code into machine instructions.\nThis can be genuinely useful — it means you do not have to learn a new programming language to get something built. But it also puts one more system between you and the computer. In the translator analogy, you have hired a second translator who speaks great English and is very good at talking to the first translator.\nThe system works, but it is bounded by two things at once: your ability to communicate with the AI model, and the model’s ability to communicate with both you and the computer. As long as the model is better at this than you are, it lets you build things beyond your current technical ability. The problem is that if you rely on it completely, you will never be able to work beyond the model’s ability to translate for you. Worse, the natural learning process recentres on learning how to interact with AI models, which is time not spent learning the core logic of a programming language.\nIt is also worth remembering that most of these models are controlled by corporations who can change them at any time. They can get worse, become restricted, or move behind a steeper paywall.\n\n\n\n\n\n\nTipThe short version\n\n\n\nIf you are going to use AI models to help write code, approach it as “How do I do this?” rather than “Do this for me.” The first keeps you connected to the concepts at every skill level. The second builds a dependency you cannot see until it fails.",
     "crumbs": [
       "Teaching",
-      "Coding Tutorials",
-      "How Computers Work"
+      "Python from Scratch",
+      "What Is a Programming Language?"
     ]
   },
   {
-    "objectID": "code_computers.html#memory-and-processing",
-    "href": "code_computers.html#memory-and-processing",
-    "title": "The Basics: How Computers Work",
-    "section": "Memory and Processing",
-    "text": "Memory and Processing\nIf information is a physical quantity, how do we store it? In our flashlight example, the information vanished the moment the light turned off .\nTo store information permanently, you need a physical container to hold the system in its low-entropy state so you can leave and come back to it later . This is called memory .\n\nRAM (Random Access Memory): Very fast, temporary memory used by your computer to hold the data it is actively thinking about. When power is lost, the data is lost .\nHDD (Hard Disk Drive): Older, slower storage that uses a magnetic arm to literally write bits onto a spinning metal platter .\nSSD (Solid State Drive): Fast, modern storage with no moving parts . Instead of magnets, it relies on microscopic components called floating-gate transistors to physically trap electrons in a specific pattern, holding onto the data even when the computer is turned off.\n\n\nCPU vs. GPU\nTo execute the logic gates and move this memory around, computers rely on processors .\nThe CPU (Central Processing Unit) is incredibly fast at doing single tasks in a sequential order . If you want to teach a computer to do a kickflip, the CPU learns step-by-step: first what a skateboard is, then how to ride it, then how to ollie, and finally how to kickflip . If it were painting a picture, the CPU is one master artist painting the entire canvas at lightning speed with a single brush .\nThe GPU (Graphics Processing Unit) is slower at single tasks, but excels at parallel processing—doing thousands of calculations at the exact same time . If the GPU were painting the same picture, it is like 5,000 artists painting one dot simultaneously . The GPU is much faster at rendering the final image, but it relies on the CPU to tell it what picture it is supposed to be painting in the first place.",
-    "crumbs": [
-      "Teaching",
-      "Coding Tutorials",
-      "How Computers Work"
-    ]
-  },
-  {
-    "objectID": "code_1_pybasics.html",
-    "href": "code_1_pybasics.html",
-    "title": "Lesson 1: Python Basics",
-    "section": "",
-    "text": "Throughout this coding help there will be boxes of code called cells. The webpage is designed to spin up a little Python system in your browser. Many of these cells are there for you to interact and play around with. There should be an option to Run Cell that you can click or you can use CMD+ENTER on MacOS or CTRL+ENTER on Windows to run the cells. Your cursor has to be inside the cell that you want to run in order for the shortcuts to work. For those of you with experience with Jupyter Notebooks, the SHIFT+ENTER does not make these cells run unfortunately.\nPractice running this cell:\n\n\n\n\n\n\n Notice how the output appeared underneath it. For some cells, I will have an output already in there, like this:",
-    "crumbs": [
-      "Teaching",
-      "Coding Tutorials",
-      "1: Python Basics"
-    ]
-  },
-  {
-    "objectID": "code_1_pybasics.html#running-a-cell",
-    "href": "code_1_pybasics.html#running-a-cell",
-    "title": "Lesson 1: Python Basics",
-    "section": "",
-    "text": "Throughout this coding help there will be boxes of code called cells. The webpage is designed to spin up a little Python system in your browser. Many of these cells are there for you to interact and play around with. There should be an option to Run Cell that you can click or you can use CMD+ENTER on MacOS or CTRL+ENTER on Windows to run the cells. Your cursor has to be inside the cell that you want to run in order for the shortcuts to work. For those of you with experience with Jupyter Notebooks, the SHIFT+ENTER does not make these cells run unfortunately.\nPractice running this cell:\n\n\n\n\n\n\n Notice how the output appeared underneath it. For some cells, I will have an output already in there, like this:",
-    "crumbs": [
-      "Teaching",
-      "Coding Tutorials",
-      "1: Python Basics"
-    ]
-  },
-  {
-    "objectID": "code_1_pybasics.html#importing-packages",
-    "href": "code_1_pybasics.html#importing-packages",
-    "title": "Lesson 1: Python Basics",
-    "section": "Importing Packages",
-    "text": "Importing Packages\nPackages are a way to save us time and effort in coding. If I want to tell the computer to do something, I need to know exactly how to explain it in Python terms. In",
-    "crumbs": [
-      "Teaching",
-      "Coding Tutorials",
-      "1: Python Basics"
-    ]
-  },
-  {
-    "objectID": "code_what_is_language.html",
-    "href": "code_what_is_language.html",
-    "title": "What is a Programming Language?",
-    "section": "",
-    "text": "Think of writing code as providing an explicit set of instructions to a computer. The programming language is an interpreter that takes the code and translates it into something that the computer can understand. A programming language, in many ways, is exactly that—a language. It has its own syntax, grammar, and vocabulary.\nLet’s say you speak English, but you want to communicate with someone who speaks Chinese. In order to communicate, there needs to be some way for the two of you to understand each other. One possibility is for you to simply learn Chinese so well that you can communicate whatever you need to. This kind of approach can take a very long time and requires quite a bit of study. To talk to a computer like this, instead of learning Chinese, you would essentially be learning how to flip bits on and off and speak in binary. Binary has its own structure that is very different from most spoken and written languages and can provide an even greater challenge to learn.\nInstead of learning Chinese to communicate, you can find someone who already speaks Chinese and ask them to translate for you. The problem is, this translator doesn’t understand English perfectly; they understand it in a way that is very literal and basic. The translator also has no mind of their own to read between the lines or understand connotations or implications. In order to communicate, you need to be very exact with the words you choose to say to the translator.\nIt might be helpful to think of a programming language as a child that is only capable of doing things that you teach it to do. Want it to know what a banana is? You need to TEACH it what a banana is. Want it to understand how to write its name? You need to TEACH it to write its name. Want it to solve a complicated problem? You need to TEACH it HOW to solve the problem. The advantage of languages like Python is that other people have often figured out how to teach the language to do some very useful things, and you can utilize what other people have done. I’m not going to spend my time telling the code, in its language, how to compute a logarithm; I’m simply going to import the NumPy package because somebody else has already done that.\nLet’s see how it might work telling this computer translator to “make a peanut butter and jelly sandwich.”\nThe translator will attempt to recognize each word because it can only translate literally:\nThe translator breaks. It doesn’t know what to do because it does not know what a “sandwich” is. If programmed properly, the translator will throw an error: “Error: I don’t know what ‘sandwich’ is.” This is the translator’s way of saying: “If you want your statement translated, you need to explicitly define what a ‘sandwich’ is first.”\nNow, we have to figure out a way to define a sandwich in terms the translator can understand. We can try telling it something like: “‘sandwich’ = food between 2 slices of bread”.\nThe translator will now attempt to process this new definition:\nNow you can attempt to run the original statement again: “make a peanut butter and jelly sandwich”\nPython, C++, Fortran, etc., are all simply translators. They each have their own specific syntax and rules connected to very specific computer translations. You can only work within the framework of these computer/human translations.",
-    "crumbs": [
-      "Teaching",
-      "Coding Tutorials",
-      "What is a Programming Language?"
-    ]
-  },
-  {
-    "objectID": "code_what_is_language.html#footnotes",
-    "href": "code_what_is_language.html#footnotes",
-    "title": "What is a Programming Language?",
+    "objectID": "teaching/python/00-what-is-a-programming-language.html#footnotes",
+    "href": "teaching/python/00-what-is-a-programming-language.html#footnotes",
+    "title": "What Is a Programming Language?",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nVibe-Coding is the name given to the process of generating code and software by instructing an AI in a natural language (like English) to write the code for you.↩︎",
+    "text": "Footnotes\n\n\nVibe-coding is the name given to generating code and software by instructing an AI, in a natural language like English, to write the code for you.↩︎",
     "crumbs": [
       "Teaching",
-      "Coding Tutorials",
-      "What is a Programming Language?"
+      "Python from Scratch",
+      "What Is a Programming Language?"
+    ]
+  },
+  {
+    "objectID": "teaching/philosophy.html",
+    "href": "teaching/philosophy.html",
+    "title": "Teaching Philosophy",
+    "section": "",
+    "text": "I believe any student can learn from the right teacher.\nI have had many, many conversations with students whose biggest struggle came down to a disconnect between them and their instructor. Not ability, not effort — a mismatch in how the two of them were carving up the world.\nThe relationship often reminds me of Plato’s cave. The teacher is trying to bring the student into the teacher’s world, but the student can only see that world through the lens of their own. Every step forward is a small breach in how the student already understands things, and the wrong guide will struggle to help them through it.\nWhat my own teaching has taught me is that the arrow runs both directions. The teacher is also only capable of interpreting the world from inside their own perspective, and the student is also, constantly, trying to pull the teacher into theirs. Perhaps that is just an analogy for communication in general. But it strikes me as an apt description of the specific difficulty of being both the teacher and the student at once. Both are captives of their own viewpoint.\nThat framing changes what the job is. If the gap is a translation problem, then the work is not repeating the explanation louder — it is finding out which language the student already speaks and building the explanation out of that. A student who understands how a bank account works already understands conservation laws. A student who has argued with an autocorrect already understands most of what makes a compiler frustrating. The material is rarely the obstacle. The route in is.",
+    "crumbs": [
+      "Teaching",
+      "Teaching Philosophy"
+    ]
+  },
+  {
+    "objectID": "teaching/philosophy.html#what-that-looks-like-in-practice",
+    "href": "teaching/philosophy.html#what-that-looks-like-in-practice",
+    "title": "Teaching Philosophy",
+    "section": "What that looks like in practice",
+    "text": "What that looks like in practice\nI ask what you already know before I tell you anything. Not to grade it — to find the bridge.\nI make the reasoning visible, including the dead ends. Textbooks show the path that worked, which quietly implies that the author saw it immediately. They didn’t. Showing the false starts is more honest and more useful.\nI refuse to call anything trivial. “Obviously” and “simply” are words that tell a struggling student the problem is them.\nI let the student be wrong out loud. A misconception you can see is one I can work with. One you are hiding because you are embarrassed will follow you into the next course.",
+    "crumbs": [
+      "Teaching",
+      "Teaching Philosophy"
+    ]
+  },
+  {
+    "objectID": "teaching/philosophy.html#the-limits",
+    "href": "teaching/philosophy.html#the-limits",
+    "title": "Teaching Philosophy",
+    "section": "The limits",
+    "text": "The limits\nWe cannot meet the needs of every student, and we cannot make every student care. I have stopped treating that as a personal failure. But it does not change the math on the ones we can reach, and there are more of those than most people assume.\nWe can make a difference. That is enough reason to keep doing it carefully.",
+    "crumbs": [
+      "Teaching",
+      "Teaching Philosophy"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/index.html",
+    "href": "teaching/labs/index.html",
+    "title": "Lab Help",
+    "section": "",
+    "text": "Most lab confusion is not about the physics. It is about what the instructions are asking for, what counts as a reasonable answer, and what to do when your numbers come out strange. Those questions get asked in every section, every week, so the answers live here.\nEach page below takes one topic and goes through it properly, with the reasoning left in. Start with the one that matches your question. If nothing here covers it, email me at s.stockton@tcu.edu and I will add a page.\n\n\n\n\n\n\n\nMeasurement Uncertainty\n\n\n\nLab\n\n\n\nWhat the uncertainty on a measurement actually means, how to estimate it from your equipment and your data, and how to carry it through a calculation.\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Teaching",
+      "Lab Help"
+    ]
+  },
+  {
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "Teaching Resources",
+    "section": "",
+    "text": "Most of the time, when a student tells me they are bad at physics, what they actually mean is that nobody has ever explained it to them in a language they already speak. That is a translation problem, not an ability problem, and it is fixable.\nSo this section exists to be the explanation I wish someone had handed me: slower where it matters, honest about what is genuinely hard, and never pretending a step is obvious when it isn’t.",
+    "crumbs": [
+      "Teaching",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "teaching/index.html#how-these-are-written",
+    "href": "teaching/index.html#how-these-are-written",
+    "title": "Teaching Resources",
+    "section": "How these are written",
+    "text": "How these are written\nI try to hold to a few rules across everything in this section.\nStart below the starting point. If a lesson needs an idea from three courses ago, the lesson explains that idea rather than assuming it. The Python series opens with information theory for exactly this reason.\nName the hard part out loud. Some things are genuinely difficult. Saying “as you can clearly see” about a step that took me an hour is a disservice, and it teaches students that their confusion is a personal failing.\nGive you something to poke at. Reading about a for loop does very little. Running one, breaking it, and running it again does quite a lot. Code on this site is live wherever it can be.\nKeep the physics attached to something real. Every abstraction started as someone trying to answer a concrete question. That question is usually the best way in.\nThere is more on where this comes from in my teaching philosophy.",
+    "crumbs": [
+      "Teaching",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "teaching/index.html#found-a-mistake",
+    "href": "teaching/index.html#found-a-mistake",
+    "title": "Teaching Resources",
+    "section": "Found a mistake?",
+    "text": "Found a mistake?\nI would genuinely like to know. Email me at s.stockton@tcu.edu — corrections, confusing passages, and “this section lost me at paragraph three” are all useful.",
+    "crumbs": [
+      "Teaching",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Full CV (PDF)  Two-page CV (PDF)"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\n\n\nPh.D. in Physics, astrophysics specialization 2025 – present\n\nTexas Christian University, Fort Worth, Texas\n\nAdvisor: Dr. Kathleen Barger\nExpected 2030\n\n\n\n\nB.S. in Physics, minor in Mathematics 2019 – 2023\n\nUtah Valley University, Orem, Utah\n\nMagna cum laude"
+  },
+  {
+    "objectID": "cv.html#research",
+    "href": "cv.html#research",
+    "title": "Curriculum Vitae",
+    "section": "Research",
+    "text": "Research\nCurrent focus. Emission-line maps of 30 Doradus, the Tarantula Nebula, from SDSS-V Local Volume Mapper integral field spectroscopy: coadded line-flux maps, dust extinction from Balmer decrements, de-reddened maps, and spatially resolved line-ratio diagnostics, aimed at the flow of gas in and around the region.\nAreas.\n\nEmission-line spectroscopy and Balmer decrements\nDust extinction in the Large Magellanic Cloud\nIntegral field spectroscopy data pipelines\nExtracting physical parameters from large spectroscopic data sets\n\n\n\nPositions\n\n\nGraduate Research Assistant 2025 – present\n\nTexas Christian University, Department of Physics and Astronomy\n\nLVM emission-line analysis of 30 Doradus with Dr. Kathleen Barger\n\n\n\n\nNSF Physics REU June 2022 – 2023\n\nUniversity of Michigan, Department of Astronomy\n\nAdvisor: Dr. Eric Bell\nIslands no more: the important mergers of nearby galaxies and their effects. Searched for faint satellites around Andromeda using number-density variations of RGB stars in the PAndAS survey, reduced Gemini follow-up imaging and built photometric catalogs of candidates, then worked on Hubble Space Telescope follow-up. Contributed to the discovery of Andromeda XXXV.\n\n\n\n\nUndergraduate Researcher May 2020 – 2023\n\nUtah Valley University, Department of Physics\n\nAdvisor: Dr. Christian Draper\nEmission Expedition: a spectral survey of 800,000 galaxies. Used the spectra of 792,503 galaxies from SDSS Data Release 16, binned by redshift, to measure how the fraction of galaxies showing each of 17 visible emission lines changes with redshift. Calculated star formation rates and used BPT diagrams to diagnose the origin of the emission."
+  },
+  {
+    "objectID": "cv.html#publications",
+    "href": "cv.html#publications",
+    "title": "Curriculum Vitae",
+    "section": "Publications",
+    "text": "Publications\n\nJose Marco Arias, Eric F. Bell, Katya Gozman, In Sung Jang, Saxon Stockton, Oleg Y. Gnedin, Richard D’Souza, Antonela Monachesi, Jeremy Bailin, David Nidever, and Roelof S. de Jong (2025). “Andromeda XXXV: The Faintest Dwarf Satellite of the Andromeda Galaxy.” The Astrophysical Journal Letters, 982(1), L3. DOI · arXiv:2502.19516 · ADS"
+  },
+  {
+    "objectID": "cv.html#presentations",
+    "href": "cv.html#presentations",
+    "title": "Curriculum Vitae",
+    "section": "Presentations",
+    "text": "Presentations\nPresenting author in every case.\n\nStockton, S. and Bell, E. (2022). Shine faint like an ultra faint dwarf galaxy. REU Symposium 2022, University of Michigan Physics Department, Ann Arbor, Michigan.\nStockton, S. and Bell, E. (2022). Shine faint like an ultra faint dwarf galaxy. Departmental seminar, Utah Valley University Physics Department, Orem, Utah.\nStockton, S. and Draper, C. (2022). Emission Expedition: a spectral survey of 800,000 galaxies. American Astronomical Society 240, Pasadena, California.\nStockton, S. and Draper, C. (2022). Emission Expedition: a spectral survey of 800,000 galaxies. Utah NASA Space Grant Consortium poster session, Logan, Utah.\nStockton, S. and Draper, C. (2022). Large sample analysis of emission and absorption galaxies. Utah Conference for Undergraduate Research, St. George, Utah.\nStockton, S. and Draper, C. (2022). Large sample analysis of emission and absorption galaxies. Departmental seminar, Utah Valley University Physics Department, Orem, Utah."
+  },
+  {
+    "objectID": "cv.html#teaching",
+    "href": "cv.html#teaching",
+    "title": "Curriculum Vitae",
+    "section": "Teaching",
+    "text": "Teaching\n\n\nTeaching Assistant 2025 – present\n\nTexas Christian University, Department of Physics and Astronomy\n\n\n\nAdjunct Instructor 2023 – 2025\n\nUtah Valley University, Department of Physics\n\n\n\nPhysics Tutor 2019 – 2020\n\nUtah Valley University\n\n\n\n\n\n\n\n\n\nCourse\nRole\nSections\n\n\n\n\nPHYS 10154 Physics 1 Lab (TCU)\nTeaching assistant\n2\n\n\nPHYS 2215 Physics for Scientists and Engineers 1 Lab (UVU)\nAdjunct instructor\n7\n\n\nPHYS 2015 College Physics 1 Lab (UVU)\nAdjunct instructor\n8\n\n\nPHYS 2025 College Physics 2 Lab (UVU)\nAdjunct instructor\n1\n\n\nASTR 1040 Introduction to Astronomy (UVU)\nLecturer\n3\n\n\nPHSC 1000 Survey of Physical Sciences (UVU)\nLecturer\n1\n\n\n\nSee Teaching Resources for the materials I have written, including Lab Help for my current sections."
+  },
+  {
+    "objectID": "cv.html#awards-fellowships-and-grants",
+    "href": "cv.html#awards-fellowships-and-grants",
+    "title": "Curriculum Vitae",
+    "section": "Awards, Fellowships, and Grants",
+    "text": "Awards, Fellowships, and Grants\n\n2022: Student Excellence Award, College of Science, UVU · NSF REU, University of Michigan · NSF S-STEM Scholarship · Utah NASA Space Grant · SCULPT Grant · Scholarly Activities SAC Grant · Dean’s List\n2021: NSF S-STEM Scholarship · Dean’s List\n2020: NSF S-STEM Scholarship · Dean’s List"
+  },
+  {
+    "objectID": "cv.html#service-and-outreach",
+    "href": "cv.html#service-and-outreach",
+    "title": "Curriculum Vitae",
+    "section": "Service and Outreach",
+    "text": "Service and Outreach\n\nSociety of Physics Students, UVU chapter president (2020 – 2022)\nUVU Student Association, Physics Department representative (2021 – 2022)\nPhysics Club representative at Club Rush (2020 – 2022)\nPhysics Department representative: Highlighting Women in STEM planning committee, College of Science Open House, and Future Science Student Day (2022); Science vs. Hollywood (2021 – 2022)\n\nProfessional memberships. American Astronomical Society (junior member) · Society of Physics Students"
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "Curriculum Vitae",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\n\n\n\n\n\n\nArea\nTools\n\n\n\n\nLanguages\nPython, C, Fortran\n\n\nScientific Python\nNumPy, SciPy, Astropy, Matplotlib, pandas\n\n\nData\nFITS, integral field spectroscopy cubes, SDSS-V / LVM data products\n\n\nOther\nGit, LaTeX, Quarto, Unix shell"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Saxon Stockton Astrophysics PhD Student Texas Christian University\ns.stockton@tcu.edu github.com/purplinator ORCID 0000-0003-1677-0213\nADS · Google Scholar · arXiv\n\n\nI am an astrophysics researcher specialising in spectral line analysis and pulling physical information out of large data sets. My current work, with Dr. Kathleen Barger at TCU, uses integral field spectroscopy from the Local Volume Mapper to study the gas in and around 30 Doradus, the largest star-forming region in the Large Magellanic Cloud. The spectra become maps: one for every emission line, corrected for the dust in the way, and then read together for what the gas is doing.\nWhat I like most about the work is the part before the result: figuring out what a data set can and cannot tell you, and building something that does not quietly lie about its own uncertainty. I am at my happiest doing an in-depth investigation into a data structure that nobody has looked at closely yet.\nOutside of that, I am an enthusiastic karaoke singer, a gamer, and a traveler."
+  },
+  {
+    "objectID": "about.html#why-this-site-exists",
+    "href": "about.html#why-this-site-exists",
+    "title": "About",
+    "section": "Why this site exists",
+    "text": "Why this site exists\nTwo reasons.\n\nThe first is ordinary: research should be findable, and code nobody can run is not a contribution. The Research section is where I write up what I am working on and document the tools that come out of it.\nThe second is the one I care about more. I like taking high-level physics and breaking it down to a level where anyone can actually engage with it — not a watered-down version, the real thing explained properly. Most people who think they are bad at physics have only ever met explanations written for people who already understood. The Teaching section is my attempt at the other kind, and it is free, permanently, to anyone who wants it."
+  },
+  {
+    "objectID": "about.html#what-i-am-working-on",
+    "href": "about.html#what-i-am-working-on",
+    "title": "About",
+    "section": "What I am working on",
+    "text": "What I am working on\nResearch. Emission-line maps of 30 Doradus from LVM spectroscopy: dust correction from Balmer decrements, then line-ratio diagnostics of the gas.  Read the summary →\nTeaching. Lab Help, short answers for the physics labs I teach, and Python from Scratch, a programming series for people who have never written a line of code. Open the series →\nNext. Mathematics lessons and worked physics problems, both currently outlined and not yet written."
+  },
+  {
+    "objectID": "about.html#get-in-touch",
+    "href": "about.html#get-in-touch",
+    "title": "About",
+    "section": "Get in touch",
+    "text": "Get in touch\nEmail is best: s.stockton@tcu.edu.\nI am glad to hear from students stuck on a problem, anyone who found an error in something I wrote, and anyone interested in the research. Corrections especially — if a lesson here lost you somewhere, that is a bug and I want to know where it happened."
+  },
+  {
+    "objectID": "teaching/labs/01-uncertainty.html",
+    "href": "teaching/labs/01-uncertainty.html",
+    "title": "Measurement Uncertainty",
+    "section": "",
+    "text": "Every lab I teach, no matter how many times I have explained it, I get questions about uncertainty. That is not a complaint. Uncertainty is confusing the first few times you meet it, and a lab period is a bad place to learn it. This page is the answer I would give you if we had the time: the quick version first, for the lab you are doing right now, and the longer story after it for anyone who wants to know why. If you find it confusing, you are in good company.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Measurement Uncertainty"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/01-uncertainty.html#uncertainty-or-error",
+    "href": "teaching/labs/01-uncertainty.html#uncertainty-or-error",
+    "title": "Measurement Uncertainty",
+    "section": "Uncertainty or Error?",
+    "text": "Uncertainty or Error?\n\n\n\n\n\n\nTipThe short version\n\n\n\nError is how far off you were. Uncertainty is how well you know the number. The first needs a right answer to compare against. The second does not.\n\n\nIn daily life the two words are close to interchangeable. In a physics lab they are not, and most of the confusion on this page comes from letting them blur together, so let me pull them apart on purpose.\nStart with “oops.” You say it when you made a mistake: you dropped something, you added where you should have subtracted, you read the wrong row of the table. That is the everyday meaning of error, and it is worth holding onto, because the lab meaning is its well-behaved cousin. In a lab report, error is how far your result landed from the value you expected. If I know my coffee is \\(180^\\circ\\mathrm{F}\\) and my thermometer reads \\(175^\\circ\\mathrm{F}\\), the error is \\(5^\\circ\\mathrm{F}\\). When a lab asks for a percent error, this is the number it wants: the gap between your answer and the accepted one, as a fraction of the accepted one.\nNobody has ever said “oops, I made an uncertainty.” Uncertainty is what you say with “I’m not sure.” Ask me how hot my coffee is when I have no thermometer and I can still answer, but only from what I know: boiling water is \\(212^\\circ\\mathrm{F}\\), the cup has been sitting for a minute, it is still too hot to drink. So, “about \\(190^\\circ\\mathrm{F}\\), give or take \\(20\\).” The give-or-take is the uncertainty. It is not a mistake. It is an honest statement of how well I know the number, and the honest version of my answer is “somewhere between \\(170\\) and \\(210^\\circ\\mathrm{F}\\), probably.”\nSo the two words answer two different questions. Error asks how far off was I? and needs a right answer to compare against. Uncertainty asks how well do I know this? and needs no right answer at all. You can put an uncertainty on a measurement nobody has ever made before. That is the whole distinction.\nOne warning: physicists have been sloppy about this for a century. You will see “error bars” on graphs that are really uncertainty bars, and the Lab Professor’s primer calls the whole subject error analysis. When you read “error” in a textbook, check which question it is answering. On this page, and in my grading, error is the gap and uncertainty is the give-or-take.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Measurement Uncertainty"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/01-uncertainty.html#why-does-uncertainty-matter",
+    "href": "teaching/labs/01-uncertainty.html#why-does-uncertainty-matter",
+    "title": "Measurement Uncertainty",
+    "section": "Why Does Uncertainty Matter?",
+    "text": "Why Does Uncertainty Matter?\nSay we are meeting for dinner and I tell you I will be there at 7. Neither of us thinks I mean 7:00:00.000. I mean around 7, give or take a bit, and the size of that bit is the uncertainty on my arrival time. If it is a few minutes, nobody cares. If it is two hours, you care a great deal, because “7 PM plus or minus 2 hours” means anywhere from 5 to 9, and you are either sitting alone at a table for hours or checking the door every five minutes. The number 7 never changed. What changed is how much the number is worth.\nThat is the job uncertainty does in science. A measurement with no uncertainty is “7 PM” with no way to tell whether it means 7 sharp or “sometime this evening.” The second number tells the reader how hard they are allowed to lean on the first. A number you cannot lean on is not a result.\n\n\n\n\n\n\nNoteUncertainty as confidence\n\n\n\nThere is one more layer, and it is the one that makes the \\(\\pm\\) precise instead of vague. “7 PM \\(\\pm\\) 2 hours” does not mean I am guaranteed to arrive between 5 and 9. It means I am fairly confident I will. When the uncertainty is a proper statistical one (a standard deviation from repeated measurements, which the Lab Professor’s primer walks through), “fairly confident” has a number attached: about a \\(68\\%\\) chance I arrive within one uncertainty of 7, so between 5 and 9; about \\(95\\%\\) within two, between 3 and 11; and \\(99.7\\%\\) within three, between 1 PM and 1 AM.\nNotice what the \\(68\\%\\) means for you. There is roughly a one-in-three chance I show up outside 5 to 9. When are you even supposed to leave the house? Widen the window and I get more confident, but the window gets less useful: “I will almost certainly arrive between 1 PM and 1 AM” is both true and worthless. Every measurement lives in that tension. The honest window and the useful window pull in opposite directions, and the quality of an experiment is how narrow a window it can honestly claim.\nThe uncertainties you estimate in this lab, like half a millimeter on a meter stick, are judgments rather than standard deviations from repeated trials, so do not read the \\(68\\%\\) off them too literally. The idea is the same: the \\(\\pm\\) is a statement of confidence, not a fence.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Measurement Uncertainty"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/01-uncertainty.html#measurement-uncertainty",
+    "href": "teaching/labs/01-uncertainty.html#measurement-uncertainty",
+    "title": "Measurement Uncertainty",
+    "section": "Measurement Uncertainty",
+    "text": "Measurement Uncertainty\nThere are two kinds of uncertainty in these labs, and the quick guide above sorts every column into one or the other. The first is measurement uncertainty: the uncertainty you get for no other reason than that no instrument reads infinitely finely.\nMeasure your desk with a ruler marked only in inches. The best you can do is “about 16 inches,” or if you are careful, “about halfway between 16 and 17.” Either way the inch marks set the limit. You can estimate between them, and that estimate is where your judgment comes in, but you cannot get a hundredth of an inch out of a ruler that only shows inches.\nSwap in a ruler marked in millimeters and the same desk comes out as “405 mm,” or “405.3 mm” if you trust yourself to read between the lines. Better instrument, smaller uncertainty, never zero. Nobody with a meter stick can tell me their desk is \\(405.728467\\) mm long, and a number written that way is not more precise. It is a claim the instrument cannot back up. The instrument sets the floor, and your honesty decides how close to it you get.\nThis is why the quick guide asks what you measured with before it asks anything else. The uncertainty on a measured column is not a formula. It is a judgment about the tool: the finest division you could actually read, or the size of the wobble if the reading would not sit still. I grade that judgment on whether it is reasonable, not on whether it matches a number in my head.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Measurement Uncertainty"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/01-uncertainty.html#calculated-uncertainty",
+    "href": "teaching/labs/01-uncertainty.html#calculated-uncertainty",
+    "title": "Measurement Uncertainty",
+    "section": "Calculated Uncertainty",
+    "text": "Calculated Uncertainty\nThe second kind shows up the moment you use a measurement. Suppose I measure the desk as \\(405 \\pm 1\\) mm on each side and want its area. Whatever the area comes out to, I cannot know it better than I knew the sides. The uncertainty in the lengths has to flow through the multiplication into the area. That is calculated uncertainty, and the two rules in the quick guide are the two ways it flows.\nAdding and subtracting pass along the biggest absolute uncertainty. Picture the total mass in the friction lab: a box whose mass was handed to you as \\(0.11\\) kg, with a bar on top known to \\(\\pm 10\\) g. The total is uncertain by about \\(10\\) g, because the bar’s fuzziness is the only fuzziness there is, and nothing about the box can shrink it. So a sum carries the largest \\(\\delta_a\\) of its pieces.\nMultiplying and dividing pass along the biggest relative uncertainty. Here the honest comparison is percentages, not amounts. Take the Lab Professor’s example: two lengths, \\(20.35 \\pm 0.05\\) m and \\(7.61 \\pm 0.02\\) m. The first has the bigger absolute uncertainty, but as a fraction of itself it is only \\(0.2\\%\\), while the second is \\(0.3\\%\\). Multiply them for an area and it is the \\(0.3\\%\\) that limits the answer, because a \\(0.3\\%\\) fuzz in one factor is a \\(0.3\\%\\) fuzz in the product, however large the product gets. So a product carries the largest \\(\\delta_r\\) of its factors, and you convert back to an amount at the end by multiplying by the product itself: \\(0.0026 \\times 154.86\\ \\mathrm{m^2} \\approx 0.4\\ \\mathrm{m^2}\\).\nWhy percentages for products and amounts for sums? Because of what each operation does to a small nudge. Nudge one term of a sum by \\(0.05\\) and the sum moves by exactly \\(0.05\\): amounts pass straight through addition. Nudge one factor of a product by \\(0.3\\%\\) and the product moves by \\(0.3\\%\\): fractions pass straight through multiplication. The two rules are one rule, “the result inherits the nudge,” written in whichever currency the operation deals in.\n\n\n\n\n\n\nNoteThe honest version\n\n\n\n“Take the biggest one” is a deliberate simplification, and it is the rule this lab uses, so use it. The full treatment, which is in the Lab Professor’s primer and in any statistics course, combines uncertainties in quadrature: for a sum, \\(\\delta_a^2 = \\delta_{a,1}^2 + \\delta_{a,2}^2\\), and the same shape for relative uncertainties in a product. A root of a sum of squares always lands between “the biggest one” and “all of them added up,” so the biggest one is a fair stand-in whenever one input dominates, which in these labs it nearly always does. For anyone who has had calculus, the general rule is \\(\\delta_A^2 = \\sum_i \\left(\\partial A/\\partial X_i\\right)^2 \\delta_{X_i}^2\\), and the lab rules are what it collapses to when one term wins.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Measurement Uncertainty"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/01-uncertainty.html#writing-it-down",
+    "href": "teaching/labs/01-uncertainty.html#writing-it-down",
+    "title": "Measurement Uncertainty",
+    "section": "Writing It Down",
+    "text": "Writing It Down\nA measurement is not finished until it is written as value \\(\\pm\\) uncertainty, with units on both, and the two numbers have to agree about how many digits are real. The convention in these labs: round the uncertainty to one significant figure, then round the value to the same decimal place. The area above came out of the calculator as \\(154.8635\\ \\mathrm{m^2}\\) with \\(\\delta_a = 0.407\\ \\mathrm{m^2}\\). Written honestly, it is \\(154.9 \\pm 0.4\\ \\mathrm{m^2}\\). Every digit past the tenths place was fiction, and the uncertainty is what told you so.\nThis is also where error and uncertainty finally meet. When a lab asks you to compare your result with an accepted value, you now hold both numbers: how far off you were, and how far off you were allowed to be. If the accepted value sits inside your \\(\\pm\\) window, your measurement agrees with it, full stop, even if the percent error is not zero. If it sits outside, something systematic happened, and working out what is the most interesting paragraph you can write in a conclusion. That is the whole point of the second number.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Measurement Uncertainty"
+    ]
+  },
+  {
+    "objectID": "teaching/math/index.html",
+    "href": "teaching/math/index.html",
+    "title": "Mathematics Lessons",
+    "section": "",
+    "text": "Most of the mathematics that gives physics students trouble is not hard. It is unmotivated. Somebody wrote \\(\\nabla \\times \\vect{B}\\) on a board without ever saying what question a curl was invented to answer, and from that point on it is a symbol you manipulate rather than an idea you have.\nThese lessons go the other direction. Each one starts with a concrete problem somebody actually had, follows the reasoning that produced the tool, and only then writes down the notation.",
+    "crumbs": [
+      "Teaching",
+      "Mathematics"
+    ]
+  },
+  {
+    "objectID": "teaching/math/index.html#planned",
+    "href": "teaching/math/index.html#planned",
+    "title": "Mathematics Lessons",
+    "section": "Planned",
+    "text": "Planned\nNothing here is written yet. The rough order I intend to work through:\n\nVectors and coordinates — why we bother with different coordinate systems and how to move between them without losing track of what is physical\nDerivatives as rates — the physics reading of calculus, where \\(\\deriv{x}{t}\\) is a thing you can see rather than a rule you apply\nIntegrals as accumulation — adding up infinitely many small contributions, and why that is the same operation as area\nTaylor series — why “just approximate it as linear” is the single most used move in physics\nLinear algebra — matrices as things that do something to vectors\nDifferential equations — how to read one before you try to solve it\nFourier analysis — decomposing a signal into frequencies, which is most of what spectroscopy is\n\nIf one of these would be useful to you sooner rather than later, tell me at s.stockton@tcu.edu and I will bump it up the list.",
+    "crumbs": [
+      "Teaching",
+      "Mathematics"
+    ]
+  },
+  {
+    "objectID": "teaching/physics/index.html",
+    "href": "teaching/physics/index.html",
+    "title": "Physics Problems",
+    "section": "",
+    "text": "A solution manual tells you the steps. It almost never tells you why anyone would have tried those steps, which is the only part you actually need to learn.\nEvery problem here is worked in the same shape:",
+    "crumbs": [
+      "Teaching",
+      "Physics Problems"
+    ]
+  },
+  {
+    "objectID": "teaching/physics/index.html#planned",
+    "href": "teaching/physics/index.html#planned",
+    "title": "Physics Problems",
+    "section": "Planned",
+    "text": "Planned\nNothing is posted yet. The first sets will come from introductory mechanics and electromagnetism, since those are the courses I see students struggle in most, followed by thermodynamics and modern physics.\n\n\n\n\n\n\nA request. If you are working a problem right now and stuck, send it to me at s.stockton@tcu.edu. Real problems that real students are stuck on are far more useful to write up than whatever I would pick on my own.",
+    "crumbs": [
+      "Teaching",
+      "Physics Problems"
+    ]
+  },
+  {
+    "objectID": "teaching/python/01-how-computers-work.html",
+    "href": "teaching/python/01-how-computers-work.html",
+    "title": "How Computers Actually Work",
+    "section": "",
+    "text": "Programming languages can feel like a mystical thing that doesn’t quite make sense. They are the opposite of that — they are purposeful and follow rigid, logical systems. This lesson is about where those systems come from, because once you can see the machinery, the syntax stops feeling arbitrary.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "How Computers Actually Work"
+    ]
+  },
+  {
+    "objectID": "teaching/python/01-how-computers-work.html#what-is-a-bit",
+    "href": "teaching/python/01-how-computers-work.html#what-is-a-bit",
+    "title": "How Computers Actually Work",
+    "section": "What is a bit?",
+    "text": "What is a bit?\nThe term bit is short for binary digit. It is a system with two states, 0 or 1 — hence the “bi-” in binary.\nIf you are particularly inquisitive, you may ask: why 0 or 1? The answer is that it doesn’t really matter which two values we choose. Any two will do. The point is that we stay consistent. I have built circuits that look for two inputs, 0 V or 5 V, and that is still a binary system. We represent bits as 0 and 1 because of simplicity.\n\nHow are 0 and 1 simple?\nThe number 0 is associated with “nothing” or “off” in most people’s daily lives. 1 is clearly “not zero” — “not nothing,” “something.”\nIf I asked you “Is there a dog in your room?” and your answer was “no,” that corresponds to 0 dogs in your room. If your answer was “yes,” that corresponds to at least 1 dog being there. By this logic, 0 represents the absence of something and 1 represents the presence of something. That is the heart of a bit’s simplicity.\nThat same logic answers the next question you might have. Why binary? Why not trinary (0,1,2), or quaternary (0,1,2,3), or any other -nary you like? Again: simplicity. The simplest way I can think of to represent something is to ask whether it exists. No other details, just the very basic question — does it exist or not? Is there a dog in your room? No (0) or yes (1). There is almost no room for confusion, because both the question and the answer are extremely simple.\nThat simplicity matters enormously once we start building more complicated structures out of it.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "How Computers Actually Work"
+    ]
+  },
+  {
+    "objectID": "teaching/python/01-how-computers-work.html#what-is-a-bit-really",
+    "href": "teaching/python/01-how-computers-work.html#what-is-a-bit-really",
+    "title": "How Computers Actually Work",
+    "section": "What is a bit, really?",
+    "text": "What is a bit, really?\nCalling a bit a binary digit, or a system with two states, doesn’t actually tell us what a bit is. This is the genuinely fascinating part of the science underneath computers.\nA bit is a single unit of information.\nThere is an entire field called Information Theory, which has been developing for roughly 160 years if you start the clock where I do. The accelerating advances in technology since around World War II run parallel to accelerating advances in this field. Some of you have heard of quantum computers relying on qubits without realising that a qubit is simply the quantum version of a bit, used in Quantum Information Theory.\nWithout going into a full history: in 1867, James Clerk Maxwell was trying to poke holes in the second law of thermodynamics — the one saying entropy always increases in a closed system — and came up with a logic test for it. His thought experiment, Maxwell’s Demon, is still somewhat relevant today. It has been solved. Probably. But it persists in some ways.\nThe pursuit of resolving Maxwell’s Demon eventually led to a realisation: information is a real, physical quantity. Just as you measure your height in feet, inches, and centimetres, information is measured in bits.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "How Computers Actually Work"
+    ]
+  },
+  {
+    "objectID": "teaching/python/01-how-computers-work.html#representing-information-with-bits",
+    "href": "teaching/python/01-how-computers-work.html#representing-information-with-bits",
+    "title": "How Computers Actually Work",
+    "section": "Representing information with bits",
+    "text": "Representing information with bits\nTo exchange or store information, we need a way to represent it.\nPicture someone using a flashlight to transmit a message in Morse code. The photons coming out of that flashlight have no special property that lets them carry information. And yet an exchange of information happens, because we encode the message into the existence and nonexistence of those photons. One level deeper, the encoding is actually tied to a change in the entropy of the system — more on that in a moment.\nLet’s represent the flashlight being off as 0 and on as 1, and take the simplest possible case where a single bit equals a single unit of Morse code time. Here is how a message might look1:\n010100000001011101010001110111011100010101011100010000000111010111000101110001011101000101110001110111011100011101011100010\nThat translates to “I love karaoke.” I started and ended the message with a 0 to account for the information associated with having no signal at the beginning and the end. Sent this way, the message took 123 bits.\nDoes that mean the information that I, personally, love karaoke has a physical size of 123 bits? No, not really. The message “I love karaoke” is what we encoded in 123 bits — not the information of what any of that means. It is important here to separate your colloquial sense of “information” as the meaning of something from the scientific definition.\nThe 123 bits I used could easily have been 121 by leaving off the bordering zeros. It could have been 200 if I added more, or if I picked a different representation scheme altogether. Morse himself designed Morse code so that common letters take less time, which is why common letters tend to be built out of dots — a dot costs 1 bit here and a dash costs 3. Rearrange the scheme and the same message might take 500 bits, or 50.\nThe bits do not hold some grandiose, obscure meaning. The information is contained in ordering the bits the specific way we chose. If I send the word “love” to 100 people, it may mean 100 different things to them. The information carried by the bits is not the meaning of the word love. It is specifically just the word love.\n\n\n\n\n\n\nTipTry it: count the bits in your own message\n\n\n\n\n\nRun this cell, then change the message and run it again. This encodes each character as 8 bits of ASCII — a different scheme than the Morse example above, which is exactly the point.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "How Computers Actually Work"
+    ]
+  },
+  {
+    "objectID": "teaching/python/01-how-computers-work.html#information-is-negative-entropy",
+    "href": "teaching/python/01-how-computers-work.html#information-is-negative-entropy",
+    "title": "How Computers Actually Work",
+    "section": "Information is negative entropy",
+    "text": "Information is negative entropy\nIn the early days of resolving Maxwell’s Demon, Leo Szilard developed the idea that knowledge is associated with a dissolution of entropy. Knowledge, and information, become intrinsically related to the energy required to reduce the entropy of a system.\nEntropy is a measure of the order or disorder of a system. One useful way to think about it is how likely a system is to exist by pure randomness.\nFlip 30 water bottles. If all 30 land perfectly upside down on their caps, that final arrangement is a very low entropy system — it is an extremely unlikely outcome. If only a few land on their caps, which is far more likely, it is a high entropy system. More naturally-random results means more entropy.\nHere is the interesting part. You can arrange those 30 bottles by hand, exactly as if they had all been perfectly cap-flipped, and the final system has the same low-entropy state as the one that got there by chance. Either way, there is an energy cost associated with taking the bottles from a high entropy state (more likely to exist) to a low entropy state (less likely to exist).\nThe information carried by a flashing flashlight arises from arranging those flashes in one specific way. It is not really the bits themselves that contain the information — it is the change in entropy away from the likely, more random state. Storing or communicating information explicitly requires forcing a system into a lower entropy state, and it is that state which holds the information. The bits are just how we represent it.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "How Computers Actually Work"
+    ]
+  },
+  {
+    "objectID": "teaching/python/01-how-computers-work.html#intro-to-logic-gates",
+    "href": "teaching/python/01-how-computers-work.html#intro-to-logic-gates",
+    "title": "How Computers Actually Work",
+    "section": "Intro to logic gates",
+    "text": "Intro to logic gates\nWhy does any of this matter? Because now we can start building systems.\nA light switch has two positions: off (0) and on (1). We set a rule: if the light is on, you dance. If the light is off, you don’t.\n\nThe trivial case — the light does what the switch says.\n\n\n\n\n\n\n\nSwitch\nLight\nYou\n\n\n\n\n1\n1\nDance\n\n\n0\n0\nDon’t dance\n\n\n\nNow I am going to put something in the middle to mess with the signal. When the switch is on (1), the light goes off (0). When the switch is off (0), the light comes on (1). This will be familiar to anyone who has lived in a room with two switches controlling the same light.\n\nA NOT gate.\n\n\n\n\n\n\n\nSwitch\nLight\nYou\n\n\n\n\n1\n0\nDon’t dance\n\n\n0\n1\nDance\n\n\n\nMessing with a signal like this is called a gate. This particular one — turning 0 into 1 and 1 into 0 — is a NOT gate. It is a simple logical play on a single bit: do the opposite of what the bit says.\nFrom an electricity standpoint you might reasonably wonder how no signal, meaning no electricity, can possibly turn the light on. In a real circuit there is a separate power source that lets the gate emit a signal when it receives none from the input. Try not to get hung up on it.\nLet’s build some more logic. Two switches now, so two bits. This time the light only turns on when both switches are on.\n\nAn AND gate. It only outputs 1 when it receives 1,1.\n\n\nSwitch A\nSwitch B\nLight\nYou\n\n\n\n\n0\n0\n0\nDon’t dance\n\n\n1\n0\n0\nDon’t dance\n\n\n0\n1\n0\nDon’t dance\n\n\n1\n1\n1\nDance\n\n\n\nThere are a multitude of gates usable in physical circuits and in logic. Complicated combinations of them are what give us modern technology. These same logical sequences are the exact tenets that created programming languages. Your computer “thinks” by manipulating bits and gates, and programming languages were devised as a way for you to do that manipulation without wiring anything.\nThis is why I think anyone diving into programming should understand a little about information theory and computers. Code is not a mystical thing that refuses to make sense. It is the opposite — rigid, purposeful, logical systems all the way down.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "How Computers Actually Work"
+    ]
+  },
+  {
+    "objectID": "teaching/python/01-how-computers-work.html#memory",
+    "href": "teaching/python/01-how-computers-work.html#memory",
+    "title": "How Computers Actually Work",
+    "section": "Memory",
+    "text": "Memory\nNow extend the idea that information is a physical quantity.\nIn the flashlight example, each bit erases the state of the one before it. But what if we could store whether a switch was on or off? Say we have 123 physical switches. We set them into the positions of that message, leave them there, and go do something else. When we come back, the bits are still where we left them.\nThat ability to store information rather than merely transmit it is memory.\nMemory hardware has advanced enormously in the last thirty years, but the principle has not changed: to store information, even temporarily, you need a physical way to contain it. This is one of the real physical limits of a computer, and it is exactly why you cannot just download more RAM.\nRAM (Random Access Memory) is very fast memory designed to hold things temporarily. It is the quick-access memory your programs actually live in, and it will usually be the limiting component when you are programming. Cut the power and it is gone.\nHDD (Hard Disk Drive), now quickly becoming obsolete, uses a spinning metal platter and a little magnetic arm to literally write bits onto the disk.\nSSD (Solid State Drive) is much faster because nothing moves. Instead of magnets it uses microscopic floating-gate transistors, which physically trap electrons in a specific pattern and hold that pattern even with the power off.\nAnything you do on a computer uses memory.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "How Computers Actually Work"
+    ]
+  },
+  {
+    "objectID": "teaching/python/01-how-computers-work.html#cpu-and-gpu",
+    "href": "teaching/python/01-how-computers-work.html#cpu-and-gpu",
+    "title": "How Computers Actually Work",
+    "section": "CPU and GPU",
+    "text": "CPU and GPU\nThere is also a limit on how fast a processor can move that information around, though it is usually less of a roadblock than memory.\nThe CPU (Central Processing Unit) is typically very fast at single, sequential tasks. Say you write a program teaching the computer to do a kickflip. To do a kickflip it first has to learn what a kickflip is, then what a skateboard is, then how to ride one, then how to ollie, then how to kickflip, and then actually do it. A CPU rips through steps like that.\nWhat it is not so fast at is doing many things at once. If you knew exactly how to paint every part of a picture, a CPU would still go paint every individual part of it, spot by spot, with one brush.\nThe GPU (Graphics Processing Unit) is where that changes. A GPU is slower at any single task, but it can do enormous numbers of them simultaneously. Give it the same painting and it picks up 5,000 brushes and paints every spot at once — vastly faster than one brush going spot to spot.\nThe trade-off runs the other way too. The GPU is much slower at learning to do the kickflip, because all those sequential steps still have to happen first, and it relies on the CPU to tell it what it is supposed to be painting in the first place.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "How Computers Actually Work"
+    ]
+  },
+  {
+    "objectID": "teaching/python/01-how-computers-work.html#footnotes",
+    "href": "teaching/python/01-how-computers-work.html#footnotes",
+    "title": "How Computers Actually Work",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nRules for Morse code as encoded here: 0 is no signal · 1 is a dot · 111 is a dash · dots and dashes within a letter are separated by one 0 · letters within a word are separated by three 0 · words are separated by seven 0.↩︎",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "How Computers Actually Work"
+    ]
+  },
+  {
+    "objectID": "teaching/python/03-python-basics.html",
+    "href": "teaching/python/03-python-basics.html",
+    "title": "Lesson 1: Python Basics",
+    "section": "",
+    "text": "The code on this page is live. A small Python interpreter loads into your browser when you open this page — the first cell may take a few seconds while it finishes. Nothing is installed on your machine, and nothing you type here leaves it.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "Lesson 1: Python Basics"
+    ]
+  },
+  {
+    "objectID": "teaching/python/03-python-basics.html#running-a-cell",
+    "href": "teaching/python/03-python-basics.html#running-a-cell",
+    "title": "Lesson 1: Python Basics",
+    "section": "Running a cell",
+    "text": "Running a cell\nThroughout this series there will be boxes of code called cells. This webpage spins up a little Python system in your browser, and many of these cells are here for you to interact with and play around with.\nThere is a Run Code button you can click. You can also put your cursor inside a cell and press Cmd+Enter on macOS or Ctrl+Enter on Windows and Linux. Your cursor has to be inside the cell you want to run for the shortcut to work.\nFor those of you with Jupyter Notebook experience: Shift+Enter does not run these cells, unfortunately.\nPractice on this one:\n\n\n\n\n\n\nNotice that the output appeared underneath it. Some cells will already have their output filled in, like this one:\n\n\n\n\n\n\n\n\n\n\n\n\nEvery cell is yours to break. Change the text, delete a quotation mark, run it again and read the error. Errors are the cheapest way to learn what a language expects, and you cannot damage anything here — refreshing the page puts it all back.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "Lesson 1: Python Basics"
+    ]
+  },
+  {
+    "objectID": "teaching/python/03-python-basics.html#variables",
+    "href": "teaching/python/03-python-basics.html#variables",
+    "title": "Lesson 1: Python Basics",
+    "section": "Variables",
+    "text": "Variables\nA variable is a name attached to a value so you can use it again later. In Python you make one with a single =:\n\n\n\n\n\n\nThe = here does not mean “equals” in the math sense. It means store the thing on the right under the name on the left. This is why a line like x = x + 1 is perfectly sensible in Python and nonsense in algebra.\nPython figures out what kind of value you handed it:\n\n\n\n\n\n\nTry changing one of those values and running it again to see the type change.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "Lesson 1: Python Basics"
+    ]
+  },
+  {
+    "objectID": "teaching/python/03-python-basics.html#importing-packages",
+    "href": "teaching/python/03-python-basics.html#importing-packages",
+    "title": "Lesson 1: Python Basics",
+    "section": "Importing packages",
+    "text": "Importing packages\nPackages save us time and effort. If I want the computer to do something, I need to know exactly how to explain it in Python terms — and somebody has usually explained it already.\nRather than teaching Python how to compute a square root from scratch, I import a package that already knows:\n\n\n\n\n\n\nTwo things happened on that import line.\nimport numpy goes and fetches the NumPy package, which is a large collection of mathematical tools other people have written and tested.\nas np gives it a shorter nickname for the rest of the file. It is purely for convenience — numpy.sqrt(144) would work identically — but np is such a strong convention that other people reading your code will expect it.\n\n\n\n\n\n\nNoteWhich packages you will actually see\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage\nNickname\nWhat it is for\n\n\n\n\nnumpy\nnp\nNumerical arrays and math\n\n\nmatplotlib.pyplot\nplt\nPlotting and figures\n\n\npandas\npd\nTables of data\n\n\nastropy\n—\nUnits, coordinates, and FITS files\n\n\nscipy\n—\nFitting, integration, signal processing\n\n\n\nYou do not need any of these yet. They are here so the names look familiar when they turn up.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "Lesson 1: Python Basics"
+    ]
+  },
+  {
+    "objectID": "teaching/python/03-python-basics.html#your-turn",
+    "href": "teaching/python/03-python-basics.html#your-turn",
+    "title": "Lesson 1: Python Basics",
+    "section": "Your turn",
+    "text": "Your turn\nChange this cell so it prints the circumference of a circle with a radius of your choosing, then run it.\n\n\n\n\n\n\n\n\n\n\n\n\nCautionShow a solution\n\n\n\n\n\nimport numpy as np\n\nradius = 3\n\ncircumference = 2 * np.pi * radius\n\nprint(circumference)\nnp.pi is NumPy’s stored value of \\(\\pi\\). You could type 3.14159 instead, but the package version is more precise and makes the intent obvious to anyone reading it.",
+    "crumbs": [
+      "Teaching",
+      "Python from Scratch",
+      "Lesson 1: Python Basics"
     ]
   }
 ]

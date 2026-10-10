@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Astrophysics PhD student at TCU. Emission-line maps of 30 Doradus in the Large Magellanic Cloud, and teaching resources for people who want the real explanation.">
 
-<title>Saxon Stockton | Astrophysics Portfolio – &lt;strong style='font-size: 1.5em; color: #ECE7F2;'&gt;Saxon Stockton&lt;/strong&gt;</title>
+<title>Saxon Stockton | Astrophysics Research &amp; Teaching – Saxon Stockton</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,16 +37,24 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-306630fe5dadf3803f956144f3abb07d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-1a02480a32cd4b5d5561d780c014b19f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-306630fe5dadf3803f956144f3abb07d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1ee97b86b0e2b131e5e94f130475b711.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2aef359bec548f01cc5e6d0baf3d94a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-c93f7a6e9ef97e5fd1ab4be6bc095a26.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-2aef359bec548f01cc5e6d0baf3d94a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,16 +82,272 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<!-- MathJax configuration, loaded on every page.
+
+     Macros defined here work in any .qmd file without a per-page preamble, so
+     equations stay short to type and consistent across the site. Add new ones
+     to the `macros` block below. -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'ams',
+      macros: {
+        // Units and constants
+        msun:    ['{M_\\odot}'],
+        lsun:    ['{L_\\odot}'],
+        rsun:    ['{R_\\odot}'],
+        kms:     ['{\\,\\mathrm{km\\,s^{-1}}}'],
+        erg:     ['{\\,\\mathrm{erg}}'],
+        angstrom:['{\\,\\text{\\AA}}'],
+        unit:    ['{\\,\\mathrm{#1}}', 1],
+
+        // Common astrophysics shorthand
+        halpha:  ['{\\mathrm{H}\\alpha}'],
+        hbeta:   ['{\\mathrm{H}\\beta}'],
+        ebv:     ['{E(B-V)}'],
+
+        // Vector and operator conveniences
+        vect:    ['{\\mathbf{#1}}', 1],
+        abs:     ['{\\left\\lvert #1 \\right\\rvert}', 1],
+        avg:     ['{\\left\\langle #1 \\right\\rangle}', 1],
+        dd:      ['{\\mathrm{d}}'],
+        deriv:   ['{\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}}', 2],
+        pderiv:  ['{\\frac{\\partial #1}{\\partial #2}}', 2]
+      }
+    },
+    options: {
+      // Let Quarto's own UI (tooltips, code cells) stay untouched by MathJax.
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
+      processHtmlClass: 'mathjax'
+    },
+    chtml: { scale: 1.0, displayAlign: 'center' }
+  };
+</script>
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Saxon Stockton | Astrophysics Research &amp; Teaching">
+<meta property="og:description" content="Astrophysics PhD student at TCU. Emission-line maps of 30 Doradus in the Large Magellanic Cloud, and teaching resources for people who want the real explanation.">
+<meta property="og:image" content="https://saxonstockton.com/images/og-card.jpg">
+<meta property="og:site_name" content="Saxon Stockton">
+<meta name="twitter:title" content="Saxon Stockton | Astrophysics Research &amp; Teaching">
+<meta name="twitter:description" content="Astrophysics PhD student at TCU. Emission-line maps of 30 Doradus in the Large Magellanic Cloud, and teaching resources for people who want the real explanation.">
+<meta name="twitter:image" content="https://saxonstockton.com/images/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="homepage-bg fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/favicon.svg" alt="" class="navbar-logo light-content">
+    <img src="./images/favicon.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Saxon Stockton</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/purplinator" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="mailto:s.stockton@tcu.edu" title="Email" class="quarto-navigation-tool px-1" aria-label="Email"><i class="bi bi-envelope"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
 <!-- main -->
@@ -90,33 +355,147 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<!-- This wrapper creates your dark purple background bubble -->
-<div class="profile-bubble">
-<!-- This grid splits the bubble into two responsive columns -->
-<div class="grid">
-<!-- LEFT COLUMN (Photo and Contact) -->
-<!-- On phones (g-col-12) it takes the full width. On laptops (g-col-md-4) it takes 1/3 of the bubble -->
-<div class="g-col-12 g-col-md-4 text-center">
-<!-- Add your image to your 'images' folder. The built-in bootstrap classes make it a perfect circle with a shadow -->
-<p><img src="images/JLwedding_selfie.jpg" class="rounded-circle shadow-sm img-fluid" style="max-width: 250px; margin-bottom: 15px;"></p>
-<p><strong>Contact</strong><br>
-<a href="mailto:s.stockton@tcu.edu">s.stockton@tcu.edu</a><br>
-GitHub: <a href="https://github.com/purplinator">purplinator</a></p>
+
+<div class="sx-hero">
+<div class="sx-hero__inner">
+<p><a href="images/portrait.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/portrait.jpg" class="sx-hero__portrait img-fluid" alt="Saxon Stockton"></a></p>
+<h1 class="sx-hero__name">
+Saxon Stockton
+</h1>
+<p class="sx-hero__role">
+Astrophysics PhD Student · Texas Christian University
+</p>
+<p class="sx-hero__pitch">
+I pull physics out of starlight. My research maps the glowing gas in and around 30 Doradus, the most active star-forming region in the Local Group, to see what a starburst does to its own galaxy. The rest of this site is my attempt to explain work like that to anyone willing to read it.
+</p>
+<!-- HELD BACK (see .gitignore): first button pointed at research/index.html -->
+<div class="sx-hero__actions">
+<p><a class="sx-btn sx-btn--solid" href="cv.html#research">See the research</a> <a class="sx-btn" href="teaching/index.html">Teaching resources</a> <a class="sx-btn" href="cv.html">CV</a></p>
 </div>
-<!-- RIGHT COLUMN (Bio and Navigation) -->
-<!-- On laptops (g-col-md-8) it takes the remaining 2/3 of the bubble -->
-<section id="saxon-stockton" class="level1 g-col-12 g-col-md-8">
-<h1>Saxon Stockton</h1>
-<p><strong>Astrophysics PhD Student | Texas Christian University</strong></p>
-<p>I am an astophyiscs researcher specializing in spectral line analysis and extracting information from large data sets. My current research focuses is on processing integral field spectroscopy from LVM around the 30 Doradus region of the Large Magellanic Cloud. I am also an enthusiastic karaoke singer, gamer, and traveler.</p>
-<p>I am particularly proficient and interested in providing in-depth investigations into data structures.</p>
-<p><br></p>
-<!-- TABLE OF CONTENTS (Using built-in Bootstrap button classes for a polished look) -->
-<section id="explore-my-work" class="level3">
-<h3 data-anchor-id="explore-my-work">Explore My Work</h3>
-<p><a href="./research.html" class="btn btn-outline-light me-2 mb-2">Research &amp; Projects</a> <a href="./teaching.html" class="btn btn-outline-light me-2 mb-2">Teaching Resources</a> <a href="./cv_page.html" class="btn btn-outline-light me-2 mb-2">Curriculum Vitae</a></p>
-</section>
-</section>
+<p class="sx-hero__contact">
+<a href="mailto:s.stockton@tcu.edu">s.stockton@tcu.edu</a> &nbsp;·&nbsp; <a href="https://github.com/purplinator">github.com/purplinator</a>
+</p>
+</div>
+</div>
+<div class="sx-section">
+<div class="sx-section__inner">
+<p class="sx-section__eyebrow">
+Three ways in
+</p>
+<h2 class="sx-section__title">
+Pick whichever one you came for
+</h2>
+<p class="sx-section__intro">
+Almost everything on this site lives in one of three places. If you are in one of my lab sections, go straight to <a href="teaching/labs/index.html">Lab Help</a>. If you are here from any other class, you want the middle one.
+</p>
+<div class="sx-cards">
+<!-- HELD BACK (see .gitignore): href was research/index.html, footer "Current projects" -->
+<a class="sx-card" href="cv.html#research">
+  <div class="sx-card__icon"><i class="bi bi-stars"></i></div>
+  <h3 class="sx-card__title">Research</h3>
+  <p class="sx-card__text">
+    Emission-line maps of 30 Doradus from SDSS-V LVM spectroscopy, and
+    documentation for the code that produces them.
+  </p>
+  <span class="sx-card__more">Current focus</span>
+</a>
+
+<a class="sx-card" href="teaching/index.html">
+  <div class="sx-card__icon"><i class="bi bi-mortarboard"></i></div>
+  <h3 class="sx-card__title">Teaching Resources</h3>
+  <p class="sx-card__text">
+    Lab help for my physics sections, Python tutorials you can run in the
+    browser, mathematics lessons, and worked physics problems. Free, no
+    account, no paywall.
+  </p>
+  <span class="sx-card__more">Start learning</span>
+</a>
+
+<a class="sx-card" href="cv.html">
+  <div class="sx-card__icon"><i class="bi bi-file-earmark-person"></i></div>
+  <h3 class="sx-card__title">Curriculum Vitae</h3>
+  <p class="sx-card__text">
+    Education, research experience, teaching history, and talks — on the page
+    or as a PDF download.
+  </p>
+  <span class="sx-card__more">Read the CV</span>
+</a>
+</div>
+</div>
+</div>
+<div class="sx-section sx-section--alt">
+<div class="sx-section__inner">
+<p class="sx-section__eyebrow">
+Right now
+</p>
+<h2 class="sx-section__title">
+What I am working on
+</h2>
+<div class="sx-cards  sx-cards--two">
+<!-- HELD BACK (see .gitignore): href was research/01-30dor-emission-lines.html, footer "Read the project" -->
+<a class="sx-card" href="cv.html#research">
+  <span class="sx-chip">In progress</span>
+  <h3 class="sx-card__title">Emission-line maps of 30 Doradus</h3>
+  <p class="sx-card__text">
+    Turning tens of thousands of LVM spectra of the Tarantula Nebula into maps
+    of hydrogen emission, dust, star formation, and ionization, from the
+    nebula out into its outflow.
+  </p>
+  <span class="sx-card__more">Summary on the CV</span>
+</a>
+
+<a class="sx-card" href="teaching/python/index.html">
+  <span class="sx-chip sx-chip--nebula">Writing</span>
+  <h3 class="sx-card__title">Python from Scratch</h3>
+  <p class="sx-card__text">
+    A tutorial series that starts before the code — what a programming language
+    actually is, and what a computer is actually doing — then teaches Python in
+    cells you run right in the page.
+  </p>
+  <span class="sx-card__more">Open the series</span>
+</a>
+</div>
+</div>
+</div>
+<div class="sx-section">
+<div class="sx-section__inner">
+<p class="sx-section__eyebrow">
+New here?
+</p>
+<h2 class="sx-section__title">
+Good places to start
+</h2>
+<div class="sx-cards">
+<a class="sx-card" href="teaching/python/00-what-is-a-programming-language.html">
+  <div class="sx-card__icon"><i class="bi bi-translate"></i></div>
+  <h3 class="sx-card__title">What is a programming language?</h3>
+  <p class="sx-card__text">
+    No code. Just the idea that a language is a very literal translator, and
+    why that explains almost every error message you will ever see.
+  </p>
+  <span class="sx-card__more">Read it</span>
+</a>
+
+<a class="sx-card" href="teaching/python/01-how-computers-work.html">
+  <div class="sx-card__icon"><i class="bi bi-cpu"></i></div>
+  <h3 class="sx-card__title">How computers actually work</h3>
+  <p class="sx-card__text">
+    Bits, entropy, logic gates, and why information is a physical quantity you
+    can measure — starting from a flashlight and a dog.
+  </p>
+  <span class="sx-card__more">Read it</span>
+</a>
+
+<a class="sx-card" href="teaching/philosophy.html">
+  <div class="sx-card__icon"><i class="bi bi-lightbulb"></i></div>
+  <h3 class="sx-card__title">How I think about teaching</h3>
+  <p class="sx-card__text">
+    Why I believe most learning problems are translation problems, and what
+    that means for how these lessons are written.
+  </p>
+  <span class="sx-card__more">Read it</span>
+</a>
+</div>
 </div>
 </div>
 
@@ -125,6 +504,19 @@ GitHub: <a href="https://github.com/purplinator">purplinator</a></p>
 
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -196,7 +588,7 @@ GitHub: <a href="https://github.com/purplinator">purplinator</a></p>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/purplinator\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/saxonstockton\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -524,8 +916,67 @@ GitHub: <a href="https://github.com/purplinator">purplinator</a></p>
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Saxon Stockton · Built with <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="./teaching/">Teaching</a> · <a href="./cv.html">CV</a> · <a href="./about.html">About</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/purplinator">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:s.stockton@tcu.edu">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

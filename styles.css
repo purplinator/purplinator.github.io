@@ -1,175 +1,962 @@
-/* Target the accordion section titles in the sidebar */
-.sidebar-item-container {
-  background-color: #f8f9fa !important;  /* Light grey background */
-  border: 2px solid #5a5a5a !important;  /* Dark grey border */
-  border-radius: 12px !important;        /* Rounds the corners to create a bubble */
-  padding: 5px 10px !important;          /* Adds breathing room inside the bubble */
-  margin-top: 10px !important;           /* Adds space between the bubbles */
-  margin-bottom: 10px !important;
-  transition: all 0.15s ease-in-out !important;
+/* ==========================================================================
+   Saxon Stockton — shared component styles
+
+   Colours are never hard-coded here. Every value reads a --sx-* token that
+   assets/theme-light.scss and assets/theme-dark.scss each define, so one rule
+   below covers both themes.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Page shell
+   --------------------------------------------------------------------------
+   Painting <html> in the deep space colour is what stops Safari on macOS from
+   flashing white at the top and bottom of the page during rubber-band
+   overscroll. The browser paints the html background into that gap, so the
+   gap needs to be a colour we chose.
+   -------------------------------------------------------------------------- */
+html {
+  background-color: var(--sx-space-deep);
+  scroll-behavior: smooth;
 }
 
-/* 1. Change the color of the bubble container on hover */
-.sidebar-item-container:hover {
-  background-color: #FFFFFF !important;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
-  transform: scale(1.1) !important; /* Grows the bubble by 3% */
-  border-color: #4D1979 !important; /* Changes your grey border to dark blue */
-  transform: translateX(4px) !important; /* Pushes the bubble 4 pixels to the right */
-  /* Paints a 6-pixel solid purple ribbon on the inside left edge */
-  box-shadow: inset 6px 0 0 #4d1979 !important;
-  /* Fades from soft purple at the left edge (0%) to standard grey near the right (80%) */
-  /* background: linear-gradient(90deg, #eadaf5 0%, #f8f9fa 80%) !important; */
+body {
+  background-color: var(--sx-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-
-/* 2. Strip Quarto's default hover background from the text inside the bubble */
-.sidebar-item-container:hover .sidebar-link,
-.sidebar-item-container:hover .sidebar-item-toggle,
-.sidebar-item-container:hover .sidebar-item-text {
-  background-color: transparent !important;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
-/* Pull the navbar contents inward from the edges of wide screens */
-.navbar > .container-fluid {
-  max-width: 1800px; /* Adjust this number to match the width of your page */
-  padding-left: 15px;  /* Optional: Add some padding to the left */
-  padding-right: 50px; /* Optional: Add some padding to the right */
+/* Anchored headings should not hide under the sticky navbar. */
+:target { scroll-margin-top: 5rem; }
+
+/* --------------------------------------------------------------------------
+   2. Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 { letter-spacing: -0.015em; }
+
+/* A hairline under every h2 gives long tutorial pages a visible rhythm. */
+#quarto-document-content h2,
+main.content h2 {
+  margin-top: 2.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--sx-border);
 }
 
-.navbar-title {
-  /* Add a subtle shadow just to your name to make it pop against the blue background */
-  text-shadow: 5px 5px 15px rgb(3, 3, 3) !important;
-  
-  /* Horizontal spacing (from the previous step) */
-  padding-right: 15px !important;  
-  margin-right: 5px !important;   
-  
-  /* NEW: Vertical spacing to stretch the line */
-  padding-top: 15px !important;     /* Stretches the line upwards */
-  padding-bottom: 15px !important;  /* Stretches the line downwards */
-  
-  /* The carved line */
-  border-right: 5px solid rgb(0, 0, 0) !important; 
-  box-shadow: 2px 0 0 rgba(117, 117, 117, 0.231) !important;
+main.content h3 { margin-top: 2rem; }
+
+/* Opening paragraph of a page: slightly larger, slightly quieter. */
+.sx-lede {
+  font-size: 1.14rem;
+  line-height: 1.6;
+  color: var(--sx-ink-muted);
+  max-width: 62ch;
 }
 
-/* Make the icons slightly larger and space them further apart */
-.quarto-navigation-tool {
-  font-size: 1.5rem !important; 
-  margin-left: 5px !important; 
+/* Reading measure is set by `grid.body-width` in _quarto.yml rather than here.
+   Capping individual elements does not work: Quarto wraps everything after a
+   heading in a <section>, so only the paragraphs above the first heading would
+   be constrained and the page would wrap at two different widths. */
+
+blockquote {
+  border-left: 3px solid var(--sx-primary);
+  background: var(--sx-primary-soft);
+  padding: 0.75rem 1.1rem;
+  border-radius: 0 var(--bs-border-radius, 0.6rem) var(--bs-border-radius, 0.6rem) 0;
+}
+blockquote > p:last-child { margin-bottom: 0; }
+
+/* Inline marks for emphasising a term mid-sentence. */
+mark, .sx-mark {
+  background: linear-gradient(180deg, transparent 58%, var(--sx-gold) 58%);
+  color: inherit;
+  padding: 0 0.1em;
 }
 
+/* --------------------------------------------------------------------------
+   3. Navbar and footer
+   -------------------------------------------------------------------------- */
+.navbar { box-shadow: var(--sx-shadow-sm); }
 
-
-/* Force the title and subtitle text to be white so it is readable */
-header.quarto-title-block h1.title,
-header.quarto-title-block p.subtitle {
-  color: #ffffff !important;
+.navbar .navbar-brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
 }
 
-/* Change the breadcrumb navigation tree color to white */
-header.quarto-title-block .quarto-page-breadcrumbs,
-header.quarto-title-block .quarto-page-breadcrumbs a,
-header.quarto-title-block .breadcrumb-item::before {
-  color: #e9ecef !important; /* Uses a soft, readable off-white */
+/* Underline that grows out from the centre of the active/hovered nav link. */
+.navbar .navbar-nav .nav-link {
+  position: relative;
+  font-weight: 600;
+}
+.navbar .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0.25rem;
+  height: 2px;
+  background: var(--sx-gold);
+  border-radius: 2px;
+  transition: left 0.18s ease, right 0.18s ease;
+}
+.navbar .navbar-nav .nav-link:hover::after,
+.navbar .navbar-nav .nav-link.active::after { left: 0.6rem; right: 0.6rem; }
+
+.nav-footer { border-top: 3px solid var(--sx-primary); }
+.nav-footer a { color: inherit; }
+
+/* --------------------------------------------------------------------------
+   4. Title banner on section pages
+   -------------------------------------------------------------------------- */
+.quarto-title-banner {
+  background: linear-gradient(135deg, var(--sx-space-deep) 0%, var(--sx-space) 55%, #3A1E6E 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Make the breadcrumb links turn pure white when hovered over */
-header.quarto-title-block .quarto-page-breadcrumbs a:hover {
-  color: #ffffff !important;
-  text-decoration: underline !important;
+/* Faint star field, drawn with layered radial gradients — no image request. */
+.quarto-title-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 30%, rgba(255,255,255,0.8) 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 70%, rgba(255,255,255,0.6) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 47% 22%, rgba(255,255,255,0.7) 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 58%, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(2px 2px at 78% 36%, rgba(246,217,166,0.75) 50%, transparent 51%),
+    radial-gradient(1px 1px at 90% 68%, rgba(255,255,255,0.6) 50%, transparent 51%);
 }
 
-/* Target the very last item in the breadcrumbs (the current page) */
-header.quarto-title-block .breadcrumb-item:last-child,
-header.quarto-title-block .breadcrumb-item:last-child a {
-  color: #ffcc00 !important;    /* Changes it to bright gold */
-  font-weight: bold !important; /* Makes it thicker than the other links */
+.quarto-title-banner .title,
+.quarto-title-banner .subtitle,
+.quarto-title-banner .quarto-title-meta,
+.quarto-title-banner .description { color: #F3EFFC; }
+.quarto-title-banner .subtitle,
+.quarto-title-banner .description { opacity: 0.85; }
+
+.quarto-title-banner .quarto-page-breadcrumbs a { color: #CFC4EA; }
+.quarto-title-banner .quarto-page-breadcrumbs a:hover { color: #FFFFFF; }
+.quarto-title-banner .quarto-page-breadcrumbs .breadcrumb-item:last-child,
+.quarto-title-banner .quarto-page-breadcrumbs .breadcrumb-item:last-child a,
+.quarto-title-banner .quarto-page-breadcrumbs .breadcrumb-item.active {
+  color: var(--sx-gold);
+  font-weight: 600;
 }
 
-/* Apply the background image only to pages with the static-bg tag */
-body.homepage-bg {
-  /* Point to the image you saved in step 1 */
-  background-image: url("images/M33_Hubble.webp.jpeg") !important;
-  
-  /* Forces the image to cover the entire screen without stretching */
-  background-size: cover !important;
-  
-  /* Keeps the image perfectly centered */
-  background-position: center !important;
-  
-  /* Prevents the image from tiling if the screen is too large */
-  background-repeat: no-repeat !important;
-  
-  /* THIS IS THE MAGIC LINE: Locks the image in place while scrolling */
-  background-attachment: fixed !important; 
+/* --------------------------------------------------------------------------
+   5. Splash hero
+   --------------------------------------------------------------------------
+   Deliberately NOT background-attachment: fixed. That property forces Safari
+   to re-composite a full-screen layer on every scroll frame, which is what
+   made the image blink out and left white slivers at the edges. A normal
+   scrolling background costs nothing and behaves identically everywhere.
+   -------------------------------------------------------------------------- */
+.sx-hero {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--sx-space-deep);
+  background-image: var(--sx-hero-veil), url("images/hero-m33.jpg");
+  background-size: cover, cover;
+  background-position: center, center 30%;
+  background-repeat: no-repeat, no-repeat;
+  padding: clamp(3rem, 9vw, 6.5rem) 1.5rem clamp(2.5rem, 7vw, 5rem);
+  color: #F3EFFC;
+  text-align: center;
 }
 
-/* The dark purple homepage container */
-.profile-bubble {
-  /* A deep, highly-legible purple */
-  background-color: #311A6D !important;
-  
-  /* Forces all standard text inside the bubble to be crisp white */
-  color: #f8f9fa !important;
-  
-  /* Pushes the bubble down from the very top of the screen */
-  margin-top: 8vh !important; 
-  
-  /* Centers the bubble and prevents it from getting too wide on massive desktop monitors */
-  margin-left: auto !important;
-  margin-right: auto !important;
-  max-width: 1300px !important;
-  
-  /* Internal breathing room and the soft rounded 'bubble' shape */
-  padding: 40px !important;
-  border-radius: 20px !important;
-  
-  /* A soft, elegant shadow to lift the bubble off your static background image */
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4) !important;
+@media (max-width: 700px) {
+  .sx-hero { background-image: var(--sx-hero-veil), url("images/hero-m33-sm.jpg"); }
 }
 
-/* Ensure the main headings inside the bubble are also white */
-.profile-bubble h1, 
-.profile-bubble h2, 
-.profile-bubble h3 {
-  color: #ffffff !important;
-  margin-top: 0 !important;
+.sx-hero__inner {
+  max-width: 780px;
+  margin: 0 auto;
 }
 
-/* Style standard links in the bio so they are visible against the dark purple */
-.profile-bubble a:not(.btn) {
-  color: #eadaf5 !important; /* A very soft pastel purple */
-  text-decoration: underline !important;
+.sx-hero__portrait {
+  width: clamp(120px, 22vw, 168px);
+  height: clamp(120px, 22vw, 168px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 22%;
+  border: 3px solid rgba(243, 239, 252, 0.55);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.25rem;
 }
 
-.profile-bubble a:not(.btn):hover {
-  color: #ffffff !important;
+.sx-hero__name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.2rem, 6.5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 0.5rem;
 }
 
-/* Custom primary button (Solid Purple) */
+.sx-hero__role {
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sx-gold);
+  margin-bottom: 1.25rem;
+}
+
+.sx-hero__pitch {
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  line-height: 1.6;
+  color: #E2DAF4;
+  max-width: 60ch;
+  margin: 0 auto 1.75rem;
+}
+
+.sx-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+}
+
+/* Hero buttons: one solid, the rest outlined. */
+.sx-hero__actions .sx-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.97rem;
+  text-decoration: none;
+  border: 1.5px solid rgba(243, 239, 252, 0.5);
+  color: #F3EFFC;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+.sx-hero__actions .sx-btn:hover {
+  background: rgba(243, 239, 252, 0.14);
+  border-color: #F3EFFC;
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+.sx-hero__actions .sx-btn--solid {
+  background: var(--sx-gold);
+  border-color: var(--sx-gold);
+  color: #241046;
+}
+.sx-hero__actions .sx-btn--solid:hover {
+  background: #F6D9A6;
+  border-color: #F6D9A6;
+  color: #241046;
+}
+
+/* Contact line beneath the buttons. */
+.sx-hero__contact {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #BFB4DC;
+}
+.sx-hero__contact a { color: #E2DAF4; text-decoration: none; border-bottom: 1px solid rgba(226, 218, 244, 0.4); }
+.sx-hero__contact a:hover { color: #FFFFFF; border-bottom-color: #FFFFFF; }
+
+/* --------------------------------------------------------------------------
+   6. Section blocks on the home page
+   -------------------------------------------------------------------------- */
+.sx-section {
+  padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+}
+.sx-section--alt { background: var(--sx-surface-alt); border-block: 1px solid var(--sx-border); }
+
+.sx-section__inner { max-width: 1080px; margin: 0 auto; }
+
+.sx-section__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sx-primary);
+  margin-bottom: 0.4rem;
+}
+
+.sx-section__title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.5rem, 3.4vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+  color: var(--sx-ink);
+}
+
+.sx-section__intro {
+  color: var(--sx-ink-muted);
+  max-width: 68ch;
+  margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Card grid — the main wayfinding element across the site
+   -------------------------------------------------------------------------- */
+.sx-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.sx-cards--two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+.sx-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--sx-surface);
+  border: 1px solid var(--sx-border);
+  border-radius: 0.9rem;
+  padding: 1.4rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--sx-shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+/* Purple ribbon that fills in from the left on hover. */
+.sx-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--sx-primary), var(--sx-nebula));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.22s ease;
+}
+.sx-card:hover, .sx-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--sx-shadow-md);
+  border-color: var(--sx-border-strong);
+  color: inherit;
+  text-decoration: none;
+}
+.sx-card:hover::before, .sx-card:focus-visible::before { transform: scaleY(1); }
+
+.sx-card__icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--sx-primary);
+  margin-bottom: 0.75rem;
+}
+
+.sx-card__title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--sx-ink);
+  margin: 0 0 0.4rem;
+}
+
+.sx-card__text {
+  font-size: 0.94rem;
+  color: var(--sx-ink-muted);
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.sx-card__more {
+  margin-top: 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--sx-primary);
+}
+.sx-card__more::after { content: " \2192"; transition: margin-left 0.18s ease; }
+.sx-card:hover .sx-card__more::after { margin-left: 0.25rem; }
+
+/* Status chips: "In progress", "Published", topic tags. */
+.sx-chip {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--sx-primary-soft);
+  color: var(--sx-primary);
+  border: 1px solid var(--sx-border);
+  margin-bottom: 0.7rem;
+  /* Cards are flex columns; without this the chip stretches the full width. */
+  align-self: flex-start;
+}
+.sx-chip--gold   { background: rgba(232, 163, 61, 0.16); color: var(--sx-gold-ink); border-color: rgba(232, 163, 61, 0.4); }
+.sx-chip--nebula { background: rgba(199, 81, 156, 0.14); color: var(--sx-nebula-ink); border-color: rgba(199, 81, 156, 0.35); }
+
+/* --------------------------------------------------------------------------
+   8. Quarto listing pages (auto-generated card grids)
+   -------------------------------------------------------------------------- */
+.quarto-listing .card,
+.quarto-grid-item.card {
+  border: 1px solid var(--sx-border);
+  border-radius: 0.9rem;
+  box-shadow: var(--sx-shadow-sm);
+  background: var(--sx-surface);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.quarto-listing .card:hover,
+.quarto-grid-item.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sx-shadow-md);
+}
+.quarto-grid-item .card-title { font-family: "Space Grotesk", sans-serif; font-weight: 600; }
+.quarto-grid-item .listing-description { color: var(--sx-ink-muted); }
+
+.quarto-listing .listing-item .listing-title a { text-decoration: none; }
+.quarto-listing .listing-item .listing-title a:hover { text-decoration: underline; }
+
+.listing-category, .quarto-category {
+  background: var(--sx-primary-soft) !important;
+  color: var(--sx-primary) !important;
+  border: 1px solid var(--sx-border) !important;
+  border-radius: 999px !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 1 !important;
+}
+.listing-category:hover, .quarto-category:hover {
+  background: var(--sx-primary) !important;
+  color: #FFFFFF !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. Sidebar
+   -------------------------------------------------------------------------- */
+.sidebar-navigation .sidebar-item-container {
+  border-radius: 0.45rem;
+  /* Room for the 3px ribbon the hover and active states paint on the inside
+     left edge, so it never overlaps the first letter of the link. */
+  padding-left: 0.55rem;
+  transition: background-color 0.14s ease, box-shadow 0.14s ease;
+}
+.sidebar-navigation .sidebar-item-container:hover {
+  background-color: var(--sx-primary-soft);
+  box-shadow: inset 3px 0 0 var(--sx-primary);
+}
+.sidebar-navigation .sidebar-link { font-size: 0.93rem; }
+/* Active page: fill the whole row, not just the text box. */
+.sidebar-navigation .sidebar-item-container:has(> .sidebar-link.active),
+.sidebar-navigation .sidebar-item-container:has(> a.active) {
+  background-color: var(--sx-primary-soft);
+  box-shadow: inset 3px 0 0 var(--sx-primary);
+}
+.sidebar-navigation .sidebar-link.active,
+.sidebar-navigation a.sidebar-item-text.active {
+  font-weight: 700;
+  color: var(--sx-primary-deep);
+  background: transparent;
+}
+
+/* Only the section heading itself is bold — not every link nested under it. */
+.sidebar-navigation .sidebar-item > .sidebar-item-container > .sidebar-item-text {
+  font-weight: 600;
+}
+.sidebar-navigation .sidebar-section .sidebar-item .sidebar-item-text {
+  font-weight: 400;
+}
+
+#quarto-margin-sidebar .quarto-secondary-nav-title,
+.sidebar nav[role="doc-toc"] > h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sx-ink-faint);
+}
+
+/* --------------------------------------------------------------------------
+   10. Prev / next page navigation — the spine of the tutorial series
+   -------------------------------------------------------------------------- */
+.nav-page {
+  border-top: 1px solid var(--sx-border);
+  padding-top: 1.25rem;
+  margin-top: 2.5rem;
+}
+.nav-page a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--sx-primary);
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.15s ease;
+}
+.nav-page a:hover { background: var(--sx-primary-soft); }
+
+/* --------------------------------------------------------------------------
+   11. Code, callouts, figures, math
+   -------------------------------------------------------------------------- */
+div.sourceCode {
+  border: 1px solid var(--sx-border);
+  border-radius: 0.6rem;
+  box-shadow: var(--sx-shadow-sm);
+}
+
+code:not(.sourceCode) { font-size: 0.88em; padding: 0.12em 0.35em; border-radius: 0.3rem; }
+
+.callout {
+  border-radius: 0.7rem !important;
+  box-shadow: var(--sx-shadow-sm);
+}
+.callout.callout-style-default > .callout-header { font-weight: 600; }
+
+figure { margin-block: 2rem; }
+figure img { border-radius: 0.6rem; box-shadow: var(--sx-shadow-sm); }
+figcaption, .figure-caption, .quarto-figure figcaption {
+  color: var(--sx-ink-muted);
+  font-size: 0.88rem;
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+/* Display equations get room to breathe and scroll sideways on phones. */
+.MathJax_Display, mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.35rem;
+}
+
+/* Footnote popups (used heavily in the tutorials for term definitions). */
+.tippy-box { border-radius: 0.6rem; }
+
+/* --------------------------------------------------------------------------
+   12. Interactive Python cells (r-wasm/live extension)
+   -------------------------------------------------------------------------- */
+.quarto-live-cell, .cell-code-editor, .exercise-editor {
+  border-radius: 0.6rem !important;
+}
+.qwebr-button, .btn-qwebr-run {
+  background: var(--sx-primary) !important;
+  border-color: var(--sx-primary) !important;
+  color: #FFFFFF !important;
+  font-weight: 600;
+}
+.qwebr-button:hover, .btn-qwebr-run:hover {
+  background: var(--sx-primary-deep) !important;
+  border-color: var(--sx-primary-deep) !important;
+}
+
+/* CodeMirror computes row positions from line-height. The site's 1.65 makes the
+   gutter numbers drift away from the code they label, so pin it back to 1.5
+   inside the editor only. */
+.cm-editor,
+.cm-editor .cm-content,
+.cm-editor .cm-gutters,
+.cm-editor .cm-line {
+  line-height: 1.5 !important;
+  font-family: "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+.cm-editor .cm-gutters {
+  background: var(--sx-surface-alt);
+  border-right: 1px solid var(--sx-border);
+  color: var(--sx-ink-faint);
+}
+
+/* Banner shown at the top of any page carrying live cells. */
+.sx-live-notice {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  background: var(--sx-primary-soft);
+  border: 1px solid var(--sx-border);
+  border-left: 4px solid var(--sx-primary);
+  border-radius: 0.6rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  color: var(--sx-ink-muted);
+  margin-bottom: 1.75rem;
+}
+.sx-live-notice strong { color: var(--sx-ink); }
+
+/* --------------------------------------------------------------------------
+   13. Buttons used in page content (CV downloads, calls to action)
+   -------------------------------------------------------------------------- */
 .btn-purple {
-  background-color: #311A6D !important;
-  color: #ffffff !important;
-  border: 2px solid #311A6D !important;
-  transition: all 0.2s ease-in-out !important;
+  background-color: var(--sx-primary);
+  border: 1.5px solid var(--sx-primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 999px;
 }
+.btn-purple:hover { background-color: var(--sx-primary-deep); border-color: var(--sx-primary-deep); color: #FFFFFF; }
 
-.btn-purple:hover {
-  background-color: #0C0426 !important; /* Slightly darker on hover */
-  border-color: #0C0426 !important;
-}
-
-/* Custom secondary button (Hollow Purple) */
 .btn-outline-purple {
-  background-color: transparent !important;
-  color: #0C0426 !important;
-  border: 2px solid #0C0426 !important;
-  transition: all 0.2s ease-in-out !important;
+  background-color: transparent;
+  border: 1.5px solid var(--sx-primary);
+  color: var(--sx-primary);
+  font-weight: 600;
+  border-radius: 999px;
+}
+.btn-outline-purple:hover { background-color: var(--sx-primary); color: #FFFFFF; }
+
+/* --------------------------------------------------------------------------
+   14. Small utilities
+   -------------------------------------------------------------------------- */
+.sx-rule {
+  border: 0;
+  height: 2px;
+  width: 4rem;
+  background: linear-gradient(90deg, var(--sx-primary), var(--sx-gold));
+  border-radius: 2px;
+  margin: 1.5rem 0;
 }
 
-.btn-outline-purple:hover {
-  background-color: #0C0426 !important;
-  color: #ffffff !important;
+.sx-meta {
+  font-size: 0.85rem;
+  color: var(--sx-ink-faint);
+}
+
+/* CV entries: title on the left, dates pushed to the right.
+   Pandoc wraps the spans of a fenced div in a <p>, so the flex container has to
+   be that paragraph rather than the div itself. */
+.sx-entry { margin-bottom: 1.5rem; }
+.sx-entry__head,
+.sx-entry__head > p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.15rem;
+}
+.sx-entry__title { font-weight: 700; color: var(--sx-ink); }
+.sx-entry__when { font-size: 0.88rem; color: var(--sx-ink-faint); white-space: nowrap; }
+.sx-entry__where { color: var(--sx-primary); font-weight: 600; font-size: 0.95rem; }
+.sx-entry ul { margin-top: 0.4rem; }
+
+/* --------------------------------------------------------------------------
+   15. Fixes from the October 2026 review
+   -------------------------------------------------------------------------- */
+
+/* Phones: Quarto collapses the section sidebar into a bar under the navbar.
+   With the title banner on, that bar takes the banner's dark background but
+   keeps the sidebar's dark text, so it is invisible. Every sidebar page on
+   this site has a banner, so the bar is always on dark. */
+nav.quarto-secondary-nav {
+  background-color: var(--sx-space);
+  border-top: 0;
+  border-bottom: 1px solid rgba(243, 239, 252, 0.18);
+}
+nav.quarto-secondary-nav .quarto-btn-toggle,
+nav.quarto-secondary-nav .quarto-secondary-nav-title,
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs,
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs a,
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs .breadcrumb-item::before {
+  color: #EFEAFB;
+}
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs .breadcrumb-item:last-child,
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs .breadcrumb-item:last-child a {
+  color: var(--sx-gold);
+  font-weight: 600;
+}
+nav.quarto-secondary-nav .quarto-btn-toggle { opacity: 1; }
+
+/* Phones: the GitHub and email icons pushed the search button onto a second
+   navbar row. Both links are in the footer and on the About page. */
+@media (max-width: 991.98px) {
+  .navbar .quarto-navbar-tools a[href^="https://github.com"],
+  .navbar .quarto-navbar-tools a[href^="mailto:"] { display: none; }
+}
+
+/* The "Modified" date block sat in a tall gap between the banner and the
+   sidebar on the CV and project pages. Keep it, but make it compact. */
+#title-block-header.quarto-title-block .quarto-title-meta {
+  margin-top: 0.6rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+}
+
+/* A square crop for portraits placed in page content. The About page sets
+   only a width, which turned the rounded-circle class into an ellipse. */
+.sx-portrait {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+/* Prose that follows a card grid (404 page) needs room above it. */
+.sx-cards + p { margin-top: 1.5rem; }
+
+/* Phones: three hero buttons wrapped as two plus an orphan. Give each a
+   half-width basis so the first two share a row and the third sits centred
+   beneath them at the same size. */
+@media (max-width: 480px) {
+  .sx-hero__actions .sx-btn {
+    flex: 0 1 calc(50% - 0.35rem);
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. Decision wizard (Lab Help)
+   A click-through question-and-answer written as fenced divs:
+     ::::: {.sx-wizard}
+     :::: {#step-id .sx-wizard__step}   markdown, then buttons in a {=html} block
+   assets/wizard.html (pulled in by teaching/labs/_metadata.yml) shows one step
+   at a time and keeps a trail of the answers chosen. Without the script, and
+   in print, every step shows in order so the page still reads as a guide.
+   -------------------------------------------------------------------------- */
+.sx-wizard {
+  --sx-wizard-on-primary: #FFFFFF;
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.4rem 1.4rem;
+  background: var(--sx-surface);
+  border: 1px solid var(--sx-border-strong);
+  border-top: 4px solid var(--sx-primary);
+  border-radius: 0.9rem;
+  box-shadow: var(--sx-shadow-md);
+  scroll-margin-top: 5rem;
+}
+/* Dark mode flips --sx-primary to a pale purple, so text on it goes dark. */
+body.quarto-dark .sx-wizard { --sx-wizard-on-primary: #14101F; }
+
+.sx-wizard__step:focus { outline: none; }
+.sx-wizard__step > :last-child { margin-bottom: 0; }
+
+/* One step at a time once the script has run. */
+.sx-wizard.is-ready .sx-wizard__step:not(.is-active) { display: none; }
+.sx-wizard.is-ready .sx-wizard__step.is-active { animation: sx-wizard-in 0.22s ease-out; }
+@keyframes sx-wizard-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sx-wizard.is-ready .sx-wizard__step.is-active { animation: none; }
+}
+
+/* No script: the steps stack, each separated by a rule. */
+.sx-wizard:not(.is-ready) .sx-wizard__step + .sx-wizard__step {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--sx-border-strong);
+}
+
+/* Trail of the answers given so far. */
+.sx-wizard__trail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.45rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--sx-ink-faint);
+}
+.sx-wizard__trail:empty { display: none; }
+.sx-wizard__crumb {
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--sx-primary-soft);
+  color: var(--sx-primary);
+  border: 1px solid var(--sx-border);
+  cursor: pointer;
+}
+.sx-wizard__crumb:hover,
+.sx-wizard__crumb:focus-visible { background: var(--sx-primary); color: var(--sx-wizard-on-primary); }
+.sx-wizard__sep { color: var(--sx-ink-faint); }
+.sx-wizard__reset {
+  margin-left: auto;
+  padding: 0.15rem 0.2rem;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: var(--sx-ink-faint);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.sx-wizard__reset:hover { color: var(--sx-primary); }
+
+/* Answer buttons: full width, stacked, big enough for a thumb. */
+.sx-wizard__choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 1.1rem;
+}
+.sx-wizard__btn {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font: inherit;
+  line-height: 1.4;
+  background: var(--sx-surface);
+  color: var(--sx-ink);
+  border: 1.5px solid var(--sx-primary);
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.sx-wizard__btn:hover,
+.sx-wizard__btn:focus-visible {
+  background: var(--sx-primary-soft);
+  box-shadow: var(--sx-shadow-sm);
+  transform: translateY(-1px);
+}
+.sx-wizard__btn:focus-visible { outline: 2px solid var(--sx-gold); outline-offset: 2px; }
+.sx-wizard__btn-title { display: block; font-weight: 700; color: var(--sx-primary); }
+.sx-wizard__btn-note  { display: block; margin-top: 0.1rem; font-size: 0.88rem; color: var(--sx-ink-muted); }
+
+/* A secondary choice ("actually, it was the other thing"). */
+.sx-wizard__btn--quiet { border-style: dashed; border-color: var(--sx-border-strong); }
+.sx-wizard__btn--quiet .sx-wizard__btn-title { color: var(--sx-ink-muted); font-weight: 600; }
+
+/* The finishing move: "Next column". */
+.sx-wizard__btn--done { background: var(--sx-primary); border-color: var(--sx-primary); }
+.sx-wizard__btn--done .sx-wizard__btn-title { color: var(--sx-wizard-on-primary); }
+.sx-wizard__btn--done:hover,
+.sx-wizard__btn--done:focus-visible { background: var(--sx-primary-deep); border-color: var(--sx-primary-deep); }
+
+/* Back / Start over line the script appends to every step after the first. */
+.sx-wizard__nav { margin-top: 1rem; font-size: 0.85rem; }
+.sx-wizard__nav button {
+  padding: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: var(--sx-ink-faint);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.sx-wizard__nav button:hover { color: var(--sx-primary); }
+.sx-wizard__nav button + button { margin-left: 1rem; }
+
+@media print {
+  .sx-wizard { box-shadow: none; }
+  .sx-wizard.is-ready .sx-wizard__step { display: block !important; animation: none; }
+  .sx-wizard.is-ready .sx-wizard__step + .sx-wizard__step {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--sx-border-strong);
+  }
+  .sx-wizard__trail, .sx-wizard__nav { display: none !important; }
+}
+
+@media (max-width: 480px) {
+  .sx-wizard { padding: 1rem 1rem 1.1rem; }
+}
+
+/* Excel-style map of the lab template, shown above the wizard so the words it
+   uses ("formula bar", "abs unc row", yellow and blue cells) have a picture.
+   Kept light in both themes, the way a screenshot would be. */
+.sx-sheet {
+  margin: 1.25rem 0 0.4rem;
+  overflow-x: auto;
+  background: #FFFFFF;
+  color: #1E1A2E;
+  border: 1px solid var(--sx-border-strong);
+  border-radius: 0.6rem;
+  box-shadow: var(--sx-shadow-sm);
+  font-size: 0.82rem;
+}
+.sx-sheet__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  background: #F3F3F3;
+  border-bottom: 1px solid #D4D4D4;
+  font-family: "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+}
+.sx-sheet__name, .sx-sheet__formula {
+  padding: 0.1rem 0.45rem;
+  background: #FFFFFF;
+  border: 1px solid #C6C6C6;
+  white-space: nowrap;
+}
+.sx-sheet__name { min-width: 3.2rem; text-align: center; }
+.sx-sheet__fx { color: #6E6E6E; font-style: italic; }
+.sx-sheet__formula { flex: 1; overflow-x: auto; }
+.sx-sheet table {
+  width: 100%;
+  min-width: 600px;
+  margin: 0;
+  border-collapse: collapse;
+}
+.sx-sheet th, .sx-sheet td {
+  padding: 0.22rem 0.5rem;
+  border: 1px solid #D4D4D4;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.sx-sheet th { background: #E9E9E9; color: #444444; font-weight: 600; }
+.sx-sheet td.is-label { text-align: right; font-weight: 600; }
+.sx-sheet td.is-raw { background: #FFFF00; }
+.sx-sheet td.is-eq  { background: #DDEBF7; }
+.sx-sheet td.is-sel { outline: 2px solid #217346; outline-offset: -2px; }
+.sx-sheet tr.is-gap td { color: #9A9A9A; }
+.sx-sheet__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.2rem;
+  padding: 0.45rem 0.6rem;
+  background: #FAFAFA;
+  border-top: 1px solid #D4D4D4;
+  font-size: 0.78rem;
+  color: #444444;
+}
+.sx-sheet__swatch {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.35em;
+  border: 1px solid #BBBBBB;
+  vertical-align: -0.1em;
+}
+.sx-sheet__caption {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--sx-ink-muted);
+}
+
+/* The break between the quick guide and the longer story on a lab page. */
+.sx-divider {
+  margin: 3.5rem 0 0.5rem;
+  padding: 1.6rem 1.5rem 1.7rem;
+  text-align: center;
+  background: var(--sx-surface-alt);
+  border: 1px solid var(--sx-border);
+  border-radius: 0.9rem;
+}
+.sx-divider::before {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 2px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(90deg, var(--sx-primary), var(--sx-gold));
+  border-radius: 2px;
+}
+.sx-divider p { max-width: 58ch; margin: 0 auto; color: var(--sx-ink-muted); }
+.sx-divider p + p { margin-top: 0.35rem; }
+.sx-divider__eyebrow {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sx-primary);
 }
