@@ -9,9 +9,11 @@
 #   research/            research hub + one file per project
 #     code/              documentation for code that came out of the research
 #   teaching/            teaching hub
+#     labs/              Lab Help: short answers for the physics labs I teach
 #     python/            "Python from Scratch" tutorial series
 #     math/              mathematics lessons
 #     physics/           worked textbook problems
+#   notes/               personal notes: travel, random thoughts (blog-style listing)
 #
 # The sidebars below use `auto: "dir/*"` globs, so adding a page is just adding
 # a file to the right folder with a two-digit number prefix — no edit to this
@@ -29,13 +31,23 @@ project:
   # render the thousands of markdown files that ship inside installed packages.
   render:
     - "*.qmd"
-    - "research/**/*.qmd"
     - "teaching/**/*.qmd"
+    # HELD BACK (see .gitignore): restore these two lines to publish the sections.
+    # - "research/**/*.qmd"
+    # - "notes/**/*.qmd"
+  # Custom domain. GitHub Pages reads the CNAME file from the published branch,
+  # and quarto-actions/publish rebuilds that branch from scratch on every push,
+  # so the file has to travel with the build output. Setting the domain only in
+  # the repository's Pages settings would be undone by the next publish.
+  resources:
+    - CNAME
 
 website:
   title: "Saxon Stockton"
   description: "Astrophysics research, teaching resources, and plain-language explanations of hard physics."
-  site-url: https://purplinator.github.io
+  site-url: https://saxonstockton.com
+  # Default image for link previews (Open Graph / Twitter cards).
+  image: images/og-card.jpg
   favicon: images/favicon.svg
 
   open-graph: true
@@ -54,14 +66,18 @@ website:
     pinned: false
     collapse-below: lg
     left:
-      - text: "Research"
-        href: research/index.qmd
+      # HELD BACK (see .gitignore): Research entry.
+      # - text: "Research"
+      #   href: research/index.qmd
       - text: "Teaching"
         href: teaching/index.qmd
       - text: "CV"
         href: cv.qmd
       - text: "About"
         href: about.qmd
+      # HELD BACK (see .gitignore): Notes entry.
+      # - text: "Notes"
+      #   href: notes/index.qmd
     tools:
       - icon: github
         href: https://github.com/purplinator
@@ -77,20 +93,21 @@ website:
       style: docked
       contents: []
 
-    - id: research
-      title: "Research"
-      style: docked
-      collapse-level: 2
-      contents:
-        - text: "Overview"
-          href: research/index.qmd
-        - section: "Projects"
-          contents:
-            - auto: "research/*"
-        - section: "Code & Documentation"
-          href: research/code/index.qmd
-          contents:
-            - auto: "research/code/*"
+    # HELD BACK (see .gitignore): Research sidebar.
+    # - id: research
+    #   title: "Research"
+    #   style: docked
+    #   collapse-level: 2
+    #   contents:
+    #     - text: "Overview"
+    #       href: research/index.qmd
+    #     - section: "Projects"
+    #       contents:
+    #         - auto: "research/*"
+    #     - section: "Code & Documentation"
+    #       href: research/code/index.qmd
+    #       contents:
+    #         - auto: "research/code/*"
 
     - id: teaching
       title: "Teaching"
@@ -101,6 +118,10 @@ website:
           href: teaching/index.qmd
         - text: "Teaching Philosophy"
           href: teaching/philosophy.qmd
+        - section: "Lab Help"
+          href: teaching/labs/index.qmd
+          contents:
+            - auto: "teaching/labs/*"
         - section: "Python from Scratch"
           href: teaching/python/index.qmd
           contents:
@@ -118,8 +139,10 @@ website:
     background: light
     left: |
       © 2026 Saxon Stockton · Built with [Quarto](https://quarto.org)
+    # HELD BACK (see .gitignore): the full line was
+    #   [Research](/research/) · [Teaching](/teaching/) · [CV](/cv.html) · [About](/about.html) · [Notes](/notes/)
     center: |
-      [Research](/research/) · [Teaching](/teaching/) · [CV](/cv.html) · [About](/about.html)
+      [Teaching](/teaching/) · [CV](/cv.html) · [About](/about.html)
     right:
       - icon: github
         href: https://github.com/purplinator

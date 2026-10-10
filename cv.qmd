@@ -1,10 +1,9 @@
 ---
 title: "Curriculum Vitae"
 subtitle: "Astrophysics PhD student, Texas Christian University"
-description: "Education, research, teaching, and talks."
+description: "Education, research, publications, presentations, teaching, awards, and service."
 toc: true
 toc-depth: 2
-date-modified: last-modified
 ---
 
 ::: {.d-flex .flex-wrap .gap-2 .mb-4}
@@ -13,89 +12,197 @@ date-modified: last-modified
 :::
 
 ::: {.sx-lede}
-I am a physics PhD student at TCU working on integral field spectroscopy of the
-Large Magellanic Cloud. Before that I studied physics at Utah Valley
-University. Contact:
-[s.stockton@tcu.edu](mailto:s.stockton@tcu.edu).
+I am a physics PhD student at TCU working with Dr. Kathleen Barger on integral
+field spectroscopy of the Large Magellanic Cloud. Before that I studied physics
+at Utah Valley University and spent a summer with the PAndAS team at the
+University of Michigan.
+:::
+
+::: {.sx-meta}
+[s.stockton@tcu.edu](mailto:s.stockton@tcu.edu) ·
+[ORCID 0000-0003-1677-0213](https://orcid.org/0000-0003-1677-0213) ·
+[ADS](https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0003-1677-0213&sort=date%20desc) ·
+[Google Scholar](https://scholar.google.com/scholar?q=author%3A%22Saxon+Stockton%22) ·
+[arXiv](https://arxiv.org/search/?searchtype=author&query=Stockton%2C+Saxon) ·
+[GitHub](https://github.com/purplinator)
 :::
 
 ## Education
 
 ::: {.sx-entry}
 ::: {.sx-entry__head}
-[Ph.D. in Physics]{.sx-entry__title}
-[Expected 2030]{.sx-entry__when}
+[Ph.D. in Physics, astrophysics specialization]{.sx-entry__title}
+[2025 – present]{.sx-entry__when}
 :::
-[Texas Christian University]{.sx-entry__where}
+[Texas Christian University, Fort Worth, Texas]{.sx-entry__where}
 
-- Astrophysics specialisation
-- Advisor: *add name*
+- Advisor: Dr. Kathleen Barger
+- Expected 2030
 :::
 
 ::: {.sx-entry}
 ::: {.sx-entry__head}
-[B.S. in Physics]{.sx-entry__title}
-[2023]{.sx-entry__when}
+[B.S. in Physics, minor in Mathematics]{.sx-entry__title}
+[2019 – 2023]{.sx-entry__when}
 :::
-[Utah Valley University]{.sx-entry__where}
+[Utah Valley University, Orem, Utah]{.sx-entry__where}
 
-- Minor in Mathematics
 - Magna cum laude
 :::
 
 ## Research
 
-**Current focus.** Spatially resolved dust extinction in the 30 Doradus region
-of the Large Magellanic Cloud, using Balmer decrements measured from Local
-Volume Mapper integral field spectroscopy.
+**Current focus.** Emission-line maps of 30 Doradus, the Tarantula Nebula, from
+SDSS-V Local Volume Mapper integral field spectroscopy: coadded line-flux maps,
+dust extinction from Balmer decrements, de-reddened maps, and spatially resolved
+line-ratio diagnostics, aimed at the flow of gas in and around the region.
 
 **Areas.**
 
-- Spectral line analysis and Balmer decrements
-- Dust extinction mapping in the Large Magellanic Cloud
+- Emission-line spectroscopy and Balmer decrements
+- Dust extinction in the Large Magellanic Cloud
 - Integral field spectroscopy data pipelines
 - Extracting physical parameters from large spectroscopic data sets
 
+<!-- HELD BACK (see .gitignore): restore this line with the Research section.
 See [Research](research/index.qmd) for project write-ups and code documentation.
+-->
 
 ### Positions
 
 ::: {.sx-entry}
 ::: {.sx-entry__head}
 [Graduate Research Assistant]{.sx-entry__title}
-[20XX – present]{.sx-entry__when}
+[2025 – present]{.sx-entry__when}
 :::
-[Texas Christian University]{.sx-entry__where}
+[Texas Christian University, Department of Physics and Astronomy]{.sx-entry__where}
 
-<!-- One or two lines on what you actually do. -->
+- LVM emission-line analysis of 30 Doradus with Dr. Kathleen Barger
+:::
+
+::: {.sx-entry}
+::: {.sx-entry__head}
+[NSF Physics REU]{.sx-entry__title}
+[June 2022 – 2023]{.sx-entry__when}
+:::
+[University of Michigan, Department of Astronomy]{.sx-entry__where}
+
+- Advisor: Dr. Eric Bell
+- *Islands no more: the important mergers of nearby galaxies and their effects.*
+  Searched for faint satellites around Andromeda using number-density
+  variations of RGB stars in the PAndAS survey, reduced Gemini follow-up
+  imaging and built photometric catalogs of candidates, then worked on Hubble
+  Space Telescope follow-up. Contributed to the discovery of Andromeda XXXV.
+:::
+
+::: {.sx-entry}
+::: {.sx-entry__head}
+[Undergraduate Researcher]{.sx-entry__title}
+[May 2020 – 2023]{.sx-entry__when}
+:::
+[Utah Valley University, Department of Physics]{.sx-entry__where}
+
+- Advisor: Dr. Christian Draper
+- *Emission Expedition: a spectral survey of 800,000 galaxies.* Used the
+  spectra of 792,503 galaxies from SDSS Data Release 16, binned by redshift, to
+  measure how the fraction of galaxies showing each of 17 visible emission lines
+  changes with redshift. Calculated star formation rates and used BPT diagrams
+  to diagnose the origin of the emission.
 :::
 
 ## Publications
 
-<!-- Format: Authors (Year). "Title." *Journal*, volume, pages. DOI. -->
-
-*In preparation.*
+1. Jose Marco Arias, Eric F. Bell, Katya Gozman, In Sung Jang, **Saxon
+   Stockton**, Oleg Y. Gnedin, Richard D'Souza, Antonela Monachesi, Jeremy
+   Bailin, David Nidever, and Roelof S. de Jong (2025). "Andromeda XXXV: The
+   Faintest Dwarf Satellite of the Andromeda Galaxy." *The Astrophysical
+   Journal Letters*, 982(1), L3.
+   [DOI](https://doi.org/10.3847/2041-8213/adb433) ·
+   [arXiv:2502.19516](https://arxiv.org/abs/2502.19516) ·
+   [ADS](https://ui.adsabs.harvard.edu/abs/2025ApJ...982L...3A/abstract)
 
 ## Presentations
 
-<!-- Format:
-::: {.sx-entry}
-::: {.sx-entry__head}
-[Talk title]{.sx-entry__title}
-[Month Year]{.sx-entry__when}
-:::
-[Conference or venue]{.sx-entry__where}
-:::
--->
+Presenting author in every case.
 
-*To be added.*
+- **Stockton, S.** and Bell, E. (2022). *Shine faint like an ultra faint dwarf
+  galaxy.* REU Symposium 2022, University of Michigan Physics Department, Ann
+  Arbor, Michigan.
+- **Stockton, S.** and Bell, E. (2022). *Shine faint like an ultra faint dwarf
+  galaxy.* Departmental seminar, Utah Valley University Physics Department,
+  Orem, Utah.
+- **Stockton, S.** and Draper, C. (2022). *Emission Expedition: a spectral
+  survey of 800,000 galaxies.* American Astronomical Society 240, Pasadena,
+  California.
+- **Stockton, S.** and Draper, C. (2022). *Emission Expedition: a spectral
+  survey of 800,000 galaxies.* Utah NASA Space Grant Consortium poster session,
+  Logan, Utah.
+- **Stockton, S.** and Draper, C. (2022). *Large sample analysis of emission
+  and absorption galaxies.* Utah Conference for Undergraduate Research, St.
+  George, Utah.
+- **Stockton, S.** and Draper, C. (2022). *Large sample analysis of emission
+  and absorption galaxies.* Departmental seminar, Utah Valley University
+  Physics Department, Orem, Utah.
 
 ## Teaching
 
-<!-- Courses taught or assisted, with term and institution. -->
+::: {.sx-entry}
+::: {.sx-entry__head}
+[Teaching Assistant]{.sx-entry__title}
+[2025 – present]{.sx-entry__when}
+:::
+[Texas Christian University, Department of Physics and Astronomy]{.sx-entry__where}
+:::
 
-*To be added.* See [Teaching Resources](teaching/index.qmd) for materials I have
-written.
+::: {.sx-entry}
+::: {.sx-entry__head}
+[Adjunct Instructor]{.sx-entry__title}
+[2023 – 2025]{.sx-entry__when}
+:::
+[Utah Valley University, Department of Physics]{.sx-entry__where}
+:::
+
+::: {.sx-entry}
+::: {.sx-entry__head}
+[Physics Tutor]{.sx-entry__title}
+[2019 – 2020]{.sx-entry__when}
+:::
+[Utah Valley University]{.sx-entry__where}
+:::
+
+| Course | Role | Sections |
+|--------|------|:--------:|
+| PHYS 10154 Physics 1 Lab (TCU) | Teaching assistant | 2 |
+| PHYS 2215 Physics for Scientists and Engineers 1 Lab (UVU) | Adjunct instructor | 7 |
+| PHYS 2015 College Physics 1 Lab (UVU) | Adjunct instructor | 8 |
+| PHYS 2025 College Physics 2 Lab (UVU) | Adjunct instructor | 1 |
+| ASTR 1040 Introduction to Astronomy (UVU) | Lecturer | 3 |
+| PHSC 1000 Survey of Physical Sciences (UVU) | Lecturer | 1 |
+
+: {tbl-colwidths="[60,25,15]"}
+
+See [Teaching Resources](teaching/index.qmd) for the materials I have written,
+including [Lab Help](teaching/labs/index.qmd) for my current sections.
+
+## Awards, Fellowships, and Grants
+
+- **2022:** Student Excellence Award, College of Science, UVU · NSF REU,
+  University of Michigan · NSF S-STEM Scholarship · Utah NASA Space Grant ·
+  SCULPT Grant · Scholarly Activities SAC Grant · Dean's List
+- **2021:** NSF S-STEM Scholarship · Dean's List
+- **2020:** NSF S-STEM Scholarship · Dean's List
+
+## Service and Outreach
+
+- Society of Physics Students, UVU chapter president (2020 – 2022)
+- UVU Student Association, Physics Department representative (2021 – 2022)
+- Physics Club representative at Club Rush (2020 – 2022)
+- Physics Department representative: Highlighting Women in STEM planning
+  committee, College of Science Open House, and Future Science Student Day
+  (2022); Science vs. Hollywood (2021 – 2022)
+
+**Professional memberships.** American Astronomical Society (junior member) ·
+Society of Physics Students
 
 ## Technical Skills
 
@@ -107,9 +214,3 @@ written.
 | Other | Git, LaTeX, Quarto, Unix shell |
 
 : {tbl-colwidths="[25,75]"}
-
-## Service and Outreach
-
-<!-- Planetarium shows, public talks, mentoring, committee work. -->
-
-*To be added.*

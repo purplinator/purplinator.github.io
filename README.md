@@ -21,16 +21,22 @@ about.qmd                 longer bio
 cv.qmd                    curriculum vitae
 404.qmd                   not-found page
 
-research/
+research/                 HELD BACK: on disk, ignored by git, not rendered (see .gitignore)
   index.qmd               hub; the project grid fills itself from this folder
-  01-lmc-dust.qmd         one file per project
+  01-30dor-emission-lines.qmd   one file per project
   code/
     index.qmd             hub for code documentation
-    01-lvm-line-fitting.qmd
+    01-30dor-pipeline.qmd
+
+notes/                    HELD BACK: personal blog listing, no posts yet (see .gitignore)
+  posts/_template.qmd     copy this to start a note
 
 teaching/
   index.qmd               hub
   philosophy.qmd
+  labs/                   Lab Help — short answers for the physics labs
+    _metadata.yml         loads the click-through "wizard" script on every lab page
+    01-uncertainty.qmd
   python/                 "Python from Scratch" — interactive lessons
     _template.qmd         copy this to start a new lesson
     00-what-is-a-programming-language.qmd
@@ -44,9 +50,10 @@ assets/
   theme-light.scss        light palette and Bootstrap variables
   theme-dark.scss         dark palette
   mathjax-config.html     site-wide LaTeX macros
+  wizard.html             click-through question-and-answer used on lab pages
 styles.css                shared component styles, reads --sx-* tokens
-images/                   hero, portrait, favicon
-files/                    CV PDFs
+images/                   hero, portrait, favicon, og-card.jpg (link previews)
+files/                    CV PDFs (lab templates kept here are ignored by git)
 ```
 
 ## Adding a page

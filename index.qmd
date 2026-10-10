@@ -1,6 +1,6 @@
 ---
 pagetitle: "Saxon Stockton | Astrophysics Research & Teaching"
-description: "Astrophysics PhD student at TCU. Spectral line analysis in the Large Magellanic Cloud, and teaching resources for people who want the real explanation."
+description: "Astrophysics PhD student at TCU. Emission-line maps of 30 Doradus in the Large Magellanic Cloud, and teaching resources for people who want the real explanation."
 page-layout: custom
 title-block-banner: false
 toc: false
@@ -17,13 +17,15 @@ sidebar: false
 <p class="sx-hero__role">Astrophysics PhD Student · Texas Christian University</p>
 
 <p class="sx-hero__pitch">
-I pull physics out of starlight. My research measures how dust reddens the
-light coming out of 30 Doradus in the Large Magellanic Cloud, and the rest of
-this site is my attempt to explain work like that to anyone willing to read it.
+I pull physics out of starlight. My research maps the glowing gas in and around
+30 Doradus, the most active star-forming region in the Local Group, to see what
+a starburst does to its own galaxy. The rest of this site is my attempt to
+explain work like that to anyone willing to read it.
 </p>
 
+<!-- HELD BACK (see .gitignore): first button pointed at research/index.html -->
 ::: {.sx-hero__actions}
-<a class="sx-btn sx-btn--solid" href="research/index.html">See the research</a>
+<a class="sx-btn sx-btn--solid" href="cv.html#research">See the research</a>
 <a class="sx-btn" href="teaching/index.html">Teaching resources</a>
 <a class="sx-btn" href="cv.html">CV</a>
 :::
@@ -43,28 +45,31 @@ this site is my attempt to explain work like that to anyone willing to read it.
 <p class="sx-section__eyebrow">Three ways in</p>
 <h2 class="sx-section__title">Pick whichever one you came for</h2>
 <p class="sx-section__intro">
-Everything on this site lives in one of three places. If you are here from a
-class, you want the middle one.
+Almost everything on this site lives in one of three places. If you are in one
+of my lab sections, go straight to <a href="teaching/labs/index.html">Lab Help</a>.
+If you are here from any other class, you want the middle one.
 </p>
 
 ```{=html}
 <div class="sx-cards">
-<a class="sx-card" href="research/index.html">
+<!-- HELD BACK (see .gitignore): href was research/index.html, footer "Current projects" -->
+<a class="sx-card" href="cv.html#research">
   <div class="sx-card__icon"><i class="bi bi-stars"></i></div>
   <h3 class="sx-card__title">Research</h3>
   <p class="sx-card__text">
-    Integral field spectroscopy of the Large Magellanic Cloud, dust extinction
-    maps, and documentation for the code that produces them.
+    Emission-line maps of 30 Doradus from SDSS-V LVM spectroscopy, and
+    documentation for the code that produces them.
   </p>
-  <span class="sx-card__more">Current projects</span>
+  <span class="sx-card__more">Current focus</span>
 </a>
 
 <a class="sx-card" href="teaching/index.html">
   <div class="sx-card__icon"><i class="bi bi-mortarboard"></i></div>
   <h3 class="sx-card__title">Teaching Resources</h3>
   <p class="sx-card__text">
-    Python tutorials you can run in the browser, mathematics lessons, and
-    worked physics problems. Free, no account, no paywall.
+    Lab help for my physics sections, Python tutorials you can run in the
+    browser, mathematics lessons, and worked physics problems. Free, no
+    account, no paywall.
   </p>
   <span class="sx-card__more">Start learning</span>
 </a>
@@ -91,14 +96,16 @@ class, you want the middle one.
 
 ```{=html}
 <div class="sx-cards  sx-cards--two">
-<a class="sx-card" href="research/01-lmc-dust.html">
+<!-- HELD BACK (see .gitignore): href was research/01-30dor-emission-lines.html, footer "Read the project" -->
+<a class="sx-card" href="cv.html#research">
   <span class="sx-chip">In progress</span>
-  <h3 class="sx-card__title">Dust extinction across 30 Doradus</h3>
+  <h3 class="sx-card__title">Emission-line maps of 30 Doradus</h3>
   <p class="sx-card__text">
-    Using Balmer decrements from LVM integral field spectroscopy to map how
-    much dust sits between us and every point in the Tarantula Nebula.
+    Turning tens of thousands of LVM spectra of the Tarantula Nebula into maps
+    of hydrogen emission, dust, star formation, and ionization, from the
+    nebula out into its outflow.
   </p>
-  <span class="sx-card__more">Read the project</span>
+  <span class="sx-card__more">Summary on the CV</span>
 </a>
 
 <a class="sx-card" href="teaching/python/index.html">

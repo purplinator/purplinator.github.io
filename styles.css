@@ -395,9 +395,8 @@ mark, .sx-mark {
   /* Cards are flex columns; without this the chip stretches the full width. */
   align-self: flex-start;
 }
-.sx-chip--gold   { background: rgba(232, 163, 61, 0.16); color: #A56B14; border-color: rgba(232, 163, 61, 0.4); }
-.sx-chip--nebula { background: rgba(199, 81, 156, 0.14); color: var(--sx-nebula); border-color: rgba(199, 81, 156, 0.35); }
-.quarto-dark .sx-chip--gold { color: var(--sx-gold); }
+.sx-chip--gold   { background: rgba(232, 163, 61, 0.16); color: var(--sx-gold-ink); border-color: rgba(232, 163, 61, 0.4); }
+.sx-chip--nebula { background: rgba(199, 81, 156, 0.14); color: var(--sx-nebula-ink); border-color: rgba(199, 81, 156, 0.35); }
 
 /* --------------------------------------------------------------------------
    8. Quarto listing pages (auto-generated card grids)
@@ -640,3 +639,324 @@ figcaption, .figure-caption, .quarto-figure figcaption {
 .sx-entry__when { font-size: 0.88rem; color: var(--sx-ink-faint); white-space: nowrap; }
 .sx-entry__where { color: var(--sx-primary); font-weight: 600; font-size: 0.95rem; }
 .sx-entry ul { margin-top: 0.4rem; }
+
+/* --------------------------------------------------------------------------
+   15. Fixes from the October 2026 review
+   -------------------------------------------------------------------------- */
+
+/* Phones: Quarto collapses the section sidebar into a bar under the navbar.
+   With the title banner on, that bar takes the banner's dark background but
+   keeps the sidebar's dark text, so it is invisible. Every sidebar page on
+   this site has a banner, so the bar is always on dark. */
+nav.quarto-secondary-nav {
+  background-color: var(--sx-space);
+  border-top: 0;
+  border-bottom: 1px solid rgba(243, 239, 252, 0.18);
+}
+nav.quarto-secondary-nav .quarto-btn-toggle,
+nav.quarto-secondary-nav .quarto-secondary-nav-title,
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs,
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs a,
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs .breadcrumb-item::before {
+  color: #EFEAFB;
+}
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs .breadcrumb-item:last-child,
+nav.quarto-secondary-nav nav.quarto-page-breadcrumbs .breadcrumb-item:last-child a {
+  color: var(--sx-gold);
+  font-weight: 600;
+}
+nav.quarto-secondary-nav .quarto-btn-toggle { opacity: 1; }
+
+/* Phones: the GitHub and email icons pushed the search button onto a second
+   navbar row. Both links are in the footer and on the About page. */
+@media (max-width: 991.98px) {
+  .navbar .quarto-navbar-tools a[href^="https://github.com"],
+  .navbar .quarto-navbar-tools a[href^="mailto:"] { display: none; }
+}
+
+/* The "Modified" date block sat in a tall gap between the banner and the
+   sidebar on the CV and project pages. Keep it, but make it compact. */
+#title-block-header.quarto-title-block .quarto-title-meta {
+  margin-top: 0.6rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+}
+
+/* A square crop for portraits placed in page content. The About page sets
+   only a width, which turned the rounded-circle class into an ellipse. */
+.sx-portrait {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+/* Prose that follows a card grid (404 page) needs room above it. */
+.sx-cards + p { margin-top: 1.5rem; }
+
+/* Phones: three hero buttons wrapped as two plus an orphan. Give each a
+   half-width basis so the first two share a row and the third sits centred
+   beneath them at the same size. */
+@media (max-width: 480px) {
+  .sx-hero__actions .sx-btn {
+    flex: 0 1 calc(50% - 0.35rem);
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. Decision wizard (Lab Help)
+   A click-through question-and-answer written as fenced divs:
+     ::::: {.sx-wizard}
+     :::: {#step-id .sx-wizard__step}   markdown, then buttons in a {=html} block
+   assets/wizard.html (pulled in by teaching/labs/_metadata.yml) shows one step
+   at a time and keeps a trail of the answers chosen. Without the script, and
+   in print, every step shows in order so the page still reads as a guide.
+   -------------------------------------------------------------------------- */
+.sx-wizard {
+  --sx-wizard-on-primary: #FFFFFF;
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.4rem 1.4rem;
+  background: var(--sx-surface);
+  border: 1px solid var(--sx-border-strong);
+  border-top: 4px solid var(--sx-primary);
+  border-radius: 0.9rem;
+  box-shadow: var(--sx-shadow-md);
+  scroll-margin-top: 5rem;
+}
+/* Dark mode flips --sx-primary to a pale purple, so text on it goes dark. */
+body.quarto-dark .sx-wizard { --sx-wizard-on-primary: #14101F; }
+
+.sx-wizard__step:focus { outline: none; }
+.sx-wizard__step > :last-child { margin-bottom: 0; }
+
+/* One step at a time once the script has run. */
+.sx-wizard.is-ready .sx-wizard__step:not(.is-active) { display: none; }
+.sx-wizard.is-ready .sx-wizard__step.is-active { animation: sx-wizard-in 0.22s ease-out; }
+@keyframes sx-wizard-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sx-wizard.is-ready .sx-wizard__step.is-active { animation: none; }
+}
+
+/* No script: the steps stack, each separated by a rule. */
+.sx-wizard:not(.is-ready) .sx-wizard__step + .sx-wizard__step {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--sx-border-strong);
+}
+
+/* Trail of the answers given so far. */
+.sx-wizard__trail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.45rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--sx-ink-faint);
+}
+.sx-wizard__trail:empty { display: none; }
+.sx-wizard__crumb {
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--sx-primary-soft);
+  color: var(--sx-primary);
+  border: 1px solid var(--sx-border);
+  cursor: pointer;
+}
+.sx-wizard__crumb:hover,
+.sx-wizard__crumb:focus-visible { background: var(--sx-primary); color: var(--sx-wizard-on-primary); }
+.sx-wizard__sep { color: var(--sx-ink-faint); }
+.sx-wizard__reset {
+  margin-left: auto;
+  padding: 0.15rem 0.2rem;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: var(--sx-ink-faint);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.sx-wizard__reset:hover { color: var(--sx-primary); }
+
+/* Answer buttons: full width, stacked, big enough for a thumb. */
+.sx-wizard__choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 1.1rem;
+}
+.sx-wizard__btn {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font: inherit;
+  line-height: 1.4;
+  background: var(--sx-surface);
+  color: var(--sx-ink);
+  border: 1.5px solid var(--sx-primary);
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.sx-wizard__btn:hover,
+.sx-wizard__btn:focus-visible {
+  background: var(--sx-primary-soft);
+  box-shadow: var(--sx-shadow-sm);
+  transform: translateY(-1px);
+}
+.sx-wizard__btn:focus-visible { outline: 2px solid var(--sx-gold); outline-offset: 2px; }
+.sx-wizard__btn-title { display: block; font-weight: 700; color: var(--sx-primary); }
+.sx-wizard__btn-note  { display: block; margin-top: 0.1rem; font-size: 0.88rem; color: var(--sx-ink-muted); }
+
+/* A secondary choice ("actually, it was the other thing"). */
+.sx-wizard__btn--quiet { border-style: dashed; border-color: var(--sx-border-strong); }
+.sx-wizard__btn--quiet .sx-wizard__btn-title { color: var(--sx-ink-muted); font-weight: 600; }
+
+/* The finishing move: "Next column". */
+.sx-wizard__btn--done { background: var(--sx-primary); border-color: var(--sx-primary); }
+.sx-wizard__btn--done .sx-wizard__btn-title { color: var(--sx-wizard-on-primary); }
+.sx-wizard__btn--done:hover,
+.sx-wizard__btn--done:focus-visible { background: var(--sx-primary-deep); border-color: var(--sx-primary-deep); }
+
+/* Back / Start over line the script appends to every step after the first. */
+.sx-wizard__nav { margin-top: 1rem; font-size: 0.85rem; }
+.sx-wizard__nav button {
+  padding: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: var(--sx-ink-faint);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.sx-wizard__nav button:hover { color: var(--sx-primary); }
+.sx-wizard__nav button + button { margin-left: 1rem; }
+
+@media print {
+  .sx-wizard { box-shadow: none; }
+  .sx-wizard.is-ready .sx-wizard__step { display: block !important; animation: none; }
+  .sx-wizard.is-ready .sx-wizard__step + .sx-wizard__step {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--sx-border-strong);
+  }
+  .sx-wizard__trail, .sx-wizard__nav { display: none !important; }
+}
+
+@media (max-width: 480px) {
+  .sx-wizard { padding: 1rem 1rem 1.1rem; }
+}
+
+/* Excel-style map of the lab template, shown above the wizard so the words it
+   uses ("formula bar", "abs unc row", yellow and blue cells) have a picture.
+   Kept light in both themes, the way a screenshot would be. */
+.sx-sheet {
+  margin: 1.25rem 0 0.4rem;
+  overflow-x: auto;
+  background: #FFFFFF;
+  color: #1E1A2E;
+  border: 1px solid var(--sx-border-strong);
+  border-radius: 0.6rem;
+  box-shadow: var(--sx-shadow-sm);
+  font-size: 0.82rem;
+}
+.sx-sheet__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  background: #F3F3F3;
+  border-bottom: 1px solid #D4D4D4;
+  font-family: "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+}
+.sx-sheet__name, .sx-sheet__formula {
+  padding: 0.1rem 0.45rem;
+  background: #FFFFFF;
+  border: 1px solid #C6C6C6;
+  white-space: nowrap;
+}
+.sx-sheet__name { min-width: 3.2rem; text-align: center; }
+.sx-sheet__fx { color: #6E6E6E; font-style: italic; }
+.sx-sheet__formula { flex: 1; overflow-x: auto; }
+.sx-sheet table {
+  width: 100%;
+  min-width: 600px;
+  margin: 0;
+  border-collapse: collapse;
+}
+.sx-sheet th, .sx-sheet td {
+  padding: 0.22rem 0.5rem;
+  border: 1px solid #D4D4D4;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.sx-sheet th { background: #E9E9E9; color: #444444; font-weight: 600; }
+.sx-sheet td.is-label { text-align: right; font-weight: 600; }
+.sx-sheet td.is-raw { background: #FFFF00; }
+.sx-sheet td.is-eq  { background: #DDEBF7; }
+.sx-sheet td.is-sel { outline: 2px solid #217346; outline-offset: -2px; }
+.sx-sheet tr.is-gap td { color: #9A9A9A; }
+.sx-sheet__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.2rem;
+  padding: 0.45rem 0.6rem;
+  background: #FAFAFA;
+  border-top: 1px solid #D4D4D4;
+  font-size: 0.78rem;
+  color: #444444;
+}
+.sx-sheet__swatch {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.35em;
+  border: 1px solid #BBBBBB;
+  vertical-align: -0.1em;
+}
+.sx-sheet__caption {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--sx-ink-muted);
+}
+
+/* The break between the quick guide and the longer story on a lab page. */
+.sx-divider {
+  margin: 3.5rem 0 0.5rem;
+  padding: 1.6rem 1.5rem 1.7rem;
+  text-align: center;
+  background: var(--sx-surface-alt);
+  border: 1px solid var(--sx-border);
+  border-radius: 0.9rem;
+}
+.sx-divider::before {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 2px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(90deg, var(--sx-primary), var(--sx-gold));
+  border-radius: 2px;
+}
+.sx-divider p { max-width: 58ch; margin: 0 auto; color: var(--sx-ink-muted); }
+.sx-divider p + p { margin-top: 0.35rem; }
+.sx-divider__eyebrow {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sx-primary);
+}

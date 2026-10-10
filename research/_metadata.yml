@@ -1,7 +1,0 @@
-# Defaults inherited by every page in research/ and its subfolders.
-# Override any of these in an individual file's front matter.
-toc: true
-toc-depth: 3
-number-sections: false
-fig-cap-location: bottom
-citations-hover: true

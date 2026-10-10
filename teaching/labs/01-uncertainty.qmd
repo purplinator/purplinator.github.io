@@ -1,0 +1,351 @@
+---
+title: "Measurement Uncertainty"
+subtitle: "Every number you measure comes with a second number, and the second one matters"
+description: "What the uncertainty on a measurement actually means, how to estimate it from your equipment and your data, and how to carry it through a calculation."
+order: 1
+categories: [Lab]
+---
+
+Every lab I teach, no matter how many times I have explained it, I get questions about uncertainty. That is not a complaint. Uncertainty is confusing the first few times you meet it, and a lab period is a bad place to learn it. This page is the answer I would give you if we had the time: the quick version first, for the lab you are doing right now, and the longer story after it for anyone who wants to know why. If you find it confusing, you are in good company.
+
+# Quick Guide for the Lab Template
+
+At the bottom of the data table in every lab template there are two rows: **abs unc, δa** and **rel unc, δr**. Every column needs a number in both. The rule for getting them depends on where that column's numbers came from, so take it one column at a time. Pick a column, answer the questions below for that column, and the guide will tell you exactly what to type. Then hit "Next column" and do the next one.
+
+```{=html}
+<div class="sx-sheet">
+  <div class="sx-sheet__bar"><span class="sx-sheet__name">G5</span><span class="sx-sheet__fx">fx</span><span class="sx-sheet__formula">=(D5)*9.81*COS(E5/180*PI())</span></div>
+  <table>
+    <thead>
+      <tr><th></th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>4</th><td></td><td>Madd'l<br>(kg)</td><td>MTOT<br>(kg)</td><td>θMAX<br>(deg)</td><td>a<br>(m/s²)</td><td>FN<br>(N)</td><td>fs-max<br>(N)</td><td>fK<br>(N)</td></tr>
+      <tr><th>5</th><td class="is-label">?? on ??</td><td>0</td><td>0.11</td><td class="is-raw">20.5</td><td class="is-raw">0.59</td><td class="is-sel">1.011</td><td>0.378</td><td>0.313</td></tr>
+      <tr><th>6</th><td></td><td></td><td></td><td class="is-raw"></td><td class="is-raw"></td><td class="is-eq"></td><td class="is-eq"></td><td class="is-eq"></td></tr>
+      <tr class="is-gap"><th>⋮</th><td></td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+      <tr><th>35</th><td class="is-label">mean:</td><td>0.65</td><td>0.76</td><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td></tr>
+      <tr><th>36</th><td class="is-label">abs unc, δa</td><td>0.01</td><td>0.01</td><td class="is-raw"></td><td class="is-raw"></td><td class="is-eq"></td><td class="is-eq"></td><td class="is-eq"></td></tr>
+      <tr><th>37</th><td class="is-label">rel unc, δr</td><td>1.5%</td><td>1.3%</td><td class="is-eq"></td><td class="is-eq"></td><td class="is-eq"></td><td class="is-eq"></td><td class="is-eq"></td></tr>
+    </tbody>
+  </table>
+  <div class="sx-sheet__legend">
+    <span><span class="sx-sheet__swatch" style="background:#FFFF00"></span>Raw data you type in</span>
+    <span><span class="sx-sheet__swatch" style="background:#DDEBF7"></span>Excel formula you enter</span>
+    <span><span class="sx-sheet__swatch" style="border:2px solid #217346"></span>Selected cell, with its formula shown in the bar</span>
+  </div>
+</div>
+<p class="sx-sheet__caption">The bottom of the Lab 5 analysis template, with the first data row filled in as an example. Rows 36 and 37 are the two this guide fills, one column at a time.</p>
+```
+
+::::: {.sx-wizard}
+
+:::: {#unc-start .sx-wizard__step}
+**Pick a column. Click on any number in it and look at the formula bar at the top of Excel. Where did that number come from?**
+
+Hint: yellow cells are always measurements that were typed in, but not every measurement gets highlighted. Sometimes a measured column is left plain on purpose, so that you have to work out what it is, and sometimes the highlighting was just missed. The formula bar never lies: if what you see there starts with `=`, Excel calculated it.
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn" data-next="unc-typed" data-label="Typed in">
+    <span class="sx-wizard__btn-title">A plain number was typed in</span>
+    <span class="sx-wizard__btn-note">By you from a measurement, or already there when you opened the template.</span>
+  </button>
+  <button class="sx-wizard__btn" data-next="unc-calc" data-label="Calculated">
+    <span class="sx-wizard__btn-title">Excel calculated it with a formula</span>
+    <span class="sx-wizard__btn-note">The formula bar starts with = and points at other cells.</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-typed .sx-wizard__step}
+**This column is a measurement**, so it gets a *measurement uncertainty*: a number that says how well you could actually read the instrument. For a measured column you always start with the absolute uncertainty $\delta_a$ and get the relative uncertainty $\delta_r$ from it afterwards, never the other way round.
+
+**What produced the numbers in this column?**
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn" data-next="unc-m-scale" data-label="Read off a scale">
+    <span class="sx-wizard__btn-title">I read them off a scale with markings</span>
+    <span class="sx-wizard__btn-note">A meter stick, ruler, protractor, the angle scale on the incline, a balance.</span>
+  </button>
+  <button class="sx-wizard__btn" data-next="unc-m-digital" data-label="Software value">
+    <span class="sx-wizard__btn-title">The software or a digital display gave me the number</span>
+    <span class="sx-wizard__btn-note">The slope of a best-fit line, a value from a Statistics box, a readout that held still.</span>
+  </button>
+  <button class="sx-wizard__btn" data-next="unc-m-noisy" data-label="Jumpy reading">
+    <span class="sx-wizard__btn-title">The reading kept jumping around</span>
+    <span class="sx-wizard__btn-note">A force-sensor trace that wobbles, a readout whose last digits never settle.</span>
+  </button>
+  <button class="sx-wizard__btn" data-next="unc-m-given" data-label="Already filled in">
+    <span class="sx-wizard__btn-title">The template already has a δ<sub>a</sub> for this column</span>
+    <span class="sx-wizard__btn-note">The mass columns usually come this way.</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-m-scale .sx-wizard__step}
+**Decide how finely you could really read it.** Find the smallest marked division on the instrument: millimeters on a meter stick, single degrees on a protractor, the last digit on the balance.
+
+- If you could tell which mark the reading was closest to, but no better than that, the smallest division is your $\delta_a$. A meter stick with millimeter marks gives $\delta_a = 0.001$ m.
+- If you could honestly see where the reading sat *between* two marks, you can go smaller. Half a division is the usual choice.
+- If the thing you were measuring did not have a crisp edge, go bigger. The angle at which a block *starts* to slip is a judgment call, and an uncertainty of a couple of degrees is more honest than one degree, even if the scale is marked in single degrees.
+
+**You decide.** I will not take points off for a reasonable estimate that you can defend in one sentence. Type that number into the **abs unc, δa** row for this column, in the same units as the column.
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn" data-next="unc-m-dr" data-label="Got δa">
+    <span class="sx-wizard__btn-title">I have δ<sub>a</sub>. Now get δ<sub>r</sub> for this column</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-m-digital .sx-wizard__step}
+**Software shows more digits than it actually knows.** The display rounds at some decimal place, and that place is where the uncertainty starts. Begin with the last digit shown: a force reported as 1.079 N gets $\delta_a = 0.001$ N, and a slope of 0.482 m/s² gets $\delta_a = 0.001$ m/s².
+
+Two things override that starting point:
+
+- If the software printed a ± next to the number, it has already estimated the uncertainty for you. The fit box in Graphical Analysis can show one next to the slope. Use it.
+- If the number was changing while you watched it, the flicker is the real uncertainty, not the last digit. Take the "jumping around" branch instead.
+
+Type the number into the **abs unc, δa** row for this column.
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn" data-next="unc-m-dr" data-label="Got δa">
+    <span class="sx-wizard__btn-title">I have δ<sub>a</sub>. Now get δ<sub>r</sub> for this column</span>
+  </button>
+  <button class="sx-wizard__btn sx-wizard__btn--quiet" data-next="unc-m-noisy" data-label="Jumpy reading">
+    <span class="sx-wizard__btn-title">Actually, it was jumping around</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-m-noisy .sx-wizard__step}
+**When a reading wobbles, the wobble is the uncertainty.** The last digit on the screen means nothing if the digit before it will not hold still. The kinetic friction force in the friction lab is the classic case: the sensor trace bounces up and down the whole time the block is sliding.
+
+- Open the Statistics box for that stretch of the graph. The mean is your value, and the standard deviation (std. dev.) is a reasonable $\delta_a$.
+- No Statistics box? Read the highest and lowest values off the wobble and take about half of the difference between them.
+
+Type the number into the **abs unc, δa** row for this column.
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn" data-next="unc-m-dr" data-label="Got δa">
+    <span class="sx-wizard__btn-title">I have δ<sub>a</sub>. Now get δ<sub>r</sub> for this column</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-m-given .sx-wizard__step}
+**The Lab Professor already decided this one.** When the **abs unc, δa** cell for a column comes filled in (the added masses usually arrive with 0.01 kg already there), that is his estimate of how well those values are known. Leave it alone.
+
+Now look one row down. **Is the rel unc, δr cell for this column filled in as well?**
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn" data-next="unc-m-dr" data-label="δr empty">
+    <span class="sx-wizard__btn-title">No, δ<sub>r</sub> is empty</span>
+  </button>
+  <button class="sx-wizard__btn sx-wizard__btn--done" data-next="unc-start">
+    <span class="sx-wizard__btn-title">Yes, both are filled in. Next column</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-m-dr .sx-wizard__step}
+**Now the relative uncertainty.** $\delta_a$ says how far off the value might be. $\delta_r$ says how big that is *compared with the value itself*, which is what you will need when this column feeds into a multiplication later on:
+
+$$\delta_r = \frac{\delta_a}{\text{mean}}$$
+
+using this column's number from the **mean:** row.
+
+The easy way in Excel: click the **rel unc, δr** cell for this column, type `=`, click the $\delta_a$ cell just above it, type `/`, click the mean cell above that, and press Enter. Excel gives you a decimal. Think of it as a percentage and keep it short: $0.001 / 0.059 = 0.0169$, which is about 1.7%, and $0.0025$ is about 0.3%. Selecting the cell and pressing the **%** button on Excel's Home tab will show it as a percentage for you; add a decimal place if it rounds all the way to 0%.
+
+**That is this column finished.** Both uncertainty rows have a number in them.
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn sx-wizard__btn--done" data-next="unc-start">
+    <span class="sx-wizard__btn-title">Next column</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-calc .sx-wizard__step}
+**This column is calculated**, so its uncertainty is inherited from the columns that went into the formula. No calculation can know its answer better than it knows its inputs. That means you cannot finish this column until every input column has *both* $\delta_a$ and $\delta_r$ filled in.
+
+Read the formula in the formula bar and note which columns it uses. Constants do not count: 9.81, $\pi$, and a single given number like the mass of the box have no uncertainty rows of their own.
+
+**Does every column in the formula already have both uncertainty rows filled in?**
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn" data-next="unc-calc-op" data-label="Inputs done">
+    <span class="sx-wizard__btn-title">Yes, all of them</span>
+  </button>
+  <button class="sx-wizard__btn" data-next="unc-calc-wait" data-label="Inputs missing">
+    <span class="sx-wizard__btn-title">No, at least one is missing</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-calc-wait .sx-wizard__step}
+**Finish the input columns first.** Pick one of the missing columns and run through this guide again from the top for that column. If it turns out to be calculated as well, it will send you back another step, and that is fine. Uncertainty flows from the measurements outward, so the measured columns always get done first and the calculated ones fall into place after them.
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn sx-wizard__btn--done" data-next="unc-start">
+    <span class="sx-wizard__btn-title">Start over with that column</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-calc-op .sx-wizard__step}
+**What does the formula do with those columns?** Only two cases matter here. Some examples from the friction lab templates:
+
+- Total mass $= M_{\text{add'l}} + M_{\text{box}}$: **only addition**.
+- Normal force $= M_{\text{tot}} \times 9.81 \times \cos\theta$: **multiplication**, with a cosine thrown in.
+- Kinetic friction $= M_{\text{tot}} \times 9.81 \times \sin\theta - M_{\text{tot}} \times a$: **a mix** of multiplying and subtracting. A mix goes with the second group.
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn" data-next="unc-calc-sum" data-label="Add or subtract">
+    <span class="sx-wizard__btn-title">It only adds or subtracts the columns</span>
+  </button>
+  <button class="sx-wizard__btn" data-next="unc-calc-prod" data-label="Multiply, divide, or mix">
+    <span class="sx-wizard__btn-title">Anything else</span>
+    <span class="sx-wizard__btn-note">Multiplying, dividing, powers, sin or cos, or a mix of those with adding.</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-calc-sum .sx-wizard__step}
+**Adding and subtracting pass along the biggest absolute uncertainty.** Compare the $\delta_a$ of each input column and take the largest one as this column's $\delta_a$. Adding a box of exactly 0.11 kg to a mass known to ±0.01 kg gives a total that is still known to ±0.01 kg. The sum cannot be sharper than its fuzziest piece.
+
+In Excel: click the **abs unc, δa** cell for this column, type `=MAX(`, click each input column's $\delta_a$ cell with a comma between them, type `)` and press Enter. With a single input column, just type `=` and click its $\delta_a$ cell.
+
+Then get $\delta_r$ exactly as for a measured column: in the **rel unc, δr** cell, type `=`, click the $\delta_a$ cell, type `/`, click the mean cell.
+
+**That is this column finished.**
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn sx-wizard__btn--done" data-next="unc-start">
+    <span class="sx-wizard__btn-title">Next column</span>
+  </button>
+</div>
+```
+::::
+
+:::: {#unc-calc-prod .sx-wizard__step}
+**Multiplying, dividing, powers, and trig pass along the biggest relative uncertainty.** Compare the $\delta_r$ of each input column and take the largest one as this column's $\delta_r$. A 2% uncertainty in a length is a 2% uncertainty in anything proportional to that length, whatever the size of the result, so for products it is the percentage that carries through, not the absolute amount.
+
+In Excel: click the **rel unc, δr** cell for this column, type `=MAX(`, click each input column's $\delta_r$ cell with a comma between them, type `)` and press Enter.
+
+Then go the other way to get $\delta_a$, because now you know the percentage and need the actual amount:
+
+$$\delta_a = \delta_r \times \text{mean}$$
+
+In the **abs unc, δa** cell: type `=`, click this column's $\delta_r$ cell, type `*`, click the mean cell, and press Enter.
+
+**That is this column finished.**
+
+```{=html}
+<div class="sx-wizard__choices">
+  <button class="sx-wizard__btn sx-wizard__btn--done" data-next="unc-start">
+    <span class="sx-wizard__btn-title">Next column</span>
+  </button>
+</div>
+```
+::::
+
+:::::
+
+::: {.callout-tip}
+## Before it goes in the report
+Round $\delta_a$ to one significant figure, then round the value to the same decimal place. An area of $154.8635$ m² with $\delta_a = 0.407$ m² is reported as $154.9 \pm 0.4$ m². The extra digits were never real, and the uncertainty is what told you so.
+:::
+
+
+::: {.sx-divider}
+[Would you like to know more?]{.sx-divider__eyebrow}
+
+Everything above is enough to finish the lab. The rest of this page is for anyone who wants to know *why* those rules work, and why the second number on every measurement matters at all.
+:::
+
+# The Longer Story
+
+## Uncertainty or Error?
+
+::: {.callout-tip}
+## The short version
+**Error** is how far off you were. **Uncertainty** is how well you know the number. The first needs a right answer to compare against. The second does not.
+:::
+
+In daily life the two words are close to interchangeable. In a physics lab they are not, and most of the confusion on this page comes from letting them blur together, so let me pull them apart on purpose.
+
+Start with "oops." You say it when you made a mistake: you dropped something, you added where you should have subtracted, you read the wrong row of the table. That is the everyday meaning of **error**, and it is worth holding onto, because the lab meaning is its well-behaved cousin. In a lab report, error is how far your result landed from the value you expected. If I know my coffee is $180^\circ\mathrm{F}$ and my thermometer reads $175^\circ\mathrm{F}$, the error is $5^\circ\mathrm{F}$. When a lab asks for a *percent error*, this is the number it wants: the gap between your answer and the accepted one, as a fraction of the accepted one.
+
+Nobody has ever said "oops, I made an uncertainty." Uncertainty is what you say with "I'm not sure." Ask me how hot my coffee is when I have no thermometer and I can still answer, but only from what I know: boiling water is $212^\circ\mathrm{F}$, the cup has been sitting for a minute, it is still too hot to drink. So, "about $190^\circ\mathrm{F}$, give or take $20$." The give-or-take is the **uncertainty**. It is not a mistake. It is an honest statement of how well I know the number, and the honest version of my answer is "somewhere between $170$ and $210^\circ\mathrm{F}$, probably."
+
+So the two words answer two different questions. Error asks *how far off was I?* and needs a right answer to compare against. Uncertainty asks *how well do I know this?* and needs no right answer at all. You can put an uncertainty on a measurement nobody has ever made before. That is the whole distinction.
+
+One warning: physicists have been sloppy about this for a century. You will see "error bars" on graphs that are really uncertainty bars, and the Lab Professor's primer calls the whole subject error analysis. When you read "error" in a textbook, check which question it is answering. On this page, and in my grading, error is the gap and uncertainty is the give-or-take.
+
+## Why Does Uncertainty Matter?
+
+Say we are meeting for dinner and I tell you I will be there at 7. Neither of us thinks I mean 7:00:00.000. I mean *around* 7, give or take a bit, and the size of that bit is the uncertainty on my arrival time. If it is a few minutes, nobody cares. If it is two hours, you care a great deal, because "7 PM plus or minus 2 hours" means anywhere from 5 to 9, and you are either sitting alone at a table for hours or checking the door every five minutes. The number 7 never changed. What changed is how much the number is worth.
+
+That is the job uncertainty does in science. A measurement with no uncertainty is "7 PM" with no way to tell whether it means 7 sharp or "sometime this evening." The second number tells the reader how hard they are allowed to lean on the first. A number you cannot lean on is not a result.
+
+::: {.callout-note}
+## Uncertainty as confidence
+There is one more layer, and it is the one that makes the $\pm$ precise instead of vague. "7 PM $\pm$ 2 hours" does not mean I am guaranteed to arrive between 5 and 9. It means I am *fairly confident* I will. When the uncertainty is a proper statistical one (a standard deviation from repeated measurements, which the Lab Professor's primer walks through), "fairly confident" has a number attached: about a $68\%$ chance I arrive within one uncertainty of 7, so between 5 and 9; about $95\%$ within two, between 3 and 11; and $99.7\%$ within three, between 1 PM and 1 AM.
+
+Notice what the $68\%$ means for you. There is roughly a one-in-three chance I show up outside 5 to 9. When are you even supposed to leave the house? Widen the window and I get more confident, but the window gets less useful: "I will almost certainly arrive between 1 PM and 1 AM" is both true and worthless. Every measurement lives in that tension. The honest window and the useful window pull in opposite directions, and the quality of an experiment is how narrow a window it can honestly claim.
+
+The uncertainties you estimate in this lab, like half a millimeter on a meter stick, are judgments rather than standard deviations from repeated trials, so do not read the $68\%$ off them too literally. The idea is the same: the $\pm$ is a statement of confidence, not a fence.
+:::
+
+## Measurement Uncertainty
+
+There are two kinds of uncertainty in these labs, and the quick guide above sorts every column into one or the other. The first is **measurement uncertainty**: the uncertainty you get for no other reason than that no instrument reads infinitely finely.
+
+Measure your desk with a ruler marked only in inches. The best you can do is "about 16 inches," or if you are careful, "about halfway between 16 and 17." Either way the inch marks set the limit. You can estimate between them, and that estimate is where your judgment comes in, but you cannot get a hundredth of an inch out of a ruler that only shows inches.
+
+Swap in a ruler marked in millimeters and the same desk comes out as "405 mm," or "405.3 mm" if you trust yourself to read between the lines. Better instrument, smaller uncertainty, never zero. Nobody with a meter stick can tell me their desk is $405.728467$ mm long, and a number written that way is not more precise. It is a claim the instrument cannot back up. The instrument sets the floor, and your honesty decides how close to it you get.
+
+This is why the quick guide asks what you measured *with* before it asks anything else. The uncertainty on a measured column is not a formula. It is a judgment about the tool: the finest division you could actually read, or the size of the wobble if the reading would not sit still. I grade that judgment on whether it is reasonable, not on whether it matches a number in my head.
+
+## Calculated Uncertainty
+
+The second kind shows up the moment you *use* a measurement. Suppose I measure the desk as $405 \pm 1$ mm on each side and want its area. Whatever the area comes out to, I cannot know it better than I knew the sides. The uncertainty in the lengths has to flow through the multiplication into the area. That is **calculated uncertainty**, and the two rules in the quick guide are the two ways it flows.
+
+**Adding and subtracting pass along the biggest absolute uncertainty.** Picture the total mass in the friction lab: a box whose mass was handed to you as $0.11$ kg, with a bar on top known to $\pm 10$ g. The total is uncertain by about $10$ g, because the bar's fuzziness is the only fuzziness there is, and nothing about the box can shrink it. So a sum carries the largest $\delta_a$ of its pieces.
+
+**Multiplying and dividing pass along the biggest relative uncertainty.** Here the honest comparison is percentages, not amounts. Take the Lab Professor's example: two lengths, $20.35 \pm 0.05$ m and $7.61 \pm 0.02$ m. The first has the bigger absolute uncertainty, but as a fraction of itself it is only $0.2\%$, while the second is $0.3\%$. Multiply them for an area and it is the $0.3\%$ that limits the answer, because a $0.3\%$ fuzz in one factor is a $0.3\%$ fuzz in the product, however large the product gets. So a product carries the largest $\delta_r$ of its factors, and you convert back to an amount at the end by multiplying by the product itself: $0.0026 \times 154.86\ \mathrm{m^2} \approx 0.4\ \mathrm{m^2}$.
+
+Why percentages for products and amounts for sums? Because of what each operation does to a small nudge. Nudge one term of a sum by $0.05$ and the sum moves by exactly $0.05$: amounts pass straight through addition. Nudge one factor of a product by $0.3\%$ and the product moves by $0.3\%$: fractions pass straight through multiplication. The two rules are one rule, "the result inherits the nudge," written in whichever currency the operation deals in.
+
+::: {.callout-note}
+## The honest version
+"Take the biggest one" is a deliberate simplification, and it is the rule this lab uses, so use it. The full treatment, which is in the Lab Professor's primer and in any statistics course, combines uncertainties in quadrature: for a sum, $\delta_a^2 = \delta_{a,1}^2 + \delta_{a,2}^2$, and the same shape for relative uncertainties in a product. A root of a sum of squares always lands between "the biggest one" and "all of them added up," so the biggest one is a fair stand-in whenever one input dominates, which in these labs it nearly always does. For anyone who has had calculus, the general rule is $\delta_A^2 = \sum_i \left(\partial A/\partial X_i\right)^2 \delta_{X_i}^2$, and the lab rules are what it collapses to when one term wins.
+:::
+
+## Writing It Down
+
+A measurement is not finished until it is written as *value $\pm$ uncertainty*, with units on both, and the two numbers have to agree about how many digits are real. The convention in these labs: round the uncertainty to one significant figure, then round the value to the same decimal place. The area above came out of the calculator as $154.8635\ \mathrm{m^2}$ with $\delta_a = 0.407\ \mathrm{m^2}$. Written honestly, it is $154.9 \pm 0.4\ \mathrm{m^2}$. Every digit past the tenths place was fiction, and the uncertainty is what told you so.
+
+This is also where error and uncertainty finally meet. When a lab asks you to compare your result with an accepted value, you now hold both numbers: how far off you were, and how far off you were allowed to be. If the accepted value sits inside your $\pm$ window, your measurement agrees with it, full stop, even if the percent error is not zero. If it sits outside, something systematic happened, and working out what is the most interesting paragraph you can write in a conclusion. That is the whole point of the second number.

@@ -9,3 +9,20 @@
 # macOS noise
 .DS_Store
 **/.DS_Store
+
+# ---------------------------------------------------------------------------
+# HELD BACK: sections not ready for the live site (since 2026-10-09).
+# The folders stay on disk but are untracked here and left out of the build by
+# the matching "HELD BACK" comments in _quarto.yml (and a few links in
+# index.qmd, about.qmd, cv.qmd and 404.qmd point at the CV instead for now).
+# To publish one: delete its line below, restore every "HELD BACK" comment
+# (grep -rn "HELD BACK" --include="*.qmd" --include="*.yml" --include="*.md" .)
+# and `git add` the folder. While ignored, the folder is not version-controlled.
+# ---------------------------------------------------------------------------
+/research/
+/notes/
+
+# Reference material used while writing, not site content
+/saxon_writing_examples/
+/files/*.xlsx
+/files/*.docx

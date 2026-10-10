@@ -8,23 +8,30 @@ toc: false
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-4}
-![](images/portrait.jpg){.rounded-circle .shadow fig-alt="Saxon Stockton" width="100%" style="max-width:260px;"}
+![](images/portrait.jpg){.sx-portrait .rounded-circle .shadow fig-alt="Saxon Stockton" width="100%" style="max-width:260px;"}
 
 **Saxon Stockton**<br>
 Astrophysics PhD Student<br>
 Texas Christian University
 
 [s.stockton@tcu.edu](mailto:s.stockton@tcu.edu)<br>
-[github.com/purplinator](https://github.com/purplinator)
+[github.com/purplinator](https://github.com/purplinator)<br>
+[ORCID 0000-0003-1677-0213](https://orcid.org/0000-0003-1677-0213)
+
+[ADS](https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0003-1677-0213&sort=date%20desc) ·
+[Google Scholar](https://scholar.google.com/scholar?q=author%3A%22Saxon+Stockton%22) ·
+[arXiv](https://arxiv.org/search/?searchtype=author&query=Stockton%2C+Saxon)
 :::
 
 ::: {.g-col-12 .g-col-md-8}
 
 I am an astrophysics researcher specialising in spectral line analysis and
-pulling physical information out of large data sets. My current work processes
-integral field spectroscopy from the Local Volume Mapper around the 30 Doradus
-region of the Large Magellanic Cloud, measuring how much dust sits between us
-and every point in that nebula.
+pulling physical information out of large data sets. My current work, with
+Dr. Kathleen Barger at TCU, uses integral field spectroscopy from the Local
+Volume Mapper to study the gas in and around 30 Doradus, the largest
+star-forming region in the Large Magellanic Cloud. The spectra become maps:
+one for every emission line, corrected for the dust in the way, and then read
+together for what the gas is doing.
 
 What I like most about the work is the part before the result: figuring out what
 a data set can and cannot tell you, and building something that does not quietly
@@ -40,8 +47,9 @@ Outside of that, I am an enthusiastic karaoke singer, a gamer, and a traveler.
 
 Two reasons.
 
+<!-- HELD BACK (see .gitignore): the Research link below pointed at research/index.qmd -->
 The first is ordinary: research should be findable, and code nobody can run is
-not a contribution. The [Research](research/index.qmd) section is where I write
+not a contribution. The [Research](cv.qmd#research) section is where I write
 up what I am working on and document the tools that come out of it.
 
 The second is the one I care about more. I like taking high-level physics and
@@ -53,11 +61,14 @@ the other kind, and it is free, permanently, to anyone who wants it.
 
 ## What I am working on
 
-**Research.** Dust extinction maps across 30 Doradus from LVM spectroscopy.
-[Read the project →](research/01-lmc-dust.qmd)
+**Research.** Emission-line maps of 30 Doradus from LVM spectroscopy: dust
+correction from Balmer decrements, then line-ratio diagnostics of the gas.
+<!-- HELD BACK (see .gitignore): was [Read the project →](research/index.qmd) -->
+[Read the summary →](cv.qmd#research)
 
-**Writing.** *Python from Scratch*, a programming series for people who have
-never written a line of code, with examples that run in the browser.
+**Teaching.** [Lab Help](teaching/labs/index.qmd), short answers for the
+physics labs I teach, and *Python from Scratch*, a programming series for
+people who have never written a line of code.
 [Open the series →](teaching/python/index.qmd)
 
 **Next.** Mathematics lessons and worked physics problems, both currently

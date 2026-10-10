@@ -1,0 +1,9 @@
+# Defaults for every page in Lab Help.
+
+# assets/wizard.html is the script behind the click-through guides: a
+# `.sx-wizard` fenced div with one `.sx-wizard__step` per question (see
+# 01-uncertainty.qmd for the authoring pattern). It is included here rather
+# than in _quarto.yml because only the lab pages use it. The matching styles
+# are in styles.css, section 16.
+include-after-body:
+  - ../../assets/wizard.html

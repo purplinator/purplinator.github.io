@@ -1,0 +1,29 @@
+---
+title: "Lab Help"
+subtitle: "Labs a little confusing?"
+description: "Short answers to the questions that come up most in the physics labs I teach: uncertainty, graphs, lab reports, and what the equipment is actually doing."
+listing:
+  id: topics
+  contents:
+    - "[0-9]*.qmd"
+  type: grid
+  grid-columns: 2
+  sort: "order asc"
+  fields: [title, description, categories]
+  sort-ui: false
+  filter-ui: false
+  date-format: ""
+---
+
+Most lab confusion is not about the physics. It is about what the instructions
+are asking for, what counts as a reasonable answer, and what to do when your
+numbers come out strange. Those questions get asked in every section, every
+week, so the answers live here.
+
+Each page below takes one topic and goes through it properly, with the
+reasoning left in. Start with the one that matches your question. If nothing
+here covers it, email me at [s.stockton@tcu.edu](mailto:s.stockton@tcu.edu)
+and I will add a page.
+
+::: {#topics}
+:::

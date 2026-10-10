@@ -9,7 +9,7 @@ listing:
   type: grid
   grid-columns: 2
   sort: "order asc"
-  fields: [title, description]
+  fields: [title, description, categories]
   sort-ui: false
   filter-ui: false
   date-format: ""
@@ -24,8 +24,8 @@ Most programming tutorials start by having you type something and promising it
 will make sense later. That works for some people. For everyone else it
 produces a year of copying code that runs without any idea why.
 
-This series takes the other route. The first three lessons contain no Python at
-all — they are about what a programming language *is*, what a computer is
+This series takes the other route. The first three pages are foundations and contain no
+Python at all — they are about what a programming language *is*, what a computer is
 physically doing when it runs one, and how to pick a language in the first
 place. Once that is in place, the syntax stops being arbitrary and starts being
 obvious.

@@ -1,7 +1,7 @@
 ---
 title: "Teaching Resources"
-subtitle: "Everything here is free, and everything here assumes you can handle the real explanation"
-description: "Python tutorials that run in your browser, mathematics lessons, and worked physics problems."
+subtitle: "Everything here is free, and nothing here is watered down"
+description: "Lab help for the physics labs I teach, Python tutorials that run in your browser, mathematics lessons, and worked physics problems."
 ---
 
 Most of the time, when a student tells me they are bad at physics, what they
@@ -15,6 +15,17 @@ pretending a step is obvious when it isn't.
 
 ```{=html}
 <div class="sx-cards">
+<a class="sx-card" href="labs/index.html">
+  <div class="sx-card__icon"><i class="bi bi-clipboard-data"></i></div>
+  <h3 class="sx-card__title">Lab Help</h3>
+  <p class="sx-card__text">
+    Short answers to the questions that come up every week in the physics labs
+    I teach: uncertainty, graphs, lab reports, and what the equipment is
+    actually doing. Start here if you are in one of my sections.
+  </p>
+  <span class="sx-card__more">Get unstuck</span>
+</a>
+
 <a class="sx-card" href="python/index.html">
   <div class="sx-card__icon"><i class="bi bi-code-square"></i></div>
   <h3 class="sx-card__title">Python from Scratch</h3>

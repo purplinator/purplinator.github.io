@@ -1,0 +1,142 @@
+<!-- Decision wizard for the Lab Help pages.
+
+     A `.sx-wizard` fenced div holds one `.sx-wizard__step` div per question
+     or answer. Buttons with `data-next="<step id>"` move between them, and a
+     button that points back at the first step starts a fresh run. This script
+     shows one step at a time, keeps a trail of the answers chosen so far (each
+     chip goes back to the question it answered), adds Back and Start-over
+     links, and opens a step directly when the page is loaded with that step's
+     id in the URL hash or when an in-page link points at it.
+
+     Without the script every step is visible in order, so the page still
+     reads as a plain guide, and the same happens in print.
+
+     Included after the body by teaching/labs/_metadata.yml. The matching
+     styles are in styles.css, section 16. The authoring pattern is in
+     teaching/labs/01-uncertainty.qmd. -->
+<script>
+(function () {
+  'use strict';
+
+  function setUp(wizard) {
+    var steps = Array.prototype.slice.call(wizard.querySelectorAll('.sx-wizard__step'));
+    if (!steps.length) return;
+
+    var byId = {};
+    steps.forEach(function (step) { byId[step.id] = step; });
+    var first = steps[0];
+    var current = first;
+    // One entry per answer given: the step it was given on, and the chip text.
+    var trail = [];
+
+    var trailBar = document.createElement('nav');
+    trailBar.className = 'sx-wizard__trail';
+    trailBar.setAttribute('aria-label', 'Answers so far');
+    wizard.insertBefore(trailBar, first);
+
+    function makeButton(className, text, onClick) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = className;
+      button.textContent = text;
+      button.addEventListener('click', onClick);
+      return button;
+    }
+
+    function restart() {
+      trail = [];
+      show(first, true);
+    }
+
+    function goBack() {
+      var last = trail.pop();
+      show(last ? byId[last.from] : first, true);
+    }
+
+    function renderTrail() {
+      trailBar.innerHTML = '';
+      if (!trail.length) return;
+      trail.forEach(function (entry, index) {
+        if (index) {
+          var sep = document.createElement('span');
+          sep.className = 'sx-wizard__sep';
+          sep.setAttribute('aria-hidden', 'true');
+          sep.textContent = '›';
+          trailBar.appendChild(sep);
+        }
+        trailBar.appendChild(makeButton('sx-wizard__crumb', entry.label, function () {
+          trail = trail.slice(0, index);
+          show(byId[entry.from], true);
+        }));
+      });
+      trailBar.appendChild(makeButton('sx-wizard__reset', 'Start over', restart));
+    }
+
+    function renderNav(step) {
+      Array.prototype.forEach.call(wizard.querySelectorAll('.sx-wizard__nav'), function (old) {
+        old.remove();
+      });
+      if (step === first || !trail.length) return;
+      var nav = document.createElement('p');
+      nav.className = 'sx-wizard__nav';
+      nav.appendChild(makeButton('', '← Back', goBack));
+      nav.appendChild(makeButton('', 'Start over', restart));
+      step.appendChild(nav);
+    }
+
+    function show(step, moveFocus) {
+      current = step;
+      steps.forEach(function (s) { s.classList.toggle('is-active', s === step); });
+      renderTrail();
+      renderNav(step);
+      if (!moveFocus) return;
+      step.setAttribute('tabindex', '-1');
+      step.focus({ preventScroll: true });
+      // After a click near the bottom of a long step the new step can start
+      // above the viewport; bring the card back into view when that happens.
+      if (wizard.getBoundingClientRect().top < 0) {
+        wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    wizard.addEventListener('click', function (event) {
+      var button = event.target.closest('.sx-wizard__btn');
+      if (!button || !wizard.contains(button)) return;
+      var next = byId[button.getAttribute('data-next')];
+      if (!next) return;
+      if (next === first) {
+        trail = [];
+      } else {
+        var title = button.querySelector('.sx-wizard__btn-title');
+        var label = button.getAttribute('data-label') || (title || button).textContent.trim();
+        trail.push({ from: current.id, label: label });
+      }
+      show(next, true);
+    });
+
+    // Deep links: a URL ending in #<step id>, or an in-page link to one. The
+    // browser cannot scroll to a hidden step, so open it and scroll ourselves.
+    function openFromHash(hash) {
+      var step = hash && byId[hash.replace(/^#/, '')];
+      if (!step) return false;
+      trail = [];
+      show(step, true);
+      wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return true;
+    }
+    window.addEventListener('hashchange', function () { openFromHash(location.hash); });
+
+    wizard.classList.add('is-ready');
+    if (!openFromHash(location.hash)) show(first, false);
+  }
+
+  function run() {
+    Array.prototype.forEach.call(document.querySelectorAll('.sx-wizard'), setUp);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>

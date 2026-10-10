@@ -93,7 +93,7 @@ $callout-color-important: $nebula;
   --sx-surface-alt:   #F5F2FC;
   --sx-ink:           #1E1A2E;
   --sx-ink-muted:     #5B5570;
-  --sx-ink-faint:     #857E9C;
+  --sx-ink-faint:     #6E6788;   /* 5.1:1 on the page background; the old #857E9C was 3.7:1 */
   --sx-border:        #E4DDF6;
   --sx-border-strong: #C9BCEB;
 
@@ -105,6 +105,8 @@ $callout-color-important: $nebula;
 
   --sx-gold:          #E8A33D;
   --sx-nebula:        #C7519C;
+  --sx-nebula-ink:    #9E3A7A;   /* nebula as small text: 6:1 on the page background */
+  --sx-gold-ink:      #8F5C10;   /* gold as small text: 5.5:1 */
 
   --sx-shadow-sm: 0 1px 2px rgba(36, 16, 70, 0.06), 0 2px 8px rgba(36, 16, 70, 0.05);
   --sx-shadow-md: 0 4px 10px rgba(36, 16, 70, 0.08), 0 12px 28px rgba(36, 16, 70, 0.10);
