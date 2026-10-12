@@ -2,58 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://saxonstockton.com/teaching/python/index.html</loc>
-    <lastmod>2026-10-10T03:16:47.956Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
   </url>
   <url>
     <loc>https://saxonstockton.com/teaching/python/02-choosing-a-language.html</loc>
-    <lastmod>2026-10-10T03:16:47.956Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
   </url>
   <url>
     <loc>https://saxonstockton.com/teaching/python/00-what-is-a-programming-language.html</loc>
-    <lastmod>2026-10-10T03:16:47.955Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
   </url>
   <url>
     <loc>https://saxonstockton.com/teaching/philosophy.html</loc>
-    <lastmod>2026-10-10T03:16:47.955Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saxonstockton.com/teaching/labs/lab-guides/index.html</loc>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saxonstockton.com/teaching/labs/lab-guides/05-friction-incline.html</loc>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
   </url>
   <url>
     <loc>https://saxonstockton.com/teaching/labs/index.html</loc>
-    <lastmod>2026-10-10T03:16:47.955Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saxonstockton.com/teaching/index.html</loc>
-    <lastmod>2026-10-10T03:16:47.955Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saxonstockton.com/cv.html</loc>
-    <lastmod>2026-10-10T03:16:47.950Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saxonstockton.com/about.html</loc>
-    <lastmod>2026-10-10T03:16:47.949Z</lastmod>
-  </url>
-  <url>
-    <loc>https://saxonstockton.com/index.html</loc>
-    <lastmod>2026-10-10T03:16:47.954Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.574Z</lastmod>
   </url>
   <url>
     <loc>https://saxonstockton.com/teaching/labs/01-uncertainty.html</loc>
-    <lastmod>2026-10-10T03:16:47.955Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.574Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saxonstockton.com/index.html</loc>
+    <lastmod>2026-10-12T02:05:46.572Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saxonstockton.com/about.html</loc>
+    <lastmod>2026-10-12T02:05:46.568Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saxonstockton.com/cv.html</loc>
+    <lastmod>2026-10-12T02:05:46.568Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saxonstockton.com/teaching/index.html</loc>
+    <lastmod>2026-10-12T02:05:46.574Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saxonstockton.com/teaching/labs/02-lab-report-format.html</loc>
+    <lastmod>2026-10-12T02:05:46.574Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saxonstockton.com/teaching/labs/lab-guides/04-friction-flat.html</loc>
+    <lastmod>2026-10-12T02:05:46.574Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saxonstockton.com/teaching/labs/lab-guides/06-spring-constant.html</loc>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
   </url>
   <url>
     <loc>https://saxonstockton.com/teaching/math/index.html</loc>
-    <lastmod>2026-10-10T03:16:47.955Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
   </url>
   <url>
     <loc>https://saxonstockton.com/teaching/physics/index.html</loc>
-    <lastmod>2026-10-10T03:16:47.955Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
   </url>
   <url>
     <loc>https://saxonstockton.com/teaching/python/01-how-computers-work.html</loc>
-    <lastmod>2026-10-10T03:16:47.956Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
   </url>
   <url>
     <loc>https://saxonstockton.com/teaching/python/03-python-basics.html</loc>
-    <lastmod>2026-10-10T03:16:47.956Z</lastmod>
+    <lastmod>2026-10-12T02:05:46.575Z</lastmod>
   </url>
 </urlset>

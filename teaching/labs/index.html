@@ -111,6 +111,34 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-guides .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-guides'] = new List('listing-guides', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 <style>html{ scroll-behavior: smooth; }</style>
 <style>
@@ -129,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
         color: #F3EFFC;
       }
 </style>
-<!-- MathJax configuration, loaded on every page.
+<!-- MathJax 4 configuration, loaded on every page.
 
      Macros defined here work in any .qmd file without a per-page preamble, so
      equations stay short to type and consistent across the site. Add new ones
@@ -171,12 +199,24 @@ ul.task-list li input[type="checkbox"] {
       ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
       processHtmlClass: 'mathjax'
     },
-    chtml: { scale: 1.0, displayAlign: 'center' }
+    // MathJax 4: font and layout options live under `output`. STIX Two Math is
+    // loaded from the same CDN as MathJax itself when it is named here.
+    output: { font: 'mathjax-stix2', scale: 1.0, displayAlign: 'center' }
   };
+</script>
+<!-- Reading-spacing preference, applied before first paint so the page does
+     not jump. The toggle itself is added by assets/spacing-toggle.html, and
+     the spacing rules are in styles.css, section 18. -->
+<script>
+  try {
+    if (localStorage.getItem('sx-spacing') === 'wide') {
+      document.documentElement.setAttribute('data-sx-spacing', 'wide');
+    }
+  } catch (e) {}
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -486,17 +526,52 @@ window.Quarto = {
  <span class="menu-text">Measurement Uncertainty</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/02-lab-report-format.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How a Lab Gets Turned In</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/labs/lab-guides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/04-friction-flat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Friction on a Flat Surface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/05-friction-incline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Friction on an Incline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/06-spring-constant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6: The Spring Constant, Two Ways</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../teaching/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python from Scratch</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../teaching/python/00-what-is-a-programming-language.html" class="sidebar-item-text sidebar-link">
@@ -536,8 +611,14 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#this-semesters-labs" id="toc-this-semesters-labs" class="nav-link active" data-scroll-target="#this-semesters-labs">This semester’s labs</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -551,7 +632,7 @@ window.Quarto = {
 <p>Each page below takes one topic and goes through it properly, with the reasoning left in. Start with the one that matches your question. If nothing here covers it, email me at <a href="mailto:s.stockton@tcu.edu">s.stockton@tcu.edu</a> and I will add a page.</p>
 <div id="listing-topics" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-2">
-<div class="g-col-1" data-index="0" data-categories="TGFi" data-listing-file-modified-sort="1791602207955" data-listing-reading-time-sort="20" data-listing-word-count-sort="3934">
+<div class="g-col-1" data-index="0" data-categories="TGFi" data-listing-file-modified-sort="1791770746574" data-listing-reading-time-sort="20" data-listing-word-count-sort="3934">
 <a href="../../teaching/labs/01-uncertainty.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -569,14 +650,150 @@ Measurement Uncertainty
 </div>
 </div></a>
 </div>
+<div class="g-col-1" data-index="1" data-categories="TGFi" data-listing-file-modified-sort="1791770746574" data-listing-reading-time-sort="11" data-listing-word-count-sort="2055">
+<a href="../../teaching/labs/02-lab-report-format.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+How a Lab Gets Turned In
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TGFi'); return false;">Lab</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>What the QPD, UDA and CON whiteboards must contain, where each photo goes in the report template, and a checklist to run before you take the picture.</p>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+<section id="this-semesters-labs" class="level2">
+<h2 class="anchored" data-anchor-id="this-semesters-labs">This semester’s labs</h2>
+<p>One page per lab: the question, what each job writes, the columns and graphs, and the conclusion sentence by sentence. Read <a href="../../teaching/labs/02-lab-report-format.html">How a Lab Gets Turned In</a> first if this is your first lab; the per-lab pages assume it.</p>
+<div id="listing-guides" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-2">
+<div class="g-col-1" data-index="0" data-categories="UmVndWxhciUyMGxhYg==" data-listing-file-modified-sort="1791770746574" data-listing-reading-time-sort="7" data-listing-word-count-sort="1309">
+<a href="../../teaching/labs/lab-guides/04-friction-flat.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lab 4: Friction on a Flat Surface
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVndWxhciUyMGxhYg=='); return false;">Regular lab</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>The question, the two forces you read off the sensor graph, the free-body diagram and sample calculations, the four trendlines, and the five conclusion questions one…</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="TWFqb3IlMjBsYWI=" data-listing-file-modified-sort="1791770746575" data-listing-reading-time-sort="7" data-listing-word-count-sort="1292">
+<a href="../../teaching/labs/lab-guides/05-friction-incline.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lab 5: Friction on an Incline
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TWFqb3IlMjBsYWI='); return false;">Major lab</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>A major lab: the slipping angle and the acceleration, the four calculated force columns, the free-body diagram on a slope, the four trendlines, and the conclusion sentence…</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="UmVndWxhciUyMGxhYg==" data-listing-file-modified-sort="1791770746575" data-listing-reading-time-sort="8" data-listing-word-count-sort="1416">
+<a href="../../teaching/labs/lab-guides/06-spring-constant.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lab 6: The Spring Constant, Two Ways
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVndWxhciUyMGxhYg=='); return false;">Regular lab</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Two parts with two graphs: spring force against stretch for a lowered mass, and maximum stretch against mass for a dropped one. Both slopes give the spring constant, and the…</p>
+</div>
+</div>
+</div></a>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
 
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<!-- "Wider spacing" toggle, added to the navbar next to Quarto's dark-mode
+     toggle on every page (Quarto renders that button twice, once for wide
+     screens and once for the collapsed menu, so this adds one beside each).
+     Sets data-sx-spacing="wide" on <html> and remembers the choice in
+     localStorage; assets/spacing-head.html re-applies it before paint on the
+     next page, and styles.css section 18 does the spacing. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    if (document.querySelector('.sx-spacing-toggle')) return;
+    var darks = document.querySelectorAll('.quarto-color-scheme-toggle');
+    if (!darks.length) return;
+    var root = document.documentElement;
+    var on = root.getAttribute('data-sx-spacing') === 'wide';
+    var links = [];
+
+    function apply() {
+      if (on) root.setAttribute('data-sx-spacing', 'wide');
+      else root.removeAttribute('data-sx-spacing');
+      links.forEach(function (l) { l.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      try { localStorage.setItem('sx-spacing', on ? 'wide' : 'normal'); } catch (e) {}
+    }
+
+    Array.prototype.forEach.call(darks, function (dark) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.className = (dark.className || '').replace('quarto-color-scheme-toggle', '').trim() + ' sx-spacing-toggle';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-pressed', on ? 'true' : 'false');
+      link.setAttribute('aria-label', 'Wider letter spacing for easier reading');
+      link.title = 'Wider spacing';
+      link.innerHTML = '<i class="bi bi-fonts" aria-hidden="true"></i>';
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        on = !on;
+        apply();
+      });
+      // Mirror the dark toggle's wrapper when it has one, so the two sit side by side.
+      var wrapper = dark.parentElement;
+      if (wrapper && wrapper.tagName === 'LI') {
+        var li = document.createElement('li');
+        li.className = wrapper.className;
+        li.appendChild(link);
+        wrapper.parentElement.insertBefore(li, wrapper);
+      } else {
+        wrapper.insertBefore(link, dark);
+      }
+      links.push(link);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
 <!-- Decision wizard for the Lab Help pages.
 
      A `.sx-wizard` fenced div holds one `.sx-wizard__step` div per question
@@ -717,6 +934,29 @@ Measurement Uncertainty
   } else {
     run();
   }
+})();
+</script>
+<!-- Tickable checklists for the Lab Help pages.
+
+     Pandoc renders a Markdown task list (`- [ ] item`) with disabled
+     checkboxes. Inside a `.sx-checklist` fenced div this script enables them
+     so a student can tick items off while checking a whiteboard. Nothing is
+     saved; reloading the page clears the boxes, which is the right behaviour
+     for a checklist that is run once per lab. Styles: styles.css section 17.
+
+     Included after the body by teaching/labs/_metadata.yml. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    var boxes = document.querySelectorAll('.sx-checklist input[type="checkbox"]');
+    Array.prototype.forEach.call(boxes, function (box) {
+      box.disabled = false;
+      box.setAttribute('aria-label', (box.parentNode.textContent || '').trim());
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
 })();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
         color: #F3EFFC;
       }
 </style>
-<!-- MathJax configuration, loaded on every page.
+<!-- MathJax 4 configuration, loaded on every page.
 
      Macros defined here work in any .qmd file without a per-page preamble, so
      equations stay short to type and consistent across the site. Add new ones
@@ -141,8 +141,20 @@ ul.task-list li input[type="checkbox"] {
       ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
       processHtmlClass: 'mathjax'
     },
-    chtml: { scale: 1.0, displayAlign: 'center' }
+    // MathJax 4: font and layout options live under `output`. STIX Two Math is
+    // loaded from the same CDN as MathJax itself when it is named here.
+    output: { font: 'mathjax-stix2', scale: 1.0, displayAlign: 'center' }
   };
+</script>
+<!-- Reading-spacing preference, applied before first paint so the page does
+     not jump. The toggle itself is added by assets/spacing-toggle.html, and
+     the spacing rules are in styles.css, section 18. -->
+<script>
+  try {
+    if (localStorage.getItem('sx-spacing') === 'wide') {
+      document.documentElement.setAttribute('data-sx-spacing', 'wide');
+    }
+  } catch (e) {}
 </script>
 
 
@@ -434,6 +446,61 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<!-- "Wider spacing" toggle, added to the navbar next to Quarto's dark-mode
+     toggle on every page (Quarto renders that button twice, once for wide
+     screens and once for the collapsed menu, so this adds one beside each).
+     Sets data-sx-spacing="wide" on <html> and remembers the choice in
+     localStorage; assets/spacing-head.html re-applies it before paint on the
+     next page, and styles.css section 18 does the spacing. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    if (document.querySelector('.sx-spacing-toggle')) return;
+    var darks = document.querySelectorAll('.quarto-color-scheme-toggle');
+    if (!darks.length) return;
+    var root = document.documentElement;
+    var on = root.getAttribute('data-sx-spacing') === 'wide';
+    var links = [];
+
+    function apply() {
+      if (on) root.setAttribute('data-sx-spacing', 'wide');
+      else root.removeAttribute('data-sx-spacing');
+      links.forEach(function (l) { l.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      try { localStorage.setItem('sx-spacing', on ? 'wide' : 'normal'); } catch (e) {}
+    }
+
+    Array.prototype.forEach.call(darks, function (dark) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.className = (dark.className || '').replace('quarto-color-scheme-toggle', '').trim() + ' sx-spacing-toggle';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-pressed', on ? 'true' : 'false');
+      link.setAttribute('aria-label', 'Wider letter spacing for easier reading');
+      link.title = 'Wider spacing';
+      link.innerHTML = '<i class="bi bi-fonts" aria-hidden="true"></i>';
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        on = !on;
+        apply();
+      });
+      // Mirror the dark toggle's wrapper when it has one, so the two sit side by side.
+      var wrapper = dark.parentElement;
+      if (wrapper && wrapper.tagName === 'LI') {
+        var li = document.createElement('li');
+        li.className = wrapper.className;
+        li.appendChild(link);
+        wrapper.parentElement.insertBefore(li, wrapper);
+      } else {
+        wrapper.insertBefore(link, dark);
+      }
+      links.push(link);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../teaching/python/00-what-is-a-programming-language.html" rel="next">
-<link href="../../teaching/labs/01-uncertainty.html" rel="prev">
+<link href="../../teaching/labs/lab-guides/06-spring-constant.html" rel="prev">
 <link href="../../images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/quarto-listing/list.min.js"></script>
 <script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
@@ -131,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
         color: #F3EFFC;
       }
 </style>
-<!-- MathJax configuration, loaded on every page.
+<!-- MathJax 4 configuration, loaded on every page.
 
      Macros defined here work in any .qmd file without a per-page preamble, so
      equations stay short to type and consistent across the site. Add new ones
@@ -173,14 +173,26 @@ ul.task-list li input[type="checkbox"] {
       ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
       processHtmlClass: 'mathjax'
     },
-    chtml: { scale: 1.0, displayAlign: 'center' }
+    // MathJax 4: font and layout options live under `output`. STIX Two Math is
+    // loaded from the same CDN as MathJax itself when it is named here.
+    output: { font: 'mathjax-stix2', scale: 1.0, displayAlign: 'center' }
   };
+</script>
+<!-- Reading-spacing preference, applied before first paint so the page does
+     not jump. The toggle itself is added by assets/spacing-toggle.html, and
+     the spacing rules are in styles.css, section 18. -->
+<script>
+  try {
+    if (localStorage.getItem('sx-spacing') === 'wide') {
+      document.documentElement.setAttribute('data-sx-spacing', 'wide');
+    }
+  } catch (e) {}
 </script>
 <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -490,17 +502,52 @@ window.Quarto = {
  <span class="menu-text">Measurement Uncertainty</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/02-lab-report-format.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How a Lab Gets Turned In</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/labs/lab-guides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/04-friction-flat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Friction on a Flat Surface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/05-friction-incline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Friction on an Incline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/06-spring-constant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6: The Spring Constant, Two Ways</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../teaching/python/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Python from Scratch</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../teaching/python/00-what-is-a-programming-language.html" class="sidebar-item-text sidebar-link">
@@ -577,7 +624,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="the-lessons">The lessons</h2>
 <div id="listing-lessons" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-2">
-<div class="g-col-1" data-index="0" data-categories="Rm91bmRhdGlvbnM=" data-listing-file-modified-sort="1791602207955" data-listing-reading-time-sort="6" data-listing-word-count-sort="1132">
+<div class="g-col-1" data-index="0" data-categories="Rm91bmRhdGlvbnM=" data-listing-file-modified-sort="1791770746575" data-listing-reading-time-sort="6" data-listing-word-count-sort="1132">
 <a href="../../teaching/python/00-what-is-a-programming-language.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -595,7 +642,7 @@ What Is a Programming Language?
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Rm91bmRhdGlvbnM=" data-listing-file-modified-sort="1791602207956" data-listing-reading-time-sort="11" data-listing-word-count-sort="2068">
+<div class="g-col-1" data-index="1" data-categories="Rm91bmRhdGlvbnM=" data-listing-file-modified-sort="1791770746575" data-listing-reading-time-sort="11" data-listing-word-count-sort="2068">
 <a href="../../teaching/python/01-how-computers-work.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -613,7 +660,7 @@ How Computers Actually Work
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Rm91bmRhdGlvbnM=" data-listing-file-modified-sort="1791602207956" data-listing-reading-time-sort="4" data-listing-word-count-sort="711">
+<div class="g-col-1" data-index="2" data-categories="Rm91bmRhdGlvbnM=" data-listing-file-modified-sort="1791770746575" data-listing-reading-time-sort="4" data-listing-word-count-sort="711">
 <a href="../../teaching/python/02-choosing-a-language.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -631,7 +678,7 @@ Choosing a Programming Language
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="UHl0aG9uJTJDTGVzc29u" data-listing-file-modified-sort="1791602207956" data-listing-reading-time-sort="4" data-listing-word-count-sort="661">
+<div class="g-col-1" data-index="3" data-categories="UHl0aG9uJTJDTGVzc29u" data-listing-file-modified-sort="1791770746575" data-listing-reading-time-sort="4" data-listing-word-count-sort="661">
 <a href="../../teaching/python/03-python-basics.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -679,6 +726,61 @@ W10=
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<!-- "Wider spacing" toggle, added to the navbar next to Quarto's dark-mode
+     toggle on every page (Quarto renders that button twice, once for wide
+     screens and once for the collapsed menu, so this adds one beside each).
+     Sets data-sx-spacing="wide" on <html> and remembers the choice in
+     localStorage; assets/spacing-head.html re-applies it before paint on the
+     next page, and styles.css section 18 does the spacing. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    if (document.querySelector('.sx-spacing-toggle')) return;
+    var darks = document.querySelectorAll('.quarto-color-scheme-toggle');
+    if (!darks.length) return;
+    var root = document.documentElement;
+    var on = root.getAttribute('data-sx-spacing') === 'wide';
+    var links = [];
+
+    function apply() {
+      if (on) root.setAttribute('data-sx-spacing', 'wide');
+      else root.removeAttribute('data-sx-spacing');
+      links.forEach(function (l) { l.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      try { localStorage.setItem('sx-spacing', on ? 'wide' : 'normal'); } catch (e) {}
+    }
+
+    Array.prototype.forEach.call(darks, function (dark) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.className = (dark.className || '').replace('quarto-color-scheme-toggle', '').trim() + ' sx-spacing-toggle';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-pressed', on ? 'true' : 'false');
+      link.setAttribute('aria-label', 'Wider letter spacing for easier reading');
+      link.title = 'Wider spacing';
+      link.innerHTML = '<i class="bi bi-fonts" aria-hidden="true"></i>';
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        on = !on;
+        apply();
+      });
+      // Mirror the dark toggle's wrapper when it has one, so the two sit side by side.
+      var wrapper = dark.parentElement;
+      if (wrapper && wrapper.tagName === 'LI') {
+        var li = document.createElement('li');
+        li.className = wrapper.className;
+        li.appendChild(link);
+        wrapper.parentElement.insertBefore(li, wrapper);
+      } else {
+        wrapper.insertBefore(link, dark);
+      }
+      links.push(link);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>
@@ -1105,8 +1207,8 @@ window._ojs.runtime.interpretFromScriptTags();
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../teaching/labs/01-uncertainty.html" class="pagination-link" aria-label="Measurement Uncertainty">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Measurement Uncertainty</span>
+      <a href="../../teaching/labs/lab-guides/06-spring-constant.html" class="pagination-link" aria-label="Lab 6: The Spring Constant, Two Ways">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 6: The Spring Constant, Two Ways</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

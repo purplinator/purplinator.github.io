@@ -186,139 +186,129 @@
     ]
   },
   {
+    "objectID": "teaching/labs/lab-guides/index.html",
+    "href": "teaching/labs/lab-guides/index.html",
+    "title": "Lab Guides",
+    "section": "",
+    "text": "Each page here takes one lab and answers “what goes in this part for this lab?” for all three jobs. The format itself, what belongs on which whiteboard and where the photos go, is on How a Lab Gets Turned In; these pages assume you have read it. The two uncertainty rows at the bottom of every data table are covered in the uncertainty guide.\nThe pages go up as the semester goes on, usually a few days before the lab. If the one you need is not here yet, the lab handout and the format page between them cover everything.\n\n\n\n\n\n\n\nLab 4: Friction on a Flat Surface\n\n\n\nRegular lab\n\n\n\nThe question, the two forces you read off the sensor graph, the free-body diagram and sample calculations, the four trendlines, and the five conclusion questions one…\n\n\n\n\n\n\n\n\n\nLab 5: Friction on an Incline\n\n\n\nMajor lab\n\n\n\nA major lab: the slipping angle and the acceleration, the four calculated force columns, the free-body diagram on a slope, the four trendlines, and the conclusion sentence…\n\n\n\n\n\n\n\n\n\nLab 6: The Spring Constant, Two Ways\n\n\n\nRegular lab\n\n\n\nTwo parts with two graphs: spring force against stretch for a lowered mass, and maximum stretch against mass for a dropped one. Both slopes give the spring constant, and the…\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/05-friction-incline.html",
+    "href": "teaching/labs/lab-guides/05-friction-incline.html",
+    "title": "Lab 5: Friction on an Incline",
+    "section": "",
+    "text": "Major lab. Every student turns in all three parts, and your grade depends on your partners’ boards as much as your own. Check all three before any of them is photographed.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 5: Friction on an Incline"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/05-friction-incline.html#at-a-glance",
+    "href": "teaching/labs/lab-guides/05-friction-incline.html#at-a-glance",
+    "title": "Lab 5: Friction on an Incline",
+    "section": "At a glance",
+    "text": "At a glance\n\nQuestion. The same one as Lab 4, how friction force depends on normal force, but answered on a tilted track instead of a flat one.\nYou measure. The angle at which the loaded block just starts to slip, and its acceleration once it is sliding, for five loads and two surface combinations.\nYou calculate. Total mass, normal force, maximum static friction force, kinetic friction force. Four calculated columns, four sample calculations.\nYou graph. Friction force against normal force, four data sets, four linear trendlines, slopes equal to the coefficients.\nYou conclude. Relationship in words, four equations, four coefficients, static against kinetic, surface against surface.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 5: Friction on an Incline"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/05-friction-incline.html#qpd",
+    "href": "teaching/labs/lab-guides/05-friction-incline.html#qpd",
+    "title": "Lab 5: Friction on an Incline",
+    "section": "QPD",
+    "text": "QPD\n\nThe question\n\nWhat is the relationship between the magnitude of the normal force (\\(F_N\\)) on a block on an incline and the magnitude of the friction force (\\(f_s\\) and \\(f_k\\)) between surfaces of A on B and C on B?\n\nName the surfaces in words. Say “on an incline” so the question is not identical to Lab 4’s.\n\n\nWhat the procedure must make clear\n\nThe two surface combinations and the loads: the box plus 0, 0.25, 0.5, 1.0 and 1.5 kg, three trials each.\nHow the slipping angle was found: the track raised slowly from flat until the block just begins to move, and the angle read off the scale at that instant. Say what “just begins to move” meant in practice, because that judgment is where this lab’s uncertainty lives.\nHow the acceleration was found: the velocity–time graph recorded while the block slides, in Graphical Analysis, with a straight-line fit over the sliding section; its slope is \\(a\\). The report wants an annotated screenshot of that graph with the fitted section and the slope marked.\nThe units: degrees for the angle, m/s² for the acceleration, kilograms for the masses.\n\n\n\n\n\n\n\n\n\n\n\nSymbol\nQuantity\nHow it is measured\nUnit\n\n\n\n\n\\(M_\\text{add'l}\\)\nmass added on top of the box\ngiven, 0 to 1.5 kg\nkg\n\n\n\\(M_\\text{box}\\)\nmass of the box\ngiven on the template, 0.11 kg\nkg\n\n\n\\(\\theta_\\text{MAX}\\)\nangle at which the block starts to slip\nangle scale on the incline\ndegrees\n\n\n\\(a\\)\nacceleration of the sliding block\nslope of the velocity–time graph\nm/s²\n\n\n\n\n\n\nThe diagram\nA photo of the tilted track with the block on it, labelled with the angle \\(\\theta\\), the block and its down-facing surface, the track surface, the added masses, the direction the block slides, and whatever records the motion.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 5: Friction on an Incline"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/05-friction-incline.html#uda",
+    "href": "teaching/labs/lab-guides/05-friction-incline.html#uda",
+    "title": "Lab 5: Friction on an Incline",
+    "section": "UDA",
+    "text": "UDA\n\nIn Excel\n\n\n\n\n\n\n\n\n\n\nColumn\nFormula\nUnit\nSample calculation on the board\n\n\n\n\n\\(M_\\text{TOT}\\)\n\\(M_\\text{add'l} + M_\\text{box}\\)\nkg\nyes\n\n\n\\(F_N\\)\n\\(M_\\text{TOT}\\,g\\cos\\theta\\)\nN\nyes\n\n\n\\(f_{s,\\max}\\)\n\\(M_\\text{TOT}\\,g\\sin\\theta\\)\nN\nyes\n\n\n\\(f_k\\)\n\\(M_\\text{TOT}\\,g\\sin\\theta - M_\\text{TOT}\\,a\\)\nN\nyes\n\n\n\\(\\theta_\\text{MAX}\\), \\(a\\)\nmeasured\ndeg, m/s²\nno, but both need uncertainty rows\n\n\n\n\nThe template converts degrees to radians inside the trig functions. If you write any formula of your own, Excel’s COS and SIN want radians, so divide by 180 and multiply by PI() first. The two measured columns are judgment calls for \\(\\delta_a\\): a degree or two for the slipping angle, and the fit’s own \\(\\pm\\) on the slope for \\(a\\) if Graphical Analysis shows one. The uncertainty guide walks through both.\nThe graph. Friction force in newtons against normal force in newtons, four series, a linear trendline on each with its equation shown, legend naming the combination and static or kinetic. Linear, so this is also the linearized graph.\n\n\nOn the board\nLeft half, derivation. Draw the block on the slope with axes along and perpendicular to the incline. Three forces: weight \\(F_g = M_\\text{TOT}\\,g\\) straight down, the normal force \\(F_N\\) perpendicular to the surface, friction \\(f\\) along the surface, uphill. Resolve the weight: \\(M_\\text{TOT}\\,g\\sin\\theta\\) down the slope, \\(M_\\text{TOT}\\,g\\cos\\theta\\) into it. Perpendicular to the slope nothing moves, so \\(F_N = M_\\text{TOT}\\,g\\cos\\theta\\). Along the slope, at the instant of slipping the block is still at rest, so \\(f_{s,\\max} = M_\\text{TOT}\\,g\\sin\\theta\\). Once it slides it accelerates down the slope at \\(a\\), so \\(M_\\text{TOT}\\,g\\sin\\theta - f_k = M_\\text{TOT}\\,a\\), which gives \\(f_k = M_\\text{TOT}\\,g\\sin\\theta - M_\\text{TOT}\\,a\\). Finish with the model being tested, \\(f = \\mu F_N\\).\nRight half, sample calculations. One per calculated column, from one real row. With invented numbers, \\(M_\\text{TOT} = 0.36\\ \\text{kg}\\), \\(\\theta = 20.5^\\circ\\) and \\(a = 0.59\\ \\text{m/s}^2\\):\n\\[F_N = (0.36)(9.81)\\cos 20.5^\\circ = 3.31\\ \\text{N}, \\quad f_{s,\\max} = (0.36)(9.81)\\sin 20.5^\\circ = 1.24\\ \\text{N}, \\quad f_k = 1.24\\ \\text{N} - (0.36\\ \\text{kg})(0.59\\ \\text{m/s}^2) = 1.02\\ \\text{N}.\\]\nWrite the units on every factor on the board, not only on the answers.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 5: Friction on an Incline"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/05-friction-incline.html#con",
+    "href": "teaching/labs/lab-guides/05-friction-incline.html#con",
+    "title": "Lab 5: Friction on an Incline",
+    "section": "CON",
+    "text": "CON\nThe questions from the report template, each with the sentence it becomes. Numbers invented.\n\nIdentify the relationship between the graphed quantities in words. → “The relationship between the normal force on the block and the friction force on it is linear, for both static and kinetic friction and both surface combinations.”\nWrite the four equations relating those quantities, using physics symbols and appropriate units. → “For cork on oak, \\(f_s = (0.33)\\,F_N\\) and \\(f_k = (0.25)\\,F_N\\); for felt on oak, \\(f_s = (0.44)\\,F_N\\) and \\(f_k = (0.36)\\,F_N\\).”\nState the four coefficients of friction and the surfaces they describe. → “The coefficients were \\(\\mu_s = 0.33\\) and \\(\\mu_k = 0.25\\) for cork on oak and \\(\\mu_s = 0.44\\) and \\(\\mu_k = 0.36\\) for felt on oak, all unitless.”\nCompare them: which is larger, static or kinetic? Which surface combination? → “Static was larger than kinetic for both combinations, and felt on oak had the larger coefficients of the two.”",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 5: Friction on an Incline"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/05-friction-incline.html#common-slips",
+    "href": "teaching/labs/lab-guides/05-friction-incline.html#common-slips",
+    "title": "Lab 5: Friction on an Incline",
+    "section": "Common slips",
+    "text": "Common slips\n\nUsing \\(F_N = M_\\text{TOT}\\,g\\) from Lab 4. On a slope the normal force is \\(M_\\text{TOT}\\,g\\cos\\theta\\), and the whole point of the lab is that the cosine is there.\nDegrees where Excel wanted radians, which shows up as negative or absurd normal forces.\nRecording the angle the track was set to rather than the angle at which the block moved.\nFitting the velocity–time graph over a stretch that includes the moment of release or the stop at the bottom. Fit only the straight, sliding part.\nLosing the minus sign in \\(f_k\\): the block speeds up because friction is less than the downhill pull, so \\(f_k\\) must come out smaller than \\(f_{s,\\max}\\) in the same row.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 5: Friction on an Incline"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/05-friction-incline.html#going-deeper",
+    "href": "teaching/labs/lab-guides/05-friction-incline.html#going-deeper",
+    "title": "Lab 5: Friction on an Incline",
+    "section": "Going deeper",
+    "text": "Going deeper\nThe angle alone gives the static coefficient. Divide the slipping condition by the normal force: \\(\\mu_s = f_{s,\\max}/F_N = \\sin\\theta/\\cos\\theta = \\tan\\theta_\\text{MAX}\\). The mass cancels. So every row of your table, whatever the load, should slip at about the same angle, and a block that slips at 20.5° has \\(\\mu_s = \\tan 20.5^\\circ = 0.37\\) before you have graphed anything. If your slipping angles drift upward as the load grows, something other than friction is going on, and that is worth a sentence in the conclusion.\nWhy we still make the graph. One angle gives one number. Five loads on a graph give a slope, an intercept that should be near zero, and a visible check that the points fall on a line at all. The graph is how you find out whether \\(f = \\mu F_N\\) was the right model, not just what \\(\\mu\\) is.\nSame coefficients as Lab 4? For the same two surfaces they should be, within uncertainty. Nothing in the question asks for the comparison, but if your numbers from Lab 4 are handy, a percent difference between the two weeks is a good test of both.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 5: Friction on an Incline"
+    ]
+  },
+  {
     "objectID": "teaching/labs/index.html",
     "href": "teaching/labs/index.html",
     "title": "Lab Help",
     "section": "",
-    "text": "Most lab confusion is not about the physics. It is about what the instructions are asking for, what counts as a reasonable answer, and what to do when your numbers come out strange. Those questions get asked in every section, every week, so the answers live here.\nEach page below takes one topic and goes through it properly, with the reasoning left in. Start with the one that matches your question. If nothing here covers it, email me at s.stockton@tcu.edu and I will add a page.\n\n\n\n\n\n\n\nMeasurement Uncertainty\n\n\n\nLab\n\n\n\nWhat the uncertainty on a measurement actually means, how to estimate it from your equipment and your data, and how to carry it through a calculation.\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top",
+    "text": "Most lab confusion is not about the physics. It is about what the instructions are asking for, what counts as a reasonable answer, and what to do when your numbers come out strange. Those questions get asked in every section, every week, so the answers live here.\nEach page below takes one topic and goes through it properly, with the reasoning left in. Start with the one that matches your question. If nothing here covers it, email me at s.stockton@tcu.edu and I will add a page.",
     "crumbs": [
       "Teaching",
       "Lab Help"
     ]
   },
   {
-    "objectID": "teaching/index.html",
-    "href": "teaching/index.html",
-    "title": "Teaching Resources",
-    "section": "",
-    "text": "Most of the time, when a student tells me they are bad at physics, what they actually mean is that nobody has ever explained it to them in a language they already speak. That is a translation problem, not an ability problem, and it is fixable.\nSo this section exists to be the explanation I wish someone had handed me: slower where it matters, honest about what is genuinely hard, and never pretending a step is obvious when it isn’t.",
+    "objectID": "teaching/labs/index.html#this-semesters-labs",
+    "href": "teaching/labs/index.html#this-semesters-labs",
+    "title": "Lab Help",
+    "section": "This semester’s labs",
+    "text": "This semester’s labs\nOne page per lab: the question, what each job writes, the columns and graphs, and the conclusion sentence by sentence. Read How a Lab Gets Turned In first if this is your first lab; the per-lab pages assume it.\n\n\n\n\n\n\n\nLab 4: Friction on a Flat Surface\n\n\n\nRegular lab\n\n\n\nThe question, the two forces you read off the sensor graph, the free-body diagram and sample calculations, the four trendlines, and the five conclusion questions one…\n\n\n\n\n\n\n\n\n\nLab 5: Friction on an Incline\n\n\n\nMajor lab\n\n\n\nA major lab: the slipping angle and the acceleration, the four calculated force columns, the free-body diagram on a slope, the four trendlines, and the conclusion sentence…\n\n\n\n\n\n\n\n\n\nLab 6: The Spring Constant, Two Ways\n\n\n\nRegular lab\n\n\n\nTwo parts with two graphs: spring force against stretch for a lowered mass, and maximum stretch against mass for a dropped one. Both slopes give the spring constant, and the…\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Teaching",
-      "Overview"
+      "Lab Help"
     ]
-  },
-  {
-    "objectID": "teaching/index.html#how-these-are-written",
-    "href": "teaching/index.html#how-these-are-written",
-    "title": "Teaching Resources",
-    "section": "How these are written",
-    "text": "How these are written\nI try to hold to a few rules across everything in this section.\nStart below the starting point. If a lesson needs an idea from three courses ago, the lesson explains that idea rather than assuming it. The Python series opens with information theory for exactly this reason.\nName the hard part out loud. Some things are genuinely difficult. Saying “as you can clearly see” about a step that took me an hour is a disservice, and it teaches students that their confusion is a personal failing.\nGive you something to poke at. Reading about a for loop does very little. Running one, breaking it, and running it again does quite a lot. Code on this site is live wherever it can be.\nKeep the physics attached to something real. Every abstraction started as someone trying to answer a concrete question. That question is usually the best way in.\nThere is more on where this comes from in my teaching philosophy.",
-    "crumbs": [
-      "Teaching",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "teaching/index.html#found-a-mistake",
-    "href": "teaching/index.html#found-a-mistake",
-    "title": "Teaching Resources",
-    "section": "Found a mistake?",
-    "text": "Found a mistake?\nI would genuinely like to know. Email me at s.stockton@tcu.edu — corrections, confusing passages, and “this section lost me at paragraph three” are all useful.",
-    "crumbs": [
-      "Teaching",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Full CV (PDF)  Two-page CV (PDF)"
-  },
-  {
-    "objectID": "cv.html#education",
-    "href": "cv.html#education",
-    "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\n\n\nPh.D. in Physics, astrophysics specialization 2025 – present\n\nTexas Christian University, Fort Worth, Texas\n\nAdvisor: Dr. Kathleen Barger\nExpected 2030\n\n\n\n\nB.S. in Physics, minor in Mathematics 2019 – 2023\n\nUtah Valley University, Orem, Utah\n\nMagna cum laude"
-  },
-  {
-    "objectID": "cv.html#research",
-    "href": "cv.html#research",
-    "title": "Curriculum Vitae",
-    "section": "Research",
-    "text": "Research\nCurrent focus. Emission-line maps of 30 Doradus, the Tarantula Nebula, from SDSS-V Local Volume Mapper integral field spectroscopy: coadded line-flux maps, dust extinction from Balmer decrements, de-reddened maps, and spatially resolved line-ratio diagnostics, aimed at the flow of gas in and around the region.\nAreas.\n\nEmission-line spectroscopy and Balmer decrements\nDust extinction in the Large Magellanic Cloud\nIntegral field spectroscopy data pipelines\nExtracting physical parameters from large spectroscopic data sets\n\n\n\nPositions\n\n\nGraduate Research Assistant 2025 – present\n\nTexas Christian University, Department of Physics and Astronomy\n\nLVM emission-line analysis of 30 Doradus with Dr. Kathleen Barger\n\n\n\n\nNSF Physics REU June 2022 – 2023\n\nUniversity of Michigan, Department of Astronomy\n\nAdvisor: Dr. Eric Bell\nIslands no more: the important mergers of nearby galaxies and their effects. Searched for faint satellites around Andromeda using number-density variations of RGB stars in the PAndAS survey, reduced Gemini follow-up imaging and built photometric catalogs of candidates, then worked on Hubble Space Telescope follow-up. Contributed to the discovery of Andromeda XXXV.\n\n\n\n\nUndergraduate Researcher May 2020 – 2023\n\nUtah Valley University, Department of Physics\n\nAdvisor: Dr. Christian Draper\nEmission Expedition: a spectral survey of 800,000 galaxies. Used the spectra of 792,503 galaxies from SDSS Data Release 16, binned by redshift, to measure how the fraction of galaxies showing each of 17 visible emission lines changes with redshift. Calculated star formation rates and used BPT diagrams to diagnose the origin of the emission."
-  },
-  {
-    "objectID": "cv.html#publications",
-    "href": "cv.html#publications",
-    "title": "Curriculum Vitae",
-    "section": "Publications",
-    "text": "Publications\n\nJose Marco Arias, Eric F. Bell, Katya Gozman, In Sung Jang, Saxon Stockton, Oleg Y. Gnedin, Richard D’Souza, Antonela Monachesi, Jeremy Bailin, David Nidever, and Roelof S. de Jong (2025). “Andromeda XXXV: The Faintest Dwarf Satellite of the Andromeda Galaxy.” The Astrophysical Journal Letters, 982(1), L3. DOI · arXiv:2502.19516 · ADS"
-  },
-  {
-    "objectID": "cv.html#presentations",
-    "href": "cv.html#presentations",
-    "title": "Curriculum Vitae",
-    "section": "Presentations",
-    "text": "Presentations\nPresenting author in every case.\n\nStockton, S. and Bell, E. (2022). Shine faint like an ultra faint dwarf galaxy. REU Symposium 2022, University of Michigan Physics Department, Ann Arbor, Michigan.\nStockton, S. and Bell, E. (2022). Shine faint like an ultra faint dwarf galaxy. Departmental seminar, Utah Valley University Physics Department, Orem, Utah.\nStockton, S. and Draper, C. (2022). Emission Expedition: a spectral survey of 800,000 galaxies. American Astronomical Society 240, Pasadena, California.\nStockton, S. and Draper, C. (2022). Emission Expedition: a spectral survey of 800,000 galaxies. Utah NASA Space Grant Consortium poster session, Logan, Utah.\nStockton, S. and Draper, C. (2022). Large sample analysis of emission and absorption galaxies. Utah Conference for Undergraduate Research, St. George, Utah.\nStockton, S. and Draper, C. (2022). Large sample analysis of emission and absorption galaxies. Departmental seminar, Utah Valley University Physics Department, Orem, Utah."
-  },
-  {
-    "objectID": "cv.html#teaching",
-    "href": "cv.html#teaching",
-    "title": "Curriculum Vitae",
-    "section": "Teaching",
-    "text": "Teaching\n\n\nTeaching Assistant 2025 – present\n\nTexas Christian University, Department of Physics and Astronomy\n\n\n\nAdjunct Instructor 2023 – 2025\n\nUtah Valley University, Department of Physics\n\n\n\nPhysics Tutor 2019 – 2020\n\nUtah Valley University\n\n\n\n\n\n\n\n\n\nCourse\nRole\nSections\n\n\n\n\nPHYS 10154 Physics 1 Lab (TCU)\nTeaching assistant\n2\n\n\nPHYS 2215 Physics for Scientists and Engineers 1 Lab (UVU)\nAdjunct instructor\n7\n\n\nPHYS 2015 College Physics 1 Lab (UVU)\nAdjunct instructor\n8\n\n\nPHYS 2025 College Physics 2 Lab (UVU)\nAdjunct instructor\n1\n\n\nASTR 1040 Introduction to Astronomy (UVU)\nLecturer\n3\n\n\nPHSC 1000 Survey of Physical Sciences (UVU)\nLecturer\n1\n\n\n\nSee Teaching Resources for the materials I have written, including Lab Help for my current sections."
-  },
-  {
-    "objectID": "cv.html#awards-fellowships-and-grants",
-    "href": "cv.html#awards-fellowships-and-grants",
-    "title": "Curriculum Vitae",
-    "section": "Awards, Fellowships, and Grants",
-    "text": "Awards, Fellowships, and Grants\n\n2022: Student Excellence Award, College of Science, UVU · NSF REU, University of Michigan · NSF S-STEM Scholarship · Utah NASA Space Grant · SCULPT Grant · Scholarly Activities SAC Grant · Dean’s List\n2021: NSF S-STEM Scholarship · Dean’s List\n2020: NSF S-STEM Scholarship · Dean’s List"
-  },
-  {
-    "objectID": "cv.html#service-and-outreach",
-    "href": "cv.html#service-and-outreach",
-    "title": "Curriculum Vitae",
-    "section": "Service and Outreach",
-    "text": "Service and Outreach\n\nSociety of Physics Students, UVU chapter president (2020 – 2022)\nUVU Student Association, Physics Department representative (2021 – 2022)\nPhysics Club representative at Club Rush (2020 – 2022)\nPhysics Department representative: Highlighting Women in STEM planning committee, College of Science Open House, and Future Science Student Day (2022); Science vs. Hollywood (2021 – 2022)\n\nProfessional memberships. American Astronomical Society (junior member) · Society of Physics Students"
-  },
-  {
-    "objectID": "cv.html#technical-skills",
-    "href": "cv.html#technical-skills",
-    "title": "Curriculum Vitae",
-    "section": "Technical Skills",
-    "text": "Technical Skills\n\n\n\n\n\n\n\nArea\nTools\n\n\n\n\nLanguages\nPython, C, Fortran\n\n\nScientific Python\nNumPy, SciPy, Astropy, Matplotlib, pandas\n\n\nData\nFITS, integral field spectroscopy cubes, SDSS-V / LVM data products\n\n\nOther\nGit, LaTeX, Quarto, Unix shell"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Saxon Stockton Astrophysics PhD Student Texas Christian University\ns.stockton@tcu.edu github.com/purplinator ORCID 0000-0003-1677-0213\nADS · Google Scholar · arXiv\n\n\nI am an astrophysics researcher specialising in spectral line analysis and pulling physical information out of large data sets. My current work, with Dr. Kathleen Barger at TCU, uses integral field spectroscopy from the Local Volume Mapper to study the gas in and around 30 Doradus, the largest star-forming region in the Large Magellanic Cloud. The spectra become maps: one for every emission line, corrected for the dust in the way, and then read together for what the gas is doing.\nWhat I like most about the work is the part before the result: figuring out what a data set can and cannot tell you, and building something that does not quietly lie about its own uncertainty. I am at my happiest doing an in-depth investigation into a data structure that nobody has looked at closely yet.\nOutside of that, I am an enthusiastic karaoke singer, a gamer, and a traveler."
-  },
-  {
-    "objectID": "about.html#why-this-site-exists",
-    "href": "about.html#why-this-site-exists",
-    "title": "About",
-    "section": "Why this site exists",
-    "text": "Why this site exists\nTwo reasons.\n\nThe first is ordinary: research should be findable, and code nobody can run is not a contribution. The Research section is where I write up what I am working on and document the tools that come out of it.\nThe second is the one I care about more. I like taking high-level physics and breaking it down to a level where anyone can actually engage with it — not a watered-down version, the real thing explained properly. Most people who think they are bad at physics have only ever met explanations written for people who already understood. The Teaching section is my attempt at the other kind, and it is free, permanently, to anyone who wants it."
-  },
-  {
-    "objectID": "about.html#what-i-am-working-on",
-    "href": "about.html#what-i-am-working-on",
-    "title": "About",
-    "section": "What I am working on",
-    "text": "What I am working on\nResearch. Emission-line maps of 30 Doradus from LVM spectroscopy: dust correction from Balmer decrements, then line-ratio diagnostics of the gas.  Read the summary →\nTeaching. Lab Help, short answers for the physics labs I teach, and Python from Scratch, a programming series for people who have never written a line of code. Open the series →\nNext. Mathematics lessons and worked physics problems, both currently outlined and not yet written."
-  },
-  {
-    "objectID": "about.html#get-in-touch",
-    "href": "about.html#get-in-touch",
-    "title": "About",
-    "section": "Get in touch",
-    "text": "Get in touch\nEmail is best: s.stockton@tcu.edu.\nI am glad to hear from students stuck on a problem, anyone who found an error in something I wrote, and anyone interested in the research. Corrections especially — if a lesson here lost you somewhere, that is a bug and I want to know where it happened."
   },
   {
     "objectID": "teaching/labs/01-uncertainty.html",
@@ -390,6 +380,396 @@
       "Teaching",
       "Lab Help",
       "Measurement Uncertainty"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Saxon Stockton Astrophysics PhD Student Texas Christian University\ns.stockton@tcu.edu github.com/purplinator ORCID 0000-0003-1677-0213\nADS · Google Scholar · arXiv\n\n\nI am an astrophysics researcher specialising in spectral line analysis and pulling physical information out of large data sets. My current work, with Dr. Kathleen Barger at TCU, uses integral field spectroscopy from the Local Volume Mapper to study the gas in and around 30 Doradus, the largest star-forming region in the Large Magellanic Cloud. The spectra become maps: one for every emission line, corrected for the dust in the way, and then read together for what the gas is doing.\nWhat I like most about the work is the part before the result: figuring out what a data set can and cannot tell you, and building something that does not quietly lie about its own uncertainty. I am at my happiest doing an in-depth investigation into a data structure that nobody has looked at closely yet.\nOutside of that, I am an enthusiastic karaoke singer, a gamer, and a traveler."
+  },
+  {
+    "objectID": "about.html#why-this-site-exists",
+    "href": "about.html#why-this-site-exists",
+    "title": "About",
+    "section": "Why this site exists",
+    "text": "Why this site exists\nTwo reasons.\n\nThe first is ordinary: research should be findable, and code nobody can run is not a contribution. The Research section is where I write up what I am working on and document the tools that come out of it.\nThe second is the one I care about more. I like taking high-level physics and breaking it down to a level where anyone can actually engage with it — not a watered-down version, the real thing explained properly. Most people who think they are bad at physics have only ever met explanations written for people who already understood. The Teaching section is my attempt at the other kind, and it is free, permanently, to anyone who wants it."
+  },
+  {
+    "objectID": "about.html#what-i-am-working-on",
+    "href": "about.html#what-i-am-working-on",
+    "title": "About",
+    "section": "What I am working on",
+    "text": "What I am working on\nResearch. Emission-line maps of 30 Doradus from LVM spectroscopy: dust correction from Balmer decrements, then line-ratio diagnostics of the gas.  Read the summary →\nTeaching. Lab Help, short answers for the physics labs I teach, and Python from Scratch, a programming series for people who have never written a line of code. Open the series →\nNext. Mathematics lessons and worked physics problems, both currently outlined and not yet written."
+  },
+  {
+    "objectID": "about.html#get-in-touch",
+    "href": "about.html#get-in-touch",
+    "title": "About",
+    "section": "Get in touch",
+    "text": "Get in touch\nEmail is best: s.stockton@tcu.edu.\nI am glad to hear from students stuck on a problem, anyone who found an error in something I wrote, and anyone interested in the research. Corrections especially — if a lesson here lost you somewhere, that is a bug and I want to know where it happened."
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Full CV (PDF)  Two-page CV (PDF)"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\n\n\nPh.D. in Physics, astrophysics specialization 2025 – present\n\nTexas Christian University, Fort Worth, Texas\n\nAdvisor: Dr. Kathleen Barger\nExpected 2030\n\n\n\n\nB.S. in Physics, minor in Mathematics 2019 – 2023\n\nUtah Valley University, Orem, Utah\n\nMagna cum laude"
+  },
+  {
+    "objectID": "cv.html#research",
+    "href": "cv.html#research",
+    "title": "Curriculum Vitae",
+    "section": "Research",
+    "text": "Research\nCurrent focus. Emission-line maps of 30 Doradus, the Tarantula Nebula, from SDSS-V Local Volume Mapper integral field spectroscopy: coadded line-flux maps, dust extinction from Balmer decrements, de-reddened maps, and spatially resolved line-ratio diagnostics, aimed at the flow of gas in and around the region.\nAreas.\n\nEmission-line spectroscopy and Balmer decrements\nDust extinction in the Large Magellanic Cloud\nIntegral field spectroscopy data pipelines\nExtracting physical parameters from large spectroscopic data sets\n\n\n\nPositions\n\n\nGraduate Research Assistant 2025 – present\n\nTexas Christian University, Department of Physics and Astronomy\n\nLVM emission-line analysis of 30 Doradus with Dr. Kathleen Barger\n\n\n\n\nNSF Physics REU June 2022 – 2023\n\nUniversity of Michigan, Department of Astronomy\n\nAdvisor: Dr. Eric Bell\nIslands no more: the important mergers of nearby galaxies and their effects. Searched for faint satellites around Andromeda using number-density variations of RGB stars in the PAndAS survey, reduced Gemini follow-up imaging and built photometric catalogs of candidates, then worked on Hubble Space Telescope follow-up. Contributed to the discovery of Andromeda XXXV.\n\n\n\n\nUndergraduate Researcher May 2020 – 2023\n\nUtah Valley University, Department of Physics\n\nAdvisor: Dr. Christian Draper\nEmission Expedition: a spectral survey of 800,000 galaxies. Used the spectra of 792,503 galaxies from SDSS Data Release 16, binned by redshift, to measure how the fraction of galaxies showing each of 17 visible emission lines changes with redshift. Calculated star formation rates and used BPT diagrams to diagnose the origin of the emission."
+  },
+  {
+    "objectID": "cv.html#publications",
+    "href": "cv.html#publications",
+    "title": "Curriculum Vitae",
+    "section": "Publications",
+    "text": "Publications\n\nJose Marco Arias, Eric F. Bell, Katya Gozman, In Sung Jang, Saxon Stockton, Oleg Y. Gnedin, Richard D’Souza, Antonela Monachesi, Jeremy Bailin, David Nidever, and Roelof S. de Jong (2025). “Andromeda XXXV: The Faintest Dwarf Satellite of the Andromeda Galaxy.” The Astrophysical Journal Letters, 982(1), L3. DOI · arXiv:2502.19516 · ADS"
+  },
+  {
+    "objectID": "cv.html#presentations",
+    "href": "cv.html#presentations",
+    "title": "Curriculum Vitae",
+    "section": "Presentations",
+    "text": "Presentations\nPresenting author in every case.\n\nStockton, S. and Bell, E. (2022). Shine faint like an ultra faint dwarf galaxy. REU Symposium 2022, University of Michigan Physics Department, Ann Arbor, Michigan.\nStockton, S. and Bell, E. (2022). Shine faint like an ultra faint dwarf galaxy. Departmental seminar, Utah Valley University Physics Department, Orem, Utah.\nStockton, S. and Draper, C. (2022). Emission Expedition: a spectral survey of 800,000 galaxies. American Astronomical Society 240, Pasadena, California.\nStockton, S. and Draper, C. (2022). Emission Expedition: a spectral survey of 800,000 galaxies. Utah NASA Space Grant Consortium poster session, Logan, Utah.\nStockton, S. and Draper, C. (2022). Large sample analysis of emission and absorption galaxies. Utah Conference for Undergraduate Research, St. George, Utah.\nStockton, S. and Draper, C. (2022). Large sample analysis of emission and absorption galaxies. Departmental seminar, Utah Valley University Physics Department, Orem, Utah."
+  },
+  {
+    "objectID": "cv.html#teaching",
+    "href": "cv.html#teaching",
+    "title": "Curriculum Vitae",
+    "section": "Teaching",
+    "text": "Teaching\n\n\nTeaching Assistant 2025 – present\n\nTexas Christian University, Department of Physics and Astronomy\n\n\n\nAdjunct Instructor 2023 – 2025\n\nUtah Valley University, Department of Physics\n\n\n\nPhysics Tutor 2019 – 2020\n\nUtah Valley University\n\n\n\n\n\n\n\n\n\nCourse\nRole\nSections\n\n\n\n\nPHYS 10154 Physics 1 Lab (TCU)\nTeaching assistant\n2\n\n\nPHYS 2215 Physics for Scientists and Engineers 1 Lab (UVU)\nAdjunct instructor\n7\n\n\nPHYS 2015 College Physics 1 Lab (UVU)\nAdjunct instructor\n8\n\n\nPHYS 2025 College Physics 2 Lab (UVU)\nAdjunct instructor\n1\n\n\nASTR 1040 Introduction to Astronomy (UVU)\nLecturer\n3\n\n\nPHSC 1000 Survey of Physical Sciences (UVU)\nLecturer\n1\n\n\n\nSee Teaching Resources for the materials I have written, including Lab Help for my current sections."
+  },
+  {
+    "objectID": "cv.html#awards-fellowships-and-grants",
+    "href": "cv.html#awards-fellowships-and-grants",
+    "title": "Curriculum Vitae",
+    "section": "Awards, Fellowships, and Grants",
+    "text": "Awards, Fellowships, and Grants\n\n2022: Student Excellence Award, College of Science, UVU · NSF REU, University of Michigan · NSF S-STEM Scholarship · Utah NASA Space Grant · SCULPT Grant · Scholarly Activities SAC Grant · Dean’s List\n2021: NSF S-STEM Scholarship · Dean’s List\n2020: NSF S-STEM Scholarship · Dean’s List"
+  },
+  {
+    "objectID": "cv.html#service-and-outreach",
+    "href": "cv.html#service-and-outreach",
+    "title": "Curriculum Vitae",
+    "section": "Service and Outreach",
+    "text": "Service and Outreach\n\nSociety of Physics Students, UVU chapter president (2020 – 2022)\nUVU Student Association, Physics Department representative (2021 – 2022)\nPhysics Club representative at Club Rush (2020 – 2022)\nPhysics Department representative: Highlighting Women in STEM planning committee, College of Science Open House, and Future Science Student Day (2022); Science vs. Hollywood (2021 – 2022)\n\nProfessional memberships. American Astronomical Society (junior member) · Society of Physics Students"
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "Curriculum Vitae",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\n\n\n\n\n\n\nArea\nTools\n\n\n\n\nLanguages\nPython, C, Fortran\n\n\nScientific Python\nNumPy, SciPy, Astropy, Matplotlib, pandas\n\n\nData\nFITS, integral field spectroscopy cubes, SDSS-V / LVM data products\n\n\nOther\nGit, LaTeX, Quarto, Unix shell"
+  },
+  {
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "Teaching Resources",
+    "section": "",
+    "text": "Most of the time, when a student tells me they are bad at physics, what they actually mean is that nobody has ever explained it to them in a language they already speak. That is a translation problem, not an ability problem, and it is fixable.\nSo this section exists to be the explanation I wish someone had handed me: slower where it matters, honest about what is genuinely hard, and never pretending a step is obvious when it isn’t.",
+    "crumbs": [
+      "Teaching",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "teaching/index.html#how-these-are-written",
+    "href": "teaching/index.html#how-these-are-written",
+    "title": "Teaching Resources",
+    "section": "How these are written",
+    "text": "How these are written\nI try to hold to a few rules across everything in this section.\nStart below the starting point. If a lesson needs an idea from three courses ago, the lesson explains that idea rather than assuming it. The Python series opens with information theory for exactly this reason.\nName the hard part out loud. Some things are genuinely difficult. Saying “as you can clearly see” about a step that took me an hour is a disservice, and it teaches students that their confusion is a personal failing.\nGive you something to poke at. Reading about a for loop does very little. Running one, breaking it, and running it again does quite a lot. Code on this site is live wherever it can be.\nKeep the physics attached to something real. Every abstraction started as someone trying to answer a concrete question. That question is usually the best way in.\nThere is more on where this comes from in my teaching philosophy.",
+    "crumbs": [
+      "Teaching",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "teaching/index.html#found-a-mistake",
+    "href": "teaching/index.html#found-a-mistake",
+    "title": "Teaching Resources",
+    "section": "Found a mistake?",
+    "text": "Found a mistake?\nI would genuinely like to know. Email me at s.stockton@tcu.edu — corrections, confusing passages, and “this section lost me at paragraph three” are all useful.",
+    "crumbs": [
+      "Teaching",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/02-lab-report-format.html",
+    "href": "teaching/labs/02-lab-report-format.html",
+    "title": "How a Lab Gets Turned In",
+    "section": "",
+    "text": "Every lab in this course is turned in the same way. Your group splits into three jobs, each job fills one whiteboard, and photos of the boards go into the Word template alongside your screenshots. The jobs are QPD (Question, Procedure, Diagram), UDA (Uncertainty, Data, Analysis) and CON (Conclusion). After “what uncertainty do I put here?”, the question I get most is “does this look okay?”, so this page is the answer: what belongs on each board, where it sits, and a checklist to run before anyone takes a photo.\nThe boards are about 75 cm by 50 cm. That is not much room, so what goes on one has to be chosen, and the layouts below are the ones that fit.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "How a Lab Gets Turned In"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/02-lab-report-format.html#who-turns-in-what",
+    "href": "teaching/labs/02-lab-report-format.html#who-turns-in-what",
+    "title": "How a Lab Gets Turned In",
+    "section": "Who turns in what",
+    "text": "Who turns in what\n\n\n\n\n\n\nNoteRegular labs and major labs\n\n\n\n\nRegular labs. You turn in the part you worked on. In a group of two, one person does QPD, the other does UDA, both write CON, and each of you turns in your own part plus CON.\nMajor labs (Lab 5 and Lab 9). Every student turns in every part, and your grade depends on your partners’ work as much as your own. Check all three boards before any of them is photographed.\nLab 9 also has a theory session in the class period before the usual three-part lab.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "How a Lab Gets Turned In"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/02-lab-report-format.html#before-you-take-the-photo",
+    "href": "teaching/labs/02-lab-report-format.html#before-you-take-the-photo",
+    "title": "How a Lab Gets Turned In",
+    "section": "Before you take the photo",
+    "text": "Before you take the photo\nRun this on every board, whatever the job. It takes thirty seconds and catches most of what I take points off for.\n\n\nYour name and your job label (QPD, UDA or CON) are in the header at the top.\nEvery number has a unit, including the ones inside equations and on axes.\nEvery symbol you wrote is defined somewhere on the board or in the question.\nDark marker, writing large enough to read on a phone screen, nothing smudged.\nThe whole board is in the frame, photographed square-on, with nothing in front of it.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "How a Lab Gets Turned In"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/02-lab-report-format.html#the-qpd-board",
+    "href": "teaching/labs/02-lab-report-format.html#the-qpd-board",
+    "title": "How a Lab Gets Turned In",
+    "section": "The QPD board",
+    "text": "The QPD board\nThe test of a QPD board is simple: someone who has never seen the equipment should be able to read it, repeat your experiment, and know exactly which numbers you wrote down and in what units.\n\n  QPDYour name · partners' names\n  Q: What is the relationship between $x$ and $y$? (the real quantities, in words)\n  \n    Procedure\n    \n      Numbered steps, in the order you did them.\n      Every measured quantity named with its symbol and unit the first time it appears.\n      What you held fixed, what you varied, how many trials.\n      Where each number was read from (the Statistics box, the angle scale, the fit).\n    \n    Diagram: an annotated photo in Word, or drawn here or on a second board\n  \n\nThe QPD board. The header and the question take two lines; the procedure gets everything else.\n\nHeader. Job label on the left, names on the right, a line under both.\nThe question, written as a title under the header. It always has the form “What is the relationship between \\(x\\) and \\(y\\)?”, and \\(x\\) and \\(y\\) are the physical quantities in words: “the normal force on the block and the friction force between the block and the track”, not “\\(F_N\\) and \\(f\\)”. If the lab has more than one surface, spring or object, name them. The symbols can follow in brackets.\nThe procedure, filling the rest of the board. Numbered steps in the order you did them, written for a reader who knows nothing about the lab. Name every quantity you measured, with its symbol and its unit, and say where the number came from: “read the maximum static friction force \\(f_{s,\\max}\\) in newtons from the Statistics box over the peak.” Say what you held fixed and what you varied.\nThe diagram. Most groups take a photo of the setup and annotate it in Word with arrows and labels on every measurable quantity: positions, distances, angles, which surface is which. Drawing it instead is fine, on a split board or a second one. Either way, “annotated” means labels. A photo with no labels is a photo, not a diagram.\n\n\n\nThe question starts “What is the relationship between” and names real quantities, not letters.\nEach measured quantity appears in the procedure with a symbol and a unit.\nThe procedure says how many trials and which values you stepped through.\nA stranger could tell from the steps where each number in the data table came from.\nThe diagram or photo has labels on every quantity that was measured.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "How a Lab Gets Turned In"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/02-lab-report-format.html#the-uda-board",
+    "href": "teaching/labs/02-lab-report-format.html#the-uda-board",
+    "title": "How a Lab Gets Turned In",
+    "section": "The UDA board",
+    "text": "The UDA board\nThe UDA job is two jobs. Most of it happens in Excel and never touches the board; the board is where you show the physics behind the spreadsheet.\nIn Excel, not on the board:\n\nData in the yellow cells, every calculated column completed, and both uncertainty rows for every column. The uncertainty guide walks through those two rows column by column.\nThe graph: the right quantities on the right axes, axis labels with units, one series per data set, a linear trendline on each series with its equation showing, and a legend that says which series is which.\nNearly every lab ends in a straight line, even when the relationship being tested is not linear, because we choose what to plot so that the line comes out straight and its slope means something. That graph is the linearized graph, and its trendline equation is the one the conclusion quotes.\n\nOn the board:\n\n  UDAYour name · partners' names\n  \n    \n      FBD + derivation\n      The free-body diagram, with every force labelled.\n      The force equations that follow from it.\n      The relationship you are about to graph, in the lab's own symbols.\n    \n    \n      Sample calculations\n      One per calculated column, from a real row:\n      $M_\\text{tot} = 0.25\\,\\text{kg} + 0.11\\,\\text{kg} = 0.36\\,\\text{kg}$\n      $F_N = (0.36\\,\\text{kg})(9.81\\,\\text{m/s}^2) = 3.5\\,\\text{N}$\n      … and so on down the calculated columns\n    \n  \n\nThe UDA board. Left half: where the formulas come from. Right half: proof that the spreadsheet uses them.\n\nHeader, as before.\nLeft half: the derivation. Whatever gets from the physics to the quantity on the graph. Often that is a free-body diagram, the force equations it implies, and the relationship that falls out; sometimes it is shorter. Label every force on the diagram and define every symbol.\nRight half: one sample calculation for every calculated column in the sheet. Pick a real row, write the measured numbers that feed it with their units, and show the arithmetic. One or two lines per column is enough. This is what proves the formula in the spreadsheet is the one from the physics, and it is where missing units get noticed, so put them in.\n\n\n\nEvery force on the free-body diagram is labelled and every symbol is defined.\nThe derivation ends with the relationship that the graph tests.\nThere is one sample calculation for every calculated column, with numbers from a real row.\nEvery number in the sample calculations carries a unit, and the result has the column’s unit.\nIn Excel: both uncertainty rows are filled for every column, the axes are labelled with units, and each trendline’s equation is on the chart with a legend naming the series.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "How a Lab Gets Turned In"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/02-lab-report-format.html#the-con-board",
+    "href": "teaching/labs/02-lab-report-format.html#the-con-board",
+    "title": "How a Lab Gets Turned In",
+    "section": "The CON board",
+    "text": "The CON board\nOne paragraph. The instructions for the conclusion arrive as a numbered list of four or five questions, and each question becomes exactly one sentence, in order. No bullet points, no headings, no “Q1:”. Someone reading only your paragraph should come away knowing what you found, how big it was, and how it compares with what was expected.\n\n  CONYour name · partners' names\n  \n    1 The relationship between $x$ and $y$ is linear / quadratic / ….\n    2 The trendline equation(s), in the lab's symbols with units.\n    3 The result(s), with units and what they describe.\n    4 Sometimes: a comparison inside your own results.\n    5 The comparison to a reference value, as a percent difference.\n    one paragraph, one sentence per question, in order\n  \n\nThe CON board. The numbers are here to show the order; they do not go on the board.\nThe sentences, one by one. Examples use the friction lab, with invented numbers.\n\nThe answer to the lab question, in the words of the QPD question. “The relationship between the normal force on the block and the friction force on it is linear, for both static and kinetic friction.”\nThe trendline equation, rewritten in the lab’s symbols with units. Excel gives you \\(y = 0.314x + 0.02\\). You write \\(f_s = (0.314)\\,F_N + 0.02\\ \\text{N}\\), and you say that the coefficient is unitless because it is a force divided by a force. One equation per data set. If the relationship graph and the linearized graph are different graphs, quote both equations.\nThe result, with units and with what it describes: “The coefficient of static friction between cork and poplar is 0.31.” All of them, if there are several.\nSometimes, a comparison inside your results, when a question asks for it: “The static coefficient was larger than the kinetic coefficient for both surfaces.”\nThe comparison to a reference: a known value, another measurement, or the class mean, usually as a percent difference. Use the formula the week’s instructions give; the two in circulation are \\(\\%\\,\\text{error} = 100\\%\\,(M - T)/T\\) against a true value \\(T\\) and \\(\\%\\,\\text{difference} = 200\\%\\,(M_1 - M_2)/(M_1 + M_2)\\) between two measurements.\n\n\n\nIt is a paragraph: one sentence per question, in the order the questions were asked.\nSentence one repeats the QPD question’s quantities and names the kind of relationship.\nEvery equation uses the lab’s symbols, not \\(x\\) and \\(y\\), with units on every term that has them.\nEvery result has a unit, or a sentence saying why it has none.\nThe comparison names what it compares against and gives a percentage.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "How a Lab Gets Turned In"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/02-lab-report-format.html#where-each-photo-goes-in-the-word-template",
+    "href": "teaching/labs/02-lab-report-format.html#where-each-photo-goes-in-the-word-template",
+    "title": "How a Lab Gets Turned In",
+    "section": "Where each photo goes in the Word template",
+    "text": "Where each photo goes in the Word template\n\n\n\n\n\n\n\nSection\nWhat goes in it\n\n\n\n\nQPD\nPhoto of the QPD board. Annotated photo of the setup. Where the lab uses a sensor, a screenshot of the sensor graph with the recorded values highlighted.\n\n\nUDA\nScreenshot of the completed data table, uncertainty rows included. Screenshot of the graph with every trendline and equation. Photo of the UDA board.\n\n\nCON\nPhoto of the CON board.\n\n\n\nFill in the name, partners and section lines at the top. On a regular lab, delete the sections you did not do.\n\n\n\n\n\n\nTipUnits, one more time\n\n\n\nBefore the photo, touch every number on the board and say its unit out loud. Then do the same for the equation. A slope has units: the slope of spring force in newtons against stretch in meters is in newtons per meter, which is exactly why it is a spring constant. A slope with no units is only unitless because both axes share a unit, and the coefficient of friction is the standard case, newtons over newtons. When that happens, say so in the sentence rather than leaving the reader to guess.\n\n\nFor what goes in each part of a particular lab, the question, the columns, the graph and the conclusion questions, see the Lab Guides.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "How a Lab Gets Turned In"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/04-friction-flat.html",
+    "href": "teaching/labs/lab-guides/04-friction-flat.html",
+    "title": "Lab 4: Friction on a Flat Surface",
+    "section": "",
+    "text": "Regular lab. You turn in the part you worked on. In a group of two, each of you turns in your own part plus CON.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 4: Friction on a Flat Surface"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/04-friction-flat.html#at-a-glance",
+    "href": "teaching/labs/lab-guides/04-friction-flat.html#at-a-glance",
+    "title": "Lab 4: Friction on a Flat Surface",
+    "section": "At a glance",
+    "text": "At a glance\n\nQuestion. How does the friction force on a block depend on the normal force pressing it into the track, for static and for kinetic friction, on two different pairs of surfaces?\nYou measure. The peak force just before the block slips and the average force while it slides, for five loads, three trials each, on two surface combinations.\nYou calculate. The total mass on the track and the normal force.\nYou graph. Friction force against normal force: four data sets on one graph, four linear trendlines. The four slopes are the four coefficients of friction.\nYou conclude. The relationship in words, the four equations, the four coefficients, static against kinetic, surface against surface.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 4: Friction on a Flat Surface"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/04-friction-flat.html#qpd",
+    "href": "teaching/labs/lab-guides/04-friction-flat.html#qpd",
+    "title": "Lab 4: Friction on a Flat Surface",
+    "section": "QPD",
+    "text": "QPD\n\nThe question\n\nWhat is the relationship between the magnitude of the normal force (\\(F_N\\)) and the magnitude of the friction force (\\(f_s\\) and \\(f_k\\)) between horizontal surfaces of A on B and C on B?\n\nFill in the surfaces with their names, felt on poplar or cork on oak, using the same names you put in the Excel header and the graph legend. The symbols go in brackets after the words, not instead of them.\n\n\nWhat the procedure must make clear\n\nWhich two surface combinations you tested, and which face of the block was down for each.\nHow the block was loaded: the box, then bars of 0, 0.25, 0.5, 1.0 and 1.5 kg on top, three trials at each.\nHow the pull was done: the force sensor hooked to the block, zeroed before each run, pulled horizontally and slowly until the block breaks free, then kept moving at a steady speed.\nWhere each number came from on the force–time graph: the maximum static friction force is the peak just before the block slips, read from a Statistics box over the peak; the kinetic friction force is the mean of the plateau while it slides, from a Statistics box over the plateau.\n\n\n\n\n\n\n\n\n\n\n\nSymbol\nQuantity\nHow it is measured\nUnit\n\n\n\n\n\\(M_\\text{bars}\\)\nmass added on top of the box\ngiven, 0 to 1.5 kg\nkg\n\n\n\\(M_\\text{box}\\)\nmass of the box\ngiven on the template, 0.11 kg\nkg\n\n\n\\(f_{s,\\max}\\)\nmaximum static friction force\npeak of the force–time graph\nN\n\n\n\\(f_k\\)\nkinetic friction force\nmean of the sliding plateau\nN\n\n\n\n\n\n\nThe diagram\nA photo of the block on the track with the sensor attached, labelled with: the block and which surface is down, the track surface, the sensor and the direction of pull, the added masses, and the direction of motion. The report’s QPD section also wants a screenshot of the force–time graph with both Statistics boxes open, one over the peak and one over the plateau, so it is clear where \\(f_{s,\\max}\\) and \\(f_k\\) came from.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 4: Friction on a Flat Surface"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/04-friction-flat.html#uda",
+    "href": "teaching/labs/lab-guides/04-friction-flat.html#uda",
+    "title": "Lab 4: Friction on a Flat Surface",
+    "section": "UDA",
+    "text": "UDA\n\nIn Excel\n\n\n\n\n\n\n\n\n\n\nColumn\nFormula\nUnit\nSample calculation on the board\n\n\n\n\n\\(M_\\text{TOTAL}\\)\n\\(M_\\text{bars} + M_\\text{box}\\)\nkg\nyes\n\n\n\\(F_N\\)\n\\(M_\\text{TOTAL} \\times 9.81\\ \\text{m/s}^2\\)\nN\nyes\n\n\n\\(f_{s,\\max}\\), \\(f_k\\)\nmeasured\nN\nno, but both need uncertainty rows\n\n\n\n\nThe mass columns come with their uncertainty filled in. For the two force columns the reading wobbles, so the standard deviation from the Statistics box is a sensible \\(\\delta_a\\); the uncertainty guide has that branch.\nThe graph. Friction force in newtons on the vertical axis, normal force in newtons on the horizontal. Four series on one chart: combination 1 static, combination 1 kinetic, combination 2 static, combination 2 kinetic. A linear trendline on each with its equation displayed, and a legend that names the combination and whether it is static or kinetic. The relationship is linear, so this graph is also the linearized graph.\n\n\nOn the board\nLeft half, derivation. Draw the block being pulled, with four forces: the normal force \\(F_N\\) up, the weight \\(F_g\\) down, the tension \\(F_T\\) from the sensor along the pull, and friction \\(f\\) opposing it. Vertically nothing accelerates, so \\(F_N - F_g = 0\\) and \\(F_N = M_\\text{TOTAL}\\,g\\). Horizontally, at the instant before slipping and again while sliding at constant speed, \\(F_T - f = 0\\), so \\(f = F_T\\): the sensor reading is the friction force. The model under test is \\(f = \\mu F_N\\), a straight line through the origin whose slope is \\(\\mu\\).\nRight half, sample calculations. One for each calculated column, from a real row of your sheet:\n\\[M_\\text{TOTAL} = 0.25\\ \\text{kg} + 0.11\\ \\text{kg} = 0.36\\ \\text{kg}, \\qquad F_N = (0.36\\ \\text{kg})(9.81\\ \\text{m/s}^2) = 3.5\\ \\text{N}.\\]",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 4: Friction on a Flat Surface"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/04-friction-flat.html#con",
+    "href": "teaching/labs/lab-guides/04-friction-flat.html#con",
+    "title": "Lab 4: Friction on a Flat Surface",
+    "section": "CON",
+    "text": "CON\nThe questions as they are handed out, each with the sentence it becomes. The numbers are invented.\n\nWhat relationship did you find between the normal force and the friction force, both static and kinetic? → “The relationship between the normal force on the block and the friction force on it is linear, for both static and kinetic friction and for both surface combinations.”\nWhat were your two static-friction trendlines and your two kinetic-friction trendlines? Physical variables, not \\(x\\) and \\(y\\). → “For cork on oak the trendlines were \\(f_s = (0.31)\\,F_N\\) and \\(f_k = (0.24)\\,F_N\\), and for felt on oak they were \\(f_s = (0.42)\\,F_N\\) and \\(f_k = (0.35)\\,F_N\\).” If Excel gives an intercept, keep it, with its unit: \\(+\\,0.05\\ \\text{N}\\).\nWhat were your four friction coefficients? → “The coefficients were \\(\\mu_s = 0.31\\) and \\(\\mu_k = 0.24\\) for cork on oak and \\(\\mu_s = 0.42\\) and \\(\\mu_k = 0.35\\) for felt on oak, to two significant figures; they are unitless because each is a force divided by a force.”\nWere the kinetic or the static coefficients greater in general? → “For both combinations the static coefficient was larger than the kinetic one.”\nWhich surface combination had the larger coefficients? → “Felt on oak had the larger coefficients for both static and kinetic friction.”\n\nThere is no outside reference value in this lab. The comparison is between your own results.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 4: Friction on a Flat Surface"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/04-friction-flat.html#common-slips",
+    "href": "teaching/labs/lab-guides/04-friction-flat.html#common-slips",
+    "title": "Lab 4: Friction on a Flat Surface",
+    "section": "Common slips",
+    "text": "Common slips\n\nWriting \\(y = 0.314x + 0.02\\) instead of \\(f_s = (0.314)\\,F_N + 0.02\\ \\text{N}\\).\nFour trendlines and no legend, so nobody can tell which is which.\nLeaving the box out of the total mass.\nReading \\(f_k\\) off the peak, or \\(f_{s,\\max}\\) off the plateau.\nPulling at an angle or in jerks. The sensor measures tension, and tension only equals friction when the pull is horizontal and the block is not accelerating.\nCoefficients quoted to five figures. Two is what is asked for, and two is what the data support.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 4: Friction on a Flat Surface"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/04-friction-flat.html#going-deeper",
+    "href": "teaching/labs/lab-guides/04-friction-flat.html#going-deeper",
+    "title": "Lab 4: Friction on a Flat Surface",
+    "section": "Going deeper",
+    "text": "Going deeper\nWhy the coefficient has no units. It is the ratio of two forces, so the newtons cancel. That also tells you what it measures: how many newtons of sideways push each newton of squeeze can resist before the surfaces let go.\nWhy static beats kinetic. When the block sits still, the high points of the two surfaces settle into each other and tiny bonds form. Breaking them takes more force than keeping them broken; once the block is sliding, it rides over the high points before new contacts can fully form. So \\(\\mu_s \\ge \\mu_k\\), and your fourth sentence is checking exactly that.\nWhy the contact area never appears. Guillaume Amontons wrote this down in 1699, two centuries after Leonardo da Vinci sketched it: friction depends on the load and not on the apparent area of contact. The real contact area, the tips of the bumps that actually touch, is a tiny fraction of the apparent one, and it grows in proportion to the load. Double the squeeze, double the real contact, double the friction. Area drops out.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 4: Friction on a Flat Surface"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/06-spring-constant.html",
+    "href": "teaching/labs/lab-guides/06-spring-constant.html",
+    "title": "Lab 6: The Spring Constant, Two Ways",
+    "section": "",
+    "text": "Regular lab. You turn in the part you worked on. In a group of two, each of you turns in your own part plus CON.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 6: The Spring Constant, Two Ways"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/06-spring-constant.html#at-a-glance",
+    "href": "teaching/labs/lab-guides/06-spring-constant.html#at-a-glance",
+    "title": "Lab 6: The Spring Constant, Two Ways",
+    "section": "At a glance",
+    "text": "At a glance\n\nQuestions. Two of them. Part 1: how does the force a spring exerts depend on how far it is stretched? Part 2: how does the farthest stretch of a dropped mass depend on the mass?\nYou measure. Part 1: a hanging mass and the spring’s position before and after it is lowered gently to rest, seven masses. Part 2: the position before release and the lowest point reached, three drops per mass.\nYou calculate. The stretch \\(\\Delta y\\) in meters for both parts, the spring force in newtons for Part 1, and the spring constant from each graph’s slope.\nYou graph. Part 1: spring force against stretch. Part 2: maximum stretch against mass. Both linear.\nYou conclude. Both relationships in words, both equations, both spring constants, and the percent difference between them.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 6: The Spring Constant, Two Ways"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/06-spring-constant.html#qpd",
+    "href": "teaching/labs/lab-guides/06-spring-constant.html#qpd",
+    "title": "Lab 6: The Spring Constant, Two Ways",
+    "section": "QPD",
+    "text": "QPD\nThis lab has two parts, and the report template has a QPD slot for each: a board photo and an annotated setup photo for Part 1, and the same again for Part 2. Split one board or use two.\n\nThe questions\n\nPart 1: What is the relationship between the stretch of the spring (\\(\\Delta y\\)) and the force the spring exerts on the hanging mass (\\(F_\\text{spring}\\))?\n\n\nPart 2: What is the relationship between the mass dropped onto the spring (\\(M\\)) and the maximum stretch it produces (\\(\\Delta y\\))?\n\n\n\nWhat the procedure must make clear\n\nPart 1: what was hung on the spring and how, how the initial position \\(y_i\\) was defined (the bottom of the hanger with no load, say), how the mass was lowered by hand until it hung at rest before \\(y_f\\) was read, and what the positions were read against.\nPart 2: that the mass was released from rest at the unstretched position without a push, how the lowest point \\(y_f\\) was caught (by eye, by video, by a marker), and that each mass was dropped three times.\nThe units as recorded: grams and centimeters in Part 1, kilograms and centimeters in Part 2. The sheet converts, but the procedure should say what was written down.\n\n\n\n\n\n\n\n\n\n\n\nSymbol\nQuantity\nHow it is measured\nUnit\n\n\n\n\n\\(M\\)\nhanging or dropped mass\nbalance or labelled mass\ng (Part 1), kg (Part 2)\n\n\n\\(y_i\\)\nposition before loading or release\nmeter stick beside the spring\ncm\n\n\n\\(y_f\\)\nposition at rest (Part 1) or lowest point (Part 2)\nmeter stick beside the spring\ncm\n\n\n\n\n\n\nThe diagram\nA photo of the spring and hanger beside the meter stick, labelled with \\(y_i\\), \\(y_f\\), \\(\\Delta y\\), the mass, and the direction of the spring force. One per part.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 6: The Spring Constant, Two Ways"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/06-spring-constant.html#uda",
+    "href": "teaching/labs/lab-guides/06-spring-constant.html#uda",
+    "title": "Lab 6: The Spring Constant, Two Ways",
+    "section": "UDA",
+    "text": "UDA\n\nIn Excel\n\n\n\n\n\n\n\n\n\n\nColumn\nFormula\nUnit\nSample calculation on the board\n\n\n\n\n\\(\\Delta y\\) (Part 1)\n\\((y_f - y_i)/100\\)\nm\nyes\n\n\n\\(F_\\text{spring}\\)\n\\((M/1000) \\times 9.81\\ \\text{m/s}^2\\)\nN\nyes\n\n\n\\(\\Delta y\\) (Part 2)\n\\((y_f - y_i)/100\\)\nm\nsame calculation as Part 1\n\n\n\\(k\\) (Part 2)\nfrom the slope of the second graph, see below\nN/m\nyes\n\n\n\n\nBoth uncertainty rows for every column, as always. The positions are meter-stick readings, so the scale branch of the uncertainty guide applies; the masses are either labelled or from a balance.\nThe graphs. Part 1: \\(F_\\text{spring}\\) in newtons on the vertical axis against \\(\\Delta y\\) in meters on the horizontal, one linear trendline with its equation. The slope is the spring constant \\(k\\) in N/m. Part 2: \\(\\Delta y\\) in meters against \\(M\\) in kilograms, one linear trendline with its equation. Its slope is \\(2g/k\\) (derivation below), so \\(k = 2g/\\text{slope}\\). Label both axes with units on both charts; the template says so in capital letters.\n\n\nOn the board\nLeft half, derivation. For Part 1, draw the hanging mass at rest with two forces, the spring force up and the weight down. At rest they balance: \\(F_\\text{spring} = Mg\\). That is why a column of masses becomes a column of forces, and Hooke’s law \\(F_\\text{spring} = k\\,\\Delta y\\) says the graph should be a line through the origin with slope \\(k\\).\nFor Part 2 the mass is not at rest, so forces alone will not do it; use energy. Released from the unstretched position, the mass falls \\(\\Delta y\\) and stops for an instant at the bottom. The gravitational energy it gave up, \\(Mg\\,\\Delta y\\), is all in the spring, \\(\\tfrac12 k\\,\\Delta y^2\\). Set them equal and cancel one \\(\\Delta y\\):\n\\[Mg\\,\\Delta y = \\tfrac12 k\\,\\Delta y^2 \\quad\\Longrightarrow\\quad \\Delta y = \\frac{2g}{k}\\,M.\\]\nA line through the origin with slope \\(2g/k\\). If your instructor has you plot \\(M\\) against \\(\\Delta y\\) instead, the slope is \\(k/2g\\) and \\(k = 2g \\times \\text{slope}\\).\nRight half, three sample calculations, as the template asks: one \\(\\Delta y\\), one \\(F_\\text{spring}\\), and the spring constant from the second graph’s slope. Invented numbers:\n\\[\\Delta y = \\frac{34.6\\ \\text{cm} - 22.1\\ \\text{cm}}{100} = 0.125\\ \\text{m}, \\qquad F_\\text{spring} = \\frac{250\\ \\text{g}}{1000}\\,(9.81\\ \\text{m/s}^2) = 2.45\\ \\text{N},\\]\n\\[k = \\frac{2g}{\\text{slope}} = \\frac{2\\,(9.81\\ \\text{m/s}^2)}{0.98\\ \\text{m/kg}} = 20\\ \\text{N/m}.\\]",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 6: The Spring Constant, Two Ways"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/06-spring-constant.html#con",
+    "href": "teaching/labs/lab-guides/06-spring-constant.html#con",
+    "title": "Lab 6: The Spring Constant, Two Ways",
+    "section": "CON",
+    "text": "CON\nThe four items from the report template, each as a sentence. Numbers invented.\n\nIdentify the relationships between both sets of graphed quantities in words. → “The relationship between the stretch of the spring and the spring force is linear, and the relationship between the dropped mass and the maximum stretch is also linear.”\nWrite the two equations relating those quantities. → “The trendlines were \\(F_\\text{spring} = (19.6\\ \\text{N/m})\\,\\Delta y\\) for the lowered mass and \\(\\Delta y = (0.98\\ \\text{m/kg})\\,M\\) for the dropped mass.” Slopes have units here; do not drop them.\nState both values of the spring constant, from the two equation constants. → “The spring constant is \\(k_1 = 19.6\\ \\text{N/m}\\) from Part 1 and \\(k_2 = 2g/0.98 = 20.0\\ \\text{N/m}\\) from Part 2.”\nCompare the two values with a percent difference, using \\(\\%\\text{diff} = (k_2 - k_1)/k_1\\). → “The two values differ by \\((20.0 - 19.6)/19.6 = 2\\%\\).” This lab’s formula divides by \\(k_1\\) rather than by the average; use the one the handout gives.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 6: The Spring Constant, Two Ways"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/06-spring-constant.html#common-slips",
+    "href": "teaching/labs/lab-guides/06-spring-constant.html#common-slips",
+    "title": "Lab 6: The Spring Constant, Two Ways",
+    "section": "Common slips",
+    "text": "Common slips\n\nMass where a force belongs. The vertical axis of the first graph is \\(Mg\\) in newtons, not \\(M\\) in grams, and the slope is only a spring constant if it is.\nGrams and centimeters leaking into the answer. The sheet divides by 1000 and by 100 for a reason; the sample calculation on the board must show the same conversions.\nA spring constant with no units, or in N/cm. It is N/m.\nGiving the mass a push on release, or catching the lowest point late. Both make \\(\\Delta y\\) too large and \\(k_2\\) too small.\nMixing up which slope needs the \\(2g\\). The force-against-stretch slope is \\(k\\). The stretch-against-mass slope is \\(2g/k\\).",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 6: The Spring Constant, Two Ways"
+    ]
+  },
+  {
+    "objectID": "teaching/labs/lab-guides/06-spring-constant.html#going-deeper",
+    "href": "teaching/labs/lab-guides/06-spring-constant.html#going-deeper",
+    "title": "Lab 6: The Spring Constant, Two Ways",
+    "section": "Going deeper",
+    "text": "Going deeper\nWhy dropping stretches the spring twice as far. Hang the mass gently and it settles where \\(k\\,\\Delta y_1 = Mg\\), so \\(\\Delta y_1 = Mg/k\\). Drop it and the energy argument gives \\(\\Delta y_2 = 2Mg/k\\). Exactly double. At the resting point the spring force only just matches the weight, but the falling mass arrives there with speed, overshoots, and keeps stretching until the spring has absorbed all the energy it brought, which takes twice the distance. If you ever wondered why a climber’s rope has to be rated for far more than the climber’s weight, this is the start of the answer.\nWhere the factor of one half comes from. The spring force grows from zero to \\(k\\,\\Delta y\\) as the spring stretches, so the work it does is the average force, \\(\\tfrac12 k\\,\\Delta y\\), times the distance \\(\\Delta y\\). That is the area of a triangle under the force–stretch line, and it is the same triangle your Part 1 graph draws.\nWhat “the same \\(k\\)” is testing. Part 1 uses forces in balance; Part 2 uses energy in motion. They should agree because they are two descriptions of one spring, and the percent difference in your last sentence is a measurement of how well two different pieces of physics line up on the same object.",
+    "crumbs": [
+      "Teaching",
+      "Lab Help",
+      "Lab Guides",
+      "Lab 6: The Spring Constant, Two Ways"
     ]
   },
   {

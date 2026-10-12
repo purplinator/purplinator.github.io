@@ -100,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
         color: #F3EFFC;
       }
 </style>
-<!-- MathJax configuration, loaded on every page.
+<!-- MathJax 4 configuration, loaded on every page.
 
      Macros defined here work in any .qmd file without a per-page preamble, so
      equations stay short to type and consistent across the site. Add new ones
@@ -142,8 +142,20 @@ ul.task-list li input[type="checkbox"] {
       ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
       processHtmlClass: 'mathjax'
     },
-    chtml: { scale: 1.0, displayAlign: 'center' }
+    // MathJax 4: font and layout options live under `output`. STIX Two Math is
+    // loaded from the same CDN as MathJax itself when it is named here.
+    output: { font: 'mathjax-stix2', scale: 1.0, displayAlign: 'center' }
   };
+</script>
+<!-- Reading-spacing preference, applied before first paint so the page does
+     not jump. The toggle itself is added by assets/spacing-toggle.html, and
+     the spacing rules are in styles.css, section 18. -->
+<script>
+  try {
+    if (localStorage.getItem('sx-spacing') === 'wide') {
+      document.documentElement.setAttribute('data-sx-spacing', 'wide');
+    }
+  } catch (e) {}
 </script>
 <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
@@ -433,17 +445,52 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Measurement Uncertainty</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/02-lab-report-format.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How a Lab Gets Turned In</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/labs/lab-guides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/04-friction-flat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Friction on a Flat Surface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/05-friction-incline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Friction on an Incline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/06-spring-constant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6: The Spring Constant, Two Ways</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../teaching/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python from Scratch</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../teaching/python/00-what-is-a-programming-language.html" class="sidebar-item-text sidebar-link active">
@@ -628,6 +675,61 @@ W10=
 <li id="fn1"><p><strong>Vibe-coding</strong> is the name given to generating code and software by instructing an AI, in a natural language like English, to write the code for you.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
+<!-- "Wider spacing" toggle, added to the navbar next to Quarto's dark-mode
+     toggle on every page (Quarto renders that button twice, once for wide
+     screens and once for the collapsed menu, so this adds one beside each).
+     Sets data-sx-spacing="wide" on <html> and remembers the choice in
+     localStorage; assets/spacing-head.html re-applies it before paint on the
+     next page, and styles.css section 18 does the spacing. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    if (document.querySelector('.sx-spacing-toggle')) return;
+    var darks = document.querySelectorAll('.quarto-color-scheme-toggle');
+    if (!darks.length) return;
+    var root = document.documentElement;
+    var on = root.getAttribute('data-sx-spacing') === 'wide';
+    var links = [];
+
+    function apply() {
+      if (on) root.setAttribute('data-sx-spacing', 'wide');
+      else root.removeAttribute('data-sx-spacing');
+      links.forEach(function (l) { l.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      try { localStorage.setItem('sx-spacing', on ? 'wide' : 'normal'); } catch (e) {}
+    }
+
+    Array.prototype.forEach.call(darks, function (dark) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.className = (dark.className || '').replace('quarto-color-scheme-toggle', '').trim() + ' sx-spacing-toggle';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-pressed', on ? 'true' : 'false');
+      link.setAttribute('aria-label', 'Wider letter spacing for easier reading');
+      link.title = 'Wider spacing';
+      link.innerHTML = '<i class="bi bi-fonts" aria-hidden="true"></i>';
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        on = !on;
+        apply();
+      });
+      // Mirror the dark toggle's wrapper when it has one, so the two sit side by side.
+      var wrapper = dark.parentElement;
+      if (wrapper && wrapper.tagName === 'LI') {
+        var li = document.createElement('li');
+        li.className = wrapper.className;
+        li.appendChild(link);
+        wrapper.parentElement.insertBefore(li, wrapper);
+      } else {
+        wrapper.insertBefore(link, dark);
+      }
+      links.push(link);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>

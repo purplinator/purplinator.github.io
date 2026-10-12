@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../teaching/python/index.html" rel="next">
+<link href="../../teaching/labs/02-lab-report-format.html" rel="next">
 <link href="../../teaching/labs/index.html" rel="prev">
 <link href="../../images/favicon.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
         color: #F3EFFC;
       }
 </style>
-<!-- MathJax configuration, loaded on every page.
+<!-- MathJax 4 configuration, loaded on every page.
 
      Macros defined here work in any .qmd file without a per-page preamble, so
      equations stay short to type and consistent across the site. Add new ones
@@ -140,12 +140,24 @@ ul.task-list li input[type="checkbox"] {
       ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
       processHtmlClass: 'mathjax'
     },
-    chtml: { scale: 1.0, displayAlign: 'center' }
+    // MathJax 4: font and layout options live under `output`. STIX Two Math is
+    // loaded from the same CDN as MathJax itself when it is named here.
+    output: { font: 'mathjax-stix2', scale: 1.0, displayAlign: 'center' }
   };
+</script>
+<!-- Reading-spacing preference, applied before first paint so the page does
+     not jump. The toggle itself is added by assets/spacing-toggle.html, and
+     the spacing rules are in styles.css, section 18. -->
+<script>
+  try {
+    if (localStorage.getItem('sx-spacing') === 'wide') {
+      document.documentElement.setAttribute('data-sx-spacing', 'wide');
+    }
+  } catch (e) {}
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -458,17 +470,52 @@ window.Quarto = {
  <span class="menu-text">Measurement Uncertainty</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/02-lab-report-format.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How a Lab Gets Turned In</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/labs/lab-guides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/04-friction-flat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Friction on a Flat Surface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/05-friction-incline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Friction on an Incline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/06-spring-constant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6: The Spring Constant, Two Ways</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../teaching/python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python from Scratch</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../teaching/python/00-what-is-a-programming-language.html" class="sidebar-item-text sidebar-link">
@@ -676,7 +723,7 @@ window.Quarto = {
 </div>
 </div>
 <div id="unc-typed" class="sx-wizard__step">
-<p><strong>This column is a measurement</strong>, so it gets a <em>measurement uncertainty</em>: a number that says how well you could actually read the instrument. For a measured column you always start with the absolute uncertainty <span class="math inline">\(\delta_a\)</span> and get the relative uncertainty <span class="math inline">\(\delta_r\)</span> from it afterwards, never the other way round.</p>
+<p><strong>This column is a measurement</strong>, so it gets a <strong>measurement uncertainty</strong>: a number that says how well you could actually read the instrument. For a measured column you always start with the absolute uncertainty <span class="math inline">\(\delta_a\)</span> and get the relative uncertainty <span class="math inline">\(\delta_r\)</span> from it afterwards, never the other way round.</p>
 <p><strong>What produced the numbers in this column?</strong></p>
 <div class="sx-wizard__choices">
   <button class="sx-wizard__btn" data-next="unc-m-scale" data-label="Read off a scale">
@@ -701,8 +748,8 @@ window.Quarto = {
 <p><strong>Decide how finely you could really read it.</strong> Find the smallest marked division on the instrument: millimeters on a meter stick, single degrees on a protractor, the last digit on the balance.</p>
 <ul>
 <li>If you could tell which mark the reading was closest to, but no better than that, the smallest division is your <span class="math inline">\(\delta_a\)</span>. A meter stick with millimeter marks gives <span class="math inline">\(\delta_a = 0.001\)</span> m.</li>
-<li>If you could honestly see where the reading sat <em>between</em> two marks, you can go smaller. Half a division is the usual choice.</li>
-<li>If the thing you were measuring did not have a crisp edge, go bigger. The angle at which a block <em>starts</em> to slip is a judgment call, and an uncertainty of a couple of degrees is more honest than one degree, even if the scale is marked in single degrees.</li>
+<li>If you could honestly see where the reading sat <strong>between</strong> two marks, you can go smaller. Half a division is the usual choice.</li>
+<li>If the thing you were measuring did not have a crisp edge, go bigger. The angle at which a block <strong>starts</strong> to slip is a judgment call, and an uncertainty of a couple of degrees is more honest than one degree, even if the scale is marked in single degrees.</li>
 </ul>
 <p><strong>You decide.</strong> I will not take points off for a reasonable estimate that you can defend in one sentence. Type that number into the <strong>abs unc, δa</strong> row for this column, in the same units as the column.</p>
 <div class="sx-wizard__choices">
@@ -754,7 +801,7 @@ window.Quarto = {
 </div>
 </div>
 <div id="unc-m-dr" class="sx-wizard__step">
-<p><strong>Now the relative uncertainty.</strong> <span class="math inline">\(\delta_a\)</span> says how far off the value might be. <span class="math inline">\(\delta_r\)</span> says how big that is <em>compared with the value itself</em>, which is what you will need when this column feeds into a multiplication later on:</p>
+<p><strong>Now the relative uncertainty.</strong> <span class="math inline">\(\delta_a\)</span> says how far off the value might be. <span class="math inline">\(\delta_r\)</span> says how big that is <strong>compared with the value itself</strong>, which is what you will need when this column feeds into a multiplication later on:</p>
 <p><span class="math display">\[\delta_r = \frac{\delta_a}{\text{mean}}\]</span></p>
 <p>using this column’s number from the <strong>mean:</strong> row.</p>
 <p>The easy way in Excel: click the <strong>rel unc, δr</strong> cell for this column, type <code>=</code>, click the <span class="math inline">\(\delta_a\)</span> cell just above it, type <code>/</code>, click the mean cell above that, and press Enter. Excel gives you a decimal. Think of it as a percentage and keep it short: <span class="math inline">\(0.001 / 0.059 = 0.0169\)</span>, which is about 1.7%, and <span class="math inline">\(0.0025\)</span> is about 0.3%. Selecting the cell and pressing the <strong>%</strong> button on Excel’s Home tab will show it as a percentage for you; add a decimal place if it rounds all the way to 0%.</p>
@@ -766,7 +813,7 @@ window.Quarto = {
 </div>
 </div>
 <div id="unc-calc" class="sx-wizard__step">
-<p><strong>This column is calculated</strong>, so its uncertainty is inherited from the columns that went into the formula. No calculation can know its answer better than it knows its inputs. That means you cannot finish this column until every input column has <em>both</em> <span class="math inline">\(\delta_a\)</span> and <span class="math inline">\(\delta_r\)</span> filled in.</p>
+<p><strong>This column is calculated</strong>, so its uncertainty is inherited from the columns that went into the formula. No calculation can know its answer better than it knows its inputs. That means you cannot finish this column until every input column has <strong>both</strong> <span class="math inline">\(\delta_a\)</span> and <span class="math inline">\(\delta_r\)</span> filled in.</p>
 <p>Read the formula in the formula bar and note which columns it uses. Constants do not count: 9.81, <span class="math inline">\(\pi\)</span>, and a single given number like the mass of the box have no uncertainty rows of their own.</p>
 <p><strong>Does every column in the formula already have both uncertainty rows filled in?</strong></p>
 <div class="sx-wizard__choices">
@@ -843,7 +890,7 @@ window.Quarto = {
 </div>
 <div class="sx-divider">
 <p><span class="sx-divider__eyebrow">Would you like to know more?</span></p>
-<p>Everything above is enough to finish the lab. The rest of this page is for anyone who wants to know <em>why</em> those rules work, and why the second number on every measurement matters at all.</p>
+<p>Everything above is enough to finish the lab. The rest of this page is for anyone who wants to know <strong>why</strong> those rules work, and why the second number on every measurement matters at all.</p>
 </div>
 </section>
 <section id="the-longer-story" class="level1">
@@ -864,14 +911,14 @@ window.Quarto = {
 </div>
 </div>
 <p>In daily life the two words are close to interchangeable. In a physics lab they are not, and most of the confusion on this page comes from letting them blur together, so let me pull them apart on purpose.</p>
-<p>Start with “oops.” You say it when you made a mistake: you dropped something, you added where you should have subtracted, you read the wrong row of the table. That is the everyday meaning of <strong>error</strong>, and it is worth holding onto, because the lab meaning is its well-behaved cousin. In a lab report, error is how far your result landed from the value you expected. If I know my coffee is <span class="math inline">\(180^\circ\mathrm{F}\)</span> and my thermometer reads <span class="math inline">\(175^\circ\mathrm{F}\)</span>, the error is <span class="math inline">\(5^\circ\mathrm{F}\)</span>. When a lab asks for a <em>percent error</em>, this is the number it wants: the gap between your answer and the accepted one, as a fraction of the accepted one.</p>
+<p>Start with “oops.” You say it when you made a mistake: you dropped something, you added where you should have subtracted, you read the wrong row of the table. That is the everyday meaning of <strong>error</strong>, and it is worth holding onto, because the lab meaning is its well-behaved cousin. In a lab report, error is how far your result landed from the value you expected. If I know my coffee is <span class="math inline">\(180^\circ\mathrm{F}\)</span> and my thermometer reads <span class="math inline">\(175^\circ\mathrm{F}\)</span>, the error is <span class="math inline">\(5^\circ\mathrm{F}\)</span>. When a lab asks for a <strong>percent error</strong>, this is the number it wants: the gap between your answer and the accepted one, as a fraction of the accepted one.</p>
 <p>Nobody has ever said “oops, I made an uncertainty.” Uncertainty is what you say with “I’m not sure.” Ask me how hot my coffee is when I have no thermometer and I can still answer, but only from what I know: boiling water is <span class="math inline">\(212^\circ\mathrm{F}\)</span>, the cup has been sitting for a minute, it is still too hot to drink. So, “about <span class="math inline">\(190^\circ\mathrm{F}\)</span>, give or take <span class="math inline">\(20\)</span>.” The give-or-take is the <strong>uncertainty</strong>. It is not a mistake. It is an honest statement of how well I know the number, and the honest version of my answer is “somewhere between <span class="math inline">\(170\)</span> and <span class="math inline">\(210^\circ\mathrm{F}\)</span>, probably.”</p>
-<p>So the two words answer two different questions. Error asks <em>how far off was I?</em> and needs a right answer to compare against. Uncertainty asks <em>how well do I know this?</em> and needs no right answer at all. You can put an uncertainty on a measurement nobody has ever made before. That is the whole distinction.</p>
+<p>So the two words answer two different questions. Error asks <strong>how far off was I?</strong> and needs a right answer to compare against. Uncertainty asks <strong>how well do I know this?</strong> and needs no right answer at all. You can put an uncertainty on a measurement nobody has ever made before. That is the whole distinction.</p>
 <p>One warning: physicists have been sloppy about this for a century. You will see “error bars” on graphs that are really uncertainty bars, and the Lab Professor’s primer calls the whole subject error analysis. When you read “error” in a textbook, check which question it is answering. On this page, and in my grading, error is the gap and uncertainty is the give-or-take.</p>
 </section>
 <section id="why-does-uncertainty-matter" class="level2">
 <h2 class="anchored" data-anchor-id="why-does-uncertainty-matter">Why Does Uncertainty Matter?</h2>
-<p>Say we are meeting for dinner and I tell you I will be there at 7. Neither of us thinks I mean 7:00:00.000. I mean <em>around</em> 7, give or take a bit, and the size of that bit is the uncertainty on my arrival time. If it is a few minutes, nobody cares. If it is two hours, you care a great deal, because “7 PM plus or minus 2 hours” means anywhere from 5 to 9, and you are either sitting alone at a table for hours or checking the door every five minutes. The number 7 never changed. What changed is how much the number is worth.</p>
+<p>Say we are meeting for dinner and I tell you I will be there at 7. Neither of us thinks I mean 7:00:00.000. I mean <strong>around</strong> 7, give or take a bit, and the size of that bit is the uncertainty on my arrival time. If it is a few minutes, nobody cares. If it is two hours, you care a great deal, because “7 PM plus or minus 2 hours” means anywhere from 5 to 9, and you are either sitting alone at a table for hours or checking the door every five minutes. The number 7 never changed. What changed is how much the number is worth.</p>
 <p>That is the job uncertainty does in science. A measurement with no uncertainty is “7 PM” with no way to tell whether it means 7 sharp or “sometime this evening.” The second number tells the reader how hard they are allowed to lean on the first. A number you cannot lean on is not a result.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -883,7 +930,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There is one more layer, and it is the one that makes the <span class="math inline">\(\pm\)</span> precise instead of vague. “7 PM <span class="math inline">\(\pm\)</span> 2 hours” does not mean I am guaranteed to arrive between 5 and 9. It means I am <em>fairly confident</em> I will. When the uncertainty is a proper statistical one (a standard deviation from repeated measurements, which the Lab Professor’s primer walks through), “fairly confident” has a number attached: about a <span class="math inline">\(68\%\)</span> chance I arrive within one uncertainty of 7, so between 5 and 9; about <span class="math inline">\(95\%\)</span> within two, between 3 and 11; and <span class="math inline">\(99.7\%\)</span> within three, between 1 PM and 1 AM.</p>
+<p>There is one more layer, and it is the one that makes the <span class="math inline">\(\pm\)</span> precise instead of vague. “7 PM <span class="math inline">\(\pm\)</span> 2 hours” does not mean I am guaranteed to arrive between 5 and 9. It means I am <strong>fairly confident</strong> I will. When the uncertainty is a proper statistical one (a standard deviation from repeated measurements, which the Lab Professor’s primer walks through), “fairly confident” has a number attached: about a <span class="math inline">\(68\%\)</span> chance I arrive within one uncertainty of 7, so between 5 and 9; about <span class="math inline">\(95\%\)</span> within two, between 3 and 11; and <span class="math inline">\(99.7\%\)</span> within three, between 1 PM and 1 AM.</p>
 <p>Notice what the <span class="math inline">\(68\%\)</span> means for you. There is roughly a one-in-three chance I show up outside 5 to 9. When are you even supposed to leave the house? Widen the window and I get more confident, but the window gets less useful: “I will almost certainly arrive between 1 PM and 1 AM” is both true and worthless. Every measurement lives in that tension. The honest window and the useful window pull in opposite directions, and the quality of an experiment is how narrow a window it can honestly claim.</p>
 <p>The uncertainties you estimate in this lab, like half a millimeter on a meter stick, are judgments rather than standard deviations from repeated trials, so do not read the <span class="math inline">\(68\%\)</span> off them too literally. The idea is the same: the <span class="math inline">\(\pm\)</span> is a statement of confidence, not a fence.</p>
 </div>
@@ -894,11 +941,11 @@ window.Quarto = {
 <p>There are two kinds of uncertainty in these labs, and the quick guide above sorts every column into one or the other. The first is <strong>measurement uncertainty</strong>: the uncertainty you get for no other reason than that no instrument reads infinitely finely.</p>
 <p>Measure your desk with a ruler marked only in inches. The best you can do is “about 16 inches,” or if you are careful, “about halfway between 16 and 17.” Either way the inch marks set the limit. You can estimate between them, and that estimate is where your judgment comes in, but you cannot get a hundredth of an inch out of a ruler that only shows inches.</p>
 <p>Swap in a ruler marked in millimeters and the same desk comes out as “405 mm,” or “405.3 mm” if you trust yourself to read between the lines. Better instrument, smaller uncertainty, never zero. Nobody with a meter stick can tell me their desk is <span class="math inline">\(405.728467\)</span> mm long, and a number written that way is not more precise. It is a claim the instrument cannot back up. The instrument sets the floor, and your honesty decides how close to it you get.</p>
-<p>This is why the quick guide asks what you measured <em>with</em> before it asks anything else. The uncertainty on a measured column is not a formula. It is a judgment about the tool: the finest division you could actually read, or the size of the wobble if the reading would not sit still. I grade that judgment on whether it is reasonable, not on whether it matches a number in my head.</p>
+<p>This is why the quick guide asks what you measured <strong>with</strong> before it asks anything else. The uncertainty on a measured column is not a formula. It is a judgment about the tool: the finest division you could actually read, or the size of the wobble if the reading would not sit still. I grade that judgment on whether it is reasonable, not on whether it matches a number in my head.</p>
 </section>
 <section id="calculated-uncertainty" class="level2">
 <h2 class="anchored" data-anchor-id="calculated-uncertainty">Calculated Uncertainty</h2>
-<p>The second kind shows up the moment you <em>use</em> a measurement. Suppose I measure the desk as <span class="math inline">\(405 \pm 1\)</span> mm on each side and want its area. Whatever the area comes out to, I cannot know it better than I knew the sides. The uncertainty in the lengths has to flow through the multiplication into the area. That is <strong>calculated uncertainty</strong>, and the two rules in the quick guide are the two ways it flows.</p>
+<p>The second kind shows up the moment you <strong>use</strong> a measurement. Suppose I measure the desk as <span class="math inline">\(405 \pm 1\)</span> mm on each side and want its area. Whatever the area comes out to, I cannot know it better than I knew the sides. The uncertainty in the lengths has to flow through the multiplication into the area. That is <strong>calculated uncertainty</strong>, and the two rules in the quick guide are the two ways it flows.</p>
 <p><strong>Adding and subtracting pass along the biggest absolute uncertainty.</strong> Picture the total mass in the friction lab: a box whose mass was handed to you as <span class="math inline">\(0.11\)</span> kg, with a bar on top known to <span class="math inline">\(\pm 10\)</span> g. The total is uncertain by about <span class="math inline">\(10\)</span> g, because the bar’s fuzziness is the only fuzziness there is, and nothing about the box can shrink it. So a sum carries the largest <span class="math inline">\(\delta_a\)</span> of its pieces.</p>
 <p><strong>Multiplying and dividing pass along the biggest relative uncertainty.</strong> Here the honest comparison is percentages, not amounts. Take the Lab Professor’s example: two lengths, <span class="math inline">\(20.35 \pm 0.05\)</span> m and <span class="math inline">\(7.61 \pm 0.02\)</span> m. The first has the bigger absolute uncertainty, but as a fraction of itself it is only <span class="math inline">\(0.2\%\)</span>, while the second is <span class="math inline">\(0.3\%\)</span>. Multiply them for an area and it is the <span class="math inline">\(0.3\%\)</span> that limits the answer, because a <span class="math inline">\(0.3\%\)</span> fuzz in one factor is a <span class="math inline">\(0.3\%\)</span> fuzz in the product, however large the product gets. So a product carries the largest <span class="math inline">\(\delta_r\)</span> of its factors, and you convert back to an amount at the end by multiplying by the product itself: <span class="math inline">\(0.0026 \times 154.86\ \mathrm{m^2} \approx 0.4\ \mathrm{m^2}\)</span>.</p>
 <p>Why percentages for products and amounts for sums? Because of what each operation does to a small nudge. Nudge one term of a sum by <span class="math inline">\(0.05\)</span> and the sum moves by exactly <span class="math inline">\(0.05\)</span>: amounts pass straight through addition. Nudge one factor of a product by <span class="math inline">\(0.3\%\)</span> and the product moves by <span class="math inline">\(0.3\%\)</span>: fractions pass straight through multiplication. The two rules are one rule, “the result inherits the nudge,” written in whichever currency the operation deals in.</p>
@@ -918,7 +965,7 @@ window.Quarto = {
 </section>
 <section id="writing-it-down" class="level2">
 <h2 class="anchored" data-anchor-id="writing-it-down">Writing It Down</h2>
-<p>A measurement is not finished until it is written as <em>value <span class="math inline">\(\pm\)</span> uncertainty</em>, with units on both, and the two numbers have to agree about how many digits are real. The convention in these labs: round the uncertainty to one significant figure, then round the value to the same decimal place. The area above came out of the calculator as <span class="math inline">\(154.8635\ \mathrm{m^2}\)</span> with <span class="math inline">\(\delta_a = 0.407\ \mathrm{m^2}\)</span>. Written honestly, it is <span class="math inline">\(154.9 \pm 0.4\ \mathrm{m^2}\)</span>. Every digit past the tenths place was fiction, and the uncertainty is what told you so.</p>
+<p>A measurement is not finished until it is written as <strong>value <span class="math inline">\(\pm\)</span> uncertainty</strong>, with units on both, and the two numbers have to agree about how many digits are real. The convention in these labs: round the uncertainty to one significant figure, then round the value to the same decimal place. The area above came out of the calculator as <span class="math inline">\(154.8635\ \mathrm{m^2}\)</span> with <span class="math inline">\(\delta_a = 0.407\ \mathrm{m^2}\)</span>. Written honestly, it is <span class="math inline">\(154.9 \pm 0.4\ \mathrm{m^2}\)</span>. Every digit past the tenths place was fiction, and the uncertainty is what told you so.</p>
 <p>This is also where error and uncertainty finally meet. When a lab asks you to compare your result with an accepted value, you now hold both numbers: how far off you were, and how far off you were allowed to be. If the accepted value sits inside your <span class="math inline">\(\pm\)</span> window, your measurement agrees with it, full stop, even if the percent error is not zero. If it sits outside, something systematic happened, and working out what is the most interesting paragraph you can write in a conclusion. That is the whole point of the second number.</p>
 
 
@@ -926,6 +973,61 @@ window.Quarto = {
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<!-- "Wider spacing" toggle, added to the navbar next to Quarto's dark-mode
+     toggle on every page (Quarto renders that button twice, once for wide
+     screens and once for the collapsed menu, so this adds one beside each).
+     Sets data-sx-spacing="wide" on <html> and remembers the choice in
+     localStorage; assets/spacing-head.html re-applies it before paint on the
+     next page, and styles.css section 18 does the spacing. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    if (document.querySelector('.sx-spacing-toggle')) return;
+    var darks = document.querySelectorAll('.quarto-color-scheme-toggle');
+    if (!darks.length) return;
+    var root = document.documentElement;
+    var on = root.getAttribute('data-sx-spacing') === 'wide';
+    var links = [];
+
+    function apply() {
+      if (on) root.setAttribute('data-sx-spacing', 'wide');
+      else root.removeAttribute('data-sx-spacing');
+      links.forEach(function (l) { l.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      try { localStorage.setItem('sx-spacing', on ? 'wide' : 'normal'); } catch (e) {}
+    }
+
+    Array.prototype.forEach.call(darks, function (dark) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.className = (dark.className || '').replace('quarto-color-scheme-toggle', '').trim() + ' sx-spacing-toggle';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-pressed', on ? 'true' : 'false');
+      link.setAttribute('aria-label', 'Wider letter spacing for easier reading');
+      link.title = 'Wider spacing';
+      link.innerHTML = '<i class="bi bi-fonts" aria-hidden="true"></i>';
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        on = !on;
+        apply();
+      });
+      // Mirror the dark toggle's wrapper when it has one, so the two sit side by side.
+      var wrapper = dark.parentElement;
+      if (wrapper && wrapper.tagName === 'LI') {
+        var li = document.createElement('li');
+        li.className = wrapper.className;
+        li.appendChild(link);
+        wrapper.parentElement.insertBefore(li, wrapper);
+      } else {
+        wrapper.insertBefore(link, dark);
+      }
+      links.push(link);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
 <!-- Decision wizard for the Lab Help pages.
 
      A `.sx-wizard` fenced div holds one `.sx-wizard__step` div per question
@@ -1066,6 +1168,29 @@ window.Quarto = {
   } else {
     run();
   }
+})();
+</script>
+<!-- Tickable checklists for the Lab Help pages.
+
+     Pandoc renders a Markdown task list (`- [ ] item`) with disabled
+     checkboxes. Inside a `.sx-checklist` fenced div this script enables them
+     so a student can tick items off while checking a whiteboard. Nothing is
+     saved; reloading the page clears the boxes, which is the right behaviour
+     for a checklist that is run once per lab. Styles: styles.css section 17.
+
+     Included after the body by teaching/labs/_metadata.yml. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    var boxes = document.querySelectorAll('.sx-checklist input[type="checkbox"]');
+    Array.prototype.forEach.call(boxes, function (box) {
+      box.disabled = false;
+      box.setAttribute('aria-label', (box.parentNode.textContent || '').trim());
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
 })();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1488,8 +1613,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../teaching/python/index.html" class="pagination-link" aria-label="Python from Scratch">
-        <span class="nav-page-text">Python from Scratch</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../teaching/labs/02-lab-report-format.html" class="pagination-link" aria-label="How a Lab Gets Turned In">
+        <span class="nav-page-text">How a Lab Gets Turned In</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

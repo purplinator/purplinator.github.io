@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="What the QPD, UDA and CON whiteboards must contain, where each photo goes in the report template, and a checklist to run before you take the picture.">
+
+<title>How a Lab Gets Turned In – Saxon Stockton</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../teaching/labs/lab-guides/index.html" rel="next">
+<link href="../../teaching/labs/01-uncertainty.html" rel="prev">
+<link href="../../images/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-306630fe5dadf3803f956144f3abb07d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-1a02480a32cd4b5d5561d780c014b19f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-306630fe5dadf3803f956144f3abb07d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2aef359bec548f01cc5e6d0baf3d94a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-c93f7a6e9ef97e5fd1ab4be6bc095a26.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2aef359bec548f01cc5e6d0baf3d94a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #F3EFFC;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #F3EFFC;
+      }
+</style>
+<!-- MathJax 4 configuration, loaded on every page.
+
+     Macros defined here work in any .qmd file without a per-page preamble, so
+     equations stay short to type and consistent across the site. Add new ones
+     to the `macros` block below. -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'ams',
+      macros: {
+        // Units and constants
+        msun:    ['{M_\\odot}'],
+        lsun:    ['{L_\\odot}'],
+        rsun:    ['{R_\\odot}'],
+        kms:     ['{\\,\\mathrm{km\\,s^{-1}}}'],
+        erg:     ['{\\,\\mathrm{erg}}'],
+        angstrom:['{\\,\\text{\\AA}}'],
+        unit:    ['{\\,\\mathrm{#1}}', 1],
+
+        // Common astrophysics shorthand
+        halpha:  ['{\\mathrm{H}\\alpha}'],
+        hbeta:   ['{\\mathrm{H}\\beta}'],
+        ebv:     ['{E(B-V)}'],
+
+        // Vector and operator conveniences
+        vect:    ['{\\mathbf{#1}}', 1],
+        abs:     ['{\\left\\lvert #1 \\right\\rvert}', 1],
+        avg:     ['{\\left\\langle #1 \\right\\rangle}', 1],
+        dd:      ['{\\mathrm{d}}'],
+        deriv:   ['{\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}}', 2],
+        pderiv:  ['{\\frac{\\partial #1}{\\partial #2}}', 2]
+      }
+    },
+    options: {
+      // Let Quarto's own UI (tooltips, code cells) stay untouched by MathJax.
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
+      processHtmlClass: 'mathjax'
+    },
+    // MathJax 4: font and layout options live under `output`. STIX Two Math is
+    // loaded from the same CDN as MathJax itself when it is named here.
+    output: { font: 'mathjax-stix2', scale: 1.0, displayAlign: 'center' }
+  };
+</script>
+<!-- Reading-spacing preference, applied before first paint so the page does
+     not jump. The toggle itself is added by assets/spacing-toggle.html, and
+     the spacing rules are in styles.css, section 18. -->
+<script>
+  try {
+    if (localStorage.getItem('sx-spacing') === 'wide') {
+      document.documentElement.setAttribute('data-sx-spacing', 'wide');
+    }
+  } catch (e) {}
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="How a Lab Gets Turned In – Saxon Stockton">
+<meta property="og:description" content="What the QPD, UDA and CON whiteboards must contain, where each photo goes in the report template, and a checklist to run before you take the picture.">
+<meta property="og:image" content="https://saxonstockton.com/teaching/labs/images/og-card.jpg">
+<meta property="og:site_name" content="Saxon Stockton">
+<meta name="twitter:title" content="How a Lab Gets Turned In – Saxon Stockton">
+<meta name="twitter:description" content="What the QPD, UDA and CON whiteboards must contain, where each photo goes in the report template, and a checklist to run before you take the picture.">
+<meta name="twitter:image" content="https://saxonstockton.com/teaching/labs/images/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/favicon.svg" alt="" class="navbar-logo light-content">
+    <img src="../../images/favicon.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Saxon Stockton</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../teaching/index.html" aria-current="page"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/purplinator" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="mailto:s.stockton@tcu.edu" title="Email" class="quarto-navigation-tool px-1" aria-label="Email"><i class="bi bi-envelope"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teaching/labs/index.html">Lab Help</a></li><li class="breadcrumb-item"><a href="../../teaching/labs/02-lab-report-format.html">How a Lab Gets Turned In</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../teaching/labs/index.html">Lab Help</a></li><li class="breadcrumb-item"><a href="../../teaching/labs/02-lab-report-format.html">How a Lab Gets Turned In</a></li></ol></nav>
+      <h1 class="title">How a Lab Gets Turned In</h1>
+            <p class="subtitle lead">Three jobs, three whiteboards, one Word document</p>
+                  <div>
+        <div class="description">
+          What the QPD, UDA and CON whiteboards must contain, where each photo goes in the report template, and a checklist to run before you take the picture.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Lab</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching Philosophy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/labs/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Help</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/01-uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measurement Uncertainty</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/02-lab-report-format.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">How a Lab Gets Turned In</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/labs/lab-guides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/04-friction-flat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Friction on a Flat Surface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/05-friction-incline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Friction on an Incline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/labs/lab-guides/06-spring-constant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6: The Spring Constant, Two Ways</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python from Scratch</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/python/00-what-is-a-programming-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What Is a Programming Language?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/python/01-how-computers-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How Computers Actually Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/python/02-choosing-a-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing a Programming Language</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/python/03-python-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1: Python Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Mathematics</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Physics Problems</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#who-turns-in-what" id="toc-who-turns-in-what" class="nav-link active" data-scroll-target="#who-turns-in-what">Who turns in what</a></li>
+  <li><a href="#before-you-take-the-photo" id="toc-before-you-take-the-photo" class="nav-link" data-scroll-target="#before-you-take-the-photo">Before you take the photo</a></li>
+  <li><a href="#the-qpd-board" id="toc-the-qpd-board" class="nav-link" data-scroll-target="#the-qpd-board">The QPD board</a></li>
+  <li><a href="#the-uda-board" id="toc-the-uda-board" class="nav-link" data-scroll-target="#the-uda-board">The UDA board</a></li>
+  <li><a href="#the-con-board" id="toc-the-con-board" class="nav-link" data-scroll-target="#the-con-board">The CON board</a></li>
+  <li><a href="#where-each-photo-goes-in-the-word-template" id="toc-where-each-photo-goes-in-the-word-template" class="nav-link" data-scroll-target="#where-each-photo-goes-in-the-word-template">Where each photo goes in the Word template</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<p>Every lab in this course is turned in the same way. Your group splits into three jobs, each job fills one whiteboard, and photos of the boards go into the Word template alongside your screenshots. The jobs are <strong>QPD</strong> (Question, Procedure, Diagram), <strong>UDA</strong> (Uncertainty, Data, Analysis) and <strong>CON</strong> (Conclusion). After “what uncertainty do I put here?”, the question I get most is “does this look okay?”, so this page is the answer: what belongs on each board, where it sits, and a checklist to run before anyone takes a photo.</p>
+<p>The boards are about 75 cm by 50 cm. That is not much room, so what goes on one has to be chosen, and the layouts below are the ones that fit.</p>
+<section id="who-turns-in-what" class="level2">
+<h2 class="anchored" data-anchor-id="who-turns-in-what">Who turns in what</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Regular labs and major labs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Regular labs.</strong> You turn in the part you worked on. In a group of two, one person does QPD, the other does UDA, both write CON, and each of you turns in your own part plus CON.</li>
+<li><strong>Major labs (Lab 5 and Lab 9).</strong> Every student turns in every part, and your grade depends on your partners’ work as much as your own. Check all three boards before any of them is photographed.</li>
+<li><strong>Lab 9</strong> also has a theory session in the class period before the usual three-part lab.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="before-you-take-the-photo" class="level2">
+<h2 class="anchored" data-anchor-id="before-you-take-the-photo">Before you take the photo</h2>
+<p>Run this on every board, whatever the job. It takes thirty seconds and catches most of what I take points off for.</p>
+<div class="sx-checklist">
+<ul class="task-list">
+<li><label><input type="checkbox">Your name and your job label (QPD, UDA or CON) are in the header at the top.</label></li>
+<li><label><input type="checkbox">Every number has a unit, including the ones inside equations and on axes.</label></li>
+<li><label><input type="checkbox">Every symbol you wrote is defined somewhere on the board or in the question.</label></li>
+<li><label><input type="checkbox">Dark marker, writing large enough to read on a phone screen, nothing smudged.</label></li>
+<li><label><input type="checkbox">The whole board is in the frame, photographed square-on, with nothing in front of it.</label></li>
+</ul>
+</div>
+</section>
+<section id="the-qpd-board" class="level2">
+<h2 class="anchored" data-anchor-id="the-qpd-board">The QPD board</h2>
+<p>The test of a QPD board is simple: someone who has never seen the equipment should be able to read it, repeat your experiment, and know exactly which numbers you wrote down and in what units.</p>
+<div class="sx-board" role="img" aria-label="Layout of the QPD whiteboard: header, question as a title, procedure filling the rest, diagram note in the corner">
+  <div class="sx-board__header"><span>QPD</span><span>Your name · partners' names</span></div>
+  <div class="sx-board__zone sx-board__zone--title">Q: What is the relationship between $x$ and $y$? <span class="sx-board__faint">(the real quantities, in words)</span></div>
+  <div class="sx-board__zone sx-board__zone--grow">
+    <span class="sx-board__label">Procedure</span>
+    <ol>
+      <li>Numbered steps, in the order you did them.</li>
+      <li>Every measured quantity named with its symbol and unit the first time it appears.</li>
+      <li>What you held fixed, what you varied, how many trials.</li>
+      <li>Where each number was read from (the Statistics box, the angle scale, the fit).</li>
+    </ol>
+    <div class="sx-board__note">Diagram: an annotated photo in Word, or drawn here or on a second board</div>
+  </div>
+</div>
+<p class="sx-board__caption">The QPD board. The header and the question take two lines; the procedure gets everything else.</p>
+<ol type="1">
+<li><strong>Header.</strong> Job label on the left, names on the right, a line under both.</li>
+<li><strong>The question</strong>, written as a title under the header. It always has the form “What is the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>?”, and <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are the physical quantities in words: “the normal force on the block and the friction force between the block and the track”, not “<span class="math inline">\(F_N\)</span> and <span class="math inline">\(f\)</span>”. If the lab has more than one surface, spring or object, name them. The symbols can follow in brackets.</li>
+<li><strong>The procedure</strong>, filling the rest of the board. Numbered steps in the order you did them, written for a reader who knows nothing about the lab. Name every quantity you measured, with its symbol and its unit, and say where the number came from: “read the maximum static friction force <span class="math inline">\(f_{s,\max}\)</span> in newtons from the Statistics box over the peak.” Say what you held fixed and what you varied.</li>
+<li><strong>The diagram.</strong> Most groups take a photo of the setup and annotate it in Word with arrows and labels on every measurable quantity: positions, distances, angles, which surface is which. Drawing it instead is fine, on a split board or a second one. Either way, “annotated” means labels. A photo with no labels is a photo, not a diagram.</li>
+</ol>
+<div class="sx-checklist">
+<ul class="task-list">
+<li><label><input type="checkbox">The question starts “What is the relationship between” and names real quantities, not letters.</label></li>
+<li><label><input type="checkbox">Each measured quantity appears in the procedure with a symbol and a unit.</label></li>
+<li><label><input type="checkbox">The procedure says how many trials and which values you stepped through.</label></li>
+<li><label><input type="checkbox">A stranger could tell from the steps where each number in the data table came from.</label></li>
+<li><label><input type="checkbox">The diagram or photo has labels on every quantity that was measured.</label></li>
+</ul>
+</div>
+</section>
+<section id="the-uda-board" class="level2">
+<h2 class="anchored" data-anchor-id="the-uda-board">The UDA board</h2>
+<p>The UDA job is two jobs. Most of it happens in Excel and never touches the board; the board is where you show the physics behind the spreadsheet.</p>
+<p><strong>In Excel, not on the board:</strong></p>
+<ul>
+<li>Data in the yellow cells, every calculated column completed, and both uncertainty rows for every column. The <a href="../../teaching/labs/01-uncertainty.html">uncertainty guide</a> walks through those two rows column by column.</li>
+<li>The graph: the right quantities on the right axes, axis labels with units, one series per data set, a linear trendline on each series with its equation showing, and a legend that says which series is which.</li>
+<li>Nearly every lab ends in a straight line, even when the relationship being tested is not linear, because we choose what to plot so that the line comes out straight and its slope means something. That graph is the linearized graph, and its trendline equation is the one the conclusion quotes.</li>
+</ul>
+<p><strong>On the board:</strong></p>
+<div class="sx-board" role="img" aria-label="Layout of the UDA whiteboard: header, then a left half with the free-body diagram and derivation and a right half with sample calculations">
+  <div class="sx-board__header"><span>UDA</span><span>Your name · partners' names</span></div>
+  <div class="sx-board__columns">
+    <div class="sx-board__col">
+      <span class="sx-board__label">FBD + derivation</span>
+      <p>The free-body diagram, with every force labelled.</p>
+      <p>The force equations that follow from it.</p>
+      <p>The relationship you are about to graph, in the lab's own symbols.</p>
+    </div>
+    <div class="sx-board__col">
+      <span class="sx-board__label">Sample calculations</span>
+      <p>One per calculated column, from a real row:</p>
+      <p>$M_\text{tot} = 0.25\,\text{kg} + 0.11\,\text{kg} = 0.36\,\text{kg}$</p>
+      <p>$F_N = (0.36\,\text{kg})(9.81\,\text{m/s}^2) = 3.5\,\text{N}$</p>
+      <p class="sx-board__faint">… and so on down the calculated columns</p>
+    </div>
+  </div>
+</div>
+<p class="sx-board__caption">The UDA board. Left half: where the formulas come from. Right half: proof that the spreadsheet uses them.</p>
+<ol type="1">
+<li><strong>Header</strong>, as before.</li>
+<li><strong>Left half: the derivation.</strong> Whatever gets from the physics to the quantity on the graph. Often that is a free-body diagram, the force equations it implies, and the relationship that falls out; sometimes it is shorter. Label every force on the diagram and define every symbol.</li>
+<li><strong>Right half: one sample calculation for every calculated column</strong> in the sheet. Pick a real row, write the measured numbers that feed it with their units, and show the arithmetic. One or two lines per column is enough. This is what proves the formula in the spreadsheet is the one from the physics, and it is where missing units get noticed, so put them in.</li>
+</ol>
+<div class="sx-checklist">
+<ul class="task-list">
+<li><label><input type="checkbox">Every force on the free-body diagram is labelled and every symbol is defined.</label></li>
+<li><label><input type="checkbox">The derivation ends with the relationship that the graph tests.</label></li>
+<li><label><input type="checkbox">There is one sample calculation for every calculated column, with numbers from a real row.</label></li>
+<li><label><input type="checkbox">Every number in the sample calculations carries a unit, and the result has the column’s unit.</label></li>
+<li><label><input type="checkbox">In Excel: both uncertainty rows are filled for every column, the axes are labelled with units, and each trendline’s equation is on the chart with a legend naming the series.</label></li>
+</ul>
+</div>
+</section>
+<section id="the-con-board" class="level2">
+<h2 class="anchored" data-anchor-id="the-con-board">The CON board</h2>
+<p>One paragraph. The instructions for the conclusion arrive as a numbered list of four or five questions, and each question becomes exactly one sentence, in order. No bullet points, no headings, no “Q1:”. Someone reading only your paragraph should come away knowing what you found, how big it was, and how it compares with what was expected.</p>
+<div class="sx-board" role="img" aria-label="Layout of the CON whiteboard: header, then one paragraph of numbered sentences">
+  <div class="sx-board__header"><span>CON</span><span>Your name · partners' names</span></div>
+  <div class="sx-board__zone sx-board__zone--grow">
+    <p><strong>1</strong> The relationship between $x$ and $y$ is linear / quadratic / ….
+    <strong>2</strong> The trendline equation(s), in the lab's symbols with units.
+    <strong>3</strong> The result(s), with units and what they describe.
+    <strong>4</strong> Sometimes: a comparison inside your own results.
+    <strong>5</strong> The comparison to a reference value, as a percent difference.</p>
+    <div class="sx-board__note">one paragraph, one sentence per question, in order</div>
+  </div>
+</div>
+<p class="sx-board__caption">The CON board. The numbers are here to show the order; they do not go on the board.</p>
+<p><strong>The sentences, one by one.</strong> Examples use the friction lab, with invented numbers.</p>
+<ol type="1">
+<li><strong>The answer to the lab question</strong>, in the words of the QPD question. “The relationship between the normal force on the block and the friction force on it is linear, for both static and kinetic friction.”</li>
+<li><strong>The trendline equation</strong>, rewritten in the lab’s symbols with units. Excel gives you <span class="math inline">\(y = 0.314x + 0.02\)</span>. You write <span class="math inline">\(f_s = (0.314)\,F_N + 0.02\ \text{N}\)</span>, and you say that the coefficient is unitless because it is a force divided by a force. One equation per data set. If the relationship graph and the linearized graph are different graphs, quote both equations.</li>
+<li><strong>The result</strong>, with units and with what it describes: “The coefficient of static friction between cork and poplar is 0.31.” All of them, if there are several.</li>
+<li><strong>Sometimes, a comparison inside your results</strong>, when a question asks for it: “The static coefficient was larger than the kinetic coefficient for both surfaces.”</li>
+<li><strong>The comparison to a reference</strong>: a known value, another measurement, or the class mean, usually as a percent difference. Use the formula the week’s instructions give; the two in circulation are <span class="math inline">\(\%\,\text{error} = 100\%\,(M - T)/T\)</span> against a true value <span class="math inline">\(T\)</span> and <span class="math inline">\(\%\,\text{difference} = 200\%\,(M_1 - M_2)/(M_1 + M_2)\)</span> between two measurements.</li>
+</ol>
+<div class="sx-checklist">
+<ul class="task-list">
+<li><label><input type="checkbox">It is a paragraph: one sentence per question, in the order the questions were asked.</label></li>
+<li><label><input type="checkbox">Sentence one repeats the QPD question’s quantities and names the kind of relationship.</label></li>
+<li><label><input type="checkbox">Every equation uses the lab’s symbols, not <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, with units on every term that has them.</label></li>
+<li><label><input type="checkbox">Every result has a unit, or a sentence saying why it has none.</label></li>
+<li><label><input type="checkbox">The comparison names what it compares against and gives a percentage.</label></li>
+</ul>
+</div>
+</section>
+<section id="where-each-photo-goes-in-the-word-template" class="level2">
+<h2 class="anchored" data-anchor-id="where-each-photo-goes-in-the-word-template">Where each photo goes in the Word template</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>What goes in it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>QPD</td>
+<td>Photo of the QPD board. Annotated photo of the setup. Where the lab uses a sensor, a screenshot of the sensor graph with the recorded values highlighted.</td>
+</tr>
+<tr class="even">
+<td>UDA</td>
+<td>Screenshot of the completed data table, uncertainty rows included. Screenshot of the graph with every trendline and equation. Photo of the UDA board.</td>
+</tr>
+<tr class="odd">
+<td>CON</td>
+<td>Photo of the CON board.</td>
+</tr>
+</tbody>
+</table>
+<p>Fill in the name, partners and section lines at the top. On a regular lab, delete the sections you did not do.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Units, one more time
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before the photo, touch every number on the board and say its unit out loud. Then do the same for the equation. A slope has units: the slope of spring force in newtons against stretch in meters is in newtons per meter, which is exactly why it is a spring constant. A slope with no units is only unitless because both axes share a unit, and the coefficient of friction is the standard case, newtons over newtons. When that happens, say so in the sentence rather than leaving the reader to guess.</p>
+</div>
+</div>
+<p>For what goes in each part of a particular lab, the question, the columns, the graph and the conclusion questions, see the <a href="../../teaching/labs/lab-guides/index.html">Lab Guides</a>.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<!-- "Wider spacing" toggle, added to the navbar next to Quarto's dark-mode
+     toggle on every page (Quarto renders that button twice, once for wide
+     screens and once for the collapsed menu, so this adds one beside each).
+     Sets data-sx-spacing="wide" on <html> and remembers the choice in
+     localStorage; assets/spacing-head.html re-applies it before paint on the
+     next page, and styles.css section 18 does the spacing. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    if (document.querySelector('.sx-spacing-toggle')) return;
+    var darks = document.querySelectorAll('.quarto-color-scheme-toggle');
+    if (!darks.length) return;
+    var root = document.documentElement;
+    var on = root.getAttribute('data-sx-spacing') === 'wide';
+    var links = [];
+
+    function apply() {
+      if (on) root.setAttribute('data-sx-spacing', 'wide');
+      else root.removeAttribute('data-sx-spacing');
+      links.forEach(function (l) { l.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      try { localStorage.setItem('sx-spacing', on ? 'wide' : 'normal'); } catch (e) {}
+    }
+
+    Array.prototype.forEach.call(darks, function (dark) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.className = (dark.className || '').replace('quarto-color-scheme-toggle', '').trim() + ' sx-spacing-toggle';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-pressed', on ? 'true' : 'false');
+      link.setAttribute('aria-label', 'Wider letter spacing for easier reading');
+      link.title = 'Wider spacing';
+      link.innerHTML = '<i class="bi bi-fonts" aria-hidden="true"></i>';
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        on = !on;
+        apply();
+      });
+      // Mirror the dark toggle's wrapper when it has one, so the two sit side by side.
+      var wrapper = dark.parentElement;
+      if (wrapper && wrapper.tagName === 'LI') {
+        var li = document.createElement('li');
+        li.className = wrapper.className;
+        li.appendChild(link);
+        wrapper.parentElement.insertBefore(li, wrapper);
+      } else {
+        wrapper.insertBefore(link, dark);
+      }
+      links.push(link);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<!-- Decision wizard for the Lab Help pages.
+
+     A `.sx-wizard` fenced div holds one `.sx-wizard__step` div per question
+     or answer. Buttons with `data-next="<step id>"` move between them, and a
+     button that points back at the first step starts a fresh run. This script
+     shows one step at a time, keeps a trail of the answers chosen so far (each
+     chip goes back to the question it answered), adds Back and Start-over
+     links, and opens a step directly when the page is loaded with that step's
+     id in the URL hash or when an in-page link points at it.
+
+     Without the script every step is visible in order, so the page still
+     reads as a plain guide, and the same happens in print.
+
+     Included after the body by teaching/labs/_metadata.yml. The matching
+     styles are in styles.css, section 16. The authoring pattern is in
+     teaching/labs/01-uncertainty.qmd. -->
+<script>
+(function () {
+  'use strict';
+
+  function setUp(wizard) {
+    var steps = Array.prototype.slice.call(wizard.querySelectorAll('.sx-wizard__step'));
+    if (!steps.length) return;
+
+    var byId = {};
+    steps.forEach(function (step) { byId[step.id] = step; });
+    var first = steps[0];
+    var current = first;
+    // One entry per answer given: the step it was given on, and the chip text.
+    var trail = [];
+
+    var trailBar = document.createElement('nav');
+    trailBar.className = 'sx-wizard__trail';
+    trailBar.setAttribute('aria-label', 'Answers so far');
+    wizard.insertBefore(trailBar, first);
+
+    function makeButton(className, text, onClick) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = className;
+      button.textContent = text;
+      button.addEventListener('click', onClick);
+      return button;
+    }
+
+    function restart() {
+      trail = [];
+      show(first, true);
+    }
+
+    function goBack() {
+      var last = trail.pop();
+      show(last ? byId[last.from] : first, true);
+    }
+
+    function renderTrail() {
+      trailBar.innerHTML = '';
+      if (!trail.length) return;
+      trail.forEach(function (entry, index) {
+        if (index) {
+          var sep = document.createElement('span');
+          sep.className = 'sx-wizard__sep';
+          sep.setAttribute('aria-hidden', 'true');
+          sep.textContent = '›';
+          trailBar.appendChild(sep);
+        }
+        trailBar.appendChild(makeButton('sx-wizard__crumb', entry.label, function () {
+          trail = trail.slice(0, index);
+          show(byId[entry.from], true);
+        }));
+      });
+      trailBar.appendChild(makeButton('sx-wizard__reset', 'Start over', restart));
+    }
+
+    function renderNav(step) {
+      Array.prototype.forEach.call(wizard.querySelectorAll('.sx-wizard__nav'), function (old) {
+        old.remove();
+      });
+      if (step === first || !trail.length) return;
+      var nav = document.createElement('p');
+      nav.className = 'sx-wizard__nav';
+      nav.appendChild(makeButton('', '← Back', goBack));
+      nav.appendChild(makeButton('', 'Start over', restart));
+      step.appendChild(nav);
+    }
+
+    function show(step, moveFocus) {
+      current = step;
+      steps.forEach(function (s) { s.classList.toggle('is-active', s === step); });
+      renderTrail();
+      renderNav(step);
+      if (!moveFocus) return;
+      step.setAttribute('tabindex', '-1');
+      step.focus({ preventScroll: true });
+      // After a click near the bottom of a long step the new step can start
+      // above the viewport; bring the card back into view when that happens.
+      if (wizard.getBoundingClientRect().top < 0) {
+        wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    wizard.addEventListener('click', function (event) {
+      var button = event.target.closest('.sx-wizard__btn');
+      if (!button || !wizard.contains(button)) return;
+      var next = byId[button.getAttribute('data-next')];
+      if (!next) return;
+      if (next === first) {
+        trail = [];
+      } else {
+        var title = button.querySelector('.sx-wizard__btn-title');
+        var label = button.getAttribute('data-label') || (title || button).textContent.trim();
+        trail.push({ from: current.id, label: label });
+      }
+      show(next, true);
+    });
+
+    // Deep links: a URL ending in #<step id>, or an in-page link to one. The
+    // browser cannot scroll to a hidden step, so open it and scroll ourselves.
+    function openFromHash(hash) {
+      var step = hash && byId[hash.replace(/^#/, '')];
+      if (!step) return false;
+      trail = [];
+      show(step, true);
+      wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return true;
+    }
+    window.addEventListener('hashchange', function () { openFromHash(location.hash); });
+
+    wizard.classList.add('is-ready');
+    if (!openFromHash(location.hash)) show(first, false);
+  }
+
+  function run() {
+    Array.prototype.forEach.call(document.querySelectorAll('.sx-wizard'), setUp);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
+<!-- Tickable checklists for the Lab Help pages.
+
+     Pandoc renders a Markdown task list (`- [ ] item`) with disabled
+     checkboxes. Inside a `.sx-checklist` fenced div this script enables them
+     so a student can tick items off while checking a whiteboard. Nothing is
+     saved; reloading the page clears the boxes, which is the right behaviour
+     for a checklist that is run once per lab. Styles: styles.css section 17.
+
+     Included after the body by teaching/labs/_metadata.yml. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    var boxes = document.querySelectorAll('.sx-checklist input[type="checkbox"]');
+    Array.prototype.forEach.call(boxes, function (box) {
+      box.disabled = false;
+      box.setAttribute('aria-label', (box.parentNode.textContent || '').trim());
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/saxonstockton\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../teaching/labs/01-uncertainty.html" class="pagination-link" aria-label="Measurement Uncertainty">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Measurement Uncertainty</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../teaching/labs/lab-guides/index.html" class="pagination-link" aria-label="Lab Guides">
+        <span class="nav-page-text">Lab Guides</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Saxon Stockton · Built with <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="../../teaching/">Teaching</a> · <a href="../../cv.html">CV</a> · <a href="../../about.html">About</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/purplinator">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:s.stockton@tcu.edu">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

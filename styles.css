@@ -960,3 +960,145 @@ body.quarto-dark .sx-wizard { --sx-wizard-on-primary: #14101F; }
   text-transform: uppercase;
   color: var(--sx-primary);
 }
+
+/* --------------------------------------------------------------------------
+   17. Lab Help: whiteboard layouts and checklists
+   `.sx-board` draws a lab whiteboard at its real 3:2 shape with the zones a
+   job's board is divided into. It stays light in both themes because it is a
+   picture of a whiteboard. `.sx-checklist` wraps a Markdown task list;
+   assets/checklist.html makes the boxes tickable.
+   -------------------------------------------------------------------------- */
+.sx-board {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 3 / 2;
+  margin: 1.25rem auto 0.4rem;
+  max-width: 640px;
+  padding: 0.55rem 0.9rem 0.7rem;
+  background: #FCFCFA;
+  color: #2B2B2B;
+  border: 7px solid #D9DCE0;
+  border-radius: 12px;
+  box-shadow: var(--sx-shadow-md), inset 0 0 0 1px #ECEEF0;
+  font-size: clamp(0.72rem, 2.2vw, 0.92rem);
+  line-height: 1.35;
+}
+.sx-board__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #D14B3A;
+  color: #D14B3A;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.sx-board__header span:last-child { font-family: inherit; font-weight: 600; letter-spacing: 0; color: #2F5BB7; }
+.sx-board__zone { padding: 0.45rem 0.1rem 0.35rem; }
+.sx-board__zone--title {
+  border-bottom: 2px solid #D14B3A;
+  color: #2F5BB7;
+  font-weight: 600;
+}
+.sx-board__zone--grow { flex: 1; display: flex; flex-direction: column; }
+.sx-board__label {
+  display: inline-block;
+  margin-bottom: 0.2rem;
+  color: #E07B1A;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.sx-board ol, .sx-board ul { margin: 0 0 0.3rem 0; padding-left: 1.3rem; }
+.sx-board li { margin-bottom: 0.1rem; }
+.sx-board p { margin: 0 0 0.25rem; }
+.sx-board__note {
+  margin-top: auto;
+  align-self: flex-end;
+  max-width: 60%;
+  padding: 0.25rem 0.5rem;
+  border: 1.5px dashed #9AA3AE;
+  border-radius: 0.4rem;
+  color: #5B6470;
+  font-size: 0.9em;
+  text-align: center;
+}
+.sx-board__columns { flex: 1; display: flex; gap: 0; }
+.sx-board__col { flex: 1; padding: 0.4rem 0.6rem 0.2rem 0.1rem; }
+.sx-board__col + .sx-board__col { border-left: 2px solid #E07B1A; padding-left: 0.7rem; }
+.sx-board__faint { color: #8A929C; }
+.sx-board__caption {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--sx-ink-muted);
+}
+
+/* Checklists. */
+.sx-checklist ul.task-list, .sx-checklist ul { list-style: none; padding-left: 0; margin-bottom: 1.25rem; }
+.sx-checklist li {
+  position: relative;
+  padding: 0.35rem 0.6rem 0.35rem 2.2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.15s ease;
+}
+.sx-checklist li:hover { background: var(--sx-primary-soft); }
+.sx-checklist input[type="checkbox"] {
+  position: absolute;
+  left: 0.55rem;
+  top: 0.62rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0;
+  accent-color: var(--sx-primary);
+  cursor: pointer;
+}
+.sx-checklist li:has(input:checked) { color: var(--sx-ink-faint); text-decoration: line-through; }
+
+/* Phones: the two halves of the UDA board stack, since side by side the math on
+   the right squeezes the text on the left to a word per line. */
+@media (max-width: 520px) {
+  .sx-board__columns { flex-direction: column; }
+  .sx-board__col + .sx-board__col {
+    border-left: 0;
+    border-top: 2px solid #E07B1A;
+    padding-left: 0.1rem;
+    padding-top: 0.5rem;
+    margin-top: 0.3rem;
+  }
+}
+
+/* A scroll container for tables that are wider than a phone screen. Wrap the
+   table in `::: {.sx-scroll}` so it scrolls sideways instead of being clipped. */
+.sx-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1rem; }
+.sx-scroll > table { margin-bottom: 0.25rem; }
+.sx-scroll th, .sx-scroll td { white-space: nowrap; }
+.sx-scroll td:last-child, .sx-scroll th:last-child { white-space: normal; min-width: 11rem; }
+
+/* --------------------------------------------------------------------------
+   18. Reading preferences
+   Wider letter and word spacing, switched on by the toggle in the navbar
+   (assets/spacing-toggle.html) and remembered per browser. The dyslexia style
+   guides recommend it; it is off by default because it lengthens every page.
+   -------------------------------------------------------------------------- */
+html[data-sx-spacing="wide"] body {
+  letter-spacing: 0.012em;
+  word-spacing: 0.06em;
+}
+/* Code and math set their own spacing. */
+html[data-sx-spacing="wide"] pre,
+html[data-sx-spacing="wide"] code,
+html[data-sx-spacing="wide"] kbd,
+html[data-sx-spacing="wide"] mjx-container {
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+.sx-spacing-toggle { cursor: pointer; }
+.sx-spacing-toggle[aria-pressed="true"] { color: var(--sx-gold) !important; }
+
+/* Dark mode: light-on-dark text blooms, so regular weight looks heavier and the
+   gap to bold shrinks. Lifting bold to pure white restores the contrast. */
+body.quarto-dark strong,
+body.quarto-dark b { color: #FFFFFF; }
