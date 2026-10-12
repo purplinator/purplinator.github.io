@@ -35,8 +35,11 @@ teaching/
   index.qmd               hub
   philosophy.qmd
   labs/                   Lab Help — short answers for the physics labs
-    _metadata.yml         loads the click-through "wizard" script on every lab page
-    01-uncertainty.qmd
+    _metadata.yml         loads the wizard and checklist scripts on every lab page
+    _notes/               reference notes behind the lab pages (not rendered)
+    01-uncertainty.qmd    click-through guide to the two uncertainty rows
+    02-lab-report-format.qmd   what goes on each whiteboard (QPD / UDA / CON)
+    lab-guides/           one page per lab; copy _template.qmd to add one
   python/                 "Python from Scratch" — interactive lessons
     _template.qmd         copy this to start a new lesson
     00-what-is-a-programming-language.qmd
@@ -49,8 +52,11 @@ teaching/
 assets/
   theme-light.scss        light palette and Bootstrap variables
   theme-dark.scss         dark palette
-  mathjax-config.html     site-wide LaTeX macros
+  mathjax-config.html     MathJax 4 setup: STIX Two Math font and site-wide LaTeX macros
   wizard.html             click-through question-and-answer used on lab pages
+  checklist.html          makes task-list checkboxes tickable on lab pages
+  spacing-head.html       applies the saved "wider spacing" preference before paint
+  spacing-toggle.html     adds the wider-spacing toggle next to the dark-mode toggle
 styles.css                shared component styles, reads --sx-* tokens
 images/                   hero, portrait, favicon, og-card.jpg (link previews)
 files/                    CV PDFs (lab templates kept here are ignored by git)

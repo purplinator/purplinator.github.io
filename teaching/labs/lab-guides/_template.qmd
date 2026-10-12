@@ -1,0 +1,74 @@
+---
+# Copy this file to NN-slug.qmd, where NN is the lab number. The number sets the
+# order in the sidebar and the listing. Underscore-prefixed files are not rendered.
+title: "Lab NN: Title"
+subtitle: "One line on what is measured and how"
+description: "One or two sentences. Shows on the Lab Guides card and in search."
+order: NN
+categories: [Regular lab]      # or [Major lab]
+major: false                   # true for Labs 5 and 9: everyone turns in every part
+---
+
+<!-- The two blocks below show whichever matches `major` in the front matter. -->
+:::: {.content-visible when-meta="major"}
+::: {.callout-important appearance="simple"}
+**Major lab.** Every student turns in all three parts, and your grade depends on your partners' boards as much as your own. Check all three before any of them is photographed.
+:::
+::::
+:::: {.content-visible unless-meta="major"}
+::: {.callout-note appearance="simple"}
+**Regular lab.** You turn in the part you worked on. In a group of two, each of you turns in your own part plus CON.
+:::
+::::
+
+## At a glance
+
+- **Question.**
+- **You measure.**
+- **You calculate.**
+- **You graph.**
+- **You conclude.**
+
+## QPD
+
+### The question
+
+### What the procedure must make clear
+
+::: {.sx-scroll}
+| Symbol | Quantity | How it is measured | Unit |
+|---|---|---|---|
+| | | | |
+:::
+
+### The diagram
+
+## UDA
+
+### In Excel
+
+::: {.sx-scroll}
+| Column | Formula | Unit | Sample calculation on the board |
+|---|---|---|---|
+| | | | |
+:::
+
+**The graph.**
+
+### On the board
+
+**Left half, derivation.**
+
+**Right half, sample calculations.**
+
+## CON
+
+The questions as they are handed out, each with the sentence it becomes. Example numbers are invented.
+
+1. **Question.** → sentence.
+
+## Common slips
+
+- 
+
+## Going deeper

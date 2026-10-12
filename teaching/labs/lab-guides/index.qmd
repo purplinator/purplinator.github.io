@@ -1,0 +1,23 @@
+---
+title: "Lab Guides"
+subtitle: "One page per lab: what each job writes, and why"
+description: "For each lab this semester: the question, the measured and calculated quantities with units, the derivation and sample calculations, the graph, and the conclusion questions one sentence at a time."
+listing:
+  id: guides
+  contents:
+    - "[0-9]*.qmd"
+  type: grid
+  grid-columns: 2
+  sort: "order asc"
+  fields: [title, description, categories]
+  sort-ui: false
+  filter-ui: false
+  date-format: ""
+---
+
+Each page here takes one lab and answers "what goes in this part for this lab?" for all three jobs. The format itself, what belongs on which whiteboard and where the photos go, is on [How a Lab Gets Turned In](../02-lab-report-format.qmd); these pages assume you have read it. The two uncertainty rows at the bottom of every data table are covered in the [uncertainty guide](../01-uncertainty.qmd).
+
+The pages go up as the semester goes on, usually a few days before the lab. If the one you need is not here yet, the lab handout and the format page between them cover everything.
+
+::: {#guides}
+:::

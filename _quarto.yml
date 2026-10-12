@@ -122,6 +122,10 @@ website:
           href: teaching/labs/index.qmd
           contents:
             - auto: "teaching/labs/*"
+            - section: "Lab Guides"
+              href: teaching/labs/lab-guides/index.qmd
+              contents:
+                - auto: "teaching/labs/lab-guides/*"
         - section: "Python from Scratch"
           href: teaching/python/index.qmd
           contents:
@@ -186,13 +190,20 @@ format:
     highlight-style: atom-one
     code-link: false
 
-    # Math. MathJax handles \( \) and $$ $$, and the macros below are available
-    # on every page so common astrophysics notation stays short to type.
+    # Math. MathJax 4 with the STIX Two Math font, whose weight and x-height sit
+    # with Source Sans 3 far better than the default TeX font (the TeX font made
+    # inline math tower over the line and \text{} subscripts look pasted in).
+    # Macros live in assets/mathjax-config.html and work on every page.
     html-math-method:
       method: mathjax
-      url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      url: "https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"
     include-in-header:
       - assets/mathjax-config.html
+      # Applies the reader's saved spacing preference before first paint.
+      - assets/spacing-head.html
+    include-after-body:
+      # Adds the "wider spacing" toggle next to the dark-mode toggle.
+      - assets/spacing-toggle.html
 
     # Footnotes appear as hover popups rather than sending readers to the
     # bottom of the page — the tutorials lean on them for term definitions.

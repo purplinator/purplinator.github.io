@@ -1,0 +1,165 @@
+---
+title: "How a Lab Gets Turned In"
+subtitle: "Three jobs, three whiteboards, one Word document"
+description: "What the QPD, UDA and CON whiteboards must contain, where each photo goes in the report template, and a checklist to run before you take the picture."
+order: 2
+categories: [Lab]
+---
+
+Every lab in this course is turned in the same way. Your group splits into three jobs, each job fills one whiteboard, and photos of the boards go into the Word template alongside your screenshots. The jobs are **QPD** (Question, Procedure, Diagram), **UDA** (Uncertainty, Data, Analysis) and **CON** (Conclusion). After "what uncertainty do I put here?", the question I get most is "does this look okay?", so this page is the answer: what belongs on each board, where it sits, and a checklist to run before anyone takes a photo.
+
+The boards are about 75 cm by 50 cm. That is not much room, so what goes on one has to be chosen, and the layouts below are the ones that fit.
+
+## Who turns in what
+
+::: {.callout-note}
+## Regular labs and major labs
+- **Regular labs.** You turn in the part you worked on. In a group of two, one person does QPD, the other does UDA, both write CON, and each of you turns in your own part plus CON.
+- **Major labs (Lab 5 and Lab 9).** Every student turns in every part, and your grade depends on your partners' work as much as your own. Check all three boards before any of them is photographed.
+- **Lab 9** also has a theory session in the class period before the usual three-part lab.
+:::
+
+## Before you take the photo
+
+Run this on every board, whatever the job. It takes thirty seconds and catches most of what I take points off for.
+
+::: {.sx-checklist}
+- [ ] Your name and your job label (QPD, UDA or CON) are in the header at the top.
+- [ ] Every number has a unit, including the ones inside equations and on axes.
+- [ ] Every symbol you wrote is defined somewhere on the board or in the question.
+- [ ] Dark marker, writing large enough to read on a phone screen, nothing smudged.
+- [ ] The whole board is in the frame, photographed square-on, with nothing in front of it.
+:::
+
+## The QPD board
+
+The test of a QPD board is simple: someone who has never seen the equipment should be able to read it, repeat your experiment, and know exactly which numbers you wrote down and in what units.
+
+```{=html}
+<div class="sx-board" role="img" aria-label="Layout of the QPD whiteboard: header, question as a title, procedure filling the rest, diagram note in the corner">
+  <div class="sx-board__header"><span>QPD</span><span>Your name · partners' names</span></div>
+  <div class="sx-board__zone sx-board__zone--title">Q: What is the relationship between $x$ and $y$? <span class="sx-board__faint">(the real quantities, in words)</span></div>
+  <div class="sx-board__zone sx-board__zone--grow">
+    <span class="sx-board__label">Procedure</span>
+    <ol>
+      <li>Numbered steps, in the order you did them.</li>
+      <li>Every measured quantity named with its symbol and unit the first time it appears.</li>
+      <li>What you held fixed, what you varied, how many trials.</li>
+      <li>Where each number was read from (the Statistics box, the angle scale, the fit).</li>
+    </ol>
+    <div class="sx-board__note">Diagram: an annotated photo in Word, or drawn here or on a second board</div>
+  </div>
+</div>
+<p class="sx-board__caption">The QPD board. The header and the question take two lines; the procedure gets everything else.</p>
+```
+
+1. **Header.** Job label on the left, names on the right, a line under both.
+2. **The question**, written as a title under the header. It always has the form "What is the relationship between $x$ and $y$?", and $x$ and $y$ are the physical quantities in words: "the normal force on the block and the friction force between the block and the track", not "$F_N$ and $f$". If the lab has more than one surface, spring or object, name them. The symbols can follow in brackets.
+3. **The procedure**, filling the rest of the board. Numbered steps in the order you did them, written for a reader who knows nothing about the lab. Name every quantity you measured, with its symbol and its unit, and say where the number came from: "read the maximum static friction force $f_{s,\max}$ in newtons from the Statistics box over the peak." Say what you held fixed and what you varied.
+4. **The diagram.** Most groups take a photo of the setup and annotate it in Word with arrows and labels on every measurable quantity: positions, distances, angles, which surface is which. Drawing it instead is fine, on a split board or a second one. Either way, "annotated" means labels. A photo with no labels is a photo, not a diagram.
+
+::: {.sx-checklist}
+- [ ] The question starts "What is the relationship between" and names real quantities, not letters.
+- [ ] Each measured quantity appears in the procedure with a symbol and a unit.
+- [ ] The procedure says how many trials and which values you stepped through.
+- [ ] A stranger could tell from the steps where each number in the data table came from.
+- [ ] The diagram or photo has labels on every quantity that was measured.
+:::
+
+## The UDA board
+
+The UDA job is two jobs. Most of it happens in Excel and never touches the board; the board is where you show the physics behind the spreadsheet.
+
+**In Excel, not on the board:**
+
+- Data in the yellow cells, every calculated column completed, and both uncertainty rows for every column. The [uncertainty guide](01-uncertainty.qmd) walks through those two rows column by column.
+- The graph: the right quantities on the right axes, axis labels with units, one series per data set, a linear trendline on each series with its equation showing, and a legend that says which series is which.
+- Nearly every lab ends in a straight line, even when the relationship being tested is not linear, because we choose what to plot so that the line comes out straight and its slope means something. That graph is the linearized graph, and its trendline equation is the one the conclusion quotes.
+
+**On the board:**
+
+```{=html}
+<div class="sx-board" role="img" aria-label="Layout of the UDA whiteboard: header, then a left half with the free-body diagram and derivation and a right half with sample calculations">
+  <div class="sx-board__header"><span>UDA</span><span>Your name · partners' names</span></div>
+  <div class="sx-board__columns">
+    <div class="sx-board__col">
+      <span class="sx-board__label">FBD + derivation</span>
+      <p>The free-body diagram, with every force labelled.</p>
+      <p>The force equations that follow from it.</p>
+      <p>The relationship you are about to graph, in the lab's own symbols.</p>
+    </div>
+    <div class="sx-board__col">
+      <span class="sx-board__label">Sample calculations</span>
+      <p>One per calculated column, from a real row:</p>
+      <p>$M_\text{tot} = 0.25\,\text{kg} + 0.11\,\text{kg} = 0.36\,\text{kg}$</p>
+      <p>$F_N = (0.36\,\text{kg})(9.81\,\text{m/s}^2) = 3.5\,\text{N}$</p>
+      <p class="sx-board__faint">… and so on down the calculated columns</p>
+    </div>
+  </div>
+</div>
+<p class="sx-board__caption">The UDA board. Left half: where the formulas come from. Right half: proof that the spreadsheet uses them.</p>
+```
+
+1. **Header**, as before.
+2. **Left half: the derivation.** Whatever gets from the physics to the quantity on the graph. Often that is a free-body diagram, the force equations it implies, and the relationship that falls out; sometimes it is shorter. Label every force on the diagram and define every symbol.
+3. **Right half: one sample calculation for every calculated column** in the sheet. Pick a real row, write the measured numbers that feed it with their units, and show the arithmetic. One or two lines per column is enough. This is what proves the formula in the spreadsheet is the one from the physics, and it is where missing units get noticed, so put them in.
+
+::: {.sx-checklist}
+- [ ] Every force on the free-body diagram is labelled and every symbol is defined.
+- [ ] The derivation ends with the relationship that the graph tests.
+- [ ] There is one sample calculation for every calculated column, with numbers from a real row.
+- [ ] Every number in the sample calculations carries a unit, and the result has the column's unit.
+- [ ] In Excel: both uncertainty rows are filled for every column, the axes are labelled with units, and each trendline's equation is on the chart with a legend naming the series.
+:::
+
+## The CON board
+
+One paragraph. The instructions for the conclusion arrive as a numbered list of four or five questions, and each question becomes exactly one sentence, in order. No bullet points, no headings, no "Q1:". Someone reading only your paragraph should come away knowing what you found, how big it was, and how it compares with what was expected.
+
+```{=html}
+<div class="sx-board" role="img" aria-label="Layout of the CON whiteboard: header, then one paragraph of numbered sentences">
+  <div class="sx-board__header"><span>CON</span><span>Your name · partners' names</span></div>
+  <div class="sx-board__zone sx-board__zone--grow">
+    <p><strong>1</strong> The relationship between $x$ and $y$ is linear / quadratic / ….
+    <strong>2</strong> The trendline equation(s), in the lab's symbols with units.
+    <strong>3</strong> The result(s), with units and what they describe.
+    <strong>4</strong> Sometimes: a comparison inside your own results.
+    <strong>5</strong> The comparison to a reference value, as a percent difference.</p>
+    <div class="sx-board__note">one paragraph, one sentence per question, in order</div>
+  </div>
+</div>
+<p class="sx-board__caption">The CON board. The numbers are here to show the order; they do not go on the board.</p>
+```
+
+**The sentences, one by one.** Examples use the friction lab, with invented numbers.
+
+1. **The answer to the lab question**, in the words of the QPD question. "The relationship between the normal force on the block and the friction force on it is linear, for both static and kinetic friction."
+2. **The trendline equation**, rewritten in the lab's symbols with units. Excel gives you $y = 0.314x + 0.02$. You write $f_s = (0.314)\,F_N + 0.02\ \text{N}$, and you say that the coefficient is unitless because it is a force divided by a force. One equation per data set. If the relationship graph and the linearized graph are different graphs, quote both equations.
+3. **The result**, with units and with what it describes: "The coefficient of static friction between cork and poplar is 0.31." All of them, if there are several.
+4. **Sometimes, a comparison inside your results**, when a question asks for it: "The static coefficient was larger than the kinetic coefficient for both surfaces."
+5. **The comparison to a reference**: a known value, another measurement, or the class mean, usually as a percent difference. Use the formula the week's instructions give; the two in circulation are $\%\,\text{error} = 100\%\,(M - T)/T$ against a true value $T$ and $\%\,\text{difference} = 200\%\,(M_1 - M_2)/(M_1 + M_2)$ between two measurements.
+
+::: {.sx-checklist}
+- [ ] It is a paragraph: one sentence per question, in the order the questions were asked.
+- [ ] Sentence one repeats the QPD question's quantities and names the kind of relationship.
+- [ ] Every equation uses the lab's symbols, not $x$ and $y$, with units on every term that has them.
+- [ ] Every result has a unit, or a sentence saying why it has none.
+- [ ] The comparison names what it compares against and gives a percentage.
+:::
+
+## Where each photo goes in the Word template
+
+| Section | What goes in it |
+|---|---|
+| QPD | Photo of the QPD board. Annotated photo of the setup. Where the lab uses a sensor, a screenshot of the sensor graph with the recorded values highlighted. |
+| UDA | Screenshot of the completed data table, uncertainty rows included. Screenshot of the graph with every trendline and equation. Photo of the UDA board. |
+| CON | Photo of the CON board. |
+
+Fill in the name, partners and section lines at the top. On a regular lab, delete the sections you did not do.
+
+::: {.callout-tip}
+## Units, one more time
+Before the photo, touch every number on the board and say its unit out loud. Then do the same for the equation. A slope has units: the slope of spring force in newtons against stretch in meters is in newtons per meter, which is exactly why it is a spring constant. A slope with no units is only unitless because both axes share a unit, and the coefficient of friction is the standard case, newtons over newtons. When that happens, say so in the sentence rather than leaving the reader to guess.
+:::
+
+For what goes in each part of a particular lab, the question, the columns, the graph and the conclusion questions, see the [Lab Guides](lab-guides/index.qmd).

@@ -60,7 +60,7 @@ Hint: yellow cells are always measurements that were typed in, but not every mea
 ::::
 
 :::: {#unc-typed .sx-wizard__step}
-**This column is a measurement**, so it gets a *measurement uncertainty*: a number that says how well you could actually read the instrument. For a measured column you always start with the absolute uncertainty $\delta_a$ and get the relative uncertainty $\delta_r$ from it afterwards, never the other way round.
+**This column is a measurement**, so it gets a **measurement uncertainty**: a number that says how well you could actually read the instrument. For a measured column you always start with the absolute uncertainty $\delta_a$ and get the relative uncertainty $\delta_r$ from it afterwards, never the other way round.
 
 **What produced the numbers in this column?**
 
@@ -90,8 +90,8 @@ Hint: yellow cells are always measurements that were typed in, but not every mea
 **Decide how finely you could really read it.** Find the smallest marked division on the instrument: millimeters on a meter stick, single degrees on a protractor, the last digit on the balance.
 
 - If you could tell which mark the reading was closest to, but no better than that, the smallest division is your $\delta_a$. A meter stick with millimeter marks gives $\delta_a = 0.001$ m.
-- If you could honestly see where the reading sat *between* two marks, you can go smaller. Half a division is the usual choice.
-- If the thing you were measuring did not have a crisp edge, go bigger. The angle at which a block *starts* to slip is a judgment call, and an uncertainty of a couple of degrees is more honest than one degree, even if the scale is marked in single degrees.
+- If you could honestly see where the reading sat **between** two marks, you can go smaller. Half a division is the usual choice.
+- If the thing you were measuring did not have a crisp edge, go bigger. The angle at which a block **starts** to slip is a judgment call, and an uncertainty of a couple of degrees is more honest than one degree, even if the scale is marked in single degrees.
 
 **You decide.** I will not take points off for a reasonable estimate that you can defend in one sentence. Type that number into the **abs unc, δa** row for this column, in the same units as the column.
 
@@ -161,7 +161,7 @@ Now look one row down. **Is the rel unc, δr cell for this column filled in as w
 ::::
 
 :::: {#unc-m-dr .sx-wizard__step}
-**Now the relative uncertainty.** $\delta_a$ says how far off the value might be. $\delta_r$ says how big that is *compared with the value itself*, which is what you will need when this column feeds into a multiplication later on:
+**Now the relative uncertainty.** $\delta_a$ says how far off the value might be. $\delta_r$ says how big that is **compared with the value itself**, which is what you will need when this column feeds into a multiplication later on:
 
 $$\delta_r = \frac{\delta_a}{\text{mean}}$$
 
@@ -181,7 +181,7 @@ The easy way in Excel: click the **rel unc, δr** cell for this column, type `=`
 ::::
 
 :::: {#unc-calc .sx-wizard__step}
-**This column is calculated**, so its uncertainty is inherited from the columns that went into the formula. No calculation can know its answer better than it knows its inputs. That means you cannot finish this column until every input column has *both* $\delta_a$ and $\delta_r$ filled in.
+**This column is calculated**, so its uncertainty is inherited from the columns that went into the formula. No calculation can know its answer better than it knows its inputs. That means you cannot finish this column until every input column has **both** $\delta_a$ and $\delta_r$ filled in.
 
 Read the formula in the formula bar and note which columns it uses. Constants do not count: 9.81, $\pi$, and a single given number like the mass of the box have no uncertainty rows of their own.
 
@@ -282,7 +282,7 @@ Round $\delta_a$ to one significant figure, then round the value to the same dec
 ::: {.sx-divider}
 [Would you like to know more?]{.sx-divider__eyebrow}
 
-Everything above is enough to finish the lab. The rest of this page is for anyone who wants to know *why* those rules work, and why the second number on every measurement matters at all.
+Everything above is enough to finish the lab. The rest of this page is for anyone who wants to know **why** those rules work, and why the second number on every measurement matters at all.
 :::
 
 # The Longer Story
@@ -296,23 +296,23 @@ Everything above is enough to finish the lab. The rest of this page is for anyon
 
 In daily life the two words are close to interchangeable. In a physics lab they are not, and most of the confusion on this page comes from letting them blur together, so let me pull them apart on purpose.
 
-Start with "oops." You say it when you made a mistake: you dropped something, you added where you should have subtracted, you read the wrong row of the table. That is the everyday meaning of **error**, and it is worth holding onto, because the lab meaning is its well-behaved cousin. In a lab report, error is how far your result landed from the value you expected. If I know my coffee is $180^\circ\mathrm{F}$ and my thermometer reads $175^\circ\mathrm{F}$, the error is $5^\circ\mathrm{F}$. When a lab asks for a *percent error*, this is the number it wants: the gap between your answer and the accepted one, as a fraction of the accepted one.
+Start with "oops." You say it when you made a mistake: you dropped something, you added where you should have subtracted, you read the wrong row of the table. That is the everyday meaning of **error**, and it is worth holding onto, because the lab meaning is its well-behaved cousin. In a lab report, error is how far your result landed from the value you expected. If I know my coffee is $180^\circ\mathrm{F}$ and my thermometer reads $175^\circ\mathrm{F}$, the error is $5^\circ\mathrm{F}$. When a lab asks for a **percent error**, this is the number it wants: the gap between your answer and the accepted one, as a fraction of the accepted one.
 
 Nobody has ever said "oops, I made an uncertainty." Uncertainty is what you say with "I'm not sure." Ask me how hot my coffee is when I have no thermometer and I can still answer, but only from what I know: boiling water is $212^\circ\mathrm{F}$, the cup has been sitting for a minute, it is still too hot to drink. So, "about $190^\circ\mathrm{F}$, give or take $20$." The give-or-take is the **uncertainty**. It is not a mistake. It is an honest statement of how well I know the number, and the honest version of my answer is "somewhere between $170$ and $210^\circ\mathrm{F}$, probably."
 
-So the two words answer two different questions. Error asks *how far off was I?* and needs a right answer to compare against. Uncertainty asks *how well do I know this?* and needs no right answer at all. You can put an uncertainty on a measurement nobody has ever made before. That is the whole distinction.
+So the two words answer two different questions. Error asks **how far off was I?** and needs a right answer to compare against. Uncertainty asks **how well do I know this?** and needs no right answer at all. You can put an uncertainty on a measurement nobody has ever made before. That is the whole distinction.
 
 One warning: physicists have been sloppy about this for a century. You will see "error bars" on graphs that are really uncertainty bars, and the Lab Professor's primer calls the whole subject error analysis. When you read "error" in a textbook, check which question it is answering. On this page, and in my grading, error is the gap and uncertainty is the give-or-take.
 
 ## Why Does Uncertainty Matter?
 
-Say we are meeting for dinner and I tell you I will be there at 7. Neither of us thinks I mean 7:00:00.000. I mean *around* 7, give or take a bit, and the size of that bit is the uncertainty on my arrival time. If it is a few minutes, nobody cares. If it is two hours, you care a great deal, because "7 PM plus or minus 2 hours" means anywhere from 5 to 9, and you are either sitting alone at a table for hours or checking the door every five minutes. The number 7 never changed. What changed is how much the number is worth.
+Say we are meeting for dinner and I tell you I will be there at 7. Neither of us thinks I mean 7:00:00.000. I mean **around** 7, give or take a bit, and the size of that bit is the uncertainty on my arrival time. If it is a few minutes, nobody cares. If it is two hours, you care a great deal, because "7 PM plus or minus 2 hours" means anywhere from 5 to 9, and you are either sitting alone at a table for hours or checking the door every five minutes. The number 7 never changed. What changed is how much the number is worth.
 
 That is the job uncertainty does in science. A measurement with no uncertainty is "7 PM" with no way to tell whether it means 7 sharp or "sometime this evening." The second number tells the reader how hard they are allowed to lean on the first. A number you cannot lean on is not a result.
 
 ::: {.callout-note}
 ## Uncertainty as confidence
-There is one more layer, and it is the one that makes the $\pm$ precise instead of vague. "7 PM $\pm$ 2 hours" does not mean I am guaranteed to arrive between 5 and 9. It means I am *fairly confident* I will. When the uncertainty is a proper statistical one (a standard deviation from repeated measurements, which the Lab Professor's primer walks through), "fairly confident" has a number attached: about a $68\%$ chance I arrive within one uncertainty of 7, so between 5 and 9; about $95\%$ within two, between 3 and 11; and $99.7\%$ within three, between 1 PM and 1 AM.
+There is one more layer, and it is the one that makes the $\pm$ precise instead of vague. "7 PM $\pm$ 2 hours" does not mean I am guaranteed to arrive between 5 and 9. It means I am **fairly confident** I will. When the uncertainty is a proper statistical one (a standard deviation from repeated measurements, which the Lab Professor's primer walks through), "fairly confident" has a number attached: about a $68\%$ chance I arrive within one uncertainty of 7, so between 5 and 9; about $95\%$ within two, between 3 and 11; and $99.7\%$ within three, between 1 PM and 1 AM.
 
 Notice what the $68\%$ means for you. There is roughly a one-in-three chance I show up outside 5 to 9. When are you even supposed to leave the house? Widen the window and I get more confident, but the window gets less useful: "I will almost certainly arrive between 1 PM and 1 AM" is both true and worthless. Every measurement lives in that tension. The honest window and the useful window pull in opposite directions, and the quality of an experiment is how narrow a window it can honestly claim.
 
@@ -327,11 +327,11 @@ Measure your desk with a ruler marked only in inches. The best you can do is "ab
 
 Swap in a ruler marked in millimeters and the same desk comes out as "405 mm," or "405.3 mm" if you trust yourself to read between the lines. Better instrument, smaller uncertainty, never zero. Nobody with a meter stick can tell me their desk is $405.728467$ mm long, and a number written that way is not more precise. It is a claim the instrument cannot back up. The instrument sets the floor, and your honesty decides how close to it you get.
 
-This is why the quick guide asks what you measured *with* before it asks anything else. The uncertainty on a measured column is not a formula. It is a judgment about the tool: the finest division you could actually read, or the size of the wobble if the reading would not sit still. I grade that judgment on whether it is reasonable, not on whether it matches a number in my head.
+This is why the quick guide asks what you measured **with** before it asks anything else. The uncertainty on a measured column is not a formula. It is a judgment about the tool: the finest division you could actually read, or the size of the wobble if the reading would not sit still. I grade that judgment on whether it is reasonable, not on whether it matches a number in my head.
 
 ## Calculated Uncertainty
 
-The second kind shows up the moment you *use* a measurement. Suppose I measure the desk as $405 \pm 1$ mm on each side and want its area. Whatever the area comes out to, I cannot know it better than I knew the sides. The uncertainty in the lengths has to flow through the multiplication into the area. That is **calculated uncertainty**, and the two rules in the quick guide are the two ways it flows.
+The second kind shows up the moment you **use** a measurement. Suppose I measure the desk as $405 \pm 1$ mm on each side and want its area. Whatever the area comes out to, I cannot know it better than I knew the sides. The uncertainty in the lengths has to flow through the multiplication into the area. That is **calculated uncertainty**, and the two rules in the quick guide are the two ways it flows.
 
 **Adding and subtracting pass along the biggest absolute uncertainty.** Picture the total mass in the friction lab: a box whose mass was handed to you as $0.11$ kg, with a bar on top known to $\pm 10$ g. The total is uncertain by about $10$ g, because the bar's fuzziness is the only fuzziness there is, and nothing about the box can shrink it. So a sum carries the largest $\delta_a$ of its pieces.
 
@@ -346,6 +346,6 @@ Why percentages for products and amounts for sums? Because of what each operatio
 
 ## Writing It Down
 
-A measurement is not finished until it is written as *value $\pm$ uncertainty*, with units on both, and the two numbers have to agree about how many digits are real. The convention in these labs: round the uncertainty to one significant figure, then round the value to the same decimal place. The area above came out of the calculator as $154.8635\ \mathrm{m^2}$ with $\delta_a = 0.407\ \mathrm{m^2}$. Written honestly, it is $154.9 \pm 0.4\ \mathrm{m^2}$. Every digit past the tenths place was fiction, and the uncertainty is what told you so.
+A measurement is not finished until it is written as **value $\pm$ uncertainty**, with units on both, and the two numbers have to agree about how many digits are real. The convention in these labs: round the uncertainty to one significant figure, then round the value to the same decimal place. The area above came out of the calculator as $154.8635\ \mathrm{m^2}$ with $\delta_a = 0.407\ \mathrm{m^2}$. Written honestly, it is $154.9 \pm 0.4\ \mathrm{m^2}$. Every digit past the tenths place was fiction, and the uncertainty is what told you so.
 
 This is also where error and uncertainty finally meet. When a lab asks you to compare your result with an accepted value, you now hold both numbers: how far off you were, and how far off you were allowed to be. If the accepted value sits inside your $\pm$ window, your measurement agrees with it, full stop, even if the percent error is not zero. If it sits outside, something systematic happened, and working out what is the most interesting paragraph you can write in a conclusion. That is the whole point of the second number.

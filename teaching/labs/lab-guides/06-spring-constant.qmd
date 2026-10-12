@@ -1,0 +1,117 @@
+---
+title: "Lab 6: The Spring Constant, Two Ways"
+subtitle: "Hooke's law by lowering a mass gently, then by dropping it"
+description: "Two parts with two graphs: spring force against stretch for a lowered mass, and maximum stretch against mass for a dropped one. Both slopes give the spring constant, and the conclusion compares them."
+order: 6
+categories: [Regular lab]
+major: false
+---
+
+:::: {.content-visible when-meta="major"}
+::: {.callout-important appearance="simple"}
+**Major lab.** Every student turns in all three parts, and your grade depends on your partners' boards as much as your own. Check all three before any of them is photographed.
+:::
+::::
+:::: {.content-visible unless-meta="major"}
+::: {.callout-note appearance="simple"}
+**Regular lab.** You turn in the part you worked on. In a group of two, each of you turns in your own part plus CON.
+:::
+::::
+
+::: {.callout-caution appearance="simple"}
+This page was written from the 2025 version of the Lab 6 templates. If this year's handout differs in a detail, the handout wins.
+:::
+
+## At a glance
+
+- **Questions.** Two of them. Part 1: how does the force a spring exerts depend on how far it is stretched? Part 2: how does the farthest stretch of a dropped mass depend on the mass?
+- **You measure.** Part 1: a hanging mass and the spring's position before and after it is lowered gently to rest, seven masses. Part 2: the position before release and the lowest point reached, three drops per mass.
+- **You calculate.** The stretch $\Delta y$ in meters for both parts, the spring force in newtons for Part 1, and the spring constant from each graph's slope.
+- **You graph.** Part 1: spring force against stretch. Part 2: maximum stretch against mass. Both linear.
+- **You conclude.** Both relationships in words, both equations, both spring constants, and the percent difference between them.
+
+## QPD
+
+This lab has two parts, and the report template has a QPD slot for each: a board photo and an annotated setup photo for Part 1, and the same again for Part 2. Split one board or use two.
+
+### The questions
+
+> Part 1: What is the relationship between the stretch of the spring ($\Delta y$) and the force the spring exerts on the hanging mass ($F_\text{spring}$)?
+
+> Part 2: What is the relationship between the mass dropped onto the spring ($M$) and the maximum stretch it produces ($\Delta y$)?
+
+### What the procedure must make clear
+
+- Part 1: what was hung on the spring and how, how the initial position $y_i$ was defined (the bottom of the hanger with no load, say), how the mass was lowered by hand until it hung at rest before $y_f$ was read, and what the positions were read against.
+- Part 2: that the mass was released from rest at the **unstretched** position without a push, how the lowest point $y_f$ was caught (by eye, by video, by a marker), and that each mass was dropped three times.
+- The units as recorded: grams and centimeters in Part 1, kilograms and centimeters in Part 2. The sheet converts, but the procedure should say what was written down.
+
+::: {.sx-scroll}
+| Symbol | Quantity | How it is measured | Unit |
+|---|---|---|---|
+| $M$ | hanging or dropped mass | balance or labelled mass | g (Part 1), kg (Part 2) |
+| $y_i$ | position before loading or release | meter stick beside the spring | cm |
+| $y_f$ | position at rest (Part 1) or lowest point (Part 2) | meter stick beside the spring | cm |
+:::
+
+### The diagram
+
+A photo of the spring and hanger beside the meter stick, labelled with $y_i$, $y_f$, $\Delta y$, the mass, and the direction of the spring force. One per part.
+
+## UDA
+
+### In Excel
+
+::: {.sx-scroll}
+| Column | Formula | Unit | Sample calculation on the board |
+|---|---|---|---|
+| $\Delta y$ (Part 1) | $(y_f - y_i)/100$ | m | yes |
+| $F_\text{spring}$ | $(M/1000) \times 9.81\ \text{m/s}^2$ | N | yes |
+| $\Delta y$ (Part 2) | $(y_f - y_i)/100$ | m | same calculation as Part 1 |
+| $k$ (Part 2) | from the slope of the second graph, see below | N/m | yes |
+:::
+
+Both uncertainty rows for every column, as always. The positions are meter-stick readings, so the [scale branch](../01-uncertainty.qmd#unc-m-scale) of the uncertainty guide applies; the masses are either labelled or from a balance.
+
+**The graphs.** Part 1: $F_\text{spring}$ in newtons on the vertical axis against $\Delta y$ in meters on the horizontal, one linear trendline with its equation. The slope is the spring constant $k$ in N/m. Part 2: $\Delta y$ in meters against $M$ in kilograms, one linear trendline with its equation. Its slope is $2g/k$ (derivation below), so $k = 2g/\text{slope}$. Label both axes with units on both charts; the template says so in capital letters.
+
+### On the board
+
+**Left half, derivation.** For Part 1, draw the hanging mass at rest with two forces, the spring force up and the weight down. At rest they balance: $F_\text{spring} = Mg$. That is why a column of masses becomes a column of forces, and Hooke's law $F_\text{spring} = k\,\Delta y$ says the graph should be a line through the origin with slope $k$.
+
+For Part 2 the mass is not at rest, so forces alone will not do it; use energy. Released from the unstretched position, the mass falls $\Delta y$ and stops for an instant at the bottom. The gravitational energy it gave up, $Mg\,\Delta y$, is all in the spring, $\tfrac12 k\,\Delta y^2$. Set them equal and cancel one $\Delta y$:
+
+$$Mg\,\Delta y = \tfrac12 k\,\Delta y^2 \quad\Longrightarrow\quad \Delta y = \frac{2g}{k}\,M.$$
+
+A line through the origin with slope $2g/k$. If your instructor has you plot $M$ against $\Delta y$ instead, the slope is $k/2g$ and $k = 2g \times \text{slope}$.
+
+**Right half, three sample calculations**, as the template asks: one $\Delta y$, one $F_\text{spring}$, and the spring constant from the second graph's slope. Invented numbers:
+
+$$\Delta y = \frac{34.6\ \text{cm} - 22.1\ \text{cm}}{100} = 0.125\ \text{m}, \qquad F_\text{spring} = \frac{250\ \text{g}}{1000}\,(9.81\ \text{m/s}^2) = 2.45\ \text{N},$$
+
+$$k = \frac{2g}{\text{slope}} = \frac{2\,(9.81\ \text{m/s}^2)}{0.98\ \text{m/kg}} = 20\ \text{N/m}.$$
+
+## CON
+
+The four items from the report template, each as a sentence. Numbers invented.
+
+1. **Identify the relationships between both sets of graphed quantities in words.** → "The relationship between the stretch of the spring and the spring force is linear, and the relationship between the dropped mass and the maximum stretch is also linear."
+2. **Write the two equations relating those quantities.** → "The trendlines were $F_\text{spring} = (19.6\ \text{N/m})\,\Delta y$ for the lowered mass and $\Delta y = (0.98\ \text{m/kg})\,M$ for the dropped mass." Slopes have units here; do not drop them.
+3. **State both values of the spring constant, from the two equation constants.** → "The spring constant is $k_1 = 19.6\ \text{N/m}$ from Part 1 and $k_2 = 2g/0.98 = 20.0\ \text{N/m}$ from Part 2."
+4. **Compare the two values with a percent difference, using** $\%\text{diff} = (k_2 - k_1)/k_1$. → "The two values differ by $(20.0 - 19.6)/19.6 = 2\%$." This lab's formula divides by $k_1$ rather than by the average; use the one the handout gives.
+
+## Common slips
+
+- Mass where a force belongs. The vertical axis of the first graph is $Mg$ in newtons, not $M$ in grams, and the slope is only a spring constant if it is.
+- Grams and centimeters leaking into the answer. The sheet divides by 1000 and by 100 for a reason; the sample calculation on the board must show the same conversions.
+- A spring constant with no units, or in N/cm. It is N/m.
+- Giving the mass a push on release, or catching the lowest point late. Both make $\Delta y$ too large and $k_2$ too small.
+- Mixing up which slope needs the $2g$. The force-against-stretch slope **is** $k$. The stretch-against-mass slope is $2g/k$.
+
+## Going deeper
+
+**Why dropping stretches the spring twice as far.** Hang the mass gently and it settles where $k\,\Delta y_1 = Mg$, so $\Delta y_1 = Mg/k$. Drop it and the energy argument gives $\Delta y_2 = 2Mg/k$. Exactly double. At the resting point the spring force only just matches the weight, but the falling mass arrives there with speed, overshoots, and keeps stretching until the spring has absorbed all the energy it brought, which takes twice the distance. If you ever wondered why a climber's rope has to be rated for far more than the climber's weight, this is the start of the answer.
+
+**Where the factor of one half comes from.** The spring force grows from zero to $k\,\Delta y$ as the spring stretches, so the work it does is the average force, $\tfrac12 k\,\Delta y$, times the distance $\Delta y$. That is the area of a triangle under the force–stretch line, and it is the same triangle your Part 1 graph draws.
+
+**What "the same $k$" is testing.** Part 1 uses forces in balance; Part 2 uses energy in motion. They should agree because they are two descriptions of one spring, and the percent difference in your last sentence is a measurement of how well two different pieces of physics line up on the same object.

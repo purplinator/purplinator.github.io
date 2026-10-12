@@ -1,9 +1,10 @@
 # Defaults for every page in Lab Help.
 
-# assets/wizard.html is the script behind the click-through guides: a
-# `.sx-wizard` fenced div with one `.sx-wizard__step` per question (see
-# 01-uncertainty.qmd for the authoring pattern). It is included here rather
-# than in _quarto.yml because only the lab pages use it. The matching styles
-# are in styles.css, section 16.
+# Two small scripts, included on every lab page rather than site-wide because
+# only these pages use them. Styles for both are in styles.css, sections 16-17.
+#   assets/wizard.html     click-through guides (`.sx-wizard` fenced divs;
+#                          authoring pattern in 01-uncertainty.qmd)
+#   assets/checklist.html  makes the boxes in `.sx-checklist` task lists tickable
 include-after-body:
   - ../../assets/wizard.html
+  - ../../assets/checklist.html

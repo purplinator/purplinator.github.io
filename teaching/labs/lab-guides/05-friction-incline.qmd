@@ -1,0 +1,108 @@
+---
+title: "Lab 5: Friction on an Incline"
+subtitle: "The same two coefficients, found from the angle at which a block slips and how fast it slides"
+description: "A major lab: the slipping angle and the acceleration, the four calculated force columns, the free-body diagram on a slope, the four trendlines, and the conclusion sentence by sentence."
+order: 5
+categories: [Major lab]
+major: true
+---
+
+:::: {.content-visible when-meta="major"}
+::: {.callout-important appearance="simple"}
+**Major lab.** Every student turns in all three parts, and your grade depends on your partners' boards as much as your own. Check all three before any of them is photographed.
+:::
+::::
+:::: {.content-visible unless-meta="major"}
+::: {.callout-note appearance="simple"}
+**Regular lab.** You turn in the part you worked on. In a group of two, each of you turns in your own part plus CON.
+:::
+::::
+
+## At a glance
+
+- **Question.** The same one as Lab 4, how friction force depends on normal force, but answered on a tilted track instead of a flat one.
+- **You measure.** The angle at which the loaded block just starts to slip, and its acceleration once it is sliding, for five loads and two surface combinations.
+- **You calculate.** Total mass, normal force, maximum static friction force, kinetic friction force. Four calculated columns, four sample calculations.
+- **You graph.** Friction force against normal force, four data sets, four linear trendlines, slopes equal to the coefficients.
+- **You conclude.** Relationship in words, four equations, four coefficients, static against kinetic, surface against surface.
+
+## QPD
+
+### The question
+
+> What is the relationship between the magnitude of the normal force ($F_N$) on a block on an incline and the magnitude of the friction force ($f_s$ and $f_k$) between surfaces of **A** on **B** and **C** on **B**?
+
+Name the surfaces in words. Say "on an incline" so the question is not identical to Lab 4's.
+
+### What the procedure must make clear
+
+- The two surface combinations and the loads: the box plus 0, 0.25, 0.5, 1.0 and 1.5 kg, three trials each.
+- How the slipping angle was found: the track raised slowly from flat until the block just begins to move, and the angle read off the scale at that instant. Say what "just begins to move" meant in practice, because that judgment is where this lab's uncertainty lives.
+- How the acceleration was found: the velocity–time graph recorded while the block slides, in Graphical Analysis, with a straight-line fit over the sliding section; its slope is $a$. The report wants an annotated screenshot of that graph with the fitted section and the slope marked.
+- The units: degrees for the angle, m/s² for the acceleration, kilograms for the masses.
+
+::: {.sx-scroll}
+| Symbol | Quantity | How it is measured | Unit |
+|---|---|---|---|
+| $M_\text{add'l}$ | mass added on top of the box | given, 0 to 1.5 kg | kg |
+| $M_\text{box}$ | mass of the box | given on the template, 0.11 kg | kg |
+| $\theta_\text{MAX}$ | angle at which the block starts to slip | angle scale on the incline | degrees |
+| $a$ | acceleration of the sliding block | slope of the velocity–time graph | m/s² |
+:::
+
+### The diagram
+
+A photo of the tilted track with the block on it, labelled with the angle $\theta$, the block and its down-facing surface, the track surface, the added masses, the direction the block slides, and whatever records the motion.
+
+## UDA
+
+### In Excel
+
+::: {.sx-scroll}
+| Column | Formula | Unit | Sample calculation on the board |
+|---|---|---|---|
+| $M_\text{TOT}$ | $M_\text{add'l} + M_\text{box}$ | kg | yes |
+| $F_N$ | $M_\text{TOT}\,g\cos\theta$ | N | yes |
+| $f_{s,\max}$ | $M_\text{TOT}\,g\sin\theta$ | N | yes |
+| $f_k$ | $M_\text{TOT}\,g\sin\theta - M_\text{TOT}\,a$ | N | yes |
+| $\theta_\text{MAX}$, $a$ | measured | deg, m/s² | no, but both need uncertainty rows |
+:::
+
+The template converts degrees to radians inside the trig functions. If you write any formula of your own, Excel's `COS` and `SIN` want radians, so divide by 180 and multiply by `PI()` first. The two measured columns are judgment calls for $\delta_a$: a degree or two for the slipping angle, and the fit's own $\pm$ on the slope for $a$ if Graphical Analysis shows one. The [uncertainty guide](../01-uncertainty.qmd) walks through both.
+
+**The graph.** Friction force in newtons against normal force in newtons, four series, a linear trendline on each with its equation shown, legend naming the combination and static or kinetic. Linear, so this is also the linearized graph.
+
+### On the board
+
+**Left half, derivation.** Draw the block on the slope with axes along and perpendicular to the incline. Three forces: weight $F_g = M_\text{TOT}\,g$ straight down, the normal force $F_N$ perpendicular to the surface, friction $f$ along the surface, uphill. Resolve the weight: $M_\text{TOT}\,g\sin\theta$ down the slope, $M_\text{TOT}\,g\cos\theta$ into it. Perpendicular to the slope nothing moves, so $F_N = M_\text{TOT}\,g\cos\theta$. Along the slope, at the instant of slipping the block is still at rest, so $f_{s,\max} = M_\text{TOT}\,g\sin\theta$. Once it slides it accelerates down the slope at $a$, so $M_\text{TOT}\,g\sin\theta - f_k = M_\text{TOT}\,a$, which gives $f_k = M_\text{TOT}\,g\sin\theta - M_\text{TOT}\,a$. Finish with the model being tested, $f = \mu F_N$.
+
+**Right half, sample calculations.** One per calculated column, from one real row. With invented numbers, $M_\text{TOT} = 0.36\ \text{kg}$, $\theta = 20.5^\circ$ and $a = 0.59\ \text{m/s}^2$:
+
+$$F_N = (0.36)(9.81)\cos 20.5^\circ = 3.31\ \text{N}, \quad f_{s,\max} = (0.36)(9.81)\sin 20.5^\circ = 1.24\ \text{N}, \quad f_k = 1.24\ \text{N} - (0.36\ \text{kg})(0.59\ \text{m/s}^2) = 1.02\ \text{N}.$$
+
+Write the units on every factor on the board, not only on the answers.
+
+## CON
+
+The questions from the report template, each with the sentence it becomes. Numbers invented.
+
+1. **Identify the relationship between the graphed quantities in words.** → "The relationship between the normal force on the block and the friction force on it is linear, for both static and kinetic friction and both surface combinations."
+2. **Write the four equations relating those quantities, using physics symbols and appropriate units.** → "For cork on oak, $f_s = (0.33)\,F_N$ and $f_k = (0.25)\,F_N$; for felt on oak, $f_s = (0.44)\,F_N$ and $f_k = (0.36)\,F_N$."
+3. **State the four coefficients of friction and the surfaces they describe.** → "The coefficients were $\mu_s = 0.33$ and $\mu_k = 0.25$ for cork on oak and $\mu_s = 0.44$ and $\mu_k = 0.36$ for felt on oak, all unitless."
+4. **Compare them: which is larger, static or kinetic? Which surface combination?** → "Static was larger than kinetic for both combinations, and felt on oak had the larger coefficients of the two."
+
+## Common slips
+
+- Using $F_N = M_\text{TOT}\,g$ from Lab 4. On a slope the normal force is $M_\text{TOT}\,g\cos\theta$, and the whole point of the lab is that the cosine is there.
+- Degrees where Excel wanted radians, which shows up as negative or absurd normal forces.
+- Recording the angle the track was **set to** rather than the angle at which the block **moved**.
+- Fitting the velocity–time graph over a stretch that includes the moment of release or the stop at the bottom. Fit only the straight, sliding part.
+- Losing the minus sign in $f_k$: the block speeds up because friction is **less** than the downhill pull, so $f_k$ must come out smaller than $f_{s,\max}$ in the same row.
+
+## Going deeper
+
+**The angle alone gives the static coefficient.** Divide the slipping condition by the normal force: $\mu_s = f_{s,\max}/F_N = \sin\theta/\cos\theta = \tan\theta_\text{MAX}$. The mass cancels. So every row of your table, whatever the load, should slip at about the same angle, and a block that slips at 20.5° has $\mu_s = \tan 20.5^\circ = 0.37$ before you have graphed anything. If your slipping angles drift upward as the load grows, something other than friction is going on, and that is worth a sentence in the conclusion.
+
+**Why we still make the graph.** One angle gives one number. Five loads on a graph give a slope, an intercept that should be near zero, and a visible check that the points fall on a line at all. The graph is how you find out whether $f = \mu F_N$ was the right model, not just what $\mu$ is.
+
+**Same coefficients as Lab 4?** For the same two surfaces they should be, within uncertainty. Nothing in the question asks for the comparison, but if your numbers from Lab 4 are handy, a percent difference between the two weeks is a good test of both.

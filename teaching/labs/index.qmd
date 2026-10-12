@@ -3,16 +3,29 @@ title: "Lab Help"
 subtitle: "Labs a little confusing?"
 description: "Short answers to the questions that come up most in the physics labs I teach: uncertainty, graphs, lab reports, and what the equipment is actually doing."
 listing:
-  id: topics
-  contents:
-    - "[0-9]*.qmd"
-  type: grid
-  grid-columns: 2
-  sort: "order asc"
-  fields: [title, description, categories]
-  sort-ui: false
-  filter-ui: false
-  date-format: ""
+  - id: topics
+    contents:
+      # A bare glob also matches subfolders, so the per-lab guides have to be
+      # excluded here or they show up in the topics grid too.
+      - "[0-9]*.qmd"
+      - "!lab-guides/**"
+    type: grid
+    grid-columns: 2
+    sort: "order asc"
+    fields: [title, description, categories]
+    sort-ui: false
+    filter-ui: false
+    date-format: ""
+  - id: guides
+    contents:
+      - "lab-guides/[0-9]*.qmd"
+    type: grid
+    grid-columns: 2
+    sort: "order asc"
+    fields: [title, description, categories]
+    sort-ui: false
+    filter-ui: false
+    date-format: ""
 ---
 
 Most lab confusion is not about the physics. It is about what the instructions
@@ -26,4 +39,14 @@ here covers it, email me at [s.stockton@tcu.edu](mailto:s.stockton@tcu.edu)
 and I will add a page.
 
 ::: {#topics}
+:::
+
+## This semester's labs
+
+One page per lab: the question, what each job writes, the columns and graphs,
+and the conclusion sentence by sentence. Read
+[How a Lab Gets Turned In](02-lab-report-format.qmd) first if this is your
+first lab; the per-lab pages assume it.
+
+::: {#guides}
 :::
