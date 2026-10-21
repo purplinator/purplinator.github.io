@@ -142,6 +142,35 @@ true value T; percent difference = 200 % × (M₁ − M₂) / (M₁ + M₂) betw
   F<sub>T</sub>; derive F<sub>N</sub> and f<sub>k,s</sub> from it; example calculation for
   F<sub>N</sub>.
 
+- **Lab 7, impulse and momentum** (2026 files, `26 P1 Lab 7 Momentous analysis template.xlsx` and
+  `26 P1 Lab 7 Report template.docx`, added 2026-10-19). Regular lab, but the report says in capitals that
+  EVERYONE submits a TWO-PARAGRAPH CON. Part A "Bumper Cart" (sheet: "Impulse-momentum analysis"):
+  M<sub>CART</sub> typed into D2, ± 0.001 kg; ten rows of v<sub>init</sub>, v<sub>finl</sub> (m/s, δa 0.01
+  given), Impulse (N·s, δa 0.001 given), Dv (m/s, student formula, its δa cell is green); KI = 0.5·M·v<sub>init</sub>²
+  and KF = 0.5·M·v<sub>finl</sub>² with a formula in row 4 only (fill down), their own mean/δa/δr cells
+  labelled in column N, and a note to add decimal places. Mean row uses −AVERAGE for the negative columns;
+  note under v<sub>finl</sub>, Impulse and Dv: "ALL of these should ALL be negative". Graph slots:
+  "Velocity Change vs Impulse" (slope → cart mass, CON paragraph 1) and "KINETIC ENERGY comparison"
+  KF vs KI (slope vs 1, CON paragraph 2, classify the interaction). Part B "Interaction types analysis":
+  M<sub>bar</sub>, M<sub>BLU</sub>, M<sub>YEL</sub> typed into row 19, ± 0.001 kg; nine rows, Bouncy /
+  Sticky / Explodey × three mass placements, M<sub>A</sub> = M<sub>YEL</sub> and M<sub>B</sub> = M<sub>BLU</sub>
+  with the bar on B in the first row of each trio, on A in the second, on neither in the third (built by
+  formula); columns Vi-A, Vf-A, MB, Vf-B (no Vi-B, B starts at rest), DpA and DpB (student formulas),
+  KI-A, KF-A, KF-B (KF-B formula in row 22 only), DKA = KF-A − KI-A, DKB = KF-B in column S for the bouncy
+  rows and column T for sticky/explodey, and "Bigger Mass: A or B?" in U. Sign notes: Vi-A positive, Vf-A
+  mixed, Vf-B positive, DpA negative, DpB positive. Uncertainty colour code: light green inputs (M<sub>A</sub>,
+  Vi-A, Vf-A) dictate the dark green DpA cells, light blue (M<sub>B</sub>, Vf-B) dictate DpB ("dark determined
+  by light", "green dictates green"); the velocity δa cells are blank in Part B. Graph slot "Momentum Change"
+  DpB vs DpA (slope vs −1) plus a pre-built scatter "Kinetic energy Comparison BOUNCY ONLY" (S22:S24 against
+  R22:R24, no trendline). Report: two QPD slots (board, annotated setup photo, Graphical Analysis screenshot
+  showing where the velocities and, in Part 1, the impulse were read), two UDA slots (table-and-graph
+  screenshot; board with THREE calculations for Part 1, Dv, DK and the mass from the slope, FOUR for Part 2,
+  Dp and DK for each cart). CON paragraph 1, momentum: (1) relationships in words, (2) the two equations,
+  (3) cart mass and the slope compared with −1.00, (4) percent difference M<sub>EXP</sub> vs M<sub>THEO</sub>
+  and percent change 1 − |slope|. Paragraph 2, kinetic energy: KF vs KI slope vs 1.00 to classify the wall
+  bounce, percent = 1 − slope, and for Part 2 "how kinetic energy change varied BY MASS for the three
+  different types of interactions – there are TWO different answers". Page: `lab-guides/07-impulse-momentum.qmd`.
+
 ## Open questions for Saxon
 
 - The rest of the semester's labs, and for each: the question, the measured variables with
@@ -149,6 +178,10 @@ true value T; percent difference = 200 % × (M₁ − M₂) / (M₁ + M₂) betw
   comparison value. Lab 9's topic and what its theory session covers.
 - Whether the 2026 Lab 6 differs from the 2025 files.
 - Exemplar board photos with names cropped out, for the format page.
+- Lab 7: what the professor means by "TWO different answers" for the Part 2 kinetic-energy sentence of
+  CON paragraph 2 (the page reads it as bouncy conserving kinetic energy whichever cart carries the bar,
+  against sticky losing and explodey gaining it); whether the explodey runs start from rest (the page
+  assumes so); and whether "everyone submits CON" is Lab 7 only or the new normal.
 
 ## Page plan (proposed 2026-10-11, first version built the same day)
 
