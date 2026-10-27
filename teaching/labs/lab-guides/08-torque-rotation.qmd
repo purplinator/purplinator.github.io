@@ -1,0 +1,171 @@
+---
+title: "Lab 8: Balanced and Unbalanced Torque"
+subtitle: "Balance a torque to find the radius of a pipe, then time half turns to find an angular acceleration"
+description: "Two parts and four graphs: the force that balances a fixed torque against the radius it acts at, whose slope is the torque and gives the pipe radius, then angular velocity against time under an unbalanced torque, whose slope is the angular acceleration."
+order: 8
+categories: [Regular lab]
+major: false
+---
+
+:::: {.content-visible when-meta="major"}
+::: {.callout-important appearance="simple"}
+**Major lab.** Every student turns in all three parts, and your grade depends on your partners' boards as much as your own. Check all three before any of them is photographed.
+:::
+::::
+:::: {.content-visible unless-meta="major"}
+::: {.callout-note appearance="simple"}
+**Regular lab.** You turn in the part you worked on. In a group of two, each of you turns in your own part plus CON.
+:::
+::::
+
+::: {.callout-caution appearance="simple"}
+This page was written from the 2025 version of the Lab 8 templates. If this year's handout differs in a detail, the handout wins.
+:::
+
+## At a glance
+
+- **Questions.** Two parts. Part 1: how does the force needed to balance a fixed torque depend on how far from the axle it acts? Part 2: how does the angular velocity of the rotor change with time when the torque on it is left unbalanced?
+- **You measure.** Part 1: the balancing force $F_T$ at seven distances $r_b$ from the axle, plus the hanging mass $M_H$ and the radius of the pipe. Part 2: the clock time every time a mark on the rotor passes a reference line, half a turn apart, seventeen times.
+- **You calculate.** Part 1: $1/r_b$, then the balancing torque $\tau$ from a slope and the pipe radius $r_a$ from $\tau$. Part 2: $\theta$, $\Delta t$, $\omega = \Delta\theta / \Delta t$ and $t_\text{MID}$, then the angular acceleration $\alpha$ two ways.
+- **You graph.** Four graphs. Part 1: $F_T$ against $r_b$ with a curved trendline, and $F_T$ against $1/r_b$ with a linear one whose slope is $\tau$. Part 2: $\omega$ against $t_\text{MID}$, linear, slope $\alpha$, and $\theta$ against $t$ with a second-order polynomial for the second value of $\alpha$.
+- **You conclude.** One paragraph: both relationships, both equations, $\tau$, $r_a$ and $\alpha$, the percent difference between $r_a$ and the pipe's measured radius, and the two values of $\alpha$.
+
+## QPD
+
+This lab has two parts, and the report template has a QPD slot for each: a board photo and an annotated setup photo for Part 1, and the same again for Part 2. Split one board or use two.
+
+The templates do not name the apparatus, so this page calls whatever turns on the axle **the rotor**: the bar, disc or platform with the pipe at its centre.
+
+### The questions
+
+> Part 1: What is the relationship between the distance from the axle at which the balancing force acts ($r_b$) and the size of the balancing force ($F_T$)?
+
+> Part 2: What is the relationship between the angular velocity of the rotor ($\omega$) and time ($t$) when the torque on it is unbalanced?
+
+Part 2 also graphs the angle the rotor has turned through against time. If your instructor wants that as a question too, write it as a second line under the first: the relationship between the angle ($\theta$) and time ($t$).
+
+### What the procedure must make clear
+
+The details below are the usual way a torque lab like this runs. Where the handout differs, the handout wins.
+
+- Part 1: what hangs from the string wound around the pipe, and its mass $M_H$. That hanging mass makes the fixed torque that everything in Part 1 balances.
+- Part 1: where the balancing force was applied for each of the seven runs, with $r_b$ measured from the **centre of the axle** to the point where the force acts, that the force pulled at right angles to that line, and that $F_T$ was read with the rotor sitting still.
+- Part 1: how the pipe's own radius was measured, for the comparison in CON. Calipers across the diameter, halved, is the usual way. The sheet has no cell for $M_H$ or for the pipe radius, so both go in the procedure and on the board.
+- Part 2: what turned the rotor and kept turning it (usually the same hanging mass, let go with nothing balancing it), which mark on the rotor and which reference line were used, and that a time was recorded every half turn, seventeen times in all.
+- Part 2: how the times were taken, whether by stopwatch, a video stepped frame by frame, or a sensor, and that the first time is the moment the mark first passed the line, so the rotor may already have been turning.
+- The units as recorded: meters for every radius, newtons for the force, kilograms for the mass, seconds for the times.
+
+::: {.sx-scroll}
+| Symbol | Quantity | How it is measured | Unit |
+|---|---|---|---|
+| $r_b$ | distance from the centre of the axle to where the balancing force acts | ruler or meter stick | m |
+| $F_T$ | force that balances the hanging mass | force sensor or spring scale read with the rotor still, or the weight of hanging masses ($M \times 9.81\ \text{m/s}^2$) | N |
+| $M_H$ | hanging mass on the string around the pipe | electronic balance | kg |
+| $r_\text{act}$ | radius of the pipe | calipers across the diameter, halved | m |
+| EDIT time | clock reading each time the mark passes the reference line | stopwatch, video or sensor | s |
+:::
+
+### The diagram
+
+Part 1: a photo of the rotor, the pipe and the string, labelled with the axle, the pipe radius $r_a$, the hanging mass $M_H$ with its weight $M_H g$ pulling on the string, one $r_b$ drawn from the axle to the point where the balancing force acts, and $F_T$ drawn at right angles to it. Part 2: the same setup with the mark, the reference line and the direction of rotation labelled, and $\Delta\theta = \pi\ \text{rad}$ shown as half a turn.
+
+## UDA
+
+### In Excel
+
+Part 1 has seven rows. Part 2 takes seventeen clock times in the yellow cells of its first column, and the rows in between hold the sixteen half turns between them. These are the calculated columns.
+
+::: {.sx-scroll}
+| Column | Formula | Unit | Sample calculation on the board |
+|---|---|---|---|
+| $1/r_b$ (Part 1) | $1/r_b$ | 1/m | yes |
+| $\tau$ (Part 1) | slope of $F_T$ against $1/r_b$ | N·m | no, read off the graph |
+| $r_a$ (Part 1) | $\tau / (M_H g)$ | m | yes |
+| $t$ (Part 2) | the previous $t$ plus the $\Delta t$ above it, which is the clock time minus the first one | s | no |
+| $\theta$ (Part 2) | the previous $\theta$ plus $\Delta\theta$ | rad | yes |
+| $\Delta t$ (Part 2) | the next clock time minus this one | s | yes |
+| $\Delta\theta$ (Part 2) | $\pi$, half a turn, the same in every row | rad | no |
+| $\omega$ (Part 2) | $\Delta\theta / \Delta t$ | rad/s | yes |
+| $t_\text{MID}$ (Part 2) | $(t_1 + t_2)/2$, the times at either end of the half turn | s | yes |
+| $\alpha$ (Part 2) | slope of $\omega$ against $t_\text{MID}$, and $2 \times$ the $t^2$ coefficient of $\theta$ against $t$ | rad/s² | yes, both |
+:::
+
+Two calculations on the Part 1 board and four on the Part 2 board, plus the second value of $\alpha$, which is what the report template asks for.
+
+Some things about this sheet that are not obvious from looking at it:
+
+- **The colours.** Yellow cells are typed in. Light green (Part 1) and light blue (Part 2) cells are formulas. Grey cells are not used. In Part 1 every green cell is empty, the mean and uncertainty rows included, so type the formula for $1/r_b$ in the first row and fill it down, then `=AVERAGE` for each mean and $\delta_a / \text{mean}$ for each $\delta_r$. In Part 2 the colours stop at row 19 until you fill down.
+- **Part 2 runs on two alternating rows.** The clock times go in the yellow cells of every other row. A row with a time holds $t$ and $\theta$ at that moment. The row under it holds $\Delta t$, $\Delta\theta$, $\omega$ and $t_\text{MID}$ for the half turn that follows, which is why each $\omega$ sits between two times. Only rows 17 to 19 have formulas. Select B18 to G19, both rows together, and drag the fill handle down to row 49, so Excel copies the two-row pattern. Dragging a single row breaks it. If it worked, the last $\theta$ is $16\pi = 50.27\ \text{rad}$.
+- **$\Delta\theta$ is the one yellow cell with a formula.** It is `=PI()`, half a turn. If your marks were a full turn apart, change it to `=2*PI()` **before** you fill down, because every row below gets its own copy.
+- **Radians.** $\theta$ in rad, $\omega$ in rad/s, $\alpha$ in rad/s². Not degrees, not revolutions.
+- **Uncertainty, Part 1.** $r_b$ and $F_T$ are measured, so their yellow $\delta_a$ cells come from the instrument, as the [uncertainty guide](../01-uncertainty.qmd) describes for measured columns. $1/r_b$ is a power, so its $\delta_r$ is the $\delta_r$ of $r_b$ and $\delta_a = \delta_r \times \text{mean}$, the [product rule](../01-uncertainty.qmd#unc-calc-prod).
+- **Uncertainty, Part 2.** The sheet gives $\delta_a = 0.01\ \text{s}$ for $t$ and $\Delta t$. $\theta$ and $\Delta\theta$ are counted, not measured: each half turn adds exactly $\pi$, and $\pi$ is a constant, so both have $\delta_a = 0$ and all of the timing uncertainty sits in $t$ and $\Delta t$. $\omega$ is a quotient, so its $\delta_r$ is the $\delta_r$ of $\Delta t$. $t_\text{MID}$ adds two times and halves them, which is a mix, so its $\delta_r$ is the $\delta_r$ of $t$. Only $t$ and $\theta$ have mean cells filled in. For the others, type `=AVERAGE` over the whole column, since it skips the blank rows.
+
+**The graphs.** Four of them, axes labelled with units on all four.
+
+1. Part 1, $F_T$ in newtons on the vertical axis against $r_b$ in meters on the horizontal, with a trendline and its equation. The template asks for two Part 1 graphs with their fits but does not name this one's fit. A power trendline suits it, and an exponent close to $-1$ means the force goes as one over the radius.
+2. Part 1, $F_T$ against $1/r_b$ in 1/m, one linear trendline with its equation. The slope is the balancing torque $\tau$ in N·m, since newtons divided by one over meters is newton meters. The intercept should be close to zero. If you plotted it the other way round, the slope is $1/\tau$.
+3. Part 2, $\omega$ in rad/s against $t_\text{MID}$ in seconds, one linear trendline. The slope is $\alpha$ in rad/s². The intercept is the angular velocity at the first mark, which is not zero if the rotor was already turning when the timing started.
+4. Part 2, $\theta$ in radians against $t$ in seconds, with a polynomial trendline of order 2. The coefficient of $t^2$ is $\alpha/2$, so $\alpha = 2 \times$ that coefficient. The report template asks for one Part 2 graph, but the comparison on the board needs this one as well.
+
+### On the board
+
+**Left half, derivation.** For Part 1, start from what a torque is. A force $F$ pulling at right angles to a line of length $r$ from the axle makes a torque $\tau = rF$, which is why a door handle sits on the side away from the hinges. Two torques act on the still rotor. The string on the pipe pulls with the weight of the hanging mass, $M_H g$, at radius $r_a$, and turns it one way. $F_T$ at radius $r_b$ turns it the other way. Still means balanced:
+
+$$F_T\,r_b = M_H g\,r_a = \tau \quad\Longrightarrow\quad F_T = \tau\,\frac{1}{r_b}.$$
+
+Here $\tau$ is the same for every run, because $M_H$ and $r_a$ never change. That makes $F_T$ against $r_b$ an inverse relationship, and $F_T$ against $1/r_b$ a line through the origin with slope $\tau$. Then $r_a = \tau / (M_H g)$. The report template writes the string's tension as $F_T = M_H g$. This page keeps $F_T$ for the balancing force in the sheet's column and writes the string's tension as $M_H g$, so the two do not get mixed up on the board.
+
+For Part 2, nothing balances the hanging mass, so the net torque is constant but not zero, and a constant net torque gives a constant angular acceleration. With $\alpha$ constant, the rotational versions of the constant-acceleration equations hold:
+
+$$\theta = \omega_0 t + \tfrac12 \alpha t^2, \qquad \omega = \omega_0 + \alpha t.$$
+
+Here $\omega_0$ is the angular velocity at the first mark, $t = 0$. The sheet never measures $\omega$ at an instant. It measures how long each half turn took, so $\Delta\theta / \Delta t$ is an average over the half turn. Which moment does that average belong to? Take two marks at $t_1$ and $t_2$:
+
+$$\frac{\Delta\theta}{\Delta t} = \frac{\omega_0 (t_2 - t_1) + \tfrac12 \alpha \left(t_2^2 - t_1^2\right)}{t_2 - t_1} = \omega_0 + \alpha\,\frac{t_1 + t_2}{2} = \omega(t_\text{MID}).$$
+
+The average over the half turn is exactly the angular velocity at the middle time. That is why the sheet pairs each $\omega$ with $t_\text{MID}$, and why $\omega$ against $t_\text{MID}$ is a line with slope $\alpha$ while $\theta$ against $t$ is a parabola with $t^2$ coefficient $\alpha/2$.
+
+**Right half, sample calculations.** For Part 1, one $1/r_b$ and the pipe radius. Invented numbers, with $M_H = 0.500\ \text{kg}$ and a slope of $0.0804\ \text{N·m}$:
+
+$$\frac{1}{r_b} = \frac{1}{0.125\ \text{m}} = 8.00\ \text{m}^{-1}, \qquad r_a = \frac{\tau}{M_H g} = \frac{0.0804\ \text{N·m}}{(0.500\ \text{kg})(9.81\ \text{m/s}^2)} = 0.0164\ \text{m}.$$
+
+For Part 2, one each of $\theta$, $\Delta t$, $\omega$ and $t_\text{MID}$: $\theta$ at the fourth mark, then the other three for the half turn from the fourth mark to the fifth. The clock read 4.89 s and 5.38 s at those two marks, and 2.14 s at the first:
+
+$$\theta = 6.28\ \text{rad} + 3.14\ \text{rad} = 9.42\ \text{rad}, \qquad \Delta t = 5.38\ \text{s} - 4.89\ \text{s} = 0.49\ \text{s},$$
+
+$$\omega = \frac{3.14\ \text{rad}}{0.49\ \text{s}} = 6.41\ \text{rad/s}, \qquad t_\text{MID} = \frac{2.75\ \text{s} + 3.24\ \text{s}}{2} = 2.995\ \text{s}.$$
+
+Then the two values of $\alpha$, one from each graph:
+
+$$\alpha_\omega = \text{slope} = 1.84\ \text{rad/s}^2, \qquad \alpha_\theta = 2\,(0.923\ \text{rad/s}^2) = 1.85\ \text{rad/s}^2.$$
+
+## CON
+
+One paragraph, with the four items from the report template in order. Each becomes one sentence, except the last, which asks for two comparisons and can take two. Numbers invented.
+
+1. **Identify the relationships between both sets of graphed quantities in words.** → "The relationship between the distance at which the balancing force acts and the size of that force is inverse, a power law of order $-1$, and the relationship between the angular velocity of the rotor and time under an unbalanced torque is linear."
+2. **Write the two equations relating those quantities.** → "The trendlines were $F_T = (0.0804\ \text{N·m})(1/r_b) + 0.005\ \text{N}$ for the balanced torque and $\omega = (1.84\ \text{rad/s}^2)\,t_\text{MID} + 0.93\ \text{rad/s}$ for the unbalanced torque." Both slopes have units, and both are results in the next sentence.
+3. **State the balancing torque and the pipe radius $r_a$ for Part 1, then the rotational acceleration for Part 2.** → "The balancing torque was $\tau = 0.0804\ \text{N·m}$, which with the 0.500 kg hanging mass gives a pipe radius of $r_a = 0.0164\ \text{m}$, and the rotational acceleration in Part 2 was $\alpha = 1.84\ \text{rad/s}^2$."
+4. **Compare the radius with the pipe's measured radius, using** $\%\text{diff} = (r_\text{exp} - r_\text{act})/r_\text{act}$, **and give the two values of the rotational acceleration.** → "The calipers gave $r_\text{act} = 0.0160\ \text{m}$, a percent difference of $(0.0164 - 0.0160)/0.0160 = 2.5\%$. The rotational acceleration was $1.84\ \text{rad/s}^2$ from the slope of $\omega$ against $t_\text{MID}$ and $1.85\ \text{rad/s}^2$ from the $\theta$ against $t$ graph, a percent difference of 0.5%." The template asks only for the two values of $\alpha$, so the percent difference between them is optional. If you give one, the primer's percent difference between two measurements, $200\%\,(\alpha_1 - \alpha_2)/(\alpha_1 + \alpha_2)$, fits it.
+
+## Common slips
+
+- Measuring $r_b$ from the edge of the pipe or the end of the bar. The lever arm runs from the centre of the axle to the point where the force acts.
+- Pulling at an angle. Only the part of the force at right angles to the radius makes a torque, so a slanted pull reads high and its point sits above the line.
+- Reporting the slope as the radius. The slope of $F_T$ against $1/r_b$ is the torque, in N·m. Divide it by $M_H g$ to get $r_a$.
+- Losing $M_H$ or the pipe's measured radius. Neither has a cell in the sheet, and CON needs both. Write them down before the setup is taken apart.
+- Centimeters. An $r_b$ in centimeters puts $1/r_b$ in one over centimeters and the torque out by a factor of 100.
+- Filling down one row at a time in Part 2. The formulas alternate between two rows, so select both and drag them together.
+- Plotting $\omega$ against the start or end time of its half turn. Every point slides sideways by half an interval, and the intervals shrink as the rotor speeds up, so the line tilts as well as shifts. $\omega$ belongs at $t_\text{MID}$.
+- A straight line through $\theta$ against $t$. The points curve upward, so the trendline is a polynomial of order 2, and $\alpha$ is twice its $t^2$ coefficient, not the coefficient itself.
+
+## Going deeper
+
+**Why the door handle is far from the hinges.** Push a door right next to its hinges and it barely moves. Push at the handle and it swings. Torque is force times distance from the axle, so the same torque costs less force the farther out you push. Part 1 measures exactly that. Every time $r_b$ doubles, $F_T$ halves, because the product $F_T r_b$ is fixed by the hanging mass on the other side. A seesaw works the same way, which is how a small child sitting far out can balance an adult sitting near the middle. The slope of the second graph is that fixed product.
+
+**Why the measured radius tends to come out a little large.** The string pulls along its own centre line, not along the surface of the pipe, so the lever arm for the hanging mass is the pipe's radius plus half the string's thickness. A string 1 mm thick on a pipe of radius 16 mm adds 0.5 mm, which is about 3%. That is the same size as the example percent difference above. String wound over itself in layers adds more. So a positive percent difference of a few percent is what the string predicts, and a negative one points to another cause, such as friction in the axle or the caliper reading.
+
+**A free check on Part 2.** Both Part 2 graphs carry the angular velocity at the first mark, $\omega_0$. It is the intercept of $\omega$ against $t_\text{MID}$, and it is the coefficient of $t$ in the polynomial fit of $\theta$ against $t$. In the example they are 0.93 rad/s and 0.91 rad/s. If yours disagree badly, look for a time typed into the wrong row.
+
+**What the two parts give together.** If Part 2 used the same hanging mass on the same pipe, the torque spinning the rotor up is very close to the torque measured in Part 1. Close, not equal, because the falling mass accelerates, so the string pulls with $M_H (g - \alpha r_a)$ rather than $M_H g$. With the example numbers, $\alpha r_a = (1.84\ \text{rad/s}^2)(0.0164\ \text{m}) = 0.030\ \text{m/s}^2$, about 0.3% of $g$. Newton's second law for rotation, $\tau = I\alpha$, then gives the rotor's moment of inertia $I$, which is the rotational version of mass: how hard the rotor is to spin up, the way mass is how hard an object is to speed up. Here that is $I = 0.0804 / 1.84 = 0.044\ \text{kg·m}^2$. Friction in the axle takes a little of the torque, and the slightly smaller string tension pushes the same way, so the true $I$ is a little smaller.

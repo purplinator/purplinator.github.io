@@ -171,6 +171,26 @@ true value T; percent difference = 200 % × (M₁ − M₂) / (M₁ + M₂) betw
   bounce, percent = 1 − slope, and for Part 2 "how kinetic energy change varied BY MASS for the three
   different types of interactions – there are TWO different answers". Page: `lab-guides/07-impulse-momentum.qmd`.
 
+- **Lab 8, balanced and unbalanced torque** (2025 files, `25 P1 Lab 8 Rotation 1 Template.docx` and
+  `25 P1 Lab 8 Template.xlsx`, added 2026-10-25). Regular lab. Greek letters in both files are typed in Symbol
+  font (q = θ, Dt = Δt, w = ω, a = α). No charts in the sheet. Part 1 "Balanced Torque": seven rows of
+  r<sub>b</sub> (m) and F<sub>T</sub> (N), both yellow (typed), with their δa cells yellow too; 1/r<sub>b</sub>
+  (1/m) and every mean/δa/δr cell light green and empty (student formulas). Report wants TWO graphs and a UDA
+  board with one 1/r sample and the calculation of the unknown pipe radius r<sub>a</sub> "based on the balanced
+  torque and the known tension force (F<sub>T</sub> = M<sub>H</sub>g) in the string". The sheet has no cell for
+  M<sub>H</sub> or the measured pipe radius. Part 2 "Constant Net Torque" (report: "Unbalanced Torque"):
+  seventeen yellow "EDIT time (s)" cells in A17, A19, ..., A49, alternating rows. Mark rows hold t = cumulative
+  (B17 = A17−A17, B19 = D18+B17) and θ (C17 = 0, C19 = C17+E18). Interval rows hold Δt = A19−A17, Δθ = `=PI()` in
+  a yellow cell, ω = Δθ/Δt, t<sub>MID</sub> = (B19+B17)/2. Formulas exist in rows 17 to 19 only, light blue,
+  grey = unused. Means given for t and θ only (B50, C50); δa given as 0.01 for t (B51) and Δt (D51), the rest
+  blank. Report: one graph (ω vs t<sub>MID</sub>, linear, slope = α) and a UDA board with one sample each of θ,
+  Δt, ω, t<sub>MID</sub>, comparing α with "the acceleration value deduced from your θ-t graph". CON, one
+  paragraph: (1) both relationships in words, (2) the two equations, (3) the balancing torque and r<sub>a</sub>,
+  then α, (4) %diff = (r<sub>exp</sub> − r<sub>act</sub>)/r<sub>act</sub> and the two values of α. Page:
+  `lab-guides/08-torque-rotation.qmd`. The page assumes the apparatus (a hanging mass M<sub>H</sub> on a string
+  around the pipe, balanced by F<sub>T</sub> at r<sub>b</sub>, then let go for Part 2) and calls the turning
+  part "the rotor".
+
 ## Open questions for Saxon
 
 - The rest of the semester's labs, and for each: the question, the measured variables with
@@ -182,6 +202,11 @@ true value T; percent difference = 200 % × (M₁ − M₂) / (M₁ + M₂) betw
   CON paragraph 2 (the page reads it as bouncy conserving kinetic energy whichever cart carries the bar,
   against sticky losing and explodey gaining it); whether the explodey runs start from rest (the page
   assumes so); and whether "everyone submits CON" is Lab 7 only or the new normal.
+- Lab 8: what the apparatus is (bar, disc or platform, and what measures F<sub>T</sub>: force sensor, spring
+  scale or hanging masses), what drives Part 2 and how the times are taken, whether the 2026 files differ from
+  the 2025 ones, which percent difference to use for the two values of α (the page suggests the primer's
+  200 %(α₁ − α₂)/(α₁ + α₂)), and whether δa = 0 for θ and Δθ (the page treats them as counted, exact) is what
+  the professor expects.
 
 ## Page plan (proposed 2026-10-11, first version built the same day)
 
