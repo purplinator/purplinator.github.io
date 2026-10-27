@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Two parts, four graphs and a two-paragraph conclusion that everyone turns in: the cart mass from the slope of velocity change against impulse, momentum conservation from a slope of minus one, and what happens to kinetic energy in bouncy, sticky and explodey interactions.">
+
+<title>Lab 7: Impulse and Momentum – Saxon Stockton</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../teaching/labs/lab-guides/08-torque-rotation.html" rel="next">
+<link href="../../../teaching/labs/lab-guides/06-spring-constant.html" rel="prev">
+<link href="../../../images/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-306630fe5dadf3803f956144f3abb07d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-1a02480a32cd4b5d5561d780c014b19f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-306630fe5dadf3803f956144f3abb07d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-2aef359bec548f01cc5e6d0baf3d94a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-c93f7a6e9ef97e5fd1ab4be6bc095a26.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-2aef359bec548f01cc5e6d0baf3d94a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #F3EFFC;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #F3EFFC;
+      }
+</style>
+<!-- MathJax 4 configuration, loaded on every page.
+
+     Macros defined here work in any .qmd file without a per-page preamble, so
+     equations stay short to type and consistent across the site. Add new ones
+     to the `macros` block below. -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'ams',
+      macros: {
+        // Units and constants
+        msun:    ['{M_\\odot}'],
+        lsun:    ['{L_\\odot}'],
+        rsun:    ['{R_\\odot}'],
+        kms:     ['{\\,\\mathrm{km\\,s^{-1}}}'],
+        erg:     ['{\\,\\mathrm{erg}}'],
+        angstrom:['{\\,\\text{\\AA}}'],
+        unit:    ['{\\,\\mathrm{#1}}', 1],
+
+        // Common astrophysics shorthand
+        halpha:  ['{\\mathrm{H}\\alpha}'],
+        hbeta:   ['{\\mathrm{H}\\beta}'],
+        ebv:     ['{E(B-V)}'],
+
+        // Vector and operator conveniences
+        vect:    ['{\\mathbf{#1}}', 1],
+        abs:     ['{\\left\\lvert #1 \\right\\rvert}', 1],
+        avg:     ['{\\left\\langle #1 \\right\\rangle}', 1],
+        dd:      ['{\\mathrm{d}}'],
+        deriv:   ['{\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}}', 2],
+        pderiv:  ['{\\frac{\\partial #1}{\\partial #2}}', 2]
+      }
+    },
+    options: {
+      // Let Quarto's own UI (tooltips, code cells) stay untouched by MathJax.
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
+      processHtmlClass: 'mathjax'
+    },
+    // MathJax 4: font and layout options live under `output`. STIX Two Math is
+    // loaded from the same CDN as MathJax itself when it is named here.
+    output: { font: 'mathjax-stix2', scale: 1.0, displayAlign: 'center' }
+  };
+</script>
+<!-- Reading-spacing preference, applied before first paint so the page does
+     not jump. The toggle itself is added by assets/spacing-toggle.html, and
+     the spacing rules are in styles.css, section 18. -->
+<script>
+  try {
+    if (localStorage.getItem('sx-spacing') === 'wide') {
+      document.documentElement.setAttribute('data-sx-spacing', 'wide');
+    }
+  } catch (e) {}
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Lab 7: Impulse and Momentum – Saxon Stockton">
+<meta property="og:description" content="Two parts, four graphs and a two-paragraph conclusion that everyone turns in: the cart mass from the slope of velocity change against impulse, momentum conservation from a slope of minus one, and what happens to kinetic energy in bouncy, sticky and explodey interactions.">
+<meta property="og:image" content="https://saxonstockton.com/teaching/labs/lab-guides/images/og-card.jpg">
+<meta property="og:site_name" content="Saxon Stockton">
+<meta name="twitter:title" content="Lab 7: Impulse and Momentum – Saxon Stockton">
+<meta name="twitter:description" content="Two parts, four graphs and a two-paragraph conclusion that everyone turns in: the cart mass from the slope of velocity change against impulse, momentum conservation from a slope of minus one, and what happens to kinetic energy in bouncy, sticky and explodey interactions.">
+<meta name="twitter:image" content="https://saxonstockton.com/teaching/labs/lab-guides/images/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/favicon.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../images/favicon.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Saxon Stockton</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../teaching/index.html" aria-current="page"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/purplinator" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="mailto:s.stockton@tcu.edu" title="Email" class="quarto-navigation-tool px-1" aria-label="Email"><i class="bi bi-envelope"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/labs/index.html">Lab Help</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/index.html">Lab Guides</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/07-impulse-momentum.html">Lab 7: Impulse and Momentum</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/labs/index.html">Lab Help</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/index.html">Lab Guides</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/07-impulse-momentum.html">Lab 7: Impulse and Momentum</a></li></ol></nav>
+      <h1 class="title">Lab 7: Impulse and Momentum</h1>
+            <p class="subtitle lead">One cart bounced off a wall, then two carts that bounce, stick or fly apart</p>
+                  <div>
+        <div class="description">
+          Two parts, four graphs and a two-paragraph conclusion that everyone turns in: the cart mass from the slope of velocity change against impulse, momentum conservation from a slope of minus one, and what happens to kinetic energy in bouncy, sticky and explodey interactions.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Regular lab</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching Philosophy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../teaching/labs/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Help</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/01-uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measurement Uncertainty</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/02-lab-report-format.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How a Lab Gets Turned In</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../teaching/labs/lab-guides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/04-friction-flat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Friction on a Flat Surface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/05-friction-incline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Friction on an Incline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/06-spring-constant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6: The Spring Constant, Two Ways</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/07-impulse-momentum.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 7: Impulse and Momentum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/08-torque-rotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 8: Balanced and Unbalanced Torque</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../teaching/python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python from Scratch</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/00-what-is-a-programming-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What Is a Programming Language?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/01-how-computers-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How Computers Actually Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/02-choosing-a-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing a Programming Language</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/03-python-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1: Python Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Mathematics</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Physics Problems</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
+  <li><a href="#qpd" id="toc-qpd" class="nav-link" data-scroll-target="#qpd">QPD</a>
+  <ul class="collapse">
+  <li><a href="#the-questions" id="toc-the-questions" class="nav-link" data-scroll-target="#the-questions">The questions</a></li>
+  <li><a href="#what-the-procedure-must-make-clear" id="toc-what-the-procedure-must-make-clear" class="nav-link" data-scroll-target="#what-the-procedure-must-make-clear">What the procedure must make clear</a></li>
+  <li><a href="#the-diagram" id="toc-the-diagram" class="nav-link" data-scroll-target="#the-diagram">The diagram</a></li>
+  </ul></li>
+  <li><a href="#uda" id="toc-uda" class="nav-link" data-scroll-target="#uda">UDA</a>
+  <ul class="collapse">
+  <li><a href="#in-excel" id="toc-in-excel" class="nav-link" data-scroll-target="#in-excel">In Excel</a></li>
+  <li><a href="#on-the-board" id="toc-on-the-board" class="nav-link" data-scroll-target="#on-the-board">On the board</a></li>
+  </ul></li>
+  <li><a href="#con" id="toc-con" class="nav-link" data-scroll-target="#con">CON</a></li>
+  <li><a href="#common-slips" id="toc-common-slips" class="nav-link" data-scroll-target="#common-slips">Common slips</a></li>
+  <li><a href="#going-deeper" id="toc-going-deeper" class="nav-link" data-scroll-target="#going-deeper">Going deeper</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Regular lab.</strong> You turn in the part you worked on. In a group of two, each of you turns in your own part plus CON.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Everyone turns in CON this week.</strong> The report template says it in capitals: every student submits the two-paragraph conclusion, whichever job they had. QPD and UDA are still turned in by the people who did them.</p>
+</div>
+</div>
+</div>
+<section id="at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
+<ul>
+<li><strong>Questions.</strong> Two parts. Part 1: how does the change in a cart’s velocity depend on the impulse the wall gives it, and does it keep its kinetic energy through the bounce? Part 2: how does the momentum change of one cart compare with the momentum change of the other when they bounce, stick or fly apart, and what happens to the kinetic energy in each case?</li>
+<li><strong>You measure.</strong> Part 1: the cart’s velocity before and after it hits the wall and the impulse from the force sensor, ten runs at different speeds, plus the cart’s mass on the balance. Part 2: the velocity of cart A before the interaction and the velocities of both carts after it, nine runs (three kinds of interaction, three ways of placing the mass bar), plus the masses of both carts and the bar.</li>
+<li><strong>You calculate.</strong> Part 1: <span class="math inline">\(\Delta v\)</span> and the kinetic energy before and after. Part 2: <span class="math inline">\(\Delta p\)</span> and <span class="math inline">\(\Delta K\)</span> for each cart. You type the formulas for <span class="math inline">\(\Delta v\)</span> and both <span class="math inline">\(\Delta p\)</span> columns yourself. The sheet builds <span class="math inline">\(M_A\)</span> and <span class="math inline">\(M_B\)</span> for every row from the three masses typed in above the Part 2 table.</li>
+<li><strong>You graph.</strong> Four graphs. Part 1: <span class="math inline">\(\Delta v\)</span> against impulse, slope <span class="math inline">\(1/M\)</span>, and <span class="math inline">\(K_F\)</span> against <span class="math inline">\(K_I\)</span>, slope compared with 1. Part 2: <span class="math inline">\(\Delta p_B\)</span> against <span class="math inline">\(\Delta p_A\)</span> for all nine runs, slope compared with <span class="math inline">\(-1\)</span>, and <span class="math inline">\(\Delta K_B\)</span> against <span class="math inline">\(\Delta K_A\)</span> for the three bouncy runs only, slope compared with <span class="math inline">\(-1\)</span>.</li>
+<li><strong>You conclude.</strong> Two paragraphs. Momentum first, both parts, with the cart mass and its percent difference from the balance. Kinetic energy second, both parts, with the wall bounce classified.</li>
+</ul>
+</section>
+<section id="qpd" class="level2">
+<h2 class="anchored" data-anchor-id="qpd">QPD</h2>
+<p>This lab has two parts, and the report template has a QPD slot for each. Each slot wants a board photo, an annotated photo of the setup, and a screenshot of the Graphical Analysis screen where the velocities were read off, with the impulse as well in Part 1. Split one board or use two.</p>
+<section id="the-questions" class="level3">
+<h3 class="anchored" data-anchor-id="the-questions">The questions</h3>
+<blockquote class="blockquote">
+<p>Part 1: What is the relationship between the impulse the wall delivers to the cart (<span class="math inline">\(J\)</span>) and the change in the cart’s velocity (<span class="math inline">\(\Delta v\)</span>)?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Part 2: What is the relationship between the change in momentum of cart A (<span class="math inline">\(\Delta p_A\)</span>) and the change in momentum of cart B (<span class="math inline">\(\Delta p_B\)</span>) when the two carts interact?</p>
+</blockquote>
+<p>The template says “questions”, and each part has a second one about energy. Write it as a second line under the first. For Part 1 it is the relationship between the cart’s kinetic energy before the bounce (<span class="math inline">\(K_I\)</span>) and after it (<span class="math inline">\(K_F\)</span>). For Part 2 it is how the kinetic energy of the two carts after bouncing, sticking or flying apart compares with the kinetic energy before.</p>
+</section>
+<section id="what-the-procedure-must-make-clear" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-procedure-must-make-clear">What the procedure must make clear</h3>
+<p>This page was written from the 2026 templates, not the handout, so the details below are the usual way this lab runs. Where the handout differs, the handout wins.</p>
+<ul>
+<li>Part 1: what the cart hit, what was on the front of the force sensor, how the cart was set moving (a push by hand, let go well before the wall), and that the ten runs were at different speeds so the impulses spread out along the graph.</li>
+<li>Part 1: where each number came from. <span class="math inline">\(v_i\)</span> and <span class="math inline">\(v_f\)</span> are read from the flat parts of the velocity–time graph just before and just after the collision. The impulse is the area under the force–time graph across the collision only, from the Integral tool with just the collision selected. Say that the sensor was zeroed first.</li>
+<li>Part 2: which cart was A (the one pushed, yellow on the sheet) and which was B (the one at rest, blue), which ends of the carts faced each other in each kind of run, and that in the explodey runs both carts started at rest touching, with the plunger of one pressed against the other, so <span class="math inline">\(v_{i,A}\)</span> is zero for those three rows.</li>
+<li>Part 2: where the mass bar sat in each of the three runs of a kind, in the sheet’s order: on B, then on A, then on neither. All three velocities come from the velocity–time graphs of the two carts, read from the flat stretches on either side of the interaction.</li>
+<li>The units as recorded: m/s for every velocity, N·s for the impulse, kg for every mass.</li>
+</ul>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Quantity</th>
+<th>How it is measured</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(M_\text{CART}\)</span></td>
+<td>mass of the Part 1 cart with its sensor</td>
+<td>electronic balance</td>
+<td>kg</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(v_i\)</span>, <span class="math inline">\(v_f\)</span></td>
+<td>cart velocity before and after it meets the wall</td>
+<td>flat parts of the velocity–time graph beside the collision</td>
+<td>m/s</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(J\)</span></td>
+<td>impulse from the wall on the cart</td>
+<td>area under the force–time graph across the collision</td>
+<td>N·s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(M_\text{YEL}\)</span>, <span class="math inline">\(M_\text{BLU}\)</span>, <span class="math inline">\(M_\text{bar}\)</span></td>
+<td>the two carts and the mass bar</td>
+<td>electronic balance</td>
+<td>kg</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(v_{i,A}\)</span></td>
+<td>velocity of cart A before the interaction</td>
+<td>velocity–time graph of cart A</td>
+<td>m/s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(v_{f,A}\)</span>, <span class="math inline">\(v_{f,B}\)</span></td>
+<td>velocities of A and B after the interaction</td>
+<td>velocity–time graph of each cart</td>
+<td>m/s</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Cart B always starts at rest. That is why the sheet has no column for its initial velocity.</p>
+</section>
+<section id="the-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="the-diagram">The diagram</h3>
+<p>Part 1: a photo of the cart, its force sensor and the wall it hits, labelled with the positive direction, <span class="math inline">\(v_i\)</span> toward the wall, <span class="math inline">\(v_f\)</span> away from it, the force from the wall on the cart, and <span class="math inline">\(M_\text{CART}\)</span>. Part 2: a photo of the two carts on the track, labelled A and B, with the mass bar, the ends that meet, the positive direction and the three velocities. The Graphical Analysis screenshots go in the same QPD slots, so mark on them where <span class="math inline">\(v_i\)</span>, <span class="math inline">\(v_f\)</span> and the impulse were read.</p>
+</section>
+</section>
+<section id="uda" class="level2">
+<h2 class="anchored" data-anchor-id="uda">UDA</h2>
+<section id="in-excel" class="level3">
+<h3 class="anchored" data-anchor-id="in-excel">In Excel</h3>
+<p>Part 1 has ten rows, Part 2 has nine, three for each kind of interaction. These are the calculated columns.</p>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Formula</th>
+<th>Unit</th>
+<th>Sample calculation on the board</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\Delta v\)</span> (Part 1)</td>
+<td><span class="math inline">\(v_f - v_i\)</span></td>
+<td>m/s</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(K_I\)</span>, <span class="math inline">\(K_F\)</span> (Part 1)</td>
+<td><span class="math inline">\(\tfrac12 M_\text{CART}\,v_i^2\)</span> and <span class="math inline">\(\tfrac12 M_\text{CART}\,v_f^2\)</span></td>
+<td>J</td>
+<td>yes, both from one row, with their difference</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(M_\text{EXP}\)</span> (Part 1)</td>
+<td><span class="math inline">\(1/\text{slope}\)</span> of the <span class="math inline">\(\Delta v\)</span> against <span class="math inline">\(J\)</span> graph</td>
+<td>kg</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(M_A\)</span>, <span class="math inline">\(M_B\)</span> (Part 2)</td>
+<td>built by the sheet from <span class="math inline">\(M_\text{YEL}\)</span>, <span class="math inline">\(M_\text{BLU}\)</span> and <span class="math inline">\(M_\text{bar}\)</span> for each row</td>
+<td>kg</td>
+<td>no</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\Delta p_A\)</span> (Part 2)</td>
+<td><span class="math inline">\(M_A\,(v_{f,A} - v_{i,A})\)</span></td>
+<td>kg·m/s</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Delta p_B\)</span> (Part 2)</td>
+<td><span class="math inline">\(M_B\,v_{f,B}\)</span></td>
+<td>kg·m/s</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(K_{I,A}\)</span>, <span class="math inline">\(K_{F,A}\)</span>, <span class="math inline">\(K_{F,B}\)</span> (Part 2)</td>
+<td><span class="math inline">\(\tfrac12 M v^2\)</span> for each</td>
+<td>J</td>
+<td>inside the two <span class="math inline">\(\Delta K\)</span> calculations</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Delta K_A\)</span> (Part 2)</td>
+<td><span class="math inline">\(K_{F,A} - K_{I,A}\)</span></td>
+<td>J</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\Delta K_B\)</span> (Part 2)</td>
+<td><span class="math inline">\(K_{F,B}\)</span>, because B started with none</td>
+<td>J</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Three calculations on the Part 1 board and four on the Part 2 board, which is what the report template counts.</p>
+<p>Some things about this sheet that are not obvious from looking at it:</p>
+<ul>
+<li><strong>What you type.</strong> The <span class="math inline">\(\Delta v\)</span> column in Part 1 and the <span class="math inline">\(\Delta p_A\)</span> and <span class="math inline">\(\Delta p_B\)</span> columns in Part 2 are empty in the template. Enter those formulas yourself in the first row, then fill down. <span class="math inline">\(M_\text{CART}\)</span> goes in the cell at the top of Part 1 and the three Part 2 masses in the row above its table, and every <span class="math inline">\(M_A\)</span> and <span class="math inline">\(M_B\)</span> is built from those.</li>
+<li><strong>Signs.</strong> Positive is the direction the cart was pushed. In Part 1 the cart comes back, so <span class="math inline">\(v_f\)</span>, <span class="math inline">\(J\)</span> and <span class="math inline">\(\Delta v\)</span> are all negative, and the sheet says so under the table. In Part 2, <span class="math inline">\(v_{i,A}\)</span> is positive (zero in the explodey rows), <span class="math inline">\(\Delta p_A\)</span> is negative, <span class="math inline">\(\Delta p_B\)</span> is positive, and <span class="math inline">\(v_{f,A}\)</span> can go either way. The mean row already handles the signs, so <span class="math inline">\(\delta_r = \delta_a / \text{mean}\)</span> works as it always does.</li>
+<li><strong>What is filled in.</strong> Part 1 gives <span class="math inline">\(\delta_a = 0.01\ \text{m/s}\)</span> for the velocities, <span class="math inline">\(0.001\ \text{N·s}\)</span> for the impulse and <span class="math inline">\(0.001\ \text{kg}\)</span> for the mass. Part 2 fills in the mass <span class="math inline">\(\delta_a\)</span> and leaves the velocity cells blank. Use the same <span class="math inline">\(0.01\ \text{m/s}\)</span>, it is the same instrument.</li>
+<li><strong>The two uncertainty rows.</strong> <span class="math inline">\(\Delta v\)</span> is a difference, so its <span class="math inline">\(\delta_a\)</span> is the larger of the two velocity values, <span class="math inline">\(0.01\ \text{m/s}\)</span>, which is what the green cell is waiting for. The <span class="math inline">\(\Delta p\)</span> columns are products, so their <span class="math inline">\(\delta_r\)</span> is the largest <span class="math inline">\(\delta_r\)</span> among their inputs, and the sheet colours them for you: the green inputs (<span class="math inline">\(M_A\)</span>, <span class="math inline">\(v_{i,A}\)</span>, <span class="math inline">\(v_{f,A}\)</span>) feed the green <span class="math inline">\(\Delta p_A\)</span>, the blue inputs (<span class="math inline">\(M_B\)</span>, <span class="math inline">\(v_{f,B}\)</span>) feed the blue <span class="math inline">\(\Delta p_B\)</span>, then <span class="math inline">\(\delta_a = \delta_r \times \text{mean}\)</span>. The <a href="../../../teaching/labs/01-uncertainty.html#unc-calc">uncertainty guide</a> walks through both rules.</li>
+<li><strong>Kinetic energy.</strong> In Part 1 the <span class="math inline">\(K_I\)</span> and <span class="math inline">\(K_F\)</span> columns have their own mean, <span class="math inline">\(\delta_a\)</span> and <span class="math inline">\(\delta_r\)</span> cells, labelled in column N, with nothing filled in. Average them yourself, then the product rule. Part 2’s kinetic energy columns have no uncertainty rows. The template holds the kinetic energy formulas in first rows only: the first row of Part 1 for <span class="math inline">\(K_I\)</span> and <span class="math inline">\(K_F\)</span>, the first row of each kind of run for <span class="math inline">\(K_{I,A}\)</span> and <span class="math inline">\(K_{F,A}\)</span>, and the very first row for <span class="math inline">\(K_{F,B}\)</span>. Fill them all down before anything is graphed, or the <span class="math inline">\(\Delta K\)</span> columns, which are already filled in, show zeros.</li>
+<li><strong>Decimal places.</strong> A kinetic energy here is a few hundredths of a joule, so the cells show 0.02 or 0.00 until decimals are added, and the sheet warns about this at the top. Add places until three significant figures show.</li>
+</ul>
+<p><strong>The graphs.</strong> Four of them, axes labelled with units on all four.</p>
+<ol type="1">
+<li>Part 1, <span class="math inline">\(\Delta v\)</span> in m/s on the vertical axis against <span class="math inline">\(J\)</span> in N·s on the horizontal, one linear trendline with its equation. The slope is <span class="math inline">\(1/M_\text{CART}\)</span>, in units of one over kilograms, so <span class="math inline">\(M_\text{EXP} = 1/\text{slope}\)</span>. If you plotted it the other way round, impulse vertical, the slope is the mass itself.</li>
+<li>Part 1, <span class="math inline">\(K_F\)</span> against <span class="math inline">\(K_I\)</span>, both in joules, one linear trendline. The slope has no units and is compared with 1.00, and <span class="math inline">\(1 - \text{slope}\)</span> is the fraction of the kinetic energy that the bounce cost.</li>
+<li>Part 2, <span class="math inline">\(\Delta p_B\)</span> against <span class="math inline">\(\Delta p_A\)</span>, both in kg·m/s, all nine runs in one series, one linear trendline. The slope is compared with <span class="math inline">\(-1.00\)</span>.</li>
+<li>Part 2, <span class="math inline">\(\Delta K_B\)</span> against <span class="math inline">\(\Delta K_A\)</span> in joules for the three bouncy rows only. The template has this chart drawn already and keeps the sticky and explodey <span class="math inline">\(\Delta K_B\)</span> values in a separate column so they stay out of it. Add the linear trendline. Its slope is compared with <span class="math inline">\(-1\)</span>.</li>
+</ol>
+</section>
+<section id="on-the-board" class="level3">
+<h3 class="anchored" data-anchor-id="on-the-board">On the board</h3>
+<p><strong>Left half, derivation.</strong> For Part 1, start from Newton’s second law in the form it was first written: force is the rate at which momentum changes, <span class="math inline">\(F = \Delta p / \Delta t\)</span>. Multiply the time back in and add up the collision:</p>
+<p><span class="math display">\[J = \int F\,dt = \Delta p = M\,\Delta v \quad\Longrightarrow\quad \Delta v = \frac{1}{M}\,J.\]</span></p>
+<p>A line through the origin with slope <span class="math inline">\(1/M\)</span>, which is why the slope of the first graph gives the cart’s mass. Then <span class="math inline">\(K = \tfrac12 M v^2\)</span>, so <span class="math inline">\(K_F / K_I = (v_f / v_i)^2\)</span>, and the second graph has slope 1 only if the cart leaves the wall as fast as it arrived.</p>
+<p>For Part 2, use Newton’s third law. While the carts interact, the force of A on B and the force of B on A are equal and opposite at every instant, and they last for the same time, so the two impulses are equal and opposite:</p>
+<p><span class="math display">\[\Delta p_B = -\,\Delta p_A, \qquad M_A v_{i,A} = M_A v_{f,A} + M_B v_{f,B}.\]</span></p>
+<p>That is a line of slope <span class="math inline">\(-1\)</span> through the origin on the third graph, and the second form is momentum conservation written out. Kinetic energy has no such law: <span class="math inline">\(\Delta K_A + \Delta K_B\)</span> can be zero, negative or positive, and the three kinds of run exist to show all three.</p>
+<p><strong>Right half, sample calculations.</strong> Three for Part 1 and four for Part 2, each from one real row, every factor with its unit. Invented numbers, with <span class="math inline">\(M_\text{CART} = 0.261\ \text{kg}\)</span>, <span class="math inline">\(v_i = 0.420\ \text{m/s}\)</span> and <span class="math inline">\(v_f = -0.378\ \text{m/s}\)</span>:</p>
+<p><span class="math display">\[\Delta v = -0.378\ \text{m/s} - 0.420\ \text{m/s} = -0.798\ \text{m/s},\]</span></p>
+<p><span class="math display">\[K_I = \tfrac12 (0.261\ \text{kg})(0.420\ \text{m/s})^2 = 0.0230\ \text{J}, \qquad K_F = \tfrac12 (0.261\ \text{kg})(0.378\ \text{m/s})^2 = 0.0186\ \text{J}, \qquad \Delta K = -0.0044\ \text{J},\]</span></p>
+<p><span class="math display">\[M_\text{EXP} = \frac{1}{\text{slope}} = \frac{1}{3.76\ \text{kg}^{-1}} = 0.266\ \text{kg}.\]</span></p>
+<p>For Part 2, take a bouncy row with the bar on B: <span class="math inline">\(M_A = 0.257\ \text{kg}\)</span>, <span class="math inline">\(M_B = 0.513\ \text{kg}\)</span>, <span class="math inline">\(v_{i,A} = 0.502\ \text{m/s}\)</span>, <span class="math inline">\(v_{f,A} = -0.158\ \text{m/s}\)</span>, <span class="math inline">\(v_{f,B} = 0.325\ \text{m/s}\)</span>:</p>
+<p><span class="math display">\[\Delta p_A = (0.257\ \text{kg})(-0.158\ \text{m/s} - 0.502\ \text{m/s}) = -0.170\ \text{kg·m/s}, \qquad \Delta p_B = (0.513\ \text{kg})(0.325\ \text{m/s}) = 0.167\ \text{kg·m/s},\]</span></p>
+<p><span class="math display">\[\Delta K_A = \tfrac12 (0.257\ \text{kg})\left[(0.158\ \text{m/s})^2 - (0.502\ \text{m/s})^2\right] = -0.0292\ \text{J}, \qquad \Delta K_B = \tfrac12 (0.513\ \text{kg})(0.325\ \text{m/s})^2 = 0.0271\ \text{J}.\]</span></p>
+<p>The two momentum changes nearly cancel and the two energy changes nearly cancel, which is what a bouncy row should do.</p>
+</section>
+</section>
+<section id="con" class="level2">
+<h2 class="anchored" data-anchor-id="con">CON</h2>
+<p>Two paragraphs this week, and everyone writes them. The first is about momentum in both parts, the second about kinetic energy in both parts. The report template lists what each must contain, so each item below becomes one sentence, in order. Numbers invented.</p>
+<p><strong>Paragraph 1, momentum.</strong></p>
+<ol type="1">
+<li><strong>The relationships in words</strong>, <span class="math inline">\(\Delta v\)</span> against impulse in Part 1 and <span class="math inline">\(\Delta p_B\)</span> against <span class="math inline">\(\Delta p_A\)</span> in Part 2. → “The relationship between the impulse on the cart and its change in velocity is linear, and the relationship between the momentum change of cart A and the momentum change of cart B is also linear.”</li>
+<li><strong>The two equations.</strong> → “The trendlines were <span class="math inline">\(\Delta v = (3.76\ \text{kg}^{-1})\,J\)</span> for the wall bounce and <span class="math inline">\(\Delta p_B = (-0.96)\,\Delta p_A\)</span> for the two carts.” The first slope has units, one over kilograms. The second has none.</li>
+<li><strong>The cart mass from Part 1, and how constant momentum was in Part 2</strong>, the slope against <span class="math inline">\(-1.00\)</span>. → “The slope gives a cart mass of <span class="math inline">\(M_\text{EXP} = 1/(3.76\ \text{kg}^{-1}) = 0.266\ \text{kg}\)</span>, and the slope of <span class="math inline">\(-0.96\)</span> against the expected <span class="math inline">\(-1.00\)</span> means cart B gained 96% of the momentum cart A lost.”</li>
+<li><strong>The two comparisons</strong>: <span class="math inline">\(M_\text{EXP}\)</span> against the balance value <span class="math inline">\(M_\text{THEO}\)</span> as a percent difference, and the momentum change of B against A as the percent change <span class="math inline">\(1 - |\text{slope}|\)</span>. → “The balance gave <span class="math inline">\(M_\text{THEO} = 0.261\ \text{kg}\)</span>, a percent difference of <span class="math inline">\(200\%\,(0.266 - 0.261)/(0.266 + 0.261) = 1.9\%\)</span>, and the momentum change of cart B fell short of cart A’s by <span class="math inline">\(1 - 0.96 = 4\%\)</span>.”</li>
+</ol>
+<p><strong>Paragraph 2, kinetic energy.</strong></p>
+<ol type="1">
+<li><strong>Part 1: the slope of <span class="math inline">\(K_F\)</span> against <span class="math inline">\(K_I\)</span> compared with 1.00, and what kind of interaction that makes the wall bounce.</strong> → “The slope of final against initial kinetic energy was 0.81, so the cart kept 81% of its kinetic energy through the wall collision, which makes the bounce a bouncy interaction with some loss rather than a sticky one.”</li>
+<li><strong>The percent difference the template asks for, <span class="math inline">\(1 - \text{slope}\)</span>.</strong> → “The kinetic energy change in the wall collision was <span class="math inline">\(1 - 0.81 = 19\%\)</span>.”</li>
+<li><strong>Part 2: how the kinetic energy change went with mass across the three kinds of interaction.</strong> The template says there are two different answers here, and the bouncy graph gives the first. This item can take two sentences. → “In the bouncy runs cart B gained what cart A lost whichever cart carried the bar, with a slope of <span class="math inline">\(-0.93\)</span> against the expected <span class="math inline">\(-1\)</span>. In the sticky runs kinetic energy was lost, most of it when the heavier cart was the one at rest, and in the explodey runs it was gained, with the lighter cart taking the larger share.”</li>
+</ol>
+</section>
+<section id="common-slips" class="level2">
+<h2 class="anchored" data-anchor-id="common-slips">Common slips</h2>
+<ul>
+<li>Reporting the slope of <span class="math inline">\(\Delta v\)</span> against <span class="math inline">\(J\)</span> as the mass. The slope is <span class="math inline">\(1/M\)</span>, in one over kilograms. One divided by it is the mass.</li>
+<li>A positive <span class="math inline">\(v_f\)</span>. The cart comes back the way it came, so <span class="math inline">\(v_f\)</span>, <span class="math inline">\(J\)</span> and <span class="math inline">\(\Delta v\)</span> are all negative. If <span class="math inline">\(J\)</span> comes out positive while <span class="math inline">\(\Delta v\)</span> is negative, the sensor’s sign is reversed, and the slope and the mass come out negative with it.</li>
+<li>Reading <span class="math inline">\(v_i\)</span> and <span class="math inline">\(v_f\)</span> far from the collision. Friction slows the cart on the way in and on the way out, so take the flat stretches right next to the collision, and integrate the force across the collision only, because baseline noise adds up over a long selection.</li>
+<li>Kinetic energies showing as 0.02 J or 0.00 J. Until the decimals are added, every point on the <span class="math inline">\(K_F\)</span> against <span class="math inline">\(K_I\)</span> graph lands in the same place.</li>
+<li>Kinetic energy formulas not filled down, or the <span class="math inline">\(\Delta v\)</span> and <span class="math inline">\(\Delta p\)</span> formulas never typed in. The template gives the energy formulas in the first row of each block only, and leaves <span class="math inline">\(\Delta v\)</span>, <span class="math inline">\(\Delta p_A\)</span> and <span class="math inline">\(\Delta p_B\)</span> empty.</li>
+<li>The bar on the wrong cart for the row. The sheet builds <span class="math inline">\(M_A\)</span> and <span class="math inline">\(M_B\)</span> in a fixed order within each kind of run, bar on B, bar on A, no bar. Run the trials in that order or move the formulas.</li>
+<li>Sticky and explodey points on the bouncy energy graph. That graph is three points, which is why the sheet keeps the other six <span class="math inline">\(\Delta K_B\)</span> values in a separate column.</li>
+<li>Treating CON as someone else’s job. This week it is everyone’s.</li>
+</ul>
+</section>
+<section id="going-deeper" class="level2">
+<h2 class="anchored" data-anchor-id="going-deeper">Going deeper</h2>
+<p><strong>Impulse and momentum are the same unit.</strong> A newton is a kilogram metre per second squared, so a newton second is a kilogram metre per second, which is a momentum. The impulse the wall delivers <strong>is</strong> the momentum it takes from the cart, which is why one column is in N·s and the next is in m/s and the slope between them is in one over kilograms. Read that slope as a price: how much velocity one newton second buys. A heavy cart buys less. That is what mass means.</p>
+<p><strong>Why the slope is minus one.</strong> Newton’s third law says the two carts push on each other with equal and opposite forces at every instant. They also push for exactly the same time, because the interaction starts and stops for both at once. Equal force for equal time is equal and opposite impulse, so <span class="math inline">\(\Delta p_B = -\Delta p_A\)</span> whatever the carts are made of and whatever their ends do. Momentum conservation is the third law with the time multiplied in. Nothing in that argument mentions kinetic energy, which is why the bouncy, sticky and explodey runs all land on the same line of slope <span class="math inline">\(-1\)</span> and still do three different things to <span class="math inline">\(K\)</span>.</p>
+<p><strong>What the three mass arrangements show.</strong> For a bouncy collision with B at rest, <span class="math inline">\(v_{f,A} = \dfrac{M_A - M_B}{M_A + M_B}\,v_{i,A}\)</span> and <span class="math inline">\(v_{f,B} = \dfrac{2M_A}{M_A + M_B}\,v_{i,A}\)</span>. Light A on heavy B: A bounces back. Heavy A on light B: A keeps going, slower. Equal masses: A stops dead and B leaves with A’s speed, which is Newton’s cradle in one click. So the <span class="math inline">\(v_{f,A}\)</span> column should change sign between the first two bouncy rows and sit near zero in the third. In an explodey run the two carts leave with equal and opposite momentum, and since <span class="math inline">\(K = p^2 / 2M\)</span> the lighter cart carries more of the energy, with the same <span class="math inline">\(p\)</span> and a smaller <span class="math inline">\(M\)</span> under it. In a sticky run the fraction of kinetic energy lost is <span class="math inline">\(M_B / (M_A + M_B)\)</span>, so the heavier the cart at rest, the more is lost.</p>
+<p><strong>Where the wall fits.</strong> Part 1 is Part 2 with a cart B of enormous mass. The cart’s momentum is not conserved on its own, because the wall, and the Earth it is bolted to, takes the difference. Put <span class="math inline">\(0.2\ \text{kg·m/s}\)</span> into <span class="math inline">\(6 \times 10^{24}\ \text{kg}\)</span> and the Earth’s share of the velocity change is about <span class="math inline">\(3 \times 10^{-26}\ \text{m/s}\)</span>, which no instrument will ever see. Push <span class="math inline">\(M_B\)</span> to infinity in the sticky fraction above and the loss goes to 100%, so a cart that stuck to the wall would stop dead and keep none of its energy. The wall bounce in Part 1 lives somewhere between that and a perfect rebound, and the slope of <span class="math inline">\(K_F\)</span> against <span class="math inline">\(K_I\)</span> says where.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<!-- "Wider spacing" toggle, added to the navbar next to Quarto's dark-mode
+     toggle on every page (Quarto renders that button twice, once for wide
+     screens and once for the collapsed menu, so this adds one beside each).
+     Sets data-sx-spacing="wide" on <html> and remembers the choice in
+     localStorage; assets/spacing-head.html re-applies it before paint on the
+     next page, and styles.css section 18 does the spacing. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    if (document.querySelector('.sx-spacing-toggle')) return;
+    var darks = document.querySelectorAll('.quarto-color-scheme-toggle');
+    if (!darks.length) return;
+    var root = document.documentElement;
+    var on = root.getAttribute('data-sx-spacing') === 'wide';
+    var links = [];
+
+    function apply() {
+      if (on) root.setAttribute('data-sx-spacing', 'wide');
+      else root.removeAttribute('data-sx-spacing');
+      links.forEach(function (l) { l.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      try { localStorage.setItem('sx-spacing', on ? 'wide' : 'normal'); } catch (e) {}
+    }
+
+    Array.prototype.forEach.call(darks, function (dark) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.className = (dark.className || '').replace('quarto-color-scheme-toggle', '').trim() + ' sx-spacing-toggle';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-pressed', on ? 'true' : 'false');
+      link.setAttribute('aria-label', 'Wider letter spacing for easier reading');
+      link.title = 'Wider spacing';
+      link.innerHTML = '<i class="bi bi-fonts" aria-hidden="true"></i>';
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        on = !on;
+        apply();
+      });
+      // Mirror the dark toggle's wrapper when it has one, so the two sit side by side.
+      var wrapper = dark.parentElement;
+      if (wrapper && wrapper.tagName === 'LI') {
+        var li = document.createElement('li');
+        li.className = wrapper.className;
+        li.appendChild(link);
+        wrapper.parentElement.insertBefore(li, wrapper);
+      } else {
+        wrapper.insertBefore(link, dark);
+      }
+      links.push(link);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<!-- Decision wizard for the Lab Help pages.
+
+     A `.sx-wizard` fenced div holds one `.sx-wizard__step` div per question
+     or answer. Buttons with `data-next="<step id>"` move between them, and a
+     button that points back at the first step starts a fresh run. This script
+     shows one step at a time, keeps a trail of the answers chosen so far (each
+     chip goes back to the question it answered), adds Back and Start-over
+     links, and opens a step directly when the page is loaded with that step's
+     id in the URL hash or when an in-page link points at it.
+
+     Without the script every step is visible in order, so the page still
+     reads as a plain guide, and the same happens in print.
+
+     Included after the body by teaching/labs/_metadata.yml. The matching
+     styles are in styles.css, section 16. The authoring pattern is in
+     teaching/labs/01-uncertainty.qmd. -->
+<script>
+(function () {
+  'use strict';
+
+  function setUp(wizard) {
+    var steps = Array.prototype.slice.call(wizard.querySelectorAll('.sx-wizard__step'));
+    if (!steps.length) return;
+
+    var byId = {};
+    steps.forEach(function (step) { byId[step.id] = step; });
+    var first = steps[0];
+    var current = first;
+    // One entry per answer given: the step it was given on, and the chip text.
+    var trail = [];
+
+    var trailBar = document.createElement('nav');
+    trailBar.className = 'sx-wizard__trail';
+    trailBar.setAttribute('aria-label', 'Answers so far');
+    wizard.insertBefore(trailBar, first);
+
+    function makeButton(className, text, onClick) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = className;
+      button.textContent = text;
+      button.addEventListener('click', onClick);
+      return button;
+    }
+
+    function restart() {
+      trail = [];
+      show(first, true);
+    }
+
+    function goBack() {
+      var last = trail.pop();
+      show(last ? byId[last.from] : first, true);
+    }
+
+    function renderTrail() {
+      trailBar.innerHTML = '';
+      if (!trail.length) return;
+      trail.forEach(function (entry, index) {
+        if (index) {
+          var sep = document.createElement('span');
+          sep.className = 'sx-wizard__sep';
+          sep.setAttribute('aria-hidden', 'true');
+          sep.textContent = '›';
+          trailBar.appendChild(sep);
+        }
+        trailBar.appendChild(makeButton('sx-wizard__crumb', entry.label, function () {
+          trail = trail.slice(0, index);
+          show(byId[entry.from], true);
+        }));
+      });
+      trailBar.appendChild(makeButton('sx-wizard__reset', 'Start over', restart));
+    }
+
+    function renderNav(step) {
+      Array.prototype.forEach.call(wizard.querySelectorAll('.sx-wizard__nav'), function (old) {
+        old.remove();
+      });
+      if (step === first || !trail.length) return;
+      var nav = document.createElement('p');
+      nav.className = 'sx-wizard__nav';
+      nav.appendChild(makeButton('', '← Back', goBack));
+      nav.appendChild(makeButton('', 'Start over', restart));
+      step.appendChild(nav);
+    }
+
+    function show(step, moveFocus) {
+      current = step;
+      steps.forEach(function (s) { s.classList.toggle('is-active', s === step); });
+      renderTrail();
+      renderNav(step);
+      if (!moveFocus) return;
+      step.setAttribute('tabindex', '-1');
+      step.focus({ preventScroll: true });
+      // After a click near the bottom of a long step the new step can start
+      // above the viewport; bring the card back into view when that happens.
+      if (wizard.getBoundingClientRect().top < 0) {
+        wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    wizard.addEventListener('click', function (event) {
+      var button = event.target.closest('.sx-wizard__btn');
+      if (!button || !wizard.contains(button)) return;
+      var next = byId[button.getAttribute('data-next')];
+      if (!next) return;
+      if (next === first) {
+        trail = [];
+      } else {
+        var title = button.querySelector('.sx-wizard__btn-title');
+        var label = button.getAttribute('data-label') || (title || button).textContent.trim();
+        trail.push({ from: current.id, label: label });
+      }
+      show(next, true);
+    });
+
+    // Deep links: a URL ending in #<step id>, or an in-page link to one. The
+    // browser cannot scroll to a hidden step, so open it and scroll ourselves.
+    function openFromHash(hash) {
+      var step = hash && byId[hash.replace(/^#/, '')];
+      if (!step) return false;
+      trail = [];
+      show(step, true);
+      wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return true;
+    }
+    window.addEventListener('hashchange', function () { openFromHash(location.hash); });
+
+    wizard.classList.add('is-ready');
+    if (!openFromHash(location.hash)) show(first, false);
+  }
+
+  function run() {
+    Array.prototype.forEach.call(document.querySelectorAll('.sx-wizard'), setUp);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
+<!-- Tickable checklists for the Lab Help pages.
+
+     Pandoc renders a Markdown task list (`- [ ] item`) with disabled
+     checkboxes. Inside a `.sx-checklist` fenced div this script enables them
+     so a student can tick items off while checking a whiteboard. Nothing is
+     saved; reloading the page clears the boxes, which is the right behaviour
+     for a checklist that is run once per lab. Styles: styles.css section 17.
+
+     Included after the body by teaching/labs/_metadata.yml. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    var boxes = document.querySelectorAll('.sx-checklist input[type="checkbox"]');
+    Array.prototype.forEach.call(boxes, function (box) {
+      box.disabled = false;
+      box.setAttribute('aria-label', (box.parentNode.textContent || '').trim());
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/saxonstockton\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../teaching/labs/lab-guides/06-spring-constant.html" class="pagination-link" aria-label="Lab 6: The Spring Constant, Two Ways">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 6: The Spring Constant, Two Ways</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../teaching/labs/lab-guides/08-torque-rotation.html" class="pagination-link" aria-label="Lab 8: Balanced and Unbalanced Torque">
+        <span class="nav-page-text">Lab 8: Balanced and Unbalanced Torque</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Saxon Stockton · Built with <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="../../../teaching/">Teaching</a> · <a href="../../../cv.html">CV</a> · <a href="../../../about.html">About</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/purplinator">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:s.stockton@tcu.edu">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
