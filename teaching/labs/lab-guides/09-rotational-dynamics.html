@@ -55,6 +55,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/bootstrap/bootstrap-8a591b2bae7be208d59503feb24059df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/bootstrap/bootstrap-dark-041b732d22562159b1ef4c42ee095202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../../site_libs/bootstrap/bootstrap-8a591b2bae7be208d59503feb24059df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -190,13 +193,13 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Lab 9: Rotational Dynamics – Saxon Stockton">
 <meta property="og:description" content="A major lab over two class periods: the theory and setup first, then the data, two graphs and the conclusion. Torque against rotational acceleration gives the rotational inertia for each setting, and rotational inertia against the added mass or its distance squared gives the T-bar’s own inertia and one of the constants.">
-<meta property="og:image" content="https://saxonstockton.com/images/og-card.jpg">
+<meta property="og:image" content="https://saxonstockton.com/teaching/labs/lab-guides/figures/09-setup-diagram.svg">
 <meta property="og:site_name" content="Saxon Stockton">
-<meta property="og:image:height" content="630">
-<meta property="og:image:width" content="1200">
+<meta property="og:image:alt" content="Side view: a red T-bar crossbar on a vertical rod that turns with rotational acceleration alpha T about a dashed vertical axis. Blue dimension lines mark R T from the axis to each end, and one mass M T hangs under each end. Near the bottom of the rod an orange string is wound on the hub. The rod is held by a red C-clamp on the edge of a table. The string runs horizontally from the hub to a pulley at the table edge and drops to the hanging mass m H. Arrows show the tension F T along the string at the hub, with tau T equals F T times r H, and F T up and F g down on the hanging mass. Top-down view: the hub as a circle of radius r H, with the string leaving it along a tangent toward the pulley.">
 <meta name="twitter:title" content="Lab 9: Rotational Dynamics – Saxon Stockton">
 <meta name="twitter:description" content="A major lab over two class periods: the theory and setup first, then the data, two graphs and the conclusion. Torque against rotational acceleration gives the rotational inertia for each setting, and rotational inertia against the added mass or its distance squared gives the T-bar’s own inertia and one of the constants.">
-<meta name="twitter:image" content="https://saxonstockton.com/images/og-card.jpg">
+<meta name="twitter:image" content="https://saxonstockton.com/teaching/labs/lab-guides/figures/09-setup-diagram.svg">
+<meta name="twitter:image:alt" content="Side view: a red T-bar crossbar on a vertical rod that turns with rotational acceleration alpha T about a dashed vertical axis. Blue dimension lines mark R T from the axis to each end, and one mass M T hangs under each end. Near the bottom of the rod an orange string is wound on the hub. The rod is held by a red C-clamp on the edge of a table. The string runs horizontally from the hub to a pulley at the table edge and drops to the hanging mass m H. Arrows show the tension F T along the string at the hub, with tau T equals F T times r H, and F T up and F g down on the hanging mass. Top-down view: the hub as a circle of radius r H, with the string leaving it along a tangent toward the pulley.">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -593,8 +596,8 @@ window.Quarto = {
   <li><a href="#the-setup" id="toc-the-setup" class="nav-link" data-scroll-target="#the-setup">The setup</a></li>
   <li><a href="#a-setup" id="toc-a-setup" class="nav-link" data-scroll-target="#a-setup">09A Setup</a>
   <ul class="collapse">
-  <li><a href="#theory-board-1-torque-and-rotational-acceleration" id="toc-theory-board-1-torque-and-rotational-acceleration" class="nav-link" data-scroll-target="#theory-board-1-torque-and-rotational-acceleration">Theory board 1: torque and rotational acceleration</a></li>
-  <li><a href="#theory-board-2-what-is-inside-i_tot" id="toc-theory-board-2-what-is-inside-i_tot" class="nav-link" data-scroll-target="#theory-board-2-what-is-inside-i_tot">Theory board 2: what is inside <span class="math inline">\(I_{TOT}\)</span></a></li>
+  <li><a href="#theory-board-1-the-derivation" id="toc-theory-board-1-the-derivation" class="nav-link" data-scroll-target="#theory-board-1-the-derivation">Theory board 1: the derivation</a></li>
+  <li><a href="#theory-board-2-the-diagram" id="toc-theory-board-2-the-diagram" class="nav-link" data-scroll-target="#theory-board-2-the-diagram">Theory board 2: the diagram</a></li>
   <li><a href="#the-qpd-board" id="toc-the-qpd-board" class="nav-link" data-scroll-target="#the-qpd-board">The QPD board</a></li>
   <li><a href="#the-annotated-setup-photo" id="toc-the-annotated-setup-photo" class="nav-link" data-scroll-target="#the-annotated-setup-photo">The annotated setup photo</a></li>
   <li><a href="#the-graphical-analysis-screenshot" id="toc-the-graphical-analysis-screenshot" class="nav-link" data-scroll-target="#the-graphical-analysis-screenshot">The Graphical Analysis screenshot</a></li>
@@ -644,12 +647,12 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
 <p>Lab 9 runs over two class periods, with one report for each.</p>
 <ul>
-<li><strong>09A Setup (first class).</strong> Two theory boards with the derivation, one QPD board, an annotated photo of the setup, and a screenshot of one trial in Graphical Analysis.</li>
+<li><strong>09A Setup (first class).</strong> Two theory boards (the derivation on one, the setup diagram on the other), one QPD board, an annotated photo of the setup, and a screenshot of one trial in Graphical Analysis.</li>
 <li><strong>09B Performance (second class).</strong> The Excel data table, a UDA board with the sample calculations, two graphs, and the CON paragraph.</li>
-<li><strong>Question.</strong> How does the rotational inertia of the spinning T-bar depend on the mass added to it (odd groups) or on how far that mass sits from the axle (even groups)?</li>
+<li><strong>Question.</strong> How does the rotational inertia of the spinning T-bar depend on the mass added to it (even groups) or on how far that mass sits from the axle (odd groups)?</li>
 <li><strong>You measure.</strong> For each of 15 trials, the string tension <span class="math inline">\(F_T\)</span> and the rotational acceleration <span class="math inline">\(\alpha\)</span>, both read in Graphical Analysis. Also the hub radius <span class="math inline">\(r_h\)</span>, the hanging mass <span class="math inline">\(m_H\)</span>, the mass of one added piece <span class="math inline">\(M_T\)</span>, and its distance <span class="math inline">\(R_T\)</span> from the axle.</li>
 <li><strong>You calculate.</strong> The torque <span class="math inline">\(\tau_T = r_h F_T\)</span> for every trial, then one rotational inertia <span class="math inline">\(I_{TOT}\)</span> for each of the five settings, from a slope.</li>
-<li><strong>You graph.</strong> Graph 1: torque against rotational acceleration, five data sets, one per setting. Graph 2: <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(M_T\)</span> (odd groups) or against <span class="math inline">\(R_T^2\)</span> (even groups).</li>
+<li><strong>You graph.</strong> Graph 1: torque against rotational acceleration, five data sets, one per setting. Graph 2: <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(M_T\)</span> (even groups) or against <span class="math inline">\(R_T^2\)</span> (odd groups).</li>
 <li><strong>You conclude.</strong> One paragraph: the relationship, its equation with units, one constant from the slope with a percent difference, and the T-bar’s own inertia from the intercept compared with last week’s.</li>
 </ul>
 </section>
@@ -664,45 +667,52 @@ window.Quarto = {
 </section>
 <section id="a-setup" class="level2">
 <h2 class="anchored" data-anchor-id="a-setup">09A Setup</h2>
-<section id="theory-board-1-torque-and-rotational-acceleration" class="level3">
-<h3 class="anchored" data-anchor-id="theory-board-1-torque-and-rotational-acceleration">Theory board 1: torque and rotational acceleration</h3>
+<section id="theory-board-1-the-derivation" class="level3">
+<h3 class="anchored" data-anchor-id="theory-board-1-the-derivation">Theory board 1: the derivation</h3>
 <p>Everything you know about straight-line motion has a partner for spinning motion. Position <span class="math inline">\(x\)</span> becomes the angle <span class="math inline">\(\theta\)</span>, velocity <span class="math inline">\(v\)</span> becomes the angular velocity <span class="math inline">\(\omega\)</span>, and acceleration <span class="math inline">\(a\)</span> becomes the rotational acceleration <span class="math inline">\(\alpha\)</span>. A force <span class="math inline">\(F\)</span> becomes a torque <span class="math inline">\(\tau\)</span>, a twist. Mass <span class="math inline">\(m\)</span>, how hard something is to speed up, becomes the rotational inertia <span class="math inline">\(I\)</span>, how hard something is to spin up. And Newton’s second law, <span class="math inline">\(F = ma\)</span>, becomes <span class="math inline">\(\tau = I\alpha\)</span>. That last line is the whole lab.</p>
-<p>Two objects move, the hanging mass and the T-bar, so the board needs two free-body diagrams and two Newton’s laws.</p>
-<p><strong>The hanging mass.</strong> Two forces act on it: its weight <span class="math inline">\(m_H g\)</span> pulling down, and the string tension <span class="math inline">\(F_T\)</span> pulling up. Take down as positive, since that is the way it speeds up:</p>
-<p><span class="math display">\[m_H g - F_T = m_H a.\]</span></p>
-<p><strong>The T-bar.</strong> A torque is a force times its lever arm, the distance from the axle to the line the force acts along, measured at right angles. The string leaves the hub along a tangent, so that line is one hub radius from the axle, and the lever arm is <span class="math inline">\(r_h\)</span>:</p>
+<p>The whole derivation goes on this board. The tension sensor measures <span class="math inline">\(F_T\)</span> directly, so you do not need a free-body diagram of the hanging mass. (<a href="#going-deeper">Going deeper</a> shows what that diagram would add.)</p>
+<p><strong>The torque.</strong> A torque is a force times its lever arm, the distance from the axle to the line the force acts along, measured at right angles. The string leaves the hub along a tangent, so that line is one hub radius from the axle, and the lever arm is <span class="math inline">\(r_h\)</span>:</p>
 <p><span class="math display">\[\tau_T = r_h F_T.\]</span></p>
-<p>Newton’s second law for rotation, with friction left out for now:</p>
-<p><span class="math display">\[\tau_T = I_{TOT}\,\alpha.\]</span></p>
+<p><strong>Newton’s second law for rotation</strong>, with friction left out for now:</p>
+<p><span class="math display">\[I_{TOT}\,\alpha = \tau_T.\]</span></p>
 <p>Here <span class="math inline">\(I_{TOT}\)</span> is the rotational inertia of everything that spins: the T-bar, the rod, the hub, the rotation sensor and the two added pieces.</p>
 <p><strong>What to graph.</strong> Write every fit as <span class="math inline">\(y = Ax + B\)</span>, with <span class="math inline">\(A\)</span> the slope and <span class="math inline">\(B\)</span> the intercept. The last equation says to put <span class="math inline">\(y = \tau_T\)</span> and <span class="math inline">\(x = \alpha\)</span>. Then the slope is <span class="math inline">\(A = I_{TOT}\)</span>, and with no friction the line goes through the origin. What if the axle has some friction? Friction works against the spin, so the string has to supply a little extra torque before the bar speeds up at all:</p>
 <p><span class="math display">\[\tau_T = I_{TOT}\,\alpha + \tau_f.\]</span></p>
 <p>The line moves up. The intercept <span class="math inline">\(B = \tau_f\)</span> is the friction torque, and it is <strong>positive</strong>. The slope is still <span class="math inline">\(I_{TOT}\)</span>. This is why each setting uses three hanging masses and a slope, not one mass and a division: the slope sets the friction aside for you.</p>
-<p><strong>Why the tension is not the weight.</strong> The string does not slip on the hub, so the mass falls exactly as fast as the edge of the hub moves, <span class="math inline">\(a = r_h\alpha\)</span>. Put that into the hanging-mass equation and solve for the tension:</p>
-<p><span class="math display">\[F_T = m_H\,(g - r_h\alpha).\]</span></p>
-<p>While the mass falls, the tension is a little <strong>less</strong> than its weight. If the string pulled with the full weight, the mass would not speed up at all. That is why the lab measures <span class="math inline">\(F_T\)</span> with a sensor instead of using <span class="math inline">\(m_H g\)</span>.</p>
-</section>
-<section id="theory-board-2-what-is-inside-i_tot" class="level3">
-<h3 class="anchored" data-anchor-id="theory-board-2-what-is-inside-i_tot">Theory board 2: what is inside <span class="math inline">\(I_{TOT}\)</span></h3>
-<p>Rotational inertias add. A small mass <span class="math inline">\(m\)</span> at a distance <span class="math inline">\(R\)</span> from the axle adds <span class="math inline">\(mR^2\)</span>, so the same mass counts four times as much at twice the distance. So the T-bar with the masses at the ends is much harder to spin up than with the same masses near the axle. Treat each added piece as a point. Two pieces, each of mass <span class="math inline">\(M_T\)</span>, each at <span class="math inline">\(R_T\)</span>:</p>
+<p><strong>What is inside <span class="math inline">\(I_{TOT}\)</span>.</strong> Rotational inertias add. A small mass <span class="math inline">\(m\)</span> at a distance <span class="math inline">\(R\)</span> from the axle adds <span class="math inline">\(mR^2\)</span>, so the same mass counts four times as much at twice the distance. So the T-bar with the masses at the ends is much harder to spin up than with the same masses near the axle. Treat each added piece as a point. Two pieces, each of mass <span class="math inline">\(M_T\)</span>, each at <span class="math inline">\(R_T\)</span>:</p>
 <p><span class="math display">\[I_{TOT} = I_0 + 2 M_T R_T^2.\]</span></p>
 <p>Here <span class="math inline">\(I_0\)</span> is the rotational inertia of the T-bar with nothing added, <span class="math inline">\(M_T\)</span> is the mass of <strong>one</strong> piece, and the 2 counts the pieces.</p>
-<p>Your group changes one thing and holds the other fixed.</p>
+<p><strong>The straight line for your group.</strong> Your group changes one thing and holds the other fixed.</p>
 <ul>
-<li><strong>Odd groups</strong> change <span class="math inline">\(M_T\)</span> and hold <span class="math inline">\(R_T\)</span> fixed. The equation is already a straight line in <span class="math inline">\(M_T\)</span>. Graph <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(M_T\)</span>. The slope is <span class="math inline">\(A = 2R_T^2\)</span>, so the experimental distance is <span class="math inline">\(R_{T,\text{exp}} = \sqrt{A/2}\)</span>. The intercept is <span class="math inline">\(B = I_0\)</span>.</li>
-<li><strong>Even groups</strong> change <span class="math inline">\(R_T\)</span> and hold <span class="math inline">\(M_T\)</span> at 100 g or 200 g. Graphed against <span class="math inline">\(R_T\)</span>, the points curve upward, because <span class="math inline">\(R_T\)</span> is squared. To straighten the graph, plot against <span class="math inline">\(R_T^2\)</span> instead. The slope is <span class="math inline">\(A = 2M_T\)</span>, so the experimental mass is <span class="math inline">\(M_{T,\text{exp}} = A/2\)</span>. The intercept is <span class="math inline">\(B = I_0\)</span>.</li>
+<li><strong>Odd groups</strong> change <span class="math inline">\(R_T\)</span> and hold <span class="math inline">\(M_T\)</span> at 100 g or 200 g. Graphed against <span class="math inline">\(R_T\)</span>, the points curve upward, because <span class="math inline">\(R_T\)</span> is squared. To straighten the graph, plot against <span class="math inline">\(R_T^2\)</span> instead. The slope is <span class="math inline">\(A = 2M_T\)</span>, so the experimental mass is <span class="math inline">\(M_{T,\text{exp}} = A/2\)</span>. The intercept is <span class="math inline">\(B = I_0\)</span>.</li>
+<li><strong>Even groups</strong> change <span class="math inline">\(M_T\)</span> and hold <span class="math inline">\(R_T\)</span> fixed. The equation is already a straight line in <span class="math inline">\(M_T\)</span>. Graph <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(M_T\)</span>. The slope is <span class="math inline">\(A = 2R_T^2\)</span>, so the experimental distance is <span class="math inline">\(R_{T,\text{exp}} = \sqrt{A/2}\)</span>. The intercept is <span class="math inline">\(B = I_0\)</span>.</li>
 </ul>
-<p>The settings are <span class="math inline">\(R_T\)</span> of 5, 10, 15, 20, 25 or 35 cm and <span class="math inline">\(M_T\)</span> from 50 to 300 g, and your group uses five of them. Convert centimeters to meters and grams to kilograms <strong>before</strong> you square anything.</p>
-<p><strong>Units.</strong> Torque is in m·N. The template writes it in that order so nobody mistakes it for joules, which are also a newton times a meter. Rotational acceleration is in rad/s², and a radian has no unit of its own. So the slope of graph 1 has units of m·N divided by 1/s², which works out to kg·m², the unit of a rotational inertia. The slope of graph 2 is in m² for odd groups and kg for even groups.</p>
+<p>Odd groups choose <span class="math inline">\(R_T\)</span> from 5, 10, 15, 20, 25 and 35 cm. Even groups choose <span class="math inline">\(M_T\)</span> from 50 to 300 g. Either way your group uses five settings. Convert centimeters to meters and grams to kilograms <strong>before</strong> you square anything.</p>
+<p><strong>Units.</strong> Torque is in m·N. The template writes it in that order so nobody mistakes it for joules, which are also a newton times a meter. Rotational acceleration is in rad/s², and a radian has no unit of its own. So the slope of graph 1 has units of m·N divided by 1/s², which works out to kg·m², the unit of a rotational inertia. The slope of graph 2 is in kg for odd groups and m² for even groups.</p>
+</section>
+<section id="theory-board-2-the-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="theory-board-2-the-diagram">Theory board 2: the diagram</h3>
+<p>The second board is the diagram only. Draw two views and label everything shown here.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="figures/09-setup-diagram.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Whiteboard 2, a clean copy of the classroom drawing: the setup from the side and the hub from above."><img src="figures/09-setup-diagram.svg" class="img-fluid figure-img" alt="Side view: a red T-bar crossbar on a vertical rod that turns with rotational acceleration alpha T about a dashed vertical axis. Blue dimension lines mark R T from the axis to each end, and one mass M T hangs under each end. Near the bottom of the rod an orange string is wound on the hub. The rod is held by a red C-clamp on the edge of a table. The string runs horizontally from the hub to a pulley at the table edge and drops to the hanging mass m H. Arrows show the tension F T along the string at the hub, with tau T equals F T times r H, and F T up and F g down on the hanging mass. Top-down view: the hub as a circle of radius r H, with the string leaving it along a tangent toward the pulley."></a></p>
+<figcaption>Whiteboard 2, a clean copy of the classroom drawing: the setup from the side and the hub from above.</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Side view.</strong> The crossbar on the rod with the rotation <span class="math inline">\(\alpha_T\)</span> about the vertical axis, <span class="math inline">\(R_T\)</span> from the axis to each end, one <span class="math inline">\(M_T\)</span> hanging under each end, the hub with the string wound on it, the clamp on the table edge, the string over the pulley down to <span class="math inline">\(m_H\)</span>, the pull <span class="math inline">\(F_T\)</span> along the string at the hub with <span class="math inline">\(\tau_T = F_T r_H\)</span>, and <span class="math inline">\(F_T\)</span> up and <span class="math inline">\(F_g\)</span> down on the hanging mass.</li>
+<li><strong>Top-down view.</strong> The hub of radius <span class="math inline">\(r_H\)</span> and the string leaving it along a tangent toward the pulley. The string pulls at right angles to the radius, which is why the lever arm is the radius and <span class="math inline">\(\tau_T = F_T r_H\)</span>.</li>
+</ul>
+<p>The diagram writes the hub radius as <span class="math inline">\(r_H\)</span> and the rotational acceleration as <span class="math inline">\(\alpha_T\)</span>. The rest of this page writes them <span class="math inline">\(r_h\)</span> and <span class="math inline">\(\alpha\)</span>. They are the same quantities.</p>
 </section>
 <section id="the-qpd-board" class="level3">
 <h3 class="anchored" data-anchor-id="the-qpd-board">The QPD board</h3>
 <p><strong>The question.</strong> The 09A report asks for one question. Pick the one for your group:</p>
 <blockquote class="blockquote">
-<p>Odd groups: What is the relationship between the total rotational inertia of the T-bar (<span class="math inline">\(I_{TOT}\)</span>) and the mass of each added piece (<span class="math inline">\(M_T\)</span>)?</p>
+<p>Odd groups: What is the relationship between the total rotational inertia of the T-bar (<span class="math inline">\(I_{TOT}\)</span>) and the distance of the added pieces from the axle (<span class="math inline">\(R_T\)</span>)?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>Even groups: What is the relationship between the total rotational inertia of the T-bar (<span class="math inline">\(I_{TOT}\)</span>) and the distance of the added pieces from the axle (<span class="math inline">\(R_T\)</span>)?</p>
+<p>Even groups: What is the relationship between the total rotational inertia of the T-bar (<span class="math inline">\(I_{TOT}\)</span>) and the mass of each added piece (<span class="math inline">\(M_T\)</span>)?</p>
 </blockquote>
 <p>The torque against rotational acceleration graph is not a second question. It is the step that turns each setting into one value of <span class="math inline">\(I_{TOT}\)</span>.</p>
 <p><strong>The procedure, in two parts.</strong> The report template asks for two parts and wants them kept apart. This is the usual way they split. Where the handout or your TA says otherwise, they win.</p>
@@ -790,7 +800,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="b-performance">09B Performance</h2>
 <section id="in-excel" class="level3">
 <h3 class="anchored" data-anchor-id="in-excel">In Excel</h3>
-<p>The template has the hub radius already typed in as a constant, <span class="math inline">\(r_h = 0.021\ \text{m}\)</span>, with a note that you may change the constants. Record the two constants your group does not change (<span class="math inline">\(R_T\)</span> for odd groups, <span class="math inline">\(M_T\)</span> for even groups) next to it. The 15 trials sit in five blocks of three rows, one block per setting.</p>
+<p>The template has the hub radius already typed in as a constant, <span class="math inline">\(r_h = 0.021\ \text{m}\)</span>, with a note that you may change the constants. Record the two constants your group does not change (<span class="math inline">\(R_T\)</span> for even groups, <span class="math inline">\(M_T\)</span> for odd groups) next to it. The 15 trials sit in five blocks of three rows, one block per setting.</p>
 <div class="sx-scroll">
 <table class="caption-top table">
 <colgroup>
@@ -839,7 +849,7 @@ window.Quarto = {
 <td>no</td>
 </tr>
 <tr class="even">
-<td>G (even groups)</td>
+<td>G (odd groups)</td>
 <td><span class="math inline">\(R_T^2\)</span></td>
 <td>m²</td>
 <td>yes</td>
@@ -856,7 +866,7 @@ window.Quarto = {
 <p>Some things about this sheet that are not obvious from looking at it:</p>
 <ul>
 <li><strong>Only the first torque cell has a formula.</strong> E8 holds <code>=C8*$G$3</code>. Fill it down through all 15 rows.</li>
-<li><strong>Column G is blank.</strong> It is an empty merged block with no header. Even groups type a header and a formula for <span class="math inline">\(R_T^2\)</span>, such as <code>=F8^2</code>, and fill it down.</li>
+<li><strong>Column G is blank.</strong> It is an empty merged block with no header. Odd groups type a header and a formula for <span class="math inline">\(R_T^2\)</span>, such as <code>=F8^2</code>, and fill it down.</li>
 <li><strong>The order inside <code>SLOPE</code>.</strong> Excel’s <code>SLOPE</code> takes the <span class="math inline">\(y\)</span> column first: <code>=SLOPE(torque cells, alpha cells)</code>, as H8 already does. Swapped, it gives <span class="math inline">\(1/I\)</span>.</li>
 <li><strong>The chart is already there.</strong> The template’s chart plots the five blocks as five data sets of torque against rotational acceleration. Add a linear trendline with its equation to each.</li>
 </ul>
@@ -866,19 +876,19 @@ window.Quarto = {
 <p>The 09B report asks for these, on the board:</p>
 <ul>
 <li>the torque calculation, <span class="math inline">\(\tau_T = r_h F_T\)</span>, for each of the 15 trials</li>
-<li><span class="math inline">\(R_T^2\)</span>, one sample, if you are an even group</li>
+<li><span class="math inline">\(R_T^2\)</span>, one sample, if you are an odd group</li>
 <li>the constant from the slope of graph 2, <span class="math inline">\(R_{T,\text{exp}}\)</span> or <span class="math inline">\(M_{T,\text{exp}}\)</span></li>
 <li>the T-bar’s own inertia <span class="math inline">\(I_0\)</span>, read from the intercept of graph 2</li>
 </ul>
-<p>Invented numbers, for an even group with <span class="math inline">\(M_T = 0.100\ \text{kg}\)</span>. One trial with the 0.19 kg hanging mass at <span class="math inline">\(R_T = 15\ \text{cm}\)</span>:</p>
+<p>Invented numbers, for an odd group with <span class="math inline">\(M_T = 0.100\ \text{kg}\)</span>. One trial with the 0.19 kg hanging mass at <span class="math inline">\(R_T = 15\ \text{cm}\)</span>:</p>
 <p><span class="math display">\[\tau_T = r_h F_T = (0.021\ \text{m})(1.853\ \text{N}) = 0.0389\ \text{m·N}, \qquad R_T^2 = (0.15\ \text{m})^2 = 0.0225\ \text{m}^2.\]</span></p>
 <p>If graph 2 gives a slope of <span class="math inline">\(A = 0.206\ \text{kg}\)</span> and an intercept of <span class="math inline">\(B = 0.0112\ \text{kg·m}^2\)</span>:</p>
 <p><span class="math display">\[M_{T,\text{exp}} = \frac{A}{2} = \frac{0.206\ \text{kg}}{2} = 0.103\ \text{kg}, \qquad I_0 = B = 0.0112\ \text{kg·m}^2.\]</span></p>
-<p>For an odd group at <span class="math inline">\(R_T = 0.25\ \text{m}\)</span>, a slope of <span class="math inline">\(A = 0.127\ \text{m}^2\)</span> gives <span class="math inline">\(R_{T,\text{exp}} = \sqrt{0.127/2}\ \text{m} = 0.252\ \text{m}\)</span>.</p>
+<p>For an even group at <span class="math inline">\(R_T = 0.25\ \text{m}\)</span>, a slope of <span class="math inline">\(A = 0.127\ \text{m}^2\)</span> gives <span class="math inline">\(R_{T,\text{exp}} = \sqrt{0.127/2}\ \text{m} = 0.252\ \text{m}\)</span>.</p>
 </section>
 <section id="check-your-torques" class="level3">
 <h3 class="anchored" data-anchor-id="check-your-torques">Check your torques</h3>
-<p>The tension is a little less than <span class="math inline">\(m_H g\)</span>, so every torque must come out a little <strong>under</strong> <span class="math inline">\(m_H g\,r_h\)</span>. With <span class="math inline">\(g = 9.81\ \text{m/s}^2\)</span> and <span class="math inline">\(r_h = 0.021\ \text{m}\)</span>:</p>
+<p>While the mass falls, the tension is a little less than <span class="math inline">\(m_H g\)</span>, so every torque must come out a little <strong>under</strong> <span class="math inline">\(m_H g\,r_h\)</span>. <a href="#going-deeper">Going deeper</a> shows why. With <span class="math inline">\(g = 9.81\ \text{m/s}^2\)</span> and <span class="math inline">\(r_h = 0.021\ \text{m}\)</span>:</p>
 <div class="sx-scroll">
 <table class="caption-top table">
 <colgroup>
@@ -929,17 +939,17 @@ window.Quarto = {
 <p>Axes labelled with units on both.</p>
 <ol type="1">
 <li><strong>Torque against rotational acceleration.</strong> <span class="math inline">\(\tau_T\)</span> in m·N up the side, <span class="math inline">\(\alpha\)</span> in rad/s² along the bottom, five data sets, each with its own linear trendline and equation. Each slope is the <span class="math inline">\(I_{TOT}\)</span> for one setting. Each intercept is a small positive friction torque.</li>
-<li><strong><span class="math inline">\(I_{TOT}\)</span> against your group’s variable.</strong> Odd groups: <span class="math inline">\(I_{TOT}\)</span> in kg·m² against <span class="math inline">\(M_T\)</span> in kg, slope in m². Even groups: <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(R_T^2\)</span> in m², slope in kg. One linear trendline with its equation. The intercept is <span class="math inline">\(I_0\)</span>.</li>
+<li><strong><span class="math inline">\(I_{TOT}\)</span> against your group’s variable.</strong> Even groups: <span class="math inline">\(I_{TOT}\)</span> in kg·m² against <span class="math inline">\(M_T\)</span> in kg, slope in m². Odd groups: <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(R_T^2\)</span> in m², slope in kg. One linear trendline with its equation. The intercept is <span class="math inline">\(I_0\)</span>.</li>
 </ol>
 </section>
 </section>
 <section id="con" class="level2">
 <h2 class="anchored" data-anchor-id="con">CON</h2>
-<p>One paragraph, with the four items from the 09B report in order. Write the equation with the physical symbols, not <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Numbers invented, for the even group above.</p>
+<p>One paragraph, with the four items from the 09B report in order. Write the equation with the physical symbols, not <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Numbers invented, for the odd group above.</p>
 <ol type="1">
 <li><strong>(a) The relationship between your graphed quantities, in words.</strong> → “The relationship between the total rotational inertia of the T-bar and the square of the distance of the added pieces from the axle is linear.”</li>
 <li><strong>(b) The equation, with the real symbols and units on the slope and intercept.</strong> → “The trendline was <span class="math inline">\(I_{TOT} = (0.206\ \text{kg})\,R_T^2 + 0.0112\ \text{kg·m}^2\)</span>.”</li>
-<li><strong>(c) One constant from the slope, compared with its measured value as a percent difference.</strong> → “Half the slope gives a mass of <span class="math inline">\(M_{T,\text{exp}} = 0.103\ \text{kg}\)</span> for each piece, against <span class="math inline">\(0.100\ \text{kg}\)</span> on the balance, a percent difference of <span class="math inline">\((0.103 - 0.100)/0.100 = 3.0\%\)</span>.” An odd group does the same with <span class="math inline">\(R_{T,\text{exp}} = \sqrt{A/2}\)</span> against the ruler.</li>
+<li><strong>(c) One constant from the slope, compared with its measured value as a percent difference.</strong> → “Half the slope gives a mass of <span class="math inline">\(M_{T,\text{exp}} = 0.103\ \text{kg}\)</span> for each piece, against <span class="math inline">\(0.100\ \text{kg}\)</span> on the balance, a percent difference of <span class="math inline">\((0.103 - 0.100)/0.100 = 3.0\%\)</span>.” An even group does the same with <span class="math inline">\(R_{T,\text{exp}} = \sqrt{A/2}\)</span> against the ruler.</li>
 <li><strong>(d) Your T-bar-only inertia, compared with last week’s <span class="math inline">\(I_0\)</span>.</strong> → “The intercept gives <span class="math inline">\(I_0 = 0.0112\ \text{kg·m}^2\)</span> for the T-bar alone, <span class="math inline">\(12\%\)</span> above last week’s <span class="math inline">\(0.010\ \text{kg·m}^2\)</span>. This week the rotation sensor was taped on the T-bar, so it spun with it and added its own rotational inertia to the intercept.”</li>
 </ol>
 <p>For (d), your TA will say whether “last week’s <span class="math inline">\(I_0\)</span>” means your group’s own Lab 8 value or the class value. The value on the board this week is <span class="math inline">\(0.010 \pm 0.002\ \text{kg·m}^2\)</span>. Expect your intercept to come out <strong>above</strong> last week’s, because the rotation sensor was not on the T-bar in Lab 8. Name the sensor as the reason.</p>
@@ -964,9 +974,15 @@ window.Quarto = {
 <section id="going-deeper" class="level2">
 <h2 class="anchored" data-anchor-id="going-deeper">Going deeper</h2>
 <p><strong>Why a figure skater spins faster with her arms in.</strong> A skater pulling her arms in moves mass closer to the axle. Since every bit of mass counts as <span class="math inline">\(mR^2\)</span>, pulling it in shrinks her rotational inertia a lot, and she spins faster to make up for it. The T-bar is the same idea run the other way: move the pieces out from 10 cm to 20 cm and they count four times as much.</p>
-<p><strong>How much less than the weight is the tension?</strong> From board 1, the tension falls short of the weight by <span class="math inline">\(m_H r_h\alpha\)</span>, which is the fraction <span class="math inline">\(r_h\alpha/g\)</span> of the weight. At <span class="math inline">\(\alpha = 3.11\ \text{rad/s}^2\)</span>, <span class="math inline">\(r_h\alpha = (0.021\ \text{m})(3.11\ \text{rad/s}^2) = 0.065\ \text{m/s}^2\)</span>, about 0.7% of <span class="math inline">\(g\)</span>. Small, but it is the reason the lab measures the tension instead of assuming it.</p>
-<p><strong>Why the intercept of graph 2 comes out high.</strong> Two things push it up. The rotation sensor spins with the bar this week, and it adds about <span class="math inline">\(m_s d^2\)</span>, its mass times the square of its distance from the axle, plus its own small inertia. And the added pieces are not points. By the parallel-axis theorem, each piece also carries its own inertia about its centre, <span class="math inline">\(I_{cm}\)</span>, so two pieces add <span class="math inline">\(2I_{cm}\)</span>. For even groups that extra does not change as <span class="math inline">\(R_T\)</span> changes, so it lands in the intercept. For odd groups adding more of the same piece, it grows with the mass and nudges the slope up a little.</p>
-<p><strong>Which settings give the cleanest line.</strong> The 5 cm setting with 100 g pieces adds only <span class="math inline">\(2(0.100)(0.05)^2 = 0.0005\ \text{kg·m}^2\)</span>, less than the <span class="math inline">\(\pm 0.002\)</span> on last week’s <span class="math inline">\(I_0\)</span>, so that point mostly measures <span class="math inline">\(I_0\)</span>. For odd groups, a large <span class="math inline">\(R_T\)</span> gives a much larger change: from 50 g to 300 g at 25 cm, <span class="math inline">\(I_{TOT}\)</span> grows by <span class="math inline">\(2(0.250)(0.25)^2 = 0.031\ \text{kg·m}^2\)</span>. The slowest case is 300 g pieces at 35 cm with the 0.19 kg hanging mass, where <span class="math inline">\(\alpha\)</span> is only about 0.47 rad/s². Friction matters most there, and the fall has to last long enough to fit.</p>
+<p><strong>Why the tension is a little less than the weight.</strong> This is not on your boards, because the sensor measures <span class="math inline">\(F_T\)</span> directly, but it explains the check table. Two forces act on the hanging mass: its weight <span class="math inline">\(m_H g\)</span> pulling down and the tension <span class="math inline">\(F_T\)</span> pulling up. Take down as positive. The string does not slip on the hub, so the mass falls exactly as fast as the edge of the hub moves:</p>
+<p><span class="math display">\[m_H g - F_T = m_H a, \qquad a = r_h\alpha.\]</span></p>
+<p>Solve for the tension:</p>
+<p><span class="math display">\[F_T = m_H\,(g - r_h\alpha).\]</span></p>
+<p>While the mass falls, the tension is a little <strong>less</strong> than its weight. If the string pulled with the full weight, the mass would not speed up at all. That is why the lab measures <span class="math inline">\(F_T\)</span> with a sensor instead of using <span class="math inline">\(m_H g\)</span>. Put this tension into <span class="math inline">\(r_h F_T = I_{TOT}\alpha\)</span> and collect the <span class="math inline">\(\alpha\)</span> terms to get the rotational acceleration you should expect:</p>
+<p><span class="math display">\[\alpha = \frac{m_H g\, r_h}{I_{TOT} + m_H r_h^2}.\]</span></p>
+<p>With <span class="math inline">\(I_{TOT} = 0.010\ \text{kg·m}^2\)</span>, last week’s bare T-bar, this gives the last column of the check table. The shortfall in the tension is <span class="math inline">\(m_H r_h\alpha\)</span>, the fraction <span class="math inline">\(r_h\alpha/g\)</span> of the weight. At <span class="math inline">\(\alpha = 3.11\ \text{rad/s}^2\)</span>, <span class="math inline">\(r_h\alpha = (0.021\ \text{m})(3.11\ \text{rad/s}^2) = 0.065\ \text{m/s}^2\)</span>, about 0.7% of <span class="math inline">\(g\)</span>.</p>
+<p><strong>Why the intercept of graph 2 comes out high.</strong> Two things push it up. The rotation sensor spins with the bar this week, and it adds about <span class="math inline">\(m_s d^2\)</span>, its mass times the square of its distance from the axle, plus its own small inertia. And the added pieces are not points. By the parallel-axis theorem, each piece also carries its own inertia about its centre, <span class="math inline">\(I_{cm}\)</span>, so two pieces add <span class="math inline">\(2I_{cm}\)</span>. For odd groups that extra does not change as <span class="math inline">\(R_T\)</span> changes, so it lands in the intercept. For even groups adding more of the same piece, it grows with the mass and nudges the slope up a little.</p>
+<p><strong>Which settings give the cleanest line.</strong> The 5 cm setting with 100 g pieces adds only <span class="math inline">\(2(0.100)(0.05)^2 = 0.0005\ \text{kg·m}^2\)</span>, less than the <span class="math inline">\(\pm 0.002\)</span> on last week’s <span class="math inline">\(I_0\)</span>, so that point mostly measures <span class="math inline">\(I_0\)</span>. For even groups, a large <span class="math inline">\(R_T\)</span> gives a much larger change: from 50 g to 300 g at 25 cm, <span class="math inline">\(I_{TOT}\)</span> grows by <span class="math inline">\(2(0.250)(0.25)^2 = 0.031\ \text{kg·m}^2\)</span>. The slowest case is 300 g pieces at 35 cm with the 0.19 kg hanging mass, where <span class="math inline">\(\alpha\)</span> is only about 0.47 rad/s². Friction matters most there, and the fall has to last long enough to fit.</p>
 
 
 </section>
@@ -1755,6 +1771,38 @@ window.Quarto = {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
