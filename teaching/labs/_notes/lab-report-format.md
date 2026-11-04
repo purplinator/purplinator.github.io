@@ -191,11 +191,48 @@ true value T; percent difference = 200 % × (M₁ − M₂) / (M₁ + M₂) betw
   around the pipe, balanced by F<sub>T</sub> at r<sub>b</sub>, then let go for Part 2) and calls the turning
   part "the rotor".
 
+- **Lab 9, rotational dynamics** (2026 files, `26 P1 09A Rotational Dynamics Setup.docx`,
+  `26 P1 09B Rotational Dynamics Performance.docx` and `26 P1 09 RotDyn Analysis Template.xlsx`, added
+  2026-11-04). Major lab: everyone turns in everything. Two class periods, one report each.
+  **From the files.** 09A Setup: two preQPD theory whiteboards ("will fill two whiteboards"), one QPD board
+  with a procedure in TWO PARTS kept distinct, an annotated setup photo labelling r<sub>H</sub>, R<sub>T</sub>,
+  m<sub>H</sub>, M<sub>T</sub>, the force sensor and the rotational motion sensor, and a Graphical Analysis
+  screenshot of ONE trial evaluated for average force and rotational acceleration during descent. 09B
+  Performance: Excel data table; UDA board with a torque calculation for each of the 15 trials, the constant
+  from the slope of the second graph, possibly one more sample calculation depending on the group's variable,
+  and the T-bar-only inertia from the final graph; graph 1 with five torque vs rotational acceleration data
+  sets and their fits; graph 2, I vs the group's variable, linearized. CON: (a) the functional relationship,
+  (b) the equation in physical symbols with units on slope and intercept, (c) one constant from the slope
+  against its measured value as a percent difference, (d) the T-bar-only inertia against last week's
+  I<sub>0</sub> as a percent difference. Sheet: constants M<sub>T</sub> (± 0.001 kg), R<sub>T</sub>
+  (± 0.001 m) and r<sub>h</sub> = 0.021 m (± 0.0001 m), "Choose EITHER MT or RT as Ind Var, record other
+  two". Columns m<sub>H</sub> (kg), F<sub>T</sub> (N), "a" (rad/s², means α), τ<sub>T</sub> = F<sub>T</sub>
+  r<sub>h</sub> (m·N, formula in E8 only), M<sub>T</sub> or R<sub>T</sub>, an empty merged column G with no
+  header, and I<sub>TOT</sub> = SLOPE(torque, α) per block of three rows. Five blocks of three, example
+  m<sub>H</sub> 0.19, 0.29, 0.59 kg. δa row: 0.01 for α, 0.001 for the variable column. One chart, "Torque vs
+  Rotational Acceleration, Determining Rotational Inertia", five series, no trendlines.
+  **From the TA boards and the TA group, 2026-11-04.** I<sub>TOT</sub> = I<sub>0</sub> + 2M<sub>T</sub>
+  R<sub>T</sub>², M<sub>T</sub> = ONE piece, one under each end of the crossbar. Odd groups vary M<sub>T</sub>
+  (50 to 300 g) at fixed R<sub>T</sub>, R<sub>T</sub> = √(A/2). Even groups vary R<sub>T</sub> (5, 10, 15, 20,
+  25, 35 cm) at M<sub>T</sub> = 100 or 200 g, graph against R<sub>T</sub>², M<sub>T</sub> = A/2. Fits written
+  y = Ax + B. Last week's I<sub>0</sub> on the board: 0.010 ± 0.002 kg·m². Apparatus: vertical rod clamped to
+  the table, crossbar on top, hub at the bottom (r<sub>h</sub> = 0.0210 ± 0.0001 m), string horizontal over a
+  guide pulley at the table edge. The tension sensor hangs upside down with the slotted masses, so it reads the
+  full tension and belongs in m<sub>H</sub>. A second force sensor taped flat on the T-bar gives ω and was not
+  on the T-bar in Lab 8, so this week's intercept should sit above last week's I<sub>0</sub>.
+  **Suggestions on the page, not from the files.** One question per group (odd: I<sub>TOT</sub> vs
+  M<sub>T</sub>, even: I<sub>TOT</sub> vs R<sub>T</sub>), with τ vs α as the procedure step that gives each
+  I<sub>TOT</sub>. Part 1 = one setting from three hanging masses, Part 2 = five settings. The check table
+  (m<sub>H</sub>g r<sub>h</sub> bound and bare-bar α 3.9, 5.9, 11.8 rad/s² from I<sub>0</sub> = 0.010), the
+  invented example numbers, and the percent difference (exp − act)/act carried over from Lab 8. Whether CON (d)
+  uses the group's own Lab 8 I<sub>0</sub> or the class value is left to the TA. Page:
+  `lab-guides/09-rotational-dynamics.qmd`.
+
 ## Open questions for Saxon
 
 - The rest of the semester's labs, and for each: the question, the measured variables with
   units, the calculated columns, the graph and its linearization, the CON questions and the
-  comparison value. Lab 9's topic and what its theory session covers.
+  comparison value. (Lab 9 is answered above.)
 - Whether the 2026 Lab 6 differs from the 2025 files.
 - Exemplar board photos with names cropped out, for the format page.
 - Lab 7: what the professor means by "TWO different answers" for the Part 2 kinetic-energy sentence of
@@ -207,6 +244,9 @@ true value T; percent difference = 200 % × (M₁ − M₂) / (M₁ + M₂) betw
   the 2025 ones, which percent difference to use for the two values of α (the page suggests the primer's
   200 %(α₁ − α₂)/(α₁ + α₂)), and whether δa = 0 for θ and Δθ (the page treats them as counted, exact) is what
   the professor expects.
+- Lab 9: whether CON (d) compares with the group's own Lab 8 I<sub>0</sub> or the class value (the page
+  leaves it to the TA), and which percent difference the professor wants for (c) and (d) (the page uses
+  (exp − act)/act, as Lab 8 did).
 
 ## Page plan (proposed 2026-10-11, first version built the same day)
 
