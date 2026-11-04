@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A major lab over two class periods: the theory and setup first, then the data, two graphs and the conclusion. Torque against rotational acceleration gives the rotational inertia for each setting, and rotational inertia against the added mass or its distance squared gives the T-bar’s own inertia and one of the constants.">
+
+<title>Lab 9: Rotational Dynamics – Saxon Stockton</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../teaching/python/index.html" rel="next">
+<link href="../../../teaching/labs/lab-guides/08-torque-rotation.html" rel="prev">
+<link href="../../../images/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-4cd2871cd0acc497167f2915b6b08a4f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2b9f1675934f6f4dbff114d25af25287.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-4cd2871cd0acc497167f2915b6b08a4f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8a591b2bae7be208d59503feb24059df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-041b732d22562159b1ef4c42ee095202.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-8a591b2bae7be208d59503feb24059df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #F3EFFC;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #F3EFFC;
+      }
+</style>
+<!-- MathJax 4 configuration, loaded on every page.
+
+     Macros defined here work in any .qmd file without a per-page preamble, so
+     equations stay short to type and consistent across the site. Add new ones
+     to the `macros` block below. -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'ams',
+      macros: {
+        // Units and constants
+        msun:    ['{M_\\odot}'],
+        lsun:    ['{L_\\odot}'],
+        rsun:    ['{R_\\odot}'],
+        kms:     ['{\\,\\mathrm{km\\,s^{-1}}}'],
+        erg:     ['{\\,\\mathrm{erg}}'],
+        angstrom:['{\\,\\text{\\AA}}'],
+        unit:    ['{\\,\\mathrm{#1}}', 1],
+
+        // Common astrophysics shorthand
+        halpha:  ['{\\mathrm{H}\\alpha}'],
+        hbeta:   ['{\\mathrm{H}\\beta}'],
+        ebv:     ['{E(B-V)}'],
+
+        // Vector and operator conveniences
+        vect:    ['{\\mathbf{#1}}', 1],
+        abs:     ['{\\left\\lvert #1 \\right\\rvert}', 1],
+        avg:     ['{\\left\\langle #1 \\right\\rangle}', 1],
+        dd:      ['{\\mathrm{d}}'],
+        deriv:   ['{\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}}', 2],
+        pderiv:  ['{\\frac{\\partial #1}{\\partial #2}}', 2]
+      }
+    },
+    options: {
+      // Let Quarto's own UI (tooltips, code cells) stay untouched by MathJax.
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
+      processHtmlClass: 'mathjax'
+    },
+    // MathJax 4: font and layout options live under `output`. STIX Two Math is
+    // loaded from the same CDN as MathJax itself when it is named here.
+    output: { font: 'mathjax-stix2', scale: 1.0, displayAlign: 'center' }
+  };
+</script>
+<!-- Reading-spacing preference, applied before first paint so the page does
+     not jump. The toggle itself is added by assets/spacing-toggle.html, and
+     the spacing rules are in styles.css, section 18. -->
+<script>
+  try {
+    if (localStorage.getItem('sx-spacing') === 'wide') {
+      document.documentElement.setAttribute('data-sx-spacing', 'wide');
+    }
+  } catch (e) {}
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Lab 9: Rotational Dynamics – Saxon Stockton">
+<meta property="og:description" content="A major lab over two class periods: the theory and setup first, then the data, two graphs and the conclusion. Torque against rotational acceleration gives the rotational inertia for each setting, and rotational inertia against the added mass or its distance squared gives the T-bar’s own inertia and one of the constants.">
+<meta property="og:image" content="https://saxonstockton.com/images/og-card.jpg">
+<meta property="og:site_name" content="Saxon Stockton">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Lab 9: Rotational Dynamics – Saxon Stockton">
+<meta name="twitter:description" content="A major lab over two class periods: the theory and setup first, then the data, two graphs and the conclusion. Torque against rotational acceleration gives the rotational inertia for each setting, and rotational inertia against the added mass or its distance squared gives the T-bar’s own inertia and one of the constants.">
+<meta name="twitter:image" content="https://saxonstockton.com/images/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
+        setTimeout(() => {
+          window.scrollTo(0, scrollY);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/favicon.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../images/favicon.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Saxon Stockton</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../teaching/index.html" aria-current="page"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/purplinator" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="mailto:s.stockton@tcu.edu" title="Email" class="quarto-navigation-tool px-1" aria-label="Email"><i class="bi bi-envelope"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/labs/index.html">Lab Help</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/index.html">Lab Guides</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/09-rotational-dynamics.html">Lab 9: Rotational Dynamics</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/labs/index.html">Lab Help</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/index.html">Lab Guides</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/09-rotational-dynamics.html">Lab 9: Rotational Dynamics</a></li></ol></nav>
+      <h1 class="title">Lab 9: Rotational Dynamics</h1>
+            <p class="subtitle lead">Spin up a T-bar with a falling mass to measure its rotational inertia, then see how that inertia depends on the masses on the bar</p>
+                  <div>
+        <div class="description">
+          A major lab over two class periods: the theory and setup first, then the data, two graphs and the conclusion. Torque against rotational acceleration gives the rotational inertia for each setting, and rotational inertia against the added mass or its distance squared gives the T-bar’s own inertia and one of the constants.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Major lab</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching Philosophy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../teaching/labs/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Lab Help</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section: Lab Help">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/01-uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measurement Uncertainty</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/02-lab-report-format.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How a Lab Gets Turned In</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../teaching/labs/lab-guides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Lab Guides</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section: Lab Guides">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/04-friction-flat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Friction on a Flat Surface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/05-friction-incline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Friction on an Incline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/06-spring-constant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6: The Spring Constant, Two Ways</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/07-impulse-momentum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7: Impulse and Momentum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/08-torque-rotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 8: Balanced and Unbalanced Torque</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/09-rotational-dynamics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 9: Rotational Dynamics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../teaching/python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Python from Scratch</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section: Python from Scratch">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/00-what-is-a-programming-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What Is a Programming Language?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/01-how-computers-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How Computers Actually Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/02-choosing-a-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing a Programming Language</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/03-python-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1: Python Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Mathematics</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Physics Problems</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
+  <li><a href="#the-setup" id="toc-the-setup" class="nav-link" data-scroll-target="#the-setup">The setup</a></li>
+  <li><a href="#a-setup" id="toc-a-setup" class="nav-link" data-scroll-target="#a-setup">09A Setup</a>
+  <ul class="collapse">
+  <li><a href="#theory-board-1-torque-and-rotational-acceleration" id="toc-theory-board-1-torque-and-rotational-acceleration" class="nav-link" data-scroll-target="#theory-board-1-torque-and-rotational-acceleration">Theory board 1: torque and rotational acceleration</a></li>
+  <li><a href="#theory-board-2-what-is-inside-i_tot" id="toc-theory-board-2-what-is-inside-i_tot" class="nav-link" data-scroll-target="#theory-board-2-what-is-inside-i_tot">Theory board 2: what is inside <span class="math inline">\(I_{TOT}\)</span></a></li>
+  <li><a href="#the-qpd-board" id="toc-the-qpd-board" class="nav-link" data-scroll-target="#the-qpd-board">The QPD board</a></li>
+  <li><a href="#the-annotated-setup-photo" id="toc-the-annotated-setup-photo" class="nav-link" data-scroll-target="#the-annotated-setup-photo">The annotated setup photo</a></li>
+  <li><a href="#the-graphical-analysis-screenshot" id="toc-the-graphical-analysis-screenshot" class="nav-link" data-scroll-target="#the-graphical-analysis-screenshot">The Graphical Analysis screenshot</a></li>
+  </ul></li>
+  <li><a href="#b-performance" id="toc-b-performance" class="nav-link" data-scroll-target="#b-performance">09B Performance</a>
+  <ul class="collapse">
+  <li><a href="#in-excel" id="toc-in-excel" class="nav-link" data-scroll-target="#in-excel">In Excel</a></li>
+  <li><a href="#on-the-uda-board" id="toc-on-the-uda-board" class="nav-link" data-scroll-target="#on-the-uda-board">On the UDA board</a></li>
+  <li><a href="#check-your-torques" id="toc-check-your-torques" class="nav-link" data-scroll-target="#check-your-torques">Check your torques</a></li>
+  <li><a href="#the-two-graphs" id="toc-the-two-graphs" class="nav-link" data-scroll-target="#the-two-graphs">The two graphs</a></li>
+  </ul></li>
+  <li><a href="#con" id="toc-con" class="nav-link" data-scroll-target="#con">CON</a></li>
+  <li><a href="#common-slips" id="toc-common-slips" class="nav-link" data-scroll-target="#common-slips">Common slips</a></li>
+  <li><a href="#going-deeper" id="toc-going-deeper" class="nav-link" data-scroll-target="#going-deeper">Going deeper</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content" tabindex="-1">
+
+
+
+
+
+
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Major lab.</strong> Every student turns in all three parts, and your grade depends on your partners’ boards as much as your own. Check all three before any of them is photographed.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-caution">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This page was written from the 2026 Lab 9 templates and the setup used in class this year. If the handout or your TA says something different, the handout and your TA win.</p>
+</div>
+</div>
+</div>
+<section id="at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
+<p>Lab 9 runs over two class periods, with one report for each.</p>
+<ul>
+<li><strong>09A Setup (first class).</strong> Two theory boards with the derivation, one QPD board, an annotated photo of the setup, and a screenshot of one trial in Graphical Analysis.</li>
+<li><strong>09B Performance (second class).</strong> The Excel data table, a UDA board with the sample calculations, two graphs, and the CON paragraph.</li>
+<li><strong>Question.</strong> How does the rotational inertia of the spinning T-bar depend on the mass added to it (odd groups) or on how far that mass sits from the axle (even groups)?</li>
+<li><strong>You measure.</strong> For each of 15 trials, the string tension <span class="math inline">\(F_T\)</span> and the rotational acceleration <span class="math inline">\(\alpha\)</span>, both read in Graphical Analysis. Also the hub radius <span class="math inline">\(r_h\)</span>, the hanging mass <span class="math inline">\(m_H\)</span>, the mass of one added piece <span class="math inline">\(M_T\)</span>, and its distance <span class="math inline">\(R_T\)</span> from the axle.</li>
+<li><strong>You calculate.</strong> The torque <span class="math inline">\(\tau_T = r_h F_T\)</span> for every trial, then one rotational inertia <span class="math inline">\(I_{TOT}\)</span> for each of the five settings, from a slope.</li>
+<li><strong>You graph.</strong> Graph 1: torque against rotational acceleration, five data sets, one per setting. Graph 2: <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(M_T\)</span> (odd groups) or against <span class="math inline">\(R_T^2\)</span> (even groups).</li>
+<li><strong>You conclude.</strong> One paragraph: the relationship, its equation with units, one constant from the slope with a percent difference, and the T-bar’s own inertia from the intercept compared with last week’s.</li>
+</ul>
+</section>
+<section id="the-setup" class="level2">
+<h2 class="anchored" data-anchor-id="the-setup">The setup</h2>
+<p>A vertical rod is clamped to the table. The T-bar crossbar sits on top of the rod, and one added piece of mass <span class="math inline">\(M_T\)</span> sits under each end, both at the same distance <span class="math inline">\(R_T\)</span> from the axle. At the bottom of the rod is a small hub with radius <span class="math inline">\(r_h = 0.0210 \pm 0.0001\ \text{m}\)</span>. A string wraps around the hub, leaves it horizontally, runs over a pulley at the table edge, and drops to a hanging mass. Let go, the mass falls, the string unwinds, and the T-bar spins faster and faster.</p>
+<p>Two sensors do the measuring.</p>
+<ul>
+<li><strong>The tension sensor</strong> is a force sensor that falls with the hanging mass. It hangs <strong>upside down</strong>: its hook is tied to the string, and the slotted masses hang from its body. So it reads the whole pull of the string. Because it falls too, it is part of the hanging mass <span class="math inline">\(m_H\)</span>.</li>
+<li><strong>The rotation sensor</strong> is a second force sensor taped flat on top of the T-bar, with its power cord plugged in. It turns with the bar and gives the angular velocity <span class="math inline">\(\omega\)</span> in Graphical Analysis. Because it turns with the bar, it is part of what you are measuring this week.</li>
+</ul>
+</section>
+<section id="a-setup" class="level2">
+<h2 class="anchored" data-anchor-id="a-setup">09A Setup</h2>
+<section id="theory-board-1-torque-and-rotational-acceleration" class="level3">
+<h3 class="anchored" data-anchor-id="theory-board-1-torque-and-rotational-acceleration">Theory board 1: torque and rotational acceleration</h3>
+<p>Everything you know about straight-line motion has a partner for spinning motion. Position <span class="math inline">\(x\)</span> becomes the angle <span class="math inline">\(\theta\)</span>, velocity <span class="math inline">\(v\)</span> becomes the angular velocity <span class="math inline">\(\omega\)</span>, and acceleration <span class="math inline">\(a\)</span> becomes the rotational acceleration <span class="math inline">\(\alpha\)</span>. A force <span class="math inline">\(F\)</span> becomes a torque <span class="math inline">\(\tau\)</span>, a twist. Mass <span class="math inline">\(m\)</span>, how hard something is to speed up, becomes the rotational inertia <span class="math inline">\(I\)</span>, how hard something is to spin up. And Newton’s second law, <span class="math inline">\(F = ma\)</span>, becomes <span class="math inline">\(\tau = I\alpha\)</span>. That last line is the whole lab.</p>
+<p>Two objects move, the hanging mass and the T-bar, so the board needs two free-body diagrams and two Newton’s laws.</p>
+<p><strong>The hanging mass.</strong> Two forces act on it: its weight <span class="math inline">\(m_H g\)</span> pulling down, and the string tension <span class="math inline">\(F_T\)</span> pulling up. Take down as positive, since that is the way it speeds up:</p>
+<p><span class="math display">\[m_H g - F_T = m_H a.\]</span></p>
+<p><strong>The T-bar.</strong> A torque is a force times its lever arm, the distance from the axle to the line the force acts along, measured at right angles. The string leaves the hub along a tangent, so that line is one hub radius from the axle, and the lever arm is <span class="math inline">\(r_h\)</span>:</p>
+<p><span class="math display">\[\tau_T = r_h F_T.\]</span></p>
+<p>Newton’s second law for rotation, with friction left out for now:</p>
+<p><span class="math display">\[\tau_T = I_{TOT}\,\alpha.\]</span></p>
+<p>Here <span class="math inline">\(I_{TOT}\)</span> is the rotational inertia of everything that spins: the T-bar, the rod, the hub, the rotation sensor and the two added pieces.</p>
+<p><strong>What to graph.</strong> Write every fit as <span class="math inline">\(y = Ax + B\)</span>, with <span class="math inline">\(A\)</span> the slope and <span class="math inline">\(B\)</span> the intercept. The last equation says to put <span class="math inline">\(y = \tau_T\)</span> and <span class="math inline">\(x = \alpha\)</span>. Then the slope is <span class="math inline">\(A = I_{TOT}\)</span>, and with no friction the line goes through the origin. What if the axle has some friction? Friction works against the spin, so the string has to supply a little extra torque before the bar speeds up at all:</p>
+<p><span class="math display">\[\tau_T = I_{TOT}\,\alpha + \tau_f.\]</span></p>
+<p>The line moves up. The intercept <span class="math inline">\(B = \tau_f\)</span> is the friction torque, and it is <strong>positive</strong>. The slope is still <span class="math inline">\(I_{TOT}\)</span>. This is why each setting uses three hanging masses and a slope, not one mass and a division: the slope sets the friction aside for you.</p>
+<p><strong>Why the tension is not the weight.</strong> The string does not slip on the hub, so the mass falls exactly as fast as the edge of the hub moves, <span class="math inline">\(a = r_h\alpha\)</span>. Put that into the hanging-mass equation and solve for the tension:</p>
+<p><span class="math display">\[F_T = m_H\,(g - r_h\alpha).\]</span></p>
+<p>While the mass falls, the tension is a little <strong>less</strong> than its weight. If the string pulled with the full weight, the mass would not speed up at all. That is why the lab measures <span class="math inline">\(F_T\)</span> with a sensor instead of using <span class="math inline">\(m_H g\)</span>.</p>
+</section>
+<section id="theory-board-2-what-is-inside-i_tot" class="level3">
+<h3 class="anchored" data-anchor-id="theory-board-2-what-is-inside-i_tot">Theory board 2: what is inside <span class="math inline">\(I_{TOT}\)</span></h3>
+<p>Rotational inertias add. A small mass <span class="math inline">\(m\)</span> at a distance <span class="math inline">\(R\)</span> from the axle adds <span class="math inline">\(mR^2\)</span>, so the same mass counts four times as much at twice the distance. So the T-bar with the masses at the ends is much harder to spin up than with the same masses near the axle. Treat each added piece as a point. Two pieces, each of mass <span class="math inline">\(M_T\)</span>, each at <span class="math inline">\(R_T\)</span>:</p>
+<p><span class="math display">\[I_{TOT} = I_0 + 2 M_T R_T^2.\]</span></p>
+<p>Here <span class="math inline">\(I_0\)</span> is the rotational inertia of the T-bar with nothing added, <span class="math inline">\(M_T\)</span> is the mass of <strong>one</strong> piece, and the 2 counts the pieces.</p>
+<p>Your group changes one thing and holds the other fixed.</p>
+<ul>
+<li><strong>Odd groups</strong> change <span class="math inline">\(M_T\)</span> and hold <span class="math inline">\(R_T\)</span> fixed. The equation is already a straight line in <span class="math inline">\(M_T\)</span>. Graph <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(M_T\)</span>. The slope is <span class="math inline">\(A = 2R_T^2\)</span>, so the experimental distance is <span class="math inline">\(R_{T,\text{exp}} = \sqrt{A/2}\)</span>. The intercept is <span class="math inline">\(B = I_0\)</span>.</li>
+<li><strong>Even groups</strong> change <span class="math inline">\(R_T\)</span> and hold <span class="math inline">\(M_T\)</span> at 100 g or 200 g. Graphed against <span class="math inline">\(R_T\)</span>, the points curve upward, because <span class="math inline">\(R_T\)</span> is squared. To straighten the graph, plot against <span class="math inline">\(R_T^2\)</span> instead. The slope is <span class="math inline">\(A = 2M_T\)</span>, so the experimental mass is <span class="math inline">\(M_{T,\text{exp}} = A/2\)</span>. The intercept is <span class="math inline">\(B = I_0\)</span>.</li>
+</ul>
+<p>The settings are <span class="math inline">\(R_T\)</span> of 5, 10, 15, 20, 25 or 35 cm and <span class="math inline">\(M_T\)</span> from 50 to 300 g, and your group uses five of them. Convert centimeters to meters and grams to kilograms <strong>before</strong> you square anything.</p>
+<p><strong>Units.</strong> Torque is in m·N. The template writes it in that order so nobody mistakes it for joules, which are also a newton times a meter. Rotational acceleration is in rad/s², and a radian has no unit of its own. So the slope of graph 1 has units of m·N divided by 1/s², which works out to kg·m², the unit of a rotational inertia. The slope of graph 2 is in m² for odd groups and kg for even groups.</p>
+</section>
+<section id="the-qpd-board" class="level3">
+<h3 class="anchored" data-anchor-id="the-qpd-board">The QPD board</h3>
+<p><strong>The question.</strong> The 09A report asks for one question. Pick the one for your group:</p>
+<blockquote class="blockquote">
+<p>Odd groups: What is the relationship between the total rotational inertia of the T-bar (<span class="math inline">\(I_{TOT}\)</span>) and the mass of each added piece (<span class="math inline">\(M_T\)</span>)?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Even groups: What is the relationship between the total rotational inertia of the T-bar (<span class="math inline">\(I_{TOT}\)</span>) and the distance of the added pieces from the axle (<span class="math inline">\(R_T\)</span>)?</p>
+</blockquote>
+<p>The torque against rotational acceleration graph is not a second question. It is the step that turns each setting into one value of <span class="math inline">\(I_{TOT}\)</span>.</p>
+<p><strong>The procedure, in two parts.</strong> The report template asks for two parts and wants them kept apart. This is the usual way they split. Where the handout or your TA says otherwise, they win.</p>
+<ol type="1">
+<li><strong>Part 1: one value of <span class="math inline">\(I_{TOT}\)</span> for one setting of the T-bar.</strong> For each of three hanging masses, wind the string, start collecting, let go, and read the average <span class="math inline">\(F_T\)</span> and the slope <span class="math inline">\(\alpha\)</span> from the fall only. The slope of <span class="math inline">\(\tau_T\)</span> against <span class="math inline">\(\alpha\)</span> for those three trials is <span class="math inline">\(I_{TOT}\)</span>.</li>
+<li><strong>Part 2: repeat Part 1 for five settings</strong> of your group’s variable. Five settings of three trials each is 15 trials.</li>
+</ol>
+<p>What the board should list:</p>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Quantity</th>
+<th>How it is measured</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(r_h\)</span></td>
+<td>radius of the hub the string wraps around</td>
+<td>given, <span class="math inline">\(0.0210 \pm 0.0001\)</span></td>
+<td>m</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(m_H\)</span></td>
+<td>slotted masses <strong>plus</strong> the tension sensor</td>
+<td>balance, weighed together as they hang</td>
+<td>kg</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(M_T\)</span></td>
+<td>mass of <strong>one</strong> added piece</td>
+<td>balance</td>
+<td>kg</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(R_T\)</span></td>
+<td>centre of the axle to the centre of each piece</td>
+<td>ruler</td>
+<td>m</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(F_T\)</span></td>
+<td>string tension during the fall</td>
+<td>tension sensor, average in Graphical Analysis</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\alpha\)</span></td>
+<td>rotational acceleration during the fall</td>
+<td>rotation sensor, slope of <span class="math inline">\(\omega\)</span> in Graphical Analysis</td>
+<td>rad/s²</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Check the tension sensor before the first run.</strong> Hold the T-bar still with the mass hanging. The sensor should read about <span class="math inline">\(m_H g\)</span>, with the sensor counted in <span class="math inline">\(m_H\)</span>. If it reads close to zero, it was zeroed with the mass hanging. Zero it upside down with nothing on the hook.</p>
+</section>
+<section id="the-annotated-setup-photo" class="level3">
+<h3 class="anchored" data-anchor-id="the-annotated-setup-photo">The annotated setup photo</h3>
+<p>Six labels: <span class="math inline">\(r_h\)</span>, <span class="math inline">\(R_T\)</span>, <span class="math inline">\(m_H\)</span>, <span class="math inline">\(M_T\)</span>, the force sensor that reads the tension, and the rotational motion sensor (the one taped on the T-bar).</p>
+</section>
+<section id="the-graphical-analysis-screenshot" class="level3">
+<h3 class="anchored" data-anchor-id="the-graphical-analysis-screenshot">The Graphical Analysis screenshot</h3>
+<p>The report wants one trial worked in the software.</p>
+<ol type="1">
+<li>Select only the fall: after you let go, and before the mass lands or the string runs out and starts to wind back up.</li>
+<li>Use the <strong>same</strong> time window on both graphs.</li>
+<li>Force graph: Statistics on the selection gives the average <span class="math inline">\(F_T\)</span>. Leave out the spike when the string goes tight.</li>
+<li>Angular velocity graph: a linear fit over the same window. Its slope is <span class="math inline">\(\alpha\)</span>.</li>
+<li>Check that the angle is in radians, not degrees or rotations.</li>
+<li>The sign of <span class="math inline">\(\alpha\)</span> depends on which way the bar spins. Use its size, and take <span class="math inline">\(F_T\)</span> as positive too, so <span class="math inline">\(\tau_T\)</span> and <span class="math inline">\(\alpha\)</span> always have the same sign.</li>
+</ol>
+</section>
+</section>
+<section id="b-performance" class="level2">
+<h2 class="anchored" data-anchor-id="b-performance">09B Performance</h2>
+<section id="in-excel" class="level3">
+<h3 class="anchored" data-anchor-id="in-excel">In Excel</h3>
+<p>The template has the hub radius already typed in as a constant, <span class="math inline">\(r_h = 0.021\ \text{m}\)</span>, with a note that you may change the constants. Record the two constants your group does not change (<span class="math inline">\(R_T\)</span> for odd groups, <span class="math inline">\(M_T\)</span> for even groups) next to it. The 15 trials sit in five blocks of three rows, one block per setting.</p>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>What goes in it</th>
+<th>Unit</th>
+<th>Sample calculation on the board</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B, <span class="math inline">\(m_H\)</span></td>
+<td>hanging mass, sensor included</td>
+<td>kg</td>
+<td>no</td>
+</tr>
+<tr class="even">
+<td>C, <span class="math inline">\(F_T\)</span></td>
+<td>average tension from Graphical Analysis</td>
+<td>N</td>
+<td>no</td>
+</tr>
+<tr class="odd">
+<td>D, “a”</td>
+<td>the rotational acceleration <span class="math inline">\(\alpha\)</span>, not the linear acceleration of the mass</td>
+<td>rad/s²</td>
+<td>no</td>
+</tr>
+<tr class="even">
+<td>E, <span class="math inline">\(\tau_T\)</span></td>
+<td><span class="math inline">\(F_T \times r_h\)</span></td>
+<td>m·N</td>
+<td>yes, for each trial</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>your group’s variable, <span class="math inline">\(M_T\)</span> or <span class="math inline">\(R_T\)</span></td>
+<td>kg or m</td>
+<td>no</td>
+</tr>
+<tr class="even">
+<td>G (even groups)</td>
+<td><span class="math inline">\(R_T^2\)</span></td>
+<td>m²</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>H, <span class="math inline">\(I_{TOT}\)</span></td>
+<td>slope of <span class="math inline">\(\tau_T\)</span> against <span class="math inline">\(\alpha\)</span> for each block of three</td>
+<td>kg·m²</td>
+<td>no, it is a slope</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Some things about this sheet that are not obvious from looking at it:</p>
+<ul>
+<li><strong>Only the first torque cell has a formula.</strong> E8 holds <code>=C8*$G$3</code>. Fill it down through all 15 rows.</li>
+<li><strong>Column G is blank.</strong> It is an empty merged block with no header. Even groups type a header and a formula for <span class="math inline">\(R_T^2\)</span>, such as <code>=F8^2</code>, and fill it down.</li>
+<li><strong>The order inside <code>SLOPE</code>.</strong> Excel’s <code>SLOPE</code> takes the <span class="math inline">\(y\)</span> column first: <code>=SLOPE(torque cells, alpha cells)</code>, as H8 already does. Swapped, it gives <span class="math inline">\(1/I\)</span>.</li>
+<li><strong>The chart is already there.</strong> The template’s chart plots the five blocks as five data sets of torque against rotational acceleration. Add a linear trendline with its equation to each.</li>
+</ul>
+</section>
+<section id="on-the-uda-board" class="level3">
+<h3 class="anchored" data-anchor-id="on-the-uda-board">On the UDA board</h3>
+<p>The 09B report asks for these, on the board:</p>
+<ul>
+<li>the torque calculation, <span class="math inline">\(\tau_T = r_h F_T\)</span>, for each of the 15 trials</li>
+<li><span class="math inline">\(R_T^2\)</span>, one sample, if you are an even group</li>
+<li>the constant from the slope of graph 2, <span class="math inline">\(R_{T,\text{exp}}\)</span> or <span class="math inline">\(M_{T,\text{exp}}\)</span></li>
+<li>the T-bar’s own inertia <span class="math inline">\(I_0\)</span>, read from the intercept of graph 2</li>
+</ul>
+<p>Invented numbers, for an even group with <span class="math inline">\(M_T = 0.100\ \text{kg}\)</span>. One trial with the 0.19 kg hanging mass at <span class="math inline">\(R_T = 15\ \text{cm}\)</span>:</p>
+<p><span class="math display">\[\tau_T = r_h F_T = (0.021\ \text{m})(1.853\ \text{N}) = 0.0389\ \text{m·N}, \qquad R_T^2 = (0.15\ \text{m})^2 = 0.0225\ \text{m}^2.\]</span></p>
+<p>If graph 2 gives a slope of <span class="math inline">\(A = 0.206\ \text{kg}\)</span> and an intercept of <span class="math inline">\(B = 0.0112\ \text{kg·m}^2\)</span>:</p>
+<p><span class="math display">\[M_{T,\text{exp}} = \frac{A}{2} = \frac{0.206\ \text{kg}}{2} = 0.103\ \text{kg}, \qquad I_0 = B = 0.0112\ \text{kg·m}^2.\]</span></p>
+<p>For an odd group at <span class="math inline">\(R_T = 0.25\ \text{m}\)</span>, a slope of <span class="math inline">\(A = 0.127\ \text{m}^2\)</span> gives <span class="math inline">\(R_{T,\text{exp}} = \sqrt{0.127/2}\ \text{m} = 0.252\ \text{m}\)</span>.</p>
+</section>
+<section id="check-your-torques" class="level3">
+<h3 class="anchored" data-anchor-id="check-your-torques">Check your torques</h3>
+<p>The tension is a little less than <span class="math inline">\(m_H g\)</span>, so every torque must come out a little <strong>under</strong> <span class="math inline">\(m_H g\,r_h\)</span>. With <span class="math inline">\(g = 9.81\ \text{m/s}^2\)</span> and <span class="math inline">\(r_h = 0.021\ \text{m}\)</span>:</p>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(m_H\)</span> (kg)</th>
+<th><span class="math inline">\(m_H g\)</span> (N)</th>
+<th><span class="math inline">\(m_H g\,r_h\)</span> (m·N)</th>
+<th>largest shortfall</th>
+<th>bare T-bar <span class="math inline">\(\alpha\)</span> (rad/s²)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.19</td>
+<td>1.864</td>
+<td>0.0391</td>
+<td>0.8%</td>
+<td>3.9</td>
+</tr>
+<tr class="even">
+<td>0.29</td>
+<td>2.845</td>
+<td>0.0597</td>
+<td>1.3%</td>
+<td>5.9</td>
+</tr>
+<tr class="odd">
+<td>0.59</td>
+<td>5.788</td>
+<td>0.1215</td>
+<td>2.5%</td>
+<td>11.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The last two columns use last week’s <span class="math inline">\(I_0 = 0.010\ \text{kg·m}^2\)</span>. With nothing added to the bar, the rotational acceleration should come out near the last column. Added pieces make <span class="math inline">\(I_{TOT}\)</span> larger, so <span class="math inline">\(\alpha\)</span> gets smaller and the torque sits even closer to <span class="math inline">\(m_H g\,r_h\)</span>. A torque well under these numbers points to a sensor zeroed with the mass hanging, or to <span class="math inline">\(r_h\)</span> in the wrong unit. A torque about twice as large means <span class="math inline">\(r_h\)</span> went in as a diameter.</p>
+</section>
+<section id="the-two-graphs" class="level3">
+<h3 class="anchored" data-anchor-id="the-two-graphs">The two graphs</h3>
+<p>Axes labelled with units on both.</p>
+<ol type="1">
+<li><strong>Torque against rotational acceleration.</strong> <span class="math inline">\(\tau_T\)</span> in m·N up the side, <span class="math inline">\(\alpha\)</span> in rad/s² along the bottom, five data sets, each with its own linear trendline and equation. Each slope is the <span class="math inline">\(I_{TOT}\)</span> for one setting. Each intercept is a small positive friction torque.</li>
+<li><strong><span class="math inline">\(I_{TOT}\)</span> against your group’s variable.</strong> Odd groups: <span class="math inline">\(I_{TOT}\)</span> in kg·m² against <span class="math inline">\(M_T\)</span> in kg, slope in m². Even groups: <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(R_T^2\)</span> in m², slope in kg. One linear trendline with its equation. The intercept is <span class="math inline">\(I_0\)</span>.</li>
+</ol>
+</section>
+</section>
+<section id="con" class="level2">
+<h2 class="anchored" data-anchor-id="con">CON</h2>
+<p>One paragraph, with the four items from the 09B report in order. Write the equation with the physical symbols, not <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Numbers invented, for the even group above.</p>
+<ol type="1">
+<li><strong>(a) The relationship between your graphed quantities, in words.</strong> → “The relationship between the total rotational inertia of the T-bar and the square of the distance of the added pieces from the axle is linear.”</li>
+<li><strong>(b) The equation, with the real symbols and units on the slope and intercept.</strong> → “The trendline was <span class="math inline">\(I_{TOT} = (0.206\ \text{kg})\,R_T^2 + 0.0112\ \text{kg·m}^2\)</span>.”</li>
+<li><strong>(c) One constant from the slope, compared with its measured value as a percent difference.</strong> → “Half the slope gives a mass of <span class="math inline">\(M_{T,\text{exp}} = 0.103\ \text{kg}\)</span> for each piece, against <span class="math inline">\(0.100\ \text{kg}\)</span> on the balance, a percent difference of <span class="math inline">\((0.103 - 0.100)/0.100 = 3.0\%\)</span>.” An odd group does the same with <span class="math inline">\(R_{T,\text{exp}} = \sqrt{A/2}\)</span> against the ruler.</li>
+<li><strong>(d) Your T-bar-only inertia, compared with last week’s <span class="math inline">\(I_0\)</span>.</strong> → “The intercept gives <span class="math inline">\(I_0 = 0.0112\ \text{kg·m}^2\)</span> for the T-bar alone, <span class="math inline">\(12\%\)</span> above last week’s <span class="math inline">\(0.010\ \text{kg·m}^2\)</span>. This week the rotation sensor was taped on the T-bar, so it spun with it and added its own rotational inertia to the intercept.”</li>
+</ol>
+<p>For (d), your TA will say whether “last week’s <span class="math inline">\(I_0\)</span>” means your group’s own Lab 8 value or the class value. The value on the board this week is <span class="math inline">\(0.010 \pm 0.002\ \text{kg·m}^2\)</span>. Expect your intercept to come out <strong>above</strong> last week’s, because the rotation sensor was not on the T-bar in Lab 8. Name the sensor as the reason.</p>
+</section>
+<section id="common-slips" class="level2">
+<h2 class="anchored" data-anchor-id="common-slips">Common slips</h2>
+<ul>
+<li><span class="math inline">\(m_H\)</span> without the tension sensor. The sensor falls with the mass, so it belongs in <span class="math inline">\(m_H\)</span>.</li>
+<li>A tension sensor zeroed with the mass hanging. It then reads close to zero with the bar held still.</li>
+<li><span class="math inline">\(M_T\)</span> as the total of both pieces. <span class="math inline">\(M_T\)</span> is <strong>one</strong> piece, and the 2 in <span class="math inline">\(2M_T R_T^2\)</span> counts the pieces. Typing in the total and then halving the slope lands 50% off.</li>
+<li>Squaring before converting. 15 cm squared is 225 cm², which is 0.0225 m², not 225.</li>
+<li><span class="math inline">\(R_T\)</span> measured to the edge of a piece instead of its centre.</li>
+<li><span class="math inline">\(r_h\)</span> as a diameter, or in centimeters.</li>
+<li><span class="math inline">\(\alpha\)</span> in degrees or rotations instead of radians.</li>
+<li>Different time windows on the force graph and the angular velocity graph, or a window that includes the release, the landing or the string winding back up.</li>
+<li><code>SLOPE</code> with the columns swapped, which gives <span class="math inline">\(1/I\)</span>.</li>
+<li>A negative friction intercept on the board. Friction opposes the spin, so the string has to supply extra torque, and <span class="math inline">\(\tau_f\)</span> is added.</li>
+<li>A hanging mass too small lets friction take a large share of the torque, and the points scatter. A hanging mass too large makes the fall so short there is little to fit.</li>
+<li>The rotation sensor’s power cord dragging or winding up during a run. That adds friction and scatter.</li>
+</ul>
+</section>
+<section id="going-deeper" class="level2">
+<h2 class="anchored" data-anchor-id="going-deeper">Going deeper</h2>
+<p><strong>Why a figure skater spins faster with her arms in.</strong> A skater pulling her arms in moves mass closer to the axle. Since every bit of mass counts as <span class="math inline">\(mR^2\)</span>, pulling it in shrinks her rotational inertia a lot, and she spins faster to make up for it. The T-bar is the same idea run the other way: move the pieces out from 10 cm to 20 cm and they count four times as much.</p>
+<p><strong>How much less than the weight is the tension?</strong> From board 1, the tension falls short of the weight by <span class="math inline">\(m_H r_h\alpha\)</span>, which is the fraction <span class="math inline">\(r_h\alpha/g\)</span> of the weight. At <span class="math inline">\(\alpha = 3.11\ \text{rad/s}^2\)</span>, <span class="math inline">\(r_h\alpha = (0.021\ \text{m})(3.11\ \text{rad/s}^2) = 0.065\ \text{m/s}^2\)</span>, about 0.7% of <span class="math inline">\(g\)</span>. Small, but it is the reason the lab measures the tension instead of assuming it.</p>
+<p><strong>Why the intercept of graph 2 comes out high.</strong> Two things push it up. The rotation sensor spins with the bar this week, and it adds about <span class="math inline">\(m_s d^2\)</span>, its mass times the square of its distance from the axle, plus its own small inertia. And the added pieces are not points. By the parallel-axis theorem, each piece also carries its own inertia about its centre, <span class="math inline">\(I_{cm}\)</span>, so two pieces add <span class="math inline">\(2I_{cm}\)</span>. For even groups that extra does not change as <span class="math inline">\(R_T\)</span> changes, so it lands in the intercept. For odd groups adding more of the same piece, it grows with the mass and nudges the slope up a little.</p>
+<p><strong>Which settings give the cleanest line.</strong> The 5 cm setting with 100 g pieces adds only <span class="math inline">\(2(0.100)(0.05)^2 = 0.0005\ \text{kg·m}^2\)</span>, less than the <span class="math inline">\(\pm 0.002\)</span> on last week’s <span class="math inline">\(I_0\)</span>, so that point mostly measures <span class="math inline">\(I_0\)</span>. For odd groups, a large <span class="math inline">\(R_T\)</span> gives a much larger change: from 50 g to 300 g at 25 cm, <span class="math inline">\(I_{TOT}\)</span> grows by <span class="math inline">\(2(0.250)(0.25)^2 = 0.031\ \text{kg·m}^2\)</span>. The slowest case is 300 g pieces at 35 cm with the 0.19 kg hanging mass, where <span class="math inline">\(\alpha\)</span> is only about 0.47 rad/s². Friction matters most there, and the fall has to last long enough to fit.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<!-- "Wider spacing" toggle, added to the navbar next to Quarto's dark-mode
+     toggle on every page (Quarto renders that button twice, once for wide
+     screens and once for the collapsed menu, so this adds one beside each).
+     Sets data-sx-spacing="wide" on <html> and remembers the choice in
+     localStorage; assets/spacing-head.html re-applies it before paint on the
+     next page, and styles.css section 18 does the spacing. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    if (document.querySelector('.sx-spacing-toggle')) return;
+    var darks = document.querySelectorAll('.quarto-color-scheme-toggle');
+    if (!darks.length) return;
+    var root = document.documentElement;
+    var on = root.getAttribute('data-sx-spacing') === 'wide';
+    var links = [];
+
+    function apply() {
+      if (on) root.setAttribute('data-sx-spacing', 'wide');
+      else root.removeAttribute('data-sx-spacing');
+      links.forEach(function (l) { l.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      try { localStorage.setItem('sx-spacing', on ? 'wide' : 'normal'); } catch (e) {}
+    }
+
+    Array.prototype.forEach.call(darks, function (dark) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.className = (dark.className || '').replace('quarto-color-scheme-toggle', '').trim() + ' sx-spacing-toggle';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-pressed', on ? 'true' : 'false');
+      link.setAttribute('aria-label', 'Wider letter spacing for easier reading');
+      link.title = 'Wider spacing';
+      link.innerHTML = '<i class="bi bi-fonts" aria-hidden="true"></i>';
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        on = !on;
+        apply();
+      });
+      // Mirror the dark toggle's wrapper when it has one, so the two sit side by side.
+      var wrapper = dark.parentElement;
+      if (wrapper && wrapper.tagName === 'LI') {
+        var li = document.createElement('li');
+        li.className = wrapper.className;
+        li.appendChild(link);
+        wrapper.parentElement.insertBefore(li, wrapper);
+      } else {
+        wrapper.insertBefore(link, dark);
+      }
+      links.push(link);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<!-- Decision wizard for the Lab Help pages.
+
+     A `.sx-wizard` fenced div holds one `.sx-wizard__step` div per question
+     or answer. Buttons with `data-next="<step id>"` move between them, and a
+     button that points back at the first step starts a fresh run. This script
+     shows one step at a time, keeps a trail of the answers chosen so far (each
+     chip goes back to the question it answered), adds Back and Start-over
+     links, and opens a step directly when the page is loaded with that step's
+     id in the URL hash or when an in-page link points at it.
+
+     Without the script every step is visible in order, so the page still
+     reads as a plain guide, and the same happens in print.
+
+     Included after the body by teaching/labs/_metadata.yml. The matching
+     styles are in styles.css, section 16. The authoring pattern is in
+     teaching/labs/01-uncertainty.qmd. -->
+<script>
+(function () {
+  'use strict';
+
+  function setUp(wizard) {
+    var steps = Array.prototype.slice.call(wizard.querySelectorAll('.sx-wizard__step'));
+    if (!steps.length) return;
+
+    var byId = {};
+    steps.forEach(function (step) { byId[step.id] = step; });
+    var first = steps[0];
+    var current = first;
+    // One entry per answer given: the step it was given on, and the chip text.
+    var trail = [];
+
+    var trailBar = document.createElement('nav');
+    trailBar.className = 'sx-wizard__trail';
+    trailBar.setAttribute('aria-label', 'Answers so far');
+    wizard.insertBefore(trailBar, first);
+
+    function makeButton(className, text, onClick) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = className;
+      button.textContent = text;
+      button.addEventListener('click', onClick);
+      return button;
+    }
+
+    function restart() {
+      trail = [];
+      show(first, true);
+    }
+
+    function goBack() {
+      var last = trail.pop();
+      show(last ? byId[last.from] : first, true);
+    }
+
+    function renderTrail() {
+      trailBar.innerHTML = '';
+      if (!trail.length) return;
+      trail.forEach(function (entry, index) {
+        if (index) {
+          var sep = document.createElement('span');
+          sep.className = 'sx-wizard__sep';
+          sep.setAttribute('aria-hidden', 'true');
+          sep.textContent = '›';
+          trailBar.appendChild(sep);
+        }
+        trailBar.appendChild(makeButton('sx-wizard__crumb', entry.label, function () {
+          trail = trail.slice(0, index);
+          show(byId[entry.from], true);
+        }));
+      });
+      trailBar.appendChild(makeButton('sx-wizard__reset', 'Start over', restart));
+    }
+
+    function renderNav(step) {
+      Array.prototype.forEach.call(wizard.querySelectorAll('.sx-wizard__nav'), function (old) {
+        old.remove();
+      });
+      if (step === first || !trail.length) return;
+      var nav = document.createElement('p');
+      nav.className = 'sx-wizard__nav';
+      nav.appendChild(makeButton('', '← Back', goBack));
+      nav.appendChild(makeButton('', 'Start over', restart));
+      step.appendChild(nav);
+    }
+
+    function show(step, moveFocus) {
+      current = step;
+      steps.forEach(function (s) { s.classList.toggle('is-active', s === step); });
+      renderTrail();
+      renderNav(step);
+      if (!moveFocus) return;
+      step.setAttribute('tabindex', '-1');
+      step.focus({ preventScroll: true });
+      // After a click near the bottom of a long step the new step can start
+      // above the viewport; bring the card back into view when that happens.
+      if (wizard.getBoundingClientRect().top < 0) {
+        wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    wizard.addEventListener('click', function (event) {
+      var button = event.target.closest('.sx-wizard__btn');
+      if (!button || !wizard.contains(button)) return;
+      var next = byId[button.getAttribute('data-next')];
+      if (!next) return;
+      if (next === first) {
+        trail = [];
+      } else {
+        var title = button.querySelector('.sx-wizard__btn-title');
+        var label = button.getAttribute('data-label') || (title || button).textContent.trim();
+        trail.push({ from: current.id, label: label });
+      }
+      show(next, true);
+    });
+
+    // Deep links: a URL ending in #<step id>, or an in-page link to one. The
+    // browser cannot scroll to a hidden step, so open it and scroll ourselves.
+    function openFromHash(hash) {
+      var step = hash && byId[hash.replace(/^#/, '')];
+      if (!step) return false;
+      trail = [];
+      show(step, true);
+      wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return true;
+    }
+    window.addEventListener('hashchange', function () { openFromHash(location.hash); });
+
+    wizard.classList.add('is-ready');
+    if (!openFromHash(location.hash)) show(first, false);
+  }
+
+  function run() {
+    Array.prototype.forEach.call(document.querySelectorAll('.sx-wizard'), setUp);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
+<!-- Tickable checklists for the Lab Help pages.
+
+     Pandoc renders a Markdown task list (`- [ ] item`) with disabled
+     checkboxes. Inside a `.sx-checklist` fenced div this script enables them
+     so a student can tick items off while checking a whiteboard. Nothing is
+     saved; reloading the page clears the boxes, which is the right behaviour
+     for a checklist that is run once per lab. Styles: styles.css section 17.
+
+     Included after the body by teaching/labs/_metadata.yml. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    var boxes = document.querySelectorAll('.sx-checklist input[type="checkbox"]');
+    Array.prototype.forEach.call(boxes, function (box) {
+      box.disabled = false;
+      box.setAttribute('aria-label', (box.parentNode.textContent || '').trim());
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/saxonstockton\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../teaching/labs/lab-guides/08-torque-rotation.html" class="pagination-link" aria-label="Lab 8: Balanced and Unbalanced Torque">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 8: Balanced and Unbalanced Torque</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../teaching/python/index.html" class="pagination-link" aria-label="Python from Scratch">
+        <span class="nav-page-text">Python from Scratch</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Saxon Stockton · Built with <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="../../../teaching/">Teaching</a> · <a href="../../../cv.html">CV</a> · <a href="../../../about.html">About</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/purplinator">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:s.stockton@tcu.edu">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
