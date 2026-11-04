@@ -26,12 +26,12 @@ This page was written from the 2026 Lab 9 templates and the setup used in class 
 
 Lab 9 runs over two class periods, with one report for each.
 
-- **09A Setup (first class).** Two theory boards with the derivation, one QPD board, an annotated photo of the setup, and a screenshot of one trial in Graphical Analysis.
+- **09A Setup (first class).** Two theory boards (the derivation on one, the setup diagram on the other), one QPD board, an annotated photo of the setup, and a screenshot of one trial in Graphical Analysis.
 - **09B Performance (second class).** The Excel data table, a UDA board with the sample calculations, two graphs, and the CON paragraph.
-- **Question.** How does the rotational inertia of the spinning T-bar depend on the mass added to it (odd groups) or on how far that mass sits from the axle (even groups)?
+- **Question.** How does the rotational inertia of the spinning T-bar depend on the mass added to it (even groups) or on how far that mass sits from the axle (odd groups)?
 - **You measure.** For each of 15 trials, the string tension $F_T$ and the rotational acceleration $\alpha$, both read in Graphical Analysis. Also the hub radius $r_h$, the hanging mass $m_H$, the mass of one added piece $M_T$, and its distance $R_T$ from the axle.
 - **You calculate.** The torque $\tau_T = r_h F_T$ for every trial, then one rotational inertia $I_{TOT}$ for each of the five settings, from a slope.
-- **You graph.** Graph 1: torque against rotational acceleration, five data sets, one per setting. Graph 2: $I_{TOT}$ against $M_T$ (odd groups) or against $R_T^2$ (even groups).
+- **You graph.** Graph 1: torque against rotational acceleration, five data sets, one per setting. Graph 2: $I_{TOT}$ against $M_T$ (even groups) or against $R_T^2$ (odd groups).
 - **You conclude.** One paragraph: the relationship, its equation with units, one constant from the slope with a percent difference, and the T-bar's own inertia from the intercept compared with last week's.
 
 ## The setup
@@ -45,23 +45,19 @@ Two sensors do the measuring.
 
 ## 09A Setup
 
-### Theory board 1: torque and rotational acceleration
+### Theory board 1: the derivation
 
 Everything you know about straight-line motion has a partner for spinning motion. Position $x$ becomes the angle $\theta$, velocity $v$ becomes the angular velocity $\omega$, and acceleration $a$ becomes the rotational acceleration $\alpha$. A force $F$ becomes a torque $\tau$, a twist. Mass $m$, how hard something is to speed up, becomes the rotational inertia $I$, how hard something is to spin up. And Newton's second law, $F = ma$, becomes $\tau = I\alpha$. That last line is the whole lab.
 
-Two objects move, the hanging mass and the T-bar, so the board needs two free-body diagrams and two Newton's laws.
+The whole derivation goes on this board. The tension sensor measures $F_T$ directly, so you do not need a free-body diagram of the hanging mass. ([Going deeper](#going-deeper) shows what that diagram would add.)
 
-**The hanging mass.** Two forces act on it: its weight $m_H g$ pulling down, and the string tension $F_T$ pulling up. Take down as positive, since that is the way it speeds up:
-
-$$m_H g - F_T = m_H a.$$
-
-**The T-bar.** A torque is a force times its lever arm, the distance from the axle to the line the force acts along, measured at right angles. The string leaves the hub along a tangent, so that line is one hub radius from the axle, and the lever arm is $r_h$:
+**The torque.** A torque is a force times its lever arm, the distance from the axle to the line the force acts along, measured at right angles. The string leaves the hub along a tangent, so that line is one hub radius from the axle, and the lever arm is $r_h$:
 
 $$\tau_T = r_h F_T.$$
 
-Newton's second law for rotation, with friction left out for now:
+**Newton's second law for rotation**, with friction left out for now:
 
-$$\tau_T = I_{TOT}\,\alpha.$$
+$$I_{TOT}\,\alpha = \tau_T.$$
 
 Here $I_{TOT}$ is the rotational inertia of everything that spins: the T-bar, the rod, the hub, the rotation sensor and the two added pieces.
 
@@ -71,36 +67,39 @@ $$\tau_T = I_{TOT}\,\alpha + \tau_f.$$
 
 The line moves up. The intercept $B = \tau_f$ is the friction torque, and it is **positive**. The slope is still $I_{TOT}$. This is why each setting uses three hanging masses and a slope, not one mass and a division: the slope sets the friction aside for you.
 
-**Why the tension is not the weight.** The string does not slip on the hub, so the mass falls exactly as fast as the edge of the hub moves, $a = r_h\alpha$. Put that into the hanging-mass equation and solve for the tension:
-
-$$F_T = m_H\,(g - r_h\alpha).$$
-
-While the mass falls, the tension is a little **less** than its weight. If the string pulled with the full weight, the mass would not speed up at all. That is why the lab measures $F_T$ with a sensor instead of using $m_H g$.
-
-### Theory board 2: what is inside $I_{TOT}$
-
-Rotational inertias add. A small mass $m$ at a distance $R$ from the axle adds $mR^2$, so the same mass counts four times as much at twice the distance. So the T-bar with the masses at the ends is much harder to spin up than with the same masses near the axle. Treat each added piece as a point. Two pieces, each of mass $M_T$, each at $R_T$:
+**What is inside $I_{TOT}$.** Rotational inertias add. A small mass $m$ at a distance $R$ from the axle adds $mR^2$, so the same mass counts four times as much at twice the distance. So the T-bar with the masses at the ends is much harder to spin up than with the same masses near the axle. Treat each added piece as a point. Two pieces, each of mass $M_T$, each at $R_T$:
 
 $$I_{TOT} = I_0 + 2 M_T R_T^2.$$
 
 Here $I_0$ is the rotational inertia of the T-bar with nothing added, $M_T$ is the mass of **one** piece, and the 2 counts the pieces.
 
-Your group changes one thing and holds the other fixed.
+**The straight line for your group.** Your group changes one thing and holds the other fixed.
 
-- **Odd groups** change $M_T$ and hold $R_T$ fixed. The equation is already a straight line in $M_T$. Graph $I_{TOT}$ against $M_T$. The slope is $A = 2R_T^2$, so the experimental distance is $R_{T,\text{exp}} = \sqrt{A/2}$. The intercept is $B = I_0$.
-- **Even groups** change $R_T$ and hold $M_T$ at 100 g or 200 g. Graphed against $R_T$, the points curve upward, because $R_T$ is squared. To straighten the graph, plot against $R_T^2$ instead. The slope is $A = 2M_T$, so the experimental mass is $M_{T,\text{exp}} = A/2$. The intercept is $B = I_0$.
+- **Odd groups** change $R_T$ and hold $M_T$ at 100 g or 200 g. Graphed against $R_T$, the points curve upward, because $R_T$ is squared. To straighten the graph, plot against $R_T^2$ instead. The slope is $A = 2M_T$, so the experimental mass is $M_{T,\text{exp}} = A/2$. The intercept is $B = I_0$.
+- **Even groups** change $M_T$ and hold $R_T$ fixed. The equation is already a straight line in $M_T$. Graph $I_{TOT}$ against $M_T$. The slope is $A = 2R_T^2$, so the experimental distance is $R_{T,\text{exp}} = \sqrt{A/2}$. The intercept is $B = I_0$.
 
-The settings are $R_T$ of 5, 10, 15, 20, 25 or 35 cm and $M_T$ from 50 to 300 g, and your group uses five of them. Convert centimeters to meters and grams to kilograms **before** you square anything.
+Odd groups choose $R_T$ from 5, 10, 15, 20, 25 and 35 cm. Even groups choose $M_T$ from 50 to 300 g. Either way your group uses five settings. Convert centimeters to meters and grams to kilograms **before** you square anything.
 
-**Units.** Torque is in m·N. The template writes it in that order so nobody mistakes it for joules, which are also a newton times a meter. Rotational acceleration is in rad/s², and a radian has no unit of its own. So the slope of graph 1 has units of m·N divided by 1/s², which works out to kg·m², the unit of a rotational inertia. The slope of graph 2 is in m² for odd groups and kg for even groups.
+**Units.** Torque is in m·N. The template writes it in that order so nobody mistakes it for joules, which are also a newton times a meter. Rotational acceleration is in rad/s², and a radian has no unit of its own. So the slope of graph 1 has units of m·N divided by 1/s², which works out to kg·m², the unit of a rotational inertia. The slope of graph 2 is in kg for odd groups and m² for even groups.
+
+### Theory board 2: the diagram
+
+The second board is the diagram only. Draw two views and label everything shown here.
+
+![Whiteboard 2, a clean copy of the classroom drawing: the setup from the side and the hub from above.](figures/09-setup-diagram.svg){fig-alt="Side view: a red T-bar crossbar on a vertical rod that turns with rotational acceleration alpha T about a dashed vertical axis. Blue dimension lines mark R T from the axis to each end, and one mass M T hangs under each end. Near the bottom of the rod an orange string is wound on the hub. The rod is held by a red C-clamp on the edge of a table. The string runs horizontally from the hub to a pulley at the table edge and drops to the hanging mass m H. Arrows show the tension F T along the string at the hub, with tau T equals F T times r H, and F T up and F g down on the hanging mass. Top-down view: the hub as a circle of radius r H, with the string leaving it along a tangent toward the pulley."}
+
+- **Side view.** The crossbar on the rod with the rotation $\alpha_T$ about the vertical axis, $R_T$ from the axis to each end, one $M_T$ hanging under each end, the hub with the string wound on it, the clamp on the table edge, the string over the pulley down to $m_H$, the pull $F_T$ along the string at the hub with $\tau_T = F_T r_H$, and $F_T$ up and $F_g$ down on the hanging mass.
+- **Top-down view.** The hub of radius $r_H$ and the string leaving it along a tangent toward the pulley. The string pulls at right angles to the radius, which is why the lever arm is the radius and $\tau_T = F_T r_H$.
+
+The diagram writes the hub radius as $r_H$ and the rotational acceleration as $\alpha_T$. The rest of this page writes them $r_h$ and $\alpha$. They are the same quantities.
 
 ### The QPD board
 
 **The question.** The 09A report asks for one question. Pick the one for your group:
 
-> Odd groups: What is the relationship between the total rotational inertia of the T-bar ($I_{TOT}$) and the mass of each added piece ($M_T$)?
+> Odd groups: What is the relationship between the total rotational inertia of the T-bar ($I_{TOT}$) and the distance of the added pieces from the axle ($R_T$)?
 
-> Even groups: What is the relationship between the total rotational inertia of the T-bar ($I_{TOT}$) and the distance of the added pieces from the axle ($R_T$)?
+> Even groups: What is the relationship between the total rotational inertia of the T-bar ($I_{TOT}$) and the mass of each added piece ($M_T$)?
 
 The torque against rotational acceleration graph is not a second question. It is the step that turns each setting into one value of $I_{TOT}$.
 
@@ -143,7 +142,7 @@ The report wants one trial worked in the software.
 
 ### In Excel
 
-The template has the hub radius already typed in as a constant, $r_h = 0.021\ \text{m}$, with a note that you may change the constants. Record the two constants your group does not change ($R_T$ for odd groups, $M_T$ for even groups) next to it. The 15 trials sit in five blocks of three rows, one block per setting.
+The template has the hub radius already typed in as a constant, $r_h = 0.021\ \text{m}$, with a note that you may change the constants. Record the two constants your group does not change ($R_T$ for even groups, $M_T$ for odd groups) next to it. The 15 trials sit in five blocks of three rows, one block per setting.
 
 ::: {.sx-scroll}
 | Column | What goes in it | Unit | Sample calculation on the board |
@@ -153,14 +152,14 @@ The template has the hub radius already typed in as a constant, $r_h = 0.021\ \t
 | D, "a" | the rotational acceleration $\alpha$, not the linear acceleration of the mass | rad/s² | no |
 | E, $\tau_T$ | $F_T \times r_h$ | m·N | yes, for each trial |
 | F | your group's variable, $M_T$ or $R_T$ | kg or m | no |
-| G (even groups) | $R_T^2$ | m² | yes |
+| G (odd groups) | $R_T^2$ | m² | yes |
 | H, $I_{TOT}$ | slope of $\tau_T$ against $\alpha$ for each block of three | kg·m² | no, it is a slope |
 :::
 
 Some things about this sheet that are not obvious from looking at it:
 
 - **Only the first torque cell has a formula.** E8 holds `=C8*$G$3`. Fill it down through all 15 rows.
-- **Column G is blank.** It is an empty merged block with no header. Even groups type a header and a formula for $R_T^2$, such as `=F8^2`, and fill it down.
+- **Column G is blank.** It is an empty merged block with no header. Odd groups type a header and a formula for $R_T^2$, such as `=F8^2`, and fill it down.
 - **The order inside `SLOPE`.** Excel's `SLOPE` takes the $y$ column first: `=SLOPE(torque cells, alpha cells)`, as H8 already does. Swapped, it gives $1/I$.
 - **The chart is already there.** The template's chart plots the five blocks as five data sets of torque against rotational acceleration. Add a linear trendline with its equation to each.
 
@@ -169,11 +168,11 @@ Some things about this sheet that are not obvious from looking at it:
 The 09B report asks for these, on the board:
 
 - the torque calculation, $\tau_T = r_h F_T$, for each of the 15 trials
-- $R_T^2$, one sample, if you are an even group
+- $R_T^2$, one sample, if you are an odd group
 - the constant from the slope of graph 2, $R_{T,\text{exp}}$ or $M_{T,\text{exp}}$
 - the T-bar's own inertia $I_0$, read from the intercept of graph 2
 
-Invented numbers, for an even group with $M_T = 0.100\ \text{kg}$. One trial with the 0.19 kg hanging mass at $R_T = 15\ \text{cm}$:
+Invented numbers, for an odd group with $M_T = 0.100\ \text{kg}$. One trial with the 0.19 kg hanging mass at $R_T = 15\ \text{cm}$:
 
 $$\tau_T = r_h F_T = (0.021\ \text{m})(1.853\ \text{N}) = 0.0389\ \text{m·N}, \qquad R_T^2 = (0.15\ \text{m})^2 = 0.0225\ \text{m}^2.$$
 
@@ -181,11 +180,11 @@ If graph 2 gives a slope of $A = 0.206\ \text{kg}$ and an intercept of $B = 0.01
 
 $$M_{T,\text{exp}} = \frac{A}{2} = \frac{0.206\ \text{kg}}{2} = 0.103\ \text{kg}, \qquad I_0 = B = 0.0112\ \text{kg·m}^2.$$
 
-For an odd group at $R_T = 0.25\ \text{m}$, a slope of $A = 0.127\ \text{m}^2$ gives $R_{T,\text{exp}} = \sqrt{0.127/2}\ \text{m} = 0.252\ \text{m}$.
+For an even group at $R_T = 0.25\ \text{m}$, a slope of $A = 0.127\ \text{m}^2$ gives $R_{T,\text{exp}} = \sqrt{0.127/2}\ \text{m} = 0.252\ \text{m}$.
 
 ### Check your torques
 
-The tension is a little less than $m_H g$, so every torque must come out a little **under** $m_H g\,r_h$. With $g = 9.81\ \text{m/s}^2$ and $r_h = 0.021\ \text{m}$:
+While the mass falls, the tension is a little less than $m_H g$, so every torque must come out a little **under** $m_H g\,r_h$. [Going deeper](#going-deeper) shows why. With $g = 9.81\ \text{m/s}^2$ and $r_h = 0.021\ \text{m}$:
 
 ::: {.sx-scroll}
 | $m_H$ (kg) | $m_H g$ (N) | $m_H g\,r_h$ (m·N) | largest shortfall | bare T-bar $\alpha$ (rad/s²) |
@@ -202,15 +201,15 @@ The last two columns use last week's $I_0 = 0.010\ \text{kg·m}^2$. With nothing
 Axes labelled with units on both.
 
 1. **Torque against rotational acceleration.** $\tau_T$ in m·N up the side, $\alpha$ in rad/s² along the bottom, five data sets, each with its own linear trendline and equation. Each slope is the $I_{TOT}$ for one setting. Each intercept is a small positive friction torque.
-2. **$I_{TOT}$ against your group's variable.** Odd groups: $I_{TOT}$ in kg·m² against $M_T$ in kg, slope in m². Even groups: $I_{TOT}$ against $R_T^2$ in m², slope in kg. One linear trendline with its equation. The intercept is $I_0$.
+2. **$I_{TOT}$ against your group's variable.** Even groups: $I_{TOT}$ in kg·m² against $M_T$ in kg, slope in m². Odd groups: $I_{TOT}$ against $R_T^2$ in m², slope in kg. One linear trendline with its equation. The intercept is $I_0$.
 
 ## CON
 
-One paragraph, with the four items from the 09B report in order. Write the equation with the physical symbols, not $x$ and $y$. Numbers invented, for the even group above.
+One paragraph, with the four items from the 09B report in order. Write the equation with the physical symbols, not $x$ and $y$. Numbers invented, for the odd group above.
 
 1. **(a) The relationship between your graphed quantities, in words.** → "The relationship between the total rotational inertia of the T-bar and the square of the distance of the added pieces from the axle is linear."
 2. **(b) The equation, with the real symbols and units on the slope and intercept.** → "The trendline was $I_{TOT} = (0.206\ \text{kg})\,R_T^2 + 0.0112\ \text{kg·m}^2$."
-3. **(c) One constant from the slope, compared with its measured value as a percent difference.** → "Half the slope gives a mass of $M_{T,\text{exp}} = 0.103\ \text{kg}$ for each piece, against $0.100\ \text{kg}$ on the balance, a percent difference of $(0.103 - 0.100)/0.100 = 3.0\%$." An odd group does the same with $R_{T,\text{exp}} = \sqrt{A/2}$ against the ruler.
+3. **(c) One constant from the slope, compared with its measured value as a percent difference.** → "Half the slope gives a mass of $M_{T,\text{exp}} = 0.103\ \text{kg}$ for each piece, against $0.100\ \text{kg}$ on the balance, a percent difference of $(0.103 - 0.100)/0.100 = 3.0\%$." An even group does the same with $R_{T,\text{exp}} = \sqrt{A/2}$ against the ruler.
 4. **(d) Your T-bar-only inertia, compared with last week's $I_0$.** → "The intercept gives $I_0 = 0.0112\ \text{kg·m}^2$ for the T-bar alone, $12\%$ above last week's $0.010\ \text{kg·m}^2$. This week the rotation sensor was taped on the T-bar, so it spun with it and added its own rotational inertia to the intercept."
 
 For (d), your TA will say whether "last week's $I_0$" means your group's own Lab 8 value or the class value. The value on the board this week is $0.010 \pm 0.002\ \text{kg·m}^2$. Expect your intercept to come out **above** last week's, because the rotation sensor was not on the T-bar in Lab 8. Name the sensor as the reason.
@@ -234,8 +233,20 @@ For (d), your TA will say whether "last week's $I_0$" means your group's own Lab
 
 **Why a figure skater spins faster with her arms in.** A skater pulling her arms in moves mass closer to the axle. Since every bit of mass counts as $mR^2$, pulling it in shrinks her rotational inertia a lot, and she spins faster to make up for it. The T-bar is the same idea run the other way: move the pieces out from 10 cm to 20 cm and they count four times as much.
 
-**How much less than the weight is the tension?** From board 1, the tension falls short of the weight by $m_H r_h\alpha$, which is the fraction $r_h\alpha/g$ of the weight. At $\alpha = 3.11\ \text{rad/s}^2$, $r_h\alpha = (0.021\ \text{m})(3.11\ \text{rad/s}^2) = 0.065\ \text{m/s}^2$, about 0.7% of $g$. Small, but it is the reason the lab measures the tension instead of assuming it.
+**Why the tension is a little less than the weight.** This is not on your boards, because the sensor measures $F_T$ directly, but it explains the check table. Two forces act on the hanging mass: its weight $m_H g$ pulling down and the tension $F_T$ pulling up. Take down as positive. The string does not slip on the hub, so the mass falls exactly as fast as the edge of the hub moves:
 
-**Why the intercept of graph 2 comes out high.** Two things push it up. The rotation sensor spins with the bar this week, and it adds about $m_s d^2$, its mass times the square of its distance from the axle, plus its own small inertia. And the added pieces are not points. By the parallel-axis theorem, each piece also carries its own inertia about its centre, $I_{cm}$, so two pieces add $2I_{cm}$. For even groups that extra does not change as $R_T$ changes, so it lands in the intercept. For odd groups adding more of the same piece, it grows with the mass and nudges the slope up a little.
+$$m_H g - F_T = m_H a, \qquad a = r_h\alpha.$$
 
-**Which settings give the cleanest line.** The 5 cm setting with 100 g pieces adds only $2(0.100)(0.05)^2 = 0.0005\ \text{kg·m}^2$, less than the $\pm 0.002$ on last week's $I_0$, so that point mostly measures $I_0$. For odd groups, a large $R_T$ gives a much larger change: from 50 g to 300 g at 25 cm, $I_{TOT}$ grows by $2(0.250)(0.25)^2 = 0.031\ \text{kg·m}^2$. The slowest case is 300 g pieces at 35 cm with the 0.19 kg hanging mass, where $\alpha$ is only about 0.47 rad/s². Friction matters most there, and the fall has to last long enough to fit.
+Solve for the tension:
+
+$$F_T = m_H\,(g - r_h\alpha).$$
+
+While the mass falls, the tension is a little **less** than its weight. If the string pulled with the full weight, the mass would not speed up at all. That is why the lab measures $F_T$ with a sensor instead of using $m_H g$. Put this tension into $r_h F_T = I_{TOT}\alpha$ and collect the $\alpha$ terms to get the rotational acceleration you should expect:
+
+$$\alpha = \frac{m_H g\, r_h}{I_{TOT} + m_H r_h^2}.$$
+
+With $I_{TOT} = 0.010\ \text{kg·m}^2$, last week's bare T-bar, this gives the last column of the check table. The shortfall in the tension is $m_H r_h\alpha$, the fraction $r_h\alpha/g$ of the weight. At $\alpha = 3.11\ \text{rad/s}^2$, $r_h\alpha = (0.021\ \text{m})(3.11\ \text{rad/s}^2) = 0.065\ \text{m/s}^2$, about 0.7% of $g$.
+
+**Why the intercept of graph 2 comes out high.** Two things push it up. The rotation sensor spins with the bar this week, and it adds about $m_s d^2$, its mass times the square of its distance from the axle, plus its own small inertia. And the added pieces are not points. By the parallel-axis theorem, each piece also carries its own inertia about its centre, $I_{cm}$, so two pieces add $2I_{cm}$. For odd groups that extra does not change as $R_T$ changes, so it lands in the intercept. For even groups adding more of the same piece, it grows with the mass and nudges the slope up a little.
+
+**Which settings give the cleanest line.** The 5 cm setting with 100 g pieces adds only $2(0.100)(0.05)^2 = 0.0005\ \text{kg·m}^2$, less than the $\pm 0.002$ on last week's $I_0$, so that point mostly measures $I_0$. For even groups, a large $R_T$ gives a much larger change: from 50 g to 300 g at 25 cm, $I_{TOT}$ grows by $2(0.250)(0.25)^2 = 0.031\ \text{kg·m}^2$. The slowest case is 300 g pieces at 35 cm with the 0.19 kg hanging mass, where $\alpha$ is only about 0.47 rad/s². Friction matters most there, and the fall has to last long enough to fit.

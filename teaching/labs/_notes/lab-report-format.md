@@ -212,16 +212,21 @@ true value T; percent difference = 200 % × (M₁ − M₂) / (M₁ + M₂) betw
   m<sub>H</sub> 0.19, 0.29, 0.59 kg. δa row: 0.01 for α, 0.001 for the variable column. One chart, "Torque vs
   Rotational Acceleration, Determining Rotational Inertia", five series, no trendlines.
   **From the TA boards and the TA group, 2026-11-04.** I<sub>TOT</sub> = I<sub>0</sub> + 2M<sub>T</sub>
-  R<sub>T</sub>², M<sub>T</sub> = ONE piece, one under each end of the crossbar. Odd groups vary M<sub>T</sub>
-  (50 to 300 g) at fixed R<sub>T</sub>, R<sub>T</sub> = √(A/2). Even groups vary R<sub>T</sub> (5, 10, 15, 20,
-  25, 35 cm) at M<sub>T</sub> = 100 or 200 g, graph against R<sub>T</sub>², M<sub>T</sub> = A/2. Fits written
-  y = Ax + B. Last week's I<sub>0</sub> on the board: 0.010 ± 0.002 kg·m². Apparatus: vertical rod clamped to
+  R<sub>T</sub>², M<sub>T</sub> = ONE piece, one under each end of the crossbar. Jeff's board has odd groups
+  varying M<sub>T</sub> and even groups varying R<sub>T</sub>. **Saxon's sections use the reverse (his decision,
+  2026-11-04), and the page follows him:** odd groups vary R<sub>T</sub> (5, 10, 15, 20, 25, 35 cm) at
+  M<sub>T</sub> = 100 or 200 g, graph against R<sub>T</sub>², M<sub>T</sub> = A/2. Even groups vary
+  M<sub>T</sub> (50 to 300 g) at fixed R<sub>T</sub>, R<sub>T</sub> = √(A/2). Fits written y = Ax + B. Jeff's
+  board puts the whole derivation (τ<sub>T</sub> = r<sub>h</sub>F<sub>T</sub>, I<sub>TOT</sub>α = τ<sub>T</sub> +
+  τ<sub>f</sub>, I<sub>TOT</sub> = I<sub>0</sub> + 2M<sub>T</sub>R<sub>T</sub>²) on theory board 1 and only the
+  diagram (side view and top-down view) on board 2. No hanging-mass free-body diagram and no a = r<sub>h</sub>α,
+  since the sensor measures F<sub>T</sub>. The page keeps those in Going deeper, behind the check table. Last week's I<sub>0</sub> on the board: 0.010 ± 0.002 kg·m². Apparatus: vertical rod clamped to
   the table, crossbar on top, hub at the bottom (r<sub>h</sub> = 0.0210 ± 0.0001 m), string horizontal over a
   guide pulley at the table edge. The tension sensor hangs upside down with the slotted masses, so it reads the
   full tension and belongs in m<sub>H</sub>. A second force sensor taped flat on the T-bar gives ω and was not
   on the T-bar in Lab 8, so this week's intercept should sit above last week's I<sub>0</sub>.
   **Suggestions on the page, not from the files.** One question per group (odd: I<sub>TOT</sub> vs
-  M<sub>T</sub>, even: I<sub>TOT</sub> vs R<sub>T</sub>), with τ vs α as the procedure step that gives each
+  R<sub>T</sub>, even: I<sub>TOT</sub> vs M<sub>T</sub>), with τ vs α as the procedure step that gives each
   I<sub>TOT</sub>. Part 1 = one setting from three hanging masses, Part 2 = five settings. The check table
   (m<sub>H</sub>g r<sub>h</sub> bound and bare-bar α 3.9, 5.9, 11.8 rad/s² from I<sub>0</sub> = 0.010), the
   invented example numbers, and the percent difference (exp − act)/act carried over from Lab 8. Whether CON (d)
