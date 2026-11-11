@@ -604,12 +604,14 @@ window.Quarto = {
   </ul></li>
   <li><a href="#b-performance" id="toc-b-performance" class="nav-link" data-scroll-target="#b-performance">09B Performance</a>
   <ul class="collapse">
+  <li><a href="#uda-quick" id="toc-uda-quick" class="nav-link" data-scroll-target="#uda-quick">UDA in one look</a></li>
+  <li><a href="#con-quick" id="toc-con-quick" class="nav-link" data-scroll-target="#con-quick">CON in one look</a></li>
+  <li><a href="#units-09b" id="toc-units-09b" class="nav-link" data-scroll-target="#units-09b">Units, line by line</a></li>
+  <li><a href="#the-uda-board-in-detail" id="toc-the-uda-board-in-detail" class="nav-link" data-scroll-target="#the-uda-board-in-detail">The UDA board in detail</a></li>
   <li><a href="#in-excel" id="toc-in-excel" class="nav-link" data-scroll-target="#in-excel">In Excel</a></li>
-  <li><a href="#on-the-uda-board" id="toc-on-the-uda-board" class="nav-link" data-scroll-target="#on-the-uda-board">On the UDA board</a></li>
   <li><a href="#check-your-torques" id="toc-check-your-torques" class="nav-link" data-scroll-target="#check-your-torques">Check your torques</a></li>
-  <li><a href="#the-two-graphs" id="toc-the-two-graphs" class="nav-link" data-scroll-target="#the-two-graphs">The two graphs</a></li>
+  <li><a href="#con-detail" id="toc-con-detail" class="nav-link" data-scroll-target="#con-detail">The CON paragraph in detail</a></li>
   </ul></li>
-  <li><a href="#con" id="toc-con" class="nav-link" data-scroll-target="#con">CON</a></li>
   <li><a href="#common-slips" id="toc-common-slips" class="nav-link" data-scroll-target="#common-slips">Common slips</a></li>
   <li><a href="#going-deeper" id="toc-going-deeper" class="nav-link" data-scroll-target="#going-deeper">Going deeper</a></li>
   </ul>
@@ -648,12 +650,12 @@ window.Quarto = {
 <p>Lab 9 runs over two class periods, with one report for each.</p>
 <ul>
 <li><strong>09A Setup (first class).</strong> Two theory boards (the derivation on one, the setup diagram on the other), one QPD board, an annotated photo of the setup, and a screenshot of one trial in Graphical Analysis.</li>
-<li><strong>09B Performance (second class).</strong> The Excel data table, a UDA board with the sample calculations, two graphs, and the CON paragraph.</li>
+<li><strong>09B Performance (second class).</strong> The Excel data table, a UDA board with the sample calculations and two physical values, two graphs, and the CON paragraph. The checklists are in <a href="#uda-quick">UDA in one look</a> and <a href="#con-quick">CON in one look</a>.</li>
 <li><strong>Question.</strong> How does the rotational inertia of the spinning T-bar depend on the mass added to it (even groups) or on how far that mass sits from the axle (odd groups)?</li>
 <li><strong>You measure.</strong> For each of 15 trials, the string tension <span class="math inline">\(F_T\)</span> and the rotational acceleration <span class="math inline">\(\alpha\)</span>, both read in Graphical Analysis. Also the hub radius <span class="math inline">\(r_h\)</span>, the hanging mass <span class="math inline">\(m_H\)</span>, the mass of one added piece <span class="math inline">\(M_T\)</span>, and its distance <span class="math inline">\(R_T\)</span> from the axle.</li>
 <li><strong>You calculate.</strong> The torque <span class="math inline">\(\tau_T = r_h F_T\)</span> for every trial, then one rotational inertia <span class="math inline">\(I_{TOT}\)</span> for each of the five settings, from a slope.</li>
 <li><strong>You graph.</strong> Graph 1: torque against rotational acceleration, five data sets, one per setting. Graph 2: <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(M_T\)</span> (even groups) or against <span class="math inline">\(R_T^2\)</span> (odd groups).</li>
-<li><strong>You conclude.</strong> One paragraph: the relationship, its equation with units, one constant from the slope with a percent difference, and the T-bar’s own inertia from the intercept compared with last week’s.</li>
+<li><strong>You conclude.</strong> One paragraph: the relationship, its equation with units, one constant from the slope with a percent difference, and the T-bar’s own inertia from the intercept compared with Lab 8’s.</li>
 </ul>
 </section>
 <section id="the-setup" class="level2">
@@ -662,8 +664,9 @@ window.Quarto = {
 <p>Two sensors do the measuring.</p>
 <ul>
 <li><strong>The tension sensor</strong> is a force sensor that falls with the hanging mass. It hangs <strong>upside down</strong>: its hook is tied to the string, and the slotted masses hang from its body. So it reads the whole pull of the string. Because it falls too, it is part of the hanging mass <span class="math inline">\(m_H\)</span>.</li>
-<li><strong>The rotation sensor</strong> is a second force sensor taped flat on top of the T-bar, with its power cord plugged in. It turns with the bar and gives the angular velocity <span class="math inline">\(\omega\)</span> in Graphical Analysis. Because it turns with the bar, it is part of what you are measuring this week.</li>
+<li><strong>The rotation sensor</strong> is a second force sensor taped flat on top of the T-bar, with its power cord plugged in. It turns with the bar, and its gyroscope gives the angular velocity <span class="math inline">\(\omega\)</span> in Graphical Analysis. Because it turns with the bar, it is part of what you are measuring this week.</li>
 </ul>
+<p>The two sensors are the same model, so Graphical Analysis has to be told which reading to take from each. Under <strong>Sensor Channels</strong>, pick <strong>Force</strong> for the hanging sensor and <strong>Z-axis gyroscope</strong> for the T-bar sensor.</p>
 </section>
 <section id="a-setup" class="level2">
 <h2 class="anchored" data-anchor-id="a-setup">09A Setup</h2>
@@ -717,7 +720,7 @@ window.Quarto = {
 <p>The torque against rotational acceleration graph is not a second question. It is the step that turns each setting into one value of <span class="math inline">\(I_{TOT}\)</span>.</p>
 <p><strong>The procedure, in two parts.</strong> The report template asks for two parts and wants them kept apart. This is the usual way they split. Where the handout or your TA says otherwise, they win.</p>
 <ol type="1">
-<li><strong>Part 1: one value of <span class="math inline">\(I_{TOT}\)</span> for one setting of the T-bar.</strong> For each of three hanging masses, wind the string, start collecting, let go, and read the average <span class="math inline">\(F_T\)</span> and the slope <span class="math inline">\(\alpha\)</span> from the fall only. The slope of <span class="math inline">\(\tau_T\)</span> against <span class="math inline">\(\alpha\)</span> for those three trials is <span class="math inline">\(I_{TOT}\)</span>.</li>
+<li><strong>Part 1: one value of <span class="math inline">\(I_{TOT}\)</span> for one setting of the T-bar.</strong> For each of three hanging masses (290 g, 590 g and 790 g, tension sensor included), wind the string, start collecting, let go, and read the average <span class="math inline">\(F_T\)</span> and the slope <span class="math inline">\(\alpha\)</span> from the fall only. The slope of <span class="math inline">\(\tau_T\)</span> against <span class="math inline">\(\alpha\)</span> for those three trials is <span class="math inline">\(I_{TOT}\)</span>.</li>
 <li><strong>Part 2: repeat Part 1 for five settings</strong> of your group’s variable. Five settings of three trials each is 15 trials.</li>
 </ol>
 <p>What the board should list:</p>
@@ -787,6 +790,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="the-graphical-analysis-screenshot">The Graphical Analysis screenshot</h3>
 <p>The report wants one trial worked in the software.</p>
 <ol type="1">
+<li>Check the channels: <strong>Force</strong> on the hanging sensor, <strong>Z-axis gyroscope</strong> on the T-bar sensor.</li>
 <li>Select only the fall: after you let go, and before the mass lands or the string runs out and starts to wind back up.</li>
 <li>Use the <strong>same</strong> time window on both graphs.</li>
 <li>Force graph: Statistics on the selection gives the average <span class="math inline">\(F_T\)</span>. Leave out the spike when the string goes tight.</li>
@@ -798,9 +802,268 @@ window.Quarto = {
 </section>
 <section id="b-performance" class="level2">
 <h2 class="anchored" data-anchor-id="b-performance">09B Performance</h2>
+<p>The 09B report has a UDA part and a CON part, and on this major lab everyone turns in both. This section starts with the two boards in one look, the same lists as the reminder boards in the room, so you can check yours before the photo. The details come after.</p>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Report section</th>
+<th>What goes in it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UDA</td>
+<td>A screenshot of the Excel data table, with the mean, δa and δr rows at the bottom filled in</td>
+</tr>
+<tr class="even">
+<td>UDA</td>
+<td>A photo of the UDA board: the sample calculations and the two physical values</td>
+</tr>
+<tr class="odd">
+<td>UDA</td>
+<td>Graph 1: torque against rotational acceleration, five data sets, each with its trendline equation</td>
+</tr>
+<tr class="even">
+<td>UDA</td>
+<td>Graph 2: <span class="math inline">\(I_{TOT}\)</span> against your group’s variable, with its trendline equation</td>
+</tr>
+<tr class="odd">
+<td>CON</td>
+<td>A photo of the CON board: one paragraph</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Units on everything.</strong> The reminder boards in the room say UNITS on nearly every line. A number with no unit is the easiest way to lose points this week. <a href="#units-09b">Units, line by line</a> gives the unit of every quantity in the report.</p>
+</div>
+</div>
+</div>
+<section id="uda-quick" class="level3">
+<h3 class="anchored" data-anchor-id="uda-quick">UDA in one look</h3>
+<div class="sx-board" role="img" aria-label="Example UDA whiteboard for Lab 9: header, a left half with the sample calculations and a right half with the equation of graph 2 and the two physical values">
+  <div class="sx-board__header"><span>UDA</span><span>Your name · partners' names</span></div>
+  <div class="sx-board__columns">
+    <div class="sx-board__col">
+      <span class="sx-board__label">Sample calculations</span>
+      <p>$\tau_T = r_h F_T = (0.021\,\text{m})(2.822\,\text{N}) = 0.0593\,\text{m·N}$</p>
+      <p>$R_T^2 = (0.15\,\text{m})^2 = 0.0225\,\text{m}^2$</p>
+      <p class="sx-board__faint">the $R_T^2$ line is for odd groups only</p>
+    </div>
+    <div class="sx-board__col">
+      <span class="sx-board__label">Physical values (2)</span>
+      <p>$I_{TOT} = (0.0112\,\text{kg·m}^2) + (0.206\,\text{kg})\,R_T^2$</p>
+      <p>$M_{T,\text{exp}} = \dfrac{A}{2} = \dfrac{0.206\,\text{kg}}{2} = 0.103\,\text{kg}$</p>
+      <p>$I_0 = B = 0.0112\,\text{kg·m}^2$</p>
+    </div>
+  </div>
+</div>
+<p class="sx-board__caption">An odd group's UDA board, with invented numbers. Even groups skip the $R_T^2$ line and find $R_{T,\text{exp}} = \sqrt{A/2}$ in place of $M_{T,\text{exp}}$.</p>
+<div class="sx-checklist">
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Sample calculations, with units.</strong> One worked torque, <span class="math inline">\(\tau_T = r_h F_T\)</span>, from a real row. Odd groups add one <span class="math inline">\(R_T^2\)</span>.</label></li>
+<li><label><input type="checkbox"><strong>Two physical values, with units.</strong> The trendline of graph 2 in physical symbols, then the constant from its slope (<span class="math inline">\(M_{T,\text{exp}}\)</span> or <span class="math inline">\(R_{T,\text{exp}}\)</span>) and the T-bar’s own inertia <span class="math inline">\(I_0\)</span> from its intercept.</label></li>
+<li><label><input type="checkbox"><strong>Uncertainties, in Excel.</strong> The mean, δa and δr rows filled in for every column. Each δa has its column’s unit, and each δr has none. <span class="math inline">\(I_{TOT}\)</span> gets <span class="math inline">\(\delta_a = 0.0005\ \text{kg·m}^2\)</span>.</label></li>
+<li><label><input type="checkbox"><strong>Graphs, in Excel.</strong> A title, both axes labelled with units, and a trendline equation on every data set.</label></li>
+</ul>
+</div>
+</section>
+<section id="con-quick" class="level3">
+<h3 class="anchored" data-anchor-id="con-quick">CON in one look</h3>
+<div class="sx-board" role="img" aria-label="Layout of the CON whiteboard for Lab 9: one paragraph of four sentences, labelled a to d">
+  <div class="sx-board__header"><span>CON</span><span>Your name · partners' names</span></div>
+  <div class="sx-board__zone sx-board__zone--grow">
+    <p><strong>a</strong> The relationship between $I_{TOT}$ and $R_T^2$ (or $M_T$) is linear.
+    <strong>b</strong> $I_{TOT} = (\text{intercept in kg·m}^2) + (\text{slope with its unit})\,R_T^2$.
+    <strong>c</strong> The slope gives $M_{T,\text{exp}}$ (or $R_{T,\text{exp}}$) with units, compared with the actual value with units, as a percent difference.
+    <strong>d</strong> The intercept gives $I_0$ with units, compared with Lab 8's $0.0101\,\text{kg·m}^2$, as a percent difference.</p>
+    <div class="sx-board__note">one paragraph, one sentence per item, in order</div>
+  </div>
+</div>
+<p class="sx-board__caption">The CON board. The letters show the order. They do not go on the board.</p>
+<div class="sx-checklist">
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>(a) The relationship, stated outright.</strong> It is linear, between <span class="math inline">\(I_{TOT}\)</span> and <span class="math inline">\(R_T^2\)</span> (odd groups) or <span class="math inline">\(M_T\)</span> (even groups).</label></li>
+<li><label><input type="checkbox"><strong>(b) The equation in physical symbols, not <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</strong> A unit on the intercept and a unit on the slope.</label></li>
+<li><label><input type="checkbox"><strong>(c) The physical value from the slope</strong>, with units, compared with the actual value from the balance or the ruler, with units, and the percent difference.</label></li>
+<li><label><input type="checkbox"><strong>(d) The physical value from the intercept</strong>, <span class="math inline">\(I_0\)</span> with units, compared with Lab 8’s <span class="math inline">\(I_0 = 0.0101\ \text{kg·m}^2\)</span>, and the percent difference.</label></li>
+</ul>
+</div>
+</section>
+<section id="units-09b" class="level3">
+<h3 class="anchored" data-anchor-id="units-09b">Units, line by line</h3>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Unit</th>
+<th>Where you write it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\tau_T\)</span></td>
+<td>m·N</td>
+<td>column E, sample calculation, graph 1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\alpha\)</span></td>
+<td>rad/s²</td>
+<td>column D, graph 1</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(R_T^2\)</span> (odd groups)</td>
+<td>m²</td>
+<td>column G, sample calculation, graph 2</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(I_{TOT}\)</span>, and each slope of graph 1</td>
+<td>kg·m²</td>
+<td>column H, graph 1, graph 2</td>
+</tr>
+<tr class="odd">
+<td>slope <span class="math inline">\(A\)</span> of graph 2, odd groups</td>
+<td>kg</td>
+<td>UDA board, CON (b)</td>
+</tr>
+<tr class="even">
+<td>slope <span class="math inline">\(A\)</span> of graph 2, even groups</td>
+<td>m²</td>
+<td>UDA board, CON (b)</td>
+</tr>
+<tr class="odd">
+<td>intercept <span class="math inline">\(B\)</span> of graph 2, <span class="math inline">\(I_0\)</span></td>
+<td>kg·m²</td>
+<td>UDA board, CON (b) and (d)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(M_{T,\text{exp}}\)</span> (odd groups)</td>
+<td>kg</td>
+<td>UDA board, CON (c)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(R_{T,\text{exp}}\)</span> (even groups)</td>
+<td>m</td>
+<td>UDA board, CON (c)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\delta_a\)</span> of a column</td>
+<td>its column’s</td>
+<td>Excel</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta_r\)</span> of a column</td>
+<td>none, use %</td>
+<td>Excel</td>
+</tr>
+<tr class="even">
+<td>percent difference</td>
+<td>none, use %</td>
+<td>CON (c) and (d)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Where the slope’s unit comes from.</strong> On a straight-line graph, the <span class="math inline">\(y\)</span> value is the slope times the <span class="math inline">\(x\)</span> value, plus the intercept. So the units have to match:</p>
+<p><span class="math display">\[(\text{unit of } y) = (\text{unit of the slope}) \times (\text{unit of } x).\]</span></p>
+<p>On graph 2, <span class="math inline">\(y = I_{TOT}\)</span>, in kg·m². If <span class="math inline">\(x\)</span> is <span class="math inline">\(M_T\)</span>, in kg, the slope has to supply the m². If <span class="math inline">\(x\)</span> is <span class="math inline">\(R_T^2\)</span>, in m², the slope has to supply the kg. So the unit of the slope already tells you what it measures: a slope in kg is a mass, <span class="math inline">\(2M_T\)</span>, and a slope in m² is a distance squared, <span class="math inline">\(2R_T^2\)</span>. The intercept is a value of <span class="math inline">\(y\)</span>, so it is in kg·m² for every group. Graph 1 works the same way: m·N divided by rad/s² is kg·m², a rotational inertia.</p>
+<p><strong>The two question marks.</strong> Two lines on the reminder boards say UNITS? with a question mark, because those are the places where the right answer can be no unit at all. The relationship in words, item (a), has no numbers, so it has no units. A δr and a percent difference are one number divided by another in the same unit, so the unit cancels. For those, the % sign is all you write.</p>
+</section>
+<section id="the-uda-board-in-detail" class="level3">
+<h3 class="anchored" data-anchor-id="the-uda-board-in-detail">The UDA board in detail</h3>
+<p><strong>Sample calculations.</strong> Pick a real row of your sheet and write the numbers that feed it, each with its unit. Every torque row uses the same formula, so one worked torque shows how all 15 were made. Invented numbers, for an odd group with <span class="math inline">\(M_T = 0.100\ \text{kg}\)</span>, the 0.29 kg hanging mass and <span class="math inline">\(R_T = 15\ \text{cm}\)</span>:</p>
+<p><span class="math display">\[\tau_T = r_h F_T = (0.021\ \text{m})(2.822\ \text{N}) = 0.0593\ \text{m·N}, \qquad R_T^2 = (0.15\ \text{m})^2 = 0.0225\ \text{m}^2.\]</span></p>
+<p>Even groups have no <span class="math inline">\(R_T^2\)</span> line. Their torque line looks the same.</p>
+<p><strong>The two physical values.</strong> The trendline of graph 2 gives a slope <span class="math inline">\(A\)</span> and an intercept <span class="math inline">\(B\)</span>. Write the trendline on the board first, in physical symbols with a unit on each number, the way the whiteboard in class shows it:</p>
+<p><span class="math display">\[I_{TOT} = (B \text{ with units}) + (A \text{ with units})\,R_T^2 \qquad\text{or}\qquad I_{TOT} = (B \text{ with units}) + (A \text{ with units})\,M_T.\]</span></p>
+<p>Then the two values. For the odd group above, with <span class="math inline">\(A = 0.206\ \text{kg}\)</span> and <span class="math inline">\(B = 0.0112\ \text{kg·m}^2\)</span>:</p>
+<p><span class="math display">\[I_{TOT} = (0.0112\ \text{kg·m}^2) + (0.206\ \text{kg})\,R_T^2,\]</span></p>
+<p><span class="math display">\[M_{T,\text{exp}} = \frac{A}{2} = \frac{0.206\ \text{kg}}{2} = 0.103\ \text{kg}, \qquad I_0 = B = 0.0112\ \text{kg·m}^2.\]</span></p>
+<p>For an even group with <span class="math inline">\(R_T = 0.250\ \text{m}\)</span>, <span class="math inline">\(A = 0.127\ \text{m}^2\)</span> and <span class="math inline">\(B = 0.0109\ \text{kg·m}^2\)</span>:</p>
+<p><span class="math display">\[I_{TOT} = (0.0109\ \text{kg·m}^2) + (0.127\ \text{m}^2)\,M_T,\]</span></p>
+<p><span class="math display">\[R_{T,\text{exp}} = \sqrt{\frac{A}{2}} = \sqrt{\frac{0.127\ \text{m}^2}{2}} = 0.252\ \text{m}, \qquad I_0 = B = 0.0109\ \text{kg·m}^2.\]</span></p>
+<p>Carry the units through and they check the work for you. Half of a slope in kg is in kg, a mass. The square root of half a slope in m² is in m, a distance. If what comes out is not a mass or a distance, the slope went in with the wrong unit.</p>
+<p><strong>Uncertainties.</strong> These live in Excel, in the three rows at the bottom of the template: <strong>mean</strong>, <strong>δa</strong> and <strong>δr</strong> (rows 23 to 25). Every column gets all three. The rules are the ones from every lab, and the <a href="../../../teaching/labs/01-uncertainty.html">uncertainty guide</a> walks through them one column at a time. For the two calculated columns, find δr first, then δa.</p>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th><span class="math inline">\(\delta_a\)</span>, in the column’s unit</th>
+<th><span class="math inline">\(\delta_r\)</span>, no unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B, <span class="math inline">\(m_H\)</span></td>
+<td>from the balance, in kg</td>
+<td><span class="math inline">\(\delta_a\)</span> / mean</td>
+</tr>
+<tr class="even">
+<td>C, <span class="math inline">\(F_T\)</span></td>
+<td>the standard deviation from Statistics over the fall, in N</td>
+<td><span class="math inline">\(\delta_a\)</span> / mean</td>
+</tr>
+<tr class="odd">
+<td>D, <span class="math inline">\(\alpha\)</span></td>
+<td>0.01 rad/s², already in the template</td>
+<td><span class="math inline">\(\delta_a\)</span> / mean</td>
+</tr>
+<tr class="even">
+<td>E, <span class="math inline">\(\tau_T\)</span></td>
+<td><span class="math inline">\(\delta_r\)</span> × mean, in m·N</td>
+<td>the larger <span class="math inline">\(\delta_r\)</span> of <span class="math inline">\(F_T\)</span> and <span class="math inline">\(r_h\)</span></td>
+</tr>
+<tr class="odd">
+<td>F, <span class="math inline">\(M_T\)</span> or <span class="math inline">\(R_T\)</span></td>
+<td>0.001 kg or 0.001 m, already in the template</td>
+<td><span class="math inline">\(\delta_a\)</span> / mean</td>
+</tr>
+<tr class="even">
+<td>G, <span class="math inline">\(R_T^2\)</span> (odd groups)</td>
+<td><span class="math inline">\(\delta_r\)</span> × mean, in m²</td>
+<td>the <span class="math inline">\(\delta_r\)</span> of <span class="math inline">\(R_T\)</span></td>
+</tr>
+<tr class="odd">
+<td>H, <span class="math inline">\(I_{TOT}\)</span></td>
+<td>0.0005 kg·m², given in class</td>
+<td><span class="math inline">\(\delta_a\)</span> / mean</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The torque is a product, so it takes the larger <span class="math inline">\(\delta_r\)</span> of its two inputs. For <span class="math inline">\(r_h\)</span> that is <span class="math inline">\(0.0001\ \text{m} / 0.021\ \text{m} = 0.5\%\)</span>. A square is a product too, so <span class="math inline">\(R_T^2\)</span> takes the <span class="math inline">\(\delta_r\)</span> of <span class="math inline">\(R_T\)</span>. The values of <span class="math inline">\(I_{TOT}\)</span> are slopes, which the template’s rules do not reach, so use the δa given in class.</p>
+<p>Thinking about units helps here as well. A δa is the give-or-take on a column’s values, so it has that column’s unit. A δr is δa divided by the mean, two numbers in the same unit, so it has none. For the odd group above, <span class="math inline">\(R_T\)</span> has a mean of 0.15 m, so its δr is <span class="math inline">\(0.001\ \text{m} / 0.15\ \text{m} = 0.007\)</span>, about 0.7%, with no unit. <span class="math inline">\(R_T^2\)</span> takes the same 0.7%, and its mean of <span class="math inline">\(0.0275\ \text{m}^2\)</span> gives <span class="math inline">\(\delta_a = 0.007 \times 0.0275\ \text{m}^2 = 0.0002\ \text{m}^2\)</span>. A δa that comes out in some other unit, or a δr that comes out with a unit, means a cell reference is off.</p>
+<p><strong>The two graphs.</strong> Each needs a title, both axes labelled with the quantity and its unit, and a linear trendline with its equation on the chart.</p>
+<ol type="1">
+<li><strong>Graph 1, torque against rotational acceleration.</strong> A title such as “Torque vs.&nbsp;Rotational Acceleration”. <span class="math inline">\(\tau_T\)</span> in m·N up the side, <span class="math inline">\(\alpha\)</span> in rad/s² along the bottom. Five data sets, one per setting, each with its own trendline and equation, and a legend that says which setting is which. Each slope is the <span class="math inline">\(I_{TOT}\)</span> for one setting, in kg·m². Each intercept is a small positive friction torque, in m·N.</li>
+<li><strong>Graph 2, <span class="math inline">\(I_{TOT}\)</span> against your group’s variable.</strong> A title such as “Total Rotational Inertia vs.&nbsp;<span class="math inline">\(R_T^2\)</span>”. <span class="math inline">\(I_{TOT}\)</span> in kg·m² up the side. Along the bottom, <span class="math inline">\(R_T^2\)</span> in m² for odd groups (slope in kg) or <span class="math inline">\(M_T\)</span> in kg for even groups (slope in m²). One trendline with its equation. The intercept is <span class="math inline">\(I_0\)</span>, in kg·m².</li>
+</ol>
+</section>
 <section id="in-excel" class="level3">
 <h3 class="anchored" data-anchor-id="in-excel">In Excel</h3>
-<p>The template has the hub radius already typed in as a constant, <span class="math inline">\(r_h = 0.021\ \text{m}\)</span>, with a note that you may change the constants. Record the two constants your group does not change (<span class="math inline">\(R_T\)</span> for even groups, <span class="math inline">\(M_T\)</span> for odd groups) next to it. The 15 trials sit in five blocks of three rows, one block per setting.</p>
+<p>The template has the hub radius already typed in as a constant, <span class="math inline">\(r_h = 0.021\ \text{m}\)</span>, with a note that you may change the constants. Record the two constants your group does not change (<span class="math inline">\(R_T\)</span> for even groups, <span class="math inline">\(M_T\)</span> for odd groups) next to it. The 15 trials sit in five blocks of three rows, one block per setting. The template’s example hanging masses are 0.19, 0.29 and 0.59 kg. Type your own: the board in class lists 290 g, 590 g and 790 g, which already count the tension sensor, and they go in as 0.29, 0.59 and 0.79 kg.</p>
 <div class="sx-scroll">
 <table class="caption-top table">
 <colgroup>
@@ -840,7 +1103,7 @@ window.Quarto = {
 <td>E, <span class="math inline">\(\tau_T\)</span></td>
 <td><span class="math inline">\(F_T \times r_h\)</span></td>
 <td>m·N</td>
-<td>yes, for each trial</td>
+<td>yes, one worked example</td>
 </tr>
 <tr class="odd">
 <td>F</td>
@@ -871,21 +1134,6 @@ window.Quarto = {
 <li><strong>The chart is already there.</strong> The template’s chart plots the five blocks as five data sets of torque against rotational acceleration. Add a linear trendline with its equation to each.</li>
 </ul>
 </section>
-<section id="on-the-uda-board" class="level3">
-<h3 class="anchored" data-anchor-id="on-the-uda-board">On the UDA board</h3>
-<p>The 09B report asks for these, on the board:</p>
-<ul>
-<li>the torque calculation, <span class="math inline">\(\tau_T = r_h F_T\)</span>, for each of the 15 trials</li>
-<li><span class="math inline">\(R_T^2\)</span>, one sample, if you are an odd group</li>
-<li>the constant from the slope of graph 2, <span class="math inline">\(R_{T,\text{exp}}\)</span> or <span class="math inline">\(M_{T,\text{exp}}\)</span></li>
-<li>the T-bar’s own inertia <span class="math inline">\(I_0\)</span>, read from the intercept of graph 2</li>
-</ul>
-<p>Invented numbers, for an odd group with <span class="math inline">\(M_T = 0.100\ \text{kg}\)</span>. One trial with the 0.19 kg hanging mass at <span class="math inline">\(R_T = 15\ \text{cm}\)</span>:</p>
-<p><span class="math display">\[\tau_T = r_h F_T = (0.021\ \text{m})(1.853\ \text{N}) = 0.0389\ \text{m·N}, \qquad R_T^2 = (0.15\ \text{m})^2 = 0.0225\ \text{m}^2.\]</span></p>
-<p>If graph 2 gives a slope of <span class="math inline">\(A = 0.206\ \text{kg}\)</span> and an intercept of <span class="math inline">\(B = 0.0112\ \text{kg·m}^2\)</span>:</p>
-<p><span class="math display">\[M_{T,\text{exp}} = \frac{A}{2} = \frac{0.206\ \text{kg}}{2} = 0.103\ \text{kg}, \qquad I_0 = B = 0.0112\ \text{kg·m}^2.\]</span></p>
-<p>For an even group at <span class="math inline">\(R_T = 0.25\ \text{m}\)</span>, a slope of <span class="math inline">\(A = 0.127\ \text{m}^2\)</span> gives <span class="math inline">\(R_{T,\text{exp}} = \sqrt{0.127/2}\ \text{m} = 0.252\ \text{m}\)</span>.</p>
-</section>
 <section id="check-your-torques" class="level3">
 <h3 class="anchored" data-anchor-id="check-your-torques">Check your torques</h3>
 <p>While the mass falls, the tension is a little less than <span class="math inline">\(m_H g\)</span>, so every torque must come out a little <strong>under</strong> <span class="math inline">\(m_H g\,r_h\)</span>. <a href="#going-deeper">Going deeper</a> shows why. With <span class="math inline">\(g = 9.81\ \text{m/s}^2\)</span> and <span class="math inline">\(r_h = 0.021\ \text{m}\)</span>:</p>
@@ -909,54 +1157,59 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>0.19</td>
-<td>1.864</td>
-<td>0.0391</td>
-<td>0.8%</td>
-<td>3.9</td>
-</tr>
-<tr class="even">
 <td>0.29</td>
 <td>2.845</td>
 <td>0.0597</td>
 <td>1.3%</td>
-<td>5.9</td>
+<td>5.8</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>0.59</td>
 <td>5.788</td>
 <td>0.1215</td>
 <td>2.5%</td>
-<td>11.8</td>
+<td>11.7</td>
+</tr>
+<tr class="odd">
+<td>0.79</td>
+<td>7.750</td>
+<td>0.1627</td>
+<td>3.3%</td>
+<td>15.6</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>The last two columns use last week’s <span class="math inline">\(I_0 = 0.010\ \text{kg·m}^2\)</span>. With nothing added to the bar, the rotational acceleration should come out near the last column. Added pieces make <span class="math inline">\(I_{TOT}\)</span> larger, so <span class="math inline">\(\alpha\)</span> gets smaller and the torque sits even closer to <span class="math inline">\(m_H g\,r_h\)</span>. A torque well under these numbers points to a sensor zeroed with the mass hanging, or to <span class="math inline">\(r_h\)</span> in the wrong unit. A torque about twice as large means <span class="math inline">\(r_h\)</span> went in as a diameter.</p>
+<p>The last two columns use Lab 8’s <span class="math inline">\(I_0 = 0.0101\ \text{kg·m}^2\)</span>. With nothing added to the bar, the rotational acceleration should come out near the last column. Added pieces make <span class="math inline">\(I_{TOT}\)</span> larger, so <span class="math inline">\(\alpha\)</span> gets smaller and the torque sits even closer to <span class="math inline">\(m_H g\,r_h\)</span>. A torque well under these numbers points to a sensor zeroed with the mass hanging, or to <span class="math inline">\(r_h\)</span> in the wrong unit. A torque about twice as large means <span class="math inline">\(r_h\)</span> went in as a diameter.</p>
 </section>
-<section id="the-two-graphs" class="level3">
-<h3 class="anchored" data-anchor-id="the-two-graphs">The two graphs</h3>
-<p>Axes labelled with units on both.</p>
+<section id="con-detail" class="level3">
+<h3 class="anchored" data-anchor-id="con-detail">The CON paragraph in detail</h3>
+<p>One paragraph, with the four items from the 09B report in order, one sentence each. Write the equation with the physical symbols, not <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
 <ol type="1">
-<li><strong>Torque against rotational acceleration.</strong> <span class="math inline">\(\tau_T\)</span> in m·N up the side, <span class="math inline">\(\alpha\)</span> in rad/s² along the bottom, five data sets, each with its own linear trendline and equation. Each slope is the <span class="math inline">\(I_{TOT}\)</span> for one setting. Each intercept is a small positive friction torque.</li>
-<li><strong><span class="math inline">\(I_{TOT}\)</span> against your group’s variable.</strong> Even groups: <span class="math inline">\(I_{TOT}\)</span> in kg·m² against <span class="math inline">\(M_T\)</span> in kg, slope in m². Odd groups: <span class="math inline">\(I_{TOT}\)</span> against <span class="math inline">\(R_T^2\)</span> in m², slope in kg. One linear trendline with its equation. The intercept is <span class="math inline">\(I_0\)</span>.</li>
+<li><strong>(a) The relationship between your graphed quantities, in words.</strong> Name both quantities and say the relationship is linear. This sentence has no numbers, so it needs no units.</li>
+<li><strong>(b) The equation, with the real symbols.</strong> <span class="math inline">\(I_{TOT}\)</span>, then the intercept with kg·m², then the slope with its own unit times <span class="math inline">\(R_T^2\)</span> or <span class="math inline">\(M_T\)</span>.</li>
+<li><strong>(c) One constant from the slope, compared with its actual value.</strong> Odd groups: <span class="math inline">\(M_{T,\text{exp}} = A/2\)</span> against the balance. Even groups: <span class="math inline">\(R_{T,\text{exp}} = \sqrt{A/2}\)</span> against the ruler. Units on both values, then the percent difference.</li>
+<li><strong>(d) Your T-bar-only inertia, compared with Lab 8’s.</strong> <span class="math inline">\(I_0\)</span> from the intercept against Lab 8’s <span class="math inline">\(I_0 = 0.0101\ \text{kg·m}^2\)</span>, the class value on the board. Units on both values, then the percent difference. If your TA says to use your own group’s Lab 8 value, use that one.</li>
 </ol>
+<p>Both comparisons use the percent difference from the actual value:</p>
+<p><span class="math display">\[\%\,\text{diff} = \frac{\text{yours} - \text{actual}}{\text{actual}} \times 100\%.\]</span></p>
+<p>The units cancel, so the % sign is all that goes after the number. If your TA gives a different formula, use theirs.</p>
+<p>Put together, with the invented numbers from the UDA examples:</p>
+<blockquote class="blockquote">
+<p><strong>Odd group, <span class="math inline">\(M_T = 0.100\ \text{kg}\)</span>.</strong> The relationship between the total rotational inertia of the T-bar and the square of the distance of the added pieces from the axle is linear. The trendline was <span class="math inline">\(I_{TOT} = (0.0112\ \text{kg·m}^2) + (0.206\ \text{kg})\,R_T^2\)</span>. Half the slope gives a mass of <span class="math inline">\(M_{T,\text{exp}} = 0.103\ \text{kg}\)</span> for each piece, against the actual <span class="math inline">\(0.100\ \text{kg}\)</span> from the balance, a percent difference of <span class="math inline">\(3.0\%\)</span>. The intercept gives <span class="math inline">\(I_0 = 0.0112\ \text{kg·m}^2\)</span> for the T-bar alone, against <span class="math inline">\(0.0101\ \text{kg·m}^2\)</span> from Lab 8, a percent difference of <span class="math inline">\(10.9\%\)</span>, higher because the rotation sensor spun with the T-bar this week.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Even group, <span class="math inline">\(R_T = 0.250\ \text{m}\)</span>.</strong> The relationship between the total rotational inertia of the T-bar and the mass of each added piece is linear. The trendline was <span class="math inline">\(I_{TOT} = (0.0109\ \text{kg·m}^2) + (0.127\ \text{m}^2)\,M_T\)</span>. The square root of half the slope gives a distance of <span class="math inline">\(R_{T,\text{exp}} = 0.252\ \text{m}\)</span> from the axle to each piece, against the actual <span class="math inline">\(0.250\ \text{m}\)</span> from the ruler, a percent difference of <span class="math inline">\(0.8\%\)</span>. The intercept gives <span class="math inline">\(I_0 = 0.0109\ \text{kg·m}^2\)</span> for the T-bar alone, against <span class="math inline">\(0.0101\ \text{kg·m}^2\)</span> from Lab 8, a percent difference of <span class="math inline">\(7.9\%\)</span>, higher because the rotation sensor spun with the T-bar this week.</p>
+</blockquote>
+<p>Expect your intercept to come out <strong>above</strong> Lab 8’s, because the rotation sensor was not on the T-bar in Lab 8. Name the sensor as the reason.</p>
 </section>
-</section>
-<section id="con" class="level2">
-<h2 class="anchored" data-anchor-id="con">CON</h2>
-<p>One paragraph, with the four items from the 09B report in order. Write the equation with the physical symbols, not <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Numbers invented, for the odd group above.</p>
-<ol type="1">
-<li><strong>(a) The relationship between your graphed quantities, in words.</strong> → “The relationship between the total rotational inertia of the T-bar and the square of the distance of the added pieces from the axle is linear.”</li>
-<li><strong>(b) The equation, with the real symbols and units on the slope and intercept.</strong> → “The trendline was <span class="math inline">\(I_{TOT} = (0.206\ \text{kg})\,R_T^2 + 0.0112\ \text{kg·m}^2\)</span>.”</li>
-<li><strong>(c) One constant from the slope, compared with its measured value as a percent difference.</strong> → “Half the slope gives a mass of <span class="math inline">\(M_{T,\text{exp}} = 0.103\ \text{kg}\)</span> for each piece, against <span class="math inline">\(0.100\ \text{kg}\)</span> on the balance, a percent difference of <span class="math inline">\((0.103 - 0.100)/0.100 = 3.0\%\)</span>.” An even group does the same with <span class="math inline">\(R_{T,\text{exp}} = \sqrt{A/2}\)</span> against the ruler.</li>
-<li><strong>(d) Your T-bar-only inertia, compared with last week’s <span class="math inline">\(I_0\)</span>.</strong> → “The intercept gives <span class="math inline">\(I_0 = 0.0112\ \text{kg·m}^2\)</span> for the T-bar alone, <span class="math inline">\(12\%\)</span> above last week’s <span class="math inline">\(0.010\ \text{kg·m}^2\)</span>. This week the rotation sensor was taped on the T-bar, so it spun with it and added its own rotational inertia to the intercept.”</li>
-</ol>
-<p>For (d), your TA will say whether “last week’s <span class="math inline">\(I_0\)</span>” means your group’s own Lab 8 value or the class value. The value on the board this week is <span class="math inline">\(0.010 \pm 0.002\ \text{kg·m}^2\)</span>. Expect your intercept to come out <strong>above</strong> last week’s, because the rotation sensor was not on the T-bar in Lab 8. Name the sensor as the reason.</p>
 </section>
 <section id="common-slips" class="level2">
 <h2 class="anchored" data-anchor-id="common-slips">Common slips</h2>
 <ul>
+<li>A number on the UDA or CON board with no unit. The slope of graph 2 is the one most often left bare: it is in kg or m², never kg·m².</li>
+<li>A δa without a unit, or a δr with one.</li>
+<li>The trendline written as <span class="math inline">\(y = Ax + B\)</span> on the CON board in place of <span class="math inline">\(I_{TOT}\)</span> and <span class="math inline">\(R_T^2\)</span> or <span class="math inline">\(M_T\)</span>.</li>
 <li><span class="math inline">\(m_H\)</span> without the tension sensor. The sensor falls with the mass, so it belongs in <span class="math inline">\(m_H\)</span>.</li>
 <li>A tension sensor zeroed with the mass hanging. It then reads close to zero with the bar held still.</li>
 <li><span class="math inline">\(M_T\)</span> as the total of both pieces. <span class="math inline">\(M_T\)</span> is <strong>one</strong> piece, and the 2 in <span class="math inline">\(2M_T R_T^2\)</span> counts the pieces. Typing in the total and then halving the slope lands 50% off.</li>
@@ -980,9 +1233,9 @@ window.Quarto = {
 <p><span class="math display">\[F_T = m_H\,(g - r_h\alpha).\]</span></p>
 <p>While the mass falls, the tension is a little <strong>less</strong> than its weight. If the string pulled with the full weight, the mass would not speed up at all. That is why the lab measures <span class="math inline">\(F_T\)</span> with a sensor instead of using <span class="math inline">\(m_H g\)</span>. Put this tension into <span class="math inline">\(r_h F_T = I_{TOT}\alpha\)</span> and collect the <span class="math inline">\(\alpha\)</span> terms to get the rotational acceleration you should expect:</p>
 <p><span class="math display">\[\alpha = \frac{m_H g\, r_h}{I_{TOT} + m_H r_h^2}.\]</span></p>
-<p>With <span class="math inline">\(I_{TOT} = 0.010\ \text{kg·m}^2\)</span>, last week’s bare T-bar, this gives the last column of the check table. The shortfall in the tension is <span class="math inline">\(m_H r_h\alpha\)</span>, the fraction <span class="math inline">\(r_h\alpha/g\)</span> of the weight. At <span class="math inline">\(\alpha = 3.11\ \text{rad/s}^2\)</span>, <span class="math inline">\(r_h\alpha = (0.021\ \text{m})(3.11\ \text{rad/s}^2) = 0.065\ \text{m/s}^2\)</span>, about 0.7% of <span class="math inline">\(g\)</span>.</p>
+<p>With <span class="math inline">\(I_{TOT} = 0.0101\ \text{kg·m}^2\)</span>, Lab 8’s bare T-bar, this gives the last column of the check table. The shortfall in the tension is <span class="math inline">\(m_H r_h\alpha\)</span>, the fraction <span class="math inline">\(r_h\alpha/g\)</span> of the weight. For the lightest hanging mass on the bare bar, <span class="math inline">\(\alpha = 5.84\ \text{rad/s}^2\)</span>, so <span class="math inline">\(r_h\alpha = (0.021\ \text{m})(5.84\ \text{rad/s}^2) = 0.123\ \text{m/s}^2\)</span>, about 1.3% of <span class="math inline">\(g\)</span>.</p>
 <p><strong>Why the intercept of graph 2 comes out high.</strong> Two things push it up. The rotation sensor spins with the bar this week, and it adds about <span class="math inline">\(m_s d^2\)</span>, its mass times the square of its distance from the axle, plus its own small inertia. And the added pieces are not points. By the parallel-axis theorem, each piece also carries its own inertia about its centre, <span class="math inline">\(I_{cm}\)</span>, so two pieces add <span class="math inline">\(2I_{cm}\)</span>. For odd groups that extra does not change as <span class="math inline">\(R_T\)</span> changes, so it lands in the intercept. For even groups adding more of the same piece, it grows with the mass and nudges the slope up a little.</p>
-<p><strong>Which settings give the cleanest line.</strong> The 5 cm setting with 100 g pieces adds only <span class="math inline">\(2(0.100)(0.05)^2 = 0.0005\ \text{kg·m}^2\)</span>, less than the <span class="math inline">\(\pm 0.002\)</span> on last week’s <span class="math inline">\(I_0\)</span>, so that point mostly measures <span class="math inline">\(I_0\)</span>. For even groups, a large <span class="math inline">\(R_T\)</span> gives a much larger change: from 50 g to 300 g at 25 cm, <span class="math inline">\(I_{TOT}\)</span> grows by <span class="math inline">\(2(0.250)(0.25)^2 = 0.031\ \text{kg·m}^2\)</span>. The slowest case is 300 g pieces at 35 cm with the 0.19 kg hanging mass, where <span class="math inline">\(\alpha\)</span> is only about 0.47 rad/s². Friction matters most there, and the fall has to last long enough to fit.</p>
+<p><strong>Which settings give the cleanest line.</strong> The 5 cm setting with 100 g pieces adds only <span class="math inline">\(2(0.100)(0.05)^2 = 0.0005\ \text{kg·m}^2\)</span>, the same size as the uncertainty on each <span class="math inline">\(I_{TOT}\)</span>, so that point mostly measures <span class="math inline">\(I_0\)</span>. For even groups, a large <span class="math inline">\(R_T\)</span> gives a much larger change: from 50 g to 300 g at 25 cm, <span class="math inline">\(I_{TOT}\)</span> grows by <span class="math inline">\(2(0.250)(0.25)^2 = 0.031\ \text{kg·m}^2\)</span>. The slowest case is 300 g pieces at 35 cm with the 0.29 kg hanging mass, where <span class="math inline">\(\alpha\)</span> is only about 0.7 rad/s². Friction matters most there, and the fall has to last long enough to fit.</p>
 
 
 </section>
