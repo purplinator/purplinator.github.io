@@ -4,8 +4,10 @@ For any session picking this up. Read this file first, then `brainstorm.md` besi
 behind the direction. The schema itself lives in the header of `opportunities/reu/programs.yml`, which
 wins if this file and it ever disagree. Update the status line at every step boundary.
 
-**Status (2026-11-10):** Step 1 done, field list accepted by Saxon ("a good start"). Step 5 questions
-answered (see step 5.3). Next: step 2, the candidate list, when Saxon says go.
+**Status (2026-11-10):** Steps 1 and 2 done. `candidates.md` holds 76 rows in the main tables and 46
+in Maybe, with the Include column pre-filled by the lead's suggestions (36 Maybe rows `in`, 9 `ask`, 1
+`out`). NSF's REU search page would not load, so NSF sites came from NSF's award data. Waiting on Saxon to
+confirm the marks and answer the `ask` rows. Next: step 3, verification in domain-grouped batches.
 
 ## Goal
 
@@ -48,6 +50,11 @@ Lead and advisor, at Saxon's request, 2026-11-10:
 - `last_verified` means every season field was re-read on the program's own pages that day. A search
   result or an aggregator is never a source.
 - Unknown is null. Never guess a deadline, a flag or a link.
+- Never flood a domain (Saxon, 2026-11-10). Every script and every agent that fetches pages sends at
+  most one request every 3 seconds to any one domain, never two at once to the same domain, identifies
+  itself as the saxonstockton.com link check, and stops asking a domain that answers 403 or 429 (that
+  page goes to "needs a human", no retries). Parallel agents are split by domain, so two agents never work
+  the same domain at once. `check_programs.py` enforces this in code (`--gap`, 3 seconds minimum).
 - Never store stipend, housing, letter count or statement prompts. Link to the program.
 - Notes are one factual line in our own words. Never copy Juan's descriptions or anyone else's.
 - At the August 1 rollover: bump `summer`, clear `deadline`, `season_note` and `source_url`. Remove an
@@ -78,7 +85,9 @@ step 3. Expect 60 to 90.
 
 ### 3. Verify (agents in parallel, then a second agent, then the checker)
 
-- Batches of about 10 candidates per agent. Each agent gets its batch, the schema header of
+- Batches of about 10 candidates per agent, grouped by domain: every program on one domain goes to the
+  same agent, so no two agents hit a domain at once. Each agent's brief repeats the rate rule above.
+- Each agent gets its batch, the schema header of
   `programs.yml`, and these rules: read only the program's own pages (and official portals: ETAP, the
   NASA Gateway, DOE WDTS); fill what the pages state; null what they do not; set `last_verified` to the
   day read and `source_url` wherever a deadline came from; `note` in its own words or null.
@@ -86,6 +95,29 @@ step 3. Expect 60 to 90.
 - A different agent re-checks a sample of about 15 percent against the pages. Nobody signs off their
   own batch.
 - The lead merges the batches into `programs.yml` and runs the checker until it shows 0 errors.
+
+### 3b. The watcher (right after step 3, added 2026-11-10)
+
+Catches programs posting or changing their details during the season, without re-verifying everything.
+Most valuable November to February, so it is built before the workbook, not after publication.
+
+- `scripts/watch_programs.py`, no AI: for each entry, fetch `url`, `apply_url`, `eligibility_url` and
+  `source_url` (each URL once), keep only the lines that matter (dates, the words deadline, apply,
+  eligibility, citizen, the season year), and compare with last week's copy. Report pages whose lines
+  changed, and flag "now mentions <season>" for entries with no deadline yet.
+- Last week's copies live on a separate `watch-state` branch, never on `main` (every push to `main`
+  redeploys the site).
+- `.github/workflows/watch-programs.yml`: weekly schedule plus a manual button. Runs the script, opens or
+  updates one GitHub issue listing the changes, never touches `main`. GitHub pauses scheduled workflows
+  after 60 days without repository activity, so a quiet summer can stop it.
+- Then an agent re-reads only the flagged pages and proposes edits to `programs.yml`. The lead merges
+  them once the checker shows 0 errors, and Saxon sees the list of changes.
+- Blind spots: pages that refuse scripts or are built in JavaScript (ETAP) cannot be watched. They stay on
+  the "needs a human" list in `candidates.md`.
+- Polite by design: weekly, one request per page, the same per-domain spacing and 403/429 stop as the
+  checker (reuse its `check_host`), and it honours each domain's robots.txt, including any Crawl-delay
+  longer than 3 seconds. A page robots.txt disallows goes to "needs a human" instead of being fetched.
+- The same signal feeds a "recently updated" banner on the list page in step 6.
 
 ### 4. Saxon's review (about 30 minutes)
 

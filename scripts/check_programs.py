@@ -34,7 +34,9 @@ import argparse
 import datetime as dt
 import re
 import sys
+import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -84,10 +86,17 @@ def as_date(value) -> dt.date | None:
     return dt.date.fromisoformat(str(value))
 
 
+USER_AGENT = "Mozilla/5.0 (compatible; saxonstockton.com link check)"
+# Politeness (Saxon, 2026-11-10: never flood a domain). Requests to one host go
+# one at a time, at least --gap seconds apart. Different hosts run side by side,
+# at most MAX_HOSTS_AT_ONCE of them. A 403 or 429 stops all further requests to
+# that host for this run.
+MAX_HOSTS_AT_ONCE = 6
+
+
 def fetch(url: str) -> tuple[str, str | None, bool]:
     """(url, problem or None, problem is only a warning)."""
-    req = urllib.request.Request(
-        url, headers={"User-Agent": "Mozilla/5.0 (compatible; saxonstockton.com link check)"})
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
         with urllib.request.urlopen(req, timeout=20) as resp:
             return url, None if resp.status < 400 else f"HTTP {resp.status}", False
@@ -97,11 +106,34 @@ def fetch(url: str) -> tuple[str, str | None, bool]:
         return url, type(e).__name__, False
 
 
+def host_of(url: str) -> str:
+    host = (urllib.parse.urlsplit(url).hostname or "").lower()
+    return host[4:] if host.startswith("www.") else host
+
+
+def check_host(urls: list[str], gap: float) -> list[tuple[str, str | None, bool]]:
+    """Fetch one host's URLs in order, gap seconds apart, stopping on 403 or 429."""
+    results, stopped = [], None
+    for n, url in enumerate(urls):
+        if stopped:
+            results.append((url, f"not checked, host answered {stopped} earlier", True))
+            continue
+        if n:
+            time.sleep(gap)
+        result = fetch(url)
+        results.append(result)
+        if result[1] in ("HTTP 403", "HTTP 429"):
+            stopped = result[1]
+    return results
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--no-net", action="store_true", help="skip the link check")
     ap.add_argument("--stale", type=int, default=60, help="days before a check counts as stale")
     ap.add_argument("--file", type=Path, default=DATA, help="data file (default: the real one)")
+    ap.add_argument("--gap", type=float, default=3.0,
+                    help="seconds between requests to the same host (minimum 3)")
     args = ap.parse_args()
 
     entries = yaml.safe_load(args.file.read_text()) or []
@@ -179,8 +211,12 @@ def main() -> int:
                 links.setdefault(e[k], []).append(f"{tag} {k}")
 
     if not args.no_net and links:
-        with ThreadPoolExecutor(max_workers=8) as pool:
-            for url, problem, soft in pool.map(fetch, links):
+        by_host: dict[str, list[str]] = {}
+        for url in links:
+            by_host.setdefault(host_of(url), []).append(url)
+        with ThreadPoolExecutor(max_workers=MAX_HOSTS_AT_ONCE) as pool:
+            batches = pool.map(lambda urls: check_host(urls, max(args.gap, 3.0)), by_host.values())
+            for url, problem, soft in (r for batch in batches for r in batch):
                 if problem:
                     where = "; ".join(links[url])
                     msg = f"{where}: link {'refused a script' if soft else 'failed'}, {problem}: {url}"
