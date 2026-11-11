@@ -1,0 +1,47 @@
+---
+title: "How to Apply to a Summer Research Program"
+description: "When to start, what goes in an application, how to ask for letters, and what happens after offers go out."
+order: 1
+---
+
+::: {.callout-note title="Placeholder for Saxon"}
+An outline only. Each section is yours to write, from your own REU
+applications and the Michigan REU in 2022. The bullets under each heading are
+prompts, not text for the page.
+:::
+
+## When to start
+
+- The season in months: programs open in November, most close between mid
+  January and early February, first offers go out in late February and early
+  March.
+- What to do in October and November so January is not a scramble.
+
+## Where applications go
+
+- NSF ETAP, the shared portal most NSF REU sites use, and what one account
+  covers.
+- Programs with their own forms, and national lab programs such as SULI.
+
+## What goes in an application
+
+- The personal statement and the research interest statement.
+- Transcripts, and what a program can and cannot tell from a GPA.
+- The list of courses and skills.
+
+## Letters of recommendation
+
+- Whom to ask, how early, and what to send them.
+- How letters work when you apply to ten programs.
+
+## Choosing where to apply
+
+- How many programs, and how to read a project list.
+- Programs for first and second year students, and for community college
+  students.
+- Programs abroad, and programs open to students who are not U.S. citizens.
+
+## After offers go out
+
+- The common early March reply deadline at domestic NSF physics REU sites.
+- Waitlists, and what to do if you hear nothing.

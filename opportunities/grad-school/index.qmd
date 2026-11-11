@@ -1,0 +1,22 @@
+---
+title: "Graduate School"
+subtitle: "Planned"
+description: "Help with applying to graduate programs in physics and astronomy. Planned, not yet written."
+---
+
+::: {.callout-note title="Placeholder for Saxon"}
+Nothing here is written yet. The list below is a starting set of topics to
+keep or cut. Pages go in this folder as `NN-slug.qmd` with `order: NN`, the
+same way as the rest of the site.
+:::
+
+## Planned
+
+- The application timeline, from the summer before to the April 15 decision
+  date.
+- Choosing programs, and what to ask current graduate students.
+- Contacting potential advisors.
+- The statement of purpose and the personal statement.
+- Fellowships to apply for as an undergraduate, such as the NSF GRFP.
+- The GRE and the physics GRE, and which programs still ask for them.
+- Visits, offers and deciding.

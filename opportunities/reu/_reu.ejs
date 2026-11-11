@@ -1,0 +1,132 @@
+<%
+// ---------------------------------------------------------------------------
+// Template for the REU list (opportunities/reu/index.qmd).
+//
+// The page has three listings over the same data file, one per group, and
+// each passes `group` in template-params ("open", "passed" or "unknown").
+// This template keeps only that group's entries.
+//
+// The site is rebuilt only on a push, so a grouping made at build time goes
+// stale as deadlines pass. The script at the bottom re-runs the same rule in
+// the reader's browser against today's date and moves entries between the
+// three lists. It reuses groupOf() through toString(), so the rule is written
+// once. Readers without JavaScript get the build-time grouping.
+//
+// The output is wrapped in a raw HTML fence because Quarto pastes it into the
+// page as markdown, and Pandoc would otherwise read the indented HTML as
+// markdown, leave divs open and nest one group's list inside another.
+//
+// Quarto runs these templates with lodash, not EJS, and the two print tags are
+// the other way round: the one with a minus sign escapes HTML and the one with
+// an equals sign prints raw. Every data value uses the minus tag. The only raw
+// print is the function source in the script. (Never write a literal tag inside
+// these comments: the template parser reads it even here.)
+// ---------------------------------------------------------------------------
+
+function groupOf(item, today) {
+  // today is "YYYY-MM-DD". Season = next summer, rolling over on August 1.
+  var year = Number(today.slice(0, 4));
+  var month = Number(today.slice(5, 7));
+  var season = month >= 8 ? year + 1 : year;
+  var deadline = item.deadline ? String(item.deadline).slice(0, 10) : "";
+  if (item.status === "cancelled") return "unknown";
+  if (Number(item.summer) !== season || !deadline) return "unknown";
+  return deadline >= today ? "open" : "passed";
+}
+
+var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+function nice(d) {
+  // "2027-02-01" -> "Feb 1, 2027". Done by hand so no time zone shifts the day.
+  if (!d) return "";
+  var s = String(d).slice(0, 10).split("-");
+  return MONTHS[Number(s[1]) - 1] + " " + Number(s[2]) + ", " + s[0];
+}
+
+var KIND = { "nsf-reu": "NSF REU", "national-lab": "National lab",
+             "nasa": "NASA", "other": "Other" };
+var STATUS = { "awaiting-funding": "Awaiting funding",
+               "cancelled": "Not running this summer" };
+
+var group = templateParams.group;
+var now = new Date();
+var today = now.getFullYear() + "-" +
+            String(now.getMonth() + 1).padStart(2, "0") + "-" +
+            String(now.getDate()).padStart(2, "0");
+
+var mine = items.filter(function (it) { return groupOf(it, today) === group; });
+mine.sort(function (a, b) {
+  if (group === "unknown") return String(a.title).localeCompare(String(b.title));
+  return String(a.deadline).localeCompare(String(b.deadline));
+});
+%>
+```{=html}
+<div class="sx-reu" data-group="<%- group %>">
+<p class="sx-reu__count"><span class="sx-reu__n"><%- mine.length %></span> <span class="sx-reu__word"><%- mine.length === 1 ? "program" : "programs" %></span></p>
+<p class="sx-reu__empty"<% if (mine.length) { %> hidden<% } %>>None right now.</p>
+<ul class="sx-reu__list">
+<% for (const it of mine) { %>
+  <li class="sx-reu-item"
+      data-title="<%- it.title %>"
+      data-deadline="<%- it.deadline ? String(it.deadline).slice(0, 10) : '' %>"
+      data-summer="<%- it.summer %>"
+      data-status="<%- it.status || '' %>">
+    <div class="sx-reu-item__head">
+      <a class="sx-reu-item__title" href="<%- it.url %>"><%- it.title %></a>
+      <span class="sx-reu-item__deadline">
+        <% if (it.deadline) { %>Summer <%- it.summer %> deadline: <strong><%- nice(it.deadline) %></strong>
+        <% } else { %>Summer <%- it.summer %> deadline: not announced<% } %>
+      </span>
+    </div>
+    <% if (it.host) { %><div class="sx-reu-item__host"><%- it.host %><% if (it.location) { %> · <%- it.location %><% } %></div><% } %>
+    <% if (it.note) { %><p class="sx-reu-item__note"><%- it.note %></p><% } %>
+    <% if (it.season_note) { %><p class="sx-reu-item__note"><%- it.season_note %></p><% } %>
+    <div class="sx-reu-item__meta">
+      <% if (it.kind && KIND[it.kind]) { %><span class="sx-chip"><%- KIND[it.kind] %></span><% } %>
+      <% for (const a of (it.area || [])) { %><span class="sx-chip sx-chip--quiet"><%- a %></span><% } %>
+      <% if (STATUS[it.status]) { %><span class="sx-chip sx-chip--gold"><%- STATUS[it.status] %></span><% } %>
+      <% if (it.applies_via === "etap") { %><span class="sx-chip sx-chip--quiet">Apply on ETAP</span><% } %>
+    </div>
+    <p class="sx-reu-item__checked">
+      <% if (it.last_verified) { %>Checked against the program page on <%- nice(it.last_verified) %>
+      <% } else { %><span class="sx-reu-item__unchecked">Not yet checked against the program page</span><% } %>
+    </p>
+  </li>
+<% } %>
+</ul>
+</div>
+<% if (group === "open") { %>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var groupOf = <%= groupOf.toString() %>;
+  var now = new Date();
+  var today = now.getFullYear() + "-" +
+              String(now.getMonth() + 1).padStart(2, "0") + "-" +
+              String(now.getDate()).padStart(2, "0");
+  var lists = {};
+  document.querySelectorAll(".sx-reu").forEach(function (box) {
+    lists[box.dataset.group] = box;
+  });
+  // Move every entry to the list today's date puts it in.
+  document.querySelectorAll(".sx-reu-item").forEach(function (li) {
+    var g = groupOf({ deadline: li.dataset.deadline, summer: li.dataset.summer,
+                      status: li.dataset.status }, today);
+    if (lists[g]) lists[g].querySelector(".sx-reu__list").appendChild(li);
+  });
+  // Re-sort, recount and show or hide the "None right now" line.
+  Object.keys(lists).forEach(function (g) {
+    var box = lists[g], ul = box.querySelector(".sx-reu__list");
+    var lis = Array.prototype.slice.call(ul.children);
+    lis.sort(function (a, b) {
+      return g === "unknown" ? a.dataset.title.localeCompare(b.dataset.title)
+                             : a.dataset.deadline.localeCompare(b.dataset.deadline);
+    });
+    lis.forEach(function (li) { ul.appendChild(li); });
+    box.querySelector(".sx-reu__n").textContent = lis.length;
+    box.querySelector(".sx-reu__word").textContent = lis.length === 1 ? "program" : "programs";
+    box.querySelector(".sx-reu__empty").hidden = lis.length > 0;
+  });
+});
+</script>
+<% } %>
+```

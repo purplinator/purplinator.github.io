@@ -1,0 +1,48 @@
+---
+title: "Opportunities"
+subtitle: "Summer research, and later graduate school, for physics and astronomy students"
+description: "Summer research programs for undergraduates in physics and astronomy, how to apply to them, and help with graduate school applications."
+---
+
+::: {.callout-note title="Placeholder for Saxon"}
+This intro is scaffolding. Say in your own words who this is for and why it
+exists. The section name "Opportunities" is a working title too.
+:::
+
+A list of summer research programs in physics and astronomy, kept current
+each application season, and a guide to applying to them. Help with graduate
+school applications comes next.
+
+```{=html}
+<div class="sx-cards">
+<a class="sx-card" href="reu/index.html">
+  <div class="sx-card__icon"><i class="bi bi-calendar-check"></i></div>
+  <h3 class="sx-card__title">Summer Research Programs</h3>
+  <p class="sx-card__text">
+    REUs, national lab internships and other paid summer research in physics
+    and astronomy, sorted by deadline.
+  </p>
+  <span class="sx-card__more">See the list</span>
+</a>
+
+<a class="sx-card" href="reu/01-how-to-apply.html">
+  <div class="sx-card__icon"><i class="bi bi-envelope-paper"></i></div>
+  <h3 class="sx-card__title">How to Apply</h3>
+  <p class="sx-card__text">
+    When to start, what goes in an application, how to ask for letters, and
+    what happens after offers go out.
+  </p>
+  <span class="sx-card__more">Read the guide</span>
+</a>
+
+<a class="sx-card" href="grad-school/index.html">
+  <div class="sx-card__icon"><i class="bi bi-mortarboard"></i></div>
+  <span class="sx-chip sx-chip--gold">Planned</span>
+  <h3 class="sx-card__title">Graduate School</h3>
+  <p class="sx-card__text">
+    Choosing programs, fellowships, statements and the application timeline.
+  </p>
+  <span class="sx-card__more">See what is planned</span>
+</a>
+</div>
+```

@@ -1,0 +1,13 @@
+# Defaults for every page in Opportunities.
+
+# OPPORTUNITIES DRAFT (since 2026-11-06). Every page in this folder is a draft:
+# `quarto preview` shows it, but `quarto render` and the GitHub Actions build
+# turn each page into an empty stub that is left out of search, listings and
+# sidebars. A push therefore cannot publish this section by accident. The source
+# is still visible in the public repo.
+#
+# To publish: delete the line below, then uncomment every entry marked
+# "OPPORTUNITIES DRAFT" (grep -rn "OPPORTUNITIES DRAFT" .).
+draft: true
+
+footnotes-hover: true

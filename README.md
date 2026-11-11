@@ -49,6 +49,22 @@ teaching/
   math/                   mathematics lessons (empty, ready for content)
   physics/                worked physics problems (empty, ready for content)
 
+opportunities/            DRAFT: tracked and rendered, but every page is an empty stub
+                          until _metadata.yml loses `draft: true` (grep "OPPORTUNITIES DRAFT")
+  _metadata.yml           the draft switch
+  _notes/                 plan.md (read first: decisions, steps, status) and brainstorm.md
+  index.qmd               hub
+  reu/
+    programs.yml          the summer research list: one entry per program, schema at the top
+    _reu.ejs              template that groups entries by deadline (and regroups in the browser)
+    index.qmd             the list page, three listings over programs.yml
+    01-how-to-apply.qmd   application guide (outline only)
+  grad-school/            graduate school help (planned)
+
+scripts/
+  check_programs.py       checks programs.yml: fields, stale checks, dead links
+                          (uv run python scripts/check_programs.py)
+
 assets/
   theme-light.scss        light palette and Bootstrap variables
   theme-dark.scss         dark palette

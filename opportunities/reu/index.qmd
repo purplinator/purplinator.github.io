@@ -1,0 +1,75 @@
+---
+title: "Summer Research Programs"
+subtitle: "Physics and astronomy REUs and internships, sorted by deadline"
+description: "A curated list of summer research programs for undergraduates in physics and astronomy, with deadlines, eligibility and the date each entry was last checked."
+# Three listings over the same data file, one per group. The grouping rule and
+# the script that keeps it current in the browser are in _reu.ejs. The data and
+# its schema are in programs.yml.
+listing:
+  - id: reu-open
+    contents: programs.yml
+    type: custom
+    template: _reu.ejs
+    sort: false
+    template-params:
+      group: open
+  - id: reu-passed
+    contents: programs.yml
+    type: custom
+    template: _reu.ejs
+    sort: false
+    template-params:
+      group: passed
+  - id: reu-unknown
+    contents: programs.yml
+    type: custom
+    template: _reu.ejs
+    sort: false
+    template-params:
+      group: unknown
+---
+
+::: {.callout-note title="Placeholder for Saxon"}
+The two paragraphs below are scaffolding. Rewrite them in your own words, and
+decide whether to mention Juan Cabanela's list here once he has answered.
+:::
+
+Most physics and astronomy summer research programs for undergraduates open
+in November and close between January and early February. This page lists
+them in one place, soonest deadline first, with who can apply and when each
+entry was last checked.
+
+The program's own page is always the authority. Deadlines move, and funding
+for some programs is not settled until spring. Every entry links to its
+program and says the date I last checked it. If something here is wrong or
+missing, email me at [s.stockton@tcu.edu](mailto:s.stockton@tcu.edu).
+
+## Deadline ahead
+
+::: {#reu-open}
+:::
+
+## Deadline passed
+
+::: {#reu-passed}
+:::
+
+## Not announced yet
+
+Programs that have not posted a deadline for this summer yet, or have said
+they are not running. Many are waiting on funding news.
+
+::: {#reu-unknown}
+:::
+
+## Other lists worth checking
+
+- [NSF REU site search](https://www.nsf.gov/funding/initiatives/reu/search).
+  Every currently funded NSF REU site in every field, searchable by research
+  area. No deadlines.
+- [NSF ETAP](https://etap.nsf.gov). The application portal most NSF REU sites
+  now use. One account covers many programs.
+- [AAS Division for Planetary Sciences REU list](https://dps.aas.org/education/reu-programs).
+  Planetary science programs in the U.S., Canada and abroad.
+- [So you want to apply for an REU](http://astrobites.org/2013/01/05/so-you-want-to-apply-for-an-reu-heres-how/),
+  from Astrobites. Written for astronomy, useful for any science REU.

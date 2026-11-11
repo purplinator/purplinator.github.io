@@ -13,6 +13,9 @@
 #     python/            "Python from Scratch" tutorial series
 #     math/              mathematics lessons
 #     physics/           worked textbook problems
+#   opportunities/       for students applying onward (drafts until published)
+#     reu/               summer research list, rendered from reu/programs.yml
+#     grad-school/       graduate school help (planned)
 #   notes/               personal notes: travel, random thoughts (blog-style listing)
 #
 # The sidebars below use `auto: "dir/*"` globs, so adding a page is just adding
@@ -32,6 +35,8 @@ project:
   render:
     - "*.qmd"
     - "teaching/**/*.qmd"
+    # Rendered, but every page is a draft for now: see opportunities/_metadata.yml.
+    - "opportunities/**/*.qmd"
     # HELD BACK (see .gitignore): restore these two lines to publish the sections.
     # - "research/**/*.qmd"
     # - "notes/**/*.qmd"
@@ -71,6 +76,9 @@ website:
       #   href: research/index.qmd
       - text: "Teaching"
         href: teaching/index.qmd
+      # OPPORTUNITIES DRAFT: uncomment when opportunities/ is published.
+      # - text: "Opportunities"
+      #   href: opportunities/index.qmd
       - text: "CV"
         href: cv.qmd
       - text: "About"
@@ -139,12 +147,31 @@ website:
           contents:
             - auto: "teaching/physics/*"
 
+    # Drafts are dropped from sidebars, so this one stays empty in the live
+    # build until opportunities/_metadata.yml loses its `draft: true`.
+    - id: opportunities
+      title: "Opportunities"
+      style: docked
+      collapse-level: 2
+      contents:
+        - text: "Overview"
+          href: opportunities/index.qmd
+        - section: "Summer Research"
+          href: opportunities/reu/index.qmd
+          contents:
+            - auto: "opportunities/reu/*"
+        - section: "Graduate School"
+          href: opportunities/grad-school/index.qmd
+          contents:
+            - auto: "opportunities/grad-school/*"
+
   page-footer:
     background: light
     left: |
       © 2026 Saxon Stockton · Built with [Quarto](https://quarto.org)
     # HELD BACK (see .gitignore): the full line was
     #   [Research](/research/) · [Teaching](/teaching/) · [CV](/cv.html) · [About](/about.html) · [Notes](/notes/)
+    # OPPORTUNITIES DRAFT: add [Opportunities](/opportunities/) after Teaching when published.
     center: |
       [Teaching](/teaching/) · [CV](/cv.html) · [About](/about.html)
     right:

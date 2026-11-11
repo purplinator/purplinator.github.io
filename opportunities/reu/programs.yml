@@ -1,0 +1,200 @@
+# ============================================================================
+# Summer research programs for undergraduates in physics and astronomy.
+#
+# This file is the ONLY source of the list. Everything else is made from it:
+#   opportunities/reu/index.qmd   renders it through _reu.ejs
+#   data/summer-programs.csv      made by scripts/build_programs_csv.py (step 5);
+#                                 never edit the CSV by hand
+#   the Google Sheet              reads that CSV with IMPORTDATA
+# scripts/check_programs.py checks this file. The plan and the reasons behind
+# these rules are in opportunities/_notes/plan.md.
+#
+# Quarto does not render a .yml file as a page. Listings cannot read files in
+# an underscore folder, which is why this one sits beside the page.
+#
+# ---------------------------------------------------------------------------
+# Fields, in the order the CSV prints them. "Req" = required once the entry is
+# verified (last_verified set). Unverified entries may leave anything null and
+# never reach the CSV.
+#
+#   key                CSV header                         req  rule
+#   id                 ID                                 yes  host-first slug: lowercase letters, digits and
+#                                                              single hyphens (florida-astro, doe-suli). No
+#                                                              year. Never changes once published, because
+#                                                              students' sheets look programs up by it.
+#   title              Program                            yes  the program's own name for itself
+#   host               Host                               yes  university, lab or agency
+#   location           Location                           yes  "City, ST", or "Several sites"
+#   deadline           Deadline                           -    YYYY-MM-DD for `summer`, or null
+#   usual_deadline     Usual deadline                     yes  "early|mid|late <Month>" or "rolling". The
+#                                                              fallback that stays useful in a year nobody
+#                                                              checks.
+#   season_note        Season note                        -    this summer only ("letters due Jan 25");
+#                                                              cleared at rollover
+#   status             Status                             yes  confirmed | awaiting-funding | cancelled | unknown
+#   kind               Type                               yes  nsf-reu | national-lab | nasa | other
+#   area               Fields                             yes  list, at least one tag from:
+#                                                                astronomy, astrophysics, planetary, solar,
+#                                                                space, particle, nuclear, condensed-matter,
+#                                                                optics, amo, plasma, gravitational,
+#                                                                biophysics, computational, physics-general,
+#                                                                education
+#   applies_via        Apply through                      yes  etap | nasa-gateway | doe-wdts | own. Add a
+#                                                              value only for a portal two or more programs
+#                                                              share.
+#   noncitizens        Open without U.S. citizenship      -    true | false | null (null = the page does not
+#                      or green card                           say). Permanent residents count as eligible
+#                                                              under NSF rules, hence the header wording.
+#   early_years        Open to first- and second-year     -    true | false | null. false only if the page
+#                      students                                excludes them.
+#   community_college  Open to community college          -    true | false | null
+#                      students
+#   apply_url          Apply link                         -    the page or portal where the application starts
+#   eligibility_url    Eligibility link                   -    where who-can-apply and what-to-submit are stated
+#   projects_url       Projects link                      -    the list of projects or mentors
+#   url                Program page                       yes  the program's main page, the durable anchor
+#   summer             Summer                             yes  the summer `deadline` belongs to (2027)
+#   last_verified      Last checked                       -    YYYY-MM-DD, or null. Set only when every season
+#                                                              field was re-read on the program's own pages
+#                                                              that day, never from a search result. null
+#                                                              keeps the row out of the CSV.
+#   note               Note                               -    one factual line, evergreen, in our own words.
+#                                                              Never copied from Juan's List or anywhere else.
+#   source_url         (not in the CSV)                   *    where the deadline was read. Required when
+#                                                              `deadline` is set on a verified entry.
+#
+# Flags are true / false / null, not yes / no: YAML reads a bare yes or no as a
+# boolean anyway, and null keeps "the page does not say" honest. The CSV prints
+# Yes / No / Not stated.
+#
+# Never store (link to the program instead): stipend, housing, letter count,
+# statement prompts. They change every year and a stale value misleads.
+#
+# Grouping on the page (rule in _reu.ejs): the season is next summer, rolling
+# over on August 1. An entry for this season with a deadline today or later is
+# "deadline ahead", one whose deadline has gone by is "deadline passed", and
+# everything else is "not announced yet". At the August rollover, bump `summer`
+# and clear `deadline`, `season_note` and `source_url`. Entries are removed only
+# then, never mid-season.
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# SEED ROWS from a web search on 2026-11-06, kept to exercise the template.
+# None has been checked against its program page (last_verified: null), so none
+# reaches the CSV. Step 3 verifies or replaces each one.
+# ----------------------------------------------------------------------------
+
+- id: florida-astro
+  title: "Astronomy REU at the University of Florida"
+  host: "University of Florida"
+  location: "Gainesville, FL"
+  deadline: 2027-02-01
+  usual_deadline: "early February"
+  season_note: "First offers expected March 1, 2027."
+  status: unknown
+  kind: nsf-reu
+  area: [astronomy, astrophysics]
+  applies_via: null
+  noncitizens: null
+  early_years: null
+  community_college: null
+  apply_url: null
+  eligibility_url: null
+  projects_url: null
+  url: https://astro.ufl.edu/reu/
+  summer: 2027
+  last_verified: null
+  note: null
+  source_url: null
+
+- id: stonybrook-physics
+  title: "Physics and Astronomy REU at Stony Brook"
+  host: "Stony Brook University"
+  location: "Stony Brook, NY"
+  deadline: 2027-02-01
+  usual_deadline: "early February"
+  season_note: "Review starts January 15. Letters due by the same deadline."
+  status: unknown
+  kind: nsf-reu
+  area: [physics-general, astronomy]
+  applies_via: null
+  noncitizens: false
+  early_years: null
+  community_college: null
+  apply_url: null
+  eligibility_url: null
+  projects_url: null
+  url: https://www.stonybrook.edu/commcms/physics-reu/
+  summer: 2027
+  last_verified: null
+  note: null
+  source_url: https://www.stonybrook.edu/commcms/physics-reu/_includes/apply.php
+
+- id: byu-physics
+  title: "Summer Research Programs at BYU"
+  host: "Brigham Young University"
+  location: "Provo, UT"
+  deadline: 2027-02-06
+  usual_deadline: "early February"
+  season_note: "Applications open November 9, 2026."
+  status: unknown
+  kind: nsf-reu
+  area: [physics-general, astronomy]
+  applies_via: null
+  noncitizens: null
+  early_years: null
+  community_college: null
+  apply_url: null
+  eligibility_url: null
+  projects_url: null
+  url: https://reu.byu.edu/home
+  summer: 2027
+  last_verified: null
+  note: null
+  source_url: null
+
+- id: kentucky-physics
+  title: "Physics and Astronomy REU at the University of Kentucky"
+  host: "University of Kentucky"
+  location: "Lexington, KY"
+  deadline: null
+  usual_deadline: null
+  season_note: null
+  status: unknown
+  kind: nsf-reu
+  area: [nuclear, condensed-matter, astronomy]
+  applies_via: null
+  noncitizens: null
+  early_years: null
+  community_college: null
+  apply_url: null
+  eligibility_url: null
+  projects_url: null
+  url: https://pa.as.uky.edu/reu
+  summer: 2027
+  last_verified: null
+  note: null
+  source_url: null
+
+- id: doe-suli
+  title: "Science Undergraduate Laboratory Internships (SULI)"
+  host: "U.S. Department of Energy national laboratories"
+  location: "Several sites"
+  deadline: null
+  usual_deadline: null
+  season_note: null
+  status: unknown
+  kind: national-lab
+  area: [physics-general, particle, nuclear, plasma, condensed-matter]
+  applies_via: doe-wdts
+  noncitizens: null
+  early_years: null
+  community_college: null
+  apply_url: null
+  eligibility_url: null
+  projects_url: null
+  url: https://science.osti.gov/wdts/suli
+  summer: 2027
+  last_verified: null
+  note: "Paid internships placed at DOE labs across the country."
+  source_url: null
