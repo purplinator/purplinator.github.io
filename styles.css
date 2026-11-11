@@ -1102,3 +1102,52 @@ html[data-sx-spacing="wide"] mjx-container {
    gap to bold shrinks. Lifting bold to pure white restores the contrast. */
 body.quarto-dark strong,
 body.quarto-dark b { color: #FFFFFF; }
+
+/* --------------------------------------------------------------------------
+   19. Opportunities: the summer research list
+   Markup comes from opportunities/reu/_reu.ejs, one .sx-reu block per group
+   (deadline ahead, passed, not announced). Chips reuse .sx-chip (section 7).
+   -------------------------------------------------------------------------- */
+.sx-reu__count {
+  font-size: 0.9rem;
+  color: var(--sx-ink-faint);
+  margin: -0.25rem 0 0.75rem;
+}
+.sx-reu__empty { color: var(--sx-ink-muted); font-style: italic; }
+.sx-reu__list { list-style: none; padding: 0; margin: 0 0 2rem; }
+
+.sx-reu-item {
+  background: var(--sx-surface);
+  border: 1px solid var(--sx-border);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.75rem;
+}
+.sx-reu-item__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+}
+.sx-reu-item__title { font-weight: 600; font-size: 1.05rem; }
+.sx-reu-item__deadline { font-size: 0.92rem; color: var(--sx-ink-muted); }
+.sx-reu-item__host { font-size: 0.92rem; color: var(--sx-ink-muted); }
+.sx-reu-item__note { margin: 0.35rem 0 0; font-size: 0.95rem; }
+.sx-reu-item__meta { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sx-reu-item__meta .sx-chip { margin-bottom: 0; }
+.sx-reu-item__facts { margin: 0.45rem 0 0; font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+.sx-reu-item__checked { margin: 0.45rem 0 0; font-size: 0.82rem; color: var(--sx-ink-faint); }
+.sx-reu-item__unchecked { color: var(--sx-gold-ink); }
+
+/* Topic tags sit behind the kind chip: same shape, no fill. */
+.sx-chip--quiet {
+  background: transparent;
+  color: var(--sx-ink-muted);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+/* The "passed" group stays readable but steps back. */
+.sx-reu[data-group="passed"] .sx-reu-item { opacity: 0.72; }
