@@ -21,6 +21,7 @@ line each:
     * a deadline outside the year before or the year of its summer
     * the same title or program page twice
     * a link the site refused to a script (403 or 429): check it by hand
+    * a link that asks for a sign-in (401), such as some Google Forms
 
 Run from the repo root:
 
@@ -101,6 +102,8 @@ def fetch(url: str) -> tuple[str, str | None, bool]:
         with urllib.request.urlopen(req, timeout=20) as resp:
             return url, None if resp.status < 400 else f"HTTP {resp.status}", False
     except urllib.error.HTTPError as e:
+        if e.code == 401:  # e.g. a Google Form that requires signing in
+            return url, "HTTP 401, the page asks for a sign-in", True
         return url, f"HTTP {e.code}", e.code in (403, 429)
     except Exception as e:  # timeouts, DNS, TLS
         return url, type(e).__name__, False

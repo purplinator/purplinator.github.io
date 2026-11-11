@@ -4,10 +4,10 @@ For any session picking this up. Read this file first, then `brainstorm.md` besi
 behind the direction. The schema itself lives in the header of `opportunities/reu/programs.yml`, which
 wins if this file and it ever disagree. Update the status line at every step boundary.
 
-**Status (2026-11-10):** Steps 1 and 2 done. `candidates.md` holds 76 rows in the main tables and 46
-in Maybe, with the Include column pre-filled by the lead's suggestions (36 Maybe rows `in`, 9 `ask`, 1
-`out`). NSF's REU search page would not load, so NSF sites came from NSF's award data. Waiting on Saxon to
-confirm the marks and answer the `ask` rows. Next: step 3, verification in domain-grouped batches.
+**Status (2026-11-11):** Steps 1 and 2 done. Saxon answered the `ask` rows and captured blocked pages by
+hand (`saxon_investigation.md`, facts in `findings.md`, raw captures in the git-ignored `sources/`).
+`candidates.md` now has 135 rows marked `in` and 2 small `ask`s. `columbia-plasma` is the first verified
+entry in `programs.yml`. Next: agree how to run step 3 with Saxon, then run it.
 
 ## Goal
 

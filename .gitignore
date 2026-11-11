@@ -27,3 +27,9 @@
 /files/*.xlsx
 /files/*.docx
 /files/Lab_Whiteboard_Examples/
+
+# Raw captures behind the Opportunities notes: other sites' page sources and
+# NSF search exports, which carry contact names, emails and phone numbers.
+# Kept on this machine only. Facts taken from them, in our own words, go in
+# the committed notes (opportunities/_notes/findings.md, candidates.md).
+/opportunities/_notes/sources/

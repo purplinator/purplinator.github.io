@@ -198,3 +198,32 @@
   last_verified: null
   note: "Paid internships placed at DOE labs across the country."
   source_url: null
+
+# ----------------------------------------------------------------------------
+# VERIFIED ENTRIES. Each one was read on the program's own pages on its
+# last_verified date (by an agent in step 3, or by Saxon when a site refuses
+# automated reading; see opportunities/_notes/findings.md).
+# ----------------------------------------------------------------------------
+
+- id: columbia-plasma
+  title: "REU in Plasma Physics, Plasma Astrophysics, and Fusion"
+  host: "Columbia University, Columbia Fusion Research Center"
+  location: "New York, NY"
+  deadline: 2027-01-31
+  usual_deadline: "late January"
+  season_note: "Runs June 1 to August 6, 2027. Letters go through a separate form."
+  status: confirmed
+  kind: nsf-reu
+  area: [plasma, astrophysics]
+  applies_via: own
+  noncitizens: false
+  early_years: null
+  community_college: null
+  apply_url: https://docs.google.com/forms/d/e/1FAIpQLSc1ebFxSzYTGWDoAETpzd9Ql-mAhu1GlwgAqaB_T2ZV3b7ZEA/viewform
+  eligibility_url: https://fusion.columbia.edu/reu-site
+  projects_url: https://fusion.columbia.edu/reu-site
+  url: https://fusion.columbia.edu/reu-site
+  summer: 2027
+  last_verified: 2026-11-11
+  note: "Ten weeks of plasma and fusion research across applied physics and astronomy, with conference travel support."
+  source_url: https://fusion.columbia.edu/reu-site

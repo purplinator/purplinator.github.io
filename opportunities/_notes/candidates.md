@@ -27,6 +27,8 @@ Key to "Found via": `NSF 1234567` is the NSF award number, `Juan 2023` means the
 
 Counts: NSF REU (physics) 48, NSF REU (astronomy) 16, National labs 10, NASA 2, Maybe 46. Main tables 76. Needs a human 16. Not found or gone 21.
 
+Updated 2026-11-11 with Saxon's answers and finds (`saxon_investigation.md`, `findings.md`): 135 rows marked `in`, 2 `ask` left (`utah-bryce`, and `engineering-first` for a group of six), 15 new rows in "Added 2026-11-11", and a "For later" list at the end.
+
 The five ids already in `programs.yml` are kept: `florida-astro`, `byu-physics`, `kentucky-physics` and `doe-suli` are in the main tables. `stonybrook-physics` is in Maybe, because no active NSF award was found for it (its award ended 2026-03-31).
 
 ## NSF REU (physics)
@@ -43,7 +45,7 @@ Count: 48
 | in | catholic-physics | Physics Research in the Nation's Capital | The Catholic University of America | Washington, DC | https://sites.google.com/cua.edu/cua-physreu | NSF 2349155, Juan 2023 |
 | in | coe-spectroscopy | Spectroscopy at Coe College (REU/RET) | Coe College | Cedar Rapids, IA | https://sites.google.com/a/coe.edu/coe-reu/ | NSF 2349118, Juan 2023 |
 | in | columbia-nevis | Nevis Labs REU Program | Columbia University, Nevis Laboratories | Irvington, NY | https://www.nevis.columbia.edu/reu/ | NSF 2349438, Juan 2023. A second Nevis award (2608840) is based in Geneva, not checked |
-| in | columbia-plasma | REU Site: Plasma Physics, Plasma Astrophysics, and Fusion | Columbia University | New York, NY | https://fusion.columbia.edu/reu-site (not loaded, 403) | NSF 2447137, search |
+| in | columbia-plasma | REU Site: Plasma Physics, Plasma Astrophysics, and Fusion | Columbia University | New York, NY | https://fusion.columbia.edu/reu-site | NSF 2447137, search. Read by Saxon 2026-11-11 (entered in programs.yml) |
 | in | duke-tunl | Undergraduate Research in Nuclear and Particle Physics at TUNL and Duke | Duke University | Durham, NC | https://tunl.duke.edu/education/reu | NSF 2547627, Juan 2023 |
 | in | etamu-physics | Summer Research Program for Community College and Liberal Arts College Students | East Texas A&M University | Commerce, TX | https://www.etamu.edu/physics-and-autonomy/reu/ | NSF 2349111, search. The page title reads "Physics and Autonomy REU" |
 | in | kstate-physics | Physics at Kansas State: Interactions of Matter, Light, and Learning | Kansas State University | Manhattan, KS | https://www.phys.ksu.edu/reu/ | NSF 2548403, Juan 2023 |
@@ -74,7 +76,7 @@ Count: 48
 | in | oklahoma-physics | Physics and Astronomy REU (REU/RET) | University of Oklahoma | Norman, OK | https://www.ou.edu/cas/physics-astronomy/students/undergraduate/research/reu | NSF 2548211, Juan 2023 (old address 404) |
 | in | rochester-physics | REU in Physics, Astrophysics, and Optics | University of Rochester | Rochester, NY | https://www.pas.rochester.edu/undergraduate/reu/index.html | NSF 2446653, Juan 2023 |
 | in | southcarolina-physics | Undergraduate Research in Physics | University of South Carolina | Columbia, SC | https://sc.edu/study/colleges_schools/artsandsciences/physics_and_astronomy/research/reu/ | NSF 2349326, search |
-| in | utdallas-physics | REU in Theoretical and Experimental Physics | University of Texas at Dallas | Richardson, TX | none found | NSF 2348872. See Needs a human |
+| in | utdallas-physics | REU in Theoretical and Experimental Physics | University of Texas at Dallas | Richardson, TX | https://sites.utdallas.edu/reuphysics/ (from NSF's search export, not loaded yet) | NSF 2348872 |
 | in | toledo-physics | Physics and Astronomy REU | University of Toledo | Toledo, OH | https://www.utoledo.edu/nsm/physast/programs/reu/ | NSF 2349585, search |
 | in | utah-physics | Physics and Astronomy REU | University of Utah | Salt Lake City, UT | https://www.physics.utah.edu/reu-opportunities/ | NSF 2349237, Juan 2023 (address changed) |
 | in | virginiatech-neutrino | Neutrino Physics at Virginia Tech | Virginia Tech | Blacksburg, VA | https://www.phys.vt.edu/Undergraduate/REU.html | NSF 2149165, Juan 2023 |
@@ -94,7 +96,7 @@ Count: 16
 | in | noirlab-chile | NOIRLab REU Chile | NSF NOIRLab (AURA) | La Serena, Chile | https://noirlab.edu/science/resources/REU-PIA/REU-Chile | NSF 2349023, search. Also an NSF facility |
 | in | cornell-astro | Astrophysics and Planetary Science REU | Cornell University | Ithaca, NY | https://astro.cornell.edu/undergraduate-research | NSF 2244064, Juan 2023. Old address redirects to this general undergraduate research page |
 | in | mariamitchell-astro | REU Internship in Astronomy | Maria Mitchell Association | Nantucket, MA | https://www.mariamitchell.org/reu-internship-in-astronomy | NSF 2349202, Juan 2023 |
-| in | nau-astro | NAU Astro REU | Northern Arizona University | Flagstaff, AZ | https://in.nau.edu/astro-reu/ (not loaded, nau.edu gave 403) | NSF 2349774, Juan 2023 |
+| in | nau-astro | NAU Astro REU | Northern Arizona University | Flagstaff, AZ | https://in.nau.edu/astro-reu/ (confirmed by Saxon) | NSF 2349774, Juan 2023 |
 | in | northwestern-ciera | CIERA REU | Northwestern University | Evanston, IL | https://sites.northwestern.edu/cierareu/ | NSF 2446392, Juan 2023 |
 | in | rit-multimessenger | REU in Multimessenger Astrophysics | Rochester Institute of Technology | Rochester, NY | https://www.rit.edu/ccrg/research-experience-undergraduates-multimessenger-astrophysics | NSF 2349530, Juan 2023 (old address 404), also physics |
 | in | rutgers-physics | Rutgers Physics and Astronomy REU | Rutgers University | Piscataway, NJ | https://reu.astro.rutgers.edu/ | NSF 2050950, Juan 2023, also physics |
@@ -161,7 +163,7 @@ Count: 46. Physics or astronomy next door: solar and space physics, planetary sc
 | in | georgetown-physics | Georgetown REU for Materials Physics | Georgetown University | Washington, DC | https://physics.georgetown.edu/reu/ | NSF 2349397 (DMR), Juan 2023. Materials physics |
 | in | vcu-magnetics | REU Site in Magnetics | Virginia Commonwealth University | Richmond, VA | https://egr.vcu.edu/departments/mechanical-nuclear-engineering/magnetics-reu/ | NSF 2349694 (DMR), search. Materials physics |
 | in | wooster-physics | Physics and Chemistry Research at the College of Wooster | The College of Wooster | Wooster, OH | https://physics.wooster.edu/reu/ (not loaded, connection failed) | NSF 2348889 (DMR), search |
-| ask | marshall-amps | Appalachian Mathematics and Physics Site (AMPS) | Marshall University | Huntington, WV | https://amps.marshall.edu/ | NSF 2349289 (DMS), search. Mathematics and physics |
+| in | marshall-mathphysics | Math and Physics REU at Marshall (the successor to AMPS) | Marshall University | Huntington, WV | https://mathphysicsreu.marshall.edu | NSF 2349289 (DMS), Saxon. The old AMPS site, https://amps.marshall.edu, is for the program that is ending |
 | in | ohiostate-cem | Center for Emergent Materials REU | The Ohio State University | Columbus, OH | https://cem.osu.edu/education-and-outreach/reu | Juan 2023. Materials |
 | in | illinois-mrsec | Illinois MRSEC REU | University of Illinois Urbana-Champaign | Urbana, IL | https://mrsec.illinois.edu/reu-program | Juan 2023. Materials |
 | in | colostate-lasers | REU in Ultraintense Lasers and High Field Photonics | Colorado State University | Fort Collins, CO | https://lasers.colostate.edu/research-experience-for-undergraduate-students/ | NSF 2447907 (ENG), search. Optics |
@@ -176,19 +178,43 @@ Count: 46. Physics or astronomy next door: solar and space physics, planetary sc
 | in | knac-astro | Keck Northeast Astronomy Consortium | KNAC (member colleges) | Several sites | https://sites.google.com/wellesley.edu/knac/ | Juan 2023 (address changed). Recruits mostly from member colleges |
 | in | cmu-physics | NSF REU in Physics | Carnegie Mellon University | Pittsburgh, PA | https://www.cmu.edu/physics/outreach/nsf-reu/index.html | search. No matching PHY REU Site award found |
 | in | florida-physics | Physics REU | University of Florida | Gainesville, FL | https://phys.ufl.edu/undergraduate/reu-research-experiences-for-undergraduates/ | search. No active PHY REU Site award found apart from the international one |
-| ask | caltech-surf | Summer Undergraduate Research Fellowships (SURF) | California Institute of Technology | Pasadena, CA | https://www.sfp.caltech.edu/undergraduate-research/programs/surf | Juan 2023. All fields |
-| ask | caltech-wave | WAVE Fellows Program | California Institute of Technology | Pasadena, CA | https://sfp.caltech.edu/undergraduate-research/programs/wavefellows | Juan 2023. All fields |
+| in | caltech-surf | Summer Undergraduate Research Fellowships (SURF) | California Institute of Technology | Pasadena, CA | https://www.sfp.caltech.edu/undergraduate-research/programs/surf | Juan 2023. All fields |
+| in | caltech-wave | WAVE Fellows Program | California Institute of Technology | Pasadena, CA | https://sfp.caltech.edu/undergraduate-research/programs/wavefellows | Juan 2023. All fields |
 | in | sps-internships | SPS Summer Internship Program | Society of Physics Students (AIP) | Several sites | https://students.aip.org/internships/program-details | Juan 2023 (old address redirects). Research, policy and outreach placements |
-| out | astron-summer | ASTRON and JIVE Summer Research Programme | ASTRON, Netherlands Institute for Radio Astronomy | Netherlands | https://www.astron.nl/education/summer-research-programme/ | Juan 2023 (address changed). International |
-| ask | rutgers-rise | Research Intensive Summer Experience (RISE) | Rutgers University, Aresty Research Center | New Brunswick, NJ | https://aresty.rutgers.edu/programs-funding/the-research-intensive-summer-experience | Juan 2023 (address changed). All fields |
-| ask | wisc-srop | Summer Research Opportunity Program (SROP) | University of Wisconsin-Madison Graduate School | Madison, WI | https://grad.wisc.edu/explore/prepare/summer-research-opportunities/ | Juan 2023 (old address 404). Umbrella application that the UW-Madison astronomy REU uses |
-| ask | doe-mlef | Mickey Leland Energy Fellowship (MLEF) | U.S. Department of Energy (run by ORISE) | Several sites | https://orise.orau.gov/mlef/ | Juan 2023. Energy, not physics specific |
+| out | astron-summer | ASTRON and JIVE Summer Research Programme | ASTRON, Netherlands Institute for Radio Astronomy | Netherlands | https://www.astron.nl/education/summer-research-programme/ | Juan 2023. Saxon: not meant for undergraduates. Kept under For later |
+| in | rutgers-rise | Research Intensive Summer Experience (RISE) | Rutgers University, Aresty Research Center | New Brunswick, NJ | https://aresty.rutgers.edu/programs-funding/the-research-intensive-summer-experience | Juan 2023 (address changed). All fields |
+| in | wisc-srop | Summer Research Opportunity Program (SROP) | University of Wisconsin-Madison Graduate School | Madison, WI | https://grad.wisc.edu/explore/prepare/summer-research-opportunities/ | Juan 2023 (old address 404). Umbrella application that the UW-Madison astronomy REU uses |
+| in | doe-mlef | Mickey Leland Energy Fellowship (MLEF) | U.S. Department of Energy (run by ORISE) | Several sites | https://orise.orau.gov/mlef/ | Juan 2023. Energy, not physics specific |
 | in | ndsu-per | Physics Education Research REU | North Dakota State University | Fargo, ND | https://www.ndsu.edu/dber/reu-program | Juan 2023 (address changed). Physics education |
-| ask | rit-dber | Discipline-Based Education Research REU | Rochester Institute of Technology, CASTLE | Rochester, NY | https://www.rit.edu/castle/research-experience-undergraduates | Juan 2023 (address changed). STEM education |
-| ask | aapm-summer | AAPM Summer Undergraduate Fellowship and DREAM Program | American Association of Physicists in Medicine | Several sites | https://www.aapm.org/education/GrantsFellowships.asp (not loaded, timed out) | Juan 2023. Medical physics |
-| ask | princeton-biophysics | Summer Research in Molecular Biophysics REU | Princeton University | Princeton, NJ | https://reumolbiophysics.princeton.edu (not loaded, 403) | Juan 2023. Biophysics |
+| in | rit-dber | Discipline-Based Education Research REU | Rochester Institute of Technology, CASTLE | Rochester, NY | https://www.rit.edu/castle/research-experience-undergraduates | Juan 2023 (address changed). STEM education |
+| in | aapm-sfp | Summer Undergraduate Fellowship Program | American Association of Physicists in Medicine | Several sites | https://aapm.secure-platform.com/gaf/page/SFP | Saxon (AAPM fellowships page), Juan 2023. Medical physics |
+| in | aapm-dream | DREAM: Driving Recruitment through Education and Mentoring | American Association of Physicists in Medicine | Several sites | https://aapm.secure-platform.com/gaf/page/dream | Saxon (AAPM fellowships page). Medical physics |
+| in | princeton-biophysics | Summer Research in Molecular Biophysics REU | Princeton University | Princeton, NJ | https://reumolbiophysics.princeton.edu (not loaded, 403) | Juan 2023. Biophysics |
 | in | lacc-cure | Consortium for Undergraduate Research Experiences (CURE) | Los Angeles City College | Los Angeles, CA | https://www.lacc.edu/academics/pathways/stem/physics-engineering-dept/cure (not loaded, 403) | Juan 2023 (address changed). Astronomy and planetary, LA-area community college students |
 | in | ucmerced-physics | Physics REU at UC Merced | University of California, Merced | Merced, CA | https://physics.ucmerced.edu/PhysicsREU (not loaded, 403) | Juan 2023. NSF award 2150531 ended 2025-02-28 |
+
+## Added 2026-11-11 (AAS list and NSF search export, from Saxon)
+
+Programs on the AAS "Internships and Summer Jobs" page or in NSF's own REU search export that the first
+pass missed. Main pages are as those sources give them, not loaded yet. Step 3 confirms each.
+
+| Include | ID | Program | Host | Location | Main page | Found via |
+|---|---|---|---|---|---|---|
+| in | harvard-banneker | Banneker Institute | Harvard University | Cambridge, MA | https://bannekerinstitute.fas.harvard.edu/program | AAS |
+| in | carnegie-cassi | Carnegie Astrophysics Summer Student Internship (CASSI) | Carnegie Observatories | Pasadena, CA | https://obs.carnegiescience.edu/CASSI | AAS |
+| in | carnegie-epl-surf | Summer Undergraduate Research Internship | Carnegie Science, Earth and Planets Laboratory | Washington, DC | https://epl.carnegiescience.edu/summer-undergraduate-research-internship | AAS. May be the same program as carnegie-epiic, step 3 decides |
+| in | umd-cresst | CRESST Summer Internship Program | University of Maryland and NASA Goddard | Greenbelt, MD | http://cresst.umd.edu/opportunities/summerintern.html | AAS |
+| in | yale-hoffleit | Dorrit Hoffleit Undergraduate Research Scholarship | Yale University | New Haven, CT | https://astronomy.yale.edu/undergraduate-program/research/dorrit-hoffleit-undergraduate-research-scholarship | AAS. May be for Yale students only, step 3 decides |
+| in | fermilab-leeteng | Lee Teng Undergraduate Internship | Argonne National Laboratory and Fermilab | Several sites | https://internships.fnal.gov/lee-teng-undergraduate-internship/ | AAS |
+| in | nrao-nac | National Astronomy Consortium (NAC) | National Radio Astronomy Observatory | Several sites | https://science.nrao.edu/opportunities/student-programs/nac/goals | AAS |
+| in | nasa-goddard-sesi | Science and Engineering Student Internship (SESI) in heliophysics | NASA Goddard Space Flight Center | Greenbelt, MD | http://sesi.gsfc.nasa.gov/ | AAS (listed both for undergraduates and for high school students) |
+| in | navy-nreip | Naval Research Enterprise Internship Program (NREIP) | U.S. Navy research laboratories | Several sites | https://nreip.asee.org/ | AAS |
+| in | utexas-taurus | TAURUS | University of Texas at Austin and McDonald Observatory | Austin, TX | https://sites.cns.utexas.edu/taurus/home | AAS |
+| in | iastate-launch | LAUNCH Space | Iowa State University (Iowa Space Grant) | Ames, IA | https://www.iaspacegrant.org/events/launch_space/ | NSF search export (astronomy and space, engineering) |
+| in | umich-physics | Summer Undergraduate Research in Physics | University of Michigan | Ann Arbor, MI | http://reu.physics.lsa.umich.edu | NSF search export. NSF award ended 2026-04-30. Saxon can ask his Michigan contacts |
+| in | umich-cern | University of Michigan CERN REU | University of Michigan | Geneva, Switzerland | http://www.um-cern-reu.org | NSF search export. NSF award ended 2026-05-31 |
+| ask | utah-bryce | Bryce Canyon Astronomy Outreach Internship | University of Utah | Bryce Canyon, UT | https://www.physics.utah.edu/~aseth/Bryce_Internship.html | AAS. Outreach rather than research |
+| ask | engineering-first | Six NSF sites that list physics as one area among engineering or computing: ASU quantum machine learning, Auburn CASE, Boston University nanomanufacturing, Michigan Tech InSPiRES, Montana State remote sensing, Oakland electrical engineering | Several | Several | see NSF search export | NSF search export. One row for all six: answer in or out for the group |
 
 ## Needs a human
 
@@ -251,3 +277,18 @@ Sites that refused automated reading or could not be read. Per the rule, a domai
 | Vanderbilt VINSE REU | https://www.vanderbilt.edu/vinse/reu/ | Redirects to a 2020 news post |
 | Mississippi State computational materials REU | https://www.ccs.msstate.edu/conferences/REU2022/ | Page covers 2022 only |
 | Rice Planetary Habitability REU | https://earthscience.rice.edu/academics/2022-nsf-reu/ | Host name no longer resolves |
+
+## For later (beyond this list's scope)
+
+Not for this list, kept so a future list (graduate students, international programs, industry) does not
+start from nothing. Sources: Saxon's notes and the AAS "Internships and Summer Jobs" page.
+
+- Not for undergraduates: ASTRON and JIVE Summer Research Programme (Netherlands), Kavli Summer Program in
+  Astrophysics, Prospects in Theoretical Physics (IAS), NASA/JPL Planetary Science Summer School, UCSC
+  astroinformatics summer school, IDA Summer Internship.
+- International, open to undergraduates: LEAPS (Leiden and ESA, Netherlands), DAAD RISE (Germany).
+- Industry and aerospace fellowships: Ball Aerospace, Boeing, Northrop Grumman internships, Brooke Owens
+  Fellowship, Patti Grace Smith Fellowship, Zed Factor Fellowship.
+- Not summer research: NASA Psyche Inspired (year-long).
+- Other lists to link from the site: AAS Internships and Summer Jobs (https://aas.org/careers/internships-summer-jobs),
+  Pathways to Science (http://www.pathwaystoscience.org/).
