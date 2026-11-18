@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Two parts, four graphs and a conclusion that everyone turns in. Read the period and the amplitude from each 30-second window of a ten-minute run, graph period against amplitude and energy against time, then find the spring constant and the pendulum length from the mean periods.">
+
+<title>Lab 10: Spring and Pendulum Oscillations – Saxon Stockton</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../teaching/python/index.html" rel="next">
+<link href="../../../teaching/labs/lab-guides/09-rotational-dynamics.html" rel="prev">
+<link href="../../../images/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-4cd2871cd0acc497167f2915b6b08a4f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2b9f1675934f6f4dbff114d25af25287.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-4cd2871cd0acc497167f2915b6b08a4f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c1ed16d06f4330f2879a582047c05a22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-d05971b39da3fe3b6bae46f6a9ef8085.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-c1ed16d06f4330f2879a582047c05a22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #F3EFFC;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #F3EFFC;
+      }
+</style>
+<!-- MathJax 4 configuration, loaded on every page.
+
+     Macros defined here work in any .qmd file without a per-page preamble, so
+     equations stay short to type and consistent across the site. Add new ones
+     to the `macros` block below. -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'ams',
+      macros: {
+        // Units and constants
+        msun:    ['{M_\\odot}'],
+        lsun:    ['{L_\\odot}'],
+        rsun:    ['{R_\\odot}'],
+        kms:     ['{\\,\\mathrm{km\\,s^{-1}}}'],
+        erg:     ['{\\,\\mathrm{erg}}'],
+        angstrom:['{\\,\\text{\\AA}}'],
+        unit:    ['{\\,\\mathrm{#1}}', 1],
+
+        // Common astrophysics shorthand
+        halpha:  ['{\\mathrm{H}\\alpha}'],
+        hbeta:   ['{\\mathrm{H}\\beta}'],
+        ebv:     ['{E(B-V)}'],
+
+        // Vector and operator conveniences
+        vect:    ['{\\mathbf{#1}}', 1],
+        abs:     ['{\\left\\lvert #1 \\right\\rvert}', 1],
+        avg:     ['{\\left\\langle #1 \\right\\rangle}', 1],
+        dd:      ['{\\mathrm{d}}'],
+        deriv:   ['{\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}}', 2],
+        pderiv:  ['{\\frac{\\partial #1}{\\partial #2}}', 2]
+      }
+    },
+    options: {
+      // Let Quarto's own UI (tooltips, code cells) stay untouched by MathJax.
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      ignoreHtmlClass: 'no-mathjax|sourceCode|cell-code',
+      processHtmlClass: 'mathjax'
+    },
+    // MathJax 4: font and layout options live under `output`. STIX Two Math is
+    // loaded from the same CDN as MathJax itself when it is named here.
+    output: { font: 'mathjax-stix2', scale: 1.0, displayAlign: 'center' }
+  };
+</script>
+<!-- Reading-spacing preference, applied before first paint so the page does
+     not jump. The toggle itself is added by assets/spacing-toggle.html, and
+     the spacing rules are in styles.css, section 18. -->
+<script>
+  try {
+    if (localStorage.getItem('sx-spacing') === 'wide') {
+      document.documentElement.setAttribute('data-sx-spacing', 'wide');
+    }
+  } catch (e) {}
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Lab 10: Spring and Pendulum Oscillations – Saxon Stockton">
+<meta property="og:description" content="Two parts, four graphs and a conclusion that everyone turns in. Read the period and the amplitude from each 30-second window of a ten-minute run, graph period against amplitude and energy against time, then find the spring constant and the pendulum length from the mean periods.">
+<meta property="og:image" content="https://saxonstockton.com/images/og-card.jpg">
+<meta property="og:site_name" content="Saxon Stockton">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Lab 10: Spring and Pendulum Oscillations – Saxon Stockton">
+<meta name="twitter:description" content="Two parts, four graphs and a conclusion that everyone turns in. Read the period and the amplitude from each 30-second window of a ten-minute run, graph period against amplitude and energy against time, then find the spring constant and the pendulum length from the mean periods.">
+<meta name="twitter:image" content="https://saxonstockton.com/images/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
+        setTimeout(() => {
+          window.scrollTo(0, scrollY);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/favicon.svg" alt="" class="navbar-logo light-content">
+    <img src="../../../images/favicon.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Saxon Stockton</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../teaching/index.html" aria-current="page"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/purplinator" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="mailto:s.stockton@tcu.edu" title="Email" class="quarto-navigation-tool px-1" aria-label="Email"><i class="bi bi-envelope"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/labs/index.html">Lab Help</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/index.html">Lab Guides</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/10-oscillations.html">Lab 10: Spring and Pendulum Oscillations</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../teaching/labs/index.html">Lab Help</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/index.html">Lab Guides</a></li><li class="breadcrumb-item"><a href="../../../teaching/labs/lab-guides/10-oscillations.html">Lab 10: Spring and Pendulum Oscillations</a></li></ol></nav>
+      <h1 class="title">Lab 10: Spring and Pendulum Oscillations</h1>
+            <p class="subtitle lead">A mass on a spring and a pendulum, each left to swing for ten minutes: does the period depend on the amplitude, and how does the energy drain away?</p>
+                  <div>
+        <div class="description">
+          Two parts, four graphs and a conclusion that everyone turns in. Read the period and the amplitude from each 30-second window of a ten-minute run, graph period against amplitude and energy against time, then find the spring constant and the pendulum length from the mean periods.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Regular lab</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching Philosophy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../teaching/labs/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Lab Help</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section: Lab Help">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/01-uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measurement Uncertainty</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/02-lab-report-format.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How a Lab Gets Turned In</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../teaching/labs/lab-guides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Lab Guides</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section: Lab Guides">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/04-friction-flat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Friction on a Flat Surface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/05-friction-incline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Friction on an Incline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/06-spring-constant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6: The Spring Constant, Two Ways</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/07-impulse-momentum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7: Impulse and Momentum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/08-torque-rotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 8: Balanced and Unbalanced Torque</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/09-rotational-dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 9: Rotational Dynamics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/labs/lab-guides/10-oscillations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 10: Spring and Pendulum Oscillations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../teaching/python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Python from Scratch</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section: Python from Scratch">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/00-what-is-a-programming-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What Is a Programming Language?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/01-how-computers-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How Computers Actually Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/02-choosing-a-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing a Programming Language</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../teaching/python/03-python-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1: Python Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Mathematics</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Physics Problems</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
+  <li><a href="#the-setup" id="toc-the-setup" class="nav-link" data-scroll-target="#the-setup">The setup</a>
+  <ul class="collapse">
+  <li><a href="#reading-ga" id="toc-reading-ga" class="nav-link" data-scroll-target="#reading-ga">Reading one window in Graphical Analysis</a></li>
+  </ul></li>
+  <li><a href="#qpd" id="toc-qpd" class="nav-link" data-scroll-target="#qpd">QPD</a>
+  <ul class="collapse">
+  <li><a href="#the-questions" id="toc-the-questions" class="nav-link" data-scroll-target="#the-questions">The questions</a></li>
+  <li><a href="#what-the-procedure-must-make-clear" id="toc-what-the-procedure-must-make-clear" class="nav-link" data-scroll-target="#what-the-procedure-must-make-clear">What the procedure must make clear</a></li>
+  <li><a href="#the-photo-and-the-screenshot" id="toc-the-photo-and-the-screenshot" class="nav-link" data-scroll-target="#the-photo-and-the-screenshot">The photo and the screenshot</a></li>
+  </ul></li>
+  <li><a href="#uda" id="toc-uda" class="nav-link" data-scroll-target="#uda">UDA</a>
+  <ul class="collapse">
+  <li><a href="#uda-quick" id="toc-uda-quick" class="nav-link" data-scroll-target="#uda-quick">UDA in one look</a></li>
+  <li><a href="#in-excel" id="toc-in-excel" class="nav-link" data-scroll-target="#in-excel">In Excel</a></li>
+  <li><a href="#on-the-board" id="toc-on-the-board" class="nav-link" data-scroll-target="#on-the-board">On the board</a></li>
+  </ul></li>
+  <li><a href="#con" id="toc-con" class="nav-link" data-scroll-target="#con">CON</a>
+  <ul class="collapse">
+  <li><a href="#con-quick" id="toc-con-quick" class="nav-link" data-scroll-target="#con-quick">CON in one look</a></li>
+  <li><a href="#con-detail" id="toc-con-detail" class="nav-link" data-scroll-target="#con-detail">Item by item</a></li>
+  <li><a href="#units-on-the-four-equations" id="toc-units-on-the-four-equations" class="nav-link" data-scroll-target="#units-on-the-four-equations">Units on the four equations</a></li>
+  </ul></li>
+  <li><a href="#common-slips" id="toc-common-slips" class="nav-link" data-scroll-target="#common-slips">Common slips</a></li>
+  <li><a href="#going-deeper" id="toc-going-deeper" class="nav-link" data-scroll-target="#going-deeper">Going deeper</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content" tabindex="-1">
+
+
+
+
+
+
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Regular lab.</strong> You turn in the part you worked on. In a group of two, each of you turns in your own part plus CON.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Everyone turns in CON this week.</strong> The report template asks each student for the job they did today, QPD or UDA, for the part they worked on, A or B, and also for a conclusion that covers both parts. So a group of four splits into four jobs (QPD A, UDA A, QPD B, UDA B), and all four people write CON. If your section has an odd number of students, one group has five, and the extra student does the UDA whiteboard.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-caution">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This page was written from the 2026 Lab 10 templates, the notes from this week’s TA meeting, and the boards in the lab room. If the handout or your TA says something different, the handout and your TA win.</p>
+</div>
+</div>
+</div>
+<section id="at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
+<ul>
+<li><strong>Questions.</strong> Part A, the spring: does the period of a mass bouncing on a spring depend on how far it bounces, and how does its energy change over ten minutes? Part B, the pendulum: the same two questions for a pendulum.</li>
+<li><strong>You measure.</strong> One ten-minute run for each system. From each 30-second window of the run, twenty windows in all, the time <span class="math inline">\(\Delta t\)</span> for a few full cycles and the size of the swing, <span class="math inline">\(\Delta y\)</span> for the spring or <span class="math inline">\(\Delta x\)</span> for the pendulum. Also the mass <span class="math inline">\(M\)</span> on the spring and the spring constant <span class="math inline">\(k\)</span> from a force against position graph (Part A), and the pendulum’s length <span class="math inline">\(L\)</span> (Part B). The pendulum’s mass, <span class="math inline">\(0.148\ \text{kg}\)</span>, is already in the sheet.</li>
+<li><strong>You calculate.</strong> For each window, the amplitude <span class="math inline">\(A\)</span>, the period <span class="math inline">\(T\)</span> and the energy <span class="math inline">\(E_{el} = \tfrac12 k A^2\)</span>. For the pendulum, <span class="math inline">\(k = Mg/L\)</span> comes first.</li>
+<li><strong>You graph.</strong> Four graphs, two for each part: <span class="math inline">\(T\)</span> against <span class="math inline">\(A\)</span>, and <span class="math inline">\(E_{el}\)</span> against <span class="math inline">\(t_{MID}\)</span>.</li>
+<li><strong>You conclude.</strong> One paragraph of five to ten sentences that covers both parts: the four relationships, the four equations, <span class="math inline">\(k\)</span> and <span class="math inline">\(L\)</span> from the mean periods, and each of those compared with a second value by a percent difference. The checklist is in <a href="#con-quick">CON in one look</a>.</li>
+</ul>
+</section>
+<section id="the-setup" class="level2">
+<h2 class="anchored" data-anchor-id="the-setup">The setup</h2>
+<p><strong>Part A, the spring.</strong> A force sensor is clamped high on a vertical rod, and a long spring hangs from its hook with the mass <span class="math inline">\(M\)</span> on the end. A motion sensor sits on the floor under the mass, looking up, inside a wire cage that protects it if the mass falls. The force sensor reads the spring’s pull and the motion sensor reads the height of the mass, both at the same moments.</p>
+<p><strong>Part B, the pendulum.</strong> A brass bob of mass <span class="math inline">\(M = 0.148\ \text{kg}\)</span> hangs from two points on the ceiling by a string in a V. The V keeps it swinging back and forth in one plane, the way a playground swing does. A motion sensor on a stand at the bob’s height, pointed along the swing, records the bob’s position.</p>
+<p>From the TA meeting and the boards in the lab room:</p>
+<ul>
+<li><strong>Collection.</strong> 50 samples per second for 600 s, ten minutes. Set both before you start collecting.</li>
+<li><strong>Spring height.</strong> At rest, the mass hangs about 35 cm above the cage.</li>
+<li><strong>Spring swing.</strong> The mass has to stay below the clamp and the bottom of the rod at the top of every bounce, so do not pull it down further than that allows.</li>
+</ul>
+<section id="reading-ga" class="level3">
+<h3 class="anchored" data-anchor-id="reading-ga">Reading one window in Graphical Analysis</h3>
+<p>Every row of the data table comes from one 30-second window of the run.</p>
+<ol type="1">
+<li><strong>Zoom to the window.</strong> Show only 0 to 30 s on the time axis. The report wants a screenshot of one of these windows, so take it while you are here.</li>
+<li><strong>Select whole cycles in the middle of the window.</strong> Click and drag from one peak to a later peak: across 5 cycles for the spring (from a peak to the sixth peak) and 3 cycles for the pendulum (from a peak to the fourth peak). That number of cycles is <span class="math inline">\(n\)</span>. Centre the selection on the middle of the window, 15 s for the first one, so that <span class="math inline">\(t_{MID}\)</span> is the middle of what you measured.</li>
+<li><strong>View Statistics.</strong> Record the box’s Δx as <span class="math inline">\(\Delta t\)</span>, the time for those <span class="math inline">\(n\)</span> cycles. Record the box’s Δy as <span class="math inline">\(\Delta y\)</span> for the spring, or as <span class="math inline">\(\Delta x\)</span> for the pendulum. The board in the room calls either one <span class="math inline">\(\Delta S\)</span>. It runs from the highest position in the selection to the lowest. If it comes out near zero, the box is measuring from the start of the selection to the end. Take its maximum minus its minimum instead.</li>
+<li><strong>Convert to centimetres.</strong> Graphical Analysis gives positions in metres and the column is in centimetres, so <span class="math inline">\(0.386\ \text{m}\)</span> goes in as 38.6.</li>
+<li><strong>Next window.</strong> Move to 30 to 60 s and repeat, up to 570 to 600 s.</li>
+</ol>
+<p>In column A of the sheet, some windows have no label (<code>180-210s</code>, <code>240-270s</code> and five more are blank), but every row has cells to fill. The rows still go in 30-second steps, twenty of them.</p>
+</section>
+</section>
+<section id="qpd" class="level2">
+<h2 class="anchored" data-anchor-id="qpd">QPD</h2>
+<p>The report has a QPD slot for each part. Each slot wants three things: the board with the question and the procedure, an annotated photo of the setup, and an annotated screenshot of one 30-second window.</p>
+<section id="the-questions" class="level3">
+<h3 class="anchored" data-anchor-id="the-questions">The questions</h3>
+<blockquote class="blockquote">
+<p>Part A: How does the period of the spring-mass system (<span class="math inline">\(T\)</span>) depend on its amplitude (<span class="math inline">\(A\)</span>), and how does its energy (<span class="math inline">\(E_{el}\)</span>) change with time (<span class="math inline">\(t\)</span>)?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Part B: How does the period of the pendulum (<span class="math inline">\(T\)</span>) depend on its amplitude (<span class="math inline">\(A\)</span>), and how does its energy (<span class="math inline">\(E_{el}\)</span>) change with time (<span class="math inline">\(t\)</span>)?</p>
+</blockquote>
+</section>
+<section id="what-the-procedure-must-make-clear" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-procedure-must-make-clear">What the procedure must make clear</h3>
+<ul>
+<li>How the system was started: the spring pulled down and let go, the pendulum pulled to one side and let go. For the spring, that it hung about 35 cm above the cage and stayed below the clamp.</li>
+<li>The collection settings, 50 samples per second for 600 s.</li>
+<li>How <span class="math inline">\(\Delta t\)</span> and <span class="math inline">\(\Delta y\)</span> (or <span class="math inline">\(\Delta x\)</span>) come out of each window: zoom to 30 s, drag across <span class="math inline">\(n\)</span> whole cycles from peak to peak, View Statistics.</li>
+<li>Part A: where <span class="math inline">\(M\)</span> and <span class="math inline">\(k\)</span> came from. <span class="math inline">\(k\)</span> is the slope of force against position. In Graphical Analysis, set the force graph’s horizontal axis to position (click the axis label), then Apply Curve Fit with a linear fit. The slope comes out negative, because as the mass rises away from the sensor below it, the spring pulls less. <span class="math inline">\(k\)</span> is its size.</li>
+<li>Part B: how <span class="math inline">\(L\)</span> was measured, from the level of the two ceiling points straight down to the centre of the bob.</li>
+</ul>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Quantity</th>
+<th>How it is measured</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(M\)</span> (Part A)</td>
+<td>mass hanging on the spring</td>
+<td>electronic balance</td>
+<td>kg</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k\)</span> (Part A)</td>
+<td>spring constant</td>
+<td>linear curve fit of force against position in Graphical Analysis</td>
+<td>N/m</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(M\)</span> (Part B)</td>
+<td>pendulum bob</td>
+<td>given in the sheet, <span class="math inline">\(0.148\ \text{kg}\)</span></td>
+<td>kg</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(L\)</span> (Part B)</td>
+<td>pendulum length</td>
+<td>tape measure, ceiling-point level to the bob’s centre</td>
+<td>m</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\Delta t\)</span></td>
+<td>time for <span class="math inline">\(n\)</span> full cycles</td>
+<td>Δx in the statistics box</td>
+<td>s</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n\)</span></td>
+<td>cycles in the selection</td>
+<td>counted, 5 for the spring and 3 for the pendulum</td>
+<td>none</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\Delta y\)</span>, <span class="math inline">\(\Delta x\)</span></td>
+<td>highest to lowest position in the selection</td>
+<td>Δy in the statistics box, times 100</td>
+<td>cm</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(t_{MID}\)</span></td>
+<td>middle of the 30-second window</td>
+<td>15, 45, 75 and so on, up to 585</td>
+<td>s</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="the-photo-and-the-screenshot" class="level3">
+<h3 class="anchored" data-anchor-id="the-photo-and-the-screenshot">The photo and the screenshot</h3>
+<p><strong>Annotated setup photo.</strong> Part A: label the force sensor, the spring, the mass <span class="math inline">\(M\)</span>, the motion sensor in its cage, and the amplitude <span class="math inline">\(A\)</span> above and below the resting position. Part B: label the two strings, the bob <span class="math inline">\(M\)</span>, the length <span class="math inline">\(L\)</span>, the motion sensor, and the amplitude <span class="math inline">\(A\)</span> to either side of straight down.</p>
+<p><strong>Annotated 30-second screenshot.</strong> One window of the position against time graph, with the <span class="math inline">\(n\)</span> cycles selected and the statistics box showing. Mark <span class="math inline">\(\Delta t\)</span> across the selected cycles and <span class="math inline">\(\Delta y\)</span> (Part A) or <span class="math inline">\(\Delta x\)</span> (Part B) from the highest point to the lowest. The template asks for both by name.</p>
+</section>
+</section>
+<section id="uda" class="level2">
+<h2 class="anchored" data-anchor-id="uda">UDA</h2>
+<p>The report has a UDA slot for each part, and each slot wants three things.</p>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Report section</th>
+<th>What goes in it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UDA, each part</td>
+<td>A screenshot of the data table, with the mean, δa and δr rows under it filled in</td>
+</tr>
+<tr class="even">
+<td>UDA, each part</td>
+<td>A photo of the sample calculation board</td>
+</tr>
+<tr class="odd">
+<td>UDA, each part</td>
+<td>A screenshot of the part’s two graphs, each with its best-fit equation showing</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="uda-quick" class="level3">
+<h3 class="anchored" data-anchor-id="uda-quick">UDA in one look</h3>
+<div class="sx-checklist">
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Data table, in Excel.</strong> Twenty rows, one per window, and every calculated column filled by a formula. Under the table, the mean, δa and δr rows filled in for every column.</label></li>
+<li><label><input type="checkbox"><strong>Four sample calculations, with units.</strong> From one real row: <span class="math inline">\(T = \Delta t/n\)</span>, <span class="math inline">\(A = \Delta S/2\)</span> and <span class="math inline">\(E_{el} = \tfrac12 kA^2\)</span>, with Part B working out <span class="math inline">\(k = Mg/L\)</span> inside the third. Fourth, from the mean period: <span class="math inline">\(k\)</span> for Part A or <span class="math inline">\(L\)</span> for Part B.</label></li>
+<li><label><input type="checkbox"><strong>Two graphs, in Excel.</strong> <span class="math inline">\(T\)</span> against <span class="math inline">\(A\)</span>, and <span class="math inline">\(E_{el}\)</span> against <span class="math inline">\(t_{MID}\)</span>. A title, both axes labelled with units, and the best-fit equation on each.</label></li>
+</ul>
+</div>
+</section>
+<section id="in-excel" class="level3">
+<h3 class="anchored" data-anchor-id="in-excel">In Excel</h3>
+<p>The template has no formulas in any cell you fill in. Every calculated column, the three rows under each table, and the pendulum’s <span class="math inline">\(k\)</span> are yours to type. The colour key is at the top of the sheet: yellow is raw data you type in, light blue is calculated. Part A’s table is rows 4 to 23, and Part B’s is rows 31 to 50, with the same columns.</p>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Formula</th>
+<th>In Excel (first row of Part A)</th>
+<th>Unit</th>
+<th>On the board</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(T\)</span></td>
+<td><span class="math inline">\(\Delta t / n\)</span></td>
+<td><code>=B4/C4</code></td>
+<td>s</td>
+<td>yes, first</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\)</span></td>
+<td><span class="math inline">\(\Delta S / 2\)</span>, which is <span class="math inline">\(\Delta y / 200\)</span> because <span class="math inline">\(\Delta y\)</span> is in centimetres</td>
+<td><code>=D4/200</code></td>
+<td>m</td>
+<td>yes, second</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(E_{el}\)</span></td>
+<td><span class="math inline">\(\tfrac12 k A^2\)</span>, with <span class="math inline">\(k\)</span> from the cell above the table</td>
+<td><code>=0.5*$G$2*E4^2</code></td>
+<td>J</td>
+<td>yes, third</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k\)</span> (Part B, cell G29)</td>
+<td><span class="math inline">\(Mg/L\)</span></td>
+<td><code>=E28*9.81/E29</code></td>
+<td>N/m</td>
+<td>inside the third</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For Part B the energy formula points at the pendulum’s <span class="math inline">\(k\)</span> instead, <code>=0.5*$G$29*E31^2</code>. The dollar signs keep <span class="math inline">\(k\)</span> fixed when you fill the formula down. Without them, the second row points at the column heading and shows <code>#VALUE!</code>, and every row after that uses a <span class="math inline">\(t_{MID}\)</span> value in place of <span class="math inline">\(k\)</span>, so the energies come out wrong and grow down the column.</p>
+<p><strong>The three rows under each table.</strong> In this template they have no labels. The board in the room names them: the mean <span class="math inline">\(\bar x\)</span>, then δa, then δr (rows 24 to 26 for Part A, rows 51 to 53 for Part B). The mean is <code>=AVERAGE(B4:B23)</code> and its neighbours. In the typed columns, <span class="math inline">\(\delta_r = \delta_a / \bar x\)</span>. In the calculated columns the <a href="../../../teaching/labs/01-uncertainty.html#unc-calc">uncertainty guide</a> runs the other way, <span class="math inline">\(\delta_a = \delta_r \times \bar x\)</span>.</p>
+<p><strong>What the template leaves blank.</strong> None of the δa values are given. Your TA has the values for your section. If you are on your own, these follow the rules in the uncertainty guide:</p>
+<ul>
+<li><span class="math inline">\(\Delta t\)</span>: <span class="math inline">\(0.02\ \text{s}\)</span>, the time between two samples at 50 samples per second.</li>
+<li><span class="math inline">\(n\)</span>: zero. A count is exact.</li>
+<li><span class="math inline">\(\Delta y\)</span> or <span class="math inline">\(\Delta x\)</span>: the last digit Graphical Analysis shows. Positions to the millimetre give <span class="math inline">\(0.1\ \text{cm}\)</span>.</li>
+<li><span class="math inline">\(t_{MID}\)</span>: zero. It is a time you chose, not one you measured.</li>
+<li><span class="math inline">\(A\)</span> is <span class="math inline">\(\Delta y\)</span> divided by a constant, <span class="math inline">\(T\)</span> is <span class="math inline">\(\Delta t\)</span> divided by an exact count, and <span class="math inline">\(E_{el}\)</span> is <span class="math inline">\(A\)</span> squared times constants. All three are products, so each takes the largest δr among its inputs, then <span class="math inline">\(\delta_a = \delta_r \times \text{mean}\)</span>. Constants such as <span class="math inline">\(k\)</span>, <span class="math inline">\(\tfrac12\)</span> and 200 do not count. So <span class="math inline">\(A\)</span> and <span class="math inline">\(E_{el}\)</span> take the δr of <span class="math inline">\(\Delta y\)</span>, and <span class="math inline">\(T\)</span> takes the δr of <span class="math inline">\(\Delta t\)</span>.</li>
+</ul>
+<p><strong>The graphs.</strong> Four of them, both axes labelled with units. Each pair goes in that part’s two “Insert Here” boxes to the right of its table.</p>
+<ol type="1">
+<li><strong>Graph A1 and Graph B1, <span class="math inline">\(T\)</span> against <span class="math inline">\(A\)</span>.</strong> Period in seconds on the vertical axis, amplitude in metres on the horizontal, with a linear trendline. Expect it nearly flat: a slope close to zero, in s/m, and an intercept close to the mean period.</li>
+<li><strong>Graph A2 and Graph B2, <span class="math inline">\(E_{el}\)</span> against <span class="math inline">\(t_{MID}\)</span>.</strong> Energy in joules against time in seconds, with an exponential trendline. Drag takes about the same fraction of what is left on every cycle, so the energy falls exponentially. Plot against the <span class="math inline">\(t_{MID}\)</span> column, not the window labels in column A, which a scatter chart plots as 1, 2, 3 and so on.</li>
+</ol>
+<p>Excel zooms the vertical axis in on the points, so a flat <span class="math inline">\(T\)</span> graph can look like it has a trend. The size of the slope is what tells you, not the look of the line.</p>
+</section>
+<section id="on-the-board" class="level3">
+<h3 class="anchored" data-anchor-id="on-the-board">On the board</h3>
+<p>The board in the room asks for four sample calculations, in this order: <span class="math inline">\(T\)</span>, <span class="math inline">\(A\)</span> and <span class="math inline">\(E_{el}\)</span> from one real row, then <span class="math inline">\(k\)</span> (Part A) or <span class="math inline">\(L\)</span> (Part B) from the mean period. Every factor carries its unit. Invented numbers below.</p>
+<p><strong>Part A</strong>, with <span class="math inline">\(M = 0.200\ \text{kg}\)</span>, <span class="math inline">\(k = 3.85\ \text{N/m}\)</span> from the force against position slope, and the 0 to 30 s row: <span class="math inline">\(\Delta t = 7.32\ \text{s}\)</span>, <span class="math inline">\(n = 5\)</span>, <span class="math inline">\(\Delta y = 38.6\ \text{cm}\)</span>.</p>
+<p><span class="math display">\[T = \frac{7.32\ \text{s}}{5} = 1.464\ \text{s},\]</span></p>
+<p><span class="math display">\[A = \frac{38.6\ \text{cm}}{2} = 19.3\ \text{cm} = 0.193\ \text{m},\]</span></p>
+<p><span class="math display">\[E_{el} = \tfrac12 (3.85\ \text{N/m})(0.193\ \text{m})^2 = 0.0717\ \text{J}.\]</span></p>
+<p>With a mean period of <span class="math inline">\(\bar T = 1.466\ \text{s}\)</span> from the mean row:</p>
+<p><span class="math display">\[\begin{aligned} k_{exp} &amp;= \frac{4\pi^2 M}{\bar T^2} \\ &amp;= \frac{4\pi^2 (0.200\ \text{kg})}{(1.466\ \text{s})^2} = 3.67\ \text{N/m}. \end{aligned}\]</span></p>
+<p><strong>Part B</strong>, with <span class="math inline">\(M = 0.148\ \text{kg}\)</span>, <span class="math inline">\(L = 1.52\ \text{m}\)</span>, and the 0 to 30 s row: <span class="math inline">\(\Delta t = 7.44\ \text{s}\)</span>, <span class="math inline">\(n = 3\)</span>, <span class="math inline">\(\Delta x = 31.2\ \text{cm}\)</span>.</p>
+<p><span class="math display">\[T = \frac{7.44\ \text{s}}{3} = 2.480\ \text{s},\]</span></p>
+<p><span class="math display">\[A = \frac{31.2\ \text{cm}}{2} = 15.6\ \text{cm} = 0.156\ \text{m},\]</span></p>
+<p><span class="math display">\[\begin{aligned} k &amp;= \frac{Mg}{L} \\ &amp;= \frac{(0.148\ \text{kg})(9.81\ \text{m/s}^2)}{1.52\ \text{m}} = 0.955\ \text{N/m}, \end{aligned}\]</span></p>
+<p><span class="math display">\[E_{el} = \tfrac12 (0.955\ \text{N/m})(0.156\ \text{m})^2 = 0.0116\ \text{J}.\]</span></p>
+<p>With a mean period of <span class="math inline">\(\bar T = 2.481\ \text{s}\)</span>:</p>
+<p><span class="math display">\[\begin{aligned} L_{exp} &amp;= \frac{g \bar T^2}{4\pi^2} \\ &amp;= \frac{(9.81\ \text{m/s}^2)(2.481\ \text{s})^2}{4\pi^2} = 1.53\ \text{m}. \end{aligned}\]</span></p>
+<p>Both formulas for the mean period come from <span class="math inline">\(T = 2\pi\sqrt{M/k}\)</span>, solved for <span class="math inline">\(k\)</span>, and from <span class="math inline">\(T = 2\pi\sqrt{L/g}\)</span>, solved for <span class="math inline">\(L\)</span>. <a href="#going-deeper">Going deeper</a> says where those come from.</p>
+</section>
+</section>
+<section id="con" class="level2">
+<h2 class="anchored" data-anchor-id="con">CON</h2>
+<p>One paragraph of five to ten sentences, written on a whiteboard and photographed, and everyone writes it, whichever job they had. It covers both parts, so get the other pair’s numbers before you start. The template lists four things it must contain.</p>
+<section id="con-quick" class="level3">
+<h3 class="anchored" data-anchor-id="con-quick">CON in one look</h3>
+<div class="sx-checklist">
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>(a) The four relationships in words.</strong> <span class="math inline">\(T\)</span> against <span class="math inline">\(A\)</span> and <span class="math inline">\(E_{el}\)</span> against <span class="math inline">\(t\)</span>, for the spring and for the pendulum.</label></li>
+<li><label><input type="checkbox"><strong>(b) The four equations in physical symbols, not <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</strong> A unit on every number in them.</label></li>
+<li><label><input type="checkbox"><strong>(c) <span class="math inline">\(k\)</span> for the spring and <span class="math inline">\(L\)</span> for the pendulum,</strong> each from its mean period, with units.</label></li>
+<li><label><input type="checkbox"><strong>(d) Two percent differences.</strong> <span class="math inline">\(k\)</span> against the force against position slope, and <span class="math inline">\(L\)</span> against the length you measured.</label></li>
+</ul>
+</div>
+</section>
+<section id="con-detail" class="level3">
+<h3 class="anchored" data-anchor-id="con-detail">Item by item</h3>
+<p>Each item becomes one or two sentences, in order. Numbers invented, the same as on the boards above.</p>
+<ol type="1">
+<li><strong>(a) The relationships.</strong> → “For both the spring and the pendulum, the period did not depend on the amplitude, and the energy decreased exponentially with time.”</li>
+<li><strong>(b) The four equations.</strong> → “The spring gave <span class="math inline">\(T = (0.012\ \text{s/m})\,A + 1.464\ \text{s}\)</span> and <span class="math inline">\(E_{el} = (0.0742\ \text{J})\,e^{-(0.00231\ \text{s}^{-1})\,t}\)</span>. The pendulum gave <span class="math inline">\(T = (0.009\ \text{s/m})\,A + 2.480\ \text{s}\)</span> and <span class="math inline">\(E_{el} = (0.0118\ \text{J})\,e^{-(0.00120\ \text{s}^{-1})\,t}\)</span>.”</li>
+<li><strong>(c) The values from the mean periods.</strong> → “The mean spring period of 1.466 s gives <span class="math inline">\(k = 4\pi^2 M/\bar T^2 = 3.67\ \text{N/m}\)</span>, and the mean pendulum period of 2.481 s gives <span class="math inline">\(L = g\bar T^2/4\pi^2 = 1.53\ \text{m}\)</span>.”</li>
+<li><strong>(d) The two comparisons.</strong> → “The slope of force against position gave <span class="math inline">\(k = 3.85\ \text{N/m}\)</span>, a percent difference of <span class="math inline">\(200\%\,(3.85 - 3.67)/(3.85 + 3.67) = 4.8\%\)</span>, and the tape measure gave <span class="math inline">\(L = 1.52\ \text{m}\)</span>, a percent difference of <span class="math inline">\(200\%\,(1.53 - 1.52)/(1.53 + 1.52) = 0.7\%\)</span>.” The template’s wording for (d) says to compare <span class="math inline">\(L\)</span> with the value from the mean pendulum period, which is where (c) already got it. The other value you have for <span class="math inline">\(L\)</span> is the one you measured with the tape, so that is the comparison.</li>
+</ol>
+</section>
+<section id="units-on-the-four-equations" class="level3">
+<h3 class="anchored" data-anchor-id="units-on-the-four-equations">Units on the four equations</h3>
+<div class="sx-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Number</th>
+<th>Unit</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>slope of <span class="math inline">\(T\)</span> against <span class="math inline">\(A\)</span></td>
+<td>s/m</td>
+<td>seconds on the vertical axis over metres on the horizontal</td>
+</tr>
+<tr class="even">
+<td>intercept of <span class="math inline">\(T\)</span> against <span class="math inline">\(A\)</span></td>
+<td>s</td>
+<td>it is a period</td>
+</tr>
+<tr class="odd">
+<td>exponential fit, the number in front</td>
+<td>J</td>
+<td>it is the energy at <span class="math inline">\(t = 0\)</span></td>
+</tr>
+<tr class="even">
+<td>exponential fit, the number in the exponent</td>
+<td>s⁻¹</td>
+<td>the exponent has to have no unit, and it multiplies <span class="math inline">\(t\)</span> in seconds</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(k\)</span></td>
+<td>N/m</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(L\)</span></td>
+<td>m</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>percent difference</td>
+<td>none, use %</td>
+<td>one length or one <span class="math inline">\(k\)</span> over another, so the unit cancels</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="common-slips" class="level2">
+<h2 class="anchored" data-anchor-id="common-slips">Common slips</h2>
+<ul>
+<li><strong>Counting peaks instead of cycles.</strong> From a peak to the sixth peak is five cycles, not six. <span class="math inline">\(n\)</span> is the number of cycles.</li>
+<li><strong>Using <span class="math inline">\(\Delta y\)</span> as the amplitude.</strong> <span class="math inline">\(\Delta y\)</span> runs from the top of the swing to the bottom, which is twice the amplitude. The formula divides by 200, not by 100, for that reason.</li>
+<li><strong>Metres in the centimetre column.</strong> Type 38.6, not 0.386, or every amplitude comes out a hundred times too small and every energy ten thousand times too small.</li>
+<li><strong>A selection that does not start and end on a peak.</strong> Then <span class="math inline">\(\Delta t\)</span> is not a whole number of periods, and the period comes out wrong in a different way in every row.</li>
+<li><strong>No dollar signs on <span class="math inline">\(k\)</span>.</strong> The energy column fills down to <code>#VALUE!</code> and then to wrong numbers that grow row by row.</li>
+<li><strong>The pendulum length along a string.</strong> The strings slant, so a length measured along one is too long. Measure straight down from the level of the ceiling points, to the centre of the bob, not its top.</li>
+<li><strong>An exponential trendline with too few digits.</strong> Excel shows something like <span class="math inline">\(y = 0.0742e^{-0.002x}\)</span>, which has lost most of its exponent. Format the trendline label as a number with more decimal places.</li>
+<li><strong>Treating CON as someone else’s job.</strong> This week it is everyone’s, and it needs both parts.</li>
+</ul>
+</section>
+<section id="going-deeper" class="level2">
+<h2 class="anchored" data-anchor-id="going-deeper">Going deeper</h2>
+<p><strong>Why the period ignores the amplitude.</strong> The spring pulls back with a force proportional to how far the mass is from its resting place, <span class="math inline">\(F = -ky\)</span>. Pull it twice as far and it pulls back twice as hard, so the mass covers twice the distance at twice the speed, and the trip takes the same time. Newton’s second law turns <span class="math inline">\(F = -ky\)</span> into <span class="math inline">\(a = -(k/M)\,y\)</span>, and the motion that does that is a cosine with angular frequency <span class="math inline">\(\omega = \sqrt{k/M}\)</span>. So <span class="math inline">\(T = 2\pi/\omega = 2\pi\sqrt{M/k}\)</span>, with no <span class="math inline">\(A\)</span> anywhere in it. Graph A1 is the test of that.</p>
+<p><strong>A pendulum is a spring with <span class="math inline">\(k = Mg/L\)</span>.</strong> When the pendulum has swung through an angle <span class="math inline">\(\theta\)</span>, the bob is a distance <span class="math inline">\(s = L\theta\)</span> along its arc from the bottom, and gravity pulls it back along the arc with a force <span class="math inline">\(Mg\sin\theta\)</span>. For small swings <span class="math inline">\(\sin\theta\)</span> and <span class="math inline">\(\theta\)</span> are nearly equal, so the force is <span class="math inline">\((Mg/L)\,s\)</span>, the spring law with <span class="math inline">\(k = Mg/L\)</span>. That is why the sheet calls it <span class="math inline">\(k\)</span> and why <span class="math inline">\(E_{el} = \tfrac12 kA^2\)</span> works for the pendulum too. For small swings the sideways distance the motion sensor reads is nearly the same as <span class="math inline">\(s\)</span>. Put it into the spring’s period and the mass cancels:</p>
+<p><span class="math display">\[T = 2\pi\sqrt{\frac{M}{Mg/L}} = 2\pi\sqrt{\frac{L}{g}}.\]</span></p>
+<p>The words “for small swings” are where the pendulum differs from the spring. On a wide swing <span class="math inline">\(\sin\theta\)</span> is smaller than <span class="math inline">\(\theta\)</span>, so the restoring force grows more slowly than <span class="math inline">\(s\)</span>, and the period gets a little longer, by a fraction of about <span class="math inline">\(\theta_0^2/16\)</span> for a swing out to angle <span class="math inline">\(\theta_0\)</span> in radians. The example swing, <span class="math inline">\(0.156\ \text{m}\)</span> on a <span class="math inline">\(1.52\ \text{m}\)</span> pendulum, is <span class="math inline">\(0.10\)</span> rad, which changes the period by about 0.07%, under 2 ms. Over three cycles that adds about 5 ms to <span class="math inline">\(\Delta t\)</span>, and the samples are 20 ms apart, so graph B1 cannot see it.</p>
+<p><strong>Where the energy goes.</strong> Air drag and the flexing of the spring take a little energy every cycle. If each cycle loses the same fraction of what is left, the energy falls exponentially, <span class="math inline">\(E_{el} = E_0\,e^{-t/\tau}\)</span>, and the number in the exponent of the trendline is <span class="math inline">\(1/\tau\)</span>. The time <span class="math inline">\(\tau\)</span> is called the time constant: the time for the energy to fall to <span class="math inline">\(1/e\)</span> of its value, about 37%, which is a drop of about 63%. In the example it is <span class="math inline">\(1/(0.00231\ \text{s}^{-1}) = 433\ \text{s}\)</span> for the spring and 833 s for the pendulum, so the spring loses its energy faster. CON does not ask for it, but it is a good extra sentence. The energy halves every <span class="math inline">\(\tau\ln 2\)</span>. In the example that is <span class="math inline">\(\ln 2 / (0.00231\ \text{s}^{-1}) = 300\ \text{s}\)</span> for the spring, five minutes, and 578 s for the pendulum. Since energy goes as <span class="math inline">\(A^2\)</span>, half the energy is <span class="math inline">\(1/\sqrt 2\)</span>, about 71%, of the amplitude, so the swing shrinks more slowly than the energy does.</p>
+<p><strong>Why the two values of <span class="math inline">\(k\)</span> disagree.</strong> Both assume a spring with no mass. A real spring moves too: the coils at the bottom go up and down almost as far as the mass, and the coils at the top hardly move. Added up, the spring behaves as if about a third of its own mass <span class="math inline">\(m_s\)</span> rode along with <span class="math inline">\(M\)</span>, so</p>
+<p><span class="math display">\[T = 2\pi\sqrt{\frac{M + m_s/3}{k}}.\]</span></p>
+<p>Using <span class="math inline">\(M\)</span> alone in <span class="math inline">\(k = 4\pi^2 M/\bar T^2\)</span> then gives a <span class="math inline">\(k\)</span> that is too small. The force sensor at the top of the spring also feels the spring’s own motion, which pushes the force against position slope a little above the true <span class="math inline">\(k\)</span>. Put the two together and the slope value divided by the period value comes out close to <span class="math inline">\(1 + m_s/2M\)</span>. In the example, <span class="math inline">\(3.85/3.67 = 1.05\)</span>, which a spring of about 20 g would explain. Long springs like the ones in this lab are not light, so weigh yours and see.</p>
+<p><strong>Why the V.</strong> A bob on one string can swing in any direction, and a small sideways push at the start turns the swing into an ellipse that drifts off the motion sensor’s line. Two strings tied to two points let the bob swing only about the line joining those points, so it stays in one plane, straight along the sensor’s line. That line is also the pivot, which is why <span class="math inline">\(L\)</span> is measured from its level and not along a string.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<!-- "Wider spacing" toggle, added to the navbar next to Quarto's dark-mode
+     toggle on every page (Quarto renders that button twice, once for wide
+     screens and once for the collapsed menu, so this adds one beside each).
+     Sets data-sx-spacing="wide" on <html> and remembers the choice in
+     localStorage; assets/spacing-head.html re-applies it before paint on the
+     next page, and styles.css section 18 does the spacing. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    if (document.querySelector('.sx-spacing-toggle')) return;
+    var darks = document.querySelectorAll('.quarto-color-scheme-toggle');
+    if (!darks.length) return;
+    var root = document.documentElement;
+    var on = root.getAttribute('data-sx-spacing') === 'wide';
+    var links = [];
+
+    function apply() {
+      if (on) root.setAttribute('data-sx-spacing', 'wide');
+      else root.removeAttribute('data-sx-spacing');
+      links.forEach(function (l) { l.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      try { localStorage.setItem('sx-spacing', on ? 'wide' : 'normal'); } catch (e) {}
+    }
+
+    Array.prototype.forEach.call(darks, function (dark) {
+      var link = document.createElement('a');
+      link.href = '#';
+      link.className = (dark.className || '').replace('quarto-color-scheme-toggle', '').trim() + ' sx-spacing-toggle';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-pressed', on ? 'true' : 'false');
+      link.setAttribute('aria-label', 'Wider letter spacing for easier reading');
+      link.title = 'Wider spacing';
+      link.innerHTML = '<i class="bi bi-fonts" aria-hidden="true"></i>';
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        on = !on;
+        apply();
+      });
+      // Mirror the dark toggle's wrapper when it has one, so the two sit side by side.
+      var wrapper = dark.parentElement;
+      if (wrapper && wrapper.tagName === 'LI') {
+        var li = document.createElement('li');
+        li.className = wrapper.className;
+        li.appendChild(link);
+        wrapper.parentElement.insertBefore(li, wrapper);
+      } else {
+        wrapper.insertBefore(link, dark);
+      }
+      links.push(link);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<!-- Decision wizard for the Lab Help pages.
+
+     A `.sx-wizard` fenced div holds one `.sx-wizard__step` div per question
+     or answer. Buttons with `data-next="<step id>"` move between them, and a
+     button that points back at the first step starts a fresh run. This script
+     shows one step at a time, keeps a trail of the answers chosen so far (each
+     chip goes back to the question it answered), adds Back and Start-over
+     links, and opens a step directly when the page is loaded with that step's
+     id in the URL hash or when an in-page link points at it.
+
+     Without the script every step is visible in order, so the page still
+     reads as a plain guide, and the same happens in print.
+
+     Included after the body by teaching/labs/_metadata.yml. The matching
+     styles are in styles.css, section 16. The authoring pattern is in
+     teaching/labs/01-uncertainty.qmd. -->
+<script>
+(function () {
+  'use strict';
+
+  function setUp(wizard) {
+    var steps = Array.prototype.slice.call(wizard.querySelectorAll('.sx-wizard__step'));
+    if (!steps.length) return;
+
+    var byId = {};
+    steps.forEach(function (step) { byId[step.id] = step; });
+    var first = steps[0];
+    var current = first;
+    // One entry per answer given: the step it was given on, and the chip text.
+    var trail = [];
+
+    var trailBar = document.createElement('nav');
+    trailBar.className = 'sx-wizard__trail';
+    trailBar.setAttribute('aria-label', 'Answers so far');
+    wizard.insertBefore(trailBar, first);
+
+    function makeButton(className, text, onClick) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = className;
+      button.textContent = text;
+      button.addEventListener('click', onClick);
+      return button;
+    }
+
+    function restart() {
+      trail = [];
+      show(first, true);
+    }
+
+    function goBack() {
+      var last = trail.pop();
+      show(last ? byId[last.from] : first, true);
+    }
+
+    function renderTrail() {
+      trailBar.innerHTML = '';
+      if (!trail.length) return;
+      trail.forEach(function (entry, index) {
+        if (index) {
+          var sep = document.createElement('span');
+          sep.className = 'sx-wizard__sep';
+          sep.setAttribute('aria-hidden', 'true');
+          sep.textContent = '›';
+          trailBar.appendChild(sep);
+        }
+        trailBar.appendChild(makeButton('sx-wizard__crumb', entry.label, function () {
+          trail = trail.slice(0, index);
+          show(byId[entry.from], true);
+        }));
+      });
+      trailBar.appendChild(makeButton('sx-wizard__reset', 'Start over', restart));
+    }
+
+    function renderNav(step) {
+      Array.prototype.forEach.call(wizard.querySelectorAll('.sx-wizard__nav'), function (old) {
+        old.remove();
+      });
+      if (step === first || !trail.length) return;
+      var nav = document.createElement('p');
+      nav.className = 'sx-wizard__nav';
+      nav.appendChild(makeButton('', '← Back', goBack));
+      nav.appendChild(makeButton('', 'Start over', restart));
+      step.appendChild(nav);
+    }
+
+    function show(step, moveFocus) {
+      current = step;
+      steps.forEach(function (s) { s.classList.toggle('is-active', s === step); });
+      renderTrail();
+      renderNav(step);
+      if (!moveFocus) return;
+      step.setAttribute('tabindex', '-1');
+      step.focus({ preventScroll: true });
+      // After a click near the bottom of a long step the new step can start
+      // above the viewport; bring the card back into view when that happens.
+      if (wizard.getBoundingClientRect().top < 0) {
+        wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    wizard.addEventListener('click', function (event) {
+      var button = event.target.closest('.sx-wizard__btn');
+      if (!button || !wizard.contains(button)) return;
+      var next = byId[button.getAttribute('data-next')];
+      if (!next) return;
+      if (next === first) {
+        trail = [];
+      } else {
+        var title = button.querySelector('.sx-wizard__btn-title');
+        var label = button.getAttribute('data-label') || (title || button).textContent.trim();
+        trail.push({ from: current.id, label: label });
+      }
+      show(next, true);
+    });
+
+    // Deep links: a URL ending in #<step id>, or an in-page link to one. The
+    // browser cannot scroll to a hidden step, so open it and scroll ourselves.
+    function openFromHash(hash) {
+      var step = hash && byId[hash.replace(/^#/, '')];
+      if (!step) return false;
+      trail = [];
+      show(step, true);
+      wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return true;
+    }
+    window.addEventListener('hashchange', function () { openFromHash(location.hash); });
+
+    wizard.classList.add('is-ready');
+    if (!openFromHash(location.hash)) show(first, false);
+  }
+
+  function run() {
+    Array.prototype.forEach.call(document.querySelectorAll('.sx-wizard'), setUp);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
+<!-- Tickable checklists for the Lab Help pages.
+
+     Pandoc renders a Markdown task list (`- [ ] item`) with disabled
+     checkboxes. Inside a `.sx-checklist` fenced div this script enables them
+     so a student can tick items off while checking a whiteboard. Nothing is
+     saved; reloading the page clears the boxes, which is the right behaviour
+     for a checklist that is run once per lab. Styles: styles.css section 17.
+
+     Included after the body by teaching/labs/_metadata.yml. -->
+<script>
+(function () {
+  'use strict';
+  function run() {
+    var boxes = document.querySelectorAll('.sx-checklist input[type="checkbox"]');
+    Array.prototype.forEach.call(boxes, function (box) {
+      box.disabled = false;
+      box.setAttribute('aria-label', (box.parentNode.textContent || '').trim());
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/saxonstockton\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../teaching/labs/lab-guides/09-rotational-dynamics.html" class="pagination-link" aria-label="Lab 9: Rotational Dynamics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 9: Rotational Dynamics</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../teaching/python/index.html" class="pagination-link" aria-label="Python from Scratch">
+        <span class="nav-page-text">Python from Scratch</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Saxon Stockton · Built with <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="../../../teaching/">Teaching</a> · <a href="../../../cv.html">CV</a> · <a href="../../../about.html">About</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/purplinator">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:s.stockton@tcu.edu">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

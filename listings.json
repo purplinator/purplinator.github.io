@@ -16,12 +16,9 @@
       "/teaching/labs/lab-guides/06-spring-constant.html",
       "/teaching/labs/lab-guides/07-impulse-momentum.html",
       "/teaching/labs/lab-guides/08-torque-rotation.html",
-      "/teaching/labs/lab-guides/09-rotational-dynamics.html"
+      "/teaching/labs/lab-guides/09-rotational-dynamics.html",
+      "/teaching/labs/lab-guides/10-oscillations.html"
     ]
-  },
-  {
-    "listing": "/opportunities/reu/index.html",
-    "items": []
   },
   {
     "listing": "/teaching/labs/index.html",
@@ -33,8 +30,13 @@
       "/teaching/labs/lab-guides/06-spring-constant.html",
       "/teaching/labs/lab-guides/07-impulse-momentum.html",
       "/teaching/labs/lab-guides/08-torque-rotation.html",
-      "/teaching/labs/lab-guides/09-rotational-dynamics.html"
+      "/teaching/labs/lab-guides/09-rotational-dynamics.html",
+      "/teaching/labs/lab-guides/10-oscillations.html"
     ]
+  },
+  {
+    "listing": "/opportunities/reu/index.html",
+    "items": []
   },
   {
     "listing": "/teaching/math/index.html",
