@@ -233,6 +233,54 @@ true value T; percent difference = 200 % × (M₁ − M₂) / (M₁ + M₂) betw
   uses the group's own Lab 8 I<sub>0</sub> or the class value is left to the TA. Page:
   `lab-guides/09-rotational-dynamics.qmd`.
 
+- **Lab 10, spring and pendulum oscillations** (2026 files, `26 P1 Lab 10 Analysis Template.xlsx` and
+  `26 P1 Lab 10 Report Template.docx`, added 2026-11-17). Regular lab, but everyone turns in
+  CON: "Submit only the section that you do today (UDA or QPD) for the Part you did (A or B) AND the CONclusion
+  that describes the results of BOTH Parts A and B." **From the files.** Part A spring-mass, Part B pendulum.
+  Report: per part, a QPD slot (board with question and procedure, annotated setup photo, annotated screenshot
+  of "the 30-second image" of the position-time graph with Dt and Dy, Dx for B), and a UDA slot (data table
+  with uncertainty analysis, sample calculation board, the two graphs with best-fit functions in y(x) form).
+  CON: one paragraph, about 5 to 10 sentences: (a) relationships between the FOUR graphed pairs, (b) the FOUR
+  equations in physical symbols with units on all constants, (c) "from the appropriate mean value" the
+  experimental k (spring) and length (pendulum), (d) compare with "the force-position graph slope (for k) and
+  mean pendulum period (for L)" by percent difference. Sheet: one tab, NO formulas (only Part B's column-A
+  labels copy Part A's). Legend J1:J2, yellow (accent4 tint) = raw data, light blue = calculated. Part A
+  rows 4 to 23: Dt (s), n, Dy (cm) yellow; A (m), T (s) blue; tMID (s) yellow; Eel (J) blue. Twenty rows for
+  0-30s to 570-600s, but the labels for 180-210s, 240-270s and every other window after are blank. Rows 24
+  to 26 unlabelled: all blue, then yellow for B/C/D/G and blue for E/F/H, then all blue (read as mean, δa,
+  δr). Above Part A: M (kg, E2) and "k =" (G2, N/m) yellow, headed "From F vs x slope". Part B rows 31 to
+  50 and 51 to 53, same columns with Dx (cm). M = 0.148 kg prefilled (E28), L (m, E29) yellow, "k = Mg/L"
+  in G29 (blue). Graph slots: A1 T vs A, A2 Eel vs t, B1 T vs A, B2 Eel vs t, "Insert Here" merged boxes
+  I4:N26, O4:T26, I31:N53, O31:T53. No δa values given anywhere.
+  **From the TA meeting, 2026-11-16 (photos in Downloads, PXL_20261116_*).** 50 samples/s for 600 s. Spring
+  mass about 35 cm above the cage (motion sensor on the floor in a wire cage, force sensor clamped high on a
+  rod with the spring on its hook). Spring oscillations stay below the clamp/bottom of the bar. Click-drag
+  across 5 cycles (spring) or 3 cycles (pendulum), "peak to 6th/4th peak", View Stats, record Δx as Δt and Δy
+  as Δy or Δx. A second hand wrote "3 peaks for pendulum, 5 peaks for spring". Odd number of students: a
+  group of five, the extra student does the UDA whiteboard. Pendulum: brass bob on a V of string from two
+  ceiling points, motion sensor on a floor stand at bob height.
+  **From the boards in a Lab 10 session, 2026-11-17 evening (PXL_20261118_0050*; Saxon: trust these a little
+  more than the meeting notes).** "4 Sample Calculations": (1) T = Δt/n, (2) A = ΔS/2, (3) E<sub>el</sub> =
+  ½kA² with k = mg/L for the pendulum and, for Part A, k from F vs Pos with "Apply curve → slope = k", (4) "For
+  Conclusion: Calculate k from mean period (part A) OR Calculate L from mean period (part B)" with
+  T = 2π√(m/k) → k = 4π²m/T² and T<sub>pend</sub> = 2π√(L/g) → L. View Statistics: Δx → Δt, Δy → ΔS (Δy spring,
+  Δx pendulum). mean x̄, abs unc δa, rel unc δr, δr = δa/x̄ or δa = δr·x̄. A drawing of the 0 to 30 s window
+  with the n = 5 bracket centred on 15 s. Duration 600 s, collection rate 50/s, m<sub>pend</sub> 0.148 kg,
+  ΣF = −kΔx<sub>eq</sub>, an F<sub>sp</sub> vs s sketch with negative slope through 35. Also "T<sub>lin</sub> =
+  1.678 s" and an empty "T<sub>tor</sub> =" (meaning unknown, left off the page). Sample CON board ("CON Lab10"
+  header): in paragraph form, relationship between T and A for both systems, between E<sub>el</sub> and
+  t<sub>mid</sub> for both, both explicit trendline equations for part A and for part B ("Variables & Units!"),
+  experimental k and % difference, experimental L and % difference, and a crossed-out last item: the time
+  constant (energy down by 1/e, ~63 %) for both setups and which loses energy faster. So the page now says
+  exponential fit, four sample calculations in that order, selection centred on t<sub>MID</sub>.
+  **Inferences on the page, not from the files.** A = Δy/200 (Δy = highest to lowest, twice the amplitude,
+  in cm); tMID = the window midpoint, 15, 45, ... 585 s; Eel = ½ k A² with k from G2 or G29; the reading of
+  CON (c) and (d) as k(mean T) against k(F vs x slope) and L(mean T) against the tape-measured L; the primer's
+  percent difference 200 %(a − b)/(a + b); suggested δa: Δt 0.02 s (sample spacing), n 0, Δy last digit
+  (0.1 cm), tMID 0; the force-position slope taken in Graphical Analysis by switching the horizontal axis; L
+  measured from the level of the ceiling points to the bob's centre. Invented example numbers throughout.
+  Page: `lab-guides/10-oscillations.qmd`.
+
 ## Open questions for Saxon
 
 - The rest of the semester's labs, and for each: the question, the measured variables with
@@ -252,6 +300,10 @@ true value T; percent difference = 200 % × (M₁ − M₂) / (M₁ + M₂) betw
 - Lab 9: whether CON (d) compares with the group's own Lab 8 I<sub>0</sub> or the class value (the page
   leaves it to the TA), and which percent difference the professor wants for (c) and (d) (the page uses
   (exp − act)/act, as Lab 8 did).
+- Lab 10 (the room boards of 2026-11-17 settled A = ΔS/2, tMID, the three rows and the exponential fit): what
+  CON (d) compares L with (the page uses the tape-measured L); which percent difference; the δa values;
+  whether the blank column-A labels mean every window or every other one after 180 s (the page says every
+  window); which part's UDA board the fifth student in a group of five takes.
 
 ## Page plan (proposed 2026-10-11, first version built the same day)
 

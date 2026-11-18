@@ -1,0 +1,247 @@
+---
+title: "Lab 10: Spring and Pendulum Oscillations"
+subtitle: "A mass on a spring and a pendulum, each left to swing for ten minutes: does the period depend on the amplitude, and how does the energy drain away?"
+description: "Two parts, four graphs and a conclusion that everyone turns in. Read the period and the amplitude from each 30-second window of a ten-minute run, graph period against amplitude and energy against time, then find the spring constant and the pendulum length from the mean periods."
+order: 10
+categories: [Regular lab]
+major: false
+---
+
+:::: {.content-visible when-meta="major"}
+::: {.callout-important appearance="simple"}
+**Major lab.** Every student turns in all three parts, and your grade depends on your partners' boards as much as your own. Check all three before any of them is photographed.
+:::
+::::
+:::: {.content-visible unless-meta="major"}
+::: {.callout-note appearance="simple"}
+**Regular lab.** You turn in the part you worked on. In a group of two, each of you turns in your own part plus CON.
+:::
+::::
+
+::: {.callout-important appearance="simple"}
+**Everyone turns in CON this week.** The report template asks each student for the job they did today, QPD or UDA, for the part they worked on, A or B, and also for a conclusion that covers both parts. So a group of four splits into four jobs (QPD A, UDA A, QPD B, UDA B), and all four people write CON. If your section has an odd number of students, one group has five, and the extra student does the UDA whiteboard.
+:::
+
+::: {.callout-caution appearance="simple"}
+This page was written from the 2026 Lab 10 templates, the notes from this week's TA meeting, and the boards in the lab room. If the handout or your TA says something different, the handout and your TA win.
+:::
+
+## At a glance
+
+- **Questions.** Part A, the spring: does the period of a mass bouncing on a spring depend on how far it bounces, and how does its energy change over ten minutes? Part B, the pendulum: the same two questions for a pendulum.
+- **You measure.** One ten-minute run for each system. From each 30-second window of the run, twenty windows in all, the time $\Delta t$ for a few full cycles and the size of the swing, $\Delta y$ for the spring or $\Delta x$ for the pendulum. Also the mass $M$ on the spring and the spring constant $k$ from a force against position graph (Part A), and the pendulum's length $L$ (Part B). The pendulum's mass, $0.148\ \text{kg}$, is already in the sheet.
+- **You calculate.** For each window, the amplitude $A$, the period $T$ and the energy $E_{el} = \tfrac12 k A^2$. For the pendulum, $k = Mg/L$ comes first.
+- **You graph.** Four graphs, two for each part: $T$ against $A$, and $E_{el}$ against $t_{MID}$.
+- **You conclude.** One paragraph of five to ten sentences that covers both parts: the four relationships, the four equations, $k$ and $L$ from the mean periods, and each of those compared with a second value by a percent difference. The checklist is in [CON in one look](#con-quick).
+
+## The setup
+
+**Part A, the spring.** A force sensor is clamped high on a vertical rod, and a long spring hangs from its hook with the mass $M$ on the end. A motion sensor sits on the floor under the mass, looking up, inside a wire cage that protects it if the mass falls. The force sensor reads the spring's pull and the motion sensor reads the height of the mass, both at the same moments.
+
+**Part B, the pendulum.** A brass bob of mass $M = 0.148\ \text{kg}$ hangs from two points on the ceiling by a string in a V. The V keeps it swinging back and forth in one plane, the way a playground swing does. A motion sensor on a stand at the bob's height, pointed along the swing, records the bob's position.
+
+From the TA meeting and the boards in the lab room:
+
+- **Collection.** 50 samples per second for 600 s, ten minutes. Set both before you start collecting.
+- **Spring height.** At rest, the mass hangs about 35 cm above the cage.
+- **Spring swing.** The mass has to stay below the clamp and the bottom of the rod at the top of every bounce, so do not pull it down further than that allows.
+
+### Reading one window in Graphical Analysis {#reading-ga}
+
+Every row of the data table comes from one 30-second window of the run.
+
+1. **Zoom to the window.** Show only 0 to 30 s on the time axis. The report wants a screenshot of one of these windows, so take it while you are here.
+2. **Select whole cycles in the middle of the window.** Click and drag from one peak to a later peak: across 5 cycles for the spring (from a peak to the sixth peak) and 3 cycles for the pendulum (from a peak to the fourth peak). That number of cycles is $n$. Centre the selection on the middle of the window, 15 s for the first one, so that $t_{MID}$ is the middle of what you measured.
+3. **View Statistics.** Record the box's Δx as $\Delta t$, the time for those $n$ cycles. Record the box's Δy as $\Delta y$ for the spring, or as $\Delta x$ for the pendulum. The board in the room calls either one $\Delta S$. It runs from the highest position in the selection to the lowest. If it comes out near zero, the box is measuring from the start of the selection to the end. Take its maximum minus its minimum instead.
+4. **Convert to centimetres.** Graphical Analysis gives positions in metres and the column is in centimetres, so $0.386\ \text{m}$ goes in as 38.6.
+5. **Next window.** Move to 30 to 60 s and repeat, up to 570 to 600 s.
+
+In column A of the sheet, some windows have no label (`180-210s`, `240-270s` and five more are blank), but every row has cells to fill. The rows still go in 30-second steps, twenty of them.
+
+## QPD
+
+The report has a QPD slot for each part. Each slot wants three things: the board with the question and the procedure, an annotated photo of the setup, and an annotated screenshot of one 30-second window.
+
+### The questions
+
+> Part A: How does the period of the spring-mass system ($T$) depend on its amplitude ($A$), and how does its energy ($E_{el}$) change with time ($t$)?
+
+> Part B: How does the period of the pendulum ($T$) depend on its amplitude ($A$), and how does its energy ($E_{el}$) change with time ($t$)?
+
+### What the procedure must make clear
+
+- How the system was started: the spring pulled down and let go, the pendulum pulled to one side and let go. For the spring, that it hung about 35 cm above the cage and stayed below the clamp.
+- The collection settings, 50 samples per second for 600 s.
+- How $\Delta t$ and $\Delta y$ (or $\Delta x$) come out of each window: zoom to 30 s, drag across $n$ whole cycles from peak to peak, View Statistics.
+- Part A: where $M$ and $k$ came from. $k$ is the slope of force against position. In Graphical Analysis, set the force graph's horizontal axis to position (click the axis label), then Apply Curve Fit with a linear fit. The slope comes out negative, because as the mass rises away from the sensor below it, the spring pulls less. $k$ is its size.
+- Part B: how $L$ was measured, from the level of the two ceiling points straight down to the centre of the bob.
+
+::: {.sx-scroll}
+| Symbol | Quantity | How it is measured | Unit |
+|---|---|---|---|
+| $M$ (Part A) | mass hanging on the spring | electronic balance | kg |
+| $k$ (Part A) | spring constant | linear curve fit of force against position in Graphical Analysis | N/m |
+| $M$ (Part B) | pendulum bob | given in the sheet, $0.148\ \text{kg}$ | kg |
+| $L$ (Part B) | pendulum length | tape measure, ceiling-point level to the bob's centre | m |
+| $\Delta t$ | time for $n$ full cycles | Δx in the statistics box | s |
+| $n$ | cycles in the selection | counted, 5 for the spring and 3 for the pendulum | none |
+| $\Delta y$, $\Delta x$ | highest to lowest position in the selection | Δy in the statistics box, times 100 | cm |
+| $t_{MID}$ | middle of the 30-second window | 15, 45, 75 and so on, up to 585 | s |
+:::
+
+### The photo and the screenshot
+
+**Annotated setup photo.** Part A: label the force sensor, the spring, the mass $M$, the motion sensor in its cage, and the amplitude $A$ above and below the resting position. Part B: label the two strings, the bob $M$, the length $L$, the motion sensor, and the amplitude $A$ to either side of straight down.
+
+**Annotated 30-second screenshot.** One window of the position against time graph, with the $n$ cycles selected and the statistics box showing. Mark $\Delta t$ across the selected cycles and $\Delta y$ (Part A) or $\Delta x$ (Part B) from the highest point to the lowest. The template asks for both by name.
+
+## UDA
+
+The report has a UDA slot for each part, and each slot wants three things.
+
+::: {.sx-scroll}
+| Report section | What goes in it |
+|---|---|
+| UDA, each part | A screenshot of the data table, with the mean, δa and δr rows under it filled in |
+| UDA, each part | A photo of the sample calculation board |
+| UDA, each part | A screenshot of the part's two graphs, each with its best-fit equation showing |
+:::
+
+### UDA in one look {#uda-quick}
+
+::: {.sx-checklist}
+- [ ] **Data table, in Excel.** Twenty rows, one per window, and every calculated column filled by a formula. Under the table, the mean, δa and δr rows filled in for every column.
+- [ ] **Four sample calculations, with units.** From one real row: $T = \Delta t/n$, $A = \Delta S/2$ and $E_{el} = \tfrac12 kA^2$, with Part B working out $k = Mg/L$ inside the third. Fourth, from the mean period: $k$ for Part A or $L$ for Part B.
+- [ ] **Two graphs, in Excel.** $T$ against $A$, and $E_{el}$ against $t_{MID}$. A title, both axes labelled with units, and the best-fit equation on each.
+:::
+
+### In Excel
+
+The template has no formulas in any cell you fill in. Every calculated column, the three rows under each table, and the pendulum's $k$ are yours to type. The colour key is at the top of the sheet: yellow is raw data you type in, light blue is calculated. Part A's table is rows 4 to 23, and Part B's is rows 31 to 50, with the same columns.
+
+::: {.sx-scroll}
+| Column | Formula | In Excel (first row of Part A) | Unit | On the board |
+|---|---|---|---|---|
+| $T$ | $\Delta t / n$ | `=B4/C4` | s | yes, first |
+| $A$ | $\Delta S / 2$, which is $\Delta y / 200$ because $\Delta y$ is in centimetres | `=D4/200` | m | yes, second |
+| $E_{el}$ | $\tfrac12 k A^2$, with $k$ from the cell above the table | `=0.5*$G$2*E4^2` | J | yes, third |
+| $k$ (Part B, cell G29) | $Mg/L$ | `=E28*9.81/E29` | N/m | inside the third |
+:::
+
+For Part B the energy formula points at the pendulum's $k$ instead, `=0.5*$G$29*E31^2`. The dollar signs keep $k$ fixed when you fill the formula down. Without them, the second row points at the column heading and shows `#VALUE!`, and every row after that uses a $t_{MID}$ value in place of $k$, so the energies come out wrong and grow down the column.
+
+**The three rows under each table.** In this template they have no labels. The board in the room names them: the mean $\bar x$, then δa, then δr (rows 24 to 26 for Part A, rows 51 to 53 for Part B). The mean is `=AVERAGE(B4:B23)` and its neighbours. In the typed columns, $\delta_r = \delta_a / \bar x$. In the calculated columns the [uncertainty guide](../01-uncertainty.qmd#unc-calc) runs the other way, $\delta_a = \delta_r \times \bar x$.
+
+**What the template leaves blank.** None of the δa values are given. Your TA has the values for your section. If you are on your own, these follow the rules in the uncertainty guide:
+
+- $\Delta t$: $0.02\ \text{s}$, the time between two samples at 50 samples per second.
+- $n$: zero. A count is exact.
+- $\Delta y$ or $\Delta x$: the last digit Graphical Analysis shows. Positions to the millimetre give $0.1\ \text{cm}$.
+- $t_{MID}$: zero. It is a time you chose, not one you measured.
+- $A$ is $\Delta y$ divided by a constant, $T$ is $\Delta t$ divided by an exact count, and $E_{el}$ is $A$ squared times constants. All three are products, so each takes the largest δr among its inputs, then $\delta_a = \delta_r \times \text{mean}$. Constants such as $k$, $\tfrac12$ and 200 do not count. So $A$ and $E_{el}$ take the δr of $\Delta y$, and $T$ takes the δr of $\Delta t$.
+
+**The graphs.** Four of them, both axes labelled with units. Each pair goes in that part's two "Insert Here" boxes to the right of its table.
+
+1. **Graph A1 and Graph B1, $T$ against $A$.** Period in seconds on the vertical axis, amplitude in metres on the horizontal, with a linear trendline. Expect it nearly flat: a slope close to zero, in s/m, and an intercept close to the mean period.
+2. **Graph A2 and Graph B2, $E_{el}$ against $t_{MID}$.** Energy in joules against time in seconds, with an exponential trendline. Drag takes about the same fraction of what is left on every cycle, so the energy falls exponentially. Plot against the $t_{MID}$ column, not the window labels in column A, which a scatter chart plots as 1, 2, 3 and so on.
+
+Excel zooms the vertical axis in on the points, so a flat $T$ graph can look like it has a trend. The size of the slope is what tells you, not the look of the line.
+
+### On the board
+
+The board in the room asks for four sample calculations, in this order: $T$, $A$ and $E_{el}$ from one real row, then $k$ (Part A) or $L$ (Part B) from the mean period. Every factor carries its unit. Invented numbers below.
+
+**Part A**, with $M = 0.200\ \text{kg}$, $k = 3.85\ \text{N/m}$ from the force against position slope, and the 0 to 30 s row: $\Delta t = 7.32\ \text{s}$, $n = 5$, $\Delta y = 38.6\ \text{cm}$.
+
+$$T = \frac{7.32\ \text{s}}{5} = 1.464\ \text{s},$$
+
+$$A = \frac{38.6\ \text{cm}}{2} = 19.3\ \text{cm} = 0.193\ \text{m},$$
+
+$$E_{el} = \tfrac12 (3.85\ \text{N/m})(0.193\ \text{m})^2 = 0.0717\ \text{J}.$$
+
+With a mean period of $\bar T = 1.466\ \text{s}$ from the mean row:
+
+$$\begin{aligned} k_{exp} &= \frac{4\pi^2 M}{\bar T^2} \\ &= \frac{4\pi^2 (0.200\ \text{kg})}{(1.466\ \text{s})^2} = 3.67\ \text{N/m}. \end{aligned}$$
+
+**Part B**, with $M = 0.148\ \text{kg}$, $L = 1.52\ \text{m}$, and the 0 to 30 s row: $\Delta t = 7.44\ \text{s}$, $n = 3$, $\Delta x = 31.2\ \text{cm}$.
+
+$$T = \frac{7.44\ \text{s}}{3} = 2.480\ \text{s},$$
+
+$$A = \frac{31.2\ \text{cm}}{2} = 15.6\ \text{cm} = 0.156\ \text{m},$$
+
+$$\begin{aligned} k &= \frac{Mg}{L} \\ &= \frac{(0.148\ \text{kg})(9.81\ \text{m/s}^2)}{1.52\ \text{m}} = 0.955\ \text{N/m}, \end{aligned}$$
+
+$$E_{el} = \tfrac12 (0.955\ \text{N/m})(0.156\ \text{m})^2 = 0.0116\ \text{J}.$$
+
+With a mean period of $\bar T = 2.481\ \text{s}$:
+
+$$\begin{aligned} L_{exp} &= \frac{g \bar T^2}{4\pi^2} \\ &= \frac{(9.81\ \text{m/s}^2)(2.481\ \text{s})^2}{4\pi^2} = 1.53\ \text{m}. \end{aligned}$$
+
+Both formulas for the mean period come from $T = 2\pi\sqrt{M/k}$, solved for $k$, and from $T = 2\pi\sqrt{L/g}$, solved for $L$. [Going deeper](#going-deeper) says where those come from.
+
+## CON
+
+One paragraph of five to ten sentences, written on a whiteboard and photographed, and everyone writes it, whichever job they had. It covers both parts, so get the other pair's numbers before you start. The template lists four things it must contain.
+
+### CON in one look {#con-quick}
+
+::: {.sx-checklist}
+- [ ] **(a) The four relationships in words.** $T$ against $A$ and $E_{el}$ against $t$, for the spring and for the pendulum.
+- [ ] **(b) The four equations in physical symbols, not $x$ and $y$.** A unit on every number in them.
+- [ ] **(c) $k$ for the spring and $L$ for the pendulum,** each from its mean period, with units.
+- [ ] **(d) Two percent differences.** $k$ against the force against position slope, and $L$ against the length you measured.
+:::
+
+### Item by item {#con-detail}
+
+Each item becomes one or two sentences, in order. Numbers invented, the same as on the boards above.
+
+1. **(a) The relationships.** → "For both the spring and the pendulum, the period did not depend on the amplitude, and the energy decreased exponentially with time."
+2. **(b) The four equations.** → "The spring gave $T = (0.012\ \text{s/m})\,A + 1.464\ \text{s}$ and $E_{el} = (0.0742\ \text{J})\,e^{-(0.00231\ \text{s}^{-1})\,t}$. The pendulum gave $T = (0.009\ \text{s/m})\,A + 2.480\ \text{s}$ and $E_{el} = (0.0118\ \text{J})\,e^{-(0.00120\ \text{s}^{-1})\,t}$."
+3. **(c) The values from the mean periods.** → "The mean spring period of 1.466 s gives $k = 4\pi^2 M/\bar T^2 = 3.67\ \text{N/m}$, and the mean pendulum period of 2.481 s gives $L = g\bar T^2/4\pi^2 = 1.53\ \text{m}$."
+4. **(d) The two comparisons.** → "The slope of force against position gave $k = 3.85\ \text{N/m}$, a percent difference of $200\%\,(3.85 - 3.67)/(3.85 + 3.67) = 4.8\%$, and the tape measure gave $L = 1.52\ \text{m}$, a percent difference of $200\%\,(1.53 - 1.52)/(1.53 + 1.52) = 0.7\%$." The template's wording for (d) says to compare $L$ with the value from the mean pendulum period, which is where (c) already got it. The other value you have for $L$ is the one you measured with the tape, so that is the comparison.
+
+### Units on the four equations
+
+::: {.sx-scroll}
+| Number | Unit | Why |
+|---|---|---|
+| slope of $T$ against $A$ | s/m | seconds on the vertical axis over metres on the horizontal |
+| intercept of $T$ against $A$ | s | it is a period |
+| exponential fit, the number in front | J | it is the energy at $t = 0$ |
+| exponential fit, the number in the exponent | s⁻¹ | the exponent has to have no unit, and it multiplies $t$ in seconds |
+| $k$ | N/m | |
+| $L$ | m | |
+| percent difference | none, use % | one length or one $k$ over another, so the unit cancels |
+:::
+
+## Common slips
+
+- **Counting peaks instead of cycles.** From a peak to the sixth peak is five cycles, not six. $n$ is the number of cycles.
+- **Using $\Delta y$ as the amplitude.** $\Delta y$ runs from the top of the swing to the bottom, which is twice the amplitude. The formula divides by 200, not by 100, for that reason.
+- **Metres in the centimetre column.** Type 38.6, not 0.386, or every amplitude comes out a hundred times too small and every energy ten thousand times too small.
+- **A selection that does not start and end on a peak.** Then $\Delta t$ is not a whole number of periods, and the period comes out wrong in a different way in every row.
+- **No dollar signs on $k$.** The energy column fills down to `#VALUE!` and then to wrong numbers that grow row by row.
+- **The pendulum length along a string.** The strings slant, so a length measured along one is too long. Measure straight down from the level of the ceiling points, to the centre of the bob, not its top.
+- **An exponential trendline with too few digits.** Excel shows something like $y = 0.0742e^{-0.002x}$, which has lost most of its exponent. Format the trendline label as a number with more decimal places.
+- **Treating CON as someone else's job.** This week it is everyone's, and it needs both parts.
+
+## Going deeper {#going-deeper}
+
+**Why the period ignores the amplitude.** The spring pulls back with a force proportional to how far the mass is from its resting place, $F = -ky$. Pull it twice as far and it pulls back twice as hard, so the mass covers twice the distance at twice the speed, and the trip takes the same time. Newton's second law turns $F = -ky$ into $a = -(k/M)\,y$, and the motion that does that is a cosine with angular frequency $\omega = \sqrt{k/M}$. So $T = 2\pi/\omega = 2\pi\sqrt{M/k}$, with no $A$ anywhere in it. Graph A1 is the test of that.
+
+**A pendulum is a spring with $k = Mg/L$.** When the pendulum has swung through an angle $\theta$, the bob is a distance $s = L\theta$ along its arc from the bottom, and gravity pulls it back along the arc with a force $Mg\sin\theta$. For small swings $\sin\theta$ and $\theta$ are nearly equal, so the force is $(Mg/L)\,s$, the spring law with $k = Mg/L$. That is why the sheet calls it $k$ and why $E_{el} = \tfrac12 kA^2$ works for the pendulum too. For small swings the sideways distance the motion sensor reads is nearly the same as $s$. Put it into the spring's period and the mass cancels:
+
+$$T = 2\pi\sqrt{\frac{M}{Mg/L}} = 2\pi\sqrt{\frac{L}{g}}.$$
+
+The words "for small swings" are where the pendulum differs from the spring. On a wide swing $\sin\theta$ is smaller than $\theta$, so the restoring force grows more slowly than $s$, and the period gets a little longer, by a fraction of about $\theta_0^2/16$ for a swing out to angle $\theta_0$ in radians. The example swing, $0.156\ \text{m}$ on a $1.52\ \text{m}$ pendulum, is $0.10$ rad, which changes the period by about 0.07%, under 2 ms. Over three cycles that adds about 5 ms to $\Delta t$, and the samples are 20 ms apart, so graph B1 cannot see it.
+
+**Where the energy goes.** Air drag and the flexing of the spring take a little energy every cycle. If each cycle loses the same fraction of what is left, the energy falls exponentially, $E_{el} = E_0\,e^{-t/\tau}$, and the number in the exponent of the trendline is $1/\tau$. The time $\tau$ is called the time constant: the time for the energy to fall to $1/e$ of its value, about 37%, which is a drop of about 63%. In the example it is $1/(0.00231\ \text{s}^{-1}) = 433\ \text{s}$ for the spring and 833 s for the pendulum, so the spring loses its energy faster. CON does not ask for it, but it is a good extra sentence. The energy halves every $\tau\ln 2$. In the example that is $\ln 2 / (0.00231\ \text{s}^{-1}) = 300\ \text{s}$ for the spring, five minutes, and 578 s for the pendulum. Since energy goes as $A^2$, half the energy is $1/\sqrt 2$, about 71%, of the amplitude, so the swing shrinks more slowly than the energy does.
+
+**Why the two values of $k$ disagree.** Both assume a spring with no mass. A real spring moves too: the coils at the bottom go up and down almost as far as the mass, and the coils at the top hardly move. Added up, the spring behaves as if about a third of its own mass $m_s$ rode along with $M$, so
+
+$$T = 2\pi\sqrt{\frac{M + m_s/3}{k}}.$$
+
+Using $M$ alone in $k = 4\pi^2 M/\bar T^2$ then gives a $k$ that is too small. The force sensor at the top of the spring also feels the spring's own motion, which pushes the force against position slope a little above the true $k$. Put the two together and the slope value divided by the period value comes out close to $1 + m_s/2M$. In the example, $3.85/3.67 = 1.05$, which a spring of about 20 g would explain. Long springs like the ones in this lab are not light, so weigh yours and see.
+
+**Why the V.** A bob on one string can swing in any direction, and a small sideways push at the start turns the swing into an ellipse that drifts off the motion sensor's line. Two strings tied to two points let the bob swing only about the line joining those points, so it stays in one plane, straight along the sensor's line. That line is also the pivot, which is why $L$ is measured from its level and not along a string.
